@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>教程 on 缘鱼</title>
+        <link>http://localhost:1313/categories/%E6%95%99%E7%A8%8B/</link>
+        <description>Recent content in 教程 on 缘鱼</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>缘鱼</copyright>
+        <lastBuildDate>Wed, 26 Mar 2025 14:52:51 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo&#43;Github搭建个人博客</title>
+        <link>http://localhost:1313/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+        <pubDate>Wed, 26 Mar 2025 14:52:51 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+        <description>&lt;p&gt;参考视频：&lt;/p&gt;
+&lt;p&gt;【【雷】Hugo + Github免费搭建博客，并实现自动化部署】 &lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1bovfeaEtQ/?share_source=copy_web&amp;amp;vd_source=6b5118a5d5b29a140a6c9241c8cdd612&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.bilibili.com/video/BV1bovfeaEtQ/?share_source=copy_web&amp;vd_source=6b5118a5d5b29a140a6c9241c8cdd612&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;下载hugo&#34;&gt;下载HUGO
+&lt;/h2&gt;&lt;p&gt;HUGO官网：https://gohugo.io/&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326132604418.png&#34; alt=&#34;image-20250326132604418&#34; style=&#34;zoom: 25%;&#34; /&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326132713412.png&#34; alt=&#34;image-20250326132713412&#34; style=&#34;zoom: 33%;&#34; /&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326132750868.png&#34; alt=&#34;image-20250326132750868&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326132925852.png&#34; alt=&#34;image-20250326132925852&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326133247163.png&#34; alt=&#34;image-20250326133247163&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在cmd中输入&lt;code&gt;hugo new site 要创建文件夹的名字&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326133645915.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250326133645915&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;7.若配置了hugo的全局环境变量则无需执行copy命令，若不知道是否配置，则与图中操作一样&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326134224456.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250326134224456&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;下载网页主题并启动&#34;&gt;下载网页主题并启动
+&lt;/h2&gt;&lt;p&gt;8.到这一步后，先把cmd窗口放到后台，别关掉，重新打开hugo官网&lt;/p&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326134805853.png&#34; alt=&#34;image-20250326134805853&#34; style=&#34;zoom:33%;&#34; /&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326134911591.png&#34; alt=&#34;image-20250326134911591&#34; style=&#34;zoom: 33%;&#34; /&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326135019194.png&#34; alt=&#34;image-20250326135019194&#34; style=&#34;zoom:33%;&#34; /&gt;
+&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326135042294.png&#34; alt=&#34;image-20250326135042294&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;ol start=&#34;12&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326135143585.png&#34; alt=&#34;image-20250326135143585&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;ol start=&#34;13&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326135211343.png&#34; alt=&#34;image-20250326135211343&#34; style=&#34;zoom:33%;&#34; /&gt;
+&lt;p&gt;14.下载好主题后，把主题压缩包解压到hugo的&lt;code&gt;themes&lt;/code&gt;文件夹中&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326140025883.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250326140025883&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;15.打开下载的&lt;code&gt;hugo-theme-stack-3.30.0&lt;/code&gt;文件夹，再打开其中的&lt;code&gt;exampleSite&lt;/code&gt;文件夹&lt;/p&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326140729572.png&#34; alt=&#34;image-20250326140729572&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;ol start=&#34;16&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326140838175.png&#34; alt=&#34;image-20250326140838175&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;17.粘贴到hugo的&lt;code&gt;dev&lt;/code&gt;文件夹下&lt;/p&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326140916904.png&#34; alt=&#34;image-20250326140916904&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;18.删掉&lt;code&gt;hugo.toml&lt;/code&gt;，因为刚刚复制的&lt;code&gt;hugo.yaml&lt;/code&gt;与其作用是一致的，相当于已经配置好了的&lt;code&gt;hugo.toml&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326141019414.png&#34; alt=&#34;image-20250326141019414&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;19.然后打开刚刚复制过来的&lt;code&gt;content&lt;/code&gt;文件夹，再打开之中的&lt;code&gt;post&lt;/code&gt;文件夹&lt;/p&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326141724281.png&#34; alt=&#34;image-20250326141724281&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;20.因为&lt;code&gt;rich-content&lt;/code&gt;中有引用国外网站，可能会导致之后无法启动网页&lt;/p&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326141828329.png&#34; alt=&#34;image-20250326141828329&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;21.回到&lt;code&gt;dev&lt;/code&gt;文件夹&lt;/p&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326142324221.png&#34; alt=&#34;image-20250326142324221&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;ol start=&#34;22&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;http://localhost:1313/assets/image-20250326142628753.png&#34; alt=&#34;image-20250326142628753&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;23.此时已经可以启动网页了，点开步骤8时放在后台的cmd窗口，输入&lt;code&gt;hugo server -D&lt;/code&gt;（其实就是官方提示的命令&lt;code&gt;hugo server --buildDrafts&lt;/code&gt;的缩写）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326143219405.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250326143219405&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;24.注意别关闭cmd窗口，关闭后就打不开下方网页了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326143328440.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250326143328440&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;创建第一个博客&#34;&gt;创建第一个博客
+&lt;/h2&gt;&lt;p&gt;25.网页启动后可以在cmd窗口用快捷键&lt;code&gt;Ctrl+C&lt;/code&gt;结束网页，此时就可以继续输入命令了。&lt;/p&gt;
+&lt;p&gt;输入&lt;code&gt;hugo new content post/myFirstBlog/index.md&lt;/code&gt;创建新内容&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326144708453.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250326144708453&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;26.在cmd窗口输入&lt;code&gt;hugo server -D&lt;/code&gt;，重新启动网页&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326144855424.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250326144855424&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326144942954.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250326144942954&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
