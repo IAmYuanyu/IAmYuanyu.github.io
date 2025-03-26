@@ -406,7 +406,17 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326195438236.png&#34; alt=&#34;image-20250326195438236&#34; style=&#34;zoom:50%;&#34; /&gt;
-&lt;p&gt;47.此时已完成了自动化部署。之后更新了代码，只要再次回到&lt;code&gt;dev&lt;/code&gt;文件夹，打开cmd窗口，依次输入&lt;code&gt;git add .&lt;/code&gt;、&lt;code&gt;git commit -m &amp;quot;update25-3-26-20:00&amp;quot;&lt;/code&gt;（双引号内写什么无所谓）、&lt;code&gt;git push&lt;/code&gt;后，页面就会更新&lt;/p&gt;
+&lt;p&gt;47.此时已完成了自动化部署。之后更新了代码，只要再次回到&lt;code&gt;dev&lt;/code&gt;文件夹，打开cmd窗口，依次输入&lt;code&gt;git add .&lt;/code&gt;、&lt;code&gt;git commit -m &amp;quot;update25-3-26-20:00&amp;quot;&lt;/code&gt;（双引号内写什么无所谓）、&lt;code&gt;git push&lt;/code&gt;后，页面就会更新（hugo-main编译完成后可能会有一点延迟，可以先等一两分钟看看）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326215838014.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250326215838014&#34;
+	
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         

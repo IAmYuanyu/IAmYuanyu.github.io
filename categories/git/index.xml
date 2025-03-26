@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Git on 缘鱼</title>
+        <link>https://IAmYuanyu.github.io/categories/git/</link>
+        <description>Recent content in Git on 缘鱼</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>缘鱼</copyright>
+        <lastBuildDate>Wed, 26 Mar 2025 21:44:16 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>暴力解决git上传代码报错</title>
+        <link>https://IAmYuanyu.github.io/p/%E6%9A%B4%E5%8A%9B%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/</link>
+        <pubDate>Wed, 26 Mar 2025 21:44:16 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/%E6%9A%B4%E5%8A%9B%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/</guid>
+        <description>&lt;img src="https://IAmYuanyu.github.io/p/%E6%9A%B4%E5%8A%9B%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/%E4%BB%A3%E7%A0%81%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4.png" alt="Featured image of post 暴力解决git上传代码报错" /&gt;&lt;p&gt;刚弄完前一篇的教程就遇到了这个问题，头疼了半天，结果发现了一个简单无脑的解决方式&lt;/p&gt;
+&lt;p&gt;push代码的时候加上-f，即用&lt;code&gt;git push -f&lt;/code&gt;提交代码&lt;/p&gt;
+&lt;p&gt;此方法有诸多风险，如数据可能丢失，破坏团队其他人代码，历史版本难以恢复等等，只建议用于自己的个人小作坊，并且确定旧代码完全没用了&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
