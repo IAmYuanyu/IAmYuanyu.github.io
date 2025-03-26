@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="保姆级教程">
+<title>Hugo&#43;Github搭建个人博客</title>
+
+<link rel='canonical' href='http://localhost:1313/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Hugo+Github搭建个人博客">
+<meta property='og:description' content="保姆级教程">
+<meta property='og:url' content='http://localhost:1313/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/'>
+<meta property='og:site_name' content='缘鱼'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-26T14:52:51&#43;08:00'/><meta property='article:modified_time' content='2025-03-26T14:52:51&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg' />
+<meta name="twitter:title" content="Hugo+Github搭建个人博客">
+<meta name="twitter:description" content="保姆级教程"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1e2eadef835e950a.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">缘鱼</a></h1>
+            <h2 class="site-description">缘鱼的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#下载hugo">下载HUGO</a></li>
+    <li><a href="#下载网页主题并启动">下载网页主题并启动</a></li>
+    <li><a href="#创建第一个博客">创建第一个博客</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+                <img src="/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu_c86b681f3fee94ff.jpg"
+                        srcset="/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu_c86b681f3fee94ff.jpg 800w, /p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu_bea442a1395058f4.jpg 1600w"
+                        width="800" 
+                        height="534" 
+                        loading="lazy"
+                        alt="Featured image of post Hugo&#43;Github搭建个人博客" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+            <a href="/categories/hugo/" >
+                Hugo
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">Hugo&#43;Github搭建个人博客</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            保姆级教程
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-03-26</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>参考视频：</p>
+<p>【【雷】Hugo + Github免费搭建博客，并实现自动化部署】 <a class="link" href="https://www.bilibili.com/video/BV1bovfeaEtQ/?share_source=copy_web&amp;vd_source=6b5118a5d5b29a140a6c9241c8cdd612"  target="_blank" rel="noopener"
+    >https://www.bilibili.com/video/BV1bovfeaEtQ/?share_source=copy_web&vd_source=6b5118a5d5b29a140a6c9241c8cdd612</a></p>
+<h2 id="下载hugo">下载HUGO
+</h2><p>HUGO官网：https://gohugo.io/</p>
+<ol>
+<li></li>
+</ol>
+<img src="/assets/image-20250326132604418.png" alt="image-20250326132604418" style="zoom: 25%;" />
+<ol start="2">
+<li></li>
+</ol>
+<img src="/assets/image-20250326132713412.png" alt="image-20250326132713412" style="zoom: 33%;" />
+<ol start="3">
+<li></li>
+</ol>
+<img src="/assets/image-20250326132750868.png" alt="image-20250326132750868" style="zoom:50%;" />
+<ol start="4">
+<li></li>
+</ol>
+<img src="/assets/image-20250326132925852.png" alt="image-20250326132925852" style="zoom: 50%;" />
+<ol start="5">
+<li></li>
+</ol>
+<img src="/assets/image-20250326133247163.png" alt="image-20250326133247163" style="zoom:50%;" />
+<ol start="6">
+<li></li>
+</ol>
+<p>在cmd中输入<code>hugo new site 要创建文件夹的名字</code></p>
+<p><img src="/assets/image-20250326133645915.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326133645915"
+	
+	
+></p>
+<p>7.若配置了hugo的全局环境变量则无需执行copy命令，若不知道是否配置，则与图中操作一样</p>
+<p><img src="/assets/image-20250326134224456.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326134224456"
+	
+	
+></p>
+<h2 id="下载网页主题并启动">下载网页主题并启动
+</h2><p>8.到这一步后，先把cmd窗口放到后台，别关掉，重新打开hugo官网</p>
+<img src="/assets/image-20250326134805853.png" alt="image-20250326134805853" style="zoom:33%;" />
+<ol start="9">
+<li></li>
+</ol>
+<img src="/assets/image-20250326134911591.png" alt="image-20250326134911591" style="zoom: 33%;" />
+<ol start="10">
+<li></li>
+</ol>
+<img src="/assets/image-20250326135019194.png" alt="image-20250326135019194" style="zoom:33%;" />
+<ol start="11">
+<li></li>
+</ol>
+<img src="/assets/image-20250326135042294.png" alt="image-20250326135042294" style="zoom:50%;" />
+<ol start="12">
+<li></li>
+</ol>
+<img src="/assets/image-20250326135143585.png" alt="image-20250326135143585" style="zoom: 50%;" />
+<ol start="13">
+<li></li>
+</ol>
+<img src="/assets/image-20250326135211343.png" alt="image-20250326135211343" style="zoom:33%;" />
+<p>14.下载好主题后，把主题压缩包解压到hugo的<code>themes</code>文件夹中</p>
+<p><img src="/assets/image-20250326140025883.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326140025883"
+	
+	
+></p>
+<p>15.打开下载的<code>hugo-theme-stack-3.30.0</code>文件夹，再打开其中的<code>exampleSite</code>文件夹</p>
+<img src="/assets/image-20250326140729572.png" alt="image-20250326140729572" style="zoom:50%;" />
+<ol start="16">
+<li></li>
+</ol>
+<img src="/assets/image-20250326140838175.png" alt="image-20250326140838175" style="zoom:50%;" />
+<p>17.粘贴到hugo的<code>dev</code>文件夹下</p>
+<img src="/assets/image-20250326140916904.png" alt="image-20250326140916904" style="zoom:50%;" />
+<p>18.删掉<code>hugo.toml</code>，因为刚刚复制的<code>hugo.yaml</code>与其作用是一致的，相当于已经配置好了的<code>hugo.toml</code></p>
+<img src="/assets/image-20250326141019414.png" alt="image-20250326141019414" style="zoom:50%;" />
+<p>19.然后打开刚刚复制过来的<code>content</code>文件夹，再打开之中的<code>post</code>文件夹</p>
+<img src="/assets/image-20250326141724281.png" alt="image-20250326141724281" style="zoom:50%;" />
+<p>20.因为<code>rich-content</code>中有引用国外网站，可能会导致之后无法启动网页</p>
+<img src="/assets/image-20250326141828329.png" alt="image-20250326141828329" style="zoom:50%;" />
+<p>21.回到<code>dev</code>文件夹</p>
+<img src="/assets/image-20250326142324221.png" alt="image-20250326142324221" style="zoom:50%;" />
+<ol start="22">
+<li></li>
+</ol>
+<img src="/assets/image-20250326142628753.png" alt="image-20250326142628753" style="zoom:50%;" />
+<p>23.此时已经可以启动网页了，点开步骤8时放在后台的cmd窗口，输入<code>hugo server -D</code>（其实就是官方提示的命令<code>hugo server --buildDrafts</code>的缩写）</p>
+<p><img src="/assets/image-20250326143219405.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326143219405"
+	
+	
+></p>
+<p>24.注意别关闭cmd窗口，关闭后就打不开下方网页了</p>
+<p><img src="/assets/image-20250326143328440.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326143328440"
+	
+	
+></p>
+<h2 id="创建第一个博客">创建第一个博客
+</h2><p>25.网页启动后可以在cmd窗口用快捷键<code>Ctrl+C</code>结束网页，此时就可以继续输入命令了。</p>
+<p>输入<code>hugo new content post/myFirstBlog/index.md</code>创建新内容</p>
+<p><img src="/assets/image-20250326144708453.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326144708453"
+	
+	
+></p>
+<p>26.在cmd窗口输入<code>hugo server -D</code>，重新启动网页</p>
+<p><img src="/assets/image-20250326144855424.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326144855424"
+	
+	
+></p>
+<p><img src="/assets/image-20250326144942954.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326144942954"
+	
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 缘鱼
+    </section>
+    
+    <section class="powerby">
+        
+            本站于2025年3月26日建立 <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.39a07620396d45f585faec6e64af2bcc5480d375782b3eb31aecee48c4df3264.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
