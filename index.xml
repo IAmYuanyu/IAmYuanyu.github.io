@@ -13,7 +13,7 @@
         <pubDate>Wed, 26 Mar 2025 14:52:51 +0800</pubDate>
         
         <guid>http://localhost:1313/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-        <description>&lt;p&gt;参考视频：&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Hugo&#43;Github搭建个人博客" /&gt;&lt;p&gt;参考视频：&lt;/p&gt;
 &lt;p&gt;【【雷】Hugo + Github免费搭建博客，并实现自动化部署】 &lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1bovfeaEtQ/?share_source=copy_web&amp;amp;vd_source=6b5118a5d5b29a140a6c9241c8cdd612&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.bilibili.com/video/BV1bovfeaEtQ/?share_source=copy_web&amp;vd_source=6b5118a5d5b29a140a6c9241c8cdd612&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;下载hugo&#34;&gt;下载HUGO
@@ -174,14 +174,6 @@
 	
 &gt;&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title>MyFirstBlog</title>
-        <link>http://localhost:1313/p/myfirstblog/</link>
-        <pubDate>Wed, 26 Mar 2025 14:46:38 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/myfirstblog/</guid>
-        <description></description>
         </item>
         <item>
         <title>Chinese Test</title>
