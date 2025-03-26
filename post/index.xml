@@ -2,18 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on 缘鱼</title>
-        <link>http://localhost:1313/post/</link>
+        <link>https://IAmYuanyu.github.io/post/</link>
         <description>Recent content in Posts on 缘鱼</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Wed, 26 Mar 2025 14:52:51 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 26 Mar 2025 21:44:16 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>解决git上传代码报错</title>
+        <link>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/</link>
+        <pubDate>Wed, 26 Mar 2025 21:44:16 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Hugo&#43;Github搭建个人博客</title>
-        <link>http://localhost:1313/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+        <link>https://IAmYuanyu.github.io/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
         <pubDate>Wed, 26 Mar 2025 14:52:51 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-        <description>&lt;img src="http://localhost:1313/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Hugo&#43;Github搭建个人博客" /&gt;&lt;p&gt;参考视频：&lt;/p&gt;
+        <guid>https://IAmYuanyu.github.io/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+        <description>&lt;img src="https://IAmYuanyu.github.io/p/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Hugo&#43;Github搭建个人博客" /&gt;&lt;p&gt;参考视频：&lt;/p&gt;
 &lt;p&gt;【【雷】Hugo + Github免费搭建博客，并实现自动化部署】 &lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1bovfeaEtQ/?share_source=copy_web&amp;amp;vd_source=6b5118a5d5b29a140a6c9241c8cdd612&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.bilibili.com/video/BV1bovfeaEtQ/?share_source=copy_web&amp;vd_source=6b5118a5d5b29a140a6c9241c8cdd612&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;下载hugo&#34;&gt;下载HUGO
@@ -21,28 +29,28 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326132604418.png&#34; alt=&#34;image-20250326132604418&#34; style=&#34;zoom: 25%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326132604418.png&#34; alt=&#34;image-20250326132604418&#34; style=&#34;zoom: 25%;&#34; /&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326132713412.png&#34; alt=&#34;image-20250326132713412&#34; style=&#34;zoom: 33%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326132713412.png&#34; alt=&#34;image-20250326132713412&#34; style=&#34;zoom: 33%;&#34; /&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326132750868.png&#34; alt=&#34;image-20250326132750868&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326132750868.png&#34; alt=&#34;image-20250326132750868&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326132925852.png&#34; alt=&#34;image-20250326132925852&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326132925852.png&#34; alt=&#34;image-20250326132925852&#34; style=&#34;zoom: 50%;&#34; /&gt;
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326133247163.png&#34; alt=&#34;image-20250326133247163&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326133247163.png&#34; alt=&#34;image-20250326133247163&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;在cmd中输入&lt;code&gt;hugo new site 要创建文件夹的名字&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326133645915.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326133645915.png&#34;
 	
 	
 	
@@ -53,7 +61,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;7.若配置了hugo的全局环境变量则无需执行copy命令，若不知道是否配置，则与图中操作一样&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326134224456.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326134224456.png&#34;
 	
 	
 	
@@ -65,29 +73,29 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;下载网页主题并启动&#34;&gt;下载网页主题并启动
 &lt;/h2&gt;&lt;p&gt;8.到这一步后，先把cmd窗口放到后台，别关掉，重新打开hugo官网&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326134805853.png&#34; alt=&#34;image-20250326134805853&#34; style=&#34;zoom:33%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326134805853.png&#34; alt=&#34;image-20250326134805853&#34; style=&#34;zoom:33%;&#34; /&gt;
 &lt;ol start=&#34;9&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326134911591.png&#34; alt=&#34;image-20250326134911591&#34; style=&#34;zoom: 33%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326134911591.png&#34; alt=&#34;image-20250326134911591&#34; style=&#34;zoom: 33%;&#34; /&gt;
 &lt;ol start=&#34;10&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326135019194.png&#34; alt=&#34;image-20250326135019194&#34; style=&#34;zoom:33%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326135019194.png&#34; alt=&#34;image-20250326135019194&#34; style=&#34;zoom:33%;&#34; /&gt;
 &lt;ol start=&#34;11&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326135042294.png&#34; alt=&#34;image-20250326135042294&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326135042294.png&#34; alt=&#34;image-20250326135042294&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;ol start=&#34;12&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326135143585.png&#34; alt=&#34;image-20250326135143585&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326135143585.png&#34; alt=&#34;image-20250326135143585&#34; style=&#34;zoom: 50%;&#34; /&gt;
 &lt;ol start=&#34;13&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326135211343.png&#34; alt=&#34;image-20250326135211343&#34; style=&#34;zoom:33%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326135211343.png&#34; alt=&#34;image-20250326135211343&#34; style=&#34;zoom:33%;&#34; /&gt;
 &lt;p&gt;14.下载好主题后，把主题压缩包解压到hugo的&lt;code&gt;themes&lt;/code&gt;文件夹中&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326140025883.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326140025883.png&#34;
 	
 	
 	
@@ -98,27 +106,27 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;15.打开下载的&lt;code&gt;hugo-theme-stack-3.30.0&lt;/code&gt;文件夹，再打开其中的&lt;code&gt;exampleSite&lt;/code&gt;文件夹&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326140729572.png&#34; alt=&#34;image-20250326140729572&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326140729572.png&#34; alt=&#34;image-20250326140729572&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;ol start=&#34;16&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326140838175.png&#34; alt=&#34;image-20250326140838175&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326140838175.png&#34; alt=&#34;image-20250326140838175&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;17.粘贴到hugo的&lt;code&gt;dev&lt;/code&gt;文件夹下&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326140916904.png&#34; alt=&#34;image-20250326140916904&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326140916904.png&#34; alt=&#34;image-20250326140916904&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;18.删掉&lt;code&gt;hugo.toml&lt;/code&gt;，因为刚刚复制的&lt;code&gt;hugo.yaml&lt;/code&gt;与其作用是一致的，相当于已经配置好了的&lt;code&gt;hugo.toml&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326141019414.png&#34; alt=&#34;image-20250326141019414&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326141019414.png&#34; alt=&#34;image-20250326141019414&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;19.然后打开刚刚复制过来的&lt;code&gt;content&lt;/code&gt;文件夹，再打开之中的&lt;code&gt;post&lt;/code&gt;文件夹&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326141724281.png&#34; alt=&#34;image-20250326141724281&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326141724281.png&#34; alt=&#34;image-20250326141724281&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;20.因为&lt;code&gt;rich-content&lt;/code&gt;中有引用国外网站，可能会导致之后无法启动网页&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326141828329.png&#34; alt=&#34;image-20250326141828329&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326141828329.png&#34; alt=&#34;image-20250326141828329&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;21.回到&lt;code&gt;dev&lt;/code&gt;文件夹&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326142324221.png&#34; alt=&#34;image-20250326142324221&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326142324221.png&#34; alt=&#34;image-20250326142324221&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;ol start=&#34;22&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326142628753.png&#34; alt=&#34;image-20250326142628753&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326142628753.png&#34; alt=&#34;image-20250326142628753&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;23.此时已经可以启动网页了，点开步骤8时放在后台的cmd窗口，输入&lt;code&gt;hugo server -D&lt;/code&gt;（其实就是官方提示的命令&lt;code&gt;hugo server --buildDrafts&lt;/code&gt;的缩写）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326143219405.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326143219405.png&#34;
 	
 	
 	
@@ -129,7 +137,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;24.注意别关闭cmd窗口，关闭后就打不开下方网页了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326143328440.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326143328440.png&#34;
 	
 	
 	
@@ -142,7 +150,7 @@
 &lt;h2 id=&#34;创建第一个博客&#34;&gt;创建第一个博客
 &lt;/h2&gt;&lt;p&gt;25.网页启动后可以在cmd窗口用快捷键&lt;code&gt;Ctrl+C&lt;/code&gt;结束网页，此时就可以继续输入命令了。&lt;/p&gt;
 &lt;p&gt;输入&lt;code&gt;hugo new content post/myFirstBlog/index.md&lt;/code&gt;创建新内容&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326144708453.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326144708453.png&#34;
 	
 	
 	
@@ -153,7 +161,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;26.在cmd窗口输入&lt;code&gt;hugo server -D&lt;/code&gt;，重新启动网页&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326144855424.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326144855424.png&#34;
 	
 	
 	
@@ -163,7 +171,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326144942954.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326144942954.png&#34;
 	
 	
 	
@@ -174,14 +182,14 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;27.Hugo的默认根路径在在&lt;code&gt;static&lt;/code&gt;文件夹，所以要注意修改笔记中图片的路径&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326152449590.png&#34; alt=&#34;image-20250326152449590&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326152449590.png&#34; alt=&#34;image-20250326152449590&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;h2 id=&#34;stack主题配置&#34;&gt;stack主题配置
 &lt;/h2&gt;&lt;p&gt;见参考视频&lt;/p&gt;
 &lt;h2 id=&#34;github常规部署&#34;&gt;Github常规部署
 &lt;/h2&gt;&lt;p&gt;28.下载Git：https://git-scm.com/downloads/win&lt;/p&gt;
 &lt;p&gt;29.登录Github：https://github.com/&lt;/p&gt;
 &lt;p&gt;若Github要2FA验证，可以下载下方插件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326170822342.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326170822342.png&#34;
 	
 	
 	
@@ -192,7 +200,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;下载方式如下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326171014870.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326171014870.png&#34;
 	
 	
 	
@@ -203,11 +211,11 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;使用方式：&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326171349307.png&#34; alt=&#34;image-20250326171349307&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326171349307.png&#34; alt=&#34;image-20250326171349307&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;30.创建仓库，创建后出现的页面别关掉&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326171553790.png&#34; alt=&#34;image-20250326171553790&#34; style=&#34;zoom: 50%;&#34; /&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326171937818.png&#34; alt=&#34;image-20250326171937818&#34; style=&#34;zoom:50%;&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326174142116.png&#34;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326171553790.png&#34; alt=&#34;image-20250326171553790&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326171937818.png&#34; alt=&#34;image-20250326171937818&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326174142116.png&#34;
 	
 	
 	
@@ -218,12 +226,12 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;31.修改&lt;code&gt;hugo.yaml&lt;/code&gt;中&lt;code&gt;baseurl&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326172358121.png&#34; alt=&#34;image-20250326172358121&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326172358121.png&#34; alt=&#34;image-20250326172358121&#34; style=&#34;zoom: 50%;&#34; /&gt;
 &lt;p&gt;32.打开&lt;code&gt;dev&lt;/code&gt;中的&lt;code&gt;public&lt;/code&gt;文件夹，在路径处输入&lt;code&gt;cmd&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326173012265.png&#34; alt=&#34;image-20250326173012265&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326173012265.png&#34; alt=&#34;image-20250326173012265&#34; style=&#34;zoom: 50%;&#34; /&gt;
 &lt;p&gt;补充（非必要，可不看）：可以先删掉&lt;code&gt;public&lt;/code&gt;文件夹，再在cmd窗口输入&lt;code&gt;hugo -D&lt;/code&gt;重新生成一个&lt;code&gt;public&lt;/code&gt;文件夹。因为在配置主题的时候可能会把很多没必要的地方删掉，而删掉的部分仍留在public中，这时就可以用&lt;code&gt;hugo -D&lt;/code&gt;重新生成一次静态页面&lt;/p&gt;
 &lt;p&gt;33.然后在cmd窗口依次输入&lt;code&gt;git init&lt;/code&gt;、&lt;code&gt;git add .&lt;/code&gt;、&lt;code&gt;git commit -m &amp;quot;first commit&amp;quot;&lt;/code&gt;、&lt;code&gt;git branch -M main&lt;/code&gt;、&lt;code&gt;git remote add origin https://github.com/xxx/xxx.github.io.git&lt;/code&gt;（这里填你自己的仓库地址）、&lt;code&gt;git push -u origin main&lt;/code&gt;，中间输出部分太长，就不放在图中了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326174514615.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326174514615.png&#34;
 	
 	
 	
@@ -234,7 +242,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;34.如果和图中一样说明部署完成了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326174828252.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326174828252.png&#34;
 	
 	
 	
@@ -248,16 +256,16 @@
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;自动部署仅限于使用&lt;code&gt;hugo new content&lt;/code&gt;命令时会更新网页，其他时候，如删除、修改文件时并不会实时同步本地文件，自行选择是否配置&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;35.再创建一个仓库&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326175344840.png&#34; alt=&#34;image-20250326175344840&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326175344840.png&#34; alt=&#34;image-20250326175344840&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;36.打开&lt;code&gt;dev&lt;/code&gt;文件夹，创建一个&lt;code&gt;.gitignore&lt;/code&gt;文件，内容如图（不会创建.gitignore文件，就在此处打开cmd窗口，输入&lt;code&gt;type nul&amp;gt;.gitignore&lt;/code&gt;即可）&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326175741141.png&#34; alt=&#34;image-20250326175741141&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326175741141.png&#34; alt=&#34;image-20250326175741141&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;37.在&lt;code&gt;dev&lt;/code&gt;文件夹打开cmd窗口，再执行一次和步骤33一样的操作（&lt;code&gt;git remote add origin https://……&lt;/code&gt;命令记得换成hugo-main的仓库地址）&lt;/p&gt;
 &lt;p&gt;38.返回Github首页&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326191003793.png&#34; alt=&#34;image-20250326191003793&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326191003793.png&#34; alt=&#34;image-20250326191003793&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;ol start=&#34;39&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326191614381.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326191614381.png&#34;
 	
 	
 	
@@ -270,7 +278,7 @@
 &lt;ol start=&#34;40&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326192035144.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326192035144.png&#34;
 	
 	
 	
@@ -283,7 +291,7 @@
 &lt;ol start=&#34;41&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326192423110.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326192423110.png&#34;
 	
 	
 	
@@ -294,7 +302,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;42.将token配置为hugo-main仓库的环境变量&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326193318542.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326193318542.png&#34;
 	
 	
 	
@@ -307,7 +315,7 @@
 &lt;ol start=&#34;43&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326193408142.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326193408142.png&#34;
 	
 	
 	
@@ -318,9 +326,9 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;44.回到&lt;code&gt;dev&lt;/code&gt;文件夹，创建&lt;code&gt;.github/workflows/&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&#34;http://localhost:1313/assets/image-20250326193741188.png&#34; alt=&#34;image-20250326193741188&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326193741188.png&#34; alt=&#34;image-20250326193741188&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;45.打开&lt;code&gt;workflows&lt;/code&gt;文件夹，创建一个&lt;code&gt;随意取个名.yaml&lt;/code&gt;文件，此处叫&lt;code&gt;hugo_deploy.yaml&lt;/code&gt;，不会创建可以用图中命令&lt;code&gt;type nul&amp;gt;hugo_deploy.yaml&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326194222742.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326194222742.png&#34;
 	
 	
 	
@@ -405,7 +413,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;              &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;commit_message&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;auto deploy&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;http://localhost:1313/assets/image-20250326195438236.png&#34; alt=&#34;image-20250326195438236&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326195438236.png&#34; alt=&#34;image-20250326195438236&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;47.再次回到&lt;code&gt;dev&lt;/code&gt;文件夹，打开cmd窗口，依次输入&lt;code&gt;git add .&lt;/code&gt;、&lt;code&gt;git commit -m &amp;quot;update25-3-26-20:00&amp;quot;&lt;/code&gt;（双引号内写什么无所谓）、&lt;code&gt;git push&lt;/code&gt;，输完命令后就完成了自动化部署&lt;/p&gt;
 </description>
         </item>
