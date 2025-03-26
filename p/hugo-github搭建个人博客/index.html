@@ -233,6 +233,9 @@
     <li><a href="#下载hugo">下载HUGO</a></li>
     <li><a href="#下载网页主题并启动">下载网页主题并启动</a></li>
     <li><a href="#创建第一个博客">创建第一个博客</a></li>
+    <li><a href="#stack主题配置">stack主题配置</a></li>
+    <li><a href="#github常规部署">Github常规部署</a></li>
+    <li><a href="#github自动部署">Github自动部署</a></li>
   </ol>
 </nav>
         </div>
@@ -478,6 +481,240 @@
 	
 	
 ></p>
+<p>27.Hugo的默认根路径在在<code>static</code>文件夹，所以要注意修改笔记中图片的路径</p>
+<img src="/assets/image-20250326152449590.png" alt="image-20250326152449590" style="zoom:50%;" />
+<h2 id="stack主题配置">stack主题配置
+</h2><p>见参考视频</p>
+<h2 id="github常规部署">Github常规部署
+</h2><p>28.下载Git：https://git-scm.com/downloads/win</p>
+<p>29.登录Github：https://github.com/</p>
+<p>若Github要2FA验证，可以下载下方插件</p>
+<p><img src="/assets/image-20250326170822342.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326170822342"
+	
+	
+></p>
+<p>下载方式如下</p>
+<p><img src="/assets/image-20250326171014870.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326171014870"
+	
+	
+></p>
+<p>使用方式：</p>
+<img src="/assets/image-20250326171349307.png" alt="image-20250326171349307" style="zoom:50%;" />
+<p>30.创建仓库，创建后出现的页面别关掉</p>
+<img src="/assets/image-20250326171553790.png" alt="image-20250326171553790" style="zoom: 50%;" />
+<img src="/assets/image-20250326171937818.png" alt="image-20250326171937818" style="zoom:50%;" />
+<p><img src="/assets/image-20250326174142116.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326174142116"
+	
+	
+></p>
+<p>31.修改<code>hugo.yaml</code>中<code>baseurl</code></p>
+<img src="/assets/image-20250326172358121.png" alt="image-20250326172358121" style="zoom: 50%;" />
+<p>32.打开<code>dev</code>中的<code>public</code>文件夹，在路径处输入<code>cmd</code></p>
+<img src="/assets/image-20250326173012265.png" alt="image-20250326173012265" style="zoom: 50%;" />
+<p>补充（非必要，可不看）：可以先删掉<code>public</code>文件夹，再在cmd窗口输入<code>hugo -D</code>重新生成一个<code>public</code>文件夹。因为在配置主题的时候可能会把很多没必要的地方删掉，而删掉的部分仍留在public中，这时就可以用<code>hugo -D</code>重新生成一次静态页面</p>
+<p>33.然后在cmd窗口依次输入<code>git init</code>、<code>git add .</code>、<code>git commit -m &quot;first commit&quot;</code>、<code>git branch -M main</code>、<code>git remote add origin https://github.com/xxx/xxx.github.io.git</code>（这里填你自己的仓库地址）、<code>git push -u origin main</code>，中间输出部分太长，就不放在图中了</p>
+<p><img src="/assets/image-20250326174514615.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326174514615"
+	
+	
+></p>
+<p>34.如果和图中一样说明部署完成了</p>
+<p><img src="/assets/image-20250326174828252.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326174828252"
+	
+	
+></p>
+<h2 id="github自动部署">Github自动部署
+</h2><blockquote>
+<p>自动部署仅限于使用<code>hugo new content</code>命令时会更新网页，其他时候，如删除、修改文件时并不会实时同步本地文件，自行选择是否配置</p></blockquote>
+<p>35.再创建一个仓库</p>
+<img src="/assets/image-20250326175344840.png" alt="image-20250326175344840" style="zoom:50%;" />
+<p>36.打开<code>dev</code>文件夹，创建一个<code>.gitignore</code>文件，内容如图（不会创建.gitignore文件，就在此处打开cmd窗口，输入<code>type nul&gt;.gitignore</code>即可）</p>
+<img src="/assets/image-20250326175741141.png" alt="image-20250326175741141" style="zoom:50%;" />
+<p>37.在<code>dev</code>文件夹打开cmd窗口，再执行一次和步骤33一样的操作（<code>git remote add origin https://……</code>命令记得换成hugo-main的仓库地址）</p>
+<p>38.返回Github首页</p>
+<img src="/assets/image-20250326191003793.png" alt="image-20250326191003793" style="zoom:50%;" />
+<ol start="39">
+<li></li>
+</ol>
+<p><img src="/assets/image-20250326191614381.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326191614381"
+	
+	
+></p>
+<ol start="40">
+<li></li>
+</ol>
+<p><img src="/assets/image-20250326192035144.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326192035144"
+	
+	
+></p>
+<ol start="41">
+<li></li>
+</ol>
+<p><img src="/assets/image-20250326192423110.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326192423110"
+	
+	
+></p>
+<p>42.将token配置为hugo-main仓库的环境变量</p>
+<p><img src="/assets/image-20250326193318542.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326193318542"
+	
+	
+></p>
+<ol start="43">
+<li></li>
+</ol>
+<p><img src="/assets/image-20250326193408142.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326193408142"
+	
+	
+></p>
+<p>44.回到<code>dev</code>文件夹，创建<code>.github/workflows/</code></p>
+<img src="/assets/image-20250326193741188.png" alt="image-20250326193741188" style="zoom:50%;" />
+<p>45.打开<code>workflows</code>文件夹，创建一个<code>随意取个名.yaml</code>文件，此处叫<code>hugo_deploy.yaml</code>，不会创建可以用图中命令<code>type nul&gt;hugo_deploy.yaml</code></p>
+<p><img src="/assets/image-20250326194222742.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250326194222742"
+	
+	
+></p>
+<p>46.将下方内容赋值到创建的<code>hugo_deploy.yaml</code>中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># 代码提交到main分支时触发github action</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Checkout</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Setup Hugo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;latest&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">extended</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Build Web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">hugo -D</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Deploy Web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-gh-pages@v4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">PERSONAL_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.你的token变量名 }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">EXTERNAL_REPOSITORY</span><span class="p">:</span><span class="w"> </span><span class="l">你的github名/你的仓库名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">PUBLISH_BRANCH</span><span class="p">:</span><span class="w"> </span><span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">PUBLISH_DIR</span><span class="p">:</span><span class="w"> </span><span class="l">./public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">commit_message</span><span class="p">:</span><span class="w"> </span><span class="l">auto deploy</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><img src="/assets/image-20250326195438236.png" alt="image-20250326195438236" style="zoom:50%;" />
+<p>47.再次回到<code>dev</code>文件夹，打开cmd窗口，依次输入<code>git add .</code>、<code>git commit -m &quot;update25-3-26-20:00&quot;</code>（双引号内写什么无所谓）、<code>git push</code>，输完命令后就完成了自动化部署</p>
 
 </section>
 
