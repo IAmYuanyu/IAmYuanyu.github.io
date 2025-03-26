@@ -254,7 +254,7 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;github自动部署&#34;&gt;Github自动部署
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;自动部署仅限于使用&lt;code&gt;hugo new content&lt;/code&gt;命令时会更新网页，其他时候，如删除、修改文件时并不会实时同步本地文件，自行选择是否配置&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;自动部署：当你在&lt;code&gt;dev&lt;/code&gt;文件中push代码后，页面就会自动更新&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;35.再创建一个仓库&lt;/p&gt;
 &lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326175344840.png&#34; alt=&#34;image-20250326175344840&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;36.打开&lt;code&gt;dev&lt;/code&gt;文件夹，创建一个&lt;code&gt;.gitignore&lt;/code&gt;文件，内容如图（不会创建.gitignore文件，就在此处打开cmd窗口，输入&lt;code&gt;type nul&amp;gt;.gitignore&lt;/code&gt;即可）&lt;/p&gt;
@@ -414,7 +414,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326195438236.png&#34; alt=&#34;image-20250326195438236&#34; style=&#34;zoom:50%;&#34; /&gt;
-&lt;p&gt;47.再次回到&lt;code&gt;dev&lt;/code&gt;文件夹，打开cmd窗口，依次输入&lt;code&gt;git add .&lt;/code&gt;、&lt;code&gt;git commit -m &amp;quot;update25-3-26-20:00&amp;quot;&lt;/code&gt;（双引号内写什么无所谓）、&lt;code&gt;git push&lt;/code&gt;，输完命令后就完成了自动化部署&lt;/p&gt;
+&lt;p&gt;47.此时已完成了自动化部署。之后更新了代码，只要再次回到&lt;code&gt;dev&lt;/code&gt;文件夹，打开cmd窗口，依次输入&lt;code&gt;git add .&lt;/code&gt;、&lt;code&gt;git commit -m &amp;quot;update25-3-26-20:00&amp;quot;&lt;/code&gt;（双引号内写什么无所谓）、&lt;code&gt;git push&lt;/code&gt;后，页面就会更新&lt;/p&gt;
 </description>
         </item>
         

@@ -554,7 +554,7 @@
 ></p>
 <h2 id="github自动部署">Github自动部署
 </h2><blockquote>
-<p>自动部署仅限于使用<code>hugo new content</code>命令时会更新网页，其他时候，如删除、修改文件时并不会实时同步本地文件，自行选择是否配置</p></blockquote>
+<p>自动部署：当你在<code>dev</code>文件中push代码后，页面就会自动更新</p></blockquote>
 <p>35.再创建一个仓库</p>
 <img src="/assets/image-20250326175344840.png" alt="image-20250326175344840" style="zoom:50%;" />
 <p>36.打开<code>dev</code>文件夹，创建一个<code>.gitignore</code>文件，内容如图（不会创建.gitignore文件，就在此处打开cmd窗口，输入<code>type nul&gt;.gitignore</code>即可）</p>
@@ -714,7 +714,7 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><img src="/assets/image-20250326195438236.png" alt="image-20250326195438236" style="zoom:50%;" />
-<p>47.再次回到<code>dev</code>文件夹，打开cmd窗口，依次输入<code>git add .</code>、<code>git commit -m &quot;update25-3-26-20:00&quot;</code>（双引号内写什么无所谓）、<code>git push</code>，输完命令后就完成了自动化部署</p>
+<p>47.此时已完成了自动化部署。之后更新了代码，只要再次回到<code>dev</code>文件夹，打开cmd窗口，依次输入<code>git add .</code>、<code>git commit -m &quot;update25-3-26-20:00&quot;</code>（双引号内写什么无所谓）、<code>git push</code>后，页面就会更新</p>
 
 </section>
 
