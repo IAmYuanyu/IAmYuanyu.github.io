@@ -1,0 +1,2580 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Linux on 缘鱼</title>
+        <link>https://IAmYuanyu.github.io/categories/linux/</link>
+        <description>Recent content in Linux on 缘鱼</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>缘鱼</copyright>
+        <lastBuildDate>Thu, 27 Mar 2025 14:54:42 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Ubuntu基础学习笔记</title>
+        <link>https://IAmYuanyu.github.io/p/ubuntu%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Thu, 27 Mar 2025 14:54:42 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/ubuntu%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h2 id=&#34;系统网络配置&#34;&gt;系统网络配置
+&lt;/h2&gt;&lt;h3 id=&#34;手动设置网络地址&#34;&gt;手动设置网络地址
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121224944116.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250121224944116&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121225105441.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250121225105441&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121225257806.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250121225257806&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;xshell远程连接&#34;&gt;Xshell远程连接
+&lt;/h2&gt;&lt;h3 id=&#34;安装ssh&#34;&gt;安装ssh
+&lt;/h3&gt;&lt;p&gt;Ubantu默认没有ssh服务，需要手动下载&lt;/p&gt;
+&lt;p&gt;分别在终端输入&lt;code&gt;sudo apt update&lt;/code&gt;和&lt;code&gt;sudo apt install -y ssh&lt;/code&gt;下载完成后即可连接Xshell&lt;/p&gt;
+&lt;h2 id=&#34;系统管理操作&#34;&gt;系统管理操作
+&lt;/h2&gt;&lt;h3 id=&#34;关闭防火墙&#34;&gt;关闭防火墙
+&lt;/h3&gt;&lt;h4 id=&#34;systemctl&#34;&gt;systemctl
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;systemctl start | stop | restart | status 服务名&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;其中，服务名不用一个个记，查看&lt;code&gt;/usr/lib/systemd/system&lt;/code&gt; 目录下的文件列表，该目录下每个文件都&lt;/p&gt;
+&lt;p&gt;对应一个服务&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121231538463.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250121231538463&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;systemctl案例实操&#34;&gt;systemctl案例实操
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;查看网络服务的状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在终端输入&lt;code&gt;sudo systemctl status NetworkManager&lt;/code&gt;后可查看网络管理服务&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121232047740.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250121232047740&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;此时按&lt;code&gt;q&lt;/code&gt;可退出此状态，继续输入指令&lt;/p&gt;
+&lt;p&gt;其他操作类似&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;停止网络服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;sudo systemctl stop NetworkManager&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;启动网络服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;sudo systemctl start NetworkManager&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;重启网络服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;sudo systemctl restart NetworkManager&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;systemctl-设置后台服务的自启配置&#34;&gt;&lt;strong&gt;systemctl&lt;/strong&gt; 设置后台服务的自启配置
+&lt;/h4&gt;&lt;p&gt;查看服务开机启动状态 ：&lt;code&gt;systemctl list-unit-files&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;关掉指定服务的自动启动：&lt;code&gt;systemctl disable 服务名&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;开启指定服务的自动启动：&lt;code&gt;systemctl enable 服务名&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;关闭防火墙-1&#34;&gt;关闭防火墙
+&lt;/h4&gt;&lt;h5 id=&#34;临时关闭防火墙&#34;&gt;临时关闭防火墙
+&lt;/h5&gt;&lt;p&gt;查看防火墙状态：&lt;code&gt;sudo systemctl status ufw&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233325312.png&#34; alt=&#34;image-20250121233325312&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;临时关闭防火墙：&lt;code&gt;sudo systemctl stop ufw&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233435053.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250121233435053&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;长期关闭防火墙&#34;&gt;长期关闭防火墙
+&lt;/h5&gt;&lt;p&gt;设置开机时启动防火墙：&lt;code&gt;sudo systemctl enable ufw&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;设置开机时关闭防火墙：&lt;code&gt;sudo systemctl disable ufw&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233526692.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250121233526692&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;查看服务是否开机自启：&lt;code&gt;sudo systemctl is-enabled ufw&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;关机重启命令&#34;&gt;关机重启命令
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;关闭系统，当前版本 Ubuntu 不会断电：&lt;code&gt;halt&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;关闭系统并断电，等同于&lt;code&gt; shutdown -h now&lt;/code&gt;：&lt;code&gt;poweroff&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重启，等同于 &lt;code&gt;shutdown -r now&lt;/code&gt;：&lt;code&gt;reboot&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;shutdown [选项] 时间&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;① shutdown 参数说明&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-h&lt;/td&gt;
+          &lt;td&gt;-h=halt 关机，不完全等同于 halt 命令&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-r&lt;/td&gt;
+          &lt;td&gt;-r=reboot 重启&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;② now 参数说明&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;now&lt;/td&gt;
+          &lt;td&gt;立刻关机&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;时间&lt;/td&gt;
+          &lt;td&gt;等待多久后关机（时间单位是分钟）&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;修改主机名&#34;&gt;修改主机名
+&lt;/h3&gt;&lt;p&gt;在终端执行：&lt;code&gt;sudo hostnamectl --static set-hostname 新名字&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;执行完上述命令，重启后生效&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122212801697.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122212801697&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;通过主机名连接xshell&#34;&gt;通过主机名连接Xshell
+&lt;/h4&gt;&lt;p&gt;找到电脑位于&lt;code&gt;C:\Windows\System32\drivers\etc&lt;/code&gt;目录下的&lt;code&gt;hosts&lt;/code&gt;文件，在最下方输入地址和主机名&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122214858368.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122214858368&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;修改完&lt;code&gt;hosts&lt;/code&gt;文件后就可以在Xshell的连接中将&lt;code&gt;主机&lt;/code&gt;中原本填写的地址改为自己的主机名&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122215049729.png&#34; alt=&#34;image-20250122215049729&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;h2 id=&#34;apt软件包&#34;&gt;APT软件包
+&lt;/h2&gt;&lt;p&gt;在终端输入&lt;code&gt;apt&lt;/code&gt;即可查看apt常用命令&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122215858014.png&#34; alt=&#34;image-20250122215858014&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;例如，当前需要根据名称列出软件包，就可以在终端输入&lt;code&gt;sudo apt list&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;其中&lt;code&gt;sudo&lt;/code&gt;表示以管理员身份执行命令&lt;/p&gt;
+&lt;h2 id=&#34;常用基本命令&#34;&gt;常用基本命令
+&lt;/h2&gt;&lt;h3 id=&#34;帮助命令&#34;&gt;帮助命令
+&lt;/h3&gt;&lt;h4 id=&#34;manual-packages&#34;&gt;Manual Packages
+&lt;/h4&gt;&lt;p&gt;查看手册页说明文档：在终端输入&lt;code&gt;man man&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122220927820.png&#34; alt=&#34;image-20250122220927820&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;h4 id=&#34;man-获得帮助信息&#34;&gt;man 获得帮助信息
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;查看ls命令的帮助信息：&lt;code&gt;man ls&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122222950334.png&#34; alt=&#34;image-20250122222950334&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;h4 id=&#34;help-获取shell内建命令的帮助信息&#34;&gt;help 获取shell内建命令的帮助信息
+&lt;/h4&gt;&lt;p&gt;shell 内建命令：shell 内建命令是 shell 的一部分，他们没有单独的可执行文件或手册页，这类命令的文档通过 help 命令访问。&lt;/p&gt;
+&lt;p&gt;基本语法：&lt;code&gt;help 命令&lt;/code&gt;                （功能描述：获得 shell 内建命令的帮助信息）&lt;/p&gt;
+&lt;p&gt;例如：查看cd命令的帮助信息&lt;code&gt;help cd&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122223245762.png&#34; alt=&#34;image-20250122223245762&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;h4 id=&#34;常用快捷键&#34;&gt;常用快捷键
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;常用快捷键&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ctrl + c&lt;/td&gt;
+          &lt;td&gt;停止进程&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ctrl + l  (这是L)&lt;/td&gt;
+          &lt;td&gt;清屏；彻底清屏是：reset&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ctrl + q&lt;/td&gt;
+          &lt;td&gt;退出&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;tab 键&lt;/td&gt;
+          &lt;td&gt;提示 (更重要的是可以防止敲错)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;上下键&lt;/td&gt;
+          &lt;td&gt;查找执行过的命令&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ctrl + u&lt;/td&gt;
+          &lt;td&gt;清除当前敲的命令&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;文件目录类&#34;&gt;文件目录类
+&lt;/h3&gt;&lt;h4 id=&#34;pwd-显示当前工作目录的绝对路径&#34;&gt;pwd 显示当前工作目录的绝对路径
+&lt;/h4&gt;&lt;p&gt;pwd即print working directory 打印工作目录&lt;/p&gt;
+&lt;p&gt;显示当前工作目录的绝对路径：&lt;code&gt;pwd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122225309652.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122225309652&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;ls-列出目录内容&#34;&gt;ls 列出目录内容
+&lt;/h4&gt;&lt;p&gt;ls即list 列出目录内容&lt;/p&gt;
+&lt;p&gt;在终端输入&lt;code&gt;ls&lt;/code&gt;列出目录的内容（LS）&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-a&lt;/td&gt;
+          &lt;td&gt;全部的文件，连同隐藏档 (开头为。的文件) 一起列出来 (常用)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-l&lt;/td&gt;
+          &lt;td&gt;长数据串列出，包含文件的属性与权限等等数据；(常用)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;显示说明：&lt;/p&gt;
+&lt;p&gt;每行列出的信息依次是：&lt;em&gt;文件类型与权限&lt;/em&gt;  &lt;em&gt;链接数&lt;/em&gt;  &lt;em&gt;文件属主&lt;/em&gt;  &lt;em&gt;文件属组&lt;/em&gt;  &lt;em&gt;文件大小&lt;/em&gt;(用byte来表示)  &lt;em&gt;建立或最近修改的时间&lt;/em&gt;  &lt;em&gt;名字&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122230435107.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122230435107&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;其中&lt;code&gt;ls -l&lt;/code&gt;可以简写为&lt;code&gt;ll&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cd-切换目录&#34;&gt;cd 切换目录
+&lt;/h4&gt;&lt;p&gt;cd即Change Directory 切换路径&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;参数&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;cd 绝对路径&lt;/td&gt;
+          &lt;td&gt;切换路径&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;cd 相对路径&lt;/td&gt;
+          &lt;td&gt;切换路径&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;cd ~ 或者 cd&lt;/td&gt;
+          &lt;td&gt;回到自己的家目录&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;cd -&lt;/td&gt;
+          &lt;td&gt;回到上一次所在目录&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;cd ..&lt;/td&gt;
+          &lt;td&gt;回到当前目录的上一级目录&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;cd -P&lt;/td&gt;
+          &lt;td&gt;跳转到实际物理路径，而非快捷方式路径&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122230744431.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122230744431&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;mkdir-创建一个新目录&#34;&gt;mkdir 创建一个新目录
+&lt;/h4&gt;&lt;p&gt;mkdir即Make directory 建立目录&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-p&lt;/td&gt;
+          &lt;td&gt;创建多层目录&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122231323509.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122231323509&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;touch-创建一个文件&#34;&gt;touch 创建一个文件
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122231506459.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122231506459&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cp-复制文件或目录&#34;&gt;cp 复制文件或目录
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;cp 源文件 目标文件&lt;/code&gt;             功能描述：复制源文件文件到目标文件&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-r&lt;/td&gt;
+          &lt;td&gt;递归复制整个文件夹&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;强制覆盖不提示的方法：\cp&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122233113308.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122233113308&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;rm-删除文件或目录&#34;&gt;rm 删除文件或目录
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-r&lt;/td&gt;
+          &lt;td&gt;递归删除目录中所有内容&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-f&lt;/td&gt;
+          &lt;td&gt;强制执行删除操作，而不提示用于进行确认&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-v&lt;/td&gt;
+          &lt;td&gt;显示指令的详细执行过程&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122233644256.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122233644256&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;mv-移动文件与目录或重命名&#34;&gt;mv 移动文件与目录或重命名
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;① &lt;code&gt;mv oldNameFile newNameFile&lt;/code&gt; （功能描述：重命名）&lt;/p&gt;
+&lt;p&gt;② &lt;code&gt;mv /temp/movefile /targetFolder&lt;/code&gt; （功能描述：移动文件）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122234207091.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122234207091&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;注：不能用&lt;code&gt;mv&lt;/code&gt;将文件移动到回收站，这和用&lt;code&gt;rm&lt;/code&gt;删除没区别，文件会直接丢失，除非自己手动创建一个文件夹作为回收站&lt;/p&gt;
+&lt;h4 id=&#34;4种方式查看文件内容&#34;&gt;4种方式查看文件内容
+&lt;/h4&gt;&lt;h5 id=&#34;cat-查看文件内容&#34;&gt;cat 查看文件内容
+&lt;/h5&gt;&lt;p&gt;作用：查看文件内容，从第一行开始显示&lt;/p&gt;
+&lt;p&gt;一般用于查看比较小的文件，一屏幕能显示全的&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能描述&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-n&lt;/td&gt;
+          &lt;td&gt;显示所有行的行号，包括空行&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;查看文件内容并显示行号：&lt;code&gt;cat -n houge.txt&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;more-文件内容分屏查看器&#34;&gt;more 文件内容分屏查看器
+&lt;/h5&gt;&lt;p&gt;more 指令是一个基于 VI 编辑器的文本过滤器，它以全屏幕的方式按页显示文本文件的内容&lt;/p&gt;
+&lt;p&gt;more 指令中内置了若干快捷键，详见操作说明&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;操作&lt;/th&gt;
+          &lt;th&gt;功能说明&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;空格键 (space)&lt;/td&gt;
+          &lt;td&gt;代表向下翻一页&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enter&lt;/td&gt;
+          &lt;td&gt;代表向下翻「一行」&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;q&lt;/td&gt;
+          &lt;td&gt;代表立刻离开 more ，不再显示该文件内容&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ctrl+F&lt;/td&gt;
+          &lt;td&gt;向下滚动一屏&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ctrl+B&lt;/td&gt;
+          &lt;td&gt;返回上一屏&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td&gt;输出当前行的行号&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;:f&lt;/td&gt;
+          &lt;td&gt;输出文件名和当前行的行号&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id=&#34;less-分屏显示文件内容&#34;&gt;less 分屏显示文件内容
+&lt;/h5&gt;&lt;p&gt;less 指令用来分屏查看文件内容，它的功能与 more 指令类似，但是比 more 指令更加强大，支持各种显示终端。less 指令在显示文件内容时，并不是一次将整个文件加载之后才显示，而是根据显示需要加载内容，对于显示大型文件具有较高的效率&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;操作&lt;/th&gt;
+          &lt;th&gt;功能说明&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;空白键&lt;/td&gt;
+          &lt;td&gt;向下翻动一页&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;[pagedown]&lt;/td&gt;
+          &lt;td&gt;向下翻动一行&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;[pageup]&lt;/td&gt;
+          &lt;td&gt;向上翻动一行&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;/ 字串&lt;/td&gt;
+          &lt;td&gt;向下搜寻「字串」的功能；n：向下查找；N：向上查找&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;? 字串&lt;/td&gt;
+          &lt;td&gt;向上搜寻「字串」的功能；n：向上查找；N：向下查找&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;q&lt;/td&gt;
+          &lt;td&gt;离开less程序&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id=&#34;tail-输出文件尾部内容&#34;&gt;tail 输出文件尾部内容
+&lt;/h5&gt;&lt;p&gt;tail 用于输出文件中尾部的内容，默认情况下 tail 指令显示文件的后 10 行内容&lt;/p&gt;
+&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123195214454.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123195214454&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-n &amp;lt;行数&amp;gt;&lt;/td&gt;
+          &lt;td&gt;输出文件尾部 n 行内容&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-f&lt;/td&gt;
+          &lt;td&gt;显示文件最新追加的内容，监视文件变化&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;echo-输出内容到控制台&#34;&gt;echo 输出内容到控制台
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-e&lt;/td&gt;
+          &lt;td&gt;支持反斜线控制的字符转换（转义字符）&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;转义字符&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;意义&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;ASCLL码值(十进制)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\a&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;响铃(BEL)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;007&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\b&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;退格(BS) ，将当前位置移到前一列&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;008&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\f&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;换页(FF)，将当前位置移到下页开头&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;012&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\n&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;换行(LF) ，将当前位置移到下一行开头&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;010&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\r&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;回车(CR) ，将当前位置移到本行开头&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;013&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\t&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;水平制表(HT) （跳到下一个TAB位置）&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;009&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\v&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;垂直制表(VT)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;011&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\&#39;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;代表一个单引号&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;039&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\&amp;quot;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;代表一个双引号字符&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;034&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\0&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;空字符(NUL)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;000&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\ddd&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1到3位八进制数所代表的任意字符&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;三位八进制&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\xhh&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;十六进制所代表的任意字符&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;十六进制&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例：（记得加双引号）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123201150157.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123201150157&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;-输出重定向和--追加&#34;&gt;&amp;gt; 输出重定向和 &amp;raquo; 追加
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123201421217.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123201421217&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/%e8%a6%86%e5%86%99%e6%bc%94%e7%a4%ba.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;覆写演示&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;ln-软链接快捷方式和硬链接&#34;&gt;ln 软链接（快捷方式）和硬链接
+&lt;/h4&gt;&lt;p&gt;软链接也成为符号链接，类似于 windows 里的快捷方式，有自己的数据块，主要存放了链接其他文件的路径&lt;/p&gt;
+&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ln -s 原文件或目录 软链接名&lt;/code&gt;			（功能描述：给原文件创建一个软链接）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ln 原文件 目标文件&lt;/code&gt;  			（功能描述：给原文件创建一个硬链接）&lt;/p&gt;
+&lt;p&gt;删除软链接： rm -rf 软链接名，而不是 rm -rf 软链接名/&lt;/p&gt;
+&lt;p&gt;查询：通过 ll 就可以查看，列表属性第 1 位是 l，尾部会有位置指向。&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123214916006.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123214916006&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;history-查看已执行的历史命令&#34;&gt;history 查看已执行的历史命令
+&lt;/h4&gt;&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123215204087.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123215204087&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;vivim-编辑器&#34;&gt;VI/VIM 编辑器
+&lt;/h3&gt;&lt;p&gt;VI 是 Unix 操作系统和类 Unix 操作系统中最通用的文本编辑器。&lt;/p&gt;
+&lt;p&gt;VIM 编辑器是从 VI 发展出来的一个性能更强大的文本编辑器。可以主动的以字体颜色辨别语法的正确性，方便程序设计。VIM 与 VI 编辑器完全兼容。&lt;/p&gt;
+&lt;p&gt;在终端中执行以下命令安装 vim：&lt;code&gt;sudo apt install vim&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;一般模式&#34;&gt;一般模式
+&lt;/h4&gt;&lt;p&gt;以 vim 打开一个档案就直接进入一般模式了（这是默认的模式）。在这个模式中， 你可以使用『上下左右』按键来移动光标，你可以使用『删除字符』或『删除整行』来处理档案内容， 也可以使用『复制、贴上』来处理你的文件数据。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;语法&lt;/th&gt;
+          &lt;th&gt;功能描述&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;yy&lt;/td&gt;
+          &lt;td&gt;复制光标当前一行&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;y 数字 y&lt;/td&gt;
+          &lt;td&gt;复制一段（从光标当前行到后 n 行）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;p&lt;/td&gt;
+          &lt;td&gt;箭头移动到目的行粘贴&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;u&lt;/td&gt;
+          &lt;td&gt;撤销上一步&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;dd&lt;/td&gt;
+          &lt;td&gt;删除光标当前行&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;d 数字 d&lt;/td&gt;
+          &lt;td&gt;删除光标（含）后多少行&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;x&lt;/td&gt;
+          &lt;td&gt;剪切一个字母 (当前光标)，相当于 del&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;X&lt;/td&gt;
+          &lt;td&gt;剪切一个字母 (当前光标的前一个)，相当于 Backspace&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;yw&lt;/td&gt;
+          &lt;td&gt;复制一个词&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;dw&lt;/td&gt;
+          &lt;td&gt;删除一个词&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;shift+6(^)&lt;/td&gt;
+          &lt;td&gt;移动到行头&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;shift+4($)&lt;/td&gt;
+          &lt;td&gt;移动到行尾&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1+shift+g&lt;/td&gt;
+          &lt;td&gt;移动到页头，数字&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;shift+g&lt;/td&gt;
+          &lt;td&gt;移动到页尾&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;数字 N+shift+g&lt;/td&gt;
+          &lt;td&gt;移动到目标行&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;编辑模式&#34;&gt;编辑模式
+&lt;/h4&gt;&lt;p&gt;​	在一般模式中可以进行删除、复制、粘贴等的动作，但是却无法编辑文件内容的！要等到你按下『i, I, o, O, a, A』等任何一个字母之后才会进入编辑模式。&lt;/p&gt;
+&lt;p&gt;​	通常在 Linux 中，按下这些按键时，在画面的左下方会出现『INSERT 或 REPLACE』的字样，此时才可以进行编辑。而如果要回到一般模式时， 则必须要按下『Esc』这个按键即可退出编辑模式。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;按键&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;i&lt;/td&gt;
+          &lt;td&gt;当前光标前&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;a&lt;/td&gt;
+          &lt;td&gt;当前光标后&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;o&lt;/td&gt;
+          &lt;td&gt;当前光标行的下一行&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;I&lt;/td&gt;
+          &lt;td&gt;光标所在行最前&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;A&lt;/td&gt;
+          &lt;td&gt;光标所在行最后&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;O&lt;/td&gt;
+          &lt;td&gt;当前光标行的上一行&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;指令模式&#34;&gt;指令模式
+&lt;/h4&gt;&lt;p&gt;在一般模式当中，输入『 : / ?』3 个中的任何一个按钮，就可以将光标移动到最底下那一行&lt;/p&gt;
+&lt;p&gt;在这个模式当中， 可以提供你『搜寻资料』的动作，而读取、存盘、大量取代字符、离开 vi 、显示行号等动作是在此模式中达成的&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;命令&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;:w&lt;/td&gt;
+          &lt;td&gt;保存&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;:q&lt;/td&gt;
+          &lt;td&gt;退出&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;:!&lt;/td&gt;
+          &lt;td&gt;强制执行&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;/ 要查找的词&lt;/td&gt;
+          &lt;td&gt;n 查找下一个，N 往上查找&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;:noh&lt;/td&gt;
+          &lt;td&gt;取消高亮显示&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;:set nu&lt;/td&gt;
+          &lt;td&gt;显示行号&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;:set nonu&lt;/td&gt;
+          &lt;td&gt;关闭行号&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;:%s/old/new/g&lt;/td&gt;
+          &lt;td&gt;替换内容&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;模式间的转换图&#34;&gt;模式间的转换图
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123224026649.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123224026649&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;时间日期类&#34;&gt;时间日期类
+&lt;/h3&gt;&lt;p&gt;基本语法：&lt;code&gt;date 选项 参数&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-d &amp;lt;时间字符串&amp;gt;&lt;/td&gt;
+          &lt;td&gt;显示指定的 “时间字符串” 表示的时间，而非当前时间&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-s &amp;lt;日期时间&amp;gt;&lt;/td&gt;
+          &lt;td&gt;设置系统日期时间&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;参数&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;+%Y&lt;/td&gt;
+          &lt;td&gt;当前年份&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;+%y&lt;/td&gt;
+          &lt;td&gt;当前年份的后两位&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;+%m&lt;/td&gt;
+          &lt;td&gt;当前月份&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;+%d&lt;/td&gt;
+          &lt;td&gt;当前哪一日&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;+%H&lt;/td&gt;
+          &lt;td&gt;当前时&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;+%M&lt;/td&gt;
+          &lt;td&gt;当前分&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;+%S&lt;/td&gt;
+          &lt;td&gt;当前秒&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;+%F&lt;/td&gt;
+          &lt;td&gt;当前年月日，中间以 : 隔开&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;+%T&lt;/td&gt;
+          &lt;td&gt;当前时分秒，中间以 - 隔开&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;date-显示当前时间&#34;&gt;date 显示当前时间
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123224530961.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123224530961&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;示例1：&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123224756658.png&#34; alt=&#34;image-20250123224756658&#34; style=&#34;zoom:120%;&#34; /&gt;
+&lt;p&gt;示例2：&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225613008.png&#34; alt=&#34;image-20250123225613008&#34; style=&#34;zoom:150%;&#34; /&gt;
+&lt;h4 id=&#34;date-显示非当前时间&#34;&gt;date 显示非当前时间
+&lt;/h4&gt;&lt;p&gt;基本语法：（很多写法，仅展示其一）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225848484.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123225848484&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225946821.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123225946821&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;date-设置系统时间&#34;&gt;date 设置系统时间
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;date -s 字符串时间&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;示例：&lt;code&gt;date -s &amp;quot;2025-01-23 23:03:20&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;用户管理命令&#34;&gt;用户管理命令
+&lt;/h3&gt;&lt;h4 id=&#34;adduser-添加新用户&#34;&gt;adduser 添加新用户
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;adduser 用户名&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;应用场景 1：企业开发，多人协同（也会有多人使用相同的一个低权限用户）。&lt;/p&gt;
+&lt;p&gt;应用场景 2：框架协同 gitlab mysql redis&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123231840565.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123231840565&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;passwd-设置或更改用户密码&#34;&gt;passwd 设置或更改用户密码
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;passwd 用户名&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;id-查看用户是否存在&#34;&gt;id 查看用户是否存在
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;id 用户名&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cat-etcpasswd-查看创建了哪些用户&#34;&gt;cat /etc/passwd 查看创建了哪些用户
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;cat /etc/passwd&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;su-切换用户&#34;&gt;su 切换用户
+&lt;/h4&gt;&lt;p&gt;su即swith user 切换用户&lt;/p&gt;
+&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;su 用户名称&lt;/code&gt;	（功能描述：切换用户，只能获得用户的执行权限，不能获得环境变量）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;su - 用户名称&lt;/code&gt;	（功能描述：切换到用户并获得该用户的环境变量及执行权限）&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123232638635.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123232638635&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;userdel-删除用户&#34;&gt;userdel 删除用户
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123232915179.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123232915179&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-r&lt;/td&gt;
+          &lt;td&gt;删除用户的同时，删除与用户相关的所有文件&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;usermod-修改用户&#34;&gt;usermod 修改用户
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123233334523.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123233334523&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-l&lt;/td&gt;
+          &lt;td&gt;改变用户名&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-d&lt;/td&gt;
+          &lt;td&gt;修改家目录&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123233428178.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123233428178&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;用户组管理命令&#34;&gt;用户组管理命令
+&lt;/h3&gt;&lt;p&gt;​	每个用户都有一个用户组，系统可以对一个用户组中的所有用户进行集中管理。不同Linux 系统对用户组的规定有所不同。&lt;/p&gt;
+&lt;p&gt;​	如 Linux 下的用户属于与它同名的用户组，这个用户组在创建用户时同时创建。&lt;/p&gt;
+&lt;p&gt;​	用户组的管理涉及用户组的添加、删除和修改。组的增加、删除和修改实际上就是对/etc/group 文件的更新。&lt;/p&gt;
+&lt;h4 id=&#34;groupadd-新增组&#34;&gt;groupadd 新增组
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;groupadd 组名&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;groupdel-删除组&#34;&gt;groupdel 删除组
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;groupdel 组名&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;groupmod-修改组&#34;&gt;groupmod 修改组
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;groupmod -n 新组名 老组名&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;usermod-修改用户主组&#34;&gt;usermod 修改用户主组
+&lt;/h4&gt;&lt;p&gt;​	在 Linux 和 Unix 系统中，每个用户都有一个主组（primary group）和可能的多个附加组（secondary groups 或 additional groups）&lt;/p&gt;
+&lt;p&gt;​	用户的主组在用户创建时被指定，默认与用户名称相同，当用户创建一个新文件或目录时，默认情况下，这些文件或目录会被分配给用户的主组&lt;/p&gt;
+&lt;p&gt;基本语法：&lt;code&gt;usermod -g 组名 用户名&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123234554600.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123234554600&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;查看附加组和用户的映射关系&#34;&gt;查看附加组和用户的映射关系
+&lt;/h4&gt;&lt;p&gt;/etc/group 文件存储了用户和附加组的映射关系，每一行对应一个用户组，第三个冒号后面是以该组作为附加组的用户列表，列表为空表示没有用户将其作为附加组。&lt;/p&gt;
+&lt;p&gt;操作：&lt;code&gt;cat /etc/group&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;将用户添加到附加组&#34;&gt;将用户添加到附加组
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;usermod -aG 组名 用户名&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123235227862.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123235227862&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123235237223.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123235237223&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;将用户从组中移除&#34;&gt;将用户从组中移除
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;deluser 用户名 组名&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;sudo-设置普通用户具有-root-权限&#34;&gt;sudo 设置普通用户具有 root 权限
+&lt;/h4&gt;&lt;p&gt;把普通用户添加进sudo组中&lt;/p&gt;
+&lt;p&gt;操作：&lt;code&gt;sudo usermod -aG sudo 用户&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;文件权限类&#34;&gt;文件权限类
+&lt;/h3&gt;&lt;h4 id=&#34;文件属性&#34;&gt;文件属性
+&lt;/h4&gt;&lt;p&gt;文件基本属性介绍：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124214443509.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124214443509&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;如果查看到是文件：链接数指的是硬链接个数&lt;/p&gt;
+&lt;p&gt;如果查看的是文件夹：链接数指的是子文件夹个数&lt;/p&gt;
+&lt;p&gt;文件属性由从左到右的10 个字符表示&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124213745962.png&#34; alt=&#34;image-20250124213745962&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;p&gt;如果没有权限，就会出现减号[ - ]而已。从左至右用 0-9 这些数字来表示：&lt;/p&gt;
+&lt;p&gt;（1）0 首位表示类型&lt;/p&gt;
+&lt;p&gt;在 Linux 中第一个字符代表这个文件是目录、文件或链接文件等等&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-&lt;/code&gt; 代表文件；&lt;code&gt;d&lt;/code&gt; 代表目录；&lt;code&gt;l&lt;/code&gt;代表链接文档(link file)&lt;/p&gt;
+&lt;p&gt;（2）第 1-3 位确定属主（该文件的所有者）拥有该文件的权限。&amp;mdash;User&lt;/p&gt;
+&lt;p&gt;（3）第 4-6 位确定属组（所有者的同组用户）拥有该文件的权限，&amp;mdash;Group&lt;/p&gt;
+&lt;p&gt;（4）第 7-9 位确定其他用户拥有该文件的权限 &amp;mdash;Other&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;rxw 作用文件和目录的不同解释&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;（1）作用到&lt;strong&gt;文件&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;[ r ]代表可读（read）：可以读取，查看&lt;/p&gt;
+&lt;p&gt;[ w ]代表可写（write）：可以修改，但是不代表可以删除该文件，删除一个文件的前提条件是对该文件所在的目录有写权限，才能删除该文件&lt;/p&gt;
+&lt;p&gt;[ x ]代表可执行（execute）：可以被系统执行&lt;/p&gt;
+&lt;p&gt;（2）作用到&lt;strong&gt;目录&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;[ r ]代表可读（read）：可以读取，ls 查看目录内容&lt;/p&gt;
+&lt;p&gt;[ w ]代表可写（write）：可以修改，目录内创建+删除+重命名目录&lt;/p&gt;
+&lt;p&gt;[ x ]代表可执行（execute）：可以进入该目录&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124214329663.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124214329663&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;chmod-改变权限&#34;&gt;chmod 改变权限
+&lt;/h4&gt;&lt;p&gt;第一种方式：&lt;code&gt;chmod [{ugoa}{+-=}{rwx}] 文件或目录&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;第二种方式：&lt;code&gt;chmod [mode=对应数字 ] [文件或目录]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;其中，&lt;/p&gt;
+&lt;p&gt;u：所有者 	g：所有组 	o：其他人 	a：所有人（u、g、o 的总和）&lt;/p&gt;
+&lt;p&gt;而在第二种方式中，r=4， w=2， x=1 ，rwx=4+2+1=7&lt;/p&gt;
+&lt;p&gt;示例1：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124215907595.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124215907595&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;示例2：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124220144848.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124220144848&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;chown-改变所有者&#34;&gt;chown 改变所有者
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;chown [选项] [最终用户] [文件或目录]&lt;/code&gt;		（功能描述：改变文件或者目录的所有者）&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-R&lt;/td&gt;
+          &lt;td&gt;同时更改该文件夹内所有子文件&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124220940294.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124220940294&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;chgrp-改变所属组&#34;&gt;chgrp 改变所属组
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;chgrp [最终用户组] [文件或目录]&lt;/code&gt;		（功能描述：改变文件或者目录的所属组）&lt;/p&gt;
+&lt;h3 id=&#34;搜索查找类&#34;&gt;搜索查找类
+&lt;/h3&gt;&lt;h4 id=&#34;find-查找文件或者目录&#34;&gt;find 查找文件或者目录
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;find [搜索范围] [选项]&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-name &amp;lt;查询方式&amp;gt;&lt;/td&gt;
+          &lt;td&gt;按照指定的文件名查找模式查找文件&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-user &amp;lt;查询方式&amp;gt;&lt;/td&gt;
+          &lt;td&gt;查找属于指定用户名所有文件&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-size &amp;lt;文件大小&amp;gt;&lt;/td&gt;
+          &lt;td&gt;按照指定的文件大小查找文件，单位为： b —— 块（512 字节） c —— 字节 w —— 字（2 字节） k —— 千字节 M —— 兆字节 G —— 吉字节&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124222700911.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124222700911&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;grep-过滤查找及--管道符&#34;&gt;grep 过滤查找及 “|” 管道符
+&lt;/h4&gt;&lt;p&gt;管道符，“|”，表示将前一个命令的处理结果输出传递给后面的命令处理&lt;/p&gt;
+&lt;p&gt;基本语法：&lt;code&gt;grep 选项 查找内容 源文件&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-n&lt;/td&gt;
+          &lt;td&gt;显示匹配行及行号。&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124222838933.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124222838933&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;压缩和解压类&#34;&gt;压缩和解压类
+&lt;/h3&gt;&lt;h4 id=&#34;gzipgunzip-压缩&#34;&gt;gzip/gunzip 压缩
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;gzip 文件&lt;/code&gt;		（功能描述：压缩文件，只能将文件压缩为*.gz 文件）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;gunzip 文件.gz&lt;/code&gt;		（功能描述：解压缩文件命令）&lt;/p&gt;
+&lt;p&gt;只能压缩文件不能压缩目录，且不保留原来的文件&lt;/p&gt;
+&lt;h4 id=&#34;tar-打包&#34;&gt;tar 打包
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;tar [选项] XXX.tar.gz 将要打包进去的内容&lt;/code&gt;		（功能描述：打包目录，压缩后的文件格式.tar.gz）&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-c&lt;/td&gt;
+          &lt;td&gt;产生 .tar 打包文件&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-v&lt;/td&gt;
+          &lt;td&gt;显示详细信息&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-f&lt;/td&gt;
+          &lt;td&gt;指定压缩后的文件名&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-z&lt;/td&gt;
+          &lt;td&gt;打包同时压缩&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-x&lt;/td&gt;
+          &lt;td&gt;解包 .tar 文件&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124224635450.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124224635450&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;磁盘类&#34;&gt;磁盘类
+&lt;/h3&gt;&lt;h4 id=&#34;df-查看磁盘空间使用情况&#34;&gt;df 查看磁盘空间使用情况
+&lt;/h4&gt;&lt;p&gt;df即disk free 空余硬盘&lt;/p&gt;
+&lt;p&gt;基本语法：&lt;code&gt;df 选项&lt;/code&gt;		（功能描述：列出文件系统的整体磁盘使用量，检查文件系统的磁盘空间占用情况）&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-h&lt;/td&gt;
+          &lt;td&gt;以人们较易阅读的 GBytes, MBytes, KBytes 等格式自行显示&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124231543105.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124231543105&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;du-文件和目录的磁盘使用空间&#34;&gt;du 文件和目录的磁盘使用空间
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;du 目录/文件&lt;/code&gt;		（功能描述：统计文件或递归显示目录及子目录的磁盘使用空间）&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-a&lt;/td&gt;
+          &lt;td&gt;显示当前目录下所有的文件目录及子目录大小&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124232032349.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124232032349&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;进程线程类&#34;&gt;进程线程类
+&lt;/h3&gt;&lt;h4 id=&#34;ps-查看当前系统进程状态&#34;&gt;ps 查看当前系统进程状态
+&lt;/h4&gt;&lt;p&gt;ps即process status 进程状态&lt;/p&gt;
+&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ps -aux [| grep xxx]&lt;/code&gt; 		（功能描述：查看系统中所有进程，可以过滤查找）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ps -ef [| grep xxx]&lt;/code&gt;		（功能描述：可以查看子父进程之间的关系）&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-a&lt;/td&gt;
+          &lt;td&gt;选择所有进程&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-u&lt;/td&gt;
+          &lt;td&gt;显示所有用户的所有进程&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-x&lt;/td&gt;
+          &lt;td&gt;显示没有终端的进程&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;ps -aux 显示信息说明：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;名称&lt;/th&gt;
+          &lt;th&gt;含义&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;USER&lt;/td&gt;
+          &lt;td&gt;该进程是由哪个用户产生的&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;PID&lt;/td&gt;
+          &lt;td&gt;进程的 ID 号&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;%CPU&lt;/td&gt;
+          &lt;td&gt;该进程占用 CPU 资源的百分比，占用越高，进程越耗费资源&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;%MEM&lt;/td&gt;
+          &lt;td&gt;该进程占用物理内存的百分比，占用越高，进程越耗费资源&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;VSZ&lt;/td&gt;
+          &lt;td&gt;该进程占用虚拟内存的大小，单位 KB&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;RSS&lt;/td&gt;
+          &lt;td&gt;该进程占用实际物理内存的大小，单位 KB&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;TTY&lt;/td&gt;
+          &lt;td&gt;该进程是在哪个终端中运行的。其中 tty1 - tty7 代表本地控制台终端，tty1 - tty6 是本地的字符界面终端，tty7 是图形终端。pts/0 - 255 代表虚拟终端&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;STAT&lt;/td&gt;
+          &lt;td&gt;进程状态。常见的状态有：R：运行、S：睡眠、T：停止状态、s：包含子进程、+：位于后台&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;START&lt;/td&gt;
+          &lt;td&gt;该进程的启动时间&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;TIME&lt;/td&gt;
+          &lt;td&gt;该进程占用 CPU 的运算时间，注意不是系统时间&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;COMMAND&lt;/td&gt;
+          &lt;td&gt;产生此进程的命令名&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;ps -ef 显示信息说明&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;名称&lt;/th&gt;
+          &lt;th&gt;含义&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;UID&lt;/td&gt;
+          &lt;td&gt;用户 ID&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;PID&lt;/td&gt;
+          &lt;td&gt;进程 ID&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;PPID&lt;/td&gt;
+          &lt;td&gt;父进程 ID&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;C&lt;/td&gt;
+          &lt;td&gt;CPU 用于计算执行优先级的因子。数值越大，表明进程是 CPU 密集型运算，执行优先级会降低；数值越小，表明进程是 I/O 密集型运算，执行优先级会提高&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;STIME&lt;/td&gt;
+          &lt;td&gt;进程启动的时间&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;TTY&lt;/td&gt;
+          &lt;td&gt;完整的终端名称&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;TIME&lt;/td&gt;
+          &lt;td&gt;CPU 时间&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;CMD&lt;/td&gt;
+          &lt;td&gt;启动进程所用的命令和参数&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例1：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124233123613.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124233123613&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;示例2：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124233450090.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124233450090&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;kill-终止进程&#34;&gt;kill 终止进程
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kill [选项] 进程号&lt;/code&gt;		（功能描述：通过进程号杀死进程）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;killall 进程名称&lt;/code&gt;		（功能描述：通过进程名称杀死进程，也支持通配符，这在系统因负载过大而变得很慢时很有用）&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-9&lt;/td&gt;
+          &lt;td&gt;表示强迫进程立即停止&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;查看服务器总体内存&#34;&gt;查看服务器总体内存
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;free -m&lt;/code&gt;		（功能描述：查看服务器总体内存，单位为兆M）&lt;/p&gt;
+&lt;h4 id=&#34;top-查看系统健康状态&#34;&gt;top 查看系统健康状态
+&lt;/h4&gt;&lt;p&gt;（现在一般用软件监控）&lt;/p&gt;
+&lt;p&gt;基本命令：&lt;code&gt;top [选项]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;选项说明：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-d 秒数&lt;/td&gt;
+          &lt;td&gt;指定 top 命令每隔几秒更新&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-i&lt;/td&gt;
+          &lt;td&gt;使 top 不显示任何闲置或者僵死进程&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-p&lt;/td&gt;
+          &lt;td&gt;通过指定监控进程 ID 来仅仅监控某个进程的状态&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;操作说明：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;操作&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;P&lt;/td&gt;
+          &lt;td&gt;以 CPU 使用率排序，默认就是此项&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;M&lt;/td&gt;
+          &lt;td&gt;以内存的使用率排序&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;N&lt;/td&gt;
+          &lt;td&gt;以 PID 排序&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;q&lt;/td&gt;
+          &lt;td&gt;退出 top&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;查询结果字段解释：&lt;/p&gt;
+&lt;p&gt;（1）第一行信息为任务队列信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235050039.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124235050039&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;（2）第二行为进程信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235108517.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124235108517&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;（3）第三行为 CPU 信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235128006.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124235128006&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;（4）第四行为物理内存信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235148689.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124235148689&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;（5）第五行为交换分区（swap）信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235213524.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124235213524&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;netstat-显示网络统计信息和端口占用情况&#34;&gt;netstat 显示网络统计信息和端口占用情况
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;netstat -anp | grep 进程号&lt;/code&gt;		（功能描述：查看该进程网络信息）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;netstat -nlp | grep 端口号&lt;/code&gt;		（功能描述：查看网络端口号占用情况）&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-n&lt;/td&gt;
+          &lt;td&gt;拒绝显示别名，能显示数字的全部转化成数字&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-l&lt;/td&gt;
+          &lt;td&gt;仅列出有在 listen（监听）的服务状态&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-p&lt;/td&gt;
+          &lt;td&gt;表示显示哪个进程在调用&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;crontab-系统定时任务&#34;&gt;crontab 系统定时任务
+&lt;/h3&gt;&lt;h4 id=&#34;crontab-服务管理&#34;&gt;crontab 服务管理
+&lt;/h4&gt;&lt;p&gt;重新启动 crond 服务：&lt;code&gt;sudo systemctl restart cron&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;crontab-定时任务设置&#34;&gt;crontab 定时任务设置
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;crontab [选项]&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-e&lt;/td&gt;
+          &lt;td&gt;编辑 crontab 定时任务&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-l&lt;/td&gt;
+          &lt;td&gt;查询 crontab 任务&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-r&lt;/td&gt;
+          &lt;td&gt;删除当前用户所有的 crontab 任务&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000633597.png&#34; alt=&#34;image-20250125000633597&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;输入&lt;code&gt;EDITOR=vim crontab -e&lt;/code&gt;后，打开如下文件，在最后写入命令即可&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125001312349.png&#34; alt=&#34;image-20250125001312349&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000844146.png&#34; alt=&#34;image-20250125000844146&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000905001.png&#34; alt=&#34;image-20250125000905001&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;h2 id=&#34;shell&#34;&gt;Shell
+&lt;/h2&gt;&lt;h3 id=&#34;shell概述&#34;&gt;Shell概述
+&lt;/h3&gt;&lt;p&gt;Shell是一个命令行解释器，它接收应用程序/用户命令，然后调用操作系统内核&lt;/p&gt;
+&lt;p&gt;Shell还是一个功能相当强大的编程语言，易编写、易调试、灵活性强&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125155355526.png&#34; alt=&#34;image-20250125155355526&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;h3 id=&#34;shell入门&#34;&gt;Shell入门
+&lt;/h3&gt;&lt;h4 id=&#34;脚本格式&#34;&gt;脚本格式
+&lt;/h4&gt;&lt;p&gt;脚本以&lt;code&gt;#!/bin/bash&lt;/code&gt; 开头（指定解析器）&lt;/p&gt;
+&lt;h4 id=&#34;创建并执行一个脚本&#34;&gt;创建并执行一个脚本
+&lt;/h4&gt;&lt;p&gt;要创建并执行一个Shell脚本，需要先在终端输入&lt;code&gt;vim hello.sh&lt;/code&gt;创建并编辑一个Shell脚本&lt;/p&gt;
+&lt;p&gt;在hello.sh中输入如图内容（按&amp;rsquo;a&amp;rsquo;开始编辑，按&amp;rsquo;esc&amp;rsquo;退出编辑，输入&amp;rsquo;:wq&amp;rsquo;保存并退出，忘记了看笔记VIM编辑器部分）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125165424109.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125165424109&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;编辑成功后，有两种运行方式&lt;/p&gt;
+&lt;p&gt;方法一：不赋予脚本执行权限时，用&lt;code&gt;sh 脚本&lt;/code&gt;或&lt;code&gt;bash 脚本&lt;/code&gt;即可运行（效果一样）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125165859260.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125165859260&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;方法二：赋予脚本执行权限，可直接执行&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125170110499.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125170110499&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;变量&#34;&gt;变量
+&lt;/h3&gt;&lt;h4 id=&#34;系统变量&#34;&gt;系统变量
+&lt;/h4&gt;&lt;p&gt;常用系统变量有HOME、PWD、SHELL、USER 等&lt;/p&gt;
+&lt;p&gt;一般系统变量都是由全大写字母构成，所以自定义变量的时候尽量避免全部用大写字母&lt;/p&gt;
+&lt;p&gt;要获取变量的值可以用&lt;code&gt;$变量名&lt;/code&gt;，$和变量名之间不能有空格&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125170721845.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125170721845&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;自定义变量&#34;&gt;自定义变量
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;基本语法&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;（1）定义变量：变量名=变量值，注意，=号前后不能有空格。（起名的时候不用加$）&lt;/p&gt;
+&lt;p&gt;（2）撤销变量：unset 变量名。&lt;/p&gt;
+&lt;p&gt;（3）声明静态变量：readonly 变量，注意：不能 unset。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;变量定义规则&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;（1）变量名称可以由字母、数字和下划线组成，但是不能以数字开头，环境变量名建议大写。&lt;/p&gt;
+&lt;p&gt;（2）等号两侧不能有空格。&lt;/p&gt;
+&lt;p&gt;（3）在 bash 中，变量默认类型都是字符串类型，无法直接进行数值运算。&lt;/p&gt;
+&lt;p&gt;（4）变量的值如果有空格，需要使用双引号或单引号括起来。&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2025-01-25_17-18-56.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PixPin_2025-01-25_17-18-56&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125172027486.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125172027486&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;特殊变量&#34;&gt;特殊变量
+&lt;/h4&gt;&lt;h5 id=&#34;n&#34;&gt;$n
+&lt;/h5&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$n&lt;/code&gt; （功能描述：n 为数字，&lt;code&gt;$0&lt;/code&gt; 代表该脚本名称，&lt;code&gt;$1-$9&lt;/code&gt; 代表第一到第九个参数，十以上的参数需要用大括号包含，如${10}）&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125173400066.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125173400066&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;heading&#34;&gt;$#
+&lt;/h5&gt;&lt;p&gt;&lt;code&gt;$#&lt;/code&gt; 	（功能描述：获取所有输入参数个数，常用于循环,判断参数的个数是否正确以及加强脚本的健壮性）&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125173915110.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125173915110&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;-和-&#34;&gt;$* 和 $@
+&lt;/h5&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$*&lt;/code&gt; 	（功能描述：这个变量代表命令行中所有的参数，$*把所有的参数看成一个整体。）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$@&lt;/code&gt; 	（功能描述：这个变量也代表命令行中所有的参数，不过$@把每个参数区分对待。）&lt;/p&gt;
+&lt;p&gt;（具体区别会在后续学习中了解）&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125181241350.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125181241350&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;heading-1&#34;&gt;$?
+&lt;/h5&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$？&lt;/code&gt;  （功能描述：最后一次执行的命令的返回状态。如果这个变量的值为 0，证明上一个命令正确执行；如果这个变量的值为非 0（具体是哪个数，由命令自己来决定，表示错误代码），则证明上一个命令执行不正确了）&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125181605791.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125181605791&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;运算符&#34;&gt;运算符
+&lt;/h3&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$((运算式))&lt;/code&gt;或&lt;code&gt;$[运算式]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;示例：计算 （2 + 3）× 4 的值&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125182018286.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125182018286&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;条件判断&#34;&gt;条件判断
+&lt;/h3&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;test 条件&lt;/code&gt;或&lt;code&gt;[ 条件 ]&lt;/code&gt;	（注意条件前后有空格）&lt;/p&gt;
+&lt;p&gt;注意：条件非空即为 true，[ atguigu ]返回 true，[ ] 返回 false&lt;/p&gt;
+&lt;h4 id=&#34;常用判断条件&#34;&gt;常用判断条件
+&lt;/h4&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184054189.png&#34; alt=&#34;image-20250125184054189&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;示例1：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184255341.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125184255341&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;示例2：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184738999.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125184738999&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;示例3：多条件判断（&lt;strong&gt;&amp;amp;&amp;amp;&lt;/strong&gt; 表示前一条命令执行成功时，才执行后一条命令，&lt;strong&gt;||&lt;/strong&gt; 表示上一条命令执行失败后，才执行下一条命令）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125185251176.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125185251176&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;流程控制&#34;&gt;流程控制
+&lt;/h3&gt;&lt;h4 id=&#34;if判断&#34;&gt;if判断
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125221736607.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125221736607&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125221758530.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125221758530&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;注意事项：&lt;/p&gt;
+&lt;p&gt;① [ 条件判断式 ]，中括号和条件判断式之间必须有空格&lt;/p&gt;
+&lt;p&gt;② if 后要有空格&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125222805470.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125222805470&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;case-语句&#34;&gt;case 语句
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125225423369.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125225423369&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;注意事项：&lt;/p&gt;
+&lt;p&gt;（1）case 行尾必须为单词“in”，每一个模式匹配必须以右括号“）”结束。&lt;/p&gt;
+&lt;p&gt;（2）双分号“;;”表示命令序列结束，相当于 C 中的 break。&lt;/p&gt;
+&lt;p&gt;（3）最后的“*）”表示默认模式，相当于 C 中的 defaul。&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125231916854.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125231916854&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125231942799.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125231942799&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;for-循环&#34;&gt;for 循环
+&lt;/h4&gt;&lt;p&gt;基本语法1：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232110733.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125232110733&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;基本语法2：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232146742.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125232146742&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;示例1：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232257501.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125232257501&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;示例2：打印所有输入参数&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232555465.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125232555465&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232618766.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125232618766&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;比较和的区别&#34;&gt;比较$*和$@的区别
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;$*和$@都表示传递给函数或脚本的所有参数，不被双引号&lt;code&gt;“”&lt;/code&gt;包含时，都以$1 $2 …$n的形式输出所有参数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在for3.sh中写入如下内容&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;=============$*=============&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; i in &lt;span class=&#34;nv&#34;&gt;$*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ban zhang love &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;=============$@=============&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; j in &lt;span class=&#34;nv&#34;&gt;$@&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ban zhang love &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$j&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233153445.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125233153445&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当它们被双引号“”包含时，$*会将所有的参数作为一个整体，以“$1 $2 …$n”的形式输出所有参数；$@会将各个参数分开，以“$1” “$2”…“$n”的形式输出所有参数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在for4.sh中写入如下内容&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;=============$*=============&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; i in &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$*&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;## $*中的所有参数看成是一个整体，所以这个 for 循环只会循环一次&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ban zhang love &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;=============$@=============&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; j in &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$@&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;## $@中的每个参数都看成是独立的，所以“$@”中有几个参数，就会循环几次&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ban zhang love &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$j&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233426867.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125233426867&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;while-循环&#34;&gt;while 循环
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233551530.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125233551530&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;示例：从 1 加到 100&lt;/p&gt;
+&lt;p&gt;在while.sh中写入如下内容&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt; -le &lt;span class=&#34;m&#34;&gt;100&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nv&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;$&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$sum&lt;/span&gt;+&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nv&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;$&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;+1&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$sum&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;执行：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233726611.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125233726611&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;read-读取控制台输入&#34;&gt;read 读取控制台输入
+&lt;/h3&gt;&lt;p&gt;基本语法：&lt;code&gt;read （选项） （参数）&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;选项：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;-p：指定读取值时的提示符。&lt;/p&gt;
+&lt;p&gt;-t：指定读取值时等待的时间（秒）如果-t 不加表示一直等待。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;变量：指定读取值的变量名。&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请在5秒内输入你的名字:&amp;#34;&lt;/span&gt; name
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;你好，&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$name&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;未在指定时间内输入名字&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126211739621.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126211739621&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;函数&#34;&gt;函数
+&lt;/h3&gt;&lt;h4 id=&#34;系统函数&#34;&gt;系统函数
+&lt;/h4&gt;&lt;h5 id=&#34;basename取文件名&#34;&gt;basename取文件名
+&lt;/h5&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;basename [string / pathname] [suffix]&lt;/code&gt; 	（功能描述：basename 命令会删掉所有的前缀包括最后一个（‘/’）字符，然后将字符串显示出来。&lt;/p&gt;
+&lt;p&gt;basename 可以理解为取路径里的文件名称。&lt;/p&gt;
+&lt;p&gt;suffix 为后缀，如果 suffix 被指定了，basename 会将 pathname 或 string 中的 suffix 去掉。&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212039885.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126212039885&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;dirname取路径&#34;&gt;dirname取路径
+&lt;/h5&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dirname 文件绝对路径 &lt;/code&gt;	（功能描述：从给定的包含绝对路径的文件名中去除文件名（非目录的部分），然后返回剩下的路径（目录的部分））&lt;/p&gt;
+&lt;p&gt;dirname 可以理解为取文件路径的绝对路径名称。&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212211976.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126212211976&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;自定义函数&#34;&gt;自定义函数
+&lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212643723.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126212643723&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;（1）必须在调用函数地方之前，先声明函数，shell 脚本是逐行运行。不会像其它语言一样先编译。&lt;/p&gt;
+&lt;p&gt;（2）函数返回值，只能通过$?系统变量获得，可以显示加：return 返回，如果不加，将以最后一条命令运行结果，作为返回值。return 后跟数值 n（0-255），运行成功返回0，其他均为失败&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;在fun.sh中如下写入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; sum&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nv&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nv&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;$&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;+&lt;span class=&#34;nv&#34;&gt;$2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;Please input the number1: &amp;#34;&lt;/span&gt; n1&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;Please input the number2: &amp;#34;&lt;/span&gt; n2&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sum &lt;span class=&#34;nv&#34;&gt;$n1&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$n2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212822161.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126212822161&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;shell工具&#34;&gt;Shell工具
+&lt;/h3&gt;&lt;h4 id=&#34;cut-工具的使用&#34;&gt;cut 工具的使用
+&lt;/h4&gt;&lt;p&gt;cut 的工作就是“剪”，具体的说就是在文件中负责剪切数据用的。cut 命令从文件的每一行剪切字节、字符和字段并将这些字节、字符和字段输出。&lt;/p&gt;
+&lt;p&gt;基本用法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cut [选项参数] filename&lt;/code&gt;		说明：默认分隔符是制表符&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项参数&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-f&lt;/td&gt;
+          &lt;td&gt;列号，提取第几列&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-d&lt;/td&gt;
+          &lt;td&gt;分隔符，按照指定分隔符分割列，默认是制表符“\t”&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-c&lt;/td&gt;
+          &lt;td&gt;按字符进行切割 后加加 n 表示取第几列 比如 -c 1&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126213807207.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126213807207&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;awk-工具的使用&#34;&gt;awk 工具的使用
+&lt;/h4&gt;&lt;p&gt;一个强大的文本分析工具，把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行分析处理。&lt;/p&gt;
+&lt;p&gt;基本用法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;awk [选项参数] ‘/pattern1/{action1} /pattern2/{action2}...’ filename&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;pattern：表示 awk 在数据中查找的内容，就是匹配模式。&lt;/p&gt;
+&lt;p&gt;action：在找到匹配内容时所执行的一系列命令。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;选项参数&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-F&lt;/td&gt;
+          &lt;td&gt;指定输入文件的分隔符&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-v&lt;/td&gt;
+          &lt;td&gt;赋值一个用户定义变量&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;正则表达式入门&#34;&gt;正则表达式入门
+&lt;/h3&gt;&lt;h4 id=&#34;常用特殊字符&#34;&gt;常用特殊字符
+&lt;/h4&gt;&lt;p&gt;1）特殊字符：&lt;code&gt;^&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126214638430.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126214638430&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;2）特殊字符：&lt;code&gt;$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126214705322.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126214705322&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;3）特殊字符：&lt;code&gt;.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220524399.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126220524399&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;4）特殊字符：&lt;code&gt;*&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220559421.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126220559421&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;5）特殊字符：&lt;code&gt;[ ]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220631176.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126220631176&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;6）特殊字符：&lt;code&gt;\&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220812299.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250126220812299&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;经典正则表达式&#34;&gt;经典正则表达式
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#邮箱正则&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;^&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;a-zA-Z0-9_-&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;+@&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;a-zA-Z0-9_-&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;+&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;.&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;a-zA-Z0-9_-&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;+&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;+$
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#手机号正则&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/^1&lt;span class=&#34;o&#34;&gt;((&lt;/span&gt;34&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;0-8&lt;span class=&#34;o&#34;&gt;])&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;8&lt;span class=&#34;se&#34;&gt;\d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;2&lt;span class=&#34;o&#34;&gt;})&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(([&lt;/span&gt;35&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;0-35-9&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;4&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;579&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;66&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;7&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;35678&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;9&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;1389&lt;span class=&#34;o&#34;&gt;])&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;1&lt;span class=&#34;o&#34;&gt;}))&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;7&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;$/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;补充&#34;&gt;补充
+&lt;/h2&gt;&lt;h3 id=&#34;该笔记基于尚硅谷课程&#34;&gt;该笔记基于尚硅谷课程
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1JF4m1A7mN/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.bilibili.com/video/BV1JF4m1A7mN/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;虚拟机代理配置&#34;&gt;虚拟机代理配置
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_63594197/article/details/138069939&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://blog.csdn.net/weixin_63594197/article/details/138069939&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;链接失效时可以看下方视频&lt;/p&gt;
+&lt;p&gt;&lt;video src=&#34;https://IAmYuanyu.github.io/虚拟机代理配置.mp4&#34; width=&#34;100%&#34; controls=&#34;true&#34;&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;h3 id=&#34;设置使用sudo时不需要密码&#34;&gt;设置使用sudo时不需要密码
+&lt;/h3&gt;&lt;p&gt;在终端输入：&lt;code&gt;sudo vim /etc/sudoers&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;找到文件最下面，修改为如图所示的样子：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124000253152.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124000253152&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;-在下一行继续输入&#34;&gt;\ 在下一行继续输入
+&lt;/h3&gt;&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125190002468.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125190002468&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Markdown on 缘鱼</title>
+        <link>https://IAmYuanyu.github.io/categories/markdown/</link>
+        <description>Recent content in Markdown on 缘鱼</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>缘鱼</copyright>
+        <lastBuildDate>Thu, 27 Mar 2025 14:15:06 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/markdown/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>将md文件中所有标题一键升降级</title>
+        <link>https://IAmYuanyu.github.io/p/%E5%B0%86md%E6%96%87%E4%BB%B6%E4%B8%AD%E6%89%80%E6%9C%89%E6%A0%87%E9%A2%98%E4%B8%80%E9%94%AE%E5%8D%87%E9%99%8D%E7%BA%A7/</link>
+        <pubDate>Thu, 27 Mar 2025 14:15:06 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/%E5%B0%86md%E6%96%87%E4%BB%B6%E4%B8%AD%E6%89%80%E6%9C%89%E6%A0%87%E9%A2%98%E4%B8%80%E9%94%AE%E5%8D%87%E9%99%8D%E7%BA%A7/</guid>
+        <description>&lt;p&gt;以vscode为例，用&lt;code&gt;ctrl+f&lt;/code&gt;快捷键打开右上角窗口&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;标题一键降级：（六级标题也会受影响）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;查找：&lt;code&gt;^#+(?=\s)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;替换：&lt;code&gt;#$0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250327144205470.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250327144205470&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;标题一键升级：（一级标题不受影响）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;查找：&lt;code&gt;##(?=\s)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;替换：&lt;code&gt;#&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250327144501704.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250327144501704&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：以#开头的内容会受影响。因为没有七级标题，六级标题降级后需要手动调整为想要的效果&lt;/p&gt;&lt;/blockquote&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
