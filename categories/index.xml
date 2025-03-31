@@ -7,20 +7,28 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Thu, 27 Mar 2025 15:25:58 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Vue3</title>
-        <link>https://IAmYuanyu.github.io/categories/vue3/</link>
-        <pubDate>Thu, 27 Mar 2025 15:25:58 +0800</pubDate>
+        <lastBuildDate>Mon, 31 Mar 2025 22:38:32 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Java</title>
+        <link>https://IAmYuanyu.github.io/categories/java/</link>
+        <pubDate>Mon, 31 Mar 2025 22:38:32 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/categories/vue3/</guid>
+        <guid>https://IAmYuanyu.github.io/categories/java/</guid>
         <description></description>
         </item>
         <item>
         <title>教程</title>
         <link>https://IAmYuanyu.github.io/categories/%E6%95%99%E7%A8%8B/</link>
-        <pubDate>Thu, 27 Mar 2025 15:25:58 +0800</pubDate>
+        <pubDate>Mon, 31 Mar 2025 22:38:32 +0800</pubDate>
         
         <guid>https://IAmYuanyu.github.io/categories/%E6%95%99%E7%A8%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Vue3</title>
+        <link>https://IAmYuanyu.github.io/categories/vue3/</link>
+        <pubDate>Thu, 27 Mar 2025 15:25:58 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/categories/vue3/</guid>
         <description></description>
         </item>
         <item>
