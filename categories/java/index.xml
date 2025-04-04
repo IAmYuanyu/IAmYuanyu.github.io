@@ -15,8 +15,8 @@
         <guid>https://IAmYuanyu.github.io/p/lombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/</guid>
         <description>&lt;p&gt;明明编写代码的时候Lombok可以正常使用，idea也可以进行代码补全，但运行后又提示找不到方法符号&lt;/p&gt;
 &lt;h2 id=&#34;未启用注解处理&#34;&gt;未启用注解处理
-&lt;/h2&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250404164138151.png&#34; alt=&#34;image-20250404164138151&#34; style=&#34;zoom: 50%;&#34; /&gt;
-&lt;p&gt;然而我不是这里报错&lt;/p&gt;
+&lt;/h2&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250404224034206.png&#34; alt=&#34;image-20250404224034206&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;p&gt;注意选择自己的项目，然而我不是这里报错&lt;/p&gt;
 &lt;h2 id=&#34;未安装lombok插件&#34;&gt;未安装Lombok插件
 &lt;/h2&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250404164602557.png&#34; alt=&#34;image-20250404164602557&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;除非是上古版本idea，不然一般都是自带好的，我也不是这里出问题&lt;/p&gt;
