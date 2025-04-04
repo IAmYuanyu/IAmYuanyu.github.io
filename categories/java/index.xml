@@ -7,7 +7,40 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Tue, 01 Apr 2025 22:47:59 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 04 Apr 2025 16:54:47 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Lombok编译报错</title>
+        <link>https://IAmYuanyu.github.io/p/lombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/</link>
+        <pubDate>Fri, 04 Apr 2025 16:54:47 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/lombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/</guid>
+        <description>&lt;p&gt;明明编写代码的时候Lombok可以正常使用，idea也可以进行代码补全，但运行后又提示找不到方法符号&lt;/p&gt;
+&lt;h2 id=&#34;未启用注解处理&#34;&gt;未启用注解处理
+&lt;/h2&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250404164138151.png&#34; alt=&#34;image-20250404164138151&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;p&gt;然而我不是这里报错&lt;/p&gt;
+&lt;h2 id=&#34;未安装lombok插件&#34;&gt;未安装Lombok插件
+&lt;/h2&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250404164602557.png&#34; alt=&#34;image-20250404164602557&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;除非是上古版本idea，不然一般都是自带好的，我也不是这里出问题&lt;/p&gt;
+&lt;h2 id=&#34;pomxml中依赖缺失&#34;&gt;pom.xml中依赖缺失
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250404164329228.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250404164329228&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这些一般是用Spring Initializer自动生成的，一般不会出问题，至少我不是这里出错&lt;/p&gt;
+&lt;h2 id=&#34;idea缓存问题&#34;&gt;idea缓存问题
+&lt;/h2&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250404164825011.png&#34; alt=&#34;image-20250404164825011&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;我依旧不是这个问题，当时我都快摆烂了，上网查了半天就这些方法&lt;/p&gt;
+&lt;h2 id=&#34;maven出问题&#34;&gt;Maven出问题
+&lt;/h2&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250404165110610.png&#34; alt=&#34;image-20250404165110610&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;头疼了两天，之后尝试clean一下Maven结果就可以了&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>反射</title>
         <link>https://IAmYuanyu.github.io/p/%E5%8F%8D%E5%B0%84/</link>
         <pubDate>Tue, 01 Apr 2025 22:47:59 +0800</pubDate>
