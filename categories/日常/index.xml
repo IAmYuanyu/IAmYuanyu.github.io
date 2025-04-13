@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>日常 on 缘鱼</title>
+        <link>https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/</link>
+        <description>Recent content in 日常 on 缘鱼</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>缘鱼</copyright>
+        <lastBuildDate>Sun, 13 Apr 2025 18:58:10 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>右键创建Markdown文档</title>
+        <link>https://IAmYuanyu.github.io/p/%E5%8F%B3%E9%94%AE%E5%88%9B%E5%BB%BAmarkdown%E6%96%87%E6%A1%A3/</link>
+        <pubDate>Sun, 13 Apr 2025 18:58:10 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/%E5%8F%B3%E9%94%AE%E5%88%9B%E5%BB%BAmarkdown%E6%96%87%E6%A1%A3/</guid>
+        <description>&lt;img src="https://IAmYuanyu.github.io/p/%E5%8F%B3%E9%94%AE%E5%88%9B%E5%BB%BAmarkdown%E6%96%87%E6%A1%A3/image-20250413190421751.png" alt="Featured image of post 右键创建Markdown文档" /&gt;&lt;ul&gt;
+&lt;li&gt;创建一个.txt文件，将下方内容复制进去&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Windows Registry Editor Version 5.00
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;HKEY_CLASSES_ROOT&lt;span class=&#34;se&#34;&gt;\.&lt;/span&gt;md&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Typora.exe&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;HKEY_CLASSES_ROOT&lt;span class=&#34;se&#34;&gt;\.&lt;/span&gt;md&lt;span class=&#34;se&#34;&gt;\S&lt;/span&gt;hellNew&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;NullFile&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;HKEY_CLASSES_ROOT&lt;span class=&#34;se&#34;&gt;\T&lt;/span&gt;ypora.exe&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Markdown 文档&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250413183956964.png&#34; alt=&#34;image-20250413183956964&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;@=&amp;ldquo;Typora.exe&amp;rdquo; 是设置运行.md文件的程序，此处以Typora为例&lt;/p&gt;
+&lt;p&gt;@=&amp;ldquo;Markdown 文档&amp;rdquo; 是设置右键新建.md文件时显示的名字，可以根据自己喜好取名&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;然后修改后缀名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250413184207997.png&#34; alt=&#34;image-20250413184207997&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;注：如果文件名不显示&lt;code&gt;.txt&lt;/code&gt;不要直接手动加上，请自行上网查询&lt;code&gt;如何显示文件后缀名&lt;/code&gt;，此处不过多赘述&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;运行修改名字后的文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250413184649825.png&#34; alt=&#34;image-20250413184649825&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;ul&gt;
+&lt;li&gt;运行成功后，之后右键新建就可以创建Markdown类型文件了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250413185000767.png&#34; alt=&#34;image-20250413185000767&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;注：若依旧没有，可以打开任务管理器（快捷键&lt;code&gt;Ctrl+Shift+Esc&lt;/code&gt;），然后如图操作&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250413185240716.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250413185240716&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>用VScode快速定位目标</title>
+        <link>https://IAmYuanyu.github.io/p/%E7%94%A8vscode%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87/</link>
+        <pubDate>Sun, 06 Apr 2025 18:09:30 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/%E7%94%A8vscode%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87/</guid>
+        <description>&lt;p&gt;VScode中间正上方的搜索框输入&lt;code&gt;%&lt;/code&gt;后，再输入想要找到的内容，会直接搜索整个项目中所有文件的内容，符合目标的内容会直接标出来文件名与文件位置&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250406181319682.png&#34; alt=&#34;image-20250406181319682&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;之前真不知道可以全局查找内容，看别人的项目都是根据文件名猜对应内容，然后一个个找&lt;img src=&#34;https://IAmYuanyu.github.io/assets/14D840CF.png&#34; alt=&#34;14D840CF&#34; style=&#34;zoom: 50%;&#34; /&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
