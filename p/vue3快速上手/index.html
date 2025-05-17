@@ -4718,12 +4718,12 @@
 <pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="c">&lt;!--</span> <span class="nx">使用v</span><span class="o">-</span><span class="nx">model指令</span> <span class="o">--&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="nt">v-model</span><span class="o">=</span><span class="s">&#34;userName&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">&lt;!--</span> <span class="na">v</span><span class="nt">-model的本质是下面这行代码</span> <span class="err">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="err">&lt;!--</span> <span class="nt">v-model的本质是下面这行代码</span><span class="p"> </span><span class="err">--</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">input</span> 
 </span></span><span class="line"><span class="cl">  <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> 
 </span></span><span class="line"><span class="cl">  <span class="nt">:value</span><span class="o">=</span><span class="s">&#34;userName&#34;</span> 
-</span></span><span class="line"><span class="cl">  <span class="err">@</span><span class="na">input</span><span class="o">=</span><span class="s">&#34;userName =(&lt;HTMLInputElement&gt;$event.target).value&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">@input</span><span class="s">=&#34;userName =(&lt;HTMLInputElement&gt;$event.target).value&#34;</span><span class="p">
+</span></span></span><span class="line"><span class="cl"><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -4739,9 +4739,9 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="c">&lt;!--</span> <span class="nx">组件标签上使用v</span><span class="o">-</span><span class="nx">model指令</span> <span class="o">--&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">AtguiguInput</span> <span class="na">v</span><span class="nt">-model</span><span class="err">=&#34;</span><span class="na">userName</span><span class="err">&#34;</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">AtguiguInput</span> <span class="nt">v-model</span><span class="o">=</span><span class="s">&#34;userName&#34;</span><span class="p">/&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span> <span class="nx">组件标签上v</span><span class="o">-</span><span class="nx">model的本质</span> <span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="err">&lt;!--</span> <span class="na">组件标签上v</span><span class="nt">-model的本质</span> <span class="err">--</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">AtguiguInput</span> <span class="nt">:modelValue</span><span class="o">=</span><span class="s">&#34;userName&#34;</span> <span class="err">@</span><span class="na">update</span><span class="o">:</span><span class="na">model</span><span class="nt">-value</span><span class="err">=&#34;</span><span class="na">userName </span><span class="o">=</span> <span class="err">$</span><span class="na">event</span><span class="err">&#34;</span><span class="p">/&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -4775,8 +4775,8 @@
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">input</span> 
 </span></span><span class="line"><span class="cl">       <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> 
 </span></span><span class="line"><span class="cl">       <span class="nt">:value</span><span class="o">=</span><span class="s">&#34;modelValue&#34;</span> 
-</span></span><span class="line"><span class="cl">       <span class="nt">@input</span><span class="s">=&#34;emit(&#39;update:model-value&#39;,$event.target.value)&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">       <span class="nt">@input</span><span class="s">=&#34;emit(&#39;update:model-value&#39;,$event.target.value)&#34;</span><span class="p">
+</span></span></span><span class="line"><span class="cl"><span class="p"></span>    <span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
@@ -4833,8 +4833,8 @@
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">input</span> 
 </span></span><span class="line"><span class="cl">       <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> 
 </span></span><span class="line"><span class="cl">       <span class="nt">:value</span><span class="o">=</span><span class="s">&#34;abc&#34;</span> 
-</span></span><span class="line"><span class="cl">       <span class="nt">@input</span><span class="s">=&#34;emit(&#39;update:abc&#39;,$event.target.value)&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">       <span class="nt">@input</span><span class="s">=&#34;emit(&#39;update:abc&#39;,$event.target.value)&#34;</span><span class="p">
+</span></span></span><span class="line"><span class="cl"><span class="p"></span>    <span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
@@ -4899,7 +4899,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;father&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="nx">父组件</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="c">&lt;!--</span> <span class="nx">v</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&#34;{x:100,y:200}&#34;</span> <span class="nx">相当于</span> <span class="o">:</span><span class="nx">x</span><span class="o">=</span><span class="s1">&#39;100&#39;</span> <span class="o">:</span><span class="nx">y</span><span class="o">=</span><span class="s1">&#39;200&#39;</span> <span class="o">--&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">Child</span> <span class="nt">:a</span><span class="o">=</span><span class="s">&#34;a&#34;</span> <span class="nt">:b</span><span class="o">=</span><span class="s">&#34;b&#34;</span> <span class="nt">:c</span><span class="o">=</span><span class="s">&#34;c&#34;</span> <span class="nt">:d</span><span class="o">=</span><span class="s">&#34;d&#34;</span> <span class="nt">v-bind</span><span class="o">=</span><span class="s">&#34;{x:100,y:200}&#34;</span><span class="p"> </span><span class="nt">:updateA</span><span class="o">=</span><span class="s">&#34;updateA&#34;</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">Child</span> <span class="nt">:a</span><span class="o">=</span><span class="s">&#34;a&#34;</span> <span class="nt">:b</span><span class="o">=</span><span class="s">&#34;b&#34;</span> <span class="nt">:c</span><span class="o">=</span><span class="s">&#34;c&#34;</span> <span class="nt">:d</span><span class="o">=</span><span class="s">&#34;d&#34;</span> <span class="nt">v-bind</span><span class="o">=</span><span class="s">&#34;{x:100,y:200}&#34; :updateA=&#34;updateA&#34;</span><span class="p">/&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
@@ -4937,12 +4937,12 @@
 </span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;child&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="nx">子组件</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="c">&lt;!--</span> <span class="nx">把父组件传入的数据再传给子组件</span> <span class="o">--&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">GrandChild</span> <span class="nt">v-bind</span><span class="s">=&#34;$attrs&#34;/&gt;
-</span></span></span><span class="line"><span class="cl"><span class="s">	&lt;/div&gt;
-</span></span></span><span class="line"><span class="cl"><span class="s">&lt;/template&gt;
-</span></span></span><span class="line"><span class="cl"><span class="s">
-</span></span></span><span class="line"><span class="cl"><span class="s">&lt;script setup lang=&#34;ts&#34; name=&#34;Child&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="na">import</span> <span class="na">GrandChild</span> <span class="na">from</span> <span class="err">&#39;</span><span class="na">.</span><span class="err">/</span><span class="na">GrandChild.vue</span><span class="err">&#39;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">GrandChild</span> <span class="nt">v-bind</span><span class="o">=</span><span class="s">&#34;$attrs&#34;</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Child&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="kr">import</span> <span class="nx">GrandChild</span> <span class="nx">from</span> <span class="s1">&#39;./GrandChild.vue&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -5309,8 +5309,8 @@
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="nx">父组件</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span><span class="nx">资产</span><span class="err">：</span><span class="p">{{</span> <span class="nx">money</span> <span class="p">}}&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span><span class="nx">汽车</span><span class="err">：</span><span class="p">{{</span> <span class="nx">car</span> <span class="p">}}&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;money += 1&#34;</span><span class="p">&gt;</span><span class="nx">资产</span><span class="o">+</span><span class="mi">1</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;car.price += 1&#34;</span><span class="p">&gt;</span><span class="nx">汽车价格</span><span class="o">+</span><span class="mi">1</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="nt">@click</span><span class="s">=&#34;money += 1&#34;</span><span class="p">&gt;</span><span class="na">资产</span><span class="err">+</span><span class="na">1</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="nt">@click</span><span class="s">=&#34;car.price += 1&#34;</span><span class="p">&gt;</span><span class="na">汽车价格</span><span class="err">+</span><span class="na">1</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Child</span><span class="p">/&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
@@ -5693,9 +5693,9 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="nx">父组件中</span><span class="err">：</span>
 </span></span><span class="line"><span class="cl">	 <span class="c">&lt;!--</span> <span class="nx">用v</span><span class="o">-</span><span class="nx">slot接收子组件传来的对象</span> <span class="o">--&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Game</span> <span class="nt">v-slot</span><span class="s">=&#34;params&#34;&gt;
-</span></span></span><span class="line"><span class="cl"><span class="s">      &lt;!-- 作用域插槽也可以有名字，不写名字其实名字就是默认的default --&gt;
-</span></span></span><span class="line"><span class="cl"><span class="s">      &lt;!-- &lt;Game v-slot</span><span class="nt">:default</span><span class="s">=&#34;params&#34;</span><span class="p">&gt;</span> <span class="err">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Game</span> <span class="nt">v-slot</span><span class="o">=</span><span class="s">&#34;params&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="err">&lt;!--</span> <span class="na">作用域插槽也可以有名字</span><span class="err">，</span><span class="na">不写名字其实名字就是默认的default</span> <span class="err">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="c">&lt;!--</span> <span class="p">&lt;</span><span class="nt">Game</span> <span class="na">v</span><span class="nt">-slot:default</span><span class="o">=</span><span class="s">&#34;params&#34;</span><span class="p">&gt;</span> <span class="o">--&gt;</span>
 </span></span><span class="line"><span class="cl">      <span class="c">&lt;!--</span> <span class="p">&lt;</span><span class="nt">Game</span> <span class="err">#</span><span class="na">default</span><span class="o">=</span><span class="s">&#34;params&#34;</span><span class="p">&gt;</span> <span class="o">--&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">li</span> <span class="nt">v-for</span><span class="o">=</span><span class="s">&#34;g in params.games&#34; :key=&#34;g.id&#34;</span><span class="p">&gt;{{</span> <span class="na">g.name</span> <span class="p">}}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
