@@ -7,7 +7,17 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Thu, 27 Mar 2025 15:25:58 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/vue3/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 25 May 2025 15:06:25 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/vue3/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>删除创建vue3后页面下方的devtools</title>
+        <link>https://IAmYuanyu.github.io/p/%E5%88%A0%E9%99%A4%E5%88%9B%E5%BB%BAvue3%E5%90%8E%E9%A1%B5%E9%9D%A2%E4%B8%8B%E6%96%B9%E7%9A%84devtools/</link>
+        <pubDate>Sun, 25 May 2025 15:06:25 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/%E5%88%A0%E9%99%A4%E5%88%9B%E5%BB%BAvue3%E5%90%8E%E9%A1%B5%E9%9D%A2%E4%B8%8B%E6%96%B9%E7%9A%84devtools/</guid>
+        <description>&lt;img src="https://IAmYuanyu.github.io/p/%E5%88%A0%E9%99%A4%E5%88%9B%E5%BB%BAvue3%E5%90%8E%E9%A1%B5%E9%9D%A2%E4%B8%8B%E6%96%B9%E7%9A%84devtools/Snipaste_2025-05-25_15-11-59.png" alt="Featured image of post 删除创建vue3后页面下方的devtools" /&gt;&lt;p&gt;找到项目下的&lt;code&gt;vite.config.js&lt;/code&gt;或&lt;code&gt;vite.config.ts&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250525151030271.png&#34; alt=&#34;image-20250525151030271&#34; style=&#34;zoom: 80%;&#34; /&gt;
+</description>
+        </item>
+        <item>
         <title>将Vue项目打包为apk文件</title>
         <link>https://IAmYuanyu.github.io/p/%E5%B0%86vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B8%BAapk%E6%96%87%E4%BB%B6/</link>
         <pubDate>Thu, 27 Mar 2025 15:25:58 +0800</pubDate>
