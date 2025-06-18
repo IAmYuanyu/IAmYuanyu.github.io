@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一键加/减#号">
-<title>将md文件中所有标题一键升降级</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="适用于保留提交历史，将当前分支的更改合并到主分支">
+<title>Git将当前分支并入主分支</title>
 
-<link rel='canonical' href='https://IAmYuanyu.github.io/p/%E5%B0%86md%E6%96%87%E4%BB%B6%E4%B8%AD%E6%89%80%E6%9C%89%E6%A0%87%E9%A2%98%E4%B8%80%E9%94%AE%E5%8D%87%E9%99%8D%E7%BA%A7/'>
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/git%E5%B0%86%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E5%B9%B6%E5%85%A5%E4%B8%BB%E5%88%86%E6%94%AF/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="将md文件中所有标题一键升降级">
-<meta property='og:description' content="一键加/减#号">
-<meta property='og:url' content='https://IAmYuanyu.github.io/p/%E5%B0%86md%E6%96%87%E4%BB%B6%E4%B8%AD%E6%89%80%E6%9C%89%E6%A0%87%E9%A2%98%E4%B8%80%E9%94%AE%E5%8D%87%E9%99%8D%E7%BA%A7/'>
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Git将当前分支并入主分支">
+<meta property='og:description' content="适用于保留提交历史，将当前分支的更改合并到主分支">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/git%E5%B0%86%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E5%B9%B6%E5%85%A5%E4%B8%BB%E5%88%86%E6%94%AF/'>
 <meta property='og:site_name' content='缘鱼'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-27T14:15:06&#43;08:00'/><meta property='article:modified_time' content='2025-03-27T14:15:06&#43;08:00'/>
-<meta name="twitter:title" content="将md文件中所有标题一键升降级">
-<meta name="twitter:description" content="一键加/减#号">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-06-18T16:01:49&#43;08:00'/><meta property='article:modified_time' content='2025-06-18T16:01:49&#43;08:00'/>
+<meta name="twitter:title" content="Git将当前分支并入主分支">
+<meta name="twitter:description" content="适用于保留提交历史，将当前分支的更改合并到主分支">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -207,7 +207,45 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#步骤">步骤：</a>
+      <ol>
+        <li><a href="#确保当前分支的修改已提交">确保当前分支的修改已提交</a></li>
+        <li><a href="#切换到主分支如-main-或-master">切换到主分支（如 <code>main</code> 或 <code>master</code>）</a></li>
+        <li><a href="#合并当前分支的修改到主分支">合并当前分支的修改到主分支</a></li>
+        <li><a href="#推送到远程主分支">推送到远程主分支</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -221,8 +259,8 @@
                 教程
             </a>
         
-            <a href="/categories/markdown/" >
-                Markdown
+            <a href="/categories/git/" >
+                Git
             </a>
         
     </header>
@@ -230,12 +268,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%B0%86md%E6%96%87%E4%BB%B6%E4%B8%AD%E6%89%80%E6%9C%89%E6%A0%87%E9%A2%98%E4%B8%80%E9%94%AE%E5%8D%87%E9%99%8D%E7%BA%A7/">将md文件中所有标题一键升降级</a>
+            <a href="/p/git%E5%B0%86%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E5%B9%B6%E5%85%A5%E4%B8%BB%E5%88%86%E6%94%AF/">Git将当前分支并入主分支</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            一键加/减#号
+            适用于保留提交历史，将当前分支的更改合并到主分支
         </h3>
         
     </div>
@@ -256,7 +294,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-03-27</time>
+                <time class="article-time--published">2025-06-18</time>
             </div>
         
 
@@ -272,40 +310,46 @@
     <section class="article-content">
     
     
-    <p>以vscode为例，用<code>ctrl+f</code>快捷键打开右上角窗口</p>
-<ul>
-<li>标题一键降级：（六级标题也会受影响）</li>
-</ul>
-<p>查找：<code>^#+(?=\s)</code></p>
-<p>替换：<code>#$0</code></p>
-<p><img src="/assets/image-20250327144205470.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250327144205470"
-	
-	
-></p>
-<ul>
-<li>标题一键升级：（一级标题不受影响）</li>
-</ul>
-<p>查找：<code>##(?=\s)</code></p>
-<p>替换：<code>#</code></p>
-<p><img src="/assets/image-20250327144501704.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250327144501704"
-	
-	
-></p>
-<blockquote>
-<p>注意：以#开头的内容会受影响。因为没有七级标题，六级标题降级后需要手动调整为想要的效果</p></blockquote>
-
+    <h2 id="步骤">步骤：
+</h2><h3 id="确保当前分支的修改已提交">确保当前分支的修改已提交
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">git add .                      <span class="c1"># 暂存所有更改</span>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;你的提交信息&#34;</span>    <span class="c1"># 提交更改</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="切换到主分支如-main-或-master">切换到主分支（如 <code>main</code> 或 <code>master</code>）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">git checkout main              <span class="c1"># 切换到主分支</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="合并当前分支的修改到主分支">合并当前分支的修改到主分支
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">git merge 你的当前分支名       <span class="c1"># 例如我的分支叫yuanyu则 git merge yuanyu</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="推送到远程主分支">推送到远程主分支
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">git push origin main           <span class="c1"># 推送主分支到远程</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -329,12 +373,51 @@
             
                 
 <article class="">
-    <a href="/p/git%E5%B0%86%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E5%B9%B6%E5%85%A5%E4%B8%BB%E5%88%86%E6%94%AF/">
+    <a href="/p/github%E4%BB%93%E5%BA%93%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E5%88%86%E6%94%AF/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Git将当前分支并入主分支</h2>
+            <h2 class="article-title">Github仓库修改默认分支</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">同步远程仓库</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%9C%A8gitee%E4%B8%8A%E4%BC%A0%E5%85%B6%E4%BB%96%E5%88%86%E6%94%AF/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">在Gitee上传其他分支</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%B0%86%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%8F%91%E9%80%81%E5%88%B0gitee%E5%9B%A2%E9%98%9F%E4%BB%93%E5%BA%93/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">将本地代码发送到Gitee团队仓库</h2>
         </div>
     </a>
 </article>
@@ -342,95 +425,23 @@
             
                 
 <article class="has-image">
-    <a href="/p/xftp%E4%BC%A0%E8%BE%93%E9%94%99%E8%AF%AF451/">
+    <a href="/p/%E6%9A%B4%E5%8A%9B%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/">
         
         
             <div class="article-image">
-                <img src="/p/xftp%E4%BC%A0%E8%BE%93%E9%94%99%E8%AF%AF451/Snipaste_2025-06-16_19-36-48.dfd892c58140a6ff58f45cfdfa4f6f34_hu_85b92c5d09ec7ce9.png" 
+                <img src="/p/%E6%9A%B4%E5%8A%9B%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/%E4%BB%A3%E7%A0%81%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4.0e0542e6f6ffdcc95255e8441b6a2e1f_hu_219879b802b081f5.png" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post Xftp传输错误451"
+                        alt="Featured image of post 暴力解决git上传代码报错"
                         
-                        data-hash="md5-39iSxYFApv9Y9Fz9&#43;k9vNA==">
+                        data-hash="md5-DgVC5vb/3MlSVehEG2ouHw==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">Xftp传输错误451</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/%E5%8E%8B%E7%BC%A9ppt%E5%A4%A7%E5%B0%8F/">
-        
-        
-            <div class="article-image">
-                <img src="/p/%E5%8E%8B%E7%BC%A9ppt%E5%A4%A7%E5%B0%8F/image-20250526154658931.eebefd9977ca213b4cceba1b1c9dbf0f_hu_e8ee59c3a2e4c52d.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 压缩PPT大小"
-                        
-                        data-hash="md5-7r79mXfKITtMzrobHJ2/Dw==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">压缩PPT大小</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/%E5%B0%86elementplus%E9%BB%98%E8%AE%A4%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE%E4%B8%BA%E4%B8%AD%E6%96%87/">
-        
-        
-            <div class="article-image">
-                <img src="/p/%E5%B0%86elementplus%E9%BB%98%E8%AE%A4%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE%E4%B8%BA%E4%B8%AD%E6%96%87/Snipaste_2025-05-25_16-36-27.2f340a7e478f9e28ca4f635ddb9934b9_hu_5217ae52d81ef2fb.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 将ElementPlus默认语言设置为中文"
-                        
-                        data-hash="md5-LzQKfkePnijKT2Nd25k0uQ==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">将ElementPlus默认语言设置为中文</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/%E5%88%A0%E9%99%A4%E5%88%9B%E5%BB%BAvue3%E5%90%8E%E9%A1%B5%E9%9D%A2%E4%B8%8B%E6%96%B9%E7%9A%84devtools/">
-        
-        
-            <div class="article-image">
-                <img src="/p/%E5%88%A0%E9%99%A4%E5%88%9B%E5%BB%BAvue3%E5%90%8E%E9%A1%B5%E9%9D%A2%E4%B8%8B%E6%96%B9%E7%9A%84devtools/Snipaste_2025-05-25_15-11-59.60001ac046eaf442abbe3bdc961fcdb7_hu_cdcd18eb0a641947.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 删除创建vue3后页面下方的devtools"
-                        
-                        data-hash="md5-YAAawEbq9EKrvjvclh/Ntw==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">删除创建vue3后页面下方的devtools</h2>
+            <h2 class="article-title">暴力解决git上传代码报错</h2>
         </div>
     </a>
 </article>

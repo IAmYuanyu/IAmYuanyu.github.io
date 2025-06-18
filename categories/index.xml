@@ -7,20 +7,28 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Mon, 16 Jun 2025 19:34:54 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Xftp</title>
-        <link>https://IAmYuanyu.github.io/categories/xftp/</link>
-        <pubDate>Mon, 16 Jun 2025 19:34:54 +0800</pubDate>
+        <lastBuildDate>Wed, 18 Jun 2025 16:01:49 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Git</title>
+        <link>https://IAmYuanyu.github.io/categories/git/</link>
+        <pubDate>Wed, 18 Jun 2025 16:01:49 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/categories/xftp/</guid>
+        <guid>https://IAmYuanyu.github.io/categories/git/</guid>
         <description></description>
         </item>
         <item>
         <title>教程</title>
         <link>https://IAmYuanyu.github.io/categories/%E6%95%99%E7%A8%8B/</link>
-        <pubDate>Mon, 16 Jun 2025 19:34:54 +0800</pubDate>
+        <pubDate>Wed, 18 Jun 2025 16:01:49 +0800</pubDate>
         
         <guid>https://IAmYuanyu.github.io/categories/%E6%95%99%E7%A8%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Xftp</title>
+        <link>https://IAmYuanyu.github.io/categories/xftp/</link>
+        <pubDate>Mon, 16 Jun 2025 19:34:54 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/categories/xftp/</guid>
         <description></description>
         </item>
         <item>
@@ -61,14 +69,6 @@
         <pubDate>Thu, 17 Apr 2025 17:51:11 +0800</pubDate>
         
         <guid>https://IAmYuanyu.github.io/categories/java/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Git</title>
-        <link>https://IAmYuanyu.github.io/categories/git/</link>
-        <pubDate>Fri, 11 Apr 2025 00:24:59 +0800</pubDate>
-        
-        <guid>https://IAmYuanyu.github.io/categories/git/</guid>
         <description></description>
         </item>
         <item>
