@@ -7,7 +7,136 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Sun, 20 Jul 2025 23:45:49 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 29 Jul 2025 00:11:35 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Maven安装</title>
+        <link>https://IAmYuanyu.github.io/p/maven%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Tue, 29 Jul 2025 00:11:35 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/maven%E5%AE%89%E8%A3%85/</guid>
+        <description>&lt;h3 id=&#34;下载压缩包&#34;&gt;下载压缩包
+&lt;/h3&gt;&lt;p&gt;首先在官网：&lt;a class=&#34;link&#34; href=&#34;https://maven.apache.org/download.cgi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载 Apache Maven – Maven&lt;/a&gt;下载&lt;code&gt;bin.zip&lt;/code&gt;结尾的安装包&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753708846090.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75370884609&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置本地仓库&#34;&gt;配置本地仓库
+&lt;/h3&gt;&lt;p&gt;将刚刚下载的压缩包解压到一个没有中文的路径后，在其根目录新建一个文件夹，我这里取名为&lt;code&gt;mvn_repo&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753709035846.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75370903584&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然后打开创建文件夹，复制该文件夹的路径&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753709178036.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75370917803&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;回到上一级目录（根目录），打开&lt;code&gt;conf&lt;/code&gt;文件夹，打开&lt;code&gt;settings.xml&lt;/code&gt;(建议用vs code之类的编译器)，然后如图操作（弄完记得保存）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753709356959.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75370935695&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置国内仓库地址&#34;&gt;配置国内仓库地址
+&lt;/h3&gt;&lt;p&gt;默认从国外的仓库下载文件，如果没法连接外网，建议配置一下国内镜像&lt;/p&gt;
+&lt;p&gt;还是在刚刚的&lt;code&gt;settings.xml&lt;/code&gt;文件中进行修改，修改完记得保存&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753710113048.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75371011304&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;mirror&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;alimaven&lt;span class=&#34;nt&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;mirrorOf&amp;gt;&lt;/span&gt;central&lt;span class=&#34;nt&#34;&gt;&amp;lt;/mirrorOf&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;aliyun maven&lt;span class=&#34;nt&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;url&amp;gt;&lt;/span&gt;https://maven.aliyun.com/nexus/content/groups/public&lt;span class=&#34;nt&#34;&gt;&amp;lt;/url&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/mirror&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;配置环境变量&#34;&gt;配置环境变量
+&lt;/h3&gt;&lt;p&gt;为了能够在任意目录下执行Maven指令，需要配置Maven的环境变量&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753710583494.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75371058349&#34;
+	
+	
+&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753710727235.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75371072723&#34;
+	
+	
+&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753711014795.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75371101479&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;验证是否配置成功&#34;&gt;验证是否配置成功
+&lt;/h3&gt;&lt;p&gt;使用电脑快捷键Win+R，在弹出的窗口输入cmd，然后点击确定&lt;/p&gt;
+&lt;p&gt;在命令行输入&lt;code&gt;mvn -v&lt;/code&gt;，配置成功的话即可看见刚刚配置的maven的版本号&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753711305436.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75371130543&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Collections集合工具类</title>
         <link>https://IAmYuanyu.github.io/p/collections%E9%9B%86%E5%90%88%E5%B7%A5%E5%85%B7%E7%B1%BB/</link>
         <pubDate>Sun, 20 Jul 2025 23:45:49 +0800</pubDate>
