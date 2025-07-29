@@ -7,7 +7,233 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Tue, 29 Jul 2025 00:11:35 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 30 Jul 2025 00:56:33 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Maven依赖下载不完整导致爆红</title>
+        <link>https://IAmYuanyu.github.io/p/maven%E4%BE%9D%E8%B5%96%E4%B8%8B%E8%BD%BD%E4%B8%8D%E5%AE%8C%E6%95%B4%E5%AF%BC%E8%87%B4%E7%88%86%E7%BA%A2/</link>
+        <pubDate>Wed, 30 Jul 2025 00:56:33 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/maven%E4%BE%9D%E8%B5%96%E4%B8%8B%E8%BD%BD%E4%B8%8D%E5%AE%8C%E6%95%B4%E5%AF%BC%E8%87%B4%E7%88%86%E7%BA%A2/</guid>
+        <description>&lt;h2 id=&#34;maven依赖下载不完整导致爆红&#34;&gt;Maven依赖下载不完整导致爆红
+&lt;/h2&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753803853105.png&#34; alt=&#34;75380385310&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753803987463.png&#34; alt=&#34;75380398746&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;产生原因：由于网络原因，依赖没有下载完整导致的，在maven仓库中生成了xxx.lastUpdated文件，该文件不删除，不会再重新下载。&lt;/p&gt;
+&lt;p&gt;解决方案：&lt;/p&gt;
+&lt;p&gt;打开Maven的本地仓库&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753804124171.png&#34; alt=&#34;75380412417&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;然后在命令行中输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;del /s *.lastUpdated
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753804194698.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75380419469&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;之后重新加载依赖，还爆红就重新打开idea&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Maven依赖范围</title>
+        <link>https://IAmYuanyu.github.io/p/maven%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4/</link>
+        <pubDate>Wed, 30 Jul 2025 00:54:50 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/maven%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4/</guid>
+        <description>&lt;h2 id=&#34;maven依赖范围&#34;&gt;Maven依赖范围
+&lt;/h2&gt;&lt;p&gt;依赖的jar包，默认情况下，可以在任何地方使用。可以通过 &lt;scope&gt;…&lt;/scope&gt; 设置其作用范围。&lt;/p&gt;
+&lt;p&gt;作用范围：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主程序范围有效。（main文件夹范围内）&lt;/li&gt;
+&lt;li&gt;测试程序范围有效。（test文件夹范围内）&lt;/li&gt;
+&lt;li&gt;是否参与打包运行。（package指令范围内）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;scope值&lt;/th&gt;
+          &lt;th&gt;主程序&lt;/th&gt;
+          &lt;th&gt;测试程序&lt;/th&gt;
+          &lt;th&gt;打包（运行）&lt;/th&gt;
+          &lt;th&gt;范例&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;compile（默认）&lt;/td&gt;
+          &lt;td&gt;Y&lt;/td&gt;
+          &lt;td&gt;Y&lt;/td&gt;
+          &lt;td&gt;Y&lt;/td&gt;
+          &lt;td&gt;log4j&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;test&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Y&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;junit&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;provided&lt;/td&gt;
+          &lt;td&gt;Y&lt;/td&gt;
+          &lt;td&gt;Y&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;servlet-api&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;runtime&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Y&lt;/td&gt;
+          &lt;td&gt;Y&lt;/td&gt;
+          &lt;td&gt;jdbc驱动&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;例如，不设置&lt;scope&gt;时，junit单元测试可以在main文件夹下使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.junit.jupiter&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;junit-jupiter&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;5.9.1&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c&#34;&gt;&amp;lt;!--依赖范围--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;test&lt;span class=&#34;nt&#34;&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;加上&lt;scope&gt;test&lt;/scope&gt;后，就只能在test文件夹下使用了&lt;/p&gt;
+&lt;p&gt;加&lt;scope&gt;test&lt;/scope&gt;前：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753803207765.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75380320776&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;加&lt;scope&gt;test&lt;/scope&gt;后：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753803243568.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75380324356&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Junit参数化测试</title>
+        <link>https://IAmYuanyu.github.io/p/junit%E5%8F%82%E6%95%B0%E5%8C%96%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Wed, 30 Jul 2025 00:52:50 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/junit%E5%8F%82%E6%95%B0%E5%8C%96%E6%B5%8B%E8%AF%95/</guid>
+        <description>&lt;h2 id=&#34;junit参数化测试批量测试&#34;&gt;Junit参数化测试/批量测试
+&lt;/h2&gt;&lt;h3 id=&#34;参数化测试&#34;&gt;参数化测试
+&lt;/h3&gt;&lt;p&gt;@ParameterizedTest + @ValueSource搭配使用实现参数化测试&lt;/p&gt;
+&lt;p&gt;@ParameterizedTest：参数化测试的注解 (可以让单个测试运行多次，每次运行时仅参数不同)&lt;/p&gt;
+&lt;p&gt;@ValueSource：参数化测试的参数来源，赋予测试方法参数&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753797044382.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75379704438&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;指定测试类测试方法显示的名称&#34;&gt;指定测试类、测试方法显示的名称
+&lt;/h3&gt;&lt;p&gt;@DisplayName：指定测试类、测试方法显示的名称 （默认为类名、方法名）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753797184194.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75379718419&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Maven依赖管理</title>
+        <link>https://IAmYuanyu.github.io/p/maven%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/</link>
+        <pubDate>Wed, 30 Jul 2025 00:49:06 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/maven%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/</guid>
+        <description>&lt;h2 id=&#34;maven依赖管理&#34;&gt;Maven依赖管理
+&lt;/h2&gt;&lt;h3 id=&#34;导入依赖&#34;&gt;导入依赖
+&lt;/h3&gt;&lt;p&gt;输入需要导入的依赖后，点击右上角的刷新就会自动下载&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753781919361.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75378191936&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;导入依赖后，点击idea右侧的maven，可以查看导入的依赖，导入的依赖可能会关联其他依赖&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753782078818.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75378207881&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;排除依赖&#34;&gt;排除依赖
+&lt;/h3&gt;&lt;p&gt;排除时无需填写版本&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753782232080.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75378223208&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;输入完需要排除的依赖后，刷新完依赖就消失了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1753782312689.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;75378231268&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Maven安装</title>
         <link>https://IAmYuanyu.github.io/p/maven%E5%AE%89%E8%A3%85/</link>
         <pubDate>Tue, 29 Jul 2025 00:11:35 +0800</pubDate>
