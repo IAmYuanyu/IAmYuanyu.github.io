@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="写了@Data但无法通过反射调用无参构造方法">
-<title>@Data与@Builder联用时冲突</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在Springboot中使用Logback">
+<title>Logback快速入门</title>
 
-<link rel='canonical' href='https://IAmYuanyu.github.io/p/@data%E4%B8%8E@builder%E8%81%94%E7%94%A8%E6%97%B6%E5%86%B2%E7%AA%81/'>
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/logback%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="@Data与@Builder联用时冲突">
-<meta property='og:description' content="写了@Data但无法通过反射调用无参构造方法">
-<meta property='og:url' content='https://IAmYuanyu.github.io/p/@data%E4%B8%8E@builder%E8%81%94%E7%94%A8%E6%97%B6%E5%86%B2%E7%AA%81/'>
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Logback快速入门">
+<meta property='og:description' content="在Springboot中使用Logback">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/logback%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/'>
 <meta property='og:site_name' content='缘鱼'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-17T17:51:11&#43;08:00'/><meta property='article:modified_time' content='2025-04-17T17:51:11&#43;08:00'/>
-<meta name="twitter:title" content="@Data与@Builder联用时冲突">
-<meta name="twitter:description" content="写了@Data但无法通过反射调用无参构造方法">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-09-03T16:39:11&#43;08:00'/><meta property='article:modified_time' content='2025-09-03T16:39:11&#43;08:00'/>
+<meta name="twitter:title" content="Logback快速入门">
+<meta name="twitter:description" content="在Springboot中使用Logback">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -207,7 +207,38 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#logback快速入门">Logback快速入门</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -230,12 +261,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/@data%E4%B8%8E@builder%E8%81%94%E7%94%A8%E6%97%B6%E5%86%B2%E7%AA%81/">@Data与@Builder联用时冲突</a>
+            <a href="/p/logback%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">Logback快速入门</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            写了@Data但无法通过反射调用无参构造方法
+            在Springboot中使用Logback
         </h3>
         
     </div>
@@ -256,7 +287,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-04-17</time>
+                <time class="article-time--published">2025-09-03</time>
             </div>
         
 
@@ -272,25 +303,84 @@
     <section class="article-content">
     
     
-    <p>如果同时使用<code>@Data</code>和<code>@Builder</code>，<code>@Builder</code>会生成全参构造方法，并<strong>覆盖默认的无参构造方法</strong>，导致框架无法通过反射调用无参构造方法</p>
-<p>解决方式：添加<code>@NoArgsConstructor</code>和<code>@AllArgsConstructor</code></p>
+    <h2 id="logback快速入门">Logback快速入门
+</h2><p>准备工作：引入logback的依赖(springboot项目中该依赖已传递)、配置文件<code>logback.xml</code>（放src/main/resources中）</p>
+<p><code>logback.xml</code>示例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="nd">@Builder</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Data</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@NoArgsConstructor</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@AllArgsConstructor</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 控制台输出 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&#34;STDOUT&#34;</span> <span class="na">class=</span><span class="s">&#34;ch.qos.logback.core.ConsoleAppender&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;encoder</span> <span class="na">class=</span><span class="s">&#34;ch.qos.logback.classic.encoder.PatternLayoutEncoder&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!--格式化输出：%d 表示日期，%thread 表示线程名，%-5level表示级别从左显示5个字符宽度，%logger显示日志记录器的名称， %msg表示日志消息，%n表示换行符 --&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;pattern&gt;</span>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n<span class="nt">&lt;/pattern&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/encoder&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/appender&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 系统文件输出 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&#34;FILE&#34;</span> <span class="na">class=</span><span class="s">&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;rollingPolicy</span> <span class="na">class=</span><span class="s">&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!-- 日志文件输出的文件名, %i表示序号 --&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;FileNamePattern&gt;</span>D:/tlias-%d{yyyy-MM-dd}-%i.log<span class="nt">&lt;/FileNamePattern&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!-- 最多保留的历史日志文件数量 --&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;MaxHistory&gt;</span>30<span class="nt">&lt;/MaxHistory&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!-- 最大文件大小，超过这个大小会触发滚动到新文件，默认为 10MB --&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;maxFileSize&gt;</span>10MB<span class="nt">&lt;/maxFileSize&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/rollingPolicy&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;encoder</span> <span class="na">class=</span><span class="s">&#34;ch.qos.logback.classic.encoder.PatternLayoutEncoder&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!--格式化输出：%d 表示日期，%thread 表示线程名，%-5level表示级别从左显示5个字符宽度，%msg表示日志消息，%n表示换行符 --&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;pattern&gt;</span>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}-%msg%n<span class="nt">&lt;/pattern&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/encoder&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/appender&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 日志输出级别 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 开启所有日志（ALL），关闭日志（OFF） --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;root</span> <span class="na">level=</span><span class="s">&#34;ALL&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&#34;STDOUT&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&#34;FILE&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/root&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/configuration&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
-</div><p>注：<code>@NoArgsConstructor</code>和<code>@AllArgsConstructor</code>顺序不能反</p>
-<p>建议使用<code>@Data</code>时都带上<code>@NoArgsConstructor</code>和<code>@AllArgsConstructor</code></p>
-
+</div>
 </section>
 
 
@@ -320,19 +410,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Logback日志级别</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/logback%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Logback快速入门</h2>
         </div>
     </a>
 </article>
@@ -372,6 +449,19 @@
 
         <div class="article-details">
             <h2 class="article-title">分层解耦</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/java%E5%8F%8D%E5%B0%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Java反射</h2>
         </div>
     </a>
 </article>
