@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Maven依赖下载过程中因网络问题导致依赖不完整">
-<title>Maven依赖下载不完整导致爆红</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="PageHelper是第三方提供的在Mybatis框架中用来实现分页的插件，用来简化分页操作，提高开发效率">
+<title>利用PageHelper分页插件简化操作</title>
 
-<link rel='canonical' href='https://IAmYuanyu.github.io/p/maven%E4%BE%9D%E8%B5%96%E4%B8%8B%E8%BD%BD%E4%B8%8D%E5%AE%8C%E6%95%B4%E5%AF%BC%E8%87%B4%E7%88%86%E7%BA%A2/'>
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/%E5%88%A9%E7%94%A8pagehelper%E5%88%86%E9%A1%B5%E6%8F%92%E4%BB%B6%E7%AE%80%E5%8C%96%E6%93%8D%E4%BD%9C/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Maven依赖下载不完整导致爆红">
-<meta property='og:description' content="Maven依赖下载过程中因网络问题导致依赖不完整">
-<meta property='og:url' content='https://IAmYuanyu.github.io/p/maven%E4%BE%9D%E8%B5%96%E4%B8%8B%E8%BD%BD%E4%B8%8D%E5%AE%8C%E6%95%B4%E5%AF%BC%E8%87%B4%E7%88%86%E7%BA%A2/'>
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="利用PageHelper分页插件简化操作">
+<meta property='og:description' content="PageHelper是第三方提供的在Mybatis框架中用来实现分页的插件，用来简化分页操作，提高开发效率">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/%E5%88%A9%E7%94%A8pagehelper%E5%88%86%E9%A1%B5%E6%8F%92%E4%BB%B6%E7%AE%80%E5%8C%96%E6%93%8D%E4%BD%9C/'>
 <meta property='og:site_name' content='缘鱼'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-30T00:56:33&#43;08:00'/><meta property='article:modified_time' content='2025-07-30T00:56:33&#43;08:00'/>
-<meta name="twitter:title" content="Maven依赖下载不完整导致爆红">
-<meta name="twitter:description" content="Maven依赖下载过程中因网络问题导致依赖不完整">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-09-05T16:45:42&#43;08:00'/><meta property='article:modified_time' content='2025-09-05T16:45:42&#43;08:00'/>
+<meta name="twitter:title" content="利用PageHelper分页插件简化操作">
+<meta name="twitter:description" content="PageHelper是第三方提供的在Mybatis框架中用来实现分页的插件，用来简化分页操作，提高开发效率">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -229,7 +229,14 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#maven依赖下载不完整导致爆红">Maven依赖下载不完整导致爆红</a></li>
+    <li><a href="#利用pagehelper分页插件简化操作">利用PageHelper分页插件简化操作</a>
+      <ol>
+        <li><a href="#使用前提导入依赖">使用前提：导入依赖</a></li>
+        <li><a href="#原始方式">原始方式</a></li>
+        <li><a href="#使用pagehelper后">使用PageHelper后</a></li>
+      </ol>
+    </li>
+    <li><a href="#pagehelper实现机制与注意事项">PageHelper实现机制与注意事项</a></li>
   </ol>
 </nav>
         </div>
@@ -261,12 +268,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/maven%E4%BE%9D%E8%B5%96%E4%B8%8B%E8%BD%BD%E4%B8%8D%E5%AE%8C%E6%95%B4%E5%AF%BC%E8%87%B4%E7%88%86%E7%BA%A2/">Maven依赖下载不完整导致爆红</a>
+            <a href="/p/%E5%88%A9%E7%94%A8pagehelper%E5%88%86%E9%A1%B5%E6%8F%92%E4%BB%B6%E7%AE%80%E5%8C%96%E6%93%8D%E4%BD%9C/">利用PageHelper分页插件简化操作</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Maven依赖下载过程中因网络问题导致依赖不完整
+            PageHelper是第三方提供的在Mybatis框架中用来实现分页的插件，用来简化分页操作，提高开发效率
         </h3>
         
     </div>
@@ -287,7 +294,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-07-30</time>
+                <time class="article-time--published">2025-09-05</time>
             </div>
         
 
@@ -303,33 +310,122 @@
     <section class="article-content">
     
     
-    <h2 id="maven依赖下载不完整导致爆红">Maven依赖下载不完整导致爆红
-</h2><img src="/assets/1753803853105.png" alt="75380385310" style="zoom:50%;" />
-<img src="/assets/1753803987463.png" alt="75380398746" style="zoom:50%;" />
-<p>产生原因：由于网络原因，依赖没有下载完整导致的，在maven仓库中生成了xxx.lastUpdated文件，该文件不删除，不会再重新下载。</p>
-<p>解决方案：</p>
-<p>打开Maven的本地仓库</p>
-<img src="/assets/1753804124171.png" alt="75380412417" style="zoom:67%;" />
-<p>然后在命令行中输入</p>
+    <h2 id="利用pagehelper分页插件简化操作">利用PageHelper分页插件简化操作
+</h2><h3 id="使用前提导入依赖">使用前提：导入依赖
+</h3><p>在<code>pom.xml</code>中导入PageHeper的依赖</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">del /s *.lastUpdated
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="c">&lt;!--分页插件PageHelper--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>com.github.pagehelper<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>pagehelper-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>2.1.0<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/assets/1753804194698.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="75380419469"
-	
-	
-></p>
-<p>之后重新加载依赖，还爆红就重新打开idea</p>
+</div><p>导入依赖后记得重新加载一下Maven</p>
+<h3 id="原始方式">原始方式
+</h3><p>原始方式-Mapper层：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 查询总记录数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Select</span><span class="p">(</span><span class="s">&#34;select count(*) from ……&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="nf">count</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 查询结果列表</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Select</span><span class="p">(</span><span class="s">&#34;select * from …… limit #{start}, #{pageSize}&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">pageSize</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>原始方式-Service层：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">PageResult</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">page</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">page</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">pageSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 获取总记录数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Long</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">empMapper</span><span class="p">.</span><span class="na">count</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 获取数据列表</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Integer</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">page</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pageSize</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">empMapper</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">pageSize</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 封装分页结果</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PageResult</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="p">(</span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="n">rows</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="使用pagehelper后">使用PageHelper后
+</h3><p>PageHelper-Mapper层：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 查询数据列表</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Select</span><span class="p">(</span><span class="s">&#34;select * from ……&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">list</span><span class="p">();</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>PageHelper-Service层：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">PageResult</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">page</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">page</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">pageSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 设置分页参数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">PageHelper</span><span class="p">.</span><span class="na">startPage</span><span class="p">(</span><span class="n">page</span><span class="p">,</span><span class="w"> </span><span class="n">pageSize</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 查询结果列表</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">empList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">empMapper</span><span class="p">.</span><span class="na">list</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 解析查询结果并封装</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Page</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Page</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">empList</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PageResult</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getTotal</span><span class="p">(),</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getResult</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="pagehelper实现机制与注意事项">PageHelper实现机制与注意事项
+</h2><p>机制：拦截你的查询语句，然后将其拆分为两条语句，第一条为<code>select count(0) ……</code>，第二条为<code>…… limit ?,?</code></p>
+<blockquote>
+<p>注：</p>
+<p>1.Mapper层用注解查询时，SQL语句结尾不能加<code>;</code></p>
+<p>2.PageHelper只会对紧跟在其后的第一条SQL语句进行分页处理</p></blockquote>
 
 </section>
 
@@ -351,19 +447,6 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
-            
-                
-<article class="">
-    <a href="/p/%E5%88%A9%E7%94%A8pagehelper%E5%88%86%E9%A1%B5%E6%8F%92%E4%BB%B6%E7%AE%80%E5%8C%96%E6%93%8D%E4%BD%9C/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">利用PageHelper分页插件简化操作</h2>
-        </div>
-    </a>
-</article>
-
             
                 
 <article class="">
@@ -412,6 +495,19 @@
 
         <div class="article-details">
             <h2 class="article-title">@PathVariable属性值的可省略情况</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/@requestparam%E7%9A%84%E5%8F%AF%E7%9C%81%E7%95%A5%E6%83%85%E5%86%B5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">@RequestParam的可省略情况</h2>
         </div>
     </a>
 </article>
