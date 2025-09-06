@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="当前端传递的请求参数名与服务端方法形参名一致时，可以省略@RequestParam注解">
-<title>@RequestParam的可省略情况</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Forecah标签简单介绍">
+<title>动态SQL--Forecah简介</title>
 
-<link rel='canonical' href='https://IAmYuanyu.github.io/p/@requestparam%E7%9A%84%E5%8F%AF%E7%9C%81%E7%95%A5%E6%83%85%E5%86%B5/'>
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/%E5%8A%A8%E6%80%81sql--forecah%E7%AE%80%E4%BB%8B/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="@RequestParam的可省略情况">
-<meta property='og:description' content="当前端传递的请求参数名与服务端方法形参名一致时，可以省略@RequestParam注解">
-<meta property='og:url' content='https://IAmYuanyu.github.io/p/@requestparam%E7%9A%84%E5%8F%AF%E7%9C%81%E7%95%A5%E6%83%85%E5%86%B5/'>
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="动态SQL--Forecah简介">
+<meta property='og:description' content="Forecah标签简单介绍">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/%E5%8A%A8%E6%80%81sql--forecah%E7%AE%80%E4%BB%8B/'>
 <meta property='og:site_name' content='缘鱼'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-09-02T21:22:55&#43;08:00'/><meta property='article:modified_time' content='2025-09-02T21:22:55&#43;08:00'/>
-<meta name="twitter:title" content="@RequestParam的可省略情况">
-<meta name="twitter:description" content="当前端传递的请求参数名与服务端方法形参名一致时，可以省略@RequestParam注解">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-09-06T22:52:04&#43;08:00'/><meta property='article:modified_time' content='2025-09-06T22:52:04&#43;08:00'/>
+<meta name="twitter:title" content="动态SQL--Forecah简介">
+<meta name="twitter:description" content="Forecah标签简单介绍">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -229,7 +229,7 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#requestparam的可省略情况">@RequestParam的可省略情况</a></li>
+    <li><a href="#动态sqlforecah">动态SQL&ndash;forecah</a></li>
   </ol>
 </nav>
         </div>
@@ -261,12 +261,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/@requestparam%E7%9A%84%E5%8F%AF%E7%9C%81%E7%95%A5%E6%83%85%E5%86%B5/">@RequestParam的可省略情况</a>
+            <a href="/p/%E5%8A%A8%E6%80%81sql--forecah%E7%AE%80%E4%BB%8B/">动态SQL--Forecah简介</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            当前端传递的请求参数名与服务端方法形参名一致时，可以省略@RequestParam注解
+            Forecah标签简单介绍
         </h3>
         
     </div>
@@ -287,7 +287,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-09-02</time>
+                <time class="article-time--published">2025-09-06</time>
             </div>
         
 
@@ -303,9 +303,19 @@
     <section class="article-content">
     
     
-    <h2 id="requestparam的可省略情况">@RequestParam的可省略情况
-</h2><p>当前端传递的请求参数名与服务端方法形参名一致时，可以省略@RequestParam注解</p>
-<p>比如下方代码中，@RequestParam(&ldquo;id&rdquo;)可以省略</p>
+    <h2 id="动态sqlforecah">动态SQL&ndash;forecah
+</h2><p>当要插入的数据是一个数组或集合时，不能写死其中具体有几条数据，此时就需要<foreach>这个动态SQL标签</p>
+<p>示例：</p>
+<p>Mapper的Java类：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">insertBatch</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">EmpExpr</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exprList</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>对应的xml映射：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -313,16 +323,44 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@DeleteMapping</span><span class="p">(</span><span class="s">&#34;/depts&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Result</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="nd">@RequestParam</span><span class="p">(</span><span class="s">&#34;id&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;删除部门：&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Result</span><span class="p">.</span><span class="na">success</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;insert</span> <span class="na">id=</span><span class="s">&#34;insertBatch&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    insert into emp_expr(emp_id, begin, end, company, job)
+</span></span><span class="line"><span class="cl">    values <span class="nt">&lt;foreach</span> <span class="na">collection=</span><span class="s">&#34;exprList&#34;</span> <span class="na">item=</span><span class="s">&#34;expr&#34;</span> <span class="na">separator=</span><span class="s">&#34;,&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">        (#{expr.empId}, #{expr.begin}, #{expr.end}, #{expr.company}, #{expr.job})
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/foreach&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/insert&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p><foreach>常见属性说明：</p>
+<p>1.collection：集合名称</p>
+<p>2.item：集合遍历出来的元素/项</p>
+<p>3.separator：每一次遍历使用的分隔符（可选）</p>
+<p>4.open：遍历开始前拼接的片段（可选）</p>
+<p>5.close：遍历结束后拼接的片段（可选）</p>
+<p>open属性演示（close同理）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;insert</span> <span class="na">id=</span><span class="s">&#34;insertBatch&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    insert into emp_expr(emp_id, begin, end, company, job)
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;foreach</span> <span class="na">collection=</span><span class="s">&#34;exprList&#34;</span> <span class="na">item=</span><span class="s">&#34;expr&#34;</span> <span class="na">separator=</span><span class="s">&#34;,&#34;</span> <span class="na">open=</span><span class="s">&#34;values&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">        (#{expr.empId}, #{expr.begin}, #{expr.end}, #{expr.company}, #{expr.job})
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/foreach&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/insert&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p>此时无论集合内有几条数据都可以正常插入</p>
+
 </section>
 
 
@@ -343,19 +381,6 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
-            
-                
-<article class="">
-    <a href="/p/%E5%8A%A8%E6%80%81sql--forecah%E7%AE%80%E4%BB%8B/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">动态SQL--Forecah简介</h2>
-        </div>
-    </a>
-</article>
-
             
                 
 <article class="">
@@ -404,6 +429,19 @@
 
         <div class="article-details">
             <h2 class="article-title">利用PageHelper分页插件简化操作</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/controller%E5%B1%82%E9%80%9A%E8%BF%87%E6%B3%A8%E8%A7%A3%E8%AE%BE%E7%BD%AE%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Controller层通过注解设置参数默认值</h2>
         </div>
     </a>
 </article>
