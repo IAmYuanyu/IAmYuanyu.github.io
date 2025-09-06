@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="遍历集合或数组">
-<title>增强for</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="使用MyBatis提供的@Options注解来获取生成的主键">
+<title>MyBatis获取新增信息生成的主键</title>
 
-<link rel='canonical' href='https://IAmYuanyu.github.io/p/%E5%A2%9E%E5%BC%BAfor/'>
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/mybatis%E8%8E%B7%E5%8F%96%E6%96%B0%E5%A2%9E%E4%BF%A1%E6%81%AF%E7%94%9F%E6%88%90%E7%9A%84%E4%B8%BB%E9%94%AE/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="增强for">
-<meta property='og:description' content="遍历集合或数组">
-<meta property='og:url' content='https://IAmYuanyu.github.io/p/%E5%A2%9E%E5%BC%BAfor/'>
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="MyBatis获取新增信息生成的主键">
+<meta property='og:description' content="使用MyBatis提供的@Options注解来获取生成的主键">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/mybatis%E8%8E%B7%E5%8F%96%E6%96%B0%E5%A2%9E%E4%BF%A1%E6%81%AF%E7%94%9F%E6%88%90%E7%9A%84%E4%B8%BB%E9%94%AE/'>
 <meta property='og:site_name' content='缘鱼'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-20T23:44:19&#43;08:00'/><meta property='article:modified_time' content='2025-07-20T23:44:19&#43;08:00'/>
-<meta name="twitter:title" content="增强for">
-<meta name="twitter:description" content="遍历集合或数组">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-09-06T22:19:21&#43;08:00'/><meta property='article:modified_time' content='2025-09-06T22:19:21&#43;08:00'/>
+<meta name="twitter:title" content="MyBatis获取新增信息生成的主键">
+<meta name="twitter:description" content="使用MyBatis提供的@Options注解来获取生成的主键">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -207,7 +207,38 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#mybatis获取新增信息生成的主键">MyBatis获取新增信息生成的主键</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -230,12 +261,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%A2%9E%E5%BC%BAfor/">增强for</a>
+            <a href="/p/mybatis%E8%8E%B7%E5%8F%96%E6%96%B0%E5%A2%9E%E4%BF%A1%E6%81%AF%E7%94%9F%E6%88%90%E7%9A%84%E4%B8%BB%E9%94%AE/">MyBatis获取新增信息生成的主键</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            遍历集合或数组
+            使用MyBatis提供的@Options注解来获取生成的主键
         </h3>
         
     </div>
@@ -256,7 +287,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-07-20</time>
+                <time class="article-time--published">2025-09-06</time>
             </div>
         
 
@@ -272,7 +303,9 @@
     <section class="article-content">
     
     
-    <p>格式：</p>
+    <h2 id="mybatis获取新增信息生成的主键">MyBatis获取新增信息生成的主键
+</h2><p>有些时候需要用到新增信息的主键，此时可以使用MyBatis提供的**@Options**注解来获取生成的主键</p>
+<p>示例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -280,13 +313,13 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="n">元素类型</span><span class="w"> </span><span class="n">变量名</span><span class="p">:</span><span class="n">要遍历的集合名或数组名</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">变量名代表着每一个元素</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Options</span><span class="p">(</span><span class="n">useGeneratedKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">keyProperty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;id&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Insert</span><span class="p">(</span><span class="s">&#34;insert into ……&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Emp</span><span class="w"> </span><span class="n">emp</span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>快速生成：集合名或数组名.for</p>
-<p>例：</p>
+</div><p>keyProperty的值是决定将返回的主键的封装到哪个属性，我的Emp表的主键是id，所以此处为id</p>
+<p>通过这个操作，即可获取到生成的主键的值。此时就可以在Service实现类中调用get方法使用新增信息的主键的值</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -305,52 +338,27 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;张三&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;李四&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;王五&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;赵六&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;======================&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">1</span><span class="p">,</span><span class="w"> </span><span class="n">2</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">,</span><span class="w"> </span><span class="n">4</span><span class="p">,</span><span class="w"> </span><span class="n">5</span><span class="p">};</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">num</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">Emp</span><span class="w"> </span><span class="n">emp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 保存员工的基本信息</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">emp</span><span class="p">.</span><span class="na">setCreateTime</span><span class="p">(</span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">emp</span><span class="p">.</span><span class="na">setUpdateTime</span><span class="p">(</span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">empMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">emp</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">输出结果</span><span class="err">：</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">张三</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">李四</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">王五</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">赵六</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">======================</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">1</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">3</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">4</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 保存员工工作经历信息</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">EmpExpr</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exprList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">getExprList</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CollectionUtils</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">exprList</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">exprList</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">empExpr</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 刚刚获取了主键，所以此时可以使用getId()方法来使用新增信息的主键的值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">empExpr</span><span class="p">.</span><span class="na">setEmpId</span><span class="p">(</span><span class="n">emp</span><span class="p">.</span><span class="na">getId</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">empExprMapper</span><span class="p">.</span><span class="na">insertBatch</span><span class="p">(</span><span class="n">exprList</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>注意：</p>
-<blockquote>
-<ol>
-<li>增强for遍历集合时，底层实现原理为迭代器</li>
-<li>增强for遍历数组时，底层实现原理为普通for循环</li>
-</ol>
-<p>因为遍历集合时原理为迭代器，所以在遍历集合的过程中不要随意修改集合长度，否则会出现并发修改异常</p></blockquote>
-
+</div>
 </section>
 
 
@@ -371,19 +379,6 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
-            
-                
-<article class="">
-    <a href="/p/mybatis%E8%8E%B7%E5%8F%96%E6%96%B0%E5%A2%9E%E4%BF%A1%E6%81%AF%E7%94%9F%E6%88%90%E7%9A%84%E4%B8%BB%E9%94%AE/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">MyBatis获取新增信息生成的主键</h2>
-        </div>
-    </a>
-</article>
-
             
                 
 <article class="">
@@ -432,6 +427,19 @@
 
         <div class="article-details">
             <h2 class="article-title">Controller层通过注解设置参数默认值</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/logback%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Logback日志级别</h2>
         </div>
     </a>
 </article>
