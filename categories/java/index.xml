@@ -40,30 +40,29 @@
         
         <guid>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3mapper.xml%E6%96%87%E4%BB%B6sql%E8%AF%AD%E5%8F%A5%E6%97%A0%E9%AB%98%E4%BA%AE%E6%97%A0%E6%8F%90%E7%A4%BA/</guid>
         <description>&lt;h2 id=&#34;解决mapperxml文件sql语句无高亮无提示&#34;&gt;解决Mapper.xml文件SQL语句无高亮无提示
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250906174139282.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250906193225367.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20250906174139282&#34;
+		alt=&#34;image-20250906193225367&#34;
 	
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;此时SQL语句无高亮，也无补全提示&lt;/p&gt;
 &lt;h3 id=&#34;解决方式&#34;&gt;解决方式
-&lt;/h3&gt;&lt;p&gt;将https改成http&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250906174337422.png&#34;
+&lt;/h3&gt;&lt;p&gt;将https改成http，此时就有高亮与补全了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250906193313488.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20250906174337422&#34;
+		alt=&#34;image-20250906193313488&#34;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;图中第八行代码写错了，正确的应该是&lt;code&gt;where e.name like concat(&#39;%&#39;, #{name}, &#39;%&#39;) and e.gender = #{gender}&lt;/code&gt;，不过这不重要&lt;/p&gt;
 </description>
         </item>
         <item>
