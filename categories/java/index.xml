@@ -37,6 +37,7 @@
 	
 	
 &gt;&lt;/p&gt;
+&lt;p&gt;图中第八行代码写错了，正确的应该是&lt;code&gt;where e.name like concat(&#39;%&#39;, #{name}, &#39;%&#39;) and e.gender = #{gender}&lt;/code&gt;，不过这不重要&lt;/p&gt;
 </description>
         </item>
         <item>
