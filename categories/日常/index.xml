@@ -7,7 +7,31 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Sat, 17 May 2025 13:51:37 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 11 Sep 2025 17:08:50 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>解决idea快捷键注释没有缩进</title>
+        <link>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3idea%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B3%A8%E9%87%8A%E6%B2%A1%E6%9C%89%E7%BC%A9%E8%BF%9B/</link>
+        <pubDate>Thu, 11 Sep 2025 17:08:50 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3idea%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B3%A8%E9%87%8A%E6%B2%A1%E6%9C%89%E7%BC%A9%E8%BF%9B/</guid>
+        <description>&lt;h2 id=&#34;解决idea快捷键注释没有缩进&#34;&gt;解决idea快捷键注释没有缩进
+&lt;/h2&gt;&lt;p&gt;如果你在idea用&lt;code&gt;ctrl+/&lt;/code&gt;快捷键注释时，注释情况如下图&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250911171454236.png&#34; alt=&#34;image-20250911171454236&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;希望让自动注释成下方这样&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250911171603285.png&#34; alt=&#34;image-20250911171603285&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;可以进行如下设置，其中第三步选择你想设置的语言，此处以Java为例&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250911172013425.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250911172013425&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>使用火绒控制软件联网</title>
         <link>https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8%E7%81%AB%E7%BB%92%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E8%81%94%E7%BD%91/</link>
         <pubDate>Sat, 17 May 2025 13:51:37 +0800</pubDate>
