@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简单介绍了左右外连接">
-<title>数据库外连接简介</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简单介绍MySQL中的case和if这两个流程控制函数的用法">
+<title>MySQL中的case和if函数简介</title>
 
-<link rel='canonical' href='https://IAmYuanyu.github.io/p/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%96%E8%BF%9E%E6%8E%A5%E7%AE%80%E4%BB%8B/'>
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/mysql%E4%B8%AD%E7%9A%84case%E5%92%8Cif%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="数据库外连接简介">
-<meta property='og:description' content="简单介绍了左右外连接">
-<meta property='og:url' content='https://IAmYuanyu.github.io/p/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%96%E8%BF%9E%E6%8E%A5%E7%AE%80%E4%BB%8B/'>
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="MySQL中的case和if函数简介">
+<meta property='og:description' content="简单介绍MySQL中的case和if这两个流程控制函数的用法">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/mysql%E4%B8%AD%E7%9A%84case%E5%92%8Cif%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B/'>
 <meta property='og:site_name' content='缘鱼'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-09-03T22:36:54&#43;08:00'/><meta property='article:modified_time' content='2025-09-03T22:36:54&#43;08:00'/>
-<meta name="twitter:title" content="数据库外连接简介">
-<meta name="twitter:description" content="简单介绍了左右外连接">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-09-13T15:13:57&#43;08:00'/><meta property='article:modified_time' content='2025-09-13T15:13:57&#43;08:00'/>
+<meta name="twitter:title" content="MySQL中的case和if函数简介">
+<meta name="twitter:description" content="简单介绍MySQL中的case和if这两个流程控制函数的用法">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -187,7 +187,12 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#数据库外连接">数据库外连接</a></li>
+    <li><a href="#mysql中的case和if函数简介">MySQL中的case和if函数简介</a>
+      <ol>
+        <li><a href="#case">case</a></li>
+        <li><a href="#ififnull">if、ifnull</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -219,12 +224,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%96%E8%BF%9E%E6%8E%A5%E7%AE%80%E4%BB%8B/">数据库外连接简介</a>
+            <a href="/p/mysql%E4%B8%AD%E7%9A%84case%E5%92%8Cif%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B/">MySQL中的case和if函数简介</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            简单介绍了左右外连接
+            简单介绍MySQL中的case和if这两个流程控制函数的用法
         </h3>
         
     </div>
@@ -245,7 +250,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-09-03</time>
+                <time class="article-time--published">2025-09-13</time>
             </div>
         
 
@@ -261,48 +266,100 @@
     <section class="article-content">
     
     
-    <h2 id="数据库外连接">数据库外连接
-</h2><p>外连接分为左外连接和右外连接。具体语法为：</p>
-<div class="highlight"><div class="chroma">
+    <h2 id="mysql中的case和if函数简介">MySQL中的case和if函数简介
+</h2><h3 id="case">case
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 1.左外连接 (常见)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="err">字段列表</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="err">表</span><span class="mi">1</span><span class="w"> </span><span class="k">left</span><span class="w"> </span><span class="p">[</span><span class="k">outer</span><span class="p">]</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="err">表</span><span class="mi">2</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="err">连接条件</span><span class="w"> </span><span class="p">...;</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-MySQL" data-lang="MySQL"><span class="line"><span class="cl"><span class="c1">-- 语法一：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">case</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">cond1</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">res1</span><span class="w"> </span><span class="p">[</span><span class="k">when</span><span class="w"> </span><span class="n">cond2</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">res2</span><span class="p">]</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 语法二(适用于等值匹配)：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">case</span><span class="w"> </span><span class="n">expr</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">val1</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">res1</span><span class="w"> </span><span class="p">[</span><span class="k">when</span><span class="w"> </span><span class="n">val2</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">res2</span><span class="p">]</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 2.右外连接
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="err">字段列表</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="err">表</span><span class="mi">1</span><span class="w"> </span><span class="k">right</span><span class="w"> </span><span class="p">[</span><span class="k">outer</span><span class="p">]</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="err">表</span><span class="mi">2</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="err">连接条件</span><span class="w"> </span><span class="p">...;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 语法一示例：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">job</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;班主任&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">when</span><span class="w"> </span><span class="n">job</span><span class="o">=</span><span class="mi">2</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;讲师&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">when</span><span class="w"> </span><span class="n">job</span><span class="o">=</span><span class="mi">3</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;学工主管&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">when</span><span class="w"> </span><span class="n">job</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;教研主管&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">when</span><span class="w"> </span><span class="n">job</span><span class="o">=</span><span class="mi">5</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;咨询师&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;其他&#39;</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">num</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 写在左边的就是左表，写在右边的就是右表
-</span></span></span><span class="line"><span class="cl"><span class="c1">-- 上面例子中，表1都是左表，表2都是右表
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 语法二示例：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;班主任&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">when</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;讲师&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">when</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;学工主管&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">when</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;教研主管&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">when</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;咨询师&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;其他&#39;</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">num</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 两种方式查询结果一致
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>左外连接就是以左表基础，查询左表和左表与右表相交的部分。右外连接同理。</p>
-<img src="/assets/image-20250903191209677.png" alt="image-20250903191209677" style="zoom:50%;" />
-<blockquote>
-<p>对于外连接，常用的是左外连接，因为右外连接的SQL也可以改造成为左外连接（两张表调换个顺序）</p></blockquote>
-<p>例如，现有员工表和部门表，需要查询所有员工的信息，以及该员工所属部门的名称</p>
-<p>此时就可以使用外连接查询</p>
-<div class="highlight"><div class="chroma">
+</div><h3 id="ififnull">if、ifnull
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">id</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-MySQL" data-lang="MySQL"><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span><span class="n">val1</span><span class="p">,</span><span class="n">val2</span><span class="p">)</span><span class="err">：如果表达式</span><span class="n">expr成立</span><span class="err">，取</span><span class="n">val1</span><span class="err">，否则取</span><span class="n">val2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 示例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;男性员工&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女性员工&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">value</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">gender</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nf">ifnull</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span><span class="n">val1</span><span class="p">)</span><span class="err">：如果</span><span class="n">expr不为null</span><span class="err">，取自身，否则取</span><span class="n">val1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 示例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="nf">ifnull</span><span class="p">(</span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>这样查询，即使该员工没有所属的部门，也依旧会显示该员工的信息</p>
-
+</div>
 </section>
 
 
@@ -326,12 +383,12 @@
             
                 
 <article class="">
-    <a href="/p/mysql%E4%B8%AD%E7%9A%84case%E5%92%8Cif%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B/">
+    <a href="/p/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%96%E8%BF%9E%E6%8E%A5%E7%AE%80%E4%BB%8B/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">MySQL中的case和if函数简介</h2>
+            <h2 class="article-title">数据库外连接简介</h2>
         </div>
     </a>
 </article>
