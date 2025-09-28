@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍了如何在Linux中安装并配置MySQL">
+<title>Linux安装MySQL</title>
+
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/linux%E5%AE%89%E8%A3%85mysql/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Linux安装MySQL">
+<meta property='og:description' content="介绍了如何在Linux中安装并配置MySQL">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/linux%E5%AE%89%E8%A3%85mysql/'>
+<meta property='og:site_name' content='缘鱼'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-09-28T17:40:00&#43;08:00'/><meta property='article:modified_time' content='2025-09-28T17:40:00&#43;08:00'/>
+<meta name="twitter:title" content="Linux安装MySQL">
+<meta name="twitter:description" content="介绍了如何在Linux中安装并配置MySQL">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1e2eadef835e950a.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">缘鱼</a></h1>
+            <h2 class="site-description">缘鱼的博客</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#linux安装mysql">Linux安装MySQL</a>
+      <ol>
+        <li><a href="#安装mysql">安装MySQL</a></li>
+        <li><a href="#启动mysql">启动MySQL</a></li>
+        <li><a href="#配置mysql">配置MySQL</a></li>
+        <li><a href="#防火墙设置">防火墙设置</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+            <a href="/categories/linux/" >
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/linux%E5%AE%89%E8%A3%85mysql/">Linux安装MySQL</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            介绍了如何在Linux中安装并配置MySQL
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-09-28</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="linux安装mysql">Linux安装MySQL
+</h2><h3 id="安装mysql">安装MySQL
+</h3><p>1.在Linux中下载MySQL或用FinalShell之类的工具将MySQL安装包传入Linux中</p>
+<p>2.然后解压MySQL到<code>/usr/local</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="n">tar</span> <span class="n">-xvf</span> <span class="n">mysql</span><span class="p">-</span><span class="mf">8.0</span><span class="p">.</span><span class="mf">30</span><span class="n">-linux-glibc2</span><span class="p">.</span><span class="mf">12</span><span class="n">-x86_64</span><span class="p">.</span><span class="py">tar</span><span class="p">.</span><span class="py">xz</span> <span class="n">-C</span> <span class="p">/</span><span class="n">usr</span><span class="p">/</span><span class="n">local</span><span class="p">/</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>3.为了方便操作，将解压后的文件重命名为mysql：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local
+</span></span><span class="line"><span class="cl">mv mysql-8.0.30-linux-glibc2.12-x86_64 mysql
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>4.配置系统环境变量，通过vim编辑 <code>/etc/profile</code> 文件, 在尾部追加：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">MYSQL_HOME</span><span class="o">=</span>/usr/local/mysql
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$MYSQL_HOME</span>/bin:<span class="nv">$PATH</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后重新加载profile文件，执行命令:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="nb">source</span> /etc/profile
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>5.注册MySQL为系统服务：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql
+</span></span><span class="line"><span class="cl"><span class="c1"># 立即启动 MySQL 服务并设置开机自启动</span>
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> --now mysql
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>6.初始化数据库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="c1">#创建一个用户组, 组名就叫mysql</span>
+</span></span><span class="line"><span class="cl">groupadd mysql
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#创建一个系统用户 mysql, 并归属于用户组 mysql </span>
+</span></span><span class="line"><span class="cl">useradd -r -g mysql -s /bin/false mysql
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#初始化数据库</span>
+</span></span><span class="line"><span class="cl">/usr/local/mysql/bin/mysqld --initialize --user<span class="o">=</span>mysql --basedir<span class="o">=</span>/usr/local/mysql --datadir<span class="o">=</span>/usr/local/mysql/data
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>如果初始化数据库时提示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/usr/local/mysql/bin/mysqld: error <span class="k">while</span> loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装这个依赖库即可解决，执行以下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install libaio1
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<p>初始化数据库后, 会输入如下日志，在日志中就输出了MySQL中root用户的一个临时密码【<strong>记得复制出来，记录下来</strong>】：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">2025-09-28T08:35:42.133150Z <span class="m">0</span> <span class="o">[</span>System<span class="o">]</span> <span class="o">[</span>MY-013169<span class="o">]</span> <span class="o">[</span>Server<span class="o">]</span> /usr/local/mysql/bin/mysqld <span class="o">(</span>mysqld 8.0.30<span class="o">)</span> initializing of server in progress as process <span class="m">38473</span>
+</span></span><span class="line"><span class="cl">2025-09-28T08:35:42.170805Z <span class="m">1</span> <span class="o">[</span>System<span class="o">]</span> <span class="o">[</span>MY-013576<span class="o">]</span> <span class="o">[</span>InnoDB<span class="o">]</span> InnoDB initialization has started.
+</span></span><span class="line"><span class="cl">2025-09-28T08:35:43.069141Z <span class="m">1</span> <span class="o">[</span>System<span class="o">]</span> <span class="o">[</span>MY-013577<span class="o">]</span> <span class="o">[</span>InnoDB<span class="o">]</span> InnoDB initialization has ended.
+</span></span><span class="line"><span class="cl">2025-09-28T08:35:44.905853Z <span class="m">6</span> <span class="o">[</span>Note<span class="o">]</span> <span class="o">[</span>MY-010454<span class="o">]</span> <span class="o">[</span>Server<span class="o">]</span> A temporary password is generated <span class="k">for</span> root@localhost: OlLxDf27tj<span class="o">)</span>V
+</span></span><span class="line"><span class="cl"><span class="c1">#最后这个OlLxDf27tj)V就是临时密码</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="启动mysql">启动MySQL
+</h3><p>7.启动MySQL：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">systemctl start mysql
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以通过<code>systemctl status mysql</code>查看是否启动，如下图就是启动成功</p>
+<p><img src="/assets/image-20250928164224908.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250928164224908"
+	
+	
+></p>
+<p>8.连接MySQL：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="c1">#执行下方命令后输入刚刚的临时密码</span>
+</span></span><span class="line"><span class="cl">mysql -uroot -p
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>如果提示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mysql: error <span class="k">while</span> loading shared libraries: libtinfo.so.5: cannot open shared object file: No such file or directory
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装这个依赖库即可解决，执行以下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install libtinfo5
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<p>如果正常连接上应该和下图差不多</p>
+<p><img src="/assets/image-20250928165738390.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250928165738390"
+	
+	
+></p>
+<h3 id="配置mysql">配置MySQL
+</h3><p>9.修改root用户的密码，<strong>在MySQL中</strong>执行下方命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">ALTER USER <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span> IDENTIFIED WITH mysql_native_password BY <span class="s1">&#39;123456&#39;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/assets/image-20250928170105308.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250928170105308"
+	
+	
+></p>
+<blockquote>
+<p>注意: 这个root账号仅仅能够在本机localhost上访问，在windows上是无法访问的</p>
+<p>如果需要在window上或其他服务器上也能远程访问，需要创建一个账号，用于远程访问的</p></blockquote>
+<p>10.创建账号，并授权远程访问，在MySQL中依次输入下方命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="c1">#创建用户</span>
+</span></span><span class="line"><span class="cl">CREATE USER <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;%&#39;</span> IDENTIFIED BY <span class="s1">&#39;123456&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#设置权限</span>
+</span></span><span class="line"><span class="cl">GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;%&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#刷新权限</span>
+</span></span><span class="line"><span class="cl">FLUSH PRIVILEGES<span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><img src="/assets/image-20250928170733591.png" alt="image-20250928170733591" style="zoom:67%;" />
+<p>11.此时就可以在Windows上连接Linux中的数据库了</p>
+<p>在Windows中使用快捷键<code>Win + R</code>，在弹出的窗口内输入<code>cmd</code>打开命令行窗口，在其中输入下方命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mysql -h192.168.xxx.xxx -P3306 -uroot -p123456
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>-h</strong>后面的<code>192.168.xxx.xxx</code>换成自己Linux系统的ip地址（可以在Linux中通过<code>ip addr show</code>查询，具体细节不多赘述）</p>
+<p><strong>-P</strong>后面的3306是MySQL的端口号，默认是3306，不放心也可以在MySQL输入<code>show global variables like 'port';</code>查询</p></blockquote>
+<p>输入命令后如果出现下图内容则说明连接成功</p>
+<p><img src="/assets/image-20250928172829986.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250928172829986"
+	
+	
+></p>
+<h3 id="防火墙设置">防火墙设置
+</h3><p>12.如果执行上面的命令后出现下方提示，则说明连接失败，因为Linux系统的防火墙，将访问拦截了</p>
+<p><img src="/assets/image-20250928172624784.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250928172624784"
+	
+	
+></p>
+<p>13.开放防火墙的3306端口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="c1">#开发防火墙的3306端口号</span>
+</span></span><span class="line"><span class="cl">firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>3306/tcp --permanent
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#重新加载</span>
+</span></span><span class="line"><span class="cl">firewall-cmd --reload
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#查看开放的端口号</span>
+</span></span><span class="line"><span class="cl">firewall-cmd --zone<span class="o">=</span>public --list-ports
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Linux防火墙场景操作：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>操作</th>
+          <th>指令</th>
+          <th>备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>查看防火墙状态</td>
+          <td>systemctl status firewalld 或 firewall-cmd &ndash;state</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>暂时关闭防火墙</td>
+          <td>systemctl stop firewalld</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>永久关闭防火墙(禁用开机自启)</td>
+          <td>systemctl disable firewalld</td>
+          <td>下次启动,才生效</td>
+      </tr>
+      <tr>
+          <td>暂时开启防火墙</td>
+          <td>systemctl start firewalld</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>永久开启防火墙(启用开机自启)</td>
+          <td>systemctl enable firewalld</td>
+          <td>下次启动,才生效</td>
+      </tr>
+      <tr>
+          <td>开放指定端口</td>
+          <td>firewall-cmd &ndash;zone=public &ndash;add-port=8080/tcp &ndash;permanent</td>
+          <td>需要重新加载生效</td>
+      </tr>
+      <tr>
+          <td>关闭指定端口</td>
+          <td>firewall-cmd &ndash;zone=public &ndash;remove-port=8080/tcp &ndash;permanent</td>
+          <td>需要重新加载生效</td>
+      </tr>
+      <tr>
+          <td>立即生效(重新加载)</td>
+          <td>firewall-cmd &ndash;reload</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>查看开放端口</td>
+          <td>firewall-cmd &ndash;zone=public &ndash;list-ports</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div></blockquote>
+<p>14.开放后再执行一次步骤11的操作即可</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/linux%E5%AE%89%E8%A3%85jdk/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux安装JDK</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ubuntu%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ubuntu基础学习笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/maven%E9%AB%98%E7%BA%A7/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Maven高级</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/springboot%E5%8E%9F%E7%90%86/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">SpringBoot原理</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/bean%E7%AE%A1%E7%90%86/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Bean管理</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="IAmYuanyu/IAmYuanyu.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 缘鱼
+    </section>
+    
+    <section class="powerby">
+        
+            本站于2025年3月26日建立 <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
