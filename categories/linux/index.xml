@@ -7,7 +7,850 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Sun, 28 Sep 2025 22:03:01 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 03 Oct 2025 22:42:27 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Docker基础</title>
+        <link>https://IAmYuanyu.github.io/p/docker%E5%9F%BA%E7%A1%80/</link>
+        <pubDate>Fri, 03 Oct 2025 22:42:27 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/docker%E5%9F%BA%E7%A1%80/</guid>
+        <description>&lt;h2 id=&#34;docker基础&#34;&gt;Docker基础
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本文基于Ubuntu系统演示&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;入门&#34;&gt;入门
+&lt;/h3&gt;&lt;p&gt;Docker 是一个开源的容器化平台，它允许开发者将应用程序及其依赖项打包到一个标准化的单元（称为 “容器”）中，从而确保应用在任何支持 Docker 的环境中都能以相同的方式运行&lt;/p&gt;
+&lt;p&gt;比如，在不使用Docker的情况下，想要安装MySQL比较麻烦，而使用Docker之后，只需要一个指令即可（记得先启动Docker）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --name mysql &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  -p 3307:3306 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  -e &lt;span class=&#34;nv&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Asia/Shanghai &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  -e &lt;span class=&#34;nv&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;123456&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  mysql:8
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;docker run&lt;/code&gt;：创建并运行一个容器，&lt;strong&gt;-d&lt;/strong&gt;是让容器在后台运行，不占用终端&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;--name mysql&lt;/code&gt;：给容器起个名字，必须唯一&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-p 3307(宿主机端口):3306(容器端口)&lt;/code&gt;：设置端口映射（在外部无法直接访问到容器，需要通过映射到宿主机的端口才能访问到容器）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-e KEY=VALUE&lt;/code&gt;：设置环境变量（KEY和VALUE的取值可以在Docker官网查看）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mysql(镜像名):8(版本)&lt;/code&gt;指定运行的镜像的名字、版本（不指定版本默认用最新版）&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;而且Docker创建的容器之间是相互隔离，互不影响的，可以再开一个MySQL试试&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --name mysql01 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  -p 3308:3306 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  -e &lt;span class=&#34;nv&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Asia/Shanghai &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  -e &lt;span class=&#34;nv&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;123456&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  mysql:8
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;此时可以在外部分别连接端口号为3307的mysql和端口号为3308mysql01，如果在mysql01中进行新建一个库或表等操作，3307的mysql中是查询不到，不受影响的&lt;/p&gt;
+&lt;h3 id=&#34;常见指令&#34;&gt;常见指令
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;命令&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;文档地址&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker pull&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;拉取镜像&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/pull/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker pull&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker push&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;推送镜像到DockerRegistry&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/push/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker push&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker images&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;查看本地镜像&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/images/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker images&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker rmi&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;删除本地镜像&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/rmi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker rmi&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker run&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;创建并运行容器（不能重复创建）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/run/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker run&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker stop&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;停止指定容器&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/stop/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker stop&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker start&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;启动指定容器&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/start/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker start&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker restart&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;重新启动容器&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/restart/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker restart&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker rm&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;删除指定容器&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/rm/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docs.docker.com&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker ps&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;查看容器&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/ps/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker ps&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker logs&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;查看容器运行日志&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/logs/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker logs&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker exec&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;进入容器&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/exec/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker exec&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker save&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;保存镜像到本地压缩文件&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/save/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker save&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker load&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;加载本地压缩文件到镜像&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/load/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker load&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker inspect&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;查看容器详细信息&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/inspect/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker inspect&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002210203737.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002210203737&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;指令详见官方文档：&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt; https://docs.docker.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;案例演示&#34;&gt;案例演示
+&lt;/h4&gt;&lt;p&gt;**案例：**查看DockerHub，拉取Nginx镜像，创建并运行Nginx容器&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;需求：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在DockerHub中搜索Nginx镜像，查看镜像的名称&lt;/li&gt;
+&lt;li&gt;拉取Nginx镜像&lt;/li&gt;
+&lt;li&gt;查看本地镜像列表&lt;/li&gt;
+&lt;li&gt;创建并运行Nginx容器&lt;/li&gt;
+&lt;li&gt;查看容器&lt;/li&gt;
+&lt;li&gt;停止容器&lt;/li&gt;
+&lt;li&gt;再次启动容器&lt;/li&gt;
+&lt;li&gt;进入Nginx容器&lt;/li&gt;
+&lt;li&gt;删除容器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;演示：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1.找一个Nginx版本并拉取镜像：&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002214815563.png&#34; alt=&#34;image-20251002214815563&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002215208954.png&#34; alt=&#34;image-20251002215208954&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果直接复制粘贴进去提示&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;permission denied &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://%2Fvar%2Frun%2Fdocker.sock/v1.51/images/create?fromImage=docker.io%2Flibrary%2Fnginx&amp;amp;tag=stable-perl&amp;#34;&lt;/span&gt;: dial unix /var/run/docker.sock: connect: permission denied
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;可以试着在带代码前面加个&lt;code&gt;sudo&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;2.查看本地镜像列表：&lt;code&gt;docker images&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002220326318.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002220326318&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;3.如果无法科学上网，镜像可能会下载得很慢，这时可以让有条件的人下载后打包为tar文件分享过来，接下来几步演示如何打包为tar文件，以及如何使用这个文件&lt;/p&gt;
+&lt;p&gt;打包为tar文件：&lt;code&gt;docker save -o nginx-stable-perl.tar nginx:stable-perl&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;输入此命令后会把本地镜像打包到当前目录&lt;/p&gt;
+&lt;p&gt;4.将打包好的tar文件内容加载到本地镜像&lt;/p&gt;
+&lt;p&gt;为了演示此处先删除刚刚下载好的Nginx镜像&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002221658205.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002221658205&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;加载tar文件：&lt;code&gt;docker load -i nginx-stable-perl.tar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002222056960.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002222056960&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;5.创建容器：&lt;code&gt;docker run -d --name nginx -p 80:80 nginx:stable-perl&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002222433261.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002222433261&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;6.查看容器：&lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002222641971.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002222641971&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;此时就可以直接在Windows的浏览器中输入Linux主机的ip地址访问到Nginx页面了（http默认端口号是80所以可以不用输入端口号）&lt;/p&gt;
+&lt;p&gt;7.停止容器：&lt;code&gt;docker stop nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002223113339.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002223113339&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;8.再次启动Nginx容器：&lt;code&gt;docker start nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002223307896.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002223307896&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;9.进入Nginx容器并开启一个交互的bash终端：&lt;code&gt;docker exec -it nginx bash&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;docker exec&lt;/code&gt;：用于在 &lt;strong&gt;已经运行的容器&lt;/strong&gt; 内部执行命令&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;it&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;-i&lt;/code&gt;（interactive）：保持标准输入（STDIN）打开，确保能与容器内的进程交互&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;-t&lt;/code&gt;（tty）：分配一个伪终端（模拟终端环境），让操作更像本地终端&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;两者结合实现了 “交互式终端” 的效果，缺一不可（否则无法正常输入命令）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash&lt;/code&gt;：要在容器内执行的命令，即启动 Bash 解释器（Linux 系统中常用的命令行 shell）&lt;/p&gt;
+&lt;p&gt;如果是启动&lt;code&gt;sh&lt;/code&gt;终端就是：&lt;code&gt;docker exec -it nginx sh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002224009764.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002224009764&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;10.退出容器回到宿主机：&lt;code&gt;exit&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002224108173.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002224108173&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;11.删除容器：&lt;code&gt;docker rm nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;先stop容器然后删除，或是直接强制删除正在运行的容器：&lt;code&gt;docker rm -f nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002224335734.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002224335734&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;数据卷挂载&#34;&gt;数据卷挂载
+&lt;/h3&gt;&lt;p&gt;数据卷（volume）是一个虚拟目录，是&lt;strong&gt;容器内目录&lt;/strong&gt;与&lt;strong&gt;宿主机目录&lt;/strong&gt;之间映射的桥梁&lt;/p&gt;
+&lt;p&gt;以Nginx为例，Nginx中有两个关键的目录：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;html&lt;/code&gt;：放置一些静态资源&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;conf&lt;/code&gt;：放置配置文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果要让Nginx代理静态资源，最好是放到&lt;code&gt;html&lt;/code&gt;目录；如果要修改Nginx的配置，最好是找到&lt;code&gt;conf&lt;/code&gt;下的&lt;code&gt;nginx.conf&lt;/code&gt;文件&lt;/p&gt;
+&lt;p&gt;容器运行的Nginx所有的文件都在容器内部，但容器内部缺少很多工具，使得操作不便&lt;/p&gt;
+&lt;p&gt;所以利用数据卷将两个目录与宿主机目录关联，方便操作&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003184107986.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003184107986&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在上图中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建了两个数据卷：&lt;code&gt;conf&lt;/code&gt;、&lt;code&gt;html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Nginx容器内部的&lt;code&gt;conf&lt;/code&gt;目录和&lt;code&gt;html&lt;/code&gt;目录分别与两个数据卷关联。&lt;/li&gt;
+&lt;li&gt;而数据卷conf和html分别指向了宿主机的&lt;code&gt;/var/lib/docker/volumes/conf/_data&lt;/code&gt;目录和&lt;code&gt;/var/lib/docker/volumes/html/_data&lt;/code&gt;目录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;容器内的&lt;code&gt;conf&lt;/code&gt;和&lt;code&gt;html&lt;/code&gt;目录就与宿主机的&lt;code&gt;conf&lt;/code&gt;和&lt;code&gt;html&lt;/code&gt;目录关联起来，称为&lt;strong&gt;挂载&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;常见命令&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;命令&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;文档地址&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker volume create&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;创建数据卷&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/volume_create/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker volume create&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker volume ls&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;查看所有数据卷&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/volume_ls/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docs.docker.com&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker volume rm&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;删除指定数据卷&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/volume_prune/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docs.docker.com&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker volume inspect&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;查看某个数据卷的详情&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/volume_inspect/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docs.docker.com&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker volume prune&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;清除数据卷&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/reference/commandline/volume_prune/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;docker volume prune&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;容器与数据卷的挂载要在创建容器时配置，对于创建好的容器，是不能设置数据卷的&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;创建容器的过程中，如果发现挂载的数据卷不存在，则会自动创建&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h4 id=&#34;案例演示-1&#34;&gt;案例演示
+&lt;/h4&gt;&lt;p&gt;演示内容：Nginx的html目录挂载&lt;/p&gt;
+&lt;p&gt;1.创建容器并指定数据卷，注意通过使用&lt;code&gt;-v 数据卷:容器内目录&lt;/code&gt;来指定数据卷&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d --name nginx -p 80:80 -v html:/usr/share/nginx/html nginx:stable-perl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;容器内目录的位置可以查看Docker官网：https://hub.docker.com/&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003185659027.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003185659027&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;2.查看数据卷&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker volume ls
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003190150595.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003190150595&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;发现除了刚刚创建的html外，还有别的匿名数据卷&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这个匿名数据卷其实是之前创建mysql容器时自动创建的，为了保存mysql中的数据，这样及时是把mysql容器删除了，但数据还在&lt;/p&gt;
+&lt;p&gt;之后创建新的mysql容器时就可以挂载这个数据卷，从而快速恢复之前的数据&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;3.查看数据卷详情&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker volume inspect html
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003190357261.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003190357261&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;其中&lt;code&gt;Mountpoint&lt;/code&gt;就是映射的磁盘目录&lt;/p&gt;
+&lt;p&gt;4.查看映射目录的内容&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ll /var/lib/docker/volumes/html/_data
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003190558390.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003190558390&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;发现内容确实是对应容器目录内的文件&lt;/p&gt;
+&lt;p&gt;5.进入该目录，并随意修改index.html内容&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /var/lib/docker/volumes/html/_data
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim index.html
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;6.在Windows的浏览器中输入Linux服务器的ip地址&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003191141021.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003191141021&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;发现页面确实被成功修改了，证明在宿主机对容器内映射文件进行的操作会同步到容器中的文件内（如果在宿主机把映射目录内的文件删除，容器内的文件也会同步被删除）&lt;/p&gt;
+&lt;h3 id=&#34;本地目录挂载&#34;&gt;本地目录挂载
+&lt;/h3&gt;&lt;p&gt;数据卷的目录结构较深，如果去操作数据卷目录会不太方便&lt;/p&gt;
+&lt;p&gt;所以也可以直接将容器目录与宿主机指定目录挂载，不使用数据卷&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 挂载本地目录或文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d --name 容器名 -p 宿主机端口:容器端口 -v 宿主机目录或文件:容器内目录或文件 镜像名
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;目录只能挂载目录，文件只能挂载文件&lt;/li&gt;
+&lt;li&gt;本地目录或文件必须以 &lt;code&gt;/&lt;/code&gt; 或 &lt;code&gt;./&lt;/code&gt;开头，如果直接以名字开头，会被识别为数据卷名而非本地目录名&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;自定义镜像&#34;&gt;自定义镜像
+&lt;/h3&gt;&lt;p&gt;前面一直在使用别人准备好的镜像，那如果我要部署一个Java项目，把它打包为一个镜像该怎么做呢？ 接下来就来介绍如何自定义镜像&lt;/p&gt;
+&lt;h4 id=&#34;镜像结构&#34;&gt;镜像结构
+&lt;/h4&gt;&lt;p&gt;要想自己构建镜像，必须先了解镜像的结构&lt;/p&gt;
+&lt;p&gt;镜像之所以能快速跨操作系统部署应用而忽略其运行环境、配置，就是因为镜像中包含了程序运行需要的系统函数库、环境、配置、依赖&lt;/p&gt;
+&lt;p&gt;因此，自定义镜像本质就是依次准备好程序运行的基础环境、依赖、应用本身、运行配置等文件，并且打包而成&lt;/p&gt;
+&lt;p&gt;举个例子，要从0部署一个Java应用，大概流程是这样：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;准备一个linux服务&lt;/li&gt;
+&lt;li&gt;安装并配置JDK&lt;/li&gt;
+&lt;li&gt;上传Jar包&lt;/li&gt;
+&lt;li&gt;运行jar包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;那因此，打包镜像也是分成这么几步：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;准备Linux运行环境（java项目并不需要完整的操作系统，仅仅是基础运行环境即可）&lt;/li&gt;
+&lt;li&gt;安装并配置JDK&lt;/li&gt;
+&lt;li&gt;拷贝jar包&lt;/li&gt;
+&lt;li&gt;配置启动脚本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上述步骤中的每一次操作其实都是在生产一些文件（系统运行环境、函数库、配置最终都是磁盘文件），所以&lt;strong&gt;镜像就是一堆文件的集合&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;但需要注意的是，镜像文件不是随意堆放的，而是按照操作的步骤分层叠加而成，每一层形成的文件都会单独打包并标记一个唯一id，称为&lt;strong&gt;Layer&lt;/strong&gt;（&lt;strong&gt;层&lt;/strong&gt;），这样的好处是，如果在构建时用到的某些层其他人已经制作够，就可以直接拷贝使用这些层，而不用重复制作，也就是便于复用&lt;/p&gt;
+&lt;p&gt;例如，第一步中需要的Linux运行环境，通用性就很强，所以Docker官方就制作了这样的只包含Linux运行环境的镜像。在制作java镜像时，就无需重复制作，直接使用Docker官方提供的CentOS或Ubuntu镜像作为基础镜像。然后再搭建其它层即可，这样逐层搭建，最终整个Java项目的镜像结构如图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003202147681.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003202147681&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;dockerfile&#34;&gt;Dockerfile
+&lt;/h4&gt;&lt;p&gt;Dockerfile就是一个文本文件，其中包含一个个的指令(Instruction)，用指令来说明要执行什么操作来构建镜像。将来Docker可以根据Dockerfile构建镜像&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;常用指令&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;指令&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;示例&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;FROM&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指定基础镜像&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;FROM ubuntu:22.04&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;ENV&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;设置环境变量，可在后面指令使用&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;ENV key value&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;COPY&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;拷贝本地文件到镜像的指定目录&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;COPY ./xx.jar /tmp/app.jar&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;RUN&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;执行Linux的shell命令，一般是安装过程的命令&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;RUN yum install gcc&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;EXPOSE&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指定容器运行时监听的端口，是给镜像使用者看的&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;EXPOSE 8080&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;ENTRYPOINT&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;镜像中应用的启动命令，容器运行时调用&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ENTRYPOINT java -jar xx.jar&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;更多指令见官方文档：&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/reference/dockerfile/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Dockerfile reference | Docker Docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;例如，要基于 ubuntu:22.04 镜像来构建一个Java应用，其Dockerfile内容如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 使用 ubuntu:22.04 作为基础镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;FROM ubuntu:22.04
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 添加 JDK 到镜像中&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;COPY jdk17.tar.gz /usr/local/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;RUN tar -xzf /usr/local/jdk17.tar.gz -C /usr/local/ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;  rm /usr/local/jdk17.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 设置环境变量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ENV &lt;span class=&#34;nv&#34;&gt;JAVA_HOME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/local/jdk-17.0.10
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ENV &lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$JAVA_HOME&lt;/span&gt;/bin:&lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 创建应用目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;RUN mkdir -p /app
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 切换到创建的目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;WORKDIR /app
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 复制应用 JAR 文件到容器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;COPY app.jar app.jar
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 暴露端口&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;EXPOSE &lt;span class=&#34;m&#34;&gt;8080&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 运行命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ENTRYPOINT &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;java&amp;#34;&lt;/span&gt;,&lt;span class=&#34;s2&#34;&gt;&amp;#34;-Djava.security.egd=file:/dev/./urandom&amp;#34;&lt;/span&gt;,&lt;span class=&#34;s2&#34;&gt;&amp;#34;-jar&amp;#34;&lt;/span&gt;,&lt;span class=&#34;s2&#34;&gt;&amp;#34;/app/app.jar&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Dockerfile文件编写好了之后，就可以使用如下命令来构建镜像了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker build -t 镜像名 .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-t&lt;/code&gt; ：是给镜像起名，格式依然是repository:tag的格式，不指定tag时，默认为latest&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.&lt;/code&gt;  ：是指定Dockerfile所在目录，如果就在当前目录，则指定为&amp;quot;.&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;演示&#34;&gt;演示
+&lt;/h5&gt;&lt;p&gt;准备好打包好的jar包、Dockerfile文件、需要的jdk后即可开始创建镜像&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003205653695.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003205653695&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;网络&#34;&gt;网络
+&lt;/h3&gt;&lt;p&gt;默认情况下，所有容器都是以bridge方式连接到Docker的一个虚拟网桥上，所以容器之间是可以互相访问的&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;演示&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;1.用基本命令，寻找Networks.bridge.IPAddress属性&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker inspect mysql
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003214409337.png&#34; alt=&#34;image-20251003214409337&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;发现mysql容器的ip地址是172.17.0.3&lt;/p&gt;
+&lt;p&gt;2.进入其他容器中通过&lt;code&gt;ping&lt;/code&gt;命令尝试能否连接&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it myapp bash
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ping 172.17.0.3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;如果提示&lt;code&gt;bash: ping: command not found&lt;/code&gt;则说明容器中没有ping命令，可以手动安装一下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 先更新包索引（可选，但建议执行）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装ping工具（属于iputils-ping包）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt install -y iputils-ping
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;安装成功后再次使用ping命令尝试连接，发现确实可以连接上&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003215923345.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003215923345&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;但是&lt;/strong&gt;，容器中的ip是自动分配的，也就是说关闭容器后再打开ip可能会变，如果在开发时把ip写死，可能会连接失败&lt;/p&gt;
+&lt;h4 id=&#34;自定义网络&#34;&gt;自定义网络
+&lt;/h4&gt;&lt;p&gt;上述问题可以使用自定义网络解决&lt;/p&gt;
+&lt;p&gt;自定义网络的解决方式就是使用Docker指令自己创建一个虚拟网卡，将创建的容器全部连接在自己创建的虚拟网卡中，这样容器之间就可以直接使用名字来建立通信&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;常见命令&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;命令&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker network create&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;创建一个网络&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker network ls&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;查看所有网络&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker network rm&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;删除指定网络&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker network prune&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;清除未使用的网络&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker network connect&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;使指定容器连接加入某网络&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker network disconnect&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;使指定容器连接离开某网络&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;docker network inspect&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;查看网络详细信息&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id=&#34;演示-1&#34;&gt;演示
+&lt;/h5&gt;&lt;p&gt;1.创建一个网络&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker network create yuanyu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003221050488.png&#34; alt=&#34;image-20251003221050488&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;2.让mysql和myapp两个容器都加入刚刚创建的网络&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker network connect yuanyu mysql
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker network connect yuanyu myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看是否加入了自定义的网络&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker inspect mysql
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003221507194.png&#34; alt=&#34;image-20251003221507194&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;检查后发现确实正常加入了自定义的网络&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在创建容器时也可以指定默认网络&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d --name 容器名 -p 宿主机端口:容器端口 --network 网络名称 镜像名:版本
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 示例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d --name myapp -p 8080:8080 --network yuanyu app:1.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;3.使用容器名进行通信&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it myapp bash
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ping mysql
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003222126890.png&#34; alt=&#34;image-20251003222126890&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;发现可以使用名字成功连通，此时无论ip怎么变都无所谓了&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>配置Docker国内镜像</title>
         <link>https://IAmYuanyu.github.io/p/%E9%85%8D%E7%BD%AEdocker%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</link>
         <pubDate>Sun, 28 Sep 2025 22:03:01 +0800</pubDate>
@@ -77,7 +920,9 @@
         
         <guid>https://IAmYuanyu.github.io/p/finalshell%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95root%E7%94%A8%E6%88%B7/</guid>
         <description>&lt;h2 id=&#34;finalshell无法登录root用户&#34;&gt;FinalShell无法登录root用户
-&lt;/h2&gt;&lt;p&gt;在FinalShell使用root建立连接时，明明密码没错却一直让你重新输入密码，反正就是连不上&lt;/p&gt;
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本文基于Ubuntu系统演示&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;在FinalShell使用root建立连接时，明明密码没错却一直让你重新输入密码，反正就是连不上&lt;/p&gt;
 &lt;p&gt;而使用普通用户却又能正常连接，但使用普通用户在FinalShell操作或上传文件时，总是有些文件夹会提示Permission denied，又或是上传文件失败&lt;/p&gt;
 &lt;p&gt;接下来通过修改SSH配置文件来解决root账号连接不上的问题&lt;/p&gt;
 &lt;p&gt;1.先用普通用户建立连接，然后用vim打开SSH配置文件&lt;/p&gt;
@@ -119,7 +964,9 @@
         
         <guid>https://IAmYuanyu.github.io/p/linux%E5%AE%89%E8%A3%85nginx/</guid>
         <description>&lt;h2 id=&#34;linux安装nginx&#34;&gt;Linux安装Nginx
-&lt;/h2&gt;&lt;p&gt;1.下载Nginx所需依赖&lt;/p&gt;
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本文基于Ubuntu系统演示&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;1.下载Nginx所需依赖&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -226,7 +1073,9 @@
         
         <guid>https://IAmYuanyu.github.io/p/linux%E5%AE%89%E8%A3%85mysql/</guid>
         <description>&lt;h2 id=&#34;linux安装mysql&#34;&gt;Linux安装MySQL
-&lt;/h2&gt;&lt;h3 id=&#34;安装mysql&#34;&gt;安装MySQL
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本文基于Ubuntu系统演示&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;安装mysql&#34;&gt;安装MySQL
 &lt;/h3&gt;&lt;p&gt;1.在Linux中下载MySQL或用FinalShell之类的工具将MySQL安装包传入Linux中&lt;/p&gt;
 &lt;p&gt;2.然后解压MySQL到&lt;code&gt;/usr/local&lt;/code&gt;：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
