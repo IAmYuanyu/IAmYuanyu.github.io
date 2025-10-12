@@ -7,10 +7,18 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Thu, 09 Oct 2025 22:55:16 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 12 Oct 2025 22:04:42 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Java</title>
+        <link>https://IAmYuanyu.github.io/categories/java/</link>
+        <pubDate>Sun, 12 Oct 2025 22:04:42 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/categories/java/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>教程</title>
         <link>https://IAmYuanyu.github.io/categories/%E6%95%99%E7%A8%8B/</link>
-        <pubDate>Thu, 09 Oct 2025 22:55:16 +0800</pubDate>
+        <pubDate>Sun, 12 Oct 2025 22:04:42 +0800</pubDate>
         
         <guid>https://IAmYuanyu.github.io/categories/%E6%95%99%E7%A8%8B/</guid>
         <description></description>
@@ -21,14 +29,6 @@
         <pubDate>Thu, 09 Oct 2025 22:55:16 +0800</pubDate>
         
         <guid>https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Java</title>
-        <link>https://IAmYuanyu.github.io/categories/java/</link>
-        <pubDate>Thu, 09 Oct 2025 22:53:22 +0800</pubDate>
-        
-        <guid>https://IAmYuanyu.github.io/categories/java/</guid>
         <description></description>
         </item>
         <item>
