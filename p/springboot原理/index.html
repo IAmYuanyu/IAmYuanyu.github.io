@@ -294,7 +294,8 @@
 </h3><p>什么是自动配置？在SpringBoot中，有时你可以在未在项目中声明的前提下，直接使用<code>@Autowired</code>自动注入一个第三方工具类，原因就是SpringBoot自动配置好了使用的第三方bean</p>
 <h4 id="实现方案">实现方案
 </h4><blockquote>
-<p>SpringBoot是如何实现的会在后面解释，这里说明SpringBoot可以有什么实现方式</p></blockquote>
+<p>SpringBoot是如何实现的会在后面解释，这里说明SpringBoot可以有什么实现方式</p>
+</blockquote>
 <p>如果第三方提供的工具类上已经加上了<code>@Component</code>的注解，那么引入后是不是一定就能直接用呢？</p>
 <p>答案是不行，因为项目的启动类中<code>@SpringBootApplication</code>注解虽然具备组件扫描功能，但是默认扫描的范围是启动类所在包及其子包，所以扫描不到第三方包也就无法将其进行管理</p>
 <h5 id="实现方式一">实现方式一
@@ -373,7 +374,8 @@
     >145. 原理篇-SpringBoot原理-自动配置-源码跟踪_哔哩哔哩_bilibili</a></p>
 <blockquote>
 <p>源码跟踪技巧：</p>
-<p>在跟踪框架源码的时候，一定要抓住关键点，找到核心流程。一定不要从头到尾一行代码去看，一个方法的去研究，一定要找到关键流程，抓住关键点，先在宏观上对整个流程或者整个原理有一个认识，有精力再去研究其中的细节。</p></blockquote>
+<p>在跟踪框架源码的时候，一定要抓住关键点，找到核心流程。一定不要从头到尾一行代码去看，一个方法的去研究，一定要找到关键流程，抓住关键点，先在宏观上对整个流程或者整个原理有一个认识，有精力再去研究其中的细节。</p>
+</blockquote>
 <p>在idea中可以快速定位当前查看类的所在位置</p>
 <p><img src="/assets/image-20250925230501904.png"
 	
@@ -1219,7 +1221,8 @@
 <p>阿里云OSS使用教程可见黑马讲义：<a class="link" href="https://heuqqdmbyk.feishu.cn/wiki/PHp6wXaNUij3bokCXWrclz5anWh"  target="_blank" rel="noopener"
     >09-后端Web实战(员工管理) - 飞书云文档</a></p>
 <p>或者黑马视频课程：<a class="link" href="https://www.bilibili.com/video/BV1yGydYEE3H?spm_id_from=333.788.videopod.episodes&amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&amp;p=106"  target="_blank" rel="noopener"
-    >106. 文件上传-阿里云OSS-准备工作_哔哩哔哩_bilibili</a></p></blockquote>
+    >106. 文件上传-阿里云OSS-准备工作_哔哩哔哩_bilibili</a></p>
+</blockquote>
 
 </section>
 

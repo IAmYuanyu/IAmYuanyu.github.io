@@ -327,7 +327,8 @@
 </h3><p>Windows版下载地址:https://github.com/tporadowski/redis/releases
 Linux版下载地址:https://download.redis.io/releases/</p>
 <blockquote>
-<p>本文仅介绍windows的使用</p></blockquote>
+<p>本文仅介绍windows的使用</p>
+</blockquote>
 <h4 id="启动redis">启动Redis
 </h4><p>解压下载好的压缩包，在解压出来的文件夹打开命令行窗口</p>
 <p><img src="/assets/PixPin_2025-10-05_18-48-02.gif"
@@ -362,7 +363,8 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 <p>想要关闭Redis，在命令行窗口使用快捷键<code>ctrl + c</code>即可结束进程</p>
 <h4 id="连接本地redis">连接本地Redis
 </h4><blockquote>
-<p>演示基础连接方式，一般会使用图形化工具连接</p></blockquote>
+<p>演示基础连接方式，一般会使用图形化工具连接</p>
+</blockquote>
 <p>要想连接上Redis，需要重复上述操作，再打开一个命令行窗口，输入下方命令即可连接（不要关闭刚刚启动Redis的命令行窗口）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -659,7 +661,7 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">setConnectionFactory</span><span class="p">(</span><span class="n">redisConnectionFactory</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//设置redis key的序列化器</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">setKeySerializer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StringRedisSerializer</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//设置redis value的序列化器</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//设置redis value的序列化器(不建议)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">setValueSerializer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StringRedisSerializer</span><span class="p">());</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
@@ -669,7 +671,9 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </div><blockquote>
 <p>当前配置类不是必须的，因为Spring Boot框架会自动装配 RedisTemplate 对象，但是默认的key和value序列化器为</p>
 <p>JdkSerializationRedisSerializer，导致我们存到Redis中后的数据和原始数据有差别（会变成一串编码），故设置为</p>
-<p>StringRedisSerializer序列化器</p></blockquote>
+<p>StringRedisSerializer序列化器</p>
+<p><strong>不过不建议将value也序列化为String类型，否则后续可能会出现一些问题</strong></p>
+</blockquote>
 <p>4.测试</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -745,7 +749,8 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ZSetOperations</span><span class="w"> </span><span class="n">zSetOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForZSet</span><span class="p">();</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>在Java中通过上面五种类型的对象来操作Redis</p></blockquote>
+</div><p>在Java中通过上面五种类型的对象来操作Redis</p>
+</blockquote>
 <h3 id="操作常见类型数据">操作常见类型数据
 </h3><h4 id="操作字符串类型数据">操作字符串类型数据
 </h4><div class="highlight"><div class="chroma">

@@ -365,7 +365,8 @@
 <blockquote>
 <p>控制反转： Inversion Of Control，简称IOC。对象的创建控制权由程序自身转移到外部（容器），这种思想称为控制反转</p>
 <p>依赖注入： Dependency Injection，简称DI。容器为应用程序提供运行时，所依赖的资源，称之为依赖注入</p>
-<p>Bean对象：IOC容器中创建、管理的对象，称之为Bean</p></blockquote>
+<p>Bean对象：IOC容器中创建、管理的对象，称之为Bean</p>
+</blockquote>
 <p>所以要将DAO和Service层的实现类交给IOC容器管理，并为Controller和Service注入运行时所依赖的对象</p>
 <p>要做到上述操作只需要在实现类上方加上@Component，在Service和DAO成员变量上方加上@Autowired即可，例如</p>
 <div class="highlight"><div class="chroma">
@@ -512,7 +513,8 @@
 </div><p>优点：能清晰地看到类的依赖关系、提高了代码的安全性</p>
 <p>缺点：代码繁琐、如果构造参数过多，可能会导致构造函数臃肿</p>
 <blockquote>
-<p>注意：如果只有一个构造函数，@Autowired注解可以省略</p></blockquote>
+<p>注意：如果只有一个构造函数，@Autowired注解可以省略</p>
+</blockquote>
 <h4 id="setter注入">setter注入
 </h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -615,7 +617,8 @@
 </div><blockquote>
 <p>@Resource 与 @Autowired区别 ?</p>
 <p>@Autowired是Spring框架提供的注解，而@Resource是JavaEE规范提供的</p>
-<p>@Autowired默认是按照类型注入，而@Resource默认是按照名称注入</p></blockquote>
+<p>@Autowired默认是按照类型注入，而@Resource默认是按照名称注入</p>
+</blockquote>
 
 </section>
 

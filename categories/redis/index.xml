@@ -26,7 +26,8 @@
 &lt;/h3&gt;&lt;p&gt;Windows版下载地址:https://github.com/tporadowski/redis/releases
 Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;本文仅介绍windows的使用&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;本文仅介绍windows的使用&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;启动redis&#34;&gt;启动Redis
 &lt;/h4&gt;&lt;p&gt;解压下载好的压缩包，在解压出来的文件夹打开命令行窗口&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2025-10-05_18-48-02.gif&#34;
@@ -61,7 +62,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;p&gt;想要关闭Redis，在命令行窗口使用快捷键&lt;code&gt;ctrl + c&lt;/code&gt;即可结束进程&lt;/p&gt;
 &lt;h4 id=&#34;连接本地redis&#34;&gt;连接本地Redis
 &lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;演示基础连接方式，一般会使用图形化工具连接&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;演示基础连接方式，一般会使用图形化工具连接&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;要想连接上Redis，需要重复上述操作，再打开一个命令行窗口，输入下方命令即可连接（不要关闭刚刚启动Redis的命令行窗口）&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -358,7 +360,7 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setConnectionFactory&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisConnectionFactory&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//设置redis key的序列化器&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setKeySerializer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;StringRedisSerializer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//设置redis value的序列化器&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//设置redis value的序列化器(不建议)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setValueSerializer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;StringRedisSerializer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -368,7 +370,9 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;当前配置类不是必须的，因为Spring Boot框架会自动装配 RedisTemplate 对象，但是默认的key和value序列化器为&lt;/p&gt;
 &lt;p&gt;JdkSerializationRedisSerializer，导致我们存到Redis中后的数据和原始数据有差别（会变成一串编码），故设置为&lt;/p&gt;
-&lt;p&gt;StringRedisSerializer序列化器&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;StringRedisSerializer序列化器&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不过不建议将value也序列化为String类型，否则后续可能会出现一些问题&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;4.测试&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -444,7 +448,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ZSetOperations&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;zSetOperations&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;opsForZSet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;在Java中通过上面五种类型的对象来操作Redis&lt;/p&gt;&lt;/blockquote&gt;
+&lt;/div&gt;&lt;p&gt;在Java中通过上面五种类型的对象来操作Redis&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;操作常见类型数据&#34;&gt;操作常见类型数据
 &lt;/h3&gt;&lt;h4 id=&#34;操作字符串类型数据&#34;&gt;操作字符串类型数据
 &lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

@@ -619,7 +619,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;优化后记得把原本写在service实现类中的设置公共字段参数代码删除掉&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;优化后记得把原本写在service实现类中的设置公共字段参数代码删除掉&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -868,7 +869,8 @@
 &lt;/h3&gt;&lt;p&gt;Windows版下载地址:https://github.com/tporadowski/redis/releases
 Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;本文仅介绍windows的使用&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;本文仅介绍windows的使用&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;启动redis&#34;&gt;启动Redis
 &lt;/h4&gt;&lt;p&gt;解压下载好的压缩包，在解压出来的文件夹打开命令行窗口&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2025-10-05_18-48-02.gif&#34;
@@ -903,7 +905,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;p&gt;想要关闭Redis，在命令行窗口使用快捷键&lt;code&gt;ctrl + c&lt;/code&gt;即可结束进程&lt;/p&gt;
 &lt;h4 id=&#34;连接本地redis&#34;&gt;连接本地Redis
 &lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;演示基础连接方式，一般会使用图形化工具连接&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;演示基础连接方式，一般会使用图形化工具连接&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;要想连接上Redis，需要重复上述操作，再打开一个命令行窗口，输入下方命令即可连接（不要关闭刚刚启动Redis的命令行窗口）&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1200,7 +1203,7 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setConnectionFactory&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisConnectionFactory&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//设置redis key的序列化器&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setKeySerializer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;StringRedisSerializer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//设置redis value的序列化器&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//设置redis value的序列化器(不建议)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setValueSerializer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;StringRedisSerializer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -1210,7 +1213,9 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;当前配置类不是必须的，因为Spring Boot框架会自动装配 RedisTemplate 对象，但是默认的key和value序列化器为&lt;/p&gt;
 &lt;p&gt;JdkSerializationRedisSerializer，导致我们存到Redis中后的数据和原始数据有差别（会变成一串编码），故设置为&lt;/p&gt;
-&lt;p&gt;StringRedisSerializer序列化器&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;StringRedisSerializer序列化器&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不过不建议将value也序列化为String类型，否则后续可能会出现一些问题&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;4.测试&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1286,7 +1291,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ZSetOperations&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;zSetOperations&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;redisTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;opsForZSet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;在Java中通过上面五种类型的对象来操作Redis&lt;/p&gt;&lt;/blockquote&gt;
+&lt;/div&gt;&lt;p&gt;在Java中通过上面五种类型的对象来操作Redis&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;操作常见类型数据&#34;&gt;操作常见类型数据
 &lt;/h3&gt;&lt;h4 id=&#34;操作字符串类型数据&#34;&gt;操作字符串类型数据
 &lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1598,7 +1604,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/h4&gt;&lt;p&gt;此处按模块拆分进行演示&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;分模块开发需要先针对模块功能进行设计，再进行编码。不会先将工程开发完毕，然后进行拆分&lt;/p&gt;
-&lt;p&gt;此处以演示为主，故将项目开发后进行拆分&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;此处以演示为主，故将项目开发后进行拆分&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;在项目同目录下创建一个模块用于存放项目的实体类（创建普通Java模块即可）：&lt;/p&gt;
 &lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250926220908113.png&#34; alt=&#34;image-20250926220908113&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;将项目中的实体类存入其中：&lt;/p&gt;
@@ -1690,7 +1697,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;p&gt;打包方式：&lt;/p&gt;
 &lt;p&gt;jar：普通模块打包，springboot项目基本都是jar包（内嵌tomcat运行）&lt;/p&gt;
 &lt;p&gt;war：普通web程序打包，需要部署在外部的tomcat服务器中运行&lt;/p&gt;
-&lt;p&gt;pom：父工程或聚合工程，该模块不写代码，仅进行依赖管理&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;pom：父工程或聚合工程，该模块不写代码，仅进行依赖管理&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250927134728474.png&#34; alt=&#34;image-20250927134728474&#34; style=&#34;zoom: 50%;&#34; /&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1811,7 +1819,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;若父子工程都配置了同一个依赖的不同版本，子工程以自己配置的为准（类似Java中的重写）&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;若父子工程都配置了同一个依赖的不同版本，子工程以自己配置的为准（类似Java中的重写）&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;在实际项目中，子工程一般会创建在父工程内，这样看起来更直观&lt;/p&gt;
 &lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250927141412429.png&#34; alt=&#34;image-20250927141412429&#34; style=&#34;zoom:33%;&#34; /&gt;
 &lt;h5 id=&#34;版本锁定&#34;&gt;版本锁定
@@ -1908,7 +1917,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;聚合工程中所包含的模块，在构建时，会自动根据模块间的依赖关系设置构建顺序，与聚合工程中模块的配置书写位置无关&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;聚合工程中所包含的模块，在构建时，会自动根据模块间的依赖关系设置构建顺序，与聚合工程中模块的配置书写位置无关&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;现在只要在聚合工程中进行打包即可&lt;/p&gt;
 &lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250927180657713.png&#34; alt=&#34;image-20250927180657713&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;h5 id=&#34;继承与聚合对比&#34;&gt;继承与聚合对比
@@ -1986,7 +1996,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;3.设置私服依赖下载的仓库组地址（在自己maven安装目录下的&lt;code&gt;conf/settings.xml&lt;/code&gt;中的profiles中配置）&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;若是不加则只允许我们使用release仓库中的依赖，不允许使用snapshot仓库中的依赖&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;若是不加则只允许我们使用release仓库中的依赖，不允许使用snapshot仓库中的依赖&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -2064,7 +2075,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;p&gt;idea会自动根据项目&lt;code&gt;pom.xml&lt;/code&gt;中设置的版本&lt;code&gt;&amp;lt;version&amp;gt;&lt;/code&gt;进行上传，如果后缀有SNAPSHOT则会自动上传到snapshot仓库，&lt;/p&gt;
 &lt;p&gt;若没有则会默认上传到releases仓库&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;在真实的企业开发中，私服都是在远程服务器中的，并不是在本地的。这里只是为了方便演示&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;在真实的企业开发中，私服都是在远程服务器中的，并不是在本地的。这里只是为了方便演示&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -2094,7 +2106,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/h3&gt;&lt;p&gt;什么是自动配置？在SpringBoot中，有时你可以在未在项目中声明的前提下，直接使用&lt;code&gt;@Autowired&lt;/code&gt;自动注入一个第三方工具类，原因就是SpringBoot自动配置好了使用的第三方bean&lt;/p&gt;
 &lt;h4 id=&#34;实现方案&#34;&gt;实现方案
 &lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;SpringBoot是如何实现的会在后面解释，这里说明SpringBoot可以有什么实现方式&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;SpringBoot是如何实现的会在后面解释，这里说明SpringBoot可以有什么实现方式&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;如果第三方提供的工具类上已经加上了&lt;code&gt;@Component&lt;/code&gt;的注解，那么引入后是不是一定就能直接用呢？&lt;/p&gt;
 &lt;p&gt;答案是不行，因为项目的启动类中&lt;code&gt;@SpringBootApplication&lt;/code&gt;注解虽然具备组件扫描功能，但是默认扫描的范围是启动类所在包及其子包，所以扫描不到第三方包也就无法将其进行管理&lt;/p&gt;
 &lt;h5 id=&#34;实现方式一&#34;&gt;实现方式一
@@ -2173,7 +2186,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
     &gt;145. 原理篇-SpringBoot原理-自动配置-源码跟踪_哔哩哔哩_bilibili&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;源码跟踪技巧：&lt;/p&gt;
-&lt;p&gt;在跟踪框架源码的时候，一定要抓住关键点，找到核心流程。一定不要从头到尾一行代码去看，一个方法的去研究，一定要找到关键流程，抓住关键点，先在宏观上对整个流程或者整个原理有一个认识，有精力再去研究其中的细节。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;在跟踪框架源码的时候，一定要抓住关键点，找到核心流程。一定不要从头到尾一行代码去看，一个方法的去研究，一定要找到关键流程，抓住关键点，先在宏观上对整个流程或者整个原理有一个认识，有精力再去研究其中的细节。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;在idea中可以快速定位当前查看类的所在位置&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250925230501904.png&#34;
 	
@@ -3019,7 +3033,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;p&gt;阿里云OSS使用教程可见黑马讲义：&lt;a class=&#34;link&#34; href=&#34;https://heuqqdmbyk.feishu.cn/wiki/PHp6wXaNUij3bokCXWrclz5anWh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;09-后端Web实战(员工管理) - 飞书云文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;或者黑马视频课程：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1yGydYEE3H?spm_id_from=333.788.videopod.episodes&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&amp;amp;p=106&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;106. 文件上传-阿里云OSS-准备工作_哔哩哔哩_bilibili&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+    &gt;106. 文件上传-阿里云OSS-准备工作_哔哩哔哩_bilibili&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -3218,7 +3233,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;p&gt;有状态的bean：在该对象中会保存数据&lt;/p&gt;
 &lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250923215218916.png&#34; alt=&#34;image-20250923215218916&#34; style=&#34;zoom:67%;&#34; /&gt;
 &lt;blockquote&gt;
-&lt;p&gt;在实际开发当中，绝大多数的Bean是单例的，不需要配置scope属性&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;在实际开发当中，绝大多数的Bean是单例的，不需要配置scope属性&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;第三方bean&#34;&gt;第三方Bean
 &lt;/h3&gt;&lt;p&gt;如果需要管理的bean对象来自于第三方，一般为只读的，无法编辑，也就无法使用&lt;code&gt;@Component&lt;/code&gt;注解声明bean，此时可以使用&lt;code&gt;@Bean&lt;/code&gt;注解&lt;/p&gt;
 &lt;p&gt;一种方法是在启动类当中进行管理，不过不推荐这种方式&lt;/p&gt;
@@ -3246,7 +3262,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;p&gt;第三方bean需要依赖其他bean时，将其他bean定义在方法形参中即可，容器会根据类型自动装配&lt;/p&gt;
 &lt;p&gt;若第三方bean没有需要依赖的bean，形参部分空着即可&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;通过&lt;code&gt;@Bean&lt;/code&gt;注解的name或value属性可以声明bean的名称，如果不指定，默认bean的名称就是方法名&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;通过&lt;code&gt;@Bean&lt;/code&gt;注解的name或value属性可以声明bean的名称，如果不指定，默认bean的名称就是方法名&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -3295,7 +3312,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;p&gt;综上所述，三种配置文件的优先级：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;properties &amp;gt; yml &amp;gt; yaml&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;虽然springboot支持多种格式配置文件，但是在项目开发时，推荐统一使用一种格式的配置 （yml是主流）&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;虽然springboot支持多种格式配置文件，但是在项目开发时，推荐统一使用一种格式的配置 （yml是主流）&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;外部属性配置&#34;&gt;外部属性配置
 &lt;/h3&gt;&lt;p&gt;可以通过Java系统属性修改端口&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -3839,7 +3857,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;好处：减少重复代码、代码无入侵、提高开发效率、维护方便&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;AOP是一种思想，而在Spring框架中对这种思想进行的实现，就是Spring AOP&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;AOP是一种思想，而在Spring框架中对这种思想进行的实现，就是Spring AOP&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;aop基础&#34;&gt;AOP基础
 &lt;/h3&gt;&lt;h4 id=&#34;aop快速入门&#34;&gt;AOP快速入门
 &lt;/h4&gt;&lt;p&gt;需求：统计所有业务层方法的执行耗时&lt;/p&gt;
@@ -3911,7 +3930,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;p&gt;切面：Aspect，描述通知与切入点的对应关系（通知+切入点）&lt;/p&gt;
 &lt;p&gt;目标对象：Target，通知所应用的对象&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;切入点表达式会在后面详细介绍&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;切入点表达式会在后面详细介绍&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250921123546127.png&#34;
 	
 	
@@ -3955,7 +3975,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;@AfterThrowing&lt;/code&gt;：异常后通知，此注解标注的通知方法发生异常后执行&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;1.&lt;code&gt;@Around&lt;/code&gt;环绕通知需要自己调用&lt;code&gt;ProceedingJoinPoint.proceed()&lt;/code&gt;来让原始方法执行，其他通知不需要考虑目标方法执行&lt;/p&gt;
-&lt;p&gt;2.&lt;code&gt;@Around&lt;/code&gt;环绕通知方法的返回值，必须指定为Object，来接收原始方法的返回值&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;2.&lt;code&gt;@Around&lt;/code&gt;环绕通知方法的返回值，必须指定为Object，来接收原始方法的返回值&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;pointcut&#34;&gt;@PointCut
 &lt;/h4&gt;&lt;p&gt;当有多个目标方法相同的通知时，如果一个个写范围不够方便，也不好统一管理&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;@PointCut&lt;/code&gt;注解的作用是将公共的切点表达式抽取出来，需要用到时引用该切点表达式即可&lt;/p&gt;
@@ -4107,7 +4128,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;根据业务需要，可以使用 且（&amp;amp;&amp;amp;）、或（||）、非（!） 来组合比较复杂的切入点表达式&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;根据业务需要，可以使用 且（&amp;amp;&amp;amp;）、或（||）、非（!） 来组合比较复杂的切入点表达式&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h5 id=&#34;annotation&#34;&gt;@annotation
 &lt;/h5&gt;&lt;p&gt;&lt;code&gt;@annotation&lt;/code&gt;切入点表达式，用于匹配标识有特定注解的方法&lt;/p&gt;
 &lt;p&gt;使用介绍：&lt;/p&gt;
@@ -4192,7 +4214,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/h4&gt;&lt;p&gt;在Spring中用JoinPoint抽象了连接点，用它可以获得方法执行时的相关信息，如目标类名、方法名、方法参数等&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;对于 @Around 通知，获取连接点信息只能使用  ProceedingJoinPoint&lt;/p&gt;
-&lt;p&gt;对于其它四种通知，获取连接点信息只能使用 JoinPoint ，它是 ProceedingJoinPoint 的父类型&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;对于其它四种通知，获取连接点信息只能使用 JoinPoint ，它是 ProceedingJoinPoint 的父类型&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -4677,7 +4700,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;注意：在yml格式的配置文件中，如果配置项的值是以 0 开头的，值需要使用 &amp;rsquo;&amp;rsquo; 引起来，因为以0开头在yml中表示8进制的数据&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;注意：在yml格式的配置文件中，如果配置项的值是以 0 开头的，值需要使用 &amp;rsquo;&amp;rsquo; 引起来，因为以0开头在yml中表示8进制的数据&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -5904,7 +5928,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;注：&lt;/p&gt;
 &lt;p&gt;1.Mapper层用注解查询时，SQL语句结尾不能加&lt;code&gt;;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;2.PageHelper只会对紧跟在其后的第一条SQL语句进行分页处理&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;2.PageHelper只会对紧跟在其后的第一条SQL语句进行分页处理&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -6065,7 +6090,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;备注：如果有Lombok，可以直接在类前面加上&lt;code&gt;@Slf4j&lt;/code&gt;，此时就可以省略&lt;code&gt;private static final Logger log = LoggerFactory.getLogger(LogTest.class);&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;备注：如果有Lombok，可以直接在类前面加上&lt;code&gt;@Slf4j&lt;/code&gt;，此时就可以省略&lt;code&gt;private static final Logger log = LoggerFactory.getLogger(LogTest.class);&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -6314,7 +6340,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;控制反转： Inversion Of Control，简称IOC。对象的创建控制权由程序自身转移到外部（容器），这种思想称为控制反转&lt;/p&gt;
 &lt;p&gt;依赖注入： Dependency Injection，简称DI。容器为应用程序提供运行时，所依赖的资源，称之为依赖注入&lt;/p&gt;
-&lt;p&gt;Bean对象：IOC容器中创建、管理的对象，称之为Bean&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Bean对象：IOC容器中创建、管理的对象，称之为Bean&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;所以要将DAO和Service层的实现类交给IOC容器管理，并为Controller和Service注入运行时所依赖的对象&lt;/p&gt;
 &lt;p&gt;要做到上述操作只需要在实现类上方加上@Component，在Service和DAO成员变量上方加上@Autowired即可，例如&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -6461,7 +6488,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/div&gt;&lt;p&gt;优点：能清晰地看到类的依赖关系、提高了代码的安全性&lt;/p&gt;
 &lt;p&gt;缺点：代码繁琐、如果构造参数过多，可能会导致构造函数臃肿&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;注意：如果只有一个构造函数，@Autowired注解可以省略&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;注意：如果只有一个构造函数，@Autowired注解可以省略&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;setter注入&#34;&gt;setter注入
 &lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -6564,7 +6592,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;@Resource 与 @Autowired区别 ?&lt;/p&gt;
 &lt;p&gt;@Autowired是Spring框架提供的注解，而@Resource是JavaEE规范提供的&lt;/p&gt;
-&lt;p&gt;@Autowired默认是按照类型注入，而@Resource默认是按照名称注入&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;@Autowired默认是按照类型注入，而@Resource默认是按照名称注入&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -7115,7 +7144,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;上述笔记基于黑马课程&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;上述笔记基于黑马课程&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -7646,7 +7676,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;li&gt;增强for遍历集合时，底层实现原理为迭代器&lt;/li&gt;
 &lt;li&gt;增强for遍历数组时，底层实现原理为普通for循环&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;因为遍历集合时原理为迭代器，所以在遍历集合的过程中不要随意修改集合长度，否则会出现并发修改异常&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;因为遍历集合时原理为迭代器，所以在遍历集合的过程中不要随意修改集合长度，否则会出现并发修改异常&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -8124,7 +8155,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;2.如何检测类的全限定名写对了&lt;/p&gt;
-&lt;p&gt;​    按ctrl不放,鼠标点击此类名,能跳到对应的类中,就证明写对了&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;​    按ctrl不放,鼠标点击此类名,能跳到对应的类中,就证明写对了&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;21三种获取class对象的方式最通用的一种&#34;&gt;2.1.三种获取Class对象的方式最通用的一种
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -9388,7 +9420,8 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1706158875708.png&#34; alt=&#34;1706158875708&#34; style=&#34;zoom:80%;&#34; /&gt;&lt;/blockquote&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1706158875708.png&#34; alt=&#34;1706158875708&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;junit相关注解&#34;&gt;Junit相关注解
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

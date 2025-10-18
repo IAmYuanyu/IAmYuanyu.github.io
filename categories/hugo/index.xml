@@ -246,7 +246,8 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;github自动部署&#34;&gt;Github自动部署
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;自动部署：当你在&lt;code&gt;dev&lt;/code&gt;文件中push代码后，页面就会自动更新&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;自动部署：当你在&lt;code&gt;dev&lt;/code&gt;文件中push代码后，页面就会自动更新&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;35.再创建一个仓库&lt;/p&gt;
 &lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250326175344840.png&#34; alt=&#34;image-20250326175344840&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;36.打开&lt;code&gt;dev&lt;/code&gt;文件夹，创建一个&lt;code&gt;.gitignore&lt;/code&gt;文件，内容如图（不会创建.gitignore文件，就在此处打开cmd窗口，输入&lt;code&gt;type nul&amp;gt;.gitignore&lt;/code&gt;即可）&lt;/p&gt;

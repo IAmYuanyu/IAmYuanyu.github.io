@@ -143,7 +143,8 @@
 &lt;/div&gt;&lt;p&gt;左外连接就是以左表基础，查询左表和左表与右表相交的部分。右外连接同理。&lt;/p&gt;
 &lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250903191209677.png&#34; alt=&#34;image-20250903191209677&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;blockquote&gt;
-&lt;p&gt;对于外连接，常用的是左外连接，因为右外连接的SQL也可以改造成为左外连接（两张表调换个顺序）&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;对于外连接，常用的是左外连接，因为右外连接的SQL也可以改造成为左外连接（两张表调换个顺序）&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;例如，现有员工表和部门表，需要查询所有员工的信息，以及该员工所属部门的名称&lt;/p&gt;
 &lt;p&gt;此时就可以使用外连接查询&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

@@ -15,7 +15,8 @@
         <guid>https://IAmYuanyu.github.io/p/javascript%E8%BF%9B%E9%98%B6/</guid>
         <description>&lt;h2 id=&#34;javascript-进阶---第1天&#34;&gt;JavaScript 进阶 - 第1天
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;学习作用域、变量提升、闭包等语言特征，加深对 JavaScript 的理解，掌握变量赋值、函数声明的简洁语法，降低代码的冗余度。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;学习作用域、变量提升、闭包等语言特征，加深对 JavaScript 的理解，掌握变量赋值、函数声明的简洁语法，降低代码的冗余度。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;理解作用域对程序执行的影响&lt;/li&gt;
 &lt;li&gt;能够分析程序执行的作用域范围&lt;/li&gt;
@@ -25,7 +26,8 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;作用域&#34;&gt;作用域
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;了解作用域对程序执行的影响及作用域链的查找机制，使用闭包函数创建隔离作用域避免全局变量污染。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;了解作用域对程序执行的影响及作用域链的查找机制，使用闭包函数创建隔离作用域避免全局变量污染。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;作用域（scope）规定了变量能够被访问的“范围”，离开了这个“范围”变量便不能被访问，作用域分为全局作用域和局部作用域。&lt;/p&gt;
 &lt;h4 id=&#34;局部作用域&#34;&gt;局部作用域
 &lt;/h4&gt;&lt;p&gt;局部作用域分为函数作用域和块作用域。&lt;/p&gt;
@@ -549,7 +551,8 @@
     &gt;查阅资料&lt;/a&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;函数&#34;&gt;函数
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;知道函数参数默认值、动态参数、剩余参数的使用细节，提升函数应用的灵活度，知道箭头函数的语法及与普通函数的差异。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;知道函数参数默认值、动态参数、剩余参数的使用细节，提升函数应用的灵活度，知道箭头函数的语法及与普通函数的差异。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;函数提升&#34;&gt;函数提升
 &lt;/h4&gt;&lt;p&gt;函数提升与变量提升比较类似，是指函数在声明之前即可被调用。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -948,7 +951,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;解构赋值&#34;&gt;解构赋值
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;知道解构的语法及分类，使用解构简洁语法快速为变量赋值。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;知道解构的语法及分类，使用解构简洁语法快速为变量赋值。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;解构赋值是一种快速为变量赋值的简洁语法，本质上仍然是为变量赋值，分为数组解构、对象解构两大类型。&lt;/p&gt;
 &lt;h4 id=&#34;数组解构&#34;&gt;数组解构
 &lt;/h4&gt;&lt;p&gt;数组解构是将数组的单元值快速批量赋值给一系列变量的简洁语法，如下代码所示：&lt;/p&gt;
@@ -1347,7 +1351,8 @@
 &lt;blockquote&gt;
 &lt;p&gt;注意：&lt;/p&gt;
 &lt;p&gt;1.forEach 主要是遍历数组&lt;/p&gt;
-&lt;p&gt;2.参数当前数组元素是必须要写的， 索引号可选。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;2.参数当前数组元素是必须要写的， 索引号可选。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -2140,7 +2145,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;javascript-进阶---第2天&#34;&gt;JavaScript 进阶 - 第2天
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;了解面向对象编程的基础概念及构造函数的作用，体会 JavaScript 一切皆对象的语言特征，掌握常见的对象属性和方法的使用。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;了解面向对象编程的基础概念及构造函数的作用，体会 JavaScript 一切皆对象的语言特征，掌握常见的对象属性和方法的使用。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;了解面向对象编程中的一般概念&lt;/li&gt;
 &lt;li&gt;能够基于构造函数创建对象&lt;/li&gt;
@@ -2150,7 +2156,8 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;深入对象&#34;&gt;深入对象
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;了解面向对象的基础概念，能够利用构造函数创建对象。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;了解面向对象的基础概念，能够利用构造函数创建对象。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;构造函数&#34;&gt;构造函数
 &lt;/h4&gt;&lt;p&gt;构造函数是专门用于创建对象的函数，如果一个函数使用 &lt;code&gt;new&lt;/code&gt; 关键字调用，那么这个函数就是构造函数。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2300,7 +2307,8 @@
 &lt;/ol&gt;
 &lt;h3 id=&#34;内置构造函数&#34;&gt;内置构造函数
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;掌握各引用类型和包装类型对象属性和方法的使用。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;掌握各引用类型和包装类型对象属性和方法的使用。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;在 JavaScript 中&lt;strong&gt;最主要&lt;/strong&gt;的数据类型有 6 种，分别是字符串、数值、布尔、undefined、null 和 对象，常见的对象类型数据包括数组和普通对象。其中字符串、数值、布尔、undefined、null 也被称为简单类型或基础类型，对象也被称为引用类型。&lt;/p&gt;
 &lt;p&gt;在 JavaScript 内置了一些构造函数，绝大部的数据处理都是基于这些构造函数实现的，JavaScript 基础阶段学习的 &lt;code&gt;Date&lt;/code&gt; 就是内置的构造函数。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -3467,7 +3475,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;javascript-进阶---第3天笔记&#34;&gt;JavaScript 进阶 - 第3天笔记
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;了解构造函数原型对象的语法特征，掌握 JavaScript 中面向对象编程的实现方式，基于面向对象编程思想实现 DOM 操作的封装。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;了解构造函数原型对象的语法特征，掌握 JavaScript 中面向对象编程的实现方式，基于面向对象编程思想实现 DOM 操作的封装。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;了解面向对象编程的一般特征&lt;/li&gt;
 &lt;li&gt;掌握基于构造函数原型对象的逻辑封装&lt;/li&gt;
@@ -3477,7 +3486,8 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;编程思想&#34;&gt;编程思想
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;学习 JavaScript 中基于原型的面向对象编程序的语法实现，理解面向对象编程的特征。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;学习 JavaScript 中基于原型的面向对象编程序的语法实现，理解面向对象编程的特征。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;面向过程&#34;&gt;面向过程
 &lt;/h4&gt;&lt;p&gt;面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候再一个一个的依次&lt;/p&gt;
 &lt;p&gt;调用就可以了。&lt;/p&gt;
@@ -3578,7 +3588,8 @@
 &lt;ol&gt;
 &lt;li&gt;构造函数体现了面向对象的封装特性&lt;/li&gt;
 &lt;li&gt;构造函数实例创建的对象彼此独立、互不影响&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;封装是面向对象思想中比较重要的一部分，js面向对象可以通过构造函数实现的封装。&lt;/p&gt;
 &lt;p&gt;前面我们学过的构造函数方法很好用，但是 存在&lt;code&gt;浪费内存&lt;/code&gt;的问题&lt;/p&gt;
 &lt;h3 id=&#34;原型对象&#34;&gt;原型对象
@@ -3591,7 +3602,8 @@
 &lt;li&gt;构造函数和原型对象中的this 都指向 实例化的对象&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;一般在构造函数放公共的属性，原型对象内放公共的方法&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;一般在构造函数放公共的属性，原型对象内放公共的方法&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -4488,7 +4500,8 @@
 &lt;li&gt;拷贝数组：Array.prototype.concat() 或者 [&amp;hellip;arr]&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
-&lt;p&gt;如果是简单数据类型拷贝值，引用数据类型拷贝的是地址 (简单理解： 如果是单层对象，没问题，如果有多层就有问题)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;如果是简单数据类型拷贝值，引用数据类型拷贝的是地址 (简单理解： 如果是单层对象，没问题，如果有多层就有问题)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;深拷贝&#34;&gt;深拷贝
 &lt;/h4&gt;&lt;p&gt;首先浅拷贝和深拷贝只针对引用类型&lt;/p&gt;
 &lt;p&gt;深拷贝：拷贝的是对象，不是地址&lt;/p&gt;
@@ -4708,7 +4721,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;异常处理&#34;&gt;异常处理
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;了解 JavaScript 中程序异常处理的方法，提升代码运行的健壮性。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;了解 JavaScript 中程序异常处理的方法，提升代码运行的健壮性。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;throw&#34;&gt;throw
 &lt;/h4&gt;&lt;p&gt;异常处理是指预估代码执行过程中可能发生的错误，然后最大程度的避免错误的发生导致整个程序无法继续运行&lt;/p&gt;
 &lt;p&gt;总结：&lt;/p&gt;
@@ -4828,7 +4842,8 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;处理this&#34;&gt;处理this
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;了解函数中 this 在不同场景下的默认值，知道动态指定函数 this 值的方法。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;了解函数中 this 在不同场景下的默认值，知道动态指定函数 this 值的方法。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;code&gt;this&lt;/code&gt; 是 JavaScript 最具“魅惑”的知识点，不同的应用场合 &lt;code&gt;this&lt;/code&gt; 的取值可能会有意想不到的结果，在此我们对以往学习过的关于【 &lt;code&gt;this&lt;/code&gt; 默认的取值】情况进行归纳和总结。&lt;/p&gt;
 &lt;h4 id=&#34;普通函数&#34;&gt;普通函数
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;普通函数&lt;/strong&gt;的调用方式决定了 &lt;code&gt;this&lt;/code&gt; 的值，即【谁调用 &lt;code&gt;this&lt;/code&gt; 的值指向谁】，如下代码所示：&lt;/p&gt;
@@ -5881,7 +5896,8 @@
         <guid>https://IAmYuanyu.github.io/p/javascriptapis/</guid>
         <description>&lt;h2 id=&#34;web-apis---第1天笔记&#34;&gt;Web APIs - 第1天笔记
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;了解 DOM 的结构并掌握其基本的操作，体验 DOM 的在开发中的作用&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;了解 DOM 的结构并掌握其基本的操作，体验 DOM 的在开发中的作用&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;知道 ECMAScript 与 JavaScript 的关系&lt;/li&gt;
 &lt;li&gt;了解 DOM 的相关概念及DOM 的本质是一个对象&lt;/li&gt;
@@ -5891,7 +5907,8 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;介绍&#34;&gt;介绍
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;知道 ECMAScript 与 JavaScript 的关系，Web APIs 是浏览器扩展的功能。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;知道 ECMAScript 与 JavaScript 的关系，Web APIs 是浏览器扩展的功能。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;严格意义上讲，我们在 JavaScript 阶段学习的知识绝大部分属于 ECMAScript 的知识体系，ECMAScript 简称 ES 它提供了一套语言标准规范，如变量、数据类型、表达式、语句、函数等语法规则都是由 ECMAScript 规定的。浏览器将 ECMAScript 大部分的规范加以实现，并且在此基础上又扩展一些实用的功能，这些被扩展出来的内容我们称为 Web APIs。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/guide.png&#34;
 	
@@ -5908,7 +5925,8 @@
 &lt;p&gt;关于 JavaScript 历史的&lt;a class=&#34;link&#34; href=&#34;https://javascript.ruanyifeng.com/introduction/history.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;扩展阅读&lt;/a&gt;。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;知道 DOM 相关的概念，建立对 DOM 的初步认识，学习 DOM 的基本操作，体会 DOM 的作用&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;知道 DOM 相关的概念，建立对 DOM 的初步认识，学习 DOM 的基本操作，体会 DOM 的作用&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;DOM（Document Object Model）是将整个 HTML 文档的每一个标签元素视为一个对象，这个对象下包含了许多的属性和方法，通过操作这些属性或者调用这些方法实现对 HTML 的动态更新，为实现网页特效以及用户交互提供技术支撑。&lt;/p&gt;
 &lt;p&gt;简言之 DOM 是用来动态修改 HTML 的，其目的是开发网页特效及用户交互。&lt;/p&gt;
 &lt;p&gt;观察一个小例子：&lt;/p&gt;
@@ -6639,7 +6657,8 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;注意：&lt;/p&gt;
 &lt;p&gt;1.由于class是关键字, 所以使用className去代替&lt;/p&gt;
-&lt;p&gt;2.className是使用新值换旧值, 如果需要添加一个类,需要保留之前的类名&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;2.className是使用新值换旧值, 如果需要添加一个类,需要保留之前的类名&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;通过 classList 操作类控制CSS&lt;/li&gt;
 &lt;/ol&gt;
@@ -7187,7 +7206,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;间歇函数&#34;&gt;间歇函数
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;知道间歇函数的作用，利用间歇函数创建定时任务。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;知道间歇函数的作用，利用间歇函数创建定时任务。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;code&gt;setInterval&lt;/code&gt; 是 JavaScript 中内置的函数，它的作用是间隔固定的时间自动重复执行另一个函数，也叫&lt;strong&gt;定时器函数&lt;/strong&gt;。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -7676,13 +7696,15 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;web-apis---第2天&#34;&gt;Web APIs - 第2天
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;学会通过为DOM注册事件来实现可交互的网页特效。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;学会通过为DOM注册事件来实现可交互的网页特效。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;能够判断函数运行的环境并确字 this 所指代的对象&lt;/li&gt;
 &lt;li&gt;理解事件的作用，知道应用事件的 3 个步骤&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;学习会为 DOM 注册事件，实现简单可交互的网页特交。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;学习会为 DOM 注册事件，实现简单可交互的网页特交。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;事件&#34;&gt;事件
 &lt;/h3&gt;&lt;p&gt;事件是编程语言中的术语，它是用来描述程序的行为或状态的，&lt;strong&gt;一旦行为或状态发生改变，便立即调用一个函数。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;例如：用户使用【鼠标点击】网页中的一个按钮、用户使用【鼠标拖拽】网页中的一张图片&lt;/p&gt;
@@ -8180,7 +8202,8 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;鼠标经过事件：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;mouseover&lt;/code&gt; 和 &lt;code&gt;mouseout&lt;/code&gt; 会有冒泡效果&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;mouseenter&lt;/code&gt;  和 &lt;code&gt;mouseleave&lt;/code&gt;   没有冒泡效果 (推荐)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;mouseenter&lt;/code&gt;  和 &lt;code&gt;mouseleave&lt;/code&gt;   没有冒泡效果 (推荐)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;键盘事件&#34;&gt;键盘事件
 &lt;/h4&gt;&lt;p&gt;&lt;code&gt;keydown&lt;/code&gt;   键盘按下触发（按住不放会一直触发）
 &lt;code&gt;keyup&lt;/code&gt;   键盘抬起触发&lt;/p&gt;
@@ -9546,7 +9569,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;环境对象&#34;&gt;环境对象
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;能够分析判断函数运行在不同环境中 this 所指代的对象。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;能够分析判断函数运行在不同环境中 this 所指代的对象。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;环境对象指的是函数内部特殊的变量 &lt;code&gt;this&lt;/code&gt; ，它代表着当前函数运行时所处的环境。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -10205,7 +10229,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;web-apis---第3天&#34;&gt;Web APIs - 第3天
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;进一步学习 事件进阶，实现更多交互的网页特效，结合事件流的特征优化事件执行的效率&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;进一步学习 事件进阶，实现更多交互的网页特效，结合事件流的特征优化事件执行的效率&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;掌握阻止事件冒泡的方法&lt;/li&gt;
 &lt;li&gt;理解事件委托的实现原理&lt;/li&gt;
@@ -10458,7 +10483,8 @@
 &lt;blockquote&gt;
 &lt;p&gt;鼠标经过事件：&lt;/p&gt;
 &lt;p&gt;mouseover 和 mouseout 会有冒泡效果&lt;/p&gt;
-&lt;p&gt;mouseenter  和 mouseleave   没有冒泡效果 (推荐)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;mouseenter  和 mouseleave   没有冒泡效果 (推荐)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;阻止默认行为&#34;&gt;阻止默认行为
 &lt;/h4&gt;&lt;p&gt;在某些情况下，我们需要阻止默认行为的发生，比如在为满足特定条件时，阻止链接的跳转&lt;/p&gt;
 &lt;p&gt;语法：&lt;code&gt;e.preventDefault()&lt;/code&gt;&lt;/p&gt;
@@ -11703,7 +11729,8 @@
 &lt;p&gt;代码：&lt;/p&gt;
 &lt;h2 id=&#34;web-apis---第4天&#34;&gt;Web APIs - 第4天
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;进一步学习 DOM 相关知识，实现可交互的网页特效&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;进一步学习 DOM 相关知识，实现可交互的网页特效&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;能够插入、删除和替换元素节点&lt;/li&gt;
 &lt;li&gt;能够依据元素节点关系查找节点&lt;/li&gt;
@@ -12200,7 +12227,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;dom-节点-1&#34;&gt;DOM 节点
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;掌握元素节点创建、复制、插入、删除等操作的方法，能够依据元素节点的结构关系查找节点&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;掌握元素节点创建、复制、插入、删除等操作的方法，能够依据元素节点的结构关系查找节点&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241030214231033.png&#34;
 	
 	
@@ -13548,7 +13576,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;web-apis---第5天笔记&#34;&gt;Web APIs - 第5天笔记
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;目标： 能够利用JS操作浏览器,具备利用本地存储实现学生就业表的能力&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;目标： 能够利用JS操作浏览器,具备利用本地存储实现学生就业表的能力&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;BOM操作&lt;/li&gt;
 &lt;li&gt;综合案例&lt;/li&gt;
@@ -13626,7 +13655,8 @@
 &lt;ol&gt;
 &lt;li&gt;延时函数需要等待,所以后面的代码先执行&lt;/li&gt;
 &lt;li&gt;返回值是一个正整数，表示定时器的编号&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -14286,7 +14316,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;map 也称为映射。映射是个术语，指两个元素的集之间元素相互“对应”的关系。&lt;/p&gt;
-&lt;p&gt;map重点在于有返回值，forEach没有返回值（undefined）&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;map重点在于有返回值，forEach没有返回值（undefined）&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;数组join方法&#34;&gt;数组join方法
 &lt;/h4&gt;&lt;p&gt;**作用：**join() 方法用于把数组中的所有元素转换一个字符串&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;语法：&lt;/strong&gt;&lt;/p&gt;
@@ -14943,7 +14974,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;web-apis---第6天笔记&#34;&gt;Web APIs - 第6天笔记
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;目标：能够利用正则表达式完成小兔鲜注册页面的表单验证，具备常见的表单验证能力&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;目标：能够利用正则表达式完成小兔鲜注册页面的表单验证，具备常见的表单验证能力&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;正则表达式&lt;/li&gt;
 &lt;li&gt;综合案例&lt;/li&gt;
@@ -15068,7 +15100,8 @@
 	
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;如果 ^ 和 $ 在一起，表示必须是精确匹配&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;如果 ^ 和 $ 在一起，表示必须是精确匹配&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -15142,7 +15175,8 @@
 	
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;注意： 逗号左右两侧千万不要出现空格&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;注意： 逗号左右两侧千万不要出现空格&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -15725,7 +15759,8 @@
         <guid>https://IAmYuanyu.github.io/p/javascript%E5%9F%BA%E7%A1%80/</guid>
         <description>&lt;h2 id=&#34;javascript-基础---第1天&#34;&gt;JavaScript 基础 - 第1天
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;了解变量、数据类型、运算符等基础概念，能够实现数据类型的转换，结合四则运算体会如何编程。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;了解变量、数据类型、运算符等基础概念，能够实现数据类型的转换，结合四则运算体会如何编程。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;体会现实世界中的事物与计算机的关系&lt;/li&gt;
 &lt;li&gt;理解什么是数据并知道数据的分类&lt;/li&gt;
@@ -15735,7 +15770,8 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;介绍&#34;&gt;介绍
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;掌握 JavaScript 的引入方式，初步认识 JavaScript 的作用&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;掌握 JavaScript 的引入方式，初步认识 JavaScript 的作用&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;引入方式&#34;&gt;引入方式
 &lt;/h4&gt;&lt;p&gt;JavaScript 程序不能独立运行，它需要被嵌入 HTML 中，然后浏览器才能执行 JavaScript 代码。通过 &lt;code&gt;script&lt;/code&gt; 标签将 JavaScript 代码引入到 HTML 中，有两种方式：&lt;/p&gt;
 &lt;h5 id=&#34;内部方式&#34;&gt;内部方式
@@ -16193,7 +16229,8 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;变量&#34;&gt;变量
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;理解变量是计算机存储数据的“容器”，掌握变量的声明方式&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;理解变量是计算机存储数据的“容器”，掌握变量的声明方式&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;变量是计算机中用来存储数据的“容器”，它可以让计算机变得有记忆，通俗的理解变量就是使用【某个符号】来代表【某个具体的数值】（数据）&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -16539,7 +16576,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;注意： 常量不允许重新赋值,声明的时候必须赋值（初始化）&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;注意： 常量不允许重新赋值,声明的时候必须赋值（初始化）&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;补充：&lt;/p&gt;
 &lt;p&gt;在声明一些未来不太会被修改的变量时，一般使用const&lt;/p&gt;
 &lt;p&gt;对于复杂类型数据，比如数组一般可以使用const声明，因为此时栈中存放的是数组对象实例所在的地址，对该数组进行增加、删除或修改等操作时，数组依旧是原来的数组，地址并不会变，因此对数组进行增加、删除或修改等操作时并不会报错（但如果修改了数组的地址就会报错）&lt;/p&gt;
@@ -16558,7 +16596,8 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;数据类型&#34;&gt;数据类型
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;计算机世界中的万事成物都是数据。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;计算机世界中的万事成物都是数据。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;计算机程序可以处理大量的数据，为了方便数据的管理，将数据分成了不同的类型：&lt;/p&gt;
 &lt;p&gt;number数字型、string字符串型、boolean布尔型、undefined未定义型、null空类型&lt;/p&gt;
 &lt;p&gt;注：通过 typeof 关键字检测数据类型&lt;/p&gt;
@@ -17063,7 +17102,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;类型转换&#34;&gt;类型转换
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;理解弱类型语言的特征，掌握显式类型转换的方法&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;理解弱类型语言的特征，掌握显式类型转换的方法&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;在 JavaScript 中数据被分成了不同的类型，如数值、字符串、布尔值、undefined，在实际编程的过程中，不同数据类型之间存在着转换的关系。&lt;/p&gt;
 &lt;h4 id=&#34;隐式转换&#34;&gt;隐式转换
 &lt;/h4&gt;&lt;p&gt;某些运算符被执行时，系统内部自动将数据类型进行转换，这种转换称为隐式转换。&lt;/p&gt;
@@ -17607,7 +17647,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;javascript-基础---第2天&#34;&gt;JavaScript 基础 - 第2天
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;理解什么是流程控制，知道条件控制的种类并掌握其对应的语法规则，具备利用循环编写简易ATM取款机程序能力&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;理解什么是流程控制，知道条件控制的种类并掌握其对应的语法规则，具备利用循环编写简易ATM取款机程序能力&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;运算符&lt;/li&gt;
 &lt;li&gt;语句&lt;/li&gt;
@@ -17648,7 +17689,8 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;blockquote&gt;
-&lt;p&gt;注意：在计算失败时，显示的结果是 NaN （not a number）&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;注意：在计算失败时，显示的结果是 NaN （not a number）&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -17775,7 +17817,8 @@
 &lt;li&gt;++、&amp;ndash; 可以在变量前面也可以在变量后面，比如: x++  或者  ++x&lt;/li&gt;
 &lt;li&gt;前置自增：先自加再使用&lt;/li&gt;
 &lt;li&gt;后置自增：先使用再自加&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -18102,7 +18145,8 @@
 	
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;逻辑运算符优先级： ！&amp;gt; &amp;amp;&amp;amp; &amp;gt;  ||&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;逻辑运算符优先级： ！&amp;gt; &amp;amp;&amp;amp; &amp;gt;  ||&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;语句&#34;&gt;语句
 &lt;/h3&gt;&lt;h4 id=&#34;表达式和语句&#34;&gt;表达式和语句
 &lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1671017924981.png&#34;
@@ -18953,7 +18997,8 @@
 &lt;/ol&gt;
 &lt;h3 id=&#34;for-语句&#34;&gt;for 语句
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;掌握 for 循环语句，让程序具备重复执行能力&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;掌握 for 循环语句，让程序具备重复执行能力&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;code&gt;for&lt;/code&gt; 是 JavaScript 提供的另一种循环控制的话句，它和 &lt;code&gt;while&lt;/code&gt; 只是语法上存在差异。&lt;/p&gt;
 &lt;h4 id=&#34;for语句的基本使用&#34;&gt;for语句的基本使用
 &lt;/h4&gt;&lt;ol&gt;
@@ -19046,7 +19091,8 @@
 &lt;li&gt;当如果明确了循环的次数的时候推荐使用&lt;code&gt;for&lt;/code&gt;循环,当不明确循环的次数的时候推荐使用&lt;code&gt;while&lt;/code&gt;循环&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;注意：&lt;code&gt;for&lt;/code&gt; 的语法结构更简洁，故 &lt;code&gt;for&lt;/code&gt; 循环的使用频次会更多。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;注意：&lt;code&gt;for&lt;/code&gt; 的语法结构更简洁，故 &lt;code&gt;for&lt;/code&gt; 循环的使用频次会更多。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h5 id=&#34;练习-1&#34;&gt;练习
 &lt;/h5&gt;&lt;p&gt;遍历数组&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -19297,7 +19343,8 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;数组-1&#34;&gt;数组
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;知道什么是数组及其应用的场景，掌握数组声明及访问的语法。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;知道什么是数组及其应用的场景，掌握数组声明及访问的语法。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;数组是什么&#34;&gt;数组是什么？
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;数组：&lt;/strong&gt;(Array)是一种可以按顺序保存数据的数据类型&lt;/p&gt;
 &lt;p&gt;**使用场景：**如果有多个数据可以用数组保存起来，然后放到一个变量中，管理非常方便&lt;/p&gt;
@@ -19802,7 +19849,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;javascript-基础---第4天笔记&#34;&gt;JavaScript 基础 - 第4天笔记
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;理解封装的意义，能够通过函数的声明实现逻辑的封装，知道对象数据类型的特征，结合数学对象实现简单计算功能。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;理解封装的意义，能够通过函数的声明实现逻辑的封装，知道对象数据类型的特征，结合数学对象实现简单计算功能。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;理解函数的封装的特征&lt;/li&gt;
 &lt;li&gt;掌握函数声明的语法&lt;/li&gt;
@@ -19811,7 +19859,8 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;函数&#34;&gt;函数
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;理解函数的封装特性，掌握函数的语法规则&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;理解函数的封装特性，掌握函数的语法规则&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;声明和调用&#34;&gt;声明和调用
 &lt;/h4&gt;&lt;p&gt;函数可以把具有相同或相似逻辑的代码“包裹”起来，通过函数调用执行这些被“包裹”的代码逻辑，这么做的优势是有利于精简代码方便复用。&lt;/p&gt;
 &lt;h5 id=&#34;声明定义&#34;&gt;声明（定义）
@@ -19877,7 +19926,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;注：函数名的命名规则与变量是一致的，并且尽量保证函数名的语义。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;注：函数名的命名规则与变量是一致的，并且尽量保证函数名的语义。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;小案例： 小星星&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -20361,7 +20411,8 @@
 &lt;p&gt;处于局部作用域内的变量称为局部变量&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如果函数内部，变量没有声明，直接赋值，也当全局变量看，但是强烈不推荐&lt;/p&gt;
-&lt;p&gt;但是有一种情况，函数内部的形参可以看做是局部变量。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;但是有一种情况，函数内部的形参可以看做是局部变量。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h5 id=&#34;变量的访问原则&#34;&gt;变量的访问原则
 &lt;/h5&gt;&lt;p&gt;就近原则：在能够访问到的情况下，先局部，局部没有再找全局&lt;/p&gt;
 &lt;p&gt;&lt;span style=&#34;color: #FF0000;&#34;&gt;例1：&lt;/span&gt;&lt;/p&gt;
@@ -20591,7 +20642,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;无需调用，立即执行，其实本质已经调用了&lt;/p&gt;
-&lt;p&gt;多个立即执行函数之间用分号隔开&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;多个立即执行函数之间用分号隔开&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;span style=&#34;color: #FF0000;&#34;&gt;例：&lt;/span&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -20819,14 +20871,16 @@
 &lt;p&gt;![](/assets/GIF 2024-10-17 23-30-16.gif)&lt;/p&gt;
 &lt;h2 id=&#34;javascript-基础---第5天&#34;&gt;JavaScript 基础 - 第5天
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;知道对象数据类型的特征，能够利用数组对象渲染页面&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;知道对象数据类型的特征，能够利用数组对象渲染页面&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;理解什么是对象，掌握定义对象的语法&lt;/li&gt;
 &lt;li&gt;掌握数学对象的使用&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;对象&#34;&gt;对象
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;对象是 JavaScript 数据类型的一种，之前已经学习了数值类型、字符串类型、布尔类型、undefined。对象数据类型可以被理解成是一种数据集合。它由属性和方法两部分构成。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;对象是 JavaScript 数据类型的一种，之前已经学习了数值类型、字符串类型、布尔类型、undefined。对象数据类型可以被理解成是一种数据集合。它由属性和方法两部分构成。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;语法&#34;&gt;语法
 &lt;/h4&gt;&lt;p&gt;声明一个对象类型的变量与之前声明一个数值或字符串类型的变量没有本质上的区别。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

@@ -308,7 +308,8 @@
 </h4><p>此处按模块拆分进行演示</p>
 <blockquote>
 <p>分模块开发需要先针对模块功能进行设计，再进行编码。不会先将工程开发完毕，然后进行拆分</p>
-<p>此处以演示为主，故将项目开发后进行拆分</p></blockquote>
+<p>此处以演示为主，故将项目开发后进行拆分</p>
+</blockquote>
 <p>在项目同目录下创建一个模块用于存放项目的实体类（创建普通Java模块即可）：</p>
 <img src="/assets/image-20250926220908113.png" alt="image-20250926220908113" style="zoom:50%;" />
 <p>将项目中的实体类存入其中：</p>
@@ -400,7 +401,8 @@
 <p>打包方式：</p>
 <p>jar：普通模块打包，springboot项目基本都是jar包（内嵌tomcat运行）</p>
 <p>war：普通web程序打包，需要部署在外部的tomcat服务器中运行</p>
-<p>pom：父工程或聚合工程，该模块不写代码，仅进行依赖管理</p></blockquote>
+<p>pom：父工程或聚合工程，该模块不写代码，仅进行依赖管理</p>
+</blockquote>
 <img src="/assets/image-20250927134728474.png" alt="image-20250927134728474" style="zoom: 50%;" />
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -521,7 +523,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>若父子工程都配置了同一个依赖的不同版本，子工程以自己配置的为准（类似Java中的重写）</p></blockquote>
+<p>若父子工程都配置了同一个依赖的不同版本，子工程以自己配置的为准（类似Java中的重写）</p>
+</blockquote>
 <p>在实际项目中，子工程一般会创建在父工程内，这样看起来更直观</p>
 <img src="/assets/image-20250927141412429.png" alt="image-20250927141412429" style="zoom:33%;" />
 <h5 id="版本锁定">版本锁定
@@ -618,7 +621,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>聚合工程中所包含的模块，在构建时，会自动根据模块间的依赖关系设置构建顺序，与聚合工程中模块的配置书写位置无关</p></blockquote>
+<p>聚合工程中所包含的模块，在构建时，会自动根据模块间的依赖关系设置构建顺序，与聚合工程中模块的配置书写位置无关</p>
+</blockquote>
 <p>现在只要在聚合工程中进行打包即可</p>
 <img src="/assets/image-20250927180657713.png" alt="image-20250927180657713" style="zoom:50%;" />
 <h5 id="继承与聚合对比">继承与聚合对比
@@ -696,7 +700,8 @@
 </div>
 </div><p>3.设置私服依赖下载的仓库组地址（在自己maven安装目录下的<code>conf/settings.xml</code>中的profiles中配置）</p>
 <blockquote>
-<p>若是不加则只允许我们使用release仓库中的依赖，不允许使用snapshot仓库中的依赖</p></blockquote>
+<p>若是不加则只允许我们使用release仓库中的依赖，不允许使用snapshot仓库中的依赖</p>
+</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -774,7 +779,8 @@
 <p>idea会自动根据项目<code>pom.xml</code>中设置的版本<code>&lt;version&gt;</code>进行上传，如果后缀有SNAPSHOT则会自动上传到snapshot仓库，</p>
 <p>若没有则会默认上传到releases仓库</p>
 <blockquote>
-<p>在真实的企业开发中，私服都是在远程服务器中的，并不是在本地的。这里只是为了方便演示</p></blockquote>
+<p>在真实的企业开发中，私服都是在远程服务器中的，并不是在本地的。这里只是为了方便演示</p>
+</blockquote>
 
 </section>
 

@@ -512,7 +512,8 @@
 </h3><p>点击查看<a class="link" href="https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create"  target="_blank" rel="noopener"
     >官方文档</a></p>
 <blockquote>
-<p>备注：目前<code>vue-cli</code>已处于维护模式，官方推荐基于 <code>Vite</code> 创建项目。</p></blockquote>
+<p>备注：目前<code>vue-cli</code>已处于维护模式，官方推荐基于 <code>Vite</code> 创建项目。</p>
+</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -703,7 +704,8 @@
 <img src="/assets/image-20250219192519483.png" alt="image-20250219192519483" style="zoom: 67%;" />
 <blockquote>
 <p>若觉得每次手动打开浏览器麻烦，可以将<code>&quot;dev&quot;: &quot;vite&quot;</code>改为<code>&quot;dev&quot;: &quot;vite --open&quot;</code></p>
-<p>此时，每次输入运行命令后将自动打开浏览器</p></blockquote>
+<p>此时，每次输入运行命令后将自动打开浏览器</p>
+</blockquote>
 <h4 id="223-如何停止运行">2.2.3. 如何停止运行
 </h4><p>在终端按快捷键<code>ctrl + c</code>停止运行</p>
 <h3 id="23-一个简单的效果">2.3. 【一个简单的效果】
@@ -793,7 +795,8 @@
 </h4><p>可以用函数的方式，更加优雅的组织代码，让相关功能的代码更加有序的组织在一起。</p>
 <p><img src="/assets/1696662249851-db6403a1-acb5-481a-88e0-e1e34d2ef53a.gif" alt="3.gif" style="height:300px;border-radius:10px"  /><img src="/assets/1696662256560-7239b9f9-a770-43c1-9386-6cc12ef1e9c0.gif" alt="4.gif" style="height:300px;border-radius:10px"  /></p>
 <blockquote>
-<p>说明：以上四张动图原创作者：大帅老猿</p></blockquote>
+<p>说明：以上四张动图原创作者：大帅老猿</p>
+</blockquote>
 <h3 id="32-拉开序幕的-setup">3.2. 【拉开序幕的 setup】
 </h3><h4 id="setup-概述">setup 概述
 </h4><p><code>setup</code>是<code>Vue3</code>中一个新的配置项，值是一个函数，它是 <code>Composition API</code> <strong>“表演的舞台</strong><em><strong>”</strong></em>，组件中所用到的：数据、方法、计算属性、监视&hellip;&hellip;等等，均配置在<code>setup</code>中。</p>
@@ -1320,7 +1323,8 @@
 <li>
 <p><code>reactive</code>用来定义：<strong>对象类型数据</strong>。</p>
 </li>
-</ol></blockquote>
+</ol>
+</blockquote>
 <ul>
 <li>区别：</li>
 </ul>
@@ -1334,7 +1338,8 @@
 <p><code>reactive</code>重新分配一个新对象，会<strong>失去</strong>响应式（可以使用<code>Object.assign</code>去整体替换）。</p>
 <img src="/assets/image-20250223211333335.png" alt="image-20250223211333335" style="zoom: 33%;" />
 </li>
-</ol></blockquote>
+</ol>
+</blockquote>
 <ul>
 <li>使用原则：</li>
 </ul>
@@ -1343,7 +1348,8 @@
 <li>若需要一个基本类型的响应式数据，必须使用<code>ref</code>。</li>
 <li>若需要一个响应式对象，层级不深，<code>ref</code>、<code>reactive</code>都可以。</li>
 <li>若需要一个响应式对象，且层级较深，推荐使用<code>reactive</code>。</li>
-</ol></blockquote>
+</ol>
+</blockquote>
 <h3 id="37-torefs-与-toref">3.7. 【toRefs 与 toRef】
 </h3><ul>
 <li>作用：将一个响应式对象中的每一个属性，转换为<code>ref</code>对象。</li>
@@ -1542,7 +1548,8 @@
 <li><code>reactive</code>定义的数据。</li>
 <li>函数返回一个值（<code>getter</code>函数）。</li>
 <li>一个包含上述内容的数组。</li>
-</ol></blockquote>
+</ol>
+</blockquote>
 <p>我们在<code>Vue3</code>中使用<code>watch</code>的时候，通常会遇到以下几种情况：</p>
 <h4 id="-情况一">* 情况一
 </h4><p>监视<code>ref</code>定义的【基本类型】数据：直接写数据名即可，监视的是其<code>value</code>值的改变。</p>
@@ -1613,7 +1620,8 @@
 <li>
 <p>若修改整个<code>ref</code>定义的对象，<code>newValue</code> 是新值， <code>oldValue</code> 是旧值，因为不是同一个对象了。</p>
 </li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2057,7 +2065,8 @@
 <li>
 <p><code>watchEffect</code>：不用明确指出监视的数据（函数中用到哪些属性，那就监视哪些属性）。</p>
 </li>
-</ol></blockquote>
+</ol>
+</blockquote>
 </li>
 <li>
 <p>示例代码：</p>
@@ -2175,7 +2184,8 @@
 <li>
 <p>用在组件标签上，获取的是组件实例对象。</p>
 </li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <p>用在普通<code>DOM</code>标签上：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2463,7 +2473,8 @@
 <li>
 <p>规律：</p>
 <blockquote>
-<p>生命周期整体分为四个阶段，分别是：<strong>创建、挂载、更新、销毁</strong>，每个阶段都有两个钩子，一前一后。</p></blockquote>
+<p>生命周期整体分为四个阶段，分别是：<strong>创建、挂载、更新、销毁</strong>，每个阶段都有两个钩子，一前一后。</p>
+</blockquote>
 </li>
 <li>
 <p><code>Vue2</code>的生命周期</p>
@@ -2471,7 +2482,8 @@
 <p>创建阶段：<code>beforeCreate</code>、<code>created</code></p>
 <p>挂载阶段：<code>beforeMount</code>、<code>mounted</code></p>
 <p>更新阶段：<code>beforeUpdate</code>、<code>updated</code></p>
-<p>销毁阶段：<code>beforeDestroy</code>、<code>destroyed</code></p></blockquote>
+<p>销毁阶段：<code>beforeDestroy</code>、<code>destroyed</code></p>
+</blockquote>
 </li>
 <li>
 <p><code>Vue3</code>的生命周期</p>
@@ -2479,7 +2491,8 @@
 <p>创建阶段：<code>setup</code></p>
 <p>挂载阶段：<code>onBeforeMount</code>、<code>onMounted</code></p>
 <p>更新阶段：<code>onBeforeUpdate</code>、<code>onUpdated</code></p>
-<p>卸载阶段：<code>onBeforeUnmount</code>、<code>onUnmounted</code></p></blockquote>
+<p>卸载阶段：<code>onBeforeUnmount</code>、<code>onUnmounted</code></p>
+</blockquote>
 </li>
 <li>
 <p>常用的钩子：<code>onMounted</code>(挂载完毕)、<code>onUpdated</code>(更新完毕)、<code>onBeforeUnmount</code>(卸载之前)</p>
@@ -2917,7 +2930,8 @@
 <li>
 <p>通过点击导航，视觉效果上“消失” 了的路由组件，默认是被<strong>卸载</strong>掉的，需要的时候再去<strong>挂载</strong>。</p>
 </li>
-</ol></blockquote>
+</ol>
+</blockquote>
 <h3 id="44路由器工作模式">4.4.【路由器工作模式】
 </h3><ol>
 <li>
@@ -3310,7 +3324,8 @@
 ></p>
 <blockquote>
 <p>备注1：传递<code>params</code>参数时，若使用<code>to</code>的对象写法，必须使用<code>name</code>配置项，不能用<code>path</code>。</p>
-<p>备注2：传递<code>params</code>参数时，需要提前在规则中占位。</p></blockquote>
+<p>备注2：传递<code>params</code>参数时，需要提前在规则中占位。</p>
+</blockquote>
 <h3 id="49-路由的props配置">4.9. 【路由的props配置】
 </h3><p>作用：让路由组件更方便的收到参数（可以将路由参数作为<code>props</code>传给组件）</p>
 <p>备注：在<code>src/router/index.ts</code>中编写</p>
@@ -4825,7 +4840,8 @@
 <li>
 <p>具体说明：<code>$attrs</code>是一个对象，包含所有父组件传入的标签属性。</p>
 <blockquote>
-<p>注意：<code>$attrs</code>会自动排除<code>props</code>中声明的属性(可以认为声明过的 <code>props</code> 被子组件自己“消费”了)</p></blockquote>
+<p>注意：<code>$attrs</code>会自动排除<code>props</code>中声明的属性(可以认为声明过的 <code>props</code> 被子组件自己“消费”了)</p>
+</blockquote>
 </li>
 </ol>
 <p>父组件：</p>
@@ -5293,7 +5309,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>注意：子组件中不用编写任何东西，是不受到任何打扰的</p></blockquote>
+<p>注意：子组件中不用编写任何东西，是不受到任何打扰的</p>
+</blockquote>
 <p>【第二步】孙组件中使用<code>inject</code>配置项接受数据。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -5602,7 +5619,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>默认插槽其实也有名字，名字为<code>default</code></p></blockquote>
+<p>默认插槽其实也有名字，名字为<code>default</code></p>
+</blockquote>
 <h4 id="3-作用域插槽">3. 作用域插槽
 </h4><ol>
 <li>
@@ -5689,7 +5707,8 @@
 </div></li>
 </ol>
 <blockquote>
-<p>作用域插槽也可以有名字，可与具名插槽结合</p></blockquote>
+<p>作用域插槽也可以有名字，可与具名插槽结合</p>
+</blockquote>
 <h2 id="7-其它-api">7. 其它 API
 </h2><h3 id="71shallowref-与-shallowreactive-">7.1.【shallowRef 与 shallowReactive 】
 </h3><h4 id="shallowref"><code>shallowRef</code>
@@ -5738,7 +5757,8 @@
 </h4><blockquote>
 <p>通过使用 <a class="link" href="https://cn.vuejs.org/api/reactivity-advanced.html#shallowref"  target="_blank" rel="noopener"
     ><code>shallowRef()</code></a> 和 <a class="link" href="https://cn.vuejs.org/api/reactivity-advanced.html#shallowreactive"  target="_blank" rel="noopener"
-    ><code>shallowReactive()</code></a> 来绕开深度响应。浅层式 <code>API</code> 创建的状态只在其顶层是响应式的，对所有深层的对象不会做任何处理，避免了对每一个内部属性做响应式所带来的性能成本，这使得属性的访问变得更快，可提升性能。</p></blockquote>
+    ><code>shallowReactive()</code></a> 来绕开深度响应。浅层式 <code>API</code> 创建的状态只在其顶层是响应式的，对所有深层的对象不会做任何处理，避免了对每一个内部属性做响应式所带来的性能成本，这使得属性的访问变得更快，可提升性能。</p>
+</blockquote>
 <h4 id="注意">注意
 </h4><p>不是响应式不代表数据不变，当页面中有响应式数据发生了变化，这些被修改的非响应式数据也会跟着变化</p>
 <p><img src="/assets/PixPin_2025-03-06_20-59-07.gif"
@@ -5964,9 +5984,11 @@
 <li>
 <p>作用：用于获取一个响应式对象的原始对象， <code>toRaw</code> 返回的对象不再是响应式的，不会触发视图更新。</p>
 <blockquote>
-<p>官网描述：这是一个可以用于临时读取而不引起代理访问/跟踪开销，或是写入而不触发更改的特殊方法。不建议保存对原始对象的持久引用，请谨慎使用。</p></blockquote>
+<p>官网描述：这是一个可以用于临时读取而不引起代理访问/跟踪开销，或是写入而不触发更改的特殊方法。不建议保存对原始对象的持久引用，请谨慎使用。</p>
+</blockquote>
 <blockquote>
-<p>何时使用？ —— 在需要将响应式对象传递给非 <code>Vue</code> 的库或外部系统时，使用 <code>toRaw</code> 可以确保它们收到的是普通对象</p></blockquote>
+<p>何时使用？ —— 在需要将响应式对象传递给非 <code>Vue</code> 的库或外部系统时，使用 <code>toRaw</code> 可以确保它们收到的是普通对象</p>
+</blockquote>
 </li>
 <li>
 <p>具体编码：</p>
@@ -5999,13 +6021,15 @@
 </div></li>
 </ol>
 <blockquote>
-<p>注：修改rawPerson的内容时，虽然页面不会更新，但原person的内容也会被修改，等到其他响应式数据更新时，person被修改的内容也会同步在页面更新</p></blockquote>
+<p>注：修改rawPerson的内容时，虽然页面不会更新，但原person的内容也会被修改，等到其他响应式数据更新时，person被修改的内容也会同步在页面更新</p>
+</blockquote>
 <h4 id="markraw"><code>markRaw</code>
 </h4><ol>
 <li>
 <p>作用：标记一个对象，使其<strong>永远不会</strong>变成响应式的。</p>
 <blockquote>
-<p>例如使用<code>mockjs</code>时，为了防止误把<code>mockjs</code>变为响应式对象，可以使用 <code>markRaw</code> 去标记<code>mockjs</code></p></blockquote>
+<p>例如使用<code>mockjs</code>时，为了防止误把<code>mockjs</code>变为响应式对象，可以使用 <code>markRaw</code> 去标记<code>mockjs</code></p>
+</blockquote>
 </li>
 <li>
 <p>编码：</p>
@@ -6221,7 +6245,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>不使用Suspense时，若子组件有异步任务，该子组件会直接消失</p></blockquote>
+<p>不使用Suspense时，若子组件有异步任务，该子组件会直接消失</p>
+</blockquote>
 <h3 id="83全局api转移到应用对象">8.3.【全局API转移到应用对象】
 </h3><ul>
 <li>

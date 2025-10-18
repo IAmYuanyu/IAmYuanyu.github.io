@@ -457,7 +457,8 @@
 <p>有状态的bean：在该对象中会保存数据</p>
 <img src="/assets/image-20250923215218916.png" alt="image-20250923215218916" style="zoom:67%;" />
 <blockquote>
-<p>在实际开发当中，绝大多数的Bean是单例的，不需要配置scope属性</p></blockquote>
+<p>在实际开发当中，绝大多数的Bean是单例的，不需要配置scope属性</p>
+</blockquote>
 <h3 id="第三方bean">第三方Bean
 </h3><p>如果需要管理的bean对象来自于第三方，一般为只读的，无法编辑，也就无法使用<code>@Component</code>注解声明bean，此时可以使用<code>@Bean</code>注解</p>
 <p>一种方法是在启动类当中进行管理，不过不推荐这种方式</p>
@@ -485,7 +486,8 @@
 <p>第三方bean需要依赖其他bean时，将其他bean定义在方法形参中即可，容器会根据类型自动装配</p>
 <p>若第三方bean没有需要依赖的bean，形参部分空着即可</p>
 <blockquote>
-<p>通过<code>@Bean</code>注解的name或value属性可以声明bean的名称，如果不指定，默认bean的名称就是方法名</p></blockquote>
+<p>通过<code>@Bean</code>注解的name或value属性可以声明bean的名称，如果不指定，默认bean的名称就是方法名</p>
+</blockquote>
 
 </section>
 

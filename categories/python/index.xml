@@ -81,7 +81,8 @@
 &lt;/h4&gt;&lt;p&gt;print()函数：&lt;code&gt;print(*objects, sep=&#39; &#39;, end=&#39;\n&#39;, file=None, flush=False)&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;sep：设置多个内容之间的分隔符，默认分隔符、空格&lt;/p&gt;
-&lt;p&gt;end: 设置结束符，默认结束符&amp;rsquo;\n&#39;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;end: 设置结束符，默认结束符&amp;rsquo;\n&#39;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;想要在一行中打印多个内容，可以在print()函数中使用逗号隔开多个内容，如下&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1097,7 +1098,8 @@
 &lt;p&gt;• 值 value 是数据&lt;/p&gt;
 &lt;p&gt;• 键 和 值 之间使用 : 分隔&lt;/p&gt;
 &lt;p&gt;• 键必须是唯一的&lt;/p&gt;
-&lt;p&gt;• 值 可以取任何数据类型，但 键 只能使用 字符串、数字或 元组&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;• 值 可以取任何数据类型，但 键 只能使用 字符串、数字或 元组&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -1510,7 +1512,8 @@
 &lt;/div&gt;&lt;h3 id=&#34;raise关键字throw&#34;&gt;raise关键字（throw）
 &lt;/h3&gt;&lt;p&gt;手动抛出一个指定类型的异常，无论是哪种异常类都可以带一个字符串参数，对异常进行描述。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;raise不带参数会把错误原样抛出&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;raise不带参数会把错误原样抛出&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
