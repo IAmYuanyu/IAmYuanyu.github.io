@@ -7,7 +7,44 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Thu, 09 Oct 2025 22:55:16 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 19 Oct 2025 12:29:42 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用Cpolar实现内网穿透</title>
+        <link>https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8cpolar%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+        <pubDate>Sun, 19 Oct 2025 12:29:42 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8cpolar%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
+        <description>&lt;h2 id=&#34;使用cpolar实现内网穿透&#34;&gt;使用Cpolar实现内网穿透
+&lt;/h2&gt;&lt;h3 id=&#34;注册登录cpolar&#34;&gt;注册登录cpolar
+&lt;/h3&gt;&lt;p&gt;官网地址：&lt;a class=&#34;link&#34; href=&#34;https://www.cpolar.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cpolar官网-安全的内网穿透工具 | 无需公网ip | 远程访问 | 搭建网站&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;登录后在首页下载，不多赘述&lt;/p&gt;
+&lt;h3 id=&#34;绑定token&#34;&gt;绑定token
+&lt;/h3&gt;&lt;p&gt;先在官网获取自己的token&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251019121610789.png&#34; alt=&#34;image-20251019121610789&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;然后打开刚刚下载的cpolar的目录，在目录处打开命令行窗口&lt;/p&gt;
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251019121926977.png&#34; alt=&#34;image-20251019121926977&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;然后在命令行窗口输入下方命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cpolar.exe authtoken YjJ**********(这里是刚刚复制的token)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;启动服务&#34;&gt;启动服务
+&lt;/h3&gt;&lt;p&gt;比如我要为本地的8080端口获取临时域名，在刚刚的命令行窗口输入下方命令即可&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cpolar.exe http 8080
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>TODO待办事项</title>
         <link>https://IAmYuanyu.github.io/p/todo%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9/</link>
         <pubDate>Thu, 09 Oct 2025 22:55:16 +0800</pubDate>
