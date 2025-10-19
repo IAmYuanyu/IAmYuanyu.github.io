@@ -7,7 +7,64 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Wed, 18 Jun 2025 18:46:48 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 19 Oct 2025 22:44:36 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Git修改commit信息</title>
+        <link>https://IAmYuanyu.github.io/p/git%E4%BF%AE%E6%94%B9commit%E4%BF%A1%E6%81%AF/</link>
+        <pubDate>Sun, 19 Oct 2025 22:44:36 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/git%E4%BF%AE%E6%94%B9commit%E4%BF%A1%E6%81%AF/</guid>
+        <description>&lt;h2 id=&#34;git修改commit信息&#34;&gt;Git修改commit信息
+&lt;/h2&gt;&lt;h3 id=&#34;只提交到本地&#34;&gt;只提交到本地
+&lt;/h3&gt;&lt;p&gt;如果只是修改&lt;strong&gt;最近一次&lt;/strong&gt;只提交到本地尚未push的commit信息可以直接使用&lt;code&gt;git commit --amend&lt;/code&gt;进行修改&lt;/p&gt;
+&lt;p&gt;输入后会进入编辑页面（一般是Vim编辑器，不会用自行搜教程），修改后直接保存即可&lt;/p&gt;
+&lt;h3 id=&#34;已提交到远程仓库&#34;&gt;已提交到远程仓库
+&lt;/h3&gt;&lt;p&gt;使用&lt;code&gt;git rebase -i&lt;/code&gt;进行修改，如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git rebase -i HEAD~1  &lt;span class=&#34;c1&#34;&gt;# 数字1表示修改最近1个提交，按需调整&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;执行上述指令后会进入编辑页面，一般第一行会显示如下内容&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pick a1b2c3d 原提交信息
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;将行首的 &lt;code&gt;pick&lt;/code&gt; 改为 &lt;code&gt;reword&lt;/code&gt;（或缩写 &lt;code&gt;r&lt;/code&gt;），然后保存退出编辑器&lt;/p&gt;
+&lt;p&gt;保存退出后会自动进入提交信息编辑页面，此时直接修改原信息在保存退出即可&lt;/p&gt;
+&lt;p&gt;由于修改了历史，需要用 &lt;code&gt;--force&lt;/code&gt;（或更安全的 &lt;code&gt;--force-with-lease&lt;/code&gt;）强制覆盖远程分支：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push --force-with-lease origin 分支名  &lt;span class=&#34;c1&#34;&gt;# 推荐用 --force-with-lease，比 --force 更安全&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--force-with-lease&lt;/code&gt; 会检查远程分支是否有他人的新提交，避免意外覆盖他人代码（多人协作时强烈推荐）&lt;/li&gt;
+&lt;li&gt;如果确认远程分支只有你的提交，也可以用 &lt;code&gt;git push --force origin 分支名&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不确定第几个可以使用&lt;code&gt;git log&lt;/code&gt;查看提交历史&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git log --oneline  &lt;span class=&#34;c1&#34;&gt;# 简洁显示提交历史，方便查找&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
         <title>部署Vue3项目到GithubPages</title>
         <link>https://IAmYuanyu.github.io/p/%E9%83%A8%E7%BD%B2vue3%E9%A1%B9%E7%9B%AE%E5%88%B0githubpages/</link>
         <pubDate>Wed, 18 Jun 2025 18:46:48 +0800</pubDate>
