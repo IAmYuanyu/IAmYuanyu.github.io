@@ -7,7 +7,66 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Sun, 19 Oct 2025 12:29:42 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 23 Nov 2025 22:20:40 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>解决win10没声音</title>
+        <link>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3win10%E6%B2%A1%E5%A3%B0%E9%9F%B3/</link>
+        <pubDate>Sun, 23 Nov 2025 22:20:40 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3win10%E6%B2%A1%E5%A3%B0%E9%9F%B3/</guid>
+        <description>&lt;p&gt;作者的电脑重装系统后，发现没声音了，驱动反反复复装了好多次，各种版本也依旧没声音。弄了一天终于解决了。&lt;/p&gt;
+&lt;h2 id=&#34;解决前的情况&#34;&gt;解决前的情况
+&lt;/h2&gt;&lt;p&gt;win10系统，台式机，声卡驱动已安装，蓝牙设备连接是有声音的，但使用有线音响连接主板就没声音了（音响是一根USB线+一根3.5mm音频线）&lt;/p&gt;
+&lt;h2 id=&#34;解决方法&#34;&gt;解决方法
+&lt;/h2&gt;&lt;p&gt;以管理员身份打开&lt;code&gt;C:\Program Files\Realtek\Audio\HDA\RtlUpd64.exe&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;运行完没什么明显反应是正常的（也可以顺手运行下旁边的&lt;code&gt;RtkNGUI64.exe&lt;/code&gt;）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后打开系统控制面板，如图操作&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251123173039410.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251123173039410&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251123173102973.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251123173102973&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;正常情况下，会如图出现一个&lt;strong&gt;Realtek高清晰音频管理器&lt;/strong&gt;，如果没有出现，请根据自己的主板去对应品牌官网下载主板对应的官方驱动，然后重新执行上述步骤&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251123173442499.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251123173442499&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251123173523454.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251123173523454&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;选择为&lt;strong&gt;后喇叭输出&lt;/strong&gt;后，点击确认，到这作者的音响就恢复声音了&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>使用Cpolar实现内网穿透</title>
         <link>https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8cpolar%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
         <pubDate>Sun, 19 Oct 2025 12:29:42 +0800</pubDate>
