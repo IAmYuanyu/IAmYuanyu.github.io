@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简单介绍了Filter的使用以及与Interceptor的区别">
 <title>过滤器Filter基础介绍</title>
@@ -331,18 +331,18 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.yuanyu.filter</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.yuanyu.utils.JwtUtils</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.*</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.annotation.WebFilter</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.http.HttpServletRequest</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.http.HttpServletResponse</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.extern.slf4j.Slf4j</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.yuanyu.utils.JwtUtils</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.*</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.annotation.WebFilter</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.http.HttpServletRequest</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.http.HttpServletResponse</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.extern.slf4j.Slf4j</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Slf4j</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@WebFilter</span><span class="p">(</span><span class="n">urlPatterns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;/*&#34;</span><span class="p">)</span><span class="w"> </span><span class="c1">// 所有请求都会被拦截</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TokenFilter</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Filter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 实现Filter(选的是servlet的)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Slf4j</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@WebFilter</span><span class="p">(</span><span class="n">urlPatterns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;/*&#34;</span><span class="p">)</span><span class="w"> </span><span class="c1">// 所有请求都会被拦截</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TokenFilter</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Filter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 实现Filter(选的是servlet的)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// doFilter必须重写</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doFilter</span><span class="p">(</span><span class="n">ServletRequest</span><span class="w"> </span><span class="n">servletRequest</span><span class="p">,</span><span class="w"> </span><span class="n">ServletResponse</span><span class="w"> </span><span class="n">servletResponse</span><span class="p">,</span><span class="w"> </span><span class="n">FilterChain</span><span class="w"> </span><span class="n">filterChain</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="w"> </span><span class="n">ServletException</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -376,7 +376,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;令牌校验通过，放行&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">filterChain</span><span class="p">.</span><span class="na">doFilter</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>别忘了在启动类上加<code>@ServletComponentScan</code></p>
@@ -392,12 +392,12 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@ServletComponentScan</span><span class="w"> </span><span class="c1">// 不加这个，Filter就无法使用</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@SpringBootApplication</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TliasWebManagementApplication</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TliasWebManagementApplication</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">TliasWebManagementApplication</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>效果：</p>
@@ -423,8 +423,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@WebFilter</span><span class="p">(</span><span class="n">urlPatterns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;/*&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DemoFilter</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Filter</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@WebFilter</span><span class="p">(</span><span class="n">urlPatterns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;/*&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DemoFilter</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Filter</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doFilter</span><span class="p">(</span><span class="n">ServletRequest</span><span class="w"> </span><span class="n">servletRequest</span><span class="p">,</span><span class="w"> </span><span class="n">ServletResponse</span><span class="w"> </span><span class="n">servletResponse</span><span class="p">,</span><span class="w"> </span><span class="n">FilterChain</span><span class="w"> </span><span class="n">filterChain</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="w"> </span><span class="n">ServletException</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;放行前……&#34;</span><span class="p">);</span><span class="w">
@@ -432,7 +432,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">filterChain</span><span class="p">.</span><span class="na">doFilter</span><span class="p">(</span><span class="n">servletRequest</span><span class="p">,</span><span class="n">servletResponse</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;放行后……&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="/assets/image-20250920190536368.png"

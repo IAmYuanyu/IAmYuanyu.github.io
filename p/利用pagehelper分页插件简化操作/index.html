@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="PageHelper是第三方提供的在Mybatis框架中用来实现分页的插件，用来简化分页操作，提高开发效率">
 <title>利用PageHelper分页插件简化操作</title>
@@ -305,13 +305,13 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 查询总记录数</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Select</span><span class="p">(</span><span class="s">&#34;select count(*) from ……&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="nf">count</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Select</span><span class="p">(</span><span class="s">&#34;select count(*) from ……&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="nf">count</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 查询结果列表</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Select</span><span class="p">(</span><span class="s">&#34;select * from …… limit #{start}, #{pageSize}&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">pageSize</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 查询结果列表</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Select</span><span class="p">(</span><span class="s">&#34;select * from …… limit #{start}, #{pageSize}&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">pageSize</span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>原始方式-Service层：</p>
@@ -336,7 +336,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">empMapper</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">pageSize</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 封装分页结果</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PageResult</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="p">(</span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="n">rows</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="使用pagehelper后">使用PageHelper后
@@ -349,8 +349,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 查询数据列表</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Select</span><span class="p">(</span><span class="s">&#34;select * from ……&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">list</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Select</span><span class="p">(</span><span class="s">&#34;select * from ……&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">list</span><span class="p">();</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>PageHelper-Service层：</p>
@@ -375,7 +375,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 解析查询结果并封装</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Page</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Page</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">empList</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PageResult</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getTotal</span><span class="p">(),</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getResult</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="pagehelper实现机制与注意事项">PageHelper实现机制与注意事项

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍了两种在SpringBoot项目中格式化输出日期的方式">
 <title>格式化后端返回的日期</title>
@@ -276,7 +276,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@JsonFormat</span><span class="p">(</span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">createTime</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">createTime</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用之前的返回结果：</p>
@@ -336,8 +336,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Slf4j</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WebMvcConfiguration</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">WebMvcConfigurationSupport</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Slf4j</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WebMvcConfiguration</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">WebMvcConfigurationSupport</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * 扩展消息转换器
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * @param converters
@@ -353,7 +353,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 设置索引放在最前面，否则会被默认的转换器给覆盖掉</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">converters</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">converter</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中的<code>JacksonObjectMapper</code>如下：</p>
@@ -411,28 +411,28 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.databind.DeserializationFeature</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.databind.ObjectMapper</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.databind.module.SimpleModule</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.databind.ObjectMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.databind.module.SimpleModule</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDate</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDateTime</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalTime</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.format.DateTimeFormatter</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDate</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDateTime</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalTime</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.format.DateTimeFormatter</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import static</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import static</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 对象映射器:基于jackson将Java对象转为json，或者将json转为Java对象
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 将JSON解析为Java对象的过程称为 [从JSON反序列化Java对象]
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 从Java对象生成JSON的过程称为 [序列化Java对象到JSON]
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">JacksonObjectMapper</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">JacksonObjectMapper</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">DEFAULT_DATE_FORMAT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;yyyy-MM-dd&#34;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//public static final String DEFAULT_DATE_TIME_FORMAT = &#34;yyyy-MM-dd HH:mm:ss&#34;;</span><span class="w">
@@ -458,7 +458,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//注册功能模块 例如，可以添加自定义序列化器和反序列化器</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">registerModule</span><span class="p">(</span><span class="n">simpleModule</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div>

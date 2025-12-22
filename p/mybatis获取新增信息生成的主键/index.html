@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="使用MyBatis提供的@Options注解来获取生成的主键">
 <title>MyBatis获取新增信息生成的主键</title>
@@ -272,8 +272,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Options</span><span class="p">(</span><span class="n">useGeneratedKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">keyProperty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;id&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Insert</span><span class="p">(</span><span class="s">&#34;insert into ……&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Emp</span><span class="w"> </span><span class="n">emp</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Insert</span><span class="p">(</span><span class="s">&#34;insert into ……&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Emp</span><span class="w"> </span><span class="n">emp</span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>keyProperty的值是决定将返回的主键的封装到哪个属性，我的Emp表的主键是id，所以此处为id</p>
@@ -313,7 +313,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">empExprMapper</span><span class="p">.</span><span class="na">insertBatch</span><span class="p">(</span><span class="n">exprList</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div>

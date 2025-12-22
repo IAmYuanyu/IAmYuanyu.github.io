@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="通过@RequestParam注解的defaultValue属性设置参数的默认值">
 <title>Controller层通过注解设置参数默认值</title>
@@ -276,12 +276,12 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@GetMapping</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Result</span><span class="w"> </span><span class="nf">page</span><span class="p">(</span><span class="nd">@RequestParam</span><span class="p">(</span><span class="n">defaultValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;1&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">page</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">Result</span><span class="w"> </span><span class="nf">page</span><span class="p">(</span><span class="nd">@RequestParam</span><span class="p">(</span><span class="n">defaultValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;1&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">page</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="nd">@RequestParam</span><span class="p">(</span><span class="n">defaultValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;10&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">pageSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;分页查询：{},{}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">page</span><span class="p">,</span><span class="w"> </span><span class="n">pageSize</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">PageResult</span><span class="o">&lt;</span><span class="n">Emp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pageResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">empService</span><span class="p">.</span><span class="na">page</span><span class="p">(</span><span class="n">page</span><span class="p">,</span><span class="w"> </span><span class="n">pageSize</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Result</span><span class="p">.</span><span class="na">success</span><span class="p">(</span><span class="n">pageResult</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div>

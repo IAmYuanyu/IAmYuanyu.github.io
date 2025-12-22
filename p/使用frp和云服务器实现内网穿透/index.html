@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="使用Frp和云服务器实现内网穿透">
+<title>使用Frp和云服务器实现内网穿透</title>
+
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%92%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/'>
+
+<link rel="stylesheet" href="/scss/style.min.6a692fd055deae459f2a9767f57f3855ba80cafd5041317f24f7360f6ca47cdf.css"><meta property='og:title' content="使用Frp和云服务器实现内网穿透">
+<meta property='og:description' content="使用Frp和云服务器实现内网穿透">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%92%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/'>
+<meta property='og:site_name' content='缘鱼'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-12-22T13:32:50&#43;08:00'/><meta property='article:modified_time' content='2025-12-22T13:32:50&#43;08:00'/>
+<meta name="twitter:title" content="使用Frp和云服务器实现内网穿透">
+<meta name="twitter:description" content="使用Frp和云服务器实现内网穿透">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1e2eadef835e950a.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">缘鱼</a></h1>
+            <h2 class="site-description">缘鱼的博客</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#准备ssh客户端">准备SSH客户端</a></li>
+    <li><a href="#准备云服务器">准备云服务器</a></li>
+    <li><a href="#连接服务器">连接服务器</a></li>
+    <li><a href="#安装宝塔面板可跳过">安装宝塔面板（可跳过）</a></li>
+    <li><a href="#下载frp">下载Frp</a>
+      <ol>
+        <li><a href="#linux">Linux</a></li>
+        <li><a href="#windows">Windows</a></li>
+      </ol>
+    </li>
+    <li><a href="#配置穿透端口">配置穿透端口</a></li>
+    <li><a href="#服务器后台自动运行">服务器后台自动运行</a>
+      <ol>
+        <li><a href="#关闭">关闭</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+            <a href="/categories/linux/" >
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E4%BD%BF%E7%94%A8frp%E5%92%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">使用Frp和云服务器实现内网穿透</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            使用Frp和云服务器实现内网穿透
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-12-22</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="使用frp和云服务器实现内网穿透">使用Frp和云服务器实现内网穿透
+</h1><h2 id="准备ssh客户端">准备SSH客户端
+</h2><p>可以下载一个FinalShell</p>
+<p>下载链接：https://wwbum.lanzoue.com/iI9iD3e6tp9c</p>
+<p>密码：9n4e</p>
+<h2 id="准备云服务器">准备云服务器
+</h2><p>先去阿里云、腾讯云、火山引擎等各家云平台买个符合自己要求的云服务器，下面我将使用阿里云演示</p>
+<p>云服务器选择ubuntu系统</p>
+<p><img src="/assets/image-20251221225536918.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251221225536918"
+	
+	
+></p>
+<h2 id="连接服务器">连接服务器
+</h2><p>打开FinalShell，连接服务器</p>
+<p><img src="/assets/image-20251221225845498.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251221225845498"
+	
+	
+></p>
+<h2 id="安装宝塔面板可跳过">安装宝塔面板（可跳过）
+</h2><p>在FinalShell中输入下方命令安装宝塔面板</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh <span class="o">&amp;&amp;</span> sudo bash install_panel.sh ssl251104
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>到这里，输入一个y，然后按回车</p>
+<p><img src="/assets/image-20251221230748547.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251221230748547"
+	
+	
+></p>
+<p>安装好后如图</p>
+<p><img src="/assets/image-20251221231401544.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251221231401544"
+	
+	
+></p>
+<p>现在直接访问给出的地址是访问不到的，需要先回到阿里云放行对应端口（也可以直接在服务器防火墙添加规则，不用一定和我一样）</p>
+<p><img src="/assets/image-20251221231838847.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251221231838847"
+	
+	
+></p>
+<p>创建后点击操作里的<code>应用至实例</code>，然后再访问就可以了，输入命令行中给出的用户名和密码</p>
+<p><img src="/assets/image-20251221232107543.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251221232107543"
+	
+	
+></p>
+<p>进入后选择绑定服务器，再之后会跳出推荐配置，根据自己买的服务器配置选择是否安装</p>
+<h2 id="下载frp">下载Frp
+</h2><p>Frp的github下载地址：[<a class="link" href="https://github.com/fatedier/frp/releases"  target="_blank" rel="noopener"
+    >Releases · fatedier/frp</a>](<a class="link" href="https://github.com/fatedier/frp"  target="_blank" rel="noopener"
+    >https://github.com/fatedier/frp</a>)</p>
+<p>我的电脑是Window系统，所以分别下载<code>frp_0.65.0_linux_amd64.tar.gz</code>和<code>frp_0.65.0_windows_amd64.zip</code>，分别用于服务器和本地电脑</p>
+<p><img src="/assets/image-20251221230457380.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251221230457380"
+	
+	
+></p>
+<p>下载后解压压缩包，其中frpc表示客户端，frps表示服务端</p>
+<p>所以可以把linux文件夹中除了frps和frps.toml外的内容都删了，windows文件夹中除了frpc.exe和frpc.toml外的内容都删了</p>
+<h3 id="linux">Linux
+</h3><p>在linux的文件夹中创建一个<code>start.sh</code>文件，其中如下填写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./frps -c ./frps.toml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后打开<code>frps.toml</code>文件，如下编写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">bindPort</span> <span class="p">=</span> <span class="mi">7000</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 下面是图形化页面</span>
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">addr</span> <span class="p">=</span> <span class="s2">&#34;0.0.0.0&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">port</span> <span class="p">=</span> <span class="mi">7500</span>
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">user</span> <span class="p">=</span> <span class="s2">&#34;admin&#34;</span> <span class="c"># 账号密码可以按自己喜欢填</span>
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">password</span> <span class="p">=</span> <span class="s2">&#34;123456&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后在FinalShell中root目录下创建一个文件夹，可以取名为frp，然后将三个文件拖进去（应该是<code>start.sh</code>，图中我写错了，别写成bat文件了）</p>
+<p><img src="/assets/image-20251221234216241.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251221234216241"
+	
+	
+></p>
+<p>然后分别执行下方命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 进入刚刚创建的目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /root/frp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 赋予读写执行权限</span>
+</span></span><span class="line"><span class="cl">chmod <span class="m">777</span> /root/frp/*
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行脚本</span>
+</span></span><span class="line"><span class="cl">./start.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后同样去阿里云放行7000和7500端口，还要去宝塔控制台里也放行这两个端口，然后访问在电脑浏览器中<code>服务器公网ip:7500</code></p>
+<p><img src="/assets/image-20251221234949463.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251221234949463"
+	
+	
+></p>
+<p>嫌麻烦也可以直接关掉宝塔的防火墙</p>
+<p><img src="/assets/image-20251221235548017.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251221235548017"
+	
+	
+></p>
+<p>这里的用户名和密码就是前面在<code>frps.toml</code>文件中编写的</p>
+<p>登录后页面如下</p>
+<p><img src="/assets/image-20251221235640297.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251221235640297"
+	
+	
+></p>
+<h3 id="windows">Windows
+</h3><p>打开windows文件夹里的<code>frpc.toml</code>，将第一个<code>serverAddr</code>的值改为服务器的公网ip，其他先不动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">serverAddr</span> <span class="p">=</span> <span class="s2">&#34;你服务器的公网ip&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">serverPort</span> <span class="p">=</span> <span class="mi">7000</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">proxies</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;test-tcp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">type</span> <span class="p">=</span> <span class="s2">&#34;tcp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">localIP</span> <span class="p">=</span> <span class="s2">&#34;127.0.0.1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">localPort</span> <span class="p">=</span> <span class="mi">22</span>
+</span></span><span class="line"><span class="cl"><span class="nx">remotePort</span> <span class="p">=</span> <span class="mi">6000</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后编写一个<code>start.bat</code>脚本，内容为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">frpc -c frpc.toml
+</span></span><span class="line"><span class="cl">pause <span class="c1"># 运行成功时不影响，失败时不会自动关闭窗口</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>双击执行</p>
+<p><img src="/assets/image-20251222121254147.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251222121254147"
+	
+	
+></p>
+<p>如图说明已经成功实现内网穿透了</p>
+<h2 id="配置穿透端口">配置穿透端口
+</h2><p>以我的本地博客为例，修改frpc.toml的内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">serverAddr</span> <span class="p">=</span> <span class="s2">&#34;106.14.144.133&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">serverPort</span> <span class="p">=</span> <span class="mi">7000</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">proxies</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;test-tcp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">type</span> <span class="p">=</span> <span class="s2">&#34;tcp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">localIP</span> <span class="p">=</span> <span class="s2">&#34;127.0.0.1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">localPort</span> <span class="p">=</span> <span class="mi">22</span>
+</span></span><span class="line"><span class="cl"><span class="nx">remotePort</span> <span class="p">=</span> <span class="mi">6000</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">proxies</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;web&#34;</span> <span class="c"># 名字不能重复</span>
+</span></span><span class="line"><span class="cl"><span class="nx">type</span> <span class="p">=</span> <span class="s2">&#34;tcp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">localIP</span> <span class="p">=</span> <span class="s2">&#34;127.0.0.1&#34;</span> <span class="c"># 本地ip地址，不用动</span>
+</span></span><span class="line"><span class="cl"><span class="nx">localPort</span> <span class="p">=</span> <span class="mi">1313</span> <span class="c"># 本地需要穿透的端口，我的博客的端口就是1313</span>
+</span></span><span class="line"><span class="cl"><span class="nx">remotePort</span> <span class="p">=</span> <span class="mi">1313</span> <span class="c"># 本地端口映射到服务器的端口</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置后重启脚本，打开frp的控制台，如图说明配置成功</p>
+<p><img src="/assets/image-20251222122808174.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251222122808174"
+	
+	
+></p>
+<p>测试：</p>
+<p>本地运行我的博客：</p>
+<p><img src="/assets/image-20251222122937853.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251222122937853"
+	
+	
+></p>
+<p>不使用localhost而是使用服务器公网ip尝试访问</p>
+<p><img src="/assets/image-20251222122847302.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251222122847302"
+	
+	
+></p>
+<p>发现可以使用服务器ip访问</p>
+<p>配置其他端口类似</p>
+<p>更详细的配置可以看frp的Github官方文档：<a class="link" href="https://github.com/fatedier/frp"  target="_blank" rel="noopener"
+    >Releases · fatedier/frp</a></p>
+<h2 id="服务器后台自动运行">服务器后台自动运行
+</h2><p>关闭FinalShell发现内网穿透就失效了，可以在云服务器上安装一个screen后台运行</p>
+<p>重新打开FinalShell，运行下面命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 安装screen</span>
+</span></span><span class="line"><span class="cl">apt install screen
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建一个新screen会话</span>
+</span></span><span class="line"><span class="cl">screen -S frp <span class="c1"># frp是自定义screen会话名，可以自己取名字</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 在新会话中进入/root/frp目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /root/frp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 执行frp脚本</span>
+</span></span><span class="line"><span class="cl">./start.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 退出会话，回到原本的控制台</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="c1"># 脚本运行时无法输入，可以使用快捷键Ctrl + A + D</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>现在即使关闭FinalShell，frp脚本也依旧会在服务器运行</p>
+<h3 id="关闭">关闭
+</h3><p>当然，也可以关闭</p>
+<p>重新打开FinalShell，输入下方命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看screen会话</span>
+</span></span><span class="line"><span class="cl">screen -ls
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入创建的screen会话</span>
+</span></span><span class="line"><span class="cl">screen -r 会话名或id
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/assets/image-20251222124504815.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251222124504815"
+	
+	
+></p>
+<p>图中588666为会话id，frp为会话名，输入其中一个即可进入会话，当然输入完整也行</p>
+<p>进入后使用快捷键<code>Ctrl + C</code>关闭frp服务</p>
+<p>如果要关闭会话可以执行下方命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 通过会话名关闭</span>
+</span></span><span class="line"><span class="cl">screen -S 会话名 -X quit
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 或通过会话ID关闭</span>
+</span></span><span class="line"><span class="cl">screen -S 会话ID -X quit
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 强制关闭无响应的会话</span>
+</span></span><span class="line"><span class="cl">screen -wipe 会话名/ID
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/dockercompose%E7%AE%80%E4%BB%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DockerCompose简介</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/docker%E5%9F%BA%E7%A1%80/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E9%85%8D%E7%BD%AEdocker%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">配置Docker国内镜像</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/finalshell%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95root%E7%94%A8%E6%88%B7/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">FinalShell无法登录root用户</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/linux%E5%AE%89%E8%A3%85nginx/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux安装Nginx</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="IAmYuanyu/IAmYuanyu.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 缘鱼
+    </section>
+    
+    <section class="powerby">
+        
+            本站于2025年3月26日建立 <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

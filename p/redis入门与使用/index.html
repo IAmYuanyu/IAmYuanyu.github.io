@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简单介绍了Redis及其在Java中的使用">
 <title>Redis入门与使用</title>
@@ -642,16 +642,16 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.yuanyu.config</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.extern.slf4j.Slf4j</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.annotation.Bean</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.annotation.Configuration</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.redis.connection.RedisConnectionFactory</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.redis.core.RedisTemplate</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.redis.serializer.StringRedisSerializer</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.extern.slf4j.Slf4j</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.annotation.Bean</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.annotation.Configuration</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.redis.connection.RedisConnectionFactory</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.redis.core.RedisTemplate</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.redis.serializer.StringRedisSerializer</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Configuration</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Slf4j</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RedisConfiguration</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Configuration</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Slf4j</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RedisConfiguration</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Bean</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">RedisTemplate</span><span class="w"> </span><span class="nf">redisTemplate</span><span class="p">(</span><span class="n">RedisConnectionFactory</span><span class="w"> </span><span class="n">redisConnectionFactory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -665,7 +665,7 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">setValueSerializer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StringRedisSerializer</span><span class="p">());</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -701,13 +701,13 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.yuanyu</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.redis.core.*</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.redis.core.*</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@SpringBootTest</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">class</span> <span class="nc">RedisDemoApplicationTests</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@SpringBootTest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">RedisDemoApplicationTests</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Autowired</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">RedisTemplate</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">;</span><span class="w">
@@ -718,7 +718,7 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// redisTemplate:org.springframework.data.redis.core.RedisTemplate@34fcd292</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>测试能成功运行说明环境搭建完成</p>
@@ -738,15 +738,15 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">//string数据操作</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ValueOperations</span><span class="w"> </span><span class="n">valueOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForValue</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//hash类型的数据操作</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">HashOperations</span><span class="w"> </span><span class="n">hashOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForHash</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//list类型的数据操作</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ListOperations</span><span class="w"> </span><span class="n">listOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForList</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//set类型数据操作</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">SetOperations</span><span class="w"> </span><span class="n">setOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForSet</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//zset类型数据操作</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ZSetOperations</span><span class="w"> </span><span class="n">zSetOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForZSet</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">ValueOperations</span><span class="w"> </span><span class="n">valueOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForValue</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//hash类型的数据操作</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">HashOperations</span><span class="w"> </span><span class="n">hashOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForHash</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//list类型的数据操作</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">ListOperations</span><span class="w"> </span><span class="n">listOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForList</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//set类型数据操作</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">SetOperations</span><span class="w"> </span><span class="n">setOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForSet</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">//zset类型数据操作</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">ZSetOperations</span><span class="w"> </span><span class="n">zSetOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForZSet</span><span class="p">();</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>在Java中通过上面五种类型的对象来操作Redis</p>
@@ -777,8 +777,8 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 操作字符串类型的数据
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Test</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testString</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testString</span><span class="p">(){</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// set</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForValue</span><span class="p">().</span><span class="na">set</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">,</span><span class="s">&#34;小明&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// get</span><span class="w">
@@ -790,7 +790,7 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForValue</span><span class="p">().</span><span class="na">setIfAbsent</span><span class="p">(</span><span class="s">&#34;lock&#34;</span><span class="p">,</span><span class="s">&#34;1&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForValue</span><span class="p">().</span><span class="na">setIfAbsent</span><span class="p">(</span><span class="s">&#34;lock&#34;</span><span class="p">,</span><span class="s">&#34;2&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForValue</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;lock&#34;</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="操作哈希类型数据">操作哈希类型数据
@@ -822,8 +822,8 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 操作哈希类型的数据
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Test</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testHash</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testHash</span><span class="p">(){</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">HashOperations</span><span class="w"> </span><span class="n">hashOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForHash</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// hset</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">hashOperations</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;100&#34;</span><span class="p">,</span><span class="s">&#34;name&#34;</span><span class="p">,</span><span class="s">&#34;tom&#34;</span><span class="p">);</span><span class="w">
@@ -839,7 +839,7 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">values</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// hdel</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">hashOperations</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="s">&#34;100&#34;</span><span class="p">,</span><span class="s">&#34;age&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="操作列表类型数据">操作列表类型数据
@@ -868,8 +868,8 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 操作列表类型的数据
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Test</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testList</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testList</span><span class="p">(){</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ListOperations</span><span class="w"> </span><span class="n">listOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForList</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// lpush</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">listOperations</span><span class="p">.</span><span class="na">leftPushAll</span><span class="p">(</span><span class="s">&#34;mylist&#34;</span><span class="p">,</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">,</span><span class="s">&#34;c&#34;</span><span class="p">);</span><span class="w">
@@ -882,7 +882,7 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// llen</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Long</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOperations</span><span class="p">.</span><span class="na">size</span><span class="p">(</span><span class="s">&#34;mylist&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">size</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="操作集合类型数据">操作集合类型数据
@@ -917,8 +917,8 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 操作集合类型的数据
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Test</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testSet</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testSet</span><span class="p">(){</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">SetOperations</span><span class="w"> </span><span class="n">setOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForSet</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// sadd</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">setOperations</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;set1&#34;</span><span class="p">,</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">,</span><span class="s">&#34;c&#34;</span><span class="p">,</span><span class="s">&#34;d&#34;</span><span class="p">);</span><span class="w">
@@ -937,7 +937,7 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">union</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// srem</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">setOperations</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&#34;set1&#34;</span><span class="p">,</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="操作有序集合类型数据">操作有序集合类型数据
@@ -966,8 +966,8 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 操作有序集合类型的数据
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Test</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testZset</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testZset</span><span class="p">(){</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ZSetOperations</span><span class="w"> </span><span class="n">zSetOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForZSet</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// zadd</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">zSetOperations</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;zset1&#34;</span><span class="p">,</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="n">10</span><span class="p">);</span><span class="w">
@@ -980,7 +980,7 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">zSetOperations</span><span class="p">.</span><span class="na">incrementScore</span><span class="p">(</span><span class="s">&#34;zset1&#34;</span><span class="p">,</span><span class="s">&#34;c&#34;</span><span class="p">,</span><span class="n">10</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// zrem</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">zSetOperations</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&#34;zset1&#34;</span><span class="p">,</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="通用命令操作">通用命令操作
@@ -1010,8 +1010,8 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 <pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 通用命令操作
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Test</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testCommon</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testCommon</span><span class="p">(){</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//keys</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Set</span><span class="w"> </span><span class="n">keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">keys</span><span class="p">(</span><span class="s">&#34;*&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">keys</span><span class="p">);</span><span class="w">
@@ -1025,7 +1025,7 @@ Linux版下载地址:https://download.redis.io/releases/</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// del</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="s">&#34;mylist&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div>

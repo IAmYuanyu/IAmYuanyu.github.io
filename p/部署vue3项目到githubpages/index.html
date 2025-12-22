@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="让Vue3项目可以直接在线访问">
 <title>部署Vue3项目到GithubPages</title>
@@ -291,7 +291,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">base</span><span class="o">:</span> <span class="s2">&#34;/你的仓库名/&#34;</span><span class="p">,</span>  <span class="c1">// 在此处加上base，其余部分不用改
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">vue</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="p">],</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">resolve</span><span class="o">:</span> <span class="p">{</span>
@@ -316,7 +316,7 @@
 <pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">  <span class="s2">&#34;scripts&#34;</span><span class="err">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;dev&#34;</span><span class="p">:</span> <span class="s2">&#34;vite&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;build&#34;</span><span class="p">:</span> <span class="s2">&#34;vite build&#34;</span><span class="p">,</span>  <span class="c1">// 如果没有就手动加上
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;preview&#34;</span><span class="p">:</span> <span class="s2">&#34;vite preview&#34;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nt">&#34;preview&#34;</span><span class="p">:</span> <span class="s2">&#34;vite preview&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span><span class="err">,</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -368,8 +368,8 @@
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;build&#34;</span><span class="p">:</span> <span class="s2">&#34;vite build&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;preview&#34;</span><span class="p">:</span> <span class="s2">&#34;vite preview&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;predeploy&#34;</span><span class="p">:</span> <span class="s2">&#34;npm run build&#34;</span><span class="p">,</span> <span class="c1">// 新增
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;deploy&#34;</span><span class="p">:</span> <span class="s2">&#34;gh-pages -d dist&#34;</span>  <span class="c1">// 新增
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nt">&#34;deploy&#34;</span><span class="p">:</span> <span class="s2">&#34;gh-pages -d dist&#34;</span>  <span class="c1">// 新增
+</span></span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>之后更新在线网站只需要运行<code>npm run deploy</code>即可</p>

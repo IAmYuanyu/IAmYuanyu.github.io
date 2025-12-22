@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="自用">
 <title>Vue3快速上手</title>
@@ -540,7 +540,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">### 安装或者升级你的@vue/cli </span>
 </span></span><span class="line"><span class="cl"><span class="n">npm</span> <span class="n">install</span> <span class="n">-g</span> <span class="nv">@vue</span><span class="p">/</span><span class="nb">cli
-</span></span></span><span class="line"><span class="cl"><span class="nb"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">### 执行创建命令</span>
 </span></span><span class="line"><span class="cl"><span class="n">vue</span> <span class="n">create</span> <span class="n">vue_test</span>
 </span></span><span class="line"><span class="cl">
@@ -666,7 +666,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span><span class="s1">&#39;App&#39;</span> <span class="c1">//组件名
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span> <span class="nx">scoped表示局部样式</span><span class="err">，</span><span class="nx">只会修改该vue文件中的元素样式</span> <span class="o">--&gt;</span>
@@ -862,25 +862,25 @@
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span><span class="s1">&#39;Person&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">setup</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// 数据，原来写在data中（注意：此时的name、age、tel数据都不是响应式数据）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;张三&#39;</span>
+</span></span></span><span class="line"><span class="cl">      <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;张三&#39;</span>
 </span></span><span class="line"><span class="cl">      <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">18</span>
 </span></span><span class="line"><span class="cl">      <span class="kd">let</span> <span class="nx">tel</span> <span class="o">=</span> <span class="s1">&#39;13888888888&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">      <span class="c1">// 方法，原来写在methods中
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">      <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;zhang-san&#39;</span> <span class="c1">//注意：此时这么修改name页面是不变化的
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">      <span class="kd">function</span> <span class="nx">changeAge</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">age</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1">//注意：此时这么修改age页面是不变化的
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">      <span class="kd">function</span> <span class="nx">showTel</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">alert</span><span class="p">(</span><span class="nx">tel</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">      <span class="c1">// 返回一个对象，对象中的内容，模板中可以直接使用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">return</span> <span class="p">{</span><span class="nx">name</span><span class="p">,</span><span class="nx">age</span><span class="p">,</span><span class="nx">tel</span><span class="p">,</span><span class="nx">changeName</span><span class="p">,</span><span class="nx">changeAge</span><span class="p">,</span><span class="nx">showTel</span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">{</span><span class="nx">name</span><span class="p">,</span><span class="nx">age</span><span class="p">,</span><span class="nx">tel</span><span class="p">,</span><span class="nx">changeName</span><span class="p">,</span><span class="nx">changeAge</span><span class="p">,</span><span class="nx">showTel</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -971,20 +971,20 @@
 </span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span> <span class="nx">下面的写法是setup语法糖</span> <span class="o">--&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">)</span> <span class="c1">//undefined
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  
+</span></span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// 数据（注意：此时的name、age、tel都不是响应式数据）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;张三&#39;</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;张三&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">18</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">tel</span> <span class="o">=</span> <span class="s1">&#39;13888888888&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">changName</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changName</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;李四&#39;</span><span class="c1">//注意：此时这么修改name页面是不变化的
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changAge</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">age</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1">//注意：此时这么修改age页面是不变化的
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">showTel</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">alert</span><span class="p">(</span><span class="nx">tel</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
@@ -1081,22 +1081,22 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Person&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">ref</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// name和age是一个RefImpl的实例对象，简称ref对象，它们的value属性是响应式的。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;张三&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;张三&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// tel就是一个普通的字符串，不是响应式的
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">tel</span> <span class="o">=</span> <span class="s1">&#39;13888888888&#39;</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">tel</span> <span class="o">=</span> <span class="s1">&#39;13888888888&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// JS中操作ref对象时候需要.value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">name</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;李四&#39;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;李四&#39;</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// 注意：name不是响应式的，name.value是响应式的，所以如下代码并不会引起页面的更新。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// name = ref(&#39;zhang-san&#39;)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="c1">// name = ref(&#39;zhang-san&#39;)
+</span></span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeAge</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// JS中操作ref对象时候需要.value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">age</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="mi">1</span> 
+</span></span></span><span class="line"><span class="cl">    <span class="nx">age</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="mi">1</span> 
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">showTel</span><span class="p">(){</span>
@@ -1182,7 +1182,7 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">reactive</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">car</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span> <span class="nx">brand</span><span class="o">:</span> <span class="s1">&#39;奔驰&#39;</span><span class="p">,</span> <span class="nx">price</span><span class="o">:</span> <span class="mi">100</span> <span class="p">})</span>
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">car</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span> <span class="nx">brand</span><span class="o">:</span> <span class="s1">&#39;奔驰&#39;</span><span class="p">,</span> <span class="nx">price</span><span class="o">:</span> <span class="mi">100</span> <span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">games</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">([</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;ahsgdyfa01&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;英雄联盟&#39;</span> <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;ahsgdyfa02&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;王者荣耀&#39;</span> <span class="p">},</span>
@@ -1283,7 +1283,7 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">car</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">({</span> <span class="nx">brand</span><span class="o">:</span> <span class="s1">&#39;奔驰&#39;</span><span class="p">,</span> <span class="nx">price</span><span class="o">:</span> <span class="mi">100</span> <span class="p">})</span>
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">car</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">({</span> <span class="nx">brand</span><span class="o">:</span> <span class="s1">&#39;奔驰&#39;</span><span class="p">,</span> <span class="nx">price</span><span class="o">:</span> <span class="mi">100</span> <span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">games</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">([</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;ahsgdyfa01&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;英雄联盟&#39;</span> <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;ahsgdyfa02&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;王者荣耀&#39;</span> <span class="p">},</span>
@@ -1411,18 +1411,18 @@
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">ref</span><span class="p">,</span><span class="nx">reactive</span><span class="p">,</span><span class="nx">toRefs</span><span class="p">,</span><span class="nx">toRef</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span><span class="mi">18</span><span class="p">,</span> <span class="nx">gender</span><span class="o">:</span><span class="s1">&#39;男&#39;</span><span class="p">})</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span><span class="mi">18</span><span class="p">,</span> <span class="nx">gender</span><span class="o">:</span><span class="s1">&#39;男&#39;</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl">	
 </span></span><span class="line"><span class="cl">  <span class="c1">// 通过toRefs将person对象中的n个属性批量取出，且依然保持响应式的能力
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 不使用toRefs直接解构，属性会丢失响应式的能力
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="p">{</span><span class="nx">name</span><span class="p">,</span><span class="nx">gender</span><span class="p">}</span> <span class="o">=</span>  <span class="nx">toRefs</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 不使用toRefs直接解构，属性会丢失响应式的能力
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="p">{</span><span class="nx">name</span><span class="p">,</span><span class="nx">gender</span><span class="p">}</span> <span class="o">=</span>  <span class="nx">toRefs</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 注：此时修改name和gender时，person.name和person.gender也会跟着改变！！！
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  
+</span></span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// 通过toRef将person对象中的gender属性取出，且依然保持响应式的能力
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="nx">toRef</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span><span class="s1">&#39;age&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="nx">toRef</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span><span class="s1">&#39;age&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="s1">&#39;~&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeAge</span><span class="p">(){</span>
@@ -1506,33 +1506,33 @@
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">lastName</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;san&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 计算属性——只读取，不修改
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="cm">/* let fullName = computed(()=&gt;{
+</span></span></span><span class="line"><span class="cl">  <span class="cm">/* let fullName = computed(()=&gt;{
 </span></span></span><span class="line"><span class="cl"><span class="cm">    return firstName.value + &#39;-&#39; + lastName.value
 </span></span></span><span class="line"><span class="cl"><span class="cm">  }) */</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 计算属性——既读取又修改
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">({</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 读取
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">get</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">get</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">firstName</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="nx">lastName</span><span class="p">.</span><span class="nx">value</span>
 </span></span><span class="line"><span class="cl">    <span class="p">},</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 修改
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">set</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">set</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;有人修改了fullName&#39;</span><span class="p">,</span><span class="nx">val</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">firstName</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">val</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">lastName</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">val</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// 也可以用解构数组：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">// const [str1, str2] = val.split(&#39;-&#39;)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">// lastname.value = str1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">// firstname.value = str2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">      <span class="c1">// const [str1, str2] = val.split(&#39;-&#39;)
+</span></span></span><span class="line"><span class="cl">      <span class="c1">// lastname.value = str1
+</span></span></span><span class="line"><span class="cl">      <span class="c1">// firstname.value = str2
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeFullName</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 此时不是直接修改fullName.value的值，而是把&#39;li-si&#39;传给fullName的set方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 所以此时，set(val)中的val就是&#39;li-si&#39;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">fullName</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;li-si&#39;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="c1">// 所以此时，set(val)中的val就是&#39;li-si&#39;
+</span></span></span><span class="line"><span class="cl">    <span class="nx">fullName</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;li-si&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span> 
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
@@ -1593,18 +1593,18 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">setup</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Person&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">ref</span><span class="p">,</span><span class="nx">watch</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">changeSum</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeSum</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">sum</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 监视，情况一：监视【ref】定义的【基本类型】数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">stopWatch</span> <span class="o">=</span> <span class="nx">watch</span><span class="p">(</span><span class="nx">sum</span><span class="p">,</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)=&gt;{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">stopWatch</span> <span class="o">=</span> <span class="nx">watch</span><span class="p">(</span><span class="nx">sum</span><span class="p">,</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)=&gt;{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;sum变化了&#39;</span><span class="p">,</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">newValue</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// 新值大于等于10时停止监视
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">stopWatch</span><span class="p">()</span>  <span class="c1">// 函数名与变量名一致
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">      <span class="nx">stopWatch</span><span class="p">()</span>  <span class="c1">// 函数名与变量名一致
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
@@ -1679,12 +1679,12 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">setup</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Person&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">ref</span><span class="p">,</span><span class="nx">watch</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">({</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">age</span><span class="o">:</span><span class="mi">18</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">person</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">name</span> <span class="o">+=</span> <span class="s1">&#39;~&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeAge</span><span class="p">(){</span>
@@ -1779,7 +1779,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">setup</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Person&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">reactive</span><span class="p">,</span><span class="nx">watch</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">age</span><span class="o">:</span><span class="mi">18</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
@@ -1791,7 +1791,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">person</span><span class="p">.</span><span class="nx">name</span> <span class="o">+=</span> <span class="s1">&#39;~&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeAge</span><span class="p">(){</span>
@@ -1805,7 +1805,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 监视，情况三：监视【reactive】定义的【对象类型】数据，且默认是开启深度监视的
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">watch</span><span class="p">(</span><span class="nx">person</span><span class="p">,(</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)=&gt;{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">watch</span><span class="p">(</span><span class="nx">person</span><span class="p">,(</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)=&gt;{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;person变化了&#39;</span><span class="p">,</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">watch</span><span class="p">(</span><span class="nx">obj</span><span class="p">,(</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)=&gt;{</span>
@@ -1900,7 +1900,7 @@
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">reactive</span><span class="p">,</span><span class="nx">watch</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">age</span><span class="o">:</span><span class="mi">18</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">car</span><span class="o">:</span><span class="p">{</span>
@@ -1909,7 +1909,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">person</span><span class="p">.</span><span class="nx">name</span> <span class="o">+=</span> <span class="s1">&#39;~&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeAge</span><span class="p">(){</span>
@@ -1926,16 +1926,16 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 监视，情况四：监视响应式对象中的某个属性，且该属性是基本类型的，要写成函数式
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// () =&gt; { return person.name } 简写为 () =&gt; person.name
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="cm">/* watch(()=&gt; person.name,(newValue,oldValue)=&gt;{
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// () =&gt; { return person.name } 简写为 () =&gt; person.name
+</span></span></span><span class="line"><span class="cl">  <span class="cm">/* watch(()=&gt; person.name,(newValue,oldValue)=&gt;{
 </span></span></span><span class="line"><span class="cl"><span class="cm">    console.log(&#39;person.name变化了&#39;,newValue,oldValue)
 </span></span></span><span class="line"><span class="cl"><span class="cm">  }) */</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 监视，情况四：监视响应式对象中的某个属性，且该属性是对象类型的，可以直接写，也能写函数，更推荐写函数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 直接写 person.car 只能监视对象内的属性变化，无法监视整个对象(即对象的地址)的变化
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 写 () =&gt; person.car 只能监视整个对象的变化，无法监视对象内属性的变化
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 写 () =&gt; person.car 时，在后面加一个{ deep: true } 就可以同时监视两者的变化了
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">watch</span><span class="p">(()=&gt;</span><span class="nx">person</span><span class="p">.</span><span class="nx">car</span><span class="p">,(</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)=&gt;{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 直接写 person.car 只能监视对象内的属性变化，无法监视整个对象(即对象的地址)的变化
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 写 () =&gt; person.car 只能监视整个对象的变化，无法监视对象内属性的变化
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 写 () =&gt; person.car 时，在后面加一个{ deep: true } 就可以同时监视两者的变化了
+</span></span></span><span class="line"><span class="cl">  <span class="nx">watch</span><span class="p">(()=&gt;</span><span class="nx">person</span><span class="p">.</span><span class="nx">car</span><span class="p">,(</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)=&gt;{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;person.car变化了&#39;</span><span class="p">,</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},{</span><span class="nx">deep</span><span class="o">:</span><span class="kc">true</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -2014,7 +2014,7 @@
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">reactive</span><span class="p">,</span><span class="nx">watch</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">age</span><span class="o">:</span><span class="mi">18</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">car</span><span class="o">:</span><span class="p">{</span>
@@ -2023,7 +2023,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeName</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">person</span><span class="p">.</span><span class="nx">name</span> <span class="o">+=</span> <span class="s1">&#39;~&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeAge</span><span class="p">(){</span>
@@ -2040,7 +2040,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 监视，情况五：监视上述的多个数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">watch</span><span class="p">([()=&gt;</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="nx">person</span><span class="p">.</span><span class="nx">car</span><span class="p">],(</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)=&gt;{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">watch</span><span class="p">([()=&gt;</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="nx">person</span><span class="p">.</span><span class="nx">car</span><span class="p">],(</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)=&gt;{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;person.car变化了&#39;</span><span class="p">,</span><span class="nx">newValue</span><span class="p">,</span><span class="nx">oldValue</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},{</span><span class="nx">deep</span><span class="o">:</span><span class="kc">true</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
@@ -2135,11 +2135,11 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">setup</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Person&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">ref</span><span class="p">,</span><span class="nx">watch</span><span class="p">,</span><span class="nx">watchEffect</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">height</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">changePrice</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changePrice</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">temp</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="mi">10</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeSum</span><span class="p">(){</span>
@@ -2147,24 +2147,24 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 用watch实现，需要明确的指出要监视：temp、height
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">watch</span><span class="p">([</span><span class="nx">temp</span><span class="p">,</span><span class="nx">height</span><span class="p">],(</span><span class="nx">value</span><span class="p">)=&gt;{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">watch</span><span class="p">([</span><span class="nx">temp</span><span class="p">,</span><span class="nx">height</span><span class="p">],(</span><span class="nx">value</span><span class="p">)=&gt;{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 从value中获取最新的temp值、height值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="p">[</span><span class="nx">newTemp</span><span class="p">,</span><span class="nx">newHeight</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span>
+</span></span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">newTemp</span><span class="p">,</span><span class="nx">newHeight</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 室温达到50℃，或水位达到20cm，立刻联系服务器
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="nx">newTemp</span> <span class="o">&gt;=</span> <span class="mi">50</span> <span class="o">||</span> <span class="nx">newHeight</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">){</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">newTemp</span> <span class="o">&gt;=</span> <span class="mi">50</span> <span class="o">||</span> <span class="nx">newHeight</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;联系服务器&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 用watchEffect实现，不用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">stopWtach</span> <span class="o">=</span> <span class="nx">watchEffect</span><span class="p">(()=&gt;{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">stopWtach</span> <span class="o">=</span> <span class="nx">watchEffect</span><span class="p">(()=&gt;{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 室温达到50℃，或水位达到20cm，立刻联系服务器
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="nx">temp</span><span class="p">.</span><span class="nx">value</span> <span class="o">&gt;=</span> <span class="mi">50</span> <span class="o">||</span> <span class="nx">height</span><span class="p">.</span><span class="nx">value</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">){</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">temp</span><span class="p">.</span><span class="nx">value</span> <span class="o">&gt;=</span> <span class="mi">50</span> <span class="o">||</span> <span class="nx">height</span><span class="p">.</span><span class="nx">value</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;demo&#39;</span><span class="p">)</span><span class="o">?</span><span class="p">.</span><span class="nx">innerText</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;联系服务器&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 水温达到100，或水位达到50，取消监视
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="nx">temp</span><span class="p">.</span><span class="nx">value</span> <span class="o">===</span> <span class="mi">100</span> <span class="o">||</span> <span class="nx">height</span><span class="p">.</span><span class="nx">value</span> <span class="o">===</span> <span class="mi">50</span><span class="p">){</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">temp</span><span class="p">.</span><span class="nx">value</span> <span class="o">===</span> <span class="mi">100</span> <span class="o">||</span> <span class="nx">height</span><span class="p">.</span><span class="nx">value</span> <span class="o">===</span> <span class="mi">50</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;清理了&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">stopWtach</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -2243,16 +2243,16 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">showLog</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 通过id获取元素
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">t1</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;title1&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">t1</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;title1&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 打印内容
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">t1</span> <span class="nx">as</span> <span class="nx">HTMLElement</span><span class="p">).</span><span class="nx">innerText</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">t1</span> <span class="nx">as</span> <span class="nx">HTMLElement</span><span class="p">).</span><span class="nx">innerText</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((&lt;</span><span class="nt">HTMLElement</span><span class="p">&gt;</span><span class="nx">t1</span><span class="p">).</span><span class="nx">innerText</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">t1</span><span class="o">?</span><span class="p">.</span><span class="nx">innerText</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">		<span class="cm">/************************************/</span>
 </span></span><span class="line"><span class="cl">		
 </span></span><span class="line"><span class="cl">    <span class="c1">// 通过ref获取元素
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title1</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title1</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title2</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title3</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
@@ -2306,7 +2306,7 @@
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="nx">Person</span> <span class="nx">from</span> <span class="s1">&#39;./components/Person.vue&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">ref</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 创建一个ref对象来存储子组件的引用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">ren</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">ren</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">test</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ren</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
@@ -2319,12 +2319,12 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">setup</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Person&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">ref</span><span class="p">,</span><span class="nx">defineExpose</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;张三&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;张三&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="cm">/****************************/</span>
 </span></span><span class="line"><span class="cl">  <span class="cm">/****************************/</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 使用defineExpose将组件中的数据交给外部，只有这样外部才能查看
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">defineExpose</span><span class="p">({</span><span class="nx">name</span><span class="p">,</span><span class="nx">age</span><span class="p">})</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">defineExpose</span><span class="p">({</span><span class="nx">name</span><span class="p">,</span><span class="nx">age</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -2344,14 +2344,14 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// 定义一个接口，限制每个Person对象的格式
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">PersonInter</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">PersonInter</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="nx">id</span><span class="o">:</span><span class="nx">string</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="nx">name</span><span class="o">:</span><span class="nx">string</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="nx">age</span><span class="o">:</span><span class="nx">number</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 定义一个自定义类型Persons
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="nx">type</span> <span class="nx">Persons</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">PersonInter</span><span class="o">&gt;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="nx">type</span> <span class="nx">Persons</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">PersonInter</span><span class="o">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>App.vue</code>中代码：</p>
@@ -2389,7 +2389,7 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">type</span> <span class="nx">Persons</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./types&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 效果同let persons:Persons = reactive(...)，不过推荐下面的写法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">persons</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">&lt;</span><span class="nt">Persons</span><span class="p">&gt;([</span>
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">persons</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">&lt;</span><span class="nt">Persons</span><span class="p">&gt;([</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;e98219e12&#39;</span><span class="p">,</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span><span class="nx">age</span><span class="o">:</span><span class="mi">18</span><span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;e98219e13&#39;</span><span class="p">,</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;李四&#39;</span><span class="p">,</span><span class="nx">age</span><span class="o">:</span><span class="mi">19</span><span class="p">},</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;e98219e14&#39;</span><span class="p">,</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;王五&#39;</span><span class="p">,</span><span class="nx">age</span><span class="o">:</span><span class="mi">20</span><span class="p">}</span>
@@ -2445,20 +2445,20 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">setup</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Person&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">defineProps</span><span class="p">,</span> <span class="nx">withDefaults</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// @ 默认表示src目录，可以在 tsconfig.json 中设置
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span><span class="nx">type</span> <span class="nx">PersonInter</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@/types&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">type</span> <span class="nx">PersonInter</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@/types&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 第一种写法：仅接收
 </span></span></span><span class="line"><span class="cl"><span class="c1">// 会把数组内的所有数据转化为一个对象，所以调用的时候就是props.属性
 </span></span></span><span class="line"><span class="cl"><span class="c1">// const props = defineProps([&#39;list&#39;])
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 第二种写法：接收+限制类型
 </span></span></span><span class="line"><span class="cl"><span class="c1">// defineProps&lt;{list:Persons}&gt;()
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 第三种写法：接收+限制类型+指定默认值+限制必要性
 </span></span></span><span class="line"><span class="cl"><span class="c1">// ?:就是可传可不传
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="nx">withDefaults</span><span class="p">(</span><span class="nx">defineProps</span><span class="o">&lt;</span><span class="p">{</span><span class="nx">list</span><span class="o">?:</span><span class="nx">Persons</span><span class="p">}</span><span class="o">&gt;</span><span class="p">(),{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="nx">withDefaults</span><span class="p">(</span><span class="nx">defineProps</span><span class="o">&lt;</span><span class="p">{</span><span class="nx">list</span><span class="o">?:</span><span class="nx">Persons</span><span class="p">}</span><span class="o">&gt;</span><span class="p">(),{</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// 必须写成函数返回值的形式
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">list</span><span class="o">:</span><span class="p">()=&gt;[{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;asdasg01&#39;</span><span class="p">,</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;小猪佩奇&#39;</span><span class="p">,</span><span class="nx">age</span><span class="o">:</span><span class="mi">18</span><span class="p">}]</span>
+</span></span></span><span class="line"><span class="cl">	<span class="nx">list</span><span class="o">:</span><span class="p">()=&gt;[{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;asdasg01&#39;</span><span class="p">,</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;小猪佩奇&#39;</span><span class="p">,</span><span class="nx">age</span><span class="o">:</span><span class="mi">18</span><span class="p">}]</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -2569,14 +2569,14 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">changeSum</span><span class="p">()</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">changeSum</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">sum</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;setup&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 生命周期钩子
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">onBeforeMount</span><span class="p">(()=&gt;{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">onBeforeMount</span><span class="p">(()=&gt;{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;挂载之前&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">onMounted</span><span class="p">(()=&gt;{</span>
@@ -2639,7 +2639,7 @@
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">ref</span><span class="p">,</span><span class="nx">onMounted</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 将所有script内容包在一个函数里
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">increment</span> <span class="o">=</span> <span class="p">()=&gt;{</span>
@@ -2653,7 +2653,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">//向外部暴露数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">return</span> <span class="p">{</span><span class="nx">sum</span><span class="p">,</span><span class="nx">increment</span><span class="p">,</span><span class="nx">decrement</span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span><span class="nx">sum</span><span class="p">,</span><span class="nx">increment</span><span class="p">,</span><span class="nx">decrement</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>		
 </span></span></code></pre></td></tr></table>
 </div>
@@ -2697,30 +2697,30 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">axios</span><span class="p">,{</span><span class="nx">AxiosError</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 将所有script内容包在一个函数里
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">dogList</span> <span class="o">=</span> <span class="nx">reactive</span><span class="o">&lt;</span><span class="nx">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">([])</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">async</span> <span class="kd">function</span> <span class="nx">getDog</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="kd">function</span> <span class="nx">getDog</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// 发请求
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kd">let</span> <span class="p">{</span><span class="nx">data</span><span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://dog.ceo/api/breed/pembroke/./assets/random&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">      <span class="kd">let</span> <span class="p">{</span><span class="nx">data</span><span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://dog.ceo/api/breed/pembroke/./assets/random&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// 维护数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">dogList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">      <span class="nx">dogList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// 处理错误
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kr">const</span> <span class="nx">err</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">AxiosError</span><span class="o">&gt;</span><span class="nx">error</span>
+</span></span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">err</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">AxiosError</span><span class="o">&gt;</span><span class="nx">error</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 挂载钩子
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">onMounted</span><span class="p">(()=&gt;{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">onMounted</span><span class="p">(()=&gt;{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">getDog</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">//向外部暴露数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">return</span> <span class="p">{</span><span class="nx">dogList</span><span class="p">,</span><span class="nx">getDog</span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span><span class="nx">dogList</span><span class="p">,</span><span class="nx">getDog</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -2780,7 +2780,7 @@
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="nx">useDog</span> <span class="nx">from</span> <span class="s1">&#39;./hooks/useDog&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 进行解构
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="p">{</span><span class="nx">sum</span><span class="p">,</span><span class="nx">increment</span><span class="p">,</span><span class="nx">decrement</span><span class="p">}</span> <span class="o">=</span> <span class="nx">useSum</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="p">{</span><span class="nx">sum</span><span class="p">,</span><span class="nx">increment</span><span class="p">,</span><span class="nx">decrement</span><span class="p">}</span> <span class="o">=</span> <span class="nx">useSum</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="p">{</span><span class="nx">dogList</span><span class="p">,</span><span class="nx">getDog</span><span class="p">}</span> <span class="o">=</span> <span class="nx">useDog</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
@@ -2861,9 +2861,9 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">router</span> <span class="nx">from</span> <span class="s1">&#39;./router/index&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 使用路由器
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">router</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">router</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 挂载整个应用到app容器中
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -2949,7 +2949,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createRouter</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">history</span><span class="o">:</span><span class="nx">createWebHistory</span><span class="p">(),</span> <span class="c1">//history模式
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="cm">/******/</span>
+</span></span></span><span class="line"><span class="cl">	<span class="cm">/******/</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -2970,7 +2970,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createRouter</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">history</span><span class="o">:</span><span class="nx">createWebHashHistory</span><span class="p">(),</span> <span class="c1">//hash模式
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="cm">/******/</span>
+</span></span></span><span class="line"><span class="cl">	<span class="cm">/******/</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -3106,10 +3106,10 @@
 </span></span><span class="line"><span class="cl">			<span class="nx">path</span><span class="o">:</span><span class="s1">&#39;/news&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">			<span class="nx">component</span>:<span class="kt">News</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">			<span class="nx">children</span><span class="o">:</span><span class="p">[</span>  <span class="c1">// 子集路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>				<span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">				<span class="p">{</span>
 </span></span><span class="line"><span class="cl">					<span class="nx">name</span><span class="o">:</span><span class="s1">&#39;xiang&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">					<span class="nx">path</span><span class="o">:</span><span class="s1">&#39;detail&#39;</span><span class="p">,</span>  <span class="c1">// 子集不用写/
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>					<span class="nx">component</span>:<span class="kt">Detail</span>
+</span></span></span><span class="line"><span class="cl">					<span class="nx">component</span>:<span class="kt">Detail</span>
 </span></span><span class="line"><span class="cl">				<span class="p">}</span>
 </span></span><span class="line"><span class="cl">			<span class="p">]</span>
 </span></span><span class="line"><span class="cl">		<span class="p">},</span>
@@ -3236,7 +3236,7 @@
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">useRoute</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue-router&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">route</span> <span class="o">=</span> <span class="nx">useRoute</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 打印query参数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">query</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">query</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -3307,7 +3307,7 @@
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">useRoute</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue-router&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">route</span> <span class="o">=</span> <span class="nx">useRoute</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 打印params参数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">params</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">params</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -3355,13 +3355,13 @@
 </span></span><span class="line"><span class="cl">	<span class="nx">component</span><span class="o">:</span><span class="nx">Detail</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// props的对象写法，作用：把对象中的每一组key-value作为props传给Detail组件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// props:{a:1,b:2,c:3}, 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// props:{a:1,b:2,c:3}, 
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// props的布尔值写法，作用：把收到了每一组params参数，作为props传给Detail组件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// props:true
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// props:true
+</span></span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// props的函数写法，作用：把返回的对象中每一组key-value作为props传给Detail组件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">props</span><span class="p">(</span><span class="nx">route</span><span class="p">){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">props</span><span class="p">(</span><span class="nx">route</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">route</span><span class="p">.</span><span class="nx">query</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -3449,7 +3449,7 @@
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">router</span><span class="p">.</span><span class="nx">replace</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 挂载后3秒自动跳转
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">/*
 </span></span></span><span class="line"><span class="cl"><span class="cm">onMounted(() =&gt; {
 </span></span></span><span class="line"><span class="cl"><span class="cm">    setTimeout(() =&gt; {
 </span></span></span><span class="line"><span class="cl"><span class="cm">        router.push(&#39;/news&#39;)
@@ -3694,11 +3694,11 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Count&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;vue&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 当前求和
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 用户选择的数字
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 当前求和
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 用户选择的数字
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">add</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">add</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">sum</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="nx">n</span><span class="p">.</span><span class="nx">value</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">minus</span><span class="p">(){</span>
@@ -3777,23 +3777,23 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;LoveTalk&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">reactive</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s2">&#34;axios&#34;</span><span class="p">;</span>  <span class="c1">// npm i axios
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">import</span> <span class="p">{</span><span class="nx">nanoid</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;nanoid&#39;</span>  <span class="c1">// npm i nanoid
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">talkList</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">([</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">nanoid</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;nanoid&#39;</span>  <span class="c1">// npm i nanoid
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 数据
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">talkList</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">([</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;ftrfasdf01&#39;</span><span class="p">,</span><span class="nx">title</span><span class="o">:</span><span class="s1">&#39;今天你有点怪，哪里怪？怪好看的！&#39;</span><span class="p">},</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;ftrfasdf02&#39;</span><span class="p">,</span><span class="nx">title</span><span class="o">:</span><span class="s1">&#39;草莓、蓝莓、蔓越莓，今天想我了没？&#39;</span><span class="p">},</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;ftrfasdf03&#39;</span><span class="p">,</span><span class="nx">title</span><span class="o">:</span><span class="s1">&#39;心里给你留了一块地，我的死心塌地&#39;</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">])</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">async</span> <span class="kd">function</span> <span class="nx">getLoveTalk</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">async</span> <span class="kd">function</span> <span class="nx">getLoveTalk</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 发请求，下面这行的写法是：连续解构赋值+重命名
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 从await axios中解构出 data，再从 data 中解构出 content，再将 content 重命名为 title
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="p">{</span><span class="nx">data</span><span class="o">:</span><span class="p">{</span><span class="nx">content</span><span class="o">:</span><span class="nx">title</span><span class="p">}}</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://api.uomg.com/api/rand.qinghua?format=json&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="c1">// 从await axios中解构出 data，再从 data 中解构出 content，再将 content 重命名为 title
+</span></span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="p">{</span><span class="nx">data</span><span class="o">:</span><span class="p">{</span><span class="nx">content</span><span class="o">:</span><span class="nx">title</span><span class="p">}}</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://api.uomg.com/api/rand.qinghua?format=json&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 把请求回来的字符串，包装成一个对象
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// title 的 key 和 value 相同，可简写
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="nx">nanoid</span><span class="p">(),</span><span class="nx">title</span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="c1">// title 的 key 和 value 相同，可简写
+</span></span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="nx">nanoid</span><span class="p">(),</span><span class="nx">title</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 放到数组中
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">talkList</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">talkList</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
@@ -3875,20 +3875,20 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// 引入defineStore用于创建store
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span><span class="nx">defineStore</span><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;pinia&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">defineStore</span><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;pinia&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 定义并暴露一个store
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useCountStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useCountStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 动作
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">actions</span><span class="o">:</span><span class="p">{},</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">actions</span><span class="o">:</span><span class="p">{},</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 状态
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">state</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">state</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">sum</span>:<span class="kt">6</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 计算
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">getters</span><span class="o">:</span><span class="p">{}</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">getters</span><span class="o">:</span><span class="p">{}</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -3920,14 +3920,14 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// 引入defineStore用于创建store
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span><span class="nx">defineStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;pinia&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">defineStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;pinia&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 定义并暴露一个store
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useTalkStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;talk&#39;</span><span class="p">,{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useTalkStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;talk&#39;</span><span class="p">,{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 动作
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">actions</span><span class="o">:</span><span class="p">{},</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">actions</span><span class="o">:</span><span class="p">{},</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 状态
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">state</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">state</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">talkList</span><span class="o">:</span><span class="p">[</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;yuysada01&#39;</span><span class="p">,</span><span class="nx">content</span><span class="o">:</span><span class="s1">&#39;你今天有点怪，哪里怪？怪好看的！&#39;</span><span class="p">},</span>
@@ -3937,7 +3937,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 计算
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">getters</span><span class="o">:</span><span class="p">{}</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">getters</span><span class="o">:</span><span class="p">{}</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -3969,15 +3969,15 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Count&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 引入对应的useXxxxxStore	
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">import</span> <span class="p">{</span><span class="nx">useSumStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@/store/sum&#39;</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">useSumStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@/store/sum&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// 调用useXxxxxStore得到对应的store
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">sumStore</span> <span class="o">=</span> <span class="nx">useSumStore</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">sumStore</span> <span class="o">=</span> <span class="nx">useSumStore</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 查看sumStore是什么
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sumStore</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sumStore</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// reactive 对象中的 ref 对象的value值可以直接调用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sumStore</span><span class="p">.</span><span class="nx">sum</span><span class="p">)</span>  <span class="c1">// 此时的sum不需要.value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sumStore</span><span class="p">.</span><span class="nx">sum</span><span class="p">)</span>  <span class="c1">// 此时的sum不需要.value
+</span></span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="/assets/image-20250303200553737.png"
@@ -4091,16 +4091,16 @@
 </span></span><span class="line"><span class="cl">  <span class="cm">/*************/</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">//加
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">increment</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">increment</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>  <span class="c1">// 打印结果见下图
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">// this 是当前的store，即useCountStore
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sum</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">      <span class="c1">// this 是当前的store，即useCountStore
+</span></span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sum</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">//操作countStore中的sum
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span>
+</span></span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span>
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">},</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">//减
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">decrement</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="nx">number</span><span class="p">){</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">decrement</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="nx">number</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">      <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sum</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">sum</span> <span class="o">-=</span> <span class="nx">value</span>
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
@@ -4132,10 +4132,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// 使用countStore
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">countStore</span> <span class="o">=</span> <span class="nx">useCountStore</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">countStore</span> <span class="o">=</span> <span class="nx">useCountStore</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 调用对应action
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">countStore</span><span class="p">.</span><span class="nx">increment</span><span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">countStore</span><span class="p">.</span><span class="nx">increment</span><span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -4181,7 +4181,7 @@
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">countStore</span> <span class="o">=</span> <span class="nx">useCountStore</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="cm">/* 使用storeToRefs转换countStore，随后解构 */</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// storeToRefs只会关注store中的数据，不会对方法进行ref包裹
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="p">{</span><span class="nx">sum</span><span class="p">}</span> <span class="o">=</span> <span class="nx">storeToRefs</span><span class="p">(</span><span class="nx">countStore</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span><span class="nx">sum</span><span class="p">}</span> <span class="o">=</span> <span class="nx">storeToRefs</span><span class="p">(</span><span class="nx">countStore</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -4236,28 +4236,28 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// 引入defineStore用于创建store
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span><span class="nx">defineStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;pinia&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">defineStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;pinia&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 定义并暴露一个store
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useCountStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useCountStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 动作
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">actions</span><span class="o">:</span><span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">actions</span><span class="o">:</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/************/</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 状态
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">state</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">state</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">sum</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">school</span><span class="o">:</span><span class="s1">&#39;atguigu&#39;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 计算
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">getters</span><span class="o">:</span><span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">getters</span><span class="o">:</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/* bigSum(state) {
 </span></span></span><span class="line"><span class="cl"><span class="cm">        return state.sum * 10
 </span></span></span><span class="line"><span class="cl"><span class="cm">    } 下行为简写形式 */</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// getters有一个名为bigSum的属性，属性值为箭头函数state =&gt; state.sum * 10，函数返回值是number类型
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">bigSum</span><span class="o">:</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="o">:</span><span class="nx">number</span> <span class="p">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">sum</span> <span class="o">*</span><span class="mi">10</span><span class="p">,</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">bigSum</span><span class="o">:</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="o">:</span><span class="nx">number</span> <span class="p">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">sum</span> <span class="o">*</span><span class="mi">10</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">upperSchool</span><span class="p">()</span><span class="o">:</span><span class="nx">string</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">school</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -4293,10 +4293,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// mutate为本次修改的信息，state为数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">talkStore</span><span class="p">.</span><span class="nx">$subscribe</span><span class="p">((</span><span class="nx">mutate</span><span class="p">,</span><span class="nx">state</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">talkStore</span><span class="p">.</span><span class="nx">$subscribe</span><span class="p">((</span><span class="nx">mutate</span><span class="p">,</span><span class="nx">state</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;LoveTalk&#39;</span><span class="p">,</span><span class="nx">mutate</span><span class="p">,</span><span class="nx">state</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// localStorage.setItem：在浏览器本地存储
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;talk&#39;</span><span class="p">,</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">talkList</span><span class="p">.</span><span class="nx">value</span><span class="p">))</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;talk&#39;</span><span class="p">,</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">talkList</span><span class="p">.</span><span class="nx">value</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -4346,20 +4346,20 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useTalkStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;talk&#39;</span><span class="p">,()</span><span class="o">=&gt;</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// talkList就是state
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">talkList</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">(</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">talkList</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// JSON.parse只能对字符串使用，所以将localStorage.getItem(&#39;talkList&#39;)断言为字符串
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 当本地浏览器数据为空时，JSON.parse(localStorage.getItem(&#39;talkList&#39;) as string)为null，考虑到null的情况，要用条件或来设置前者为null时的处理方式
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;talkList&#39;</span><span class="p">)</span> <span class="kr">as</span> <span class="kt">string</span><span class="p">)</span> <span class="o">||</span> <span class="p">[]</span>
+</span></span></span><span class="line"><span class="cl">    <span class="c1">// 当本地浏览器数据为空时，JSON.parse(localStorage.getItem(&#39;talkList&#39;) as string)为null，考虑到null的情况，要用条件或来设置前者为null时的处理方式
+</span></span></span><span class="line"><span class="cl">    <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;talkList&#39;</span><span class="p">)</span> <span class="kr">as</span> <span class="kt">string</span><span class="p">)</span> <span class="o">||</span> <span class="p">[]</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// getATalk函数相当于action
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">async</span> <span class="kd">function</span> <span class="nx">getATalk</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="kd">function</span> <span class="nx">getATalk</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 发请求，下面这行的写法是：连续解构赋值+重命名
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="p">{</span><span class="nx">data</span><span class="o">:</span><span class="p">{</span><span class="nx">content</span>:<span class="kt">title</span><span class="p">}}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s1">&#39;https://api.uomg.com/api/rand.qinghua?format=json&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="p">{</span><span class="nx">data</span><span class="o">:</span><span class="p">{</span><span class="nx">content</span>:<span class="kt">title</span><span class="p">}}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s1">&#39;https://api.uomg.com/api/rand.qinghua?format=json&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 把请求回来的字符串，包装成一个对象
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">id</span>:<span class="kt">nanoid</span><span class="p">(),</span><span class="nx">title</span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">id</span>:<span class="kt">nanoid</span><span class="p">(),</span><span class="nx">title</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 放到数组中
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">talkList</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">talkList</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span><span class="nx">talkList</span><span class="p">,</span><span class="nx">getATalk</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
@@ -4422,10 +4422,10 @@
 </span></span><span class="line"><span class="cl">	<span class="kr">import</span> <span class="nx">Child</span> <span class="nx">from</span> <span class="s1">&#39;./Child.vue&#39;</span>
 </span></span><span class="line"><span class="cl">	<span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;vue&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kr">const</span> <span class="nx">car</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;奔驰&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">car</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;奔驰&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">toy</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">function</span> <span class="nx">getToy</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="nx">string</span><span class="p">){</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kd">function</span> <span class="nx">getToy</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="nx">string</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">		<span class="nx">toy</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -4517,7 +4517,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">//子组件中，触发事件：
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;send-toy&#39;</span><span class="p">,</span> <span class="nx">传给$event的具体数据</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;send-toy&#39;</span><span class="p">,</span> <span class="nx">传给$event的具体数据</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -4583,10 +4583,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// 引入mitt 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">mitt</span> <span class="nx">from</span> <span class="s2">&#34;mitt&#34;</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">mitt</span> <span class="nx">from</span> <span class="s2">&#34;mitt&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 调用mitt得到emitter，emitter能绑定事件、触发事件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">emitter</span> <span class="o">=</span> <span class="nx">mitt</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">emitter</span> <span class="o">=</span> <span class="nx">mitt</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cm">/*
 </span></span></span><span class="line"><span class="cl"><span class="cm">  // 绑定事件
@@ -4612,7 +4612,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 创建并暴露mitt
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">emitter</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">emitter</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>接收数据的组件中：绑定事件、同时在销毁前解绑事件：</p>
@@ -4637,14 +4637,14 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">onUnmounted</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;vue&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 绑定事件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;send-toy&#39;</span><span class="p">,(</span><span class="nx">value</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;send-toy&#39;</span><span class="p">,(</span><span class="nx">value</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;send-toy事件被触发&#39;</span><span class="p">,</span><span class="nx">value</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 在组件卸载时解绑事件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">onUnmounted</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">onUnmounted</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 解绑事件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">emitter</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;send-toy&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">emitter</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;send-toy&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -4663,7 +4663,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">sendToy</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 触发事件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">emitter</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;send-toy&#39;</span><span class="p">,</span><span class="nx">toy</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">emitter</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;send-toy&#39;</span><span class="p">,</span><span class="nx">toy</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -4749,15 +4749,15 @@
 </span></span><span class="line"><span class="cl">       <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> 
 </span></span><span class="line"><span class="cl">       <span class="nt">:value</span><span class="o">=</span><span class="s">&#34;modelValue&#34;</span> 
 </span></span><span class="line"><span class="cl">       <span class="nt">@input</span><span class="s">=&#34;emit(&#39;update:model-value&#39;,$event.target.value)&#34;</span><span class="p">
-</span></span></span><span class="line"><span class="cl"><span class="p"></span>    <span class="p">&gt;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;AtguiguInput&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 接收props
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">defineProps</span><span class="p">([</span><span class="s1">&#39;modelValue&#39;</span><span class="p">])</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">defineProps</span><span class="p">([</span><span class="s1">&#39;modelValue&#39;</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 声明事件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">emit</span> <span class="o">=</span> <span class="nx">defineEmits</span><span class="p">([</span><span class="s1">&#39;update:model-value&#39;</span><span class="p">])</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">emit</span> <span class="o">=</span> <span class="nx">defineEmits</span><span class="p">([</span><span class="s1">&#39;update:model-value&#39;</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -4807,15 +4807,15 @@
 </span></span><span class="line"><span class="cl">       <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> 
 </span></span><span class="line"><span class="cl">       <span class="nt">:value</span><span class="o">=</span><span class="s">&#34;abc&#34;</span> 
 </span></span><span class="line"><span class="cl">       <span class="nt">@input</span><span class="s">=&#34;emit(&#39;update:abc&#39;,$event.target.value)&#34;</span><span class="p">
-</span></span></span><span class="line"><span class="cl"><span class="p"></span>    <span class="p">&gt;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;AtguiguInput&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 接收props
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">defineProps</span><span class="p">([</span><span class="s1">&#39;abc&#39;</span><span class="p">])</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">defineProps</span><span class="p">([</span><span class="s1">&#39;abc&#39;</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 声明事件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">emit</span> <span class="o">=</span> <span class="nx">defineEmits</span><span class="p">([</span><span class="s1">&#39;update:abc&#39;</span><span class="p">])</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">emit</span> <span class="o">=</span> <span class="nx">defineEmits</span><span class="p">([</span><span class="s1">&#39;update:abc&#39;</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -5036,10 +5036,10 @@
 </span></span><span class="line"><span class="cl">	<span class="kd">let</span> <span class="nx">c1</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">	<span class="kd">let</span> <span class="nx">c2</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// refs:{[key:string]:any} 表示，refs是一个对象，对象中有为字符串类型的属性，属性存储的类型可能是任何类型（实在搞不懂直接用any）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">function</span> <span class="nx">getAllChild</span><span class="p">(</span><span class="nx">refs</span><span class="o">:</span><span class="p">{[</span><span class="nx">key</span><span class="o">:</span><span class="nx">string</span><span class="p">]</span><span class="o">:</span><span class="nx">any</span><span class="p">}){</span>
+</span></span></span><span class="line"><span class="cl">	<span class="c1">// refs:{[key:string]:any} 表示，refs是一个对象，对象中有为字符串类型的属性，属性存储的类型可能是任何类型（实在搞不懂直接用any）
+</span></span></span><span class="line"><span class="cl">	<span class="kd">function</span> <span class="nx">getAllChild</span><span class="p">(</span><span class="nx">refs</span><span class="o">:</span><span class="p">{[</span><span class="nx">key</span><span class="o">:</span><span class="nx">string</span><span class="p">]</span><span class="o">:</span><span class="nx">any</span><span class="p">}){</span>
 </span></span><span class="line"><span class="cl">		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">refs</span><span class="p">)</span>  <span class="c1">// 打印结果见下图
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">refs</span><span class="p">){</span>
+</span></span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">refs</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">			<span class="nx">refs</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">book</span> <span class="o">+=</span> <span class="mi">3</span>
 </span></span><span class="line"><span class="cl">		<span class="p">}</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
@@ -5079,11 +5079,11 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Child1&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">	<span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;vue&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">let</span> <span class="nx">toy</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;奥特曼&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kd">let</span> <span class="nx">toy</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;奥特曼&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="kd">let</span> <span class="nx">book</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// 把数据交给外部
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">defineExpose</span><span class="p">({</span><span class="nx">toy</span><span class="p">,</span><span class="nx">book</span><span class="p">})</span>
+</span></span></span><span class="line"><span class="cl">	<span class="nx">defineExpose</span><span class="p">({</span><span class="nx">toy</span><span class="p">,</span><span class="nx">book</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -5119,10 +5119,10 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Child2&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">		<span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;vue&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kd">let</span> <span class="nx">computer</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;联想&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">		<span class="kd">let</span> <span class="nx">computer</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;联想&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="kd">let</span> <span class="nx">book</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="c1">// 把数据交给外部
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">defineExpose</span><span class="p">({</span><span class="nx">computer</span><span class="p">,</span><span class="nx">book</span><span class="p">})</span>
+</span></span></span><span class="line"><span class="cl">		<span class="nx">defineExpose</span><span class="p">({</span><span class="nx">computer</span><span class="p">,</span><span class="nx">book</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -5171,10 +5171,10 @@
 </span></span><span class="line"><span class="cl">	<span class="kr">import</span> <span class="nx">Child</span> <span class="nx">from</span> <span class="s1">&#39;./Child.vue&#39;</span>
 </span></span><span class="line"><span class="cl">	<span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;vue&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">let</span> <span class="nx">house</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kd">let</span> <span class="nx">house</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// 向外部提供数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">defineExpose</span><span class="p">({</span><span class="nx">house</span><span class="p">})</span>
+</span></span></span><span class="line"><span class="cl">	<span class="nx">defineExpose</span><span class="p">({</span><span class="nx">house</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -5207,10 +5207,10 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Child&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">function</span> <span class="nx">minusHouse</span><span class="p">(</span><span class="nx">parent</span><span class="o">:</span><span class="nx">any</span><span class="p">){</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kd">function</span> <span class="nx">minusHouse</span><span class="p">(</span><span class="nx">parent</span><span class="o">:</span><span class="nx">any</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">parent</span><span class="p">)</span>  <span class="c1">// 打印结果见下图
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// parent是响应式对象，所以调用其中的响应式属性house不用.value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">parent</span><span class="p">.</span><span class="nx">house</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span></span><span class="line"><span class="cl">        <span class="c1">// parent是响应式对象，所以调用其中的响应式属性house不用.value
+</span></span></span><span class="line"><span class="cl">		<span class="nx">parent</span><span class="p">.</span><span class="nx">house</span> <span class="o">-=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
@@ -5293,17 +5293,17 @@
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="nx">Child</span> <span class="nx">from</span> <span class="s1">&#39;./Child.vue&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span><span class="nx">reactive</span><span class="p">,</span><span class="nx">provide</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;vue&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">money</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">money</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">car</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">brand</span><span class="o">:</span><span class="s1">&#39;奔驰&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">price</span><span class="o">:</span><span class="mi">100</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 用于更新money的方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">updateMoney</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="nx">number</span><span class="p">){</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">updateMoney</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="nx">number</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">money</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="nx">value</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 向后代提供数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">provide</span><span class="p">(</span><span class="s1">&#39;moneyContext&#39;</span><span class="p">,{</span><span class="nx">money</span><span class="p">,</span><span class="nx">updateMoney</span><span class="p">})</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">provide</span><span class="p">(</span><span class="s1">&#39;moneyContext&#39;</span><span class="p">,{</span><span class="nx">money</span><span class="p">,</span><span class="nx">updateMoney</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">provide</span><span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span><span class="nx">car</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
@@ -5344,8 +5344,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;GrandChild&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">inject</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 注入数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 写一个默认值告诉编译器，moneyContext内有money和updateMoney
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="p">{</span><span class="nx">money</span><span class="p">,</span><span class="nx">updateMoney</span><span class="p">}</span> <span class="o">=</span> <span class="nx">inject</span><span class="p">(</span><span class="s1">&#39;moneyContext&#39;</span><span class="p">,{</span><span class="nx">money</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="nx">updateMoney</span><span class="o">:</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="nx">number</span><span class="p">)=&gt;{}})</span>
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 写一个默认值告诉编译器，moneyContext内有money和updateMoney
+</span></span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="p">{</span><span class="nx">money</span><span class="p">,</span><span class="nx">updateMoney</span><span class="p">}</span> <span class="o">=</span> <span class="nx">inject</span><span class="p">(</span><span class="s1">&#39;moneyContext&#39;</span><span class="p">,{</span><span class="nx">money</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="nx">updateMoney</span><span class="o">:</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="nx">number</span><span class="p">)=&gt;{}})</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">car</span> <span class="o">=</span> <span class="nx">inject</span><span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
@@ -6010,9 +6010,9 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cm">/* toRaw */</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 响应式对象
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;tony&#39;</span><span class="p">,</span><span class="nx">age</span><span class="o">:</span><span class="mi">18</span><span class="p">})</span>
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;tony&#39;</span><span class="p">,</span><span class="nx">age</span><span class="o">:</span><span class="mi">18</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 原始对象
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">rawPerson</span> <span class="o">=</span> <span class="nx">toRaw</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">rawPerson</span> <span class="o">=</span> <span class="nx">toRaw</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isReactive</span><span class="p">(</span><span class="nx">person</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isReactive</span><span class="p">(</span><span class="nx">rawPerson</span><span class="p">))</span>
@@ -6056,7 +6056,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;asdda04&#39;</span><span class="p">,</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;重庆&#39;</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">])</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 根据原始对象citys去创建响应式对象citys2 —— 创建失败，因为citys被markRaw标记了
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">citys2</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">(</span><span class="nx">citys</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">citys2</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">(</span><span class="nx">citys</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isReactive</span><span class="p">(</span><span class="nx">citys</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isReactive</span><span class="p">(</span><span class="nx">citys2</span><span class="p">))</span>
 </span></span></code></pre></td></tr></table>
@@ -6097,20 +6097,20 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span><span class="p">(</span><span class="nx">initValue</span>:<span class="kt">string</span><span class="p">,</span><span class="nx">delay</span>:<span class="kt">number</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">customRef</span><span class="p">((</span><span class="nx">track</span><span class="p">,</span><span class="nx">trigger</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>  <span class="c1">// track-跟踪，trigger-触发，底层代码自动传递
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="nx">timer</span>:<span class="kt">number</span>
+</span></span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">timer</span>:<span class="kt">number</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// msg被读取时，get()会被调用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kr">get</span><span class="p">(){</span>
+</span></span></span><span class="line"><span class="cl">      <span class="kr">get</span><span class="p">(){</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">track</span><span class="p">()</span> <span class="c1">// 告诉Vue数据msg很重要，要对msg持续关注，一旦变化就更新
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="nx">initValue</span>
+</span></span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">initValue</span>
 </span></span><span class="line"><span class="cl">      <span class="p">},</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// msg被修改时，set()会被调用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kr">set</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
+</span></span></span><span class="line"><span class="cl">      <span class="kr">set</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">)</span>  <span class="c1">// 防止快速输入时出bug
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">        <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">          <span class="nx">initValue</span> <span class="o">=</span> <span class="nx">value</span>
 </span></span><span class="line"><span class="cl">          <span class="nx">trigger</span><span class="p">()</span> <span class="c1">//通知Vue数据msg变化了
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">},</span> <span class="nx">delay</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">        <span class="p">},</span> <span class="nx">delay</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">})</span> 
@@ -6152,10 +6152,10 @@
 </span></span><span class="line"><span class="cl">	<span class="kr">import</span> <span class="nx">useMsgRef</span> <span class="nx">from</span> <span class="s1">&#39;./useMsgRef&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// 使用Vue提供的默认ref定义响应式数据，数据一变，页面就更新
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// let msg = ref(&#39;你好&#39;)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">	<span class="c1">// let msg = ref(&#39;你好&#39;)
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// 使用useMsgRef来定义一个响应式数据且有延迟效果
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">let</span> <span class="p">{</span><span class="nx">msg</span><span class="p">}</span> <span class="o">=</span> <span class="nx">useMsgRef</span><span class="p">(</span><span class="s1">&#39;你好&#39;</span><span class="p">,</span><span class="mi">2000</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kd">let</span> <span class="p">{</span><span class="nx">msg</span><span class="p">}</span> <span class="o">=</span> <span class="nx">useMsgRef</span><span class="p">(</span><span class="s1">&#39;你好&#39;</span><span class="p">,</span><span class="mi">2000</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -6272,12 +6272,12 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Hello</span> <span class="kr">from</span> <span class="s1">&#39;./Hello.vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 创建应用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 让Hello组件成为全局组件，即使用时无需再引入
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span><span class="nx">Hello</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span><span class="nx">Hello</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 挂载应用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -6308,18 +6308,18 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">App</span> <span class="kr">from</span> <span class="s1">&#39;./App.vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 创建应用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 设置全局属性 x ，x 的值为 99
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">globalProperties</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">99</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">globalProperties</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">99</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 若只有上一行代码，x可以使用，但使用时会报红，加上下面的代码即可解决报红
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">declare</span> <span class="nx">module</span> <span class="s1">&#39;vue&#39;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">declare</span> <span class="nx">module</span> <span class="s1">&#39;vue&#39;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">interface</span> <span class="nx">ComponentCustomProperties</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 上面都是固定内容，此处写自定义全局属性的数据类型
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">x</span>:<span class="kt">number</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">x</span>:<span class="kt">number</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 挂载应用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -6348,16 +6348,16 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">App</span> <span class="kr">from</span> <span class="s1">&#39;./App.vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 创建应用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 注册全局指令
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">&#39;beauty&#39;</span><span class="p">,(</span><span class="nx">element</span><span class="p">,{</span><span class="nx">value</span><span class="p">})</span><span class="o">=&gt;</span><span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">&#39;beauty&#39;</span><span class="p">,(</span><span class="nx">element</span><span class="p">,{</span><span class="nx">value</span><span class="p">})</span><span class="o">=&gt;</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">element</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">+=</span> <span class="nx">value</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">&#39;yellow&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 挂载应用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用演示：</p>
@@ -6399,12 +6399,12 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">App</span> <span class="kr">from</span> <span class="s1">&#39;./App.vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 创建应用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 挂载应用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 2秒后卸载应用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">app</span><span class="p">.</span><span class="nx">unmount</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
@@ -6468,16 +6468,16 @@
 <pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createApp</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 整体导入 ElementPlus 组件库
 </span></span></span><span class="line"><span class="cl"><span class="c1">// 导入ElementPlus组件库的所有模块和功能
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">ElementPlus</span> <span class="kr">from</span> <span class="s1">&#39;element-plus&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">ElementPlus</span> <span class="kr">from</span> <span class="s1">&#39;element-plus&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 导入ElementPlus组件库所需的全局CSS样式
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="s1">&#39;element-plus/dist/index.css&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="s1">&#39;element-plus/dist/index.css&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">App</span> <span class="kr">from</span> <span class="s1">&#39;./App.vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 使用ElementPlus
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">ElementPlus</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">ElementPlus</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍了Stream流和方法引用的基本使用">
 <title>Stream流与方法引用</title>
@@ -364,7 +364,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">3</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">));</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="简介">简介
@@ -542,7 +542,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Stream</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">strArray</span><span class="p">).</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span><span class="w"> </span><span class="c1">// hello world java</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Stream</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="n">1</span><span class="p">,</span><span class="w"> </span><span class="n">2</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">}).</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span><span class="w"> </span><span class="c1">// [I@41629346</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="stream流的中间操作方法">Stream流的中间操作方法
@@ -642,7 +642,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">
 </span></span></span><span class="line"><span class="cl"><span class="cm">        */</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -679,7 +679,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 需求：跳过list集合中前3个元素，打印剩余元素</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">skip</span><span class="p">(</span><span class="n">3</span><span class="p">).</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -718,7 +718,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 需求：将list1集合去重后再打印</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">list1</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">distinct</span><span class="p">().</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -789,7 +789,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">        
 </span></span></span><span class="line"><span class="cl"><span class="cm">        */</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="stream流的终结操作方法">Stream流的终结操作方法
@@ -929,7 +929,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">
 </span></span></span><span class="line"><span class="cl"><span class="cm">        */</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -988,7 +988,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toMap</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&#34;-&#34;</span><span class="p">)</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&#34;-&#34;</span><span class="p">)</span><span class="o">[</span><span class="n">2</span><span class="o">]</span><span class="p">)));</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">map</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -1075,7 +1075,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">descending</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">num1</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="方法引用符">方法引用符
@@ -1130,7 +1130,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">Integer</span><span class="p">::</span><span class="n">parseInt</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -1218,7 +1218,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">         第二个参数到最后一个参数：跟被引用方法的形参保持一致，如果没有第二个参数，则被引用方法需要是无参的成员方法
 </span></span></span><span class="line"><span class="cl"><span class="cm">        */</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -1269,9 +1269,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Demo</span><span class="p">()::</span><span class="n">isNumber</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Demo</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Demo</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 判断字符串是否是数字</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isNumber</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="na">trim</span><span class="p">().</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1280,7 +1280,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;^-?\\d+(\\.\\d+)?$&#34;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="n">regex</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -1366,9 +1366,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">studentList</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// [Student{name=&#39;张三&#39;, age=18}, Student{name=&#39;李四&#39;, age=19}, Student{name=&#39;王五&#39;, age=20}, Student{name=&#39;赵六&#39;, age=21}]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
@@ -1404,7 +1404,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="s">&#34;, age=&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">+</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="sc">&#39;}&#39;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>数组的构造方法：</p>
@@ -1431,7 +1431,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Integer</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">toArray</span><span class="p">(</span><span class="n">Integer</span><span class="o">[]</span><span class="p">::</span><span class="k">new</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">array</span><span class="p">));</span><span class="w"> </span><span class="c1">// [1, 2, 3, 4, 5]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="写了@Data但无法通过反射调用无参构造方法">
 <title>@Data与@Builder联用时冲突</title>
@@ -241,9 +241,9 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="nd">@Builder</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Data</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@NoArgsConstructor</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@AllArgsConstructor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>注：<code>@NoArgsConstructor</code>和<code>@AllArgsConstructor</code>顺序不能反</p>

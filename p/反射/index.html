@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1.class类的以及class对象的介绍以及反射介绍 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 1.反射概述:解剖class对象的一个技术 2.问题:能解剖class对象的啥呢? a.解剖出成员变量 : 赋值 b.解剖出成员方法: 调用 c.解剖出构造方法: new对象 3.用反射的好处:让代码变的更通用,更灵活 4.怎么学反射: a.将反射看成是一套API来学 b.通过涛哥的案例,体会反射的好处,用反射写出来的代码有多牛掰 5.问题:玩儿反射,最开始的一步是干啥? 获取Class对象 6.class对象:class文件对应的对象 class类:描述class对象的类叫做class类 2.反射之获取Class对象 1 2 3 4 5 6 7 1.方式1:调用Object中的getClass方法: Class &lt;?&gt; getClass() 2.方式2:不管是基本类型还是引用类型,jvm都为其提供了一个静态成员:class 3.方式3:Class类中的静态方法: static Class&lt;?&gt; forName(String className) className:传递的是类的全限定名(包名.类名) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 public class Person { private String name; private Integer age; public Person() { } //私有构造 private Person(String name){ this.name = name; } public Person(String name, Integer age) { this.name = name; this.age = age; } public String getName() { return name; } public void setName(String name) { this.name = name; } public Integer getAge() { return age; } public void setAge(Integer age) { this.age = age; } @Override public String toString() { return &#34;Person{&#34; + &#34;name=&#39;&#34; + name + &#39;\\&#39;&#39; + &#34;, age=&#34; + age + &#39;}&#39;; } } 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 public class Demo01GetClass { @Test public void get1()throws Exception{ /* 1.方式1:调用Object中的getClass方法: Class &lt;?&gt; getClass() */ Person person = new Person(); Class&lt;? extends Person&gt; aClass1 = person.getClass(); System.out.println(&#34;aClass1 = &#34; + aClass1); System.out.println(&#34;==========================&#34;); //2.方式2:不管是基本类型还是引用类型,jvm都为其提供了一个静态成员:class Class&lt;Person&gt; aClass2 = Person.class; System.out.println(&#34;aClass2 = &#34; + aClass2); System.out.println(&#34;===========================&#34;); /* static Class&lt;?&gt; forName(String className) className:传递的是类的全限定名(包名.类名) */ Class&lt;?&gt; aClass3 = Class.forName(&#34;com.atguigu.c_reflect.Person&#34;); System.out.println(&#34;aClass3 = &#34; + aClass3); System.out.println(&#34;==========================&#34;); System.out.println(aClass1==aClass2); } } 运行结果：\n">
 <title>反射</title>
@@ -309,21 +309,21 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="p">.</span><span class="na">反射概述</span><span class="p">:</span><span class="n">解剖class对象的一个技术</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="p">.</span><span class="na">问题</span><span class="p">:</span><span class="n">能解剖class对象的啥呢</span><span class="o">?</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">问题</span><span class="p">:</span><span class="n">能解剖class对象的啥呢</span><span class="o">?</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">a</span><span class="p">.</span><span class="na">解剖出成员变量</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">赋值</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">b</span><span class="p">.</span><span class="na">解剖出成员方法</span><span class="p">:</span><span class="w"> </span><span class="n">调用</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">c</span><span class="p">.</span><span class="na">解剖出构造方法</span><span class="p">:</span><span class="w"> </span><span class="n">new对象</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">3</span><span class="p">.</span><span class="na">用反射的好处</span><span class="p">:</span><span class="n">让代码变的更通用</span><span class="p">,</span><span class="n">更灵活</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">3</span><span class="p">.</span><span class="na">用反射的好处</span><span class="p">:</span><span class="n">让代码变的更通用</span><span class="p">,</span><span class="n">更灵活</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">4</span><span class="p">.</span><span class="na">怎么学反射</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">4</span><span class="p">.</span><span class="na">怎么学反射</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">a</span><span class="p">.</span><span class="na">将反射看成是一套API来学</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">b</span><span class="p">.</span><span class="na">通过涛哥的案例</span><span class="p">,</span><span class="n">体会反射的好处</span><span class="p">,</span><span class="n">用反射写出来的代码有多牛掰</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">5</span><span class="p">.</span><span class="na">问题</span><span class="p">:</span><span class="n">玩儿反射</span><span class="p">,</span><span class="n">最开始的一步是干啥</span><span class="o">?</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">5</span><span class="p">.</span><span class="na">问题</span><span class="p">:</span><span class="n">玩儿反射</span><span class="p">,</span><span class="n">最开始的一步是干啥</span><span class="o">?</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">获取Class对象</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">6</span><span class="p">.</span><span class="na">class对象</span><span class="p">:</span><span class="n">class文件对应的对象</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">6</span><span class="p">.</span><span class="na">class对象</span><span class="p">:</span><span class="n">class文件对应的对象</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">class类</span><span class="p">:</span><span class="n">描述class对象的类叫做class类</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -342,7 +342,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="p">.</span><span class="na">方式1</span><span class="p">:</span><span class="n">调用Object中的getClass方法</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Class</span><span class="w"> </span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">getClass</span><span class="p">()</span><span class="w">  
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="p">.</span><span class="na">方式2</span><span class="p">:</span><span class="n">不管是基本类型还是引用类型</span><span class="p">,</span><span class="n">jvm都为其提供了一个静态成员</span><span class="p">:</span><span class="kd">class</span>
+</span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">方式2</span><span class="p">:</span><span class="n">不管是基本类型还是引用类型</span><span class="p">,</span><span class="n">jvm都为其提供了一个静态成员</span><span class="p">:</span><span class="kd">class</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl"><span class="nc">3</span><span class="p">.</span><span class="na">方式3</span><span class="p">:</span><span class="n">Class类中的静态方法</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="kd">static</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">forName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">className</span><span class="p">)</span><span class="w">  
@@ -434,7 +434,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="s">&#34;, age=&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">+</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="sc">&#39;}&#39;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -502,7 +502,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">aClass1</span><span class="o">==</span><span class="n">aClass2</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>运行结果：</p>
@@ -538,7 +538,7 @@
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="p">.</span><span class="w"> </span><span class="n">方式3</span><span class="p">:</span><span class="n">Class类中的静态方法</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="kd">static</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">forName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">className</span><span class="p">)</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="w">                           </span><span class="n">className</span><span class="p">:</span><span class="n">传递的是类的全限定名</span><span class="p">(</span><span class="n">包名</span><span class="p">.</span><span class="na">类名</span><span class="p">)</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="p">.</span><span class="na">原因</span><span class="p">:</span><span class="n">参数为String形式</span><span class="p">,</span><span class="n">可以和properties文件结合使用</span><span class="w">                               
+</span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">原因</span><span class="p">:</span><span class="n">参数为String形式</span><span class="p">,</span><span class="n">可以和properties文件结合使用</span><span class="w">                               
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -582,7 +582,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;aClass = &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">aClass</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>运行结果：</p>
@@ -633,7 +633,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">constructor</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>运行结果：（Person类的定义在<strong>反射之获取Class对象</strong>）</p>
@@ -660,7 +660,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">a</span><span class="p">.</span><span class="na">如果获取的是空参构造</span><span class="p">:</span><span class="n">参数不用写</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">b</span><span class="p">.</span><span class="na">如果获取的是有参构造</span><span class="p">:</span><span class="n">参数写参数类型的class对象</span><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">      
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="p">.</span><span class="na">Constructor类中的方法</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">Constructor类中的方法</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">T</span><span class="w"> </span><span class="nf">newInstance</span><span class="p">(</span><span class="n">Object</span><span class="p">...</span><span class="na">initargs</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">创建对象</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                         </span><span class="n">initargs</span><span class="p">:</span><span class="n">传递的是构造方法的实参</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">a</span><span class="p">.</span><span class="na">如果根据无参构造new对象</span><span class="p">,</span><span class="n">initargs不写了</span><span class="w">
@@ -746,7 +746,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">         * Person{name=&#39;null&#39;, age=null}
 </span></span></span><span class="line"><span class="cl"><span class="cm">         */</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="33利用空参构造创建对象的快捷方式_public">3.3.利用空参构造创建对象的快捷方式_public
@@ -762,8 +762,8 @@
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nl">Class类中的方法</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">T</span><span class="w"> </span><span class="nf">newInstance</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">根据空参构造创建对象</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">前提</span><span class="p">:</span><span class="n">被反射的类中必须有public的空参构造</span><span class="w">      
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">注</span><span class="err">：</span><span class="n">在jdk17中过时了</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nl">前提</span><span class="p">:</span><span class="n">被反射的类中必须有public的空参构造</span><span class="w">      
+</span></span></span><span class="line"><span class="cl"><span class="n">注</span><span class="err">：</span><span class="n">在jdk17中过时了</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -795,7 +795,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//好比是直接输出对象名,默认调用toString</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">person</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="34利用反射获取有参构造并创建对象_public">3.4.利用反射获取有参构造并创建对象_public
@@ -820,7 +820,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">a</span><span class="p">.</span><span class="na">如果获取的是空参构造</span><span class="p">:</span><span class="n">参数不用写</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">b</span><span class="p">.</span><span class="na">如果获取的是有参构造</span><span class="p">:</span><span class="n">参数写参数类型的class对象</span><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">      
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="p">.</span><span class="na">Constructor类中的方法</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">Constructor类中的方法</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">T</span><span class="w"> </span><span class="nf">newInstance</span><span class="p">(</span><span class="n">Object</span><span class="p">...</span><span class="na">initargs</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">创建对象</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                         </span><span class="n">initargs</span><span class="p">:</span><span class="n">传递的是构造方法的实参</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">a</span><span class="p">.</span><span class="na">如果根据无参构造new对象</span><span class="p">,</span><span class="n">initargs不写了</span><span class="w">
@@ -860,7 +860,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//好比是直接输出Person对象,直接调用toString</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">person</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>运行结果：</p>
@@ -888,11 +888,11 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="p">.</span><span class="na">Constructor</span><span class="o">&lt;?&gt;[]</span><span class="w"> </span><span class="n">getDeclaredConstructors</span><span class="p">()</span><span class="n">获取所有构造方法</span><span class="p">,</span><span class="n">包括private</span><span class="w">  
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="p">.</span><span class="na">Constructor</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getDeclaredConstructor</span><span class="p">(</span><span class="n">类</span><span class="o">&lt;?&gt;</span><span class="p">...</span><span class="w"> </span><span class="n">parameterTypes</span><span class="p">)</span><span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取指定构造</span><span class="p">,</span><span class="n">包括private</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">Constructor</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getDeclaredConstructor</span><span class="p">(</span><span class="n">类</span><span class="o">&lt;?&gt;</span><span class="p">...</span><span class="w"> </span><span class="n">parameterTypes</span><span class="p">)</span><span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取指定构造</span><span class="p">,</span><span class="n">包括private</span><span class="w">   
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">parameterTypes</span><span class="p">:</span><span class="n">参数类型的class对象</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="w">      
 </span></span></span><span class="line"><span class="cl"><span class="w">      
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">3</span><span class="p">.</span><span class="na">Constructor有一个父类叫做AccessibleObject</span><span class="w"> </span><span class="p">,</span><span class="n">里面有一个方法</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">3</span><span class="p">.</span><span class="na">Constructor有一个父类叫做AccessibleObject</span><span class="w"> </span><span class="p">,</span><span class="n">里面有一个方法</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAccessible</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">flag</span><span class="p">)</span><span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">修改访问权限</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                     </span><span class="n">flag为true</span><span class="p">:</span><span class="n">解除私有权限</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
@@ -928,7 +928,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">         * public Person()
 </span></span></span><span class="line"><span class="cl"><span class="cm">         */</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -958,7 +958,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">	
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 输出：Person{name=&#39;三上&#39;, age=null}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="4反射方法">4.反射方法
@@ -1020,7 +1020,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="n">name</span><span class="p">:</span><span class="n">传递方法名</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="n">parameterTypes</span><span class="p">:</span><span class="n">方法参数类型的class对象</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                       
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="p">.</span><span class="na">调用方法</span><span class="p">:</span><span class="n">Method对象中的方法</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">调用方法</span><span class="p">:</span><span class="n">Method对象中的方法</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Object</span><span class="w"> </span><span class="nf">invoke</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">执行方法</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">obj</span><span class="p">:</span><span class="n">根据构造new出来的对象</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">args</span><span class="p">:</span><span class="n">方法实参</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">如果有参数</span><span class="p">,</span><span class="n">直接传递实参</span><span class="p">;</span><span class="n">否则不用传</span><span class="w">
@@ -1085,7 +1085,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getName</span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="n">person</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">o</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cm">/** 输出：
+</span></span></span><span class="line"><span class="cl"><span class="cm">/** 输出：
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * Person{name=&#39;柳岩&#39;, age=null}
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * ============================
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 柳岩
@@ -1105,12 +1105,12 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="p">.</span><span class="na">Method</span><span class="o">[]</span><span class="w"> </span><span class="nf">getDeclaredMethods</span><span class="p">()</span><span class="w">   </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取所有的成员方法</span><span class="p">,</span><span class="n">包括private</span><span class="w"> </span><span class="n">的</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="p">.</span><span class="na">Method</span><span class="w"> </span><span class="nf">getDeclaredMethod</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">类</span><span class="o">&lt;?&gt;</span><span class="p">...</span><span class="w"> </span><span class="n">parameterTypes</span><span class="p">)</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取执行成员方法</span><span class="p">,</span><span class="n">包括private</span><span class="w">      
+</span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">Method</span><span class="w"> </span><span class="nf">getDeclaredMethod</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">类</span><span class="o">&lt;?&gt;</span><span class="p">...</span><span class="w"> </span><span class="n">parameterTypes</span><span class="p">)</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取执行成员方法</span><span class="p">,</span><span class="n">包括private</span><span class="w">      
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">                       </span><span class="n">name</span><span class="p">:</span><span class="n">传递方法名</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                       </span><span class="n">parameterTypes</span><span class="p">:</span><span class="n">方法参数类型的class对象</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                           
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">3</span><span class="p">.</span><span class="na">解除私有权限</span><span class="p">:</span><span class="kt">void</span><span class="w"> </span><span class="nf">setAccessible</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">flag</span><span class="p">)</span><span class="w">                             
+</span></span></span><span class="line"><span class="cl"><span class="n">3</span><span class="p">.</span><span class="na">解除私有权限</span><span class="p">:</span><span class="kt">void</span><span class="w"> </span><span class="nf">setAccessible</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">flag</span><span class="p">)</span><span class="w">                             
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1173,8 +1173,8 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nl">Class类中的方法</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">1</span><span class="p">.</span><span class="na">Field</span><span class="o">[]</span><span class="w"> </span><span class="nf">getFields</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取所有public的属性</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="p">.</span><span class="na">Field</span><span class="o">[]</span><span class="w"> </span><span class="nf">getDeclaredFields</span><span class="p">()</span><span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取所有属性</span><span class="p">,</span><span class="n">包括priavte的</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="n">1</span><span class="p">.</span><span class="na">Field</span><span class="o">[]</span><span class="w"> </span><span class="nf">getFields</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取所有public的属性</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">Field</span><span class="o">[]</span><span class="w"> </span><span class="nf">getDeclaredFields</span><span class="p">()</span><span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取所有属性</span><span class="p">,</span><span class="n">包括priavte的</span><span class="w">    
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1240,10 +1240,10 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nl">Class类中的方法</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">1</span><span class="p">.</span><span class="na">Field</span><span class="w"> </span><span class="nf">getField</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取指定public的属性</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="p">.</span><span class="na">Field</span><span class="w"> </span><span class="nf">getDeclaredField</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取指定属性</span><span class="p">,</span><span class="n">包括priavte的</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="n">1</span><span class="p">.</span><span class="na">Field</span><span class="w"> </span><span class="nf">getField</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取指定public的属性</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">Field</span><span class="w"> </span><span class="nf">getDeclaredField</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取指定属性</span><span class="p">,</span><span class="n">包括priavte的</span><span class="w"> 
 </span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">3</span><span class="p">.</span><span class="na">Field类中的方法</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">3</span><span class="p">.</span><span class="na">Field类中的方法</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="n">Object</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">为属性赋值</span><span class="p">,</span><span class="n">相当于javabean中的set方法</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="n">obj</span><span class="p">:</span><span class="n">对象</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="n">value</span><span class="p">:</span><span class="n">赋予的值</span><span class="w">
@@ -1331,7 +1331,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">接口名</span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="nf">find</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1345,11 +1345,11 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// MyBatis的配置文件</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">&lt;</span><span class="n">select</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&#34;find&#34;</span><span class="w"> </span><span class="n">resultType</span><span class="o">=</span><span class="s">&#34;Employee的全限定名&#34;</span><span class="o">&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">select</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&#34;find&#34;</span><span class="w"> </span><span class="n">resultType</span><span class="o">=</span><span class="s">&#34;Employee的全限定名&#34;</span><span class="o">&gt;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">select</span><span class="w"> </span><span class="n">列名</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">表名</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">条件</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">&lt;/</span><span class="n">select</span><span class="o">&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">select</span><span class="o">&gt;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">根据接口的class对象</span><span class="p">,</span><span class="n">创建一个实现类对象</span><span class="p">,</span><span class="n">然后通过配置文件中的方法名反射这个方法</span><span class="p">,</span><span class="n">invoke执行这个方法</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="n">根据接口的class对象</span><span class="p">,</span><span class="n">创建一个实现类对象</span><span class="p">,</span><span class="n">然后通过配置文件中的方法名反射这个方法</span><span class="p">,</span><span class="n">invoke执行这个方法</span><span class="w">    
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>练习：</p>
@@ -1388,7 +1388,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">className</span><span class="o">=</span><span class="n">包名</span><span class="p">.</span><span class="na">Person</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">methodName</span><span class="o">=</span><span class="n">eat</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">步骤</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nl">步骤</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">1</span><span class="p">.</span><span class="na">创建properties配置文件</span><span class="p">,</span><span class="n">配置信息</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="na">问题</span><span class="p">:</span><span class="n">properties配置文件放到哪里</span><span class="o">?</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">将来我们开发完之后给用户的是out路径下的class文件</span><span class="p">,</span><span class="n">将class文件打包</span><span class="p">,</span><span class="w">  </span><span class="n">如果将配置文件直接放到模块下</span><span class="w">
@@ -1473,7 +1473,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//5.执行方法</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">method</span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="n">o</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>注：本笔记基于尚硅谷课程</p>

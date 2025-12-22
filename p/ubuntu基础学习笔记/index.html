@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="自用">
 <title>Ubuntu基础学习笔记</title>
@@ -2593,7 +2593,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">echo</span> <span class="s1">&#39;=============$*=============&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;=============$*=============&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> i in <span class="nv">$*</span>
 </span></span><span class="line"><span class="cl"><span class="k">do</span>
 </span></span><span class="line"><span class="cl"> <span class="nb">echo</span> <span class="s2">&#34;ban zhang love </span><span class="nv">$i</span><span class="s2">&#34;</span>
@@ -2638,7 +2638,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">echo</span> <span class="s1">&#39;=============$*=============&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;=============$*=============&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> i in <span class="s2">&#34;</span><span class="nv">$*</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## $*中的所有参数看成是一个整体，所以这个 for 循环只会循环一次</span>
 </span></span><span class="line"><span class="cl"><span class="k">do</span>
@@ -2692,7 +2692,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nv">sum</span><span class="o">=</span><span class="m">0</span>
+</span></span></span><span class="line"><span class="cl"><span class="nv">sum</span><span class="o">=</span><span class="m">0</span>
 </span></span><span class="line"><span class="cl"><span class="nv">i</span><span class="o">=</span><span class="m">1</span>
 </span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="o">[</span> <span class="nv">$i</span> -le <span class="m">100</span> <span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="k">do</span>
@@ -2735,7 +2735,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">read</span> -t <span class="m">5</span> -p <span class="s2">&#34;请在5秒内输入你的名字:&#34;</span> name
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$name</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">     <span class="nb">echo</span> <span class="s2">&#34;你好，</span><span class="nv">$name</span><span class="s2">&#34;</span>
@@ -2819,7 +2819,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">function</span> sum<span class="o">()</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">function</span> sum<span class="o">()</span>
 </span></span><span class="line"><span class="cl"><span class="o">{</span>
 </span></span><span class="line"><span class="cl"> <span class="nv">s</span><span class="o">=</span><span class="m">0</span>
 </span></span><span class="line"><span class="cl"> <span class="nv">s</span><span class="o">=</span>$<span class="o">[</span><span class="nv">$1</span>+<span class="nv">$2</span><span class="o">]</span>
@@ -3044,6 +3044,19 @@
             
                 
 <article class="">
+    <a href="/p/%E4%BD%BF%E7%94%A8frp%E5%92%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用Frp和云服务器实现内网穿透</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/dockercompose%E7%AE%80%E4%BB%8B/">
         
         
@@ -3089,19 +3102,6 @@
 
         <div class="article-details">
             <h2 class="article-title">FinalShell无法登录root用户</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/linux%E5%AE%89%E8%A3%85nginx/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux安装Nginx</h2>
         </div>
     </a>
 </article>

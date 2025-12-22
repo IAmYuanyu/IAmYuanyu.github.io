@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简单演示了在SpringBoot实现文件上传接口">
 <title>SpringBoot实现文件上传接口</title>
@@ -309,12 +309,12 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.PostMapping</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.RequestParam</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.multipart.MultipartFile</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.RequestParam</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.multipart.MultipartFile</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@RestController</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FileUploadController</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@RestController</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FileUploadController</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 单文件上传</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&#34;/upload/single&#34;</span><span class="p">)</span><span class="w">
@@ -340,7 +340,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// ...</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&#34;上传成功，共&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">files</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;个文件&#34;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>可在<code>application.properties</code>中配置文件大小限制：</p>
@@ -409,20 +409,20 @@
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#uploadBtn&#34;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 添加文件（files是input[type=&#34;file&#34;]的DOM对象，multiple属性允许选择多文件）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">files</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;fileInput&#34;</span><span class="p">).</span><span class="nx">files</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">files</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;fileInput&#34;</span><span class="p">).</span><span class="nx">files</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">files</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&#34;files&#34;</span><span class="p">,</span> <span class="nx">files</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span> <span class="c1">// 键名&#34;files&#34;需与后端@RequestParam(&#34;files&#34;)一致
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 添加额外参数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&#34;description&#34;</span><span class="p">,</span> <span class="s2">&#34;这是一批文件&#34;</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&#34;description&#34;</span><span class="p">,</span> <span class="s2">&#34;这是一批文件&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">url</span><span class="o">:</span> <span class="s2">&#34;/upload/multiple&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;POST&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">data</span><span class="o">:</span> <span class="nx">formData</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">contentType</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// 必须设为false，让浏览器自动处理multipart/form-data
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">processData</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// 禁止jQuery序列化FormData（否则文件会被转为字符串）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">        <span class="nx">processData</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// 禁止jQuery序列化FormData（否则文件会被转为字符串）
+</span></span></span><span class="line"><span class="cl">        <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;上传结果：&#34;</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">});</span>

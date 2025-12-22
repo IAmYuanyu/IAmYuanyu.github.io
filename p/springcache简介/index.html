@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简单介绍了SpringCache三个常用注解的使用">
 <title>SpringCache简介</title>
@@ -349,12 +349,12 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">* value：缓存的名称，每个缓存名称下面可以有多个key
 </span></span></span><span class="line"><span class="cl"><span class="cm">* key：缓存的key，支持Spring的表达式语言SPEL语法
 </span></span></span><span class="line"><span class="cl"><span class="cm">*/</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@PostMapping</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@CachePut</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;userCache&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;#user.id&#34;</span><span class="p">)</span><span class="c1">//key的生成：userCache::1</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="nd">@RequestBody</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@PostMapping</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@CachePut</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;userCache&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;#user.id&#34;</span><span class="p">)</span><span class="c1">//key的生成：userCache::1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="nd">@RequestBody</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">){</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">userMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">user</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">user</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>**说明：**key的写法如下：</p>
@@ -396,12 +396,12 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm">* Cacheable：在方法执行前spring先查看缓存中是否有数据，如果有数据，则直接返回缓存数据
 </span></span></span><span class="line"><span class="cl"><span class="cm">* 若没有数据，调用方法并将方法返回值放到缓存中
 </span></span></span><span class="line"><span class="cl"><span class="cm">*/</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@GetMapping</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Cacheable</span><span class="p">(</span><span class="n">cacheNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;userCache&#34;</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="s">&#34;#id&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="nf">getById</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">id</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@GetMapping</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Cacheable</span><span class="p">(</span><span class="n">cacheNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;userCache&#34;</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="s">&#34;#id&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="nf">getById</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">id</span><span class="p">){</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userMapper</span><span class="p">.</span><span class="na">getById</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">user</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="cacheevict">@CacheEvict
@@ -421,16 +421,16 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@DeleteMapping</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@CacheEvict</span><span class="p">(</span><span class="n">cacheNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;userCache&#34;</span><span class="p">,</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;#id&#34;</span><span class="p">)</span><span class="c1">//删除某个key对应的缓存数据</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deleteById</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">id</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@CacheEvict</span><span class="p">(</span><span class="n">cacheNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;userCache&#34;</span><span class="p">,</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;#id&#34;</span><span class="p">)</span><span class="c1">//删除某个key对应的缓存数据</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deleteById</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">id</span><span class="p">){</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">userMapper</span><span class="p">.</span><span class="na">deleteById</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@DeleteMapping</span><span class="p">(</span><span class="s">&#34;/delAll&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@CacheEvict</span><span class="p">(</span><span class="n">cacheNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;userCache&#34;</span><span class="p">,</span><span class="n">allEntries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="c1">//删除userCache下所有的缓存数据</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deleteAll</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@DeleteMapping</span><span class="p">(</span><span class="s">&#34;/delAll&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@CacheEvict</span><span class="p">(</span><span class="n">cacheNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;userCache&#34;</span><span class="p">,</span><span class="n">allEntries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="c1">//删除userCache下所有的缓存数据</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deleteAll</span><span class="p">(){</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">userMapper</span><span class="p">.</span><span class="na">deleteAll</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div>

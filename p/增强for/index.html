@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="遍历集合或数组">
 <title>增强for</title>
@@ -240,7 +240,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="n">元素类型</span><span class="w"> </span><span class="n">变量名</span><span class="p">:</span><span class="n">要遍历的集合名或数组名</span><span class="p">){</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">变量名代表着每一个元素</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>快速生成：集合名或数组名.for</p>
@@ -275,30 +275,30 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;张三&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;李四&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;王五&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;赵六&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;张三&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;李四&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;王五&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;赵六&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;======================&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">1</span><span class="p">,</span><span class="w"> </span><span class="n">2</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">,</span><span class="w"> </span><span class="n">4</span><span class="p">,</span><span class="w"> </span><span class="n">5</span><span class="p">};</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;======================&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">1</span><span class="p">,</span><span class="w"> </span><span class="n">2</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">,</span><span class="w"> </span><span class="n">4</span><span class="p">,</span><span class="w"> </span><span class="n">5</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">num</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">输出结果</span><span class="err">：</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">张三</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">李四</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">王五</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">赵六</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">======================</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">1</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">2</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">3</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">4</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">输出结果</span><span class="err">：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">张三</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">李四</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">王五</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">赵六</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">======================</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">5</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>注意：</p>

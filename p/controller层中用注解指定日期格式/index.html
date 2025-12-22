@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="日期时间类型参数接收时，需要通过@DateTimeFormat注解指定前端传递">
 <title>Controller层中用注解指定日期格式</title>
@@ -273,10 +273,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@GetMapping</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Result</span><span class="w"> </span><span class="nf">page</span><span class="p">(</span><span class="nd">@DateTimeFormat</span><span class="p">(</span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;yyyy-MM-dd&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">LocalDate</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">Result</span><span class="w"> </span><span class="nf">page</span><span class="p">(</span><span class="nd">@DateTimeFormat</span><span class="p">(</span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;yyyy-MM-dd&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">LocalDate</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="nd">@DateTimeFormat</span><span class="p">(</span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;yyyy-MM-dd&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">LocalDate</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 略……</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div>

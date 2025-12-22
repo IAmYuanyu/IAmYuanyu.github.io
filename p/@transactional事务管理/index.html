@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="@Transactional事务管理简单介绍">
 <title>@Transactional事务管理</title>
@@ -303,8 +303,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Transactional</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">Emp</span><span class="w"> </span><span class="n">emp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">Emp</span><span class="w"> </span><span class="n">emp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 保存员工的基本信息</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">emp</span><span class="p">.</span><span class="na">setCreateTime</span><span class="p">(</span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">());</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">emp</span><span class="p">.</span><span class="na">setUpdateTime</span><span class="p">(</span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">());</span><span class="w">
@@ -321,7 +321,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">empExprMapper</span><span class="p">.</span><span class="na">insertBatch</span><span class="p">(</span><span class="n">exprList</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>上述代码执行到第9行会报错，如果没有@Transactional进行事务管理，就会导致员工信息被保存，但对应的工作经历却丢失了</p>
@@ -358,8 +358,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Transactional</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">Emp</span><span class="w"> </span><span class="n">emp</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">Emp</span><span class="w"> </span><span class="n">emp</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 保存员工的基本信息</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">emp</span><span class="p">.</span><span class="na">setCreateTime</span><span class="p">(</span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">());</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">emp</span><span class="p">.</span><span class="na">setUpdateTime</span><span class="p">(</span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">());</span><span class="w">
@@ -378,7 +378,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">empExprMapper</span><span class="p">.</span><span class="na">insertBatch</span><span class="p">(</span><span class="n">exprList</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>Exception就是非运行时异常，此时运行代码后，员工基本信息会被正常提交，而员工工作经历会丢失</p>
@@ -479,8 +479,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Transactional</span><span class="p">(</span><span class="n">rollbackFor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Exception</span><span class="p">.</span><span class="na">class</span><span class="w"> </span><span class="p">})</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">Emp</span><span class="w"> </span><span class="n">emp</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">Emp</span><span class="w"> </span><span class="n">emp</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 保存员工的基本信息</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">emp</span><span class="p">.</span><span class="na">setCreateTime</span><span class="p">(</span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">());</span><span class="w">
@@ -503,13 +503,13 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">EmpLog</span><span class="w"> </span><span class="n">empLog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EmpLog</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">(),</span><span class="w"> </span><span class="s">&#34;新增员工：&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">emp</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">empLogService</span><span class="p">.</span><span class="na">insertLog</span><span class="p">(</span><span class="n">empLog</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// empLogService实现类中的insertLog方法</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">insertLog</span><span class="p">(</span><span class="n">EmpLog</span><span class="w"> </span><span class="n">empLog</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// empLogService实现类中的insertLog方法</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">insertLog</span><span class="p">(</span><span class="n">EmpLog</span><span class="w"> </span><span class="n">empLog</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">empLogMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">empLog</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果代码如上，运行结束后记录操作日志的行为也会回滚，无法满足需求</p>
@@ -524,10 +524,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Transactional</span><span class="p">(</span><span class="n">propagation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Propagation</span><span class="p">.</span><span class="na">REQUIRES_NEW</span><span class="p">)</span><span class="w">  </span><span class="c1">// 在新事务中运行</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">insertLog</span><span class="p">(</span><span class="n">EmpLog</span><span class="w"> </span><span class="n">empLog</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">insertLog</span><span class="p">(</span><span class="n">EmpLog</span><span class="w"> </span><span class="n">empLog</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">empLogMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">empLog</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>修改后，即可满足需求</p>

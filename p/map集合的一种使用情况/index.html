@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Map集合的一种使用情况 现有一段SQL查询语句，如下\n1 2 3 4 5 6 7 8 9 10 11 &lt;select id=&#34;countEmpJobData&#34; resultType=&#34;java.util.Map&#34;&gt; select ( case when job=1 then &#39;班主任&#39; when job=2 then &#39;讲师&#39; when job=3 then &#39;学工主管&#39; when job=4 then &#39;教研主管&#39; when job=5 then &#39;咨询师&#39; else &#39;其他&#39; end) pos, count(*) num from emp group by job order by num &lt;/select&gt; 在数据库中的查询结果如下\n">
 <title>Map集合的一种使用情况</title>
@@ -370,7 +370,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Service</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ReportServiceImpl</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ReportService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ReportServiceImpl</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ReportService</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Autowired</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">EmpMapper</span><span class="w"> </span><span class="n">empMapper</span><span class="p">;</span><span class="w">
@@ -395,7 +395,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">dataMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">)).</span><span class="na">toList</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JobOption</span><span class="p">(</span><span class="n">jobList</span><span class="p">,</span><span class="w"> </span><span class="n">dataList</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中的<code>JobOption</code>实体类如下</p>
@@ -411,12 +411,12 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@NoArgsConstructor</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@AllArgsConstructor</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">JobOption</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">JobOption</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="n">jobList</span><span class="p">;</span><span class="w"> </span><span class="c1">// 职位列表</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="n">dataList</span><span class="p">;</span><span class="w"> </span><span class="c1">// 数据列表</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div>

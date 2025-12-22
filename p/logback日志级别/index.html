@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="了解如何控制Logback输出的日志级别">
 <title>Logback日志级别</title>
@@ -351,7 +351,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LogTest</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LogTest</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// private static final Logger log = LoggerFactory.getLogger(LogTest.class);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
@@ -373,12 +373,12 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">&#34;error .....&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 在上述配置情况下，输出结果如下</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 2025-09-02 22:19:50.974 [main] INFO  com.itheima.LogTest - 计算结果为: 101</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 2025-09-02 22:19:50.980 [main] WARN  com.itheima.LogTest - warn ......</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 2025-09-02 22:19:50.980 [main] ERROR com.itheima.LogTest - error .....</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 在上述配置情况下，输出结果如下</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 2025-09-02 22:19:50.974 [main] INFO  com.itheima.LogTest - 计算结果为: 101</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 2025-09-02 22:19:50.980 [main] WARN  com.itheima.LogTest - warn ......</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 2025-09-02 22:19:50.980 [main] ERROR com.itheima.LogTest - error .....</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>

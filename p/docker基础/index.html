@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍了Docker的基本使用">
 <title>Docker基础</title>
@@ -305,11 +305,11 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name mysql <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 3307:3306 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="m">123456</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  mysql:8
+</span></span></span><span class="line"><span class="cl">  --name mysql <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -p 3307:3306 <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -e <span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="m">123456</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">  mysql:8
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -331,11 +331,11 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name mysql01 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 3308:3306 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="m">123456</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  mysql:8
+</span></span></span><span class="line"><span class="cl">  --name mysql01 <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -p 3308:3306 <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -e <span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="m">123456</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">  mysql:8
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>此时可以在外部分别连接端口号为3307的mysql和端口号为3308mysql01，如果在mysql01中进行新建一个库或表等操作，3307的mysql中是查询不到，不受影响的</p>
@@ -1152,6 +1152,19 @@
             
                 
 <article class="">
+    <a href="/p/%E4%BD%BF%E7%94%A8frp%E5%92%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用Frp和云服务器实现内网穿透</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/dockercompose%E7%AE%80%E4%BB%8B/">
         
         
@@ -1197,19 +1210,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Linux安装Nginx</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/linux%E5%AE%89%E8%A3%85mysql/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux安装MySQL</h2>
         </div>
     </a>
 </article>
