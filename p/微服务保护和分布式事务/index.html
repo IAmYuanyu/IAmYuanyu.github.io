@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="包含了Sentinel、Seata的简单使用">
+<title>微服务保护和分布式事务</title>
+
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%BF%9D%E6%8A%A4%E5%92%8C%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/'>
+
+<link rel="stylesheet" href="/scss/style.min.6a692fd055deae459f2a9767f57f3855ba80cafd5041317f24f7360f6ca47cdf.css"><meta property='og:title' content="微服务保护和分布式事务">
+<meta property='og:description' content="包含了Sentinel、Seata的简单使用">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%BF%9D%E6%8A%A4%E5%92%8C%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/'>
+<meta property='og:site_name' content='缘鱼'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-02-04T22:22:48&#43;08:00'/><meta property='article:modified_time' content='2026-02-04T22:22:48&#43;08:00'/>
+<meta name="twitter:title" content="微服务保护和分布式事务">
+<meta name="twitter:description" content="包含了Sentinel、Seata的简单使用">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_93cee29ac6c6fbb9.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">缘鱼</a></h1>
+            <h2 class="site-description">缘鱼的博客</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#微服务保护">微服务保护</a>
+      <ol>
+        <li><a href="#服务保护方案">服务保护方案</a>
+          <ol>
+            <li><a href="#请求限流">请求限流</a></li>
+            <li><a href="#线程隔离">线程隔离</a></li>
+            <li><a href="#服务熔断">服务熔断</a></li>
+          </ol>
+        </li>
+        <li><a href="#sentinel">Sentinel</a>
+          <ol>
+            <li><a href="#介绍和安装">介绍和安装</a></li>
+            <li><a href="#微服务整合">微服务整合</a></li>
+          </ol>
+        </li>
+        <li><a href="#请求限流-1">请求限流</a></li>
+        <li><a href="#线程隔离-1">线程隔离</a>
+          <ol>
+            <li><a href="#openfeign整合sentinel">OpenFeign整合Sentinel</a></li>
+            <li><a href="#配置线程隔离">配置线程隔离</a></li>
+          </ol>
+        </li>
+        <li><a href="#fallback">Fallback</a>
+          <ol>
+            <li><a href="#编写降级逻辑">编写降级逻辑</a></li>
+            <li><a href="#服务熔断-1">服务熔断</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#分布式事务">分布式事务</a>
+      <ol>
+        <li><a href="#认识seata">认识Seata</a></li>
+        <li><a href="#部署tc服务">部署TC服务</a>
+          <ol>
+            <li><a href="#准备数据库表">准备数据库表</a></li>
+            <li><a href="#准备配置文件">准备配置文件</a></li>
+            <li><a href="#docker部署">Docker部署</a></li>
+          </ol>
+        </li>
+        <li><a href="#微服务集成seata">微服务集成Seata</a>
+          <ol>
+            <li><a href="#引入依赖">引入依赖</a></li>
+            <li><a href="#配置nacos">配置Nacos</a></li>
+            <li><a href="#nacos配置说明">Nacos配置说明</a></li>
+            <li><a href="#配置bootstrapyaml">配置bootstrap.yaml</a></li>
+            <li><a href="#查看配置结果">查看配置结果</a></li>
+          </ol>
+        </li>
+        <li><a href="#xa模式">XA模式</a>
+          <ol>
+            <li><a href="#两阶段提交">两阶段提交</a></li>
+            <li><a href="#seata的xa模型">Seata的XA模型</a></li>
+            <li><a href="#优缺点">优缺点</a></li>
+            <li><a href="#实现步骤">实现步骤</a></li>
+          </ol>
+        </li>
+        <li><a href="#at模式">AT模式</a>
+          <ol>
+            <li><a href="#seata的at模型">Seata的AT模型</a></li>
+            <li><a href="#流程梳理">流程梳理</a></li>
+            <li><a href="#实现步骤-1">实现步骤</a></li>
+          </ol>
+        </li>
+        <li><a href="#at与xa的区别">AT与XA的区别</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/java/" >
+                Java
+            </a>
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%BF%9D%E6%8A%A4%E5%92%8C%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">微服务保护和分布式事务</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            包含了Sentinel、Seata的简单使用
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-02-04</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <blockquote>
+<p>本文基于黑马课程，并且是衔接在我博客的另一篇文章“SpringCloud”之后的内容，其中设计到的项目在上一篇文章</p>
+<p>本文新涉及的资料：https://www.123865.com/s/SQzhTd-zAXld</p>
+</blockquote>
+<h2 id="微服务保护">微服务保护
+</h2><p>保证服务运行的健壮性，避免级联失败导致的雪崩问题，就属于微服务保护。接下来将介绍微服务保护的常见方案以及对应的技术。</p>
+<h3 id="服务保护方案">服务保护方案
+</h3><p>微服务保护的方案有很多，比如：</p>
+<ul>
+<li>请求限流</li>
+<li>线程隔离</li>
+<li>服务熔断</li>
+</ul>
+<p>这些方案或多或少都会导致服务的体验上略有下降，比如请求限流，降低了并发上限；线程隔离，降低了可用资源数量；服务熔断，降低了服务的完整度，部分服务变的不可用或弱可用。因此这些方案都属于服务<strong>降级</strong>的方案。但通过这些方案，服务的健壮性得到了提升。接下来就逐一了解这些方案的原理。</p>
+<h4 id="请求限流">请求限流
+</h4><p>服务故障最重要原因，就是并发太高。解决了这个问题，就能避免大部分故障。当然，接口的并发不是一直很高，而是突发的。因此请求限流，就是<strong>限制或控制</strong>接口访问的并发流量，避免服务因流量激增而出现故障。</p>
+<p>请求限流往往会有一个限流器，数量高低起伏的并发请求曲线，经过限流器就变的非常平稳。这就像是水电站的大坝，起到蓄水的作用，可以通过开关控制水流出的大小，让下游水流始终维持在一个平稳的量。</p>
+<p><img src="/assets/1766149084765-1.jpeg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h4 id="线程隔离">线程隔离
+</h4><p>当一个业务接口响应时间长，而且并发高时，就可能耗尽服务器的线程资源，导致服务内的其它接口受到影响。所以必须把这种影响降低，或者缩减影响的范围。线程隔离正是解决这个问题的好办法。</p>
+<p>线程隔离的思想来自轮船的舱壁模式：</p>
+<p><img src="/assets/1766149201508-4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>轮船的船舱会被隔板分割为N个相互隔离的密闭舱，假如轮船触礁进水，只有损坏的部分密闭舱会进水，而其他舱由于相互隔离，并不会进水。这样就把进水控制在部分船体，避免了整个船舱进水而沉没。</p>
+<p>为了避免某个接口故障或压力过大导致整个服务不可用，可以限定每个接口可以使用的资源范围，也就是将其“隔离”起来。</p>
+<p><img src="/assets/image-20251219210056881.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251219210056881"
+	
+	
+></p>
+<p>如图所示，给查询购物车业务限定可用线程数量上限为20，这样即便查询购物车的请求因为查询商品服务而出现故障，也不会导致服务器的线程资源被耗尽，不会影响到其它接口。</p>
+<h4 id="服务熔断">服务熔断
+</h4><p>线程隔离虽然避免了雪崩问题，但故障服务（商品服务）依然会拖慢购物车服务（服务调用方）的接口响应速度。而且商品查询的故障依然会导致查询购物车功能出现故障，购物车业务也变的不可用了。</p>
+<p>所以要做两件事情：</p>
+<ul>
+<li><strong>编写服务降级逻辑</strong>：就是服务调用失败后的处理逻辑，根据业务场景，可以抛出异常，也可以返回友好提示或默认数据。</li>
+<li><strong>异常统计和熔断</strong>：统计服务提供方的异常比例，当比例过高表明该接口会影响到其它服务，应该拒绝调用该接口，而是直接走降级逻辑。</li>
+</ul>
+<p><img src="/assets/image-20251219212159582.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251219212159582"
+	
+	
+></p>
+<h3 id="sentinel">Sentinel
+</h3><p>微服务保护的技术有很多，但在目前国内使用较多的还是Sentinel，所以接下来学习Sentinel的使用。</p>
+<h4 id="介绍和安装">介绍和安装
+</h4><p>Sentinel是阿里巴巴开源的一款服务保护框架，目前已经加入SpringCloudAlibaba中。官方网站：https://sentinelguard.io/zh-cn/</p>
+<p>Sentinel 的使用可以分为两个部分:</p>
+<ul>
+<li><strong>核心库</strong>（Jar包）：不依赖任何框架/库，能够运行于 Java 8 及以上的版本的运行时环境，同时对 Dubbo / Spring Cloud 等框架也有较好的支持。在项目中引入依赖即可实现服务限流、隔离、熔断等功能。</li>
+<li><strong>控制台</strong>（Dashboard）：Dashboard 主要负责管理推送规则、监控、管理机器信息等。</li>
+</ul>
+<p>为了方便监控微服务，首先要把Sentinel的控制台搭建出来。</p>
+<p>1）下载jar包</p>
+<p>下载地址：https://github.com/alibaba/Sentinel/releases</p>
+<p>2）运行</p>
+<p>将jar包放在任意非中文、不包含特殊字符的目录下，重命名为<code>sentinel-dashboard.jar</code>：</p>
+<p><img src="/assets/1766151238840-7.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>然后运行如下命令启动控制台：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">java -Dserver.port<span class="o">=</span><span class="m">8090</span> -Dcsp.sentinel.dashboard.server<span class="o">=</span>localhost:8090 -Dproject.name<span class="o">=</span>sentinel-dashboard -jar sentinel-dashboard.jar
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其它启动时可配置参数可参考官方文档：https://github.com/alibaba/Sentinel/wiki/%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%A1%B9</p>
+<p>3）访问</p>
+<p>访问<a class="link" href="http://localhost:8080"  target="_blank" rel="noopener"
+    >http://localhost:8090</a>页面，就可以看到sentinel的控制台了：</p>
+<p><img src="/assets/1766151749686-10.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>需要输入账号和密码，默认都是：sentinel</p>
+<p>登录后，即可看到控制台，默认会监控sentinel-dashboard服务本身：</p>
+<p><img src="/assets/1766151749687-11.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h4 id="微服务整合">微服务整合
+</h4><p>我们在<code>cart-service</code>模块中整合sentinel，连接<code>sentinel-dashboard</code>控制台，步骤如下：</p>
+<p>1）引入sentinel依赖</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="c">&lt;!--sentinel--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span> 
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-alibaba-sentinel<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>2）配置控制台</p>
+<p>修改application.yaml文件，添加下面内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-YAML" data-lang="YAML"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sentinel</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">transport</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">dashboard</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:8090</span><span class="w"> </span><span class="c"># sentinel控制台地址</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>3）访问<code>cart-service</code>的任意端点</p>
+<p>重启<code>cart-service</code>，然后访问查询购物车接口，sentinel的客户端就会将服务访问的信息提交到<code>sentinel-dashboard</code>控制台。并展示出统计信息：</p>
+<p><img src="/assets/1766233957677-1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>点击簇点链路菜单，会看到下面的页面：</p>
+<p><img src="/assets/1766235113597-4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>所谓簇点链路，就是单机调用链路，是一次请求进入服务后经过的每一个被<code>Sentinel</code>监控的资源。默认情况下，<code>Sentinel</code>会监控<code>SpringMVC</code>的每一个<code>Endpoint</code>（接口）。</p>
+<p>因此，<code>/carts</code>这个接口路径就是其中一个簇点，可以对其进行限流、熔断、隔离等保护措施。</p>
+<p>不过，需要注意的是，该项目的SpringMVC接口是按照Restful风格设计，因此购物车的查询、删除、修改等接口全部都是<code>/carts</code>路径：</p>
+<p><img src="/assets/1766235113597-5.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>默认情况下Sentinel会把路径作为簇点资源的名称，无法区分路径相同但请求方式不同的接口，查询、删除、修改等都被识别为一个簇点资源，这显然是不合适的。</p>
+<p>所以可以选择打开Sentinel的请求方式前缀，把<code>请求方式 + 请求路径</code>作为簇点资源名：</p>
+<p>首先，在<code>cart-service</code>的<code>application.yml</code>中添加下面的配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-YAML" data-lang="YAML"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sentinel</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">transport</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">dashboard</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:8090</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">http-method-specify</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># 开启请求方式前缀</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后，重启服务，通过页面访问购物车的相关接口，可以看到sentinel控制台的簇点链路发生了变化：</p>
+<p><img src="/assets/1766235418454-10.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h3 id="请求限流-1">请求限流
+</h3><p>在簇点链路后面点击流控按钮，即可对其做限流配置：</p>
+<p><img src="/assets/1766478891316-2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>在弹出的菜单中这样填写：</p>
+<p><img src="/assets/1766478891313-1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>这样就把查询购物车列表这个簇点资源的流量限制在了每秒6个，也就是最大QPS为6</p>
+<p>利用Jemeter做限流测试，我们每秒发出10个请求：（JMeter和测试文件都在资料中）</p>
+<p><img src="/assets/1766479038457-7.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>最终监控结果如下：</p>
+<p><img src="/assets/1766479038457-8.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>可以看出<code>GET:/carts</code>这个接口的通过QPS稳定在6附近，而拒绝的QPS在4附近，符合预期。</p>
+<h3 id="线程隔离-1">线程隔离
+</h3><h4 id="openfeign整合sentinel">OpenFeign整合Sentinel
+</h4><p>修改cart-service模块的application.yml文件，开启Feign的sentinel功能：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-YAML" data-lang="YAML"><span class="line"><span class="cl"><span class="nt">feign</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">sentinel</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># 开启feign对sentinel的支持</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>需要注意的是，默认情况下SpringBoot项目的tomcat最大线程数是200，允许的最大连接是8492，单机测试很难打满。</p>
+<p>所以需要配置一下cart-service模块的application.yml文件，修改tomcat连接：（可以在Sentinel中改）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-YAML" data-lang="YAML"><span class="line"><span class="cl"><span class="nt">server</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8082</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tomcat</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">threads</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="c"># 允许的最大线程数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">accept-count</span><span class="p">:</span><span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="c"># 最大排队等待数量</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">max-connections</span><span class="p">:</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="c"># 允许的最大连接</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后重启cart-service服务，可以看到查询商品的FeignClient自动变成了一个簇点资源：</p>
+<p><img src="/assets/1766483226512-13.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h4 id="配置线程隔离">配置线程隔离
+</h4><p>接下来，点击查询商品的FeignClient对应的簇点资源后面的流控按钮：</p>
+<p><img src="/assets/1766483226513-14.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>在弹出的表单中填写下面内容：</p>
+<p><img src="/assets/1766483226513-15.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>注意，这里勾选的是并发线程数限制，也就是说这个查询功能最多使用5个线程，而不是5QPS。如果查询商品的接口每秒处理2个请求，则5个线程的实际QPS在10左右，而超出的请求自然会被拒绝。</p>
+<p><img src="/assets/1766483226513-16.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>测试前可以在代码中模拟业务延迟：</p>
+<p><img src="/assets/image-20251223180959611.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251223180959611"
+	
+	
+></p>
+<p>利用Jemeter测试，每秒发送100个请求：</p>
+<p><img src="/assets/1766483226513-17.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>最终测试结果如下：</p>
+<p><img src="/assets/1766483226513-18.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>进入查询购物车的请求每秒大概在100，而在查询商品时却只剩下每秒10左右，符合预期</p>
+<p>此时如果通过页面访问购物车的其它接口，例如添加购物车、修改购物车商品数量，发现不受影响：</p>
+<p><img src="/assets/1766483226513-19.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>响应时间非常短，这就证明线程隔离起到了作用，尽管查询购物车这个接口并发很高，但是它能使用的线程资源被限制了，因此不会影响到其它接口。</p>
+<h3 id="fallback">Fallback
+</h3><p>前面利用线程隔离对查询购物车业务进行隔离，保护了购物车服务的其它接口。由于查询商品的功能耗时较高（模拟了500毫秒延时），再加上线程隔离限定了线程数为5，导致接口吞吐能力有限，最终QPS只有10左右。这就导致了几个问题：</p>
+<p>第一，超出的QPS上限的请求就只能抛出异常，从而导致购物车的查询失败。但从业务角度来说，即便没有查询到最新的商品信息，购物车也应该展示给用户，用户体验更好。也就是给查询失败设置一个<strong>降级处理</strong>逻辑。</p>
+<p>第二，由于查询商品的延迟较高（模拟的500ms），从而导致查询购物车的响应时间也变的很长。这样不仅拖慢了购物车服务，消耗了购物车服务的更多资源，而且用户体验也很差。对于商品服务这种不太健康的接口，应该直接停止调用，直接走降级逻辑，避免影响到当前服务。也就是将商品查询接口<strong>熔断</strong>。</p>
+<h4 id="编写降级逻辑">编写降级逻辑
+</h4><p>触发限流或熔断后的请求不一定要直接报错，也可以返回一些默认数据或者友好提示，用户体验会更好。</p>
+<p>给FeignClient编写失败后的降级逻辑有两种方式：</p>
+<ul>
+<li>方式一：FallbackClass，无法对远程调用的异常做处理</li>
+<li>方式二：FallbackFactory，可以对远程调用的异常做处理，一般选择这种方式。</li>
+</ul>
+<p>这里演示方式二的失败降级处理。</p>
+<p><strong>步骤一</strong>：在hm-api模块中给<code>ItemClient</code>定义降级处理类，实现<code>FallbackFactory</code>：</p>
+<p><img src="/assets/1766485571028-34.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.hmall.api.client.fallback</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.hmall.api.client.ItemClient</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.hmall.api.dto.ItemDTO</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.hmall.api.dto.OrderDetailDTO</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.hmall.common.exception.BizIllegalException</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">com.hmall.common.utils.CollUtils</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.extern.slf4j.Slf4j</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.cloud.openfeign.FallbackFactory</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Collection</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Slf4j</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ItemClientFallback</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">FallbackFactory</span><span class="o">&lt;</span><span class="n">ItemClient</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ItemClient</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span><span class="n">Throwable</span><span class="w"> </span><span class="n">cause</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemClient</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ItemDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">queryItemByIds</span><span class="p">(</span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ids</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">log</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">&#34;远程调用ItemClient#queryItemByIds方法出现异常，参数：{}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">ids</span><span class="p">,</span><span class="w"> </span><span class="n">cause</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// 查询购物车允许失败，查询失败，返回空集合</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">CollUtils</span><span class="p">.</span><span class="na">emptyList</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deductStock</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">OrderDetailDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// 库存扣减业务需要触发事务回滚，查询失败，抛出异常</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BizIllegalException</span><span class="p">(</span><span class="n">cause</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>步骤二</strong>：在<code>hm-api</code>模块中的<code>com.hmall.api.config.DefaultFeignConfig</code>类中将<code>ItemClientFallback</code>注册为一个<code>Bean</code>：</p>
+<p><img src="/assets/1766485692445-37.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p><strong>步骤三</strong>：在<code>hm-api</code>模块中的<code>ItemClient</code>接口中使用<code>ItemClientFallbackFactory</code>：</p>
+<p><img src="/assets/1766485692446-38.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>重启后，如果流控规则消失了就重新配置一下最大线程数为6，再次测试，发现被限流的请求不再报错，走了降级逻辑：</p>
+<p><img src="/assets/1766485692446-39.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<blockquote>
+<p>如果异常一开始是0，但访问达到一定数量后异常开始提高，失败的请求响应<code>org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect</code>的话，有可能是mysql崩溃了</p>
+<p>可以在虚拟机中使用<code>docker ps</code>看看mysql被挂起的时间，如果挂起时间和刚刚测试到现在的时间差不多，大概率是mysql被访问崩溃了，和Fallback没关系</p>
+</blockquote>
+<p>但是未被限流的请求延时依然很高：</p>
+<p><img src="/assets/1766485692446-40.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>导致最终的平局响应时间较长。</p>
+<h4 id="服务熔断-1">服务熔断
+</h4><p>查询商品的RT（Response Time）较高（模拟的500ms），从而导致查询购物车的RT也变的很长。这样不仅拖慢了购物车服务，消耗了购物车服务的更多资源，而且用户体验也很差。</p>
+<p>对于商品服务这种不太健康的接口，应该停止调用，直接走降级逻辑，避免影响到当前服务。也就是将商品查询接口<strong>熔断</strong>。当商品服务接口恢复正常后，再允许调用。这其实就是<strong>断路器</strong>的工作模式了。</p>
+<p>Sentinel中的断路器不仅可以统计某个接口的<strong>慢请求比例</strong>，还可以统计<strong>异常请求比例</strong>。当这些比例超出阈值时，就会<strong>熔断</strong>该接口，即拦截访问该接口的一切请求，降级处理；当该接口恢复正常时，再放行对于该接口的请求。</p>
+<p>断路器的工作状态切换有一个状态机来控制：</p>
+<p><img src="/assets/image-20251223220248726.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251223220248726"
+	
+	
+></p>
+<p>状态机包括三个状态：</p>
+<ul>
+<li><strong>closed</strong>：关闭状态，断路器放行所有请求，并开始统计异常比例、慢请求比例。超过阈值则切换到open状态</li>
+<li><strong>open</strong>：打开状态，服务调用被<strong>熔断</strong>，访问被熔断服务的请求会被拒绝，快速失败，直接走降级逻辑。Open状态持续一段时间后会进入half-open状态</li>
+<li><strong>half-open</strong>：半开状态，放行一次请求，根据执行结果来判断接下来的操作。
+<ul>
+<li>请求成功：则切换到closed状态</li>
+<li>请求失败：则切换到open状态</li>
+</ul>
+</li>
+</ul>
+<p>可以在控制台通过点击簇点后的**<code>熔断</code>**按钮来配置熔断策略：</p>
+<p><img src="/assets/1766505431737-49.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>在弹出的表格中这样填写：</p>
+<p><img src="/assets/1766505431739-50.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>这种是按照慢调用比例来做熔断，上述配置的含义是：</p>
+<ul>
+<li>RT超过200毫秒的请求调用就是慢调用</li>
+<li>统计最近1000ms内的最少5次请求，如果慢调用比例不低于0.5(50%)，则触发熔断</li>
+<li>熔断持续时长20s</li>
+</ul>
+<p>配置完成后，再次利用JMeter测试，可以发现：</p>
+<p><img src="/assets/1766505431739-51.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>在一开始一段时间是允许访问的，后来触发熔断后，查询商品服务的接口通过QPS直接为0，所有请求都被熔断了。而查询购物车的本身并没有受到影响。</p>
+<p>此时整个购物车查询服务的平均RT影响不大：</p>
+<p><img src="/assets/1766505431739-52.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h2 id="分布式事务">分布式事务
+</h2><p>项目中的下单业务整体流程：</p>
+<p><img src="/assets/image-20260202224806527.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260202224806527"
+	
+	
+></p>
+<p>由于订单、购物车、商品分别在三个不同的微服务，而每个微服务都有自己独立的数据库，因此下单过程中就会跨多个数据库完成业务。而每个微服务都会执行自己的本地事务：</p>
+<ul>
+<li>交易服务：下单事务</li>
+<li>购物车服务：清理购物车事务</li>
+<li>库存服务：扣减库存事务</li>
+</ul>
+<p>整个业务中，各个本地事务是有关联的。因此每个微服务的本地事务，也可以称为<strong>分支事务</strong>。多个有关联的分支事务一起就组成了<strong>全局事务</strong>。我们必须保证整个全局事务同时成功或失败。</p>
+<p>每一个分支事务就是传统的<strong>单体事务</strong>，都可以满足ACID特性（原子性，一致性，隔离性，持久性），但全局事务跨越多个服务、多个数据库，是否还能满足呢？</p>
+<p>可以通过下单业务来测试：当库存不足时下单会发生什么？</p>
+<p>先进入购物车页面：</p>
+<p><img src="/assets/1770044260100-5.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>目前购物车有4种商品，选中其中两个结算下单，进入订单结算页面：</p>
+<p><img src="/assets/1770044260096-1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>然后将购物车中某个商品的库存修改为<code>0</code>：</p>
+<p><img src="/assets/1770044260097-2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>然后，提交订单，最终因库存不足导致下单失败：</p>
+<p><img src="/assets/1770044260097-3.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>然后查看购物车列表，发现购物车数据依然被清空了，并未回滚：</p>
+<p><img src="/assets/1770044260097-4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>事务并未遵循ACID的原则，归其原因就是参与事务的多个子业务在不同的微服务，跨越了不同的数据库。虽然每个单独的业务都能在本地遵循ACID，但是它们互相之间没有感知，不知道有人失败了，无法保证最终结果的统一，也就无法遵循ACID的事务特性了。</p>
+<p>这就是分布式事务问题，出现以下情况之一就可能产生分布式事务问题：</p>
+<ul>
+<li>业务跨多个服务实现</li>
+<li>业务跨多个数据源实现</li>
+</ul>
+<h3 id="认识seata">认识Seata
+</h3><p>解决分布式事务的方案有很多，但实现起来都比较复杂，因此我们一般会使用开源的框架来解决分布式事务问题。在众多的开源分布式事务框架中，功能最完善、使用最多的就是阿里巴巴在2019年开源的Seata了。</p>
+<p>官网：https://seata.io/zh-cn/docs/overview/what-is-seata.html</p>
+<p>其实分布式事务产生的一个重要原因，就是参与事务的多个分支事务互相无感知，不知道彼此的执行状态。因此解决分布式事务的思想非常简单：</p>
+<p>就是找一个统一的<strong>事务协调者</strong>，与多个分支事务通信，检测每个分支事务的执行状态，保证全局事务下的每一个分支事务同时成功或失败即可。大多数的分布式事务框架都是基于这个理论来实现的。</p>
+<p>Seata也不例外，在Seata的事务管理中有三个重要的角色：</p>
+<ul>
+<li><strong>TC</strong> <strong>(Transaction Coordinator) -</strong> **事务协调者：**维护全局和分支事务的状态，协调全局事务提交或回滚。</li>
+<li><strong>TM (Transaction Manager) -</strong> **事务管理器：**定义全局事务的范围、开始全局事务、提交或回滚全局事务。</li>
+<li><strong>RM (Resource Manager) -</strong> **资源管理器：**管理分支事务，与TC交谈以注册分支事务和报告分支事务的状态，并驱动分支事务提交或回滚。</li>
+</ul>
+<p>Seata的工作架构如图所示：</p>
+<p><img src="/assets/1770044716637-16.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>其中，<strong>TM</strong>和<strong>RM</strong>可以理解为Seata的客户端部分，引入到参与事务的微服务依赖中即可。将来<strong>TM</strong>和<strong>RM</strong>就会协助微服务，实现本地分支事务与<strong>TC</strong>之间交互，实现事务的提交或回滚。</p>
+<p>而<strong>TC</strong>服务则是事务协调中心，是一个独立的微服务，需要单独部署。</p>
+<h3 id="部署tc服务">部署TC服务
+</h3><h4 id="准备数据库表">准备数据库表
+</h4><p>Seata支持多种存储模式，但考虑到持久化的需要，一般选择基于数据库存储。执行资料中提供的<code>seata-tc.sql</code>，导入数据库表：</p>
+<p><img src="/assets/1770045383076-19.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h4 id="准备配置文件">准备配置文件
+</h4><p>资料准备了一个seata目录，其中包含了seata运行时所需要的配置文件：</p>
+<p><img src="/assets/1770045446412-22.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>其中第80行左右配置的是数据库连接信息，默认端口是3306，可以根据自己的情况更改</p>
+<p><img src="/assets/image-20260202232808713.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260202232808713"
+	
+	
+></p>
+<p>将整个seata文件夹拷贝到虚拟机的<code>/root</code>目录：</p>
+<p><img src="/assets/1770045446413-23.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h4 id="docker部署">Docker部署
+</h4><p>需要注意，要确保nacos、mysql都在hm-net网络中。如果某个容器不再hm-net网络，可以参考下面的命令将某容器加入指定网络：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">docker network connect <span class="o">[</span>网络名<span class="o">]</span> <span class="o">[</span>容器名<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在虚拟机的<code>/root</code>目录执行下面的命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">docker run --name seata <span class="se">\
+</span></span></span><span class="line"><span class="cl">-p 8099:8099 <span class="se">\
+</span></span></span><span class="line"><span class="cl">-p 7099:7099 <span class="se">\
+</span></span></span><span class="line"><span class="cl">-e <span class="nv">SEATA_IP</span><span class="o">=</span>122.51.162.100 <span class="se">\
+</span></span></span><span class="line"><span class="cl">-v ./seata:/seata-server/resources <span class="se">\
+</span></span></span><span class="line"><span class="cl">--privileged<span class="o">=</span><span class="nb">true</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">--network hm-net <span class="se">\
+</span></span></span><span class="line"><span class="cl">--ulimit <span class="nv">nofile</span><span class="o">=</span>65536:65536 <span class="se">\
+</span></span></span><span class="line"><span class="cl">-d <span class="se">\
+</span></span></span><span class="line"><span class="cl">seataio/seata-server:1.5.2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>记得把第四行的ip地址改成自己的虚拟机ip地址</p>
+<p>如果镜像下载困难，也可以把资料提供的镜像上传到虚拟机并加载（<code>docker load -i seata-1.5.2.tar</code>）：</p>
+<p><img src="/assets/1770046203131-28.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>部署成功后可以使用<code>docker ps</code>查看是否创建成功，同时也可以通过<code>docker logs -f seata</code>指令来查看seata启动后的日志以确保正常启动，如果报错就根据报错情况修改配置</p>
+<p>正常启动后的日志：</p>
+<p><img src="/assets/image-20260203000236973.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260203000236973"
+	
+	
+></p>
+<blockquote>
+<p>如果数据库连接报错，可以试着把<code>application.yml</code>中第84行的<code>mysql:端口号</code>改成<code>虚拟机ip:端口号</code></p>
+<p><img src="/assets/f7338f61-4005-47de-a04b-1e68f4b45df5.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="f7338f61-4005-47de-a04b-1e68f4b45df5"
+	
+	
+></p>
+<p><img src="/assets/image-20260203000733753.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260203000733753"
+	
+	
+></p>
+</blockquote>
+<p>此时，就可以在nacos的控制台看见seata-server了，同时也可以在浏览器地址输入<code>http://虚拟机ip:7099/</code>来访问seata的控制台，默认的账号密码都是admin</p>
+<h3 id="微服务集成seata">微服务集成Seata
+</h3><p>参与分布式事务的每一个微服务都需要集成Seata。下单流程涉及到了<code>cart-service</code>、<code>item-service</code>和<code>trade-service</code>，所以给这三个模块引入依赖</p>
+<h4 id="引入依赖">引入依赖
+</h4><p>为了方便各个微服务集成seata，需要把seata配置共享到nacos，因此不仅要引入seata依赖，还要引入nacos依赖：（<code>cart-service</code>已有前两个依赖，只需引入第三个）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="c">&lt;!--nacos统一配置管理--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-alibaba-nacos-config<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--读取bootstrap文件--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.cloud<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-bootstrap<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--seata--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-alibaba-seata<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="配置nacos">配置Nacos
+</h4><p>首先在nacos上添加一个共享的seata配置，命名为<code>shared-seata.yaml</code>：</p>
+<p><img src="/assets/image-20260203222121279.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260203222121279"
+	
+	
+></p>
+<p>配置内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-YAML" data-lang="YAML"><span class="line"><span class="cl"><span class="nt">seata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">registry</span><span class="p">:</span><span class="w"> </span><span class="c"># TC服务注册中心的配置，微服务根据这些信息去注册中心获取tc服务地址</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w"> </span><span class="c"># 注册中心类型 nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="m">122.51.162.100</span><span class="p">:</span><span class="m">8848</span><span class="w"> </span><span class="c"># nacos地址</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w"> </span><span class="c"># namespace，默认为空</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">DEFAULT_GROUP</span><span class="w"> </span><span class="c"># 分组，默认是DEFAULT_GROUP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l">seata-server</span><span class="w"> </span><span class="c"># seata服务名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tx-service-group</span><span class="p">:</span><span class="w"> </span><span class="l">hmall</span><span class="w"> </span><span class="c"># 事务组名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">vgroup-mapping</span><span class="p">:</span><span class="w"> </span><span class="c"># 事务组与tc集群的映射关系</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hmall</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;default&#34;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="nacos配置说明">Nacos配置说明
+</h4><p><img src="/assets/image-20260203222235383.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260203222235383"
+	
+	
+></p>
+<p><img src="/assets/image-20260203222442252.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260203222442252"
+	
+	
+></p>
+<p><img src="/assets/image-20260203222610959.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260203222610959"
+	
+	
+></p>
+<h4 id="配置bootstrapyaml">配置bootstrap.yaml
+</h4><p>修改<code>cart-service</code>、<code>item-service</code>和<code>trade-service</code>模块中的<code>src/main/resources/bootstrap.yaml</code>文件，没有则新建一个，以<code>cart-service</code>为例，内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">cart-service</span><span class="w"> </span><span class="c"># 服务名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l">dev</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="m">192.168.19.129</span><span class="w"> </span><span class="c"># nacos地址</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">config</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">file-extension</span><span class="p">:</span><span class="w"> </span><span class="l">yaml</span><span class="w"> </span><span class="c"># 文件后缀名（刚刚在nacos控制台新建配置时选择的配置格式）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">shared-configs</span><span class="p">:</span><span class="w"> </span><span class="c"># 共享配置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">dataId</span><span class="p">:</span><span class="w"> </span><span class="l">shared-jdbc.yaml</span><span class="w"> </span><span class="c"># 共享mybatis配置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">dataId</span><span class="p">:</span><span class="w"> </span><span class="l">shared-log.yaml</span><span class="w"> </span><span class="c"># 共享日志配置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">dataId</span><span class="p">:</span><span class="w"> </span><span class="l">shared-swagger.yaml</span><span class="w"> </span><span class="c"># 共享swagger配置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="nt">dataId</span><span class="p">:</span><span class="w"> </span><span class="l">shared-seata.yaml</span><span class="w"> </span><span class="c"># 共享seata配置</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>item-service</code>和<code>trade-service</code>模块之前没有配置bootstrap，此时配置后可以参考<code>cart-service</code>模块优化<code>application.yaml</code>中的内容</p>
+<p><code>item-service</code>优化后的<code>application.yaml</code>参考：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">server</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8081</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">hm</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">db</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="l">hm-item</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">swagger</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;黑马商城商品接口文档&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;黑马商城商品接口文档&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">package</span><span class="p">:</span><span class="w"> </span><span class="l">com.hmall.item.controller</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>trade-service</code>优化后的<code>application.yaml</code>参考：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">server</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8085</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">hm</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">db</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="l">hm-trade</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">swagger</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;黑马商城交易接口文档&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;黑马商城交易接口文档&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">package</span><span class="p">:</span><span class="w"> </span><span class="l">com.hmall.trade.controller</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">feign</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">okhttp</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># 开启OKHttp功能</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="查看配置结果">查看配置结果
+</h4><p>重启这三个模块服务，然后打开终端，查看虚拟机中的Seata的日志（<code>docker logs -f seata</code>）,结果如下说明是配置成功了</p>
+<p><img src="/assets/image-20260203231246061.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260203231246061"
+	
+	
+></p>
+<h3 id="xa模式">XA模式
+</h3><p>Seata支持四种不同的分布式事务解决方案：</p>
+<ul>
+<li><strong>XA</strong></li>
+<li><strong>TCC</strong></li>
+<li><strong>AT</strong></li>
+<li><strong>SAGA</strong></li>
+</ul>
+<p>这里以<code>XA</code>模式和<code>AT</code>模式来讲解其实现原理。</p>
+<p><code>XA</code> 规范 是<code> X/Open</code> 组织定义的分布式事务处理（DTP，Distributed Transaction Processing）标准，XA 规范 描述了全局的<code>TM</code>与局部的<code>RM</code>之间的接口，几乎所有主流的数据库都对 XA 规范 提供了支持。</p>
+<h4 id="两阶段提交">两阶段提交
+</h4><p>A是规范，目前主流数据库都实现了这种规范，实现的原理都是基于两阶段提交。</p>
+<p>正常情况：</p>
+<p><img src="/assets/1770132871142-32.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>异常情况：</p>
+<p><img src="/assets/1770132871143-33.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>一阶段：</p>
+<ul>
+<li>事务协调者通知每个事务参与者执行本地事务</li>
+<li>本地事务执行完成后报告事务执行状态给事务协调者，此时事务不提交，继续持有数据库锁</li>
+</ul>
+<p>二阶段：</p>
+<ul>
+<li>事务协调者基于一阶段的报告来判断下一步操作</li>
+<li>如果一阶段都成功，则通知所有事务参与者，提交事务</li>
+<li>如果一阶段任意一个参与者失败，则通知所有事务参与者回滚事务</li>
+</ul>
+<h4 id="seata的xa模型">Seata的XA模型
+</h4><p>Seata对原始的XA模式做了简单的封装和改造，以适应自己的事务模型，基本架构如图：</p>
+<p><img src="/assets/1770132905554-38.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p><code>RM</code>一阶段的工作：</p>
+<ol>
+<li>注册分支事务到<code>TC</code></li>
+<li>执行分支业务sql但不提交</li>
+<li>报告执行状态到<code>TC</code></li>
+</ol>
+<p><code>TC</code>二阶段的工作：</p>
+<ol>
+<li><code>TC</code>检测各分支事务执行状态</li>
+<li>如果都成功，通知所有RM提交事务</li>
+<li>如果有失败，通知所有RM回滚事务</li>
+</ol>
+<p><code>RM</code>二阶段的工作：</p>
+<ul>
+<li>接收<code>TC</code>指令，提交或回滚事务</li>
+</ul>
+<h4 id="优缺点">优缺点
+</h4><p><code>XA</code>模式的优点是什么？</p>
+<ul>
+<li>事务的强一致性，满足ACID原则</li>
+<li>常用数据库都支持，实现简单，并且没有代码侵入</li>
+</ul>
+<p><code>XA</code>模式的缺点是什么？</p>
+<ul>
+<li>因为一阶段需要锁定数据库资源，等待二阶段结束才释放，性能较差</li>
+<li>依赖关系型数据库实现事务</li>
+</ul>
+<h4 id="实现步骤">实现步骤
+</h4><p>首先，在配置文件中指定要采用的分布式事务模式。可以在Nacos中的共享<code>shared-seata.yaml</code>配置文件中设置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-YAML" data-lang="YAML"><span class="line"><span class="cl"><span class="nt">seata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">data-source-proxy-mode</span><span class="p">:</span><span class="w"> </span><span class="l">XA</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>其次，利用<code>@GlobalTransactional</code>标记分布式事务的入口方法：</p>
+<p><img src="/assets/1770133025940-41.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>以上两步即可实现XA模式</p>
+<h3 id="at模式">AT模式
+</h3><p><code>AT</code>模式同样是分阶段提交的事务模型，不过缺弥补了<code>XA</code>模型中资源锁定周期过长的缺陷</p>
+<h4 id="seata的at模型">Seata的AT模型
+</h4><p>基本流程图：</p>
+<p><img src="/assets/1770212332358-44.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>阶段一<code>RM</code>的工作：</p>
+<ul>
+<li>注册分支事务</li>
+<li>记录undo-log（数据快照）</li>
+<li>执行业务sql并提交</li>
+<li>报告事务状态</li>
+</ul>
+<p>阶段二提交时<code>RM</code>的工作：</p>
+<ul>
+<li>删除undo-log即可</li>
+</ul>
+<p>阶段二回滚时<code>RM</code>的工作：</p>
+<ul>
+<li>根据undo-log恢复数据到更新前</li>
+</ul>
+<h4 id="流程梳理">流程梳理
+</h4><p>用一个真实的业务来梳理下AT模式的原理。</p>
+<p>比如，现在有一个数据库表，记录用户余额：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>id</strong></th>
+          <th style="text-align: left"><strong>money</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">100</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>其中一个分支业务要执行的SQL为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="n">tb_account</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">money</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">money</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>AT模式下，当前分支事务执行流程如下：</p>
+<p><strong>一阶段</strong>：</p>
+<ol>
+<li><code>TM</code>发起并注册全局事务到<code>TC</code></li>
+<li><code>TM</code>调用分支事务</li>
+<li>分支事务准备执行业务SQL</li>
+<li><code>RM</code>拦截业务SQL，根据where条件查询原始数据，形成快照。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&#34;money&#34;</span><span class="p">:</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li><code>RM</code>执行业务SQL，提交本地事务，释放数据库锁。此时 money = 90</li>
+<li><code>RM</code>报告本地事务状态给<code>TC</code></li>
+</ol>
+<p><strong>二阶段</strong>：</p>
+<ol>
+<li><code>TM</code>通知<code>TC</code>事务结束</li>
+<li><code>TC</code>检查分支事务状态
+<ol>
+<li>如果都成功，则立即删除快照</li>
+<li>如果有分支事务失败，需要回滚。读取快照数据（{&ldquo;id&rdquo;: 1, &ldquo;money&rdquo;: 100}），将快照恢复到数据库。此时数据库再次恢复为100</li>
+</ol>
+</li>
+</ol>
+<p>流程图：</p>
+<p><img src="/assets/1770212824884-47.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h4 id="实现步骤-1">实现步骤
+</h4><p>首先，添加资料中的<code>seata-at.sql</code>到微服务对应的数据库中（此处涉及到<code>cart-service</code>、<code>item-service</code>和<code>trade-service</code>三个模块，所以在这三个模块对应库中执行下方sql语句）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- for AT mode you must to init this sql for you business database. the seata server not need it.
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">undo_log</span><span class="o">`</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">branch_id</span><span class="o">`</span><span class="w">     </span><span class="nb">BIGINT</span><span class="w">       </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;branch transaction id&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">xid</span><span class="o">`</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;global transaction id&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">context</span><span class="o">`</span><span class="w">       </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;undo_log context,such as serialization&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">rollback_info</span><span class="o">`</span><span class="w"> </span><span class="n">LONGBLOB</span><span class="w">     </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;rollback info&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">log_status</span><span class="o">`</span><span class="w">    </span><span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w">      </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;0:normal status,1:defense status&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">log_created</span><span class="o">`</span><span class="w">   </span><span class="n">DATETIME</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w">  </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;create datetime&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">log_modified</span><span class="o">`</span><span class="w">  </span><span class="n">DATETIME</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w">  </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;modify datetime&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="o">`</span><span class="n">ux_undo_log</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">xid</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">branch_id</span><span class="o">`</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InnoDB</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="o">=</span><span class="s1">&#39;AT transaction mode undo table&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后，修改<code>application.yml</code>文件，将事务模式修改为AT模式（不填时默认就是AT模式）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">seata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">data-source-proxy-mode</span><span class="p">:</span><span class="w"> </span><span class="l">AT</span><span class="w"> </span><span class="c"># 开启数据源代理的AT模式</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="at与xa的区别">AT与XA的区别
+</h3><p><code>AT</code>模式与<code>XA</code>模式最大的区别是什么？</p>
+<ul>
+<li><code>XA</code>模式一阶段不提交事务，锁定资源；<code>AT</code>模式一阶段直接提交，不锁定资源。</li>
+<li><code>XA</code>模式依赖数据库机制实现回滚；<code>AT</code>模式利用数据快照实现数据回滚。</li>
+<li><code>XA</code>模式强一致；<code>AT</code>模式最终一致</li>
+</ul>
+<p>可见，AT模式使用起来更加简单，无业务侵入，性能更好。因此企业90%的分布式事务都可以用AT模式来解决。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/springcloud/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">SpringCloud</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/mybatisplus/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MybatisPlus</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/springsecurity%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">SpringSecurity使用说明</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/velocity%E5%85%A5%E9%97%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Velocity入门</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/xfilestorage%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">XFileStorage快速入门</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="IAmYuanyu/IAmYuanyu.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2025 - 
+        
+        2026 缘鱼
+    </section>
+    
+    <section class="powerby">
+        
+            本站于2025年3月26日建立 <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
