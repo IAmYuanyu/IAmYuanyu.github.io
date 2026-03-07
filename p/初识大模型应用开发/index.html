@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本文简单介绍了大模型应用开发的基本原理，为另一篇SpringAI入门铺垫了一些基础知识">
+<title>初识大模型应用开发</title>
+
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/%E5%88%9D%E8%AF%86%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/'>
+
+<link rel="stylesheet" href="/scss/style.min.6a692fd055deae459f2a9767f57f3855ba80cafd5041317f24f7360f6ca47cdf.css"><meta property='og:title' content="初识大模型应用开发">
+<meta property='og:description' content="本文简单介绍了大模型应用开发的基本原理，为另一篇SpringAI入门铺垫了一些基础知识">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/%E5%88%9D%E8%AF%86%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/'>
+<meta property='og:site_name' content='缘鱼'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-03-07T16:52:05&#43;08:00'/><meta property='article:modified_time' content='2026-03-07T16:52:05&#43;08:00'/>
+<meta name="twitter:title" content="初识大模型应用开发">
+<meta name="twitter:description" content="本文简单介绍了大模型应用开发的基本原理，为另一篇SpringAI入门铺垫了一些基础知识">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_93cee29ac6c6fbb9.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">缘鱼</a></h1>
+            <h2 class="site-description">缘鱼的博客</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#认识ai">认识AI</a>
+      <ol>
+        <li><a href="#ai发展">AI发展</a></li>
+        <li><a href="#大模型原理">大模型原理</a></li>
+      </ol>
+    </li>
+    <li><a href="#大模型应用开发">大模型应用开发</a>
+      <ol>
+        <li><a href="#云部署模型">云部署模型</a>
+          <ol>
+            <li><a href="#申请api_key">申请API_KEY</a></li>
+            <li><a href="#体验模型">体验模型</a></li>
+          </ol>
+        </li>
+        <li><a href="#本地部署模型">本地部署模型</a>
+          <ol>
+            <li><a href="#安装ollama">安装Ollama</a></li>
+            <li><a href="#运行模型">运行模型</a></li>
+          </ol>
+        </li>
+        <li><a href="#调用模型">调用模型</a>
+          <ol>
+            <li><a href="#接口说明">接口说明</a></li>
+            <li><a href="#提示词角色">提示词角色</a></li>
+            <li><a href="#会话记忆">会话记忆</a></li>
+            <li><a href="#调用模型-1">调用模型</a></li>
+          </ol>
+        </li>
+        <li><a href="#大模型应用">大模型应用</a>
+          <ol>
+            <li><a href="#大模型与大模型应用">大模型与大模型应用</a></li>
+          </ol>
+        </li>
+        <li><a href="#大模型应用开发技术架构">大模型应用开发技术架构</a>
+          <ol>
+            <li><a href="#技术架构">技术架构</a></li>
+            <li><a href="#技术选型">技术选型</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+            <a href="/categories/ai/" >
+                AI
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E5%88%9D%E8%AF%86%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/">初识大模型应用开发</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            本文简单介绍了大模型应用开发的基本原理，为另一篇SpringAI入门铺垫了一些基础知识
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-03-07</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <blockquote>
+<p>本文内容基于黑马SpringAI课程：https://www.bilibili.com/video/BV1MtZnYtEB3</p>
+</blockquote>
+<h2 id="认识ai">认识AI
+</h2><h3 id="ai发展">AI发展
+</h3><p><strong>AI</strong>，人工智能（<strong>A</strong>rtificial <strong>I</strong>ntelligence），使机器能够像人类一样思考、学习和解决问题的技术。</p>
+<p>AI发展至今大概可以分为三个阶段：</p>
+<p><img src="/assets/1772714299061-2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>其中，深度学习领域的自然语言处理(<strong>N</strong>atural <strong>L</strong>anguage <strong>P</strong>rocessing, NLP)有一个关键技术叫做<strong>Transformer</strong>，这是一种由多层感知机组成的神经网络模型，是现如今AI高速发展的最主要原因。</p>
+<p>我们所熟知的<strong>大模型</strong>（<strong>L</strong>arge <strong>L</strong>anguage <strong>M</strong>odels, LLM），例如GPT、DeepSeek底层都是采用Transformer神经网络模型。</p>
+<p>以GPT模型为例，其三个字母的缩写分别是Generative、Pre-trained、Transformer：</p>
+<p><img src="/assets/1772714299057-1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p><em>那么问题来， Transformer神经网络有什么神奇的地方，可以实现如此强大的能力呢？</em></p>
+<h3 id="大模型原理">大模型原理
+</h3><p>其实，最早Transformer是由Google在2017年提出的一种神经网络模型，一开始的作用是把它作为<strong>机器翻译</strong>的核心：</p>
+<p><img src="/assets/1772714338076-7.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>Transformer中提出的<strong>注意力机制</strong>使得神经网络在处理信息时可以根据上下内容调整对数据的理解，变得更加智能化。这不仅仅是说人类的文字，包括图片、音频数据都可以交给Transformer来处理。于是，越来越多的模型开始基于Transformer实现了各种神奇的功能。</p>
+<p>例如，有的模型可以根据音频生成文本，或者根据文本生成音频：</p>
+<p><img src="/assets/1772714338076-8.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>还有的模型则可以根据文字生成图片，比如Dall-E、MidJourney：</p>
+<p><img src="/assets/1772714338076-9.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>不过，今天要聊的<strong>大语言模型</strong>（<strong>L</strong>arge <strong>L</strong>anguage <strong>M</strong>odels, 以下简称LLM）是对Transformer的另一种用法：<strong>推理预测。</strong></p>
+<p>LLM在训练Transformer时会尝试输入一些文本、音频、图片等信息，然后让Transformer推理接下来跟着的应该是什么内容。推理的结果会以概率分布的形式出现：</p>
+<p><img src="/assets/1772714338076-10.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p><em>问题来了，仅仅是推测接下来的内容，怎么能让ChatGPT在对话中<strong>生成大段的有关联的文字内容</strong>呢？</em></p>
+<p>其实LLM采用的就是笨办法，答案就是：持续生成</p>
+<p>根据前文推测出接下来的一个词语后，把这个词语加入前文，再次交给大模型处理，推测下一个字，然后不断重复前面的过程，就可以生成大段的内容了：</p>
+<p><img src="/assets/1772714338076-11.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>这就是为什么我们跟AI聊天的时候，它生成的内容总是一个字一个字的输出。</p>
+<p>以上就是LLM的核心技术，Transformer的原理了~</p>
+<p>如果想要进一步搞清楚Transformer机制，可以参考以下两个视频：</p>
+<p><a class="link" href="https://www.bilibili.com/video/BV1atCRYsE7x"  target="_blank" rel="noopener"
+    >https://www.bilibili.com/video/BV1atCRYsE7x</a></p>
+<p><a class="link" href="https://www.youtube.com/watch?v=wjZofJX0v4M&amp;t=1169s"  target="_blank" rel="noopener"
+    >https://www.youtube.com/watch?v=wjZofJX0v4M&t=1169s</a></p>
+<h2 id="大模型应用开发">大模型应用开发
+</h2><h3 id="云部署模型">云部署模型
+</h3><p>通常发布大模型的官方、大多数的云平台都会提供开放的、公共的大模型服务。以下是国内常见的提供大模型服务的云平台：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th><strong>云平台</strong></th>
+          <th><strong>公司</strong></th>
+          <th><strong>地址</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>阿里百炼</td>
+          <td>阿里巴巴</td>
+          <td><a class="link" href="https://bailian.console.aliyun.com/"  target="_blank" rel="noopener"
+    >https://bailian.console.aliyun.com</a></td>
+      </tr>
+      <tr>
+          <td>腾讯TI平台</td>
+          <td>腾讯</td>
+          <td><a class="link" href="https://cloud.tencent.com/product/ti"  target="_blank" rel="noopener"
+    >https://cloud.tencent.com/product/ti</a></td>
+      </tr>
+      <tr>
+          <td>千帆平台</td>
+          <td>百度</td>
+          <td><a class="link" href="https://console.bce.baidu.com/qianfan/overview"  target="_blank" rel="noopener"
+    >https://console.bce.baidu.com/qianfan/overview</a></td>
+      </tr>
+      <tr>
+          <td>SiliconCloud</td>
+          <td>硅基流动</td>
+          <td><a class="link" href="https://siliconflow.cn/zh-cn/siliconcloud"  target="_blank" rel="noopener"
+    >https://siliconflow.cn/zh-cn/siliconcloud</a></td>
+      </tr>
+      <tr>
+          <td>火山方舟-火山引擎</td>
+          <td>字节跳动</td>
+          <td><a class="link" href="https://www.volcengine.com/product/ark"  target="_blank" rel="noopener"
+    >https://www.volcengine.com/product/ark</a></td>
+      </tr>
+  </tbody>
+</table></div>
+<p>这些开放平台并不是免费，而是按照调用时消耗的token来付费，每百万token通常在几毛~几元钱，而且平台通常都会赠送新用户百万token的免费使用权。（token可以简单理解成你与大模型交互时发送和响应的文字，通常一个汉字2个token左右）</p>
+<p>接下来以阿里百炼为例，首先登录不多说了</p>
+<h4 id="申请api_key">申请API_KEY
+</h4><p>注册账号以后还需要申请一个API_KEY才能访问百炼平台的大模型。</p>
+<p>在阿里云百炼平台的右上角，鼠标悬停在用户图标上，可以看到下拉菜单：</p>
+<p><img src="/assets/1772715159799-22.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>选择<code>API-KEY</code>，进入<code>API-KEY</code>管理页面：</p>
+<p><img src="/assets/1772715159800-23.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>选择<code>创建我的API-KEY</code>，会弹出表单：</p>
+<p><img src="/assets/1772715159800-24.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>填写完毕，点击确定，即可生成一个新的<code>API-KEY</code>：</p>
+<p><img src="/assets/1772715159800-25.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>后续开发中就需要用到这个<code>API-KEY</code>了，一定要记牢。而且要<strong>保密</strong>，不能告诉别人。</p>
+<h4 id="体验模型">体验模型
+</h4><p>访问百炼平台，可以看到如下内容：</p>
+<p><img src="/assets/1772715183593-34.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>点击<code>模型调用</code> -&gt;<code>立即调用</code> 就能进入模型广场：</p>
+<p><img src="/assets/1772715183593-35.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>选择一个自己喜欢的模型，然后点击<code>API调用示例</code>，即可进入API文档页：</p>
+<p><img src="/assets/1772715183594-36.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>点击<code>立即体验</code>，就可以进入API调用大模型的试验台：</p>
+<p><img src="/assets/1772715183594-37.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>在这里就可以模拟调用大模型接口了。</p>
+<h3 id="本地部署模型">本地部署模型
+</h3><h4 id="安装ollama">安装Ollama
+</h4><p>手动部署最简单的方式就是使用Ollama，这是一个帮助你部署和运行大模型的工具。</p>
+<p>官网：https://ollama.com/</p>
+<blockquote>
+<p>注意：Ollama默认安装目录是C盘的用户目录，如果<strong>不希望安装在C盘</strong>的话（其实C盘如果足够大放C盘也没事），就不能直接双击安装了。需要通过<strong>命令行安装</strong>。</p>
+</blockquote>
+<p>命令行安装方式如下：</p>
+<p>在OllamaSetup.exe所在目录打开cmd命令行，然后命令如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">OllamaSetup.exe /DIR<span class="o">=</span>你要安装的目录位置
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行该命令后会弹出安装窗口，点击右下角install即可</p>
+<p>安装完成后，还需要配置一个环境变量，更改Ollama下载和部署模型的位置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nv">OLLAMA_MODELS</span><span class="o">=</span>你想要保存模型的目录
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>环境变量配置，如图：</p>
+<p><img src="/assets/1772716370986-46.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>配置完可以打开一个命令行窗口，输入：<code>ollama --help</code>看看是否能成功识别</p>
+<h4 id="运行模型">运行模型
+</h4><p>可以在其官网上搜索自己需要的模型：</p>
+<img src="./assets/image-20260305212138497.png" alt="image-20260305212138497" style="zoom:80%;" />
+<p>以目前最热门的lfm2为例，点击后：</p>
+<p><img src="/assets/image-20260305213328218.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260305213328218"
+	
+	
+></p>
+<p>模型名字里的b，表示billion，数字越小说明模型阉割越严重（越大对配置要求越高，谨慎选择），运行结果类似：</p>
+<p><img src="/assets/1772717712433-49.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>Ollama是一个模型管理工具，有点像Docker，而且命令也很像，比如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ollama serve      <span class="c1"># Start ollama</span>
+</span></span><span class="line"><span class="cl">ollama create     <span class="c1"># Create a model from a Modelfile</span>
+</span></span><span class="line"><span class="cl">ollama show       <span class="c1"># Show information for a model</span>
+</span></span><span class="line"><span class="cl">ollama run        <span class="c1"># Run a model</span>
+</span></span><span class="line"><span class="cl">ollama stop       <span class="c1"># Stop a running model</span>
+</span></span><span class="line"><span class="cl">ollama pull       <span class="c1"># Pull a model from a registry</span>
+</span></span><span class="line"><span class="cl">ollama push       <span class="c1"># Push a model to a registry</span>
+</span></span><span class="line"><span class="cl">ollama list       <span class="c1"># List models</span>
+</span></span><span class="line"><span class="cl">ollama ps         <span class="c1"># List running models</span>
+</span></span><span class="line"><span class="cl">ollama cp         <span class="c1"># Copy a model</span>
+</span></span><span class="line"><span class="cl">ollama rm         <span class="c1"># Remove a model</span>
+</span></span><span class="line"><span class="cl">ollama <span class="nb">help</span>       <span class="c1"># Help about any command</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="调用模型">调用模型
+</h3><p>大模型开发并不是在浏览器中跟AI聊天。而是通过<strong>访问模型对外暴露的API接口，实现与大模型的交互</strong>。</p>
+<p>所以要学习大模型应用开发，就必须掌握模型的API接口规范。</p>
+<p>目前大多数大模型都遵循OpenAI的接口规范，是基于Http协议的接口。因此请求路径、参数、返回值信息都是类似的，可能会有一些小的差别。具体需要查看大模型的官方API文档。</p>
+<h4 id="接口说明">接口说明
+</h4><p>以DeepSeek官方给出的文档为例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="c1"># Please install OpenAI SDK first: `pip3 install openai`</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DEEPSEEK_API_KEY&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">base_url</span><span class="o">=</span><span class="s2">&#34;https://api.deepseek.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="o">=</span><span class="s2">&#34;deepseek-chat&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;You are a helpful assistant&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;Hello&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stream</span><span class="o">=</span><span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>请求方式：通常是POST，因为要传递JSON风格的参数</li>
+<li>请求路径：与平台有关
+<ul>
+<li>DeepSeek官方平台：https://api.deepseek.com</li>
+<li>本地ollama部署的模型：http://localhost:11434</li>
+</ul>
+</li>
+<li>安全校验：开放平台都需要提供API_KEY来校验权限，本地ollama则不需要</li>
+<li>请求参数：参数很多，比较常见的有：
+<ul>
+<li><code>model</code>：要访问的模型名称</li>
+<li><code>messages</code>：发送给大模型的消息，是一个数组</li>
+<li><code>stream</code>：true，代表响应结果流式返回；false，代表响应结果一次性返回，但需要等待</li>
+<li><code>temperature</code>：取值范围[0:2)，代表大模型生成结果的随机性，越小随机性越低。DeepSeek-R1不支持</li>
+</ul>
+</li>
+</ul>
+<p>注意，这里请求参数中的messages是一个消息数组，而且其中的消息要包含两个属性：</p>
+<ul>
+<li>role：消息对应的角色</li>
+<li>content：消息内容</li>
+</ul>
+<p>其中消息的内容，也被称为<strong>提示词</strong>（<strong>Prompt</strong>），也就是发送给大模型的<strong>指令</strong>。</p>
+<h4 id="提示词角色">提示词角色
+</h4><p>首先了解常见的三种<strong>提示词角色</strong>：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">角色</th>
+          <th style="text-align: left">描述</th>
+          <th style="text-align: left">示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>system</strong></td>
+          <td style="text-align: left">优先于user指令之前的指令，也就是给大模型设定角色和任务背景的系统指令</td>
+          <td style="text-align: left">你是一个乐于助人的编程助手，你以小哈基的身份来回答用户的问题。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>user</strong></td>
+          <td style="text-align: left">终端用户输入的指令（类似于你在ChatGPT聊天框输入的内容）</td>
+          <td style="text-align: left">写一首关于Java编程的诗</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>assistant</strong></td>
+          <td style="text-align: left">由大模型生成的消息，可能是上一轮对话生成的结果</td>
+          <td style="text-align: left">注意，用户可能与模型产生多轮对话，每轮对话模型都会生成不同结果。</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>其中System类型的消息非常重要！影响了后续AI会话的行为模式。</p>
+<p>比如，当我们询问这些AI对话产品“<strong>你是谁</strong>”这个问题的时候，每一个AI的回答都不一样，<em>这是怎么回事呢？</em></p>
+<p>这其实是因为AI对话产品并不是直接把用户的提问发送给LLM，通常都会在user提问的前面通过System消息给模型设定好背景</p>
+<h4 id="会话记忆">会话记忆
+</h4><p><em>为什么要把历史消息都放入Messages中，形成一个数组呢？</em></p>
+<p>这是因为<strong>大模型是没有记忆</strong>的，因此调用API接口与大模型对话时，每一次对话信息都不会保留，多次对话之间都是独立的，没有关联的。</p>
+<p>但是平时使用的AI对话产品却能够记住每一轮对话信息，根据这些信息进一步回答，<em>这是怎么回事呢？</em></p>
+<p>答案就是<strong>Messages</strong>数组。</p>
+<p>只需要每一次发送请求时，都把历史对话中每一轮的User消息、Assistant消息都封装到Messages数组中，一起发送给大模型，这样大模型就会根据这些历史对话信息进一步回答，就像是拥有了记忆一样。</p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">System: 你是一家名为《黑马程序员》的职业教育培训公司的智能客服，你的名字叫小黑。请以友好、热情的方式回答用户问题。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">User: 你好，我是小明
+</span></span><span class="line"><span class="cl">Assisant: 你好小明，我是小黑，很高兴认识你！😊 你是想了解我们的课程信息，还是有其他关于职业培训的问题需要咨询呢？无论什么问题，我都会尽力帮你解答哦！
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">User: 帮我写一个跟我名字有关的诗
+</span></span><span class="line"><span class="cl">Assisant: 好的，下面是以你的名字写的诗：
+</span></span><span class="line"><span class="cl">小明啊小明，名字真明亮，
+</span></span><span class="line"><span class="cl">如晨曦初现，驱散了黑暗。
+</span></span><span class="line"><span class="cl">心中有火焰，智慧放光芒，
+</span></span><span class="line"><span class="cl">在求知路上，你是那最亮的星。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">像清澈溪流，绕过知识山岗，
+</span></span><span class="line"><span class="cl">带着勇气和希望，不断向前方。
+</span></span><span class="line"><span class="cl">你的每一步，都闪耀着坚强，
+</span></span><span class="line"><span class="cl">未来的大门，正为你而敞开。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">无论走到哪，世界因你更晴朗，
+</span></span><span class="line"><span class="cl">小明啊小明，愿你永远这样，
+</span></span><span class="line"><span class="cl">保持那份纯真，还有对梦想的向往，
+</span></span><span class="line"><span class="cl">人生的旅途上，成为自己的太阳。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="调用模型-1">调用模型
+</h4><p>部分平台提供了图形化的试验台，可以方便测试模型接口。比如阿里云百炼平台：</p>
+<p><img src="/assets/image-20260307161107296.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260307161107296"
+	
+	
+></p>
+<p>也可以用普通的http客户端来发起请求大模型，以Ollama为例：</p>
+<p>Ollama在本地部署时，会自动提供模型对应的Http接口，访问地址是：http://localhost:11434/api/chat</p>
+<p><img src="/assets/1772871232694-1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h3 id="大模型应用">大模型应用
+</h3><p><strong>大模型应用</strong>是基于大模型的推理、分析、生成能力，<strong>结合传统编程</strong>能力，开发出的各种应用。</p>
+<p><em>为什么要把传统应用与大模型结合呢？</em></p>
+<p>传统应用开发和大模型有着各自擅长的领域：</p>
+<ul>
+<li>传统编程：<strong>确定性、规则化、高性能</strong>，适合数学计算、流程控制等场景。</li>
+<li>AI大模型：<strong>概率性、非结构化、泛化性</strong>，适合语言、图像、创造性任务。</li>
+</ul>
+<p>两者之间恰好是互补的关系，两者结合则能解决以前难以实现的一些问题：</p>
+<ul>
+<li><strong>混合系统（Hybrid AI）</strong>
+<ul>
+<li>用传统程序处理结构化逻辑（如支付校验），AI处理非结构化任务（如用户意图识别）。</li>
+<li><strong>示例</strong>：智能客服中，AI理解用户问题，传统代码调用数据库返回结果。</li>
+</ul>
+</li>
+<li><strong>增强可解释性</strong>
+<ul>
+<li>结合规则引擎约束AI输出（如法律文档生成时强制符合条款格式）。</li>
+</ul>
+</li>
+<li><strong>低代码/无代码平台</strong>
+<ul>
+<li>通过AI自动生成部分代码（如GitHub Copilot），降低传统开发门槛。</li>
+</ul>
+</li>
+</ul>
+<p>在传统应用开发中介入AI大模型，充分利用两者的优势，既能利用AI实现更加便捷的人机交互，更好的理解用户意图，又能利用传统编程保证安全性和准确性，强强联合，这就是大模型应用开发的真谛！</p>
+<p>综上所述，大模型应用就是整合传统程序和大模型的能力和优势来开发的一种应用。</p>
+<h4 id="大模型与大模型应用">大模型与大模型应用
+</h4><p>我们熟知的大模型比如GPT、DeepSeek都是生成式模型，顾名思义，根据前文不断生成后文。</p>
+<p>不过，模型本身只具备生成后文的能力、基本推理能力。我们平常使用的AI对话产品除了生成和推理，还有会话记忆功能、联网功能等等。这些都是大模型不具备的。</p>
+<p>要想让大模型产生记忆，联网等功能，是需要通过额外的程序来实现的，也就是<strong>基于大模型开发应用</strong>。</p>
+<p>所以，<strong>我们现在接触的AI对话产品其实都是基于大模型开发的应用，并不是大模型本身</strong>，这一点要区分清楚。</p>
+<p>下面是一些大模型对话产品及其模型的关系：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>大模型</strong></th>
+          <th style="text-align: left"><strong>对话产品</strong></th>
+          <th style="text-align: left"><strong>公司</strong></th>
+          <th style="text-align: left"><strong>地址</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">GPT-3.5、GPT-4o</td>
+          <td style="text-align: left">ChatGPT</td>
+          <td style="text-align: left">OpenAI</td>
+          <td style="text-align: left"><a class="link" href="https://chatgpt.com/"  target="_blank" rel="noopener"
+    >https://chatgpt.com/</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Claude 3.5</td>
+          <td style="text-align: left">Claude AI</td>
+          <td style="text-align: left">Anthropic</td>
+          <td style="text-align: left"><a class="link" href="https://claude.ai/chats"  target="_blank" rel="noopener"
+    >https://claude.ai/chats</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>DeepSeek-R1</strong></td>
+          <td style="text-align: left"><strong>DeepSeek</strong></td>
+          <td style="text-align: left">深度求索</td>
+          <td style="text-align: left"><a class="link" href="https://www.deepseek.com/"  target="_blank" rel="noopener"
+    >https://www.deepseek.com/</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">文心大模型3.5</td>
+          <td style="text-align: left">文心一言</td>
+          <td style="text-align: left">百度</td>
+          <td style="text-align: left"><a class="link" href="https://yiyan.baidu.com/"  target="_blank" rel="noopener"
+    >https://yiyan.baidu.com/</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">星火3.5</td>
+          <td style="text-align: left">讯飞星火</td>
+          <td style="text-align: left">科大讯飞</td>
+          <td style="text-align: left"><a class="link" href="https://xinghuo.xfyun.cn/desk"  target="_blank" rel="noopener"
+    >https://xinghuo.xfyun.cn/desk</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Qwen-Max</td>
+          <td style="text-align: left">通义千问</td>
+          <td style="text-align: left">阿里巴巴</td>
+          <td style="text-align: left"><a class="link" href="https://tongyi.aliyun.com/qianwen/"  target="_blank" rel="noopener"
+    >https://tongyi.aliyun.com/qianwen/</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Moonshoot</td>
+          <td style="text-align: left">Kimi</td>
+          <td style="text-align: left">月之暗面</td>
+          <td style="text-align: left"><a class="link" href="https://kimi.moonshot.cn/"  target="_blank" rel="noopener"
+    >https://kimi.moonshot.cn/</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Yi-Large</td>
+          <td style="text-align: left">零一万物</td>
+          <td style="text-align: left">零一万物</td>
+          <td style="text-align: left"><a class="link" href="https://platform.lingyiwanwu.com/"  target="_blank" rel="noopener"
+    >https://platform.lingyiwanwu.com/</a></td>
+      </tr>
+  </tbody>
+</table></div>
+<p>当然，除了AI对话应用之外，大模型还可以开发很多其它的AI应用，常见的领域包括：</p>
+<p><img src="/assets/1772872103681-4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p><em>那么问题来了，如何进行大模型应用开发呢？</em></p>
+<h3 id="大模型应用开发技术架构">大模型应用开发技术架构
+</h3><h4 id="技术架构">技术架构
+</h4><p>目前，大模型应用开发的技术架构主要有四种：</p>
+<p><img src="/assets/1772872198906-7.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>1）<strong>纯Prompt模式</strong></p>
+<p>不同的提示词能够让大模型给出差异巨大的答案。</p>
+<p><strong>不断雕琢提示词，使大模型能给出最理想的答案</strong>，这个过程就叫做<strong>提示词工程</strong>（<strong>Prompt Engineering</strong>）。</p>
+<p>很多简单的AI应用，仅仅靠一段足够好的提示词就能实现了，这就是<strong>纯Prompt模式</strong>。</p>
+<p>其流程如图：</p>
+<p><img src="/assets/image-20260307163211958.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260307163211958"
+	
+	
+></p>
+<p>2）<strong>Function Calling</strong></p>
+<p>大模型虽然可以理解自然语言，更清晰弄懂用户意图，但是确无法直接操作数据库、执行严格的业务规则。这个时候我们就可以整合传统应用于大模型的能力了。</p>
+<p>简单来说，可以分为以下步骤：</p>
+<ol>
+<li>我们可以把传统应用中的部分功能封装成一个个函数（Function）。</li>
+<li>然后在提示词中描述用户的需求，并且描述清楚每个函数的作用，要求AI理解用户意图，判断什么时候需要调用哪个函数，并且将任务拆解为多个步骤（Agent）。</li>
+<li>当AI执行到某一步，需要调用某个函数时，会返回要调用的函数名称、函数需要的参数信息。</li>
+<li>传统应用接收到这些数据以后，就可以调用本地函数。再把函数执行结果封装为提示词，再次发送给AI。</li>
+<li>以此类推，逐步执行，直到达成最终结果。</li>
+</ol>
+<p>流程如图：</p>
+<p><img src="/assets/image-20260307163221172.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260307163221172"
+	
+	
+></p>
+<blockquote>
+<p>注意：并不是所有大模型都支持Function Calling，比如DeepSeek-R1模型就不支持。</p>
+</blockquote>
+<p>3）<strong>RAG</strong></p>
+<p>RAG（<strong>R</strong>etrieval**-A<strong>ugmented <strong>G</strong>eneration）叫做检索增强生成。简单来说就是把</strong>信息检索技术<strong>和</strong>大模型**结合的方案。</p>
+<p>大模型从知识角度存在很多限制：</p>
+<ul>
+<li><strong>时效性差</strong>：大模型训练比较耗时，其训练数据都是旧数据，无法实时更新</li>
+<li><strong>缺少专业领域知识</strong>：大模型训练数据都是采集的通用数据，缺少专业数据</li>
+</ul>
+<p><em>可能有人会说， 我把最新的数据或者专业文档都拼接到提示词，一起发给大模型，不就可以了？</em></p>
+<p>现在的大模型都是基于Transformer神经网络，Transformer的强项就是所谓的注意力机制。它可以根据上下文来分析文本含义，所以理解人类意图更加准确。</p>
+<p>但是，这里上下文的大小是有限制的，GPT3刚刚出来的时候，仅支持2000个token的上下文。现在领先一点的模型支持的上下文数量也不超过 200K token，所以海量知识库数据是无法直接写入提示词的。</p>
+<p><em>怎么办呢？</em></p>
+<p>RAG技术正是来解决这一问题的。</p>
+<p>RAG就是利用信息检索技术来拓展大模型的知识库，解决大模型的知识限制。整体来说RAG分为两个模块：</p>
+<ul>
+<li><strong>检索模块（Retrieval）</strong>：负责存储和检索拓展的知识库
+<ul>
+<li>文本拆分：将文本按照某种规则拆分为很多片段</li>
+<li>文本嵌入（Embedding)：根据文本片段内容，将文本片段归类存储</li>
+<li>文本检索：根据用户提问的问题，找出最相关的文本片段</li>
+</ul>
+</li>
+<li><strong>生成模块（Generation）</strong>：
+<ul>
+<li>组合提示词：将检索到的片段与用户提问组织成提示词，形成更丰富的上下文信息</li>
+<li>生成结果：调用生成式模型（例如DeepSeek）根据提示词，生成更准确的回答</li>
+</ul>
+</li>
+</ul>
+<p>由于每次都是从向量库中找出与用户问题相关的数据，而不是整个知识库，所以上下文就不会超过大模型的限制，同时又保证了大模型回答问题是基于知识库中的内容。</p>
+<p>流程如图：</p>
+<p><img src="/assets/image-20260307164023643.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260307164023643"
+	
+	
+></p>
+<p>4）<strong>Fine-tuning</strong></p>
+<p><strong>Fine-tuning</strong>就是<strong>模型微调</strong>，就是在预训练大模型（比如DeepSeek、Qwen）的基础上，通过企业自己的数据做进一步的训练，使大模型的回答更符合自己企业的业务需求。这个过程通常需要在模型的参数上进行细微的修改，以达到最佳的性能表现。</p>
+<p>在进行微调时，通常会保留模型的大部分结构和参数，只对其中的一小部分进行调整。这样做的好处是可以利用预训练模型已经学习到的知识，同时减少了训练时间和计算资源的消耗。微调的过程包括以下几个关键步骤：</p>
+<ul>
+<li><strong>选择合适的预训练模型</strong>：根据任务的需求，选择一个已经在大量数据上进行过预训练的模型，如Qwen-2.5。</li>
+<li><strong>准备特定领域的数据集</strong>：收集和准备与任务相关的数据集，这些数据将用于微调模型。</li>
+<li><strong>设置超参数</strong>：调整学习率、批次大小、训练轮次等超参数，以确保模型能够有效学习新任务的特征。</li>
+<li><strong>训练和优化</strong>：使用特定任务的数据对模型进行训练，通过前向传播、损失计算、反向传播和权重更新等步骤，不断优化模型的性能。</li>
+</ul>
+<p>模型微调虽然更加灵活、强大，但是也存在一些问题：</p>
+<ul>
+<li>需要大量的计算资源</li>
+<li>调参复杂性高</li>
+<li>过拟合风险</li>
+</ul>
+<p>总之，<strong>Fine-tuning</strong>成本较高，难度较大，并不适合大多数企业。而且前面三种技术方案已经能够解决常见问题了。</p>
+<p><em>那么，问题来了，该如何选择技术架构呢？</em></p>
+<h4 id="技术选型">技术选型
+</h4><p>从开发成本由低到高来看，四种方案排序如下：</p>
+<p>Prompt &lt; Function Calling &lt; RAG &lt; Fine-tuning</p>
+<p>所以在选择技术时通常也应该遵循&quot;在达成目标效果的前提下，尽量降低开发成本&quot;这一首要原则。然后可以参考以下流程来思考：</p>
+<p><img src="/assets/image-20260307164618976.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260307164618976"
+	
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/mousewithoutborders%E5%88%86%E4%BA%AB%E4%BB%A5%E5%8F%8A%E5%85%B3%E9%97%AD%E5%85%B6%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MouseWithoutBorders分享以及关闭其开机自启</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/elasticsearch/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ElasticSearch</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/mq%E8%BF%9B%E9%98%B6/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MQ进阶</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/mq%E5%9F%BA%E7%A1%80/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MQ基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%BF%9D%E6%8A%A4%E5%92%8C%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">微服务保护和分布式事务</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="IAmYuanyu/IAmYuanyu.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2025 - 
+        
+        2026 缘鱼
+    </section>
+    
+    <section class="powerby">
+        
+            本站于2025年3月26日建立 <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
