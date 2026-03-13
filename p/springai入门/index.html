@@ -325,6 +325,19 @@
         <li><a href="#测试-4">测试</a></li>
       </ol>
     </li>
+    <li><a href="#拓展">拓展</a>
+      <ol>
+        <li><a href="#会话记忆持久化">会话记忆持久化</a>
+          <ol>
+            <li><a href="#定义可序列化的message">定义可序列化的Message</a></li>
+            <li><a href="#导入依赖">导入依赖</a></li>
+            <li><a href="#配置redis连接">配置Redis连接</a></li>
+            <li><a href="#修改会话保存方式">修改会话保存方式</a></li>
+          </ol>
+        </li>
+        <li></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -5872,7 +5885,461 @@
 	
 	
 ></p>
-
+<h2 id="拓展">拓展
+</h2><h3 id="会话记忆持久化">会话记忆持久化
+</h3><p>目前，会话记忆是基于内存，重启就没了。</p>
+<p>接下来基于Redis自定义ChatMemory持久化</p>
+<h4 id="定义可序列化的message">定义可序列化的Message
+</h4><p>SpringAI中的Message类未实现Serializable接口，也没提供public的构造方法，因此无法基于任何形式做序列化。</p>
+<p>所以必须定义一个可序列化的Message类，方便后续持久化。</p>
+<p>定义一个<code>com.yuanyu.ai.entity.po</code>包，新建一个<code>Msg</code>类：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.yuanyu.ai.entity.po</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.AllArgsConstructor</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.Data</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.NoArgsConstructor</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.ai.chat.messages.*</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Msg</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">MessageType</span><span class="w"> </span><span class="n">messageType</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">metadata</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Msg</span><span class="p">(</span><span class="n">Message</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">messageType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">message</span><span class="p">.</span><span class="na">getMessageType</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">message</span><span class="p">.</span><span class="na">getText</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">metadata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">message</span><span class="p">.</span><span class="na">getMetadata</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Message</span><span class="w"> </span><span class="nf">toMessage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">messageType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="n">SYSTEM</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SystemMessage</span><span class="p">(</span><span class="n">text</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// case USER -&gt; new UserMessage(text, List.of(), metadata);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="n">USER</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">UserMessage</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">text</span><span class="p">(</span><span class="n">text</span><span class="p">).</span><span class="na">metadata</span><span class="p">(</span><span class="n">metadata</span><span class="p">).</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// case ASSISTANT -&gt; new AssistantMessage(text, metadata, List.of(), List.of());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="n">ASSISTANT</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">AssistantMessage</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">content</span><span class="p">(</span><span class="n">text</span><span class="p">).</span><span class="na">properties</span><span class="p">(</span><span class="n">metadata</span><span class="p">).</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&#34;Unsupported message type: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">messageType</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个类中有两个关键方法：</p>
+<ul>
+<li><strong>构造方法</strong>：实现将SpringAI的Message转为我们的Msg的功能</li>
+<li><strong>toMessage方法</strong>：实现将Msg转为SpringAI的Message</li>
+</ul>
+<h4 id="导入依赖">导入依赖
+</h4><p>在项目中引入spring-data-redis的starter依赖：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-data-redis<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="配置redis连接">配置Redis连接
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">SpringAILearning</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">data</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">redis</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">6379</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l">localhost</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="m">123456</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="修改会话保存方式">修改会话保存方式
+</h4><p>在<code>com.yuanyu.ai.repository</code>包中新建一个<code>RedisChatMemory</code>类，确保单一会话记忆：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">yuanyu</span><span class="p">.</span><span class="nx">ai</span><span class="p">.</span><span class="nx">repository</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">com</span><span class="p">.</span><span class="nx">fasterxml</span><span class="p">.</span><span class="nx">jackson</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">JsonProcessingException</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">com</span><span class="p">.</span><span class="nx">fasterxml</span><span class="p">.</span><span class="nx">jackson</span><span class="p">.</span><span class="nx">databind</span><span class="p">.</span><span class="nx">ObjectMapper</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">com</span><span class="p">.</span><span class="nx">yuanyu</span><span class="p">.</span><span class="nx">ai</span><span class="p">.</span><span class="nx">entity</span><span class="p">.</span><span class="nx">po</span><span class="p">.</span><span class="nx">Msg</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">lombok</span><span class="p">.</span><span class="nx">RequiredArgsConstructor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">springframework</span><span class="p">.</span><span class="nx">ai</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">memory</span><span class="p">.</span><span class="nx">ChatMemory</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">springframework</span><span class="p">.</span><span class="nx">ai</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">Message</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">springframework</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">redis</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">StringRedisTemplate</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">List</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@RequiredArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="kr">public</span> <span class="kr">class</span> <span class="nx">RedisChatMemory</span> <span class="kr">implements</span> <span class="nx">ChatMemory</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="nx">final</span> <span class="nx">StringRedisTemplate</span> <span class="nx">redisTemplate</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="nx">final</span> <span class="nx">ObjectMapper</span> <span class="nx">objectMapper</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="nx">final</span> <span class="kr">static</span> <span class="nb">String</span> <span class="nx">PREFIX</span> <span class="o">=</span> <span class="s2">&#34;chat:memory:&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 添加单条消息
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">public</span> <span class="k">void</span> <span class="nx">add</span><span class="p">(</span><span class="nb">String</span> <span class="nx">conversationId</span><span class="p">,</span> <span class="nx">Message</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 将 Message 转换为 JSON 字符串
+</span></span></span><span class="line"><span class="cl">        <span class="nx">Msg</span> <span class="nx">msg</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Msg</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">String</span> <span class="nx">jsonMsg</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">jsonMsg</span> <span class="o">=</span> <span class="nx">objectMapper</span><span class="p">.</span><span class="nx">writeValueAsString</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">JsonProcessingException</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="nx">RuntimeException</span><span class="p">(</span><span class="s2">&#34;消息序列化失败&#34;</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 存入 Redis 列表
+</span></span></span><span class="line"><span class="cl">        <span class="nx">redisTemplate</span><span class="p">.</span><span class="nx">opsForList</span><span class="p">().</span><span class="nx">rightPush</span><span class="p">(</span><span class="nx">PREFIX</span> <span class="o">+</span> <span class="nx">conversationId</span><span class="p">,</span> <span class="nx">jsonMsg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 核心方法：批量添加会话消息到 Redis
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">public</span> <span class="k">void</span> <span class="nx">add</span><span class="p">(</span><span class="nb">String</span> <span class="nx">conversationId</span><span class="p">,</span> <span class="nx">List</span><span class="p">&lt;</span><span class="nt">Message</span><span class="p">&gt;</span> <span class="nx">messages</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 空值校验
+</span></span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">messages</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">messages</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 将 Message 列表转换为 JSON 字符串列表
+</span></span></span><span class="line"><span class="cl">        <span class="nx">List</span><span class="p">&lt;</span><span class="nt">String</span><span class="p">&gt;</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">messages</span><span class="p">.</span><span class="nx">stream</span><span class="p">().</span><span class="nx">map</span><span class="p">(</span><span class="nx">Msg</span><span class="o">::</span><span class="k">new</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">msg</span> <span class="o">-&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="nx">objectMapper</span><span class="p">.</span><span class="nx">writeValueAsString</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">JsonProcessingException</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">throw</span> <span class="k">new</span> <span class="nx">RuntimeException</span><span class="p">(</span><span class="s2">&#34;消息序列化失败&#34;</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}).</span><span class="nx">toList</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 存入 Redis 列表
+</span></span></span><span class="line"><span class="cl">        <span class="nx">redisTemplate</span><span class="p">.</span><span class="nx">opsForList</span><span class="p">().</span><span class="nx">rightPushAll</span><span class="p">(</span><span class="nx">PREFIX</span> <span class="o">+</span> <span class="nx">conversationId</span><span class="p">,</span> <span class="nx">list</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 适配接口：获取指定会话的全部历史消息
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">public</span> <span class="nx">List</span><span class="p">&lt;</span><span class="nt">Message</span><span class="p">&gt;</span> <span class="kr">get</span><span class="p">(</span><span class="nb">String</span> <span class="nx">conversationId</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Redis list range 操作中，end=-1 表示读取从 0 到最后一个元素（全部消息）
+</span></span></span><span class="line"><span class="cl">        <span class="nx">List</span><span class="p">&lt;</span><span class="nt">String</span><span class="p">&gt;</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">redisTemplate</span><span class="p">.</span><span class="nx">opsForList</span><span class="p">().</span><span class="nx">range</span><span class="p">(</span><span class="nx">PREFIX</span> <span class="o">+</span> <span class="nx">conversationId</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">list</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">list</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">List</span><span class="p">.</span><span class="k">of</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 将 JSON 字符串反序列化为 Message 列表
+</span></span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">list</span><span class="p">.</span><span class="nx">stream</span><span class="p">().</span><span class="nx">map</span><span class="p">(</span><span class="nx">s</span> <span class="o">-&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="nx">objectMapper</span><span class="p">.</span><span class="nx">readValue</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">Msg</span><span class="p">.</span><span class="kr">class</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">JsonProcessingException</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">throw</span> <span class="k">new</span> <span class="nx">RuntimeException</span><span class="p">(</span><span class="s2">&#34;消息反序列化失败&#34;</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}).</span><span class="nx">map</span><span class="p">(</span><span class="nx">Msg</span><span class="o">::</span><span class="nx">toMessage</span><span class="p">).</span><span class="nx">toList</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 清空指定会话的所有消息
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">public</span> <span class="k">void</span> <span class="nx">clear</span><span class="p">(</span><span class="nb">String</span> <span class="nx">conversationId</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">redisTemplate</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">PREFIX</span> <span class="o">+</span> <span class="nx">conversationId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 读取指定会话的最后 N 条消息
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param conversationId
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param lastN
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">public</span> <span class="nx">List</span><span class="p">&lt;</span><span class="nt">Message</span><span class="p">&gt;</span> <span class="kr">get</span><span class="p">(</span><span class="nb">String</span> <span class="nx">conversationId</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">lastN</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">List</span><span class="p">&lt;</span><span class="nt">String</span><span class="p">&gt;</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">redisTemplate</span><span class="p">.</span><span class="nx">opsForList</span><span class="p">().</span><span class="nx">range</span><span class="p">(</span><span class="nx">PREFIX</span> <span class="o">+</span> <span class="nx">conversationId</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">lastN</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">list</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">list</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">List</span><span class="p">.</span><span class="k">of</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">list</span><span class="p">.</span><span class="nx">stream</span><span class="p">().</span><span class="nx">map</span><span class="p">(</span><span class="nx">s</span> <span class="o">-&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="nx">objectMapper</span><span class="p">.</span><span class="nx">readValue</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">Msg</span><span class="p">.</span><span class="kr">class</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">JsonProcessingException</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">throw</span> <span class="k">new</span> <span class="nx">RuntimeException</span><span class="p">(</span><span class="s2">&#34;消息反序列化失败&#34;</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}).</span><span class="nx">map</span><span class="p">(</span><span class="nx">Msg</span><span class="o">::</span><span class="nx">toMessage</span><span class="p">).</span><span class="nx">toList</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>同时，为了保证会话历史持久化，再定义一个<code>RedisChatHistory</code>类，用于实现会话历史持久化：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.yuanyu.ai.repository</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.RequiredArgsConstructor</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.redis.core.StringRedisTemplate</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Component</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Collections</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Set</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@RequiredArgsConstructor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Component</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RedisChatHistory</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ChatHistoryRepository</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">StringRedisTemplate</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CHAT_HISTORY_KEY_PREFIX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;chat:history:&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CHAT_ID_TYPE_MAPPING_PREFIX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;chat:id:type:&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">chatId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForSet</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="n">CHAT_HISTORY_KEY_PREFIX</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">chatId</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForValue</span><span class="p">().</span><span class="na">set</span><span class="p">(</span><span class="n">CHAT_ID_TYPE_MAPPING_PREFIX</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">chatId</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getChatIds</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 从 Redis Set 中获取指定类型下的所有会话 ID</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">chatIds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForSet</span><span class="p">().</span><span class="na">members</span><span class="p">(</span><span class="n">CHAT_HISTORY_KEY_PREFIX</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">type</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">chatIds</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">chatIds</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">emptyList</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 将会话 ID 按字母顺序排序后转换为列表返回</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">chatIds</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">sorted</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">compareTo</span><span class="p">).</span><span class="na">toList</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改原本在<code>CommonConfiguration</code>中的<code>chatMemory</code>方法，将原本将会话存储于内存改为存储于Redis：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Bean</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">ChatMemory</span><span class="w"> </span><span class="nf">chatMemory</span><span class="p">(</span><span class="n">StringRedisTemplate</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">,</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">objectMapper</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RedisChatMemory</span><span class="p">(</span><span class="n">redisTemplate</span><span class="p">,</span><span class="w"> </span><span class="n">objectMapper</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>现在重启服务应该就能通过Redis实现会话持久化了</p>
+<blockquote>
+<p>注意：</p>
+<p>使用Redis方案时，需要将之前内存方案定义的ChatHistoryRepository从Spring容器中移除。</p>
+</blockquote>
+<h3 id="">
+</h3>
 </section>
 
 
