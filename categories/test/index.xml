@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Test on 缘鱼</title>
+        <title>Test on 缘鱼的笔记</title>
         <link>https://IAmYuanyu.github.io/categories/test/</link>
-        <description>Recent content in Test on 缘鱼</description>
+        <description>Recent content in Test on 缘鱼的笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright><atom:link href="https://IAmYuanyu.github.io/categories/test/index.xml" rel="self" type="application/rss+xml" />
