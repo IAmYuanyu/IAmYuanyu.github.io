@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本文为我阅读《高性能MySQL》第四版（作者为Silvia Botros和Jeremy Tinley）时的笔记，这本书的MySQL版本是到8.0的，所以更新的版本语法和特性可能有所改变，仅供参考。本篇笔记适合有一点点MySQL基础（至少得会增删改查基础语法）的人进行进一步学习。">
+<title>《高性能MySQL》读书笔记</title>
+
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/'>
+
+<link rel="stylesheet" href="/scss/style.min.6a692fd055deae459f2a9767f57f3855ba80cafd5041317f24f7360f6ca47cdf.css"><meta property='og:title' content="《高性能MySQL》读书笔记">
+<meta property='og:description' content="本文为我阅读《高性能MySQL》第四版（作者为Silvia Botros和Jeremy Tinley）时的笔记，这本书的MySQL版本是到8.0的，所以更新的版本语法和特性可能有所改变，仅供参考。本篇笔记适合有一点点MySQL基础（至少得会增删改查基础语法）的人进行进一步学习。">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/'>
+<meta property='og:site_name' content='缘鱼的笔记'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-03-30T23:44:37&#43;08:00'/><meta property='article:modified_time' content='2026-03-30T23:44:37&#43;08:00'/>
+<meta name="twitter:title" content="《高性能MySQL》读书笔记">
+<meta name="twitter:description" content="本文为我阅读《高性能MySQL》第四版（作者为Silvia Botros和Jeremy Tinley）时的笔记，这本书的MySQL版本是到8.0的，所以更新的版本语法和特性可能有所改变，仅供参考。本篇笔记适合有一点点MySQL基础（至少得会增删改查基础语法）的人进行进一步学习。">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_93cee29ac6c6fbb9.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">缘鱼的笔记</a></h1>
+            <h2 class="site-description">缘鱼的博客</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#并发控制">并发控制</a>
+      <ol>
+        <li><a href="#读写锁">读写锁</a></li>
+        <li><a href="#锁的粒度">锁的粒度</a></li>
+      </ol>
+    </li>
+    <li><a href="#事务">事务</a>
+      <ol>
+        <li><a href="#隔离级别">隔离级别</a>
+          <ol>
+            <li><a href="#read-uncommitted未提交读">READ UNCOMMITTED（未提交读）</a></li>
+            <li><a href="#read-committed提交读">READ COMMITTED（提交读）</a></li>
+            <li><a href="#repeatable-read可重复读">REPEATABLE READ（可重复读）</a></li>
+            <li><a href="#serializable可串行化">SERIALIZABLE（可串行化）</a></li>
+          </ol>
+        </li>
+        <li><a href="#死锁">死锁</a></li>
+        <li><a href="#事务日志">事务日志</a></li>
+        <li><a href="#mysql中的事务">MySQL中的事务</a>
+          <ol>
+            <li><a href="#理解autocommit">理解AUTOCOMMIT</a></li>
+            <li><a href="#隐式锁定和显式锁定">隐式锁定和显式锁定</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+            <a href="/categories/mysql/" >
+                MySQL
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《高性能MySQL》读书笔记</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            本文为我阅读《高性能MySQL》第四版（作者为Silvia Botros和Jeremy Tinley）时的笔记，这本书的MySQL版本是到8.0的，所以更新的版本语法和特性可能有所改变，仅供参考。本篇笔记适合有一点点MySQL基础（至少得会增删改查基础语法）的人进行进一步学习。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-03-30</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="并发控制">并发控制
+</h2><h3 id="读写锁">读写锁
+</h3><p>处理并发读/写访问的系统通常实现一个由两种锁类型组成的锁系统。这两种锁通常被称为<strong>共享锁</strong>（shared lock）和<strong>排他锁</strong>（exclusive lock），也叫<strong>读锁</strong>（read lock）和<strong>写锁</strong>（write lock）。</p>
+<p>资源上的<strong>读锁</strong>是共享的，或者说是互不阻塞的。多个客户端可以同时读一个资源而互不打扰。</p>
+<p><strong>写锁</strong>则是排他的，一个写锁既会阻塞读锁也会阻塞其他写锁，这是处于安全策略的考虑，确保特定的时间点只有一个客户端能写入，并防止其他客户端读取正在写入的数据。</p>
+<blockquote>
+<p>其他锁补充：</p>
+<p><strong>记录锁</strong>（Record Lock）：属于行级锁，只锁具体某一条记录。必须命中索引（主键 / 唯一索引）才会是真正的记录锁，比如有如下一张表，其中id是主键</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">id</th>
+          <th style="text-align: left">name</th>
+          <th style="text-align: left">money</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">张三</td>
+          <td style="text-align: left">100</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">李四</td>
+          <td style="text-align: left">200</td>
+      </tr>
+  </tbody>
+</table></div>
+<ul>
+<li>情况1：条件用主键（命中索引）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">money</span><span class="o">=</span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>MySQL 一看：<code>id=1</code> 是主键，直接定位到这一行，就只锁<code>id=1</code>这一行</p>
+<ul>
+<li>情况2：条件用没索引的字段（没命中索引）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">money</span><span class="o">=</span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;张三&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>name 没有索引，MySQL 不知道张三在哪一行，只能全表扫描，为了安全，它会把所有行都锁住，那就变成表锁了</p>
+<hr>
+<p><strong>意向锁</strong>（Intention Lock）：表级别的 “预告锁”，它不是锁住表，而是告诉别人：我准备对表里某些行加锁了。分为：</p>
+<ul>
+<li>意向共享锁（IS）：准备加 S 锁（共享锁）</li>
+<li>意向排他锁（IX）：准备加 X 锁（排他锁）</li>
+</ul>
+<p>作用是快速判断整张表能不能加表锁。如果有人加了 IX/IS，说明表里有行被锁住，那么别人就不能直接对整张表加 X 锁（比如 <code>ALTER TABLE</code>），这样就可以避免遍历所有行去检查有没有锁。</p>
+<p><em>什么时候会产生意向锁？</em></p>
+<p>对某一行加 共享锁（S 锁）→ 表自动加 意向共享锁 IS</p>
+<p>对某一行加 排他锁（X 锁）→ 表自动加 意向排他锁 IX</p>
+<p>比如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行这条语句时会对 id=1 这一行加 X 锁，同时对整张表加 IX 意向排他锁。</p>
+<hr>
+<p><strong>总结：</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">锁</th>
+          <th style="text-align: left">级别</th>
+          <th style="text-align: left">作用</th>
+          <th style="text-align: left">互斥关系</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">共享锁 S</td>
+          <td style="text-align: left">行</td>
+          <td style="text-align: left">允许读，禁止写</td>
+          <td style="text-align: left">S-S 兼容，S-X 互斥</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">排他锁 X</td>
+          <td style="text-align: left">行</td>
+          <td style="text-align: left">独占，禁止读写</td>
+          <td style="text-align: left">与所有锁互斥</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">记录锁</td>
+          <td style="text-align: left">行</td>
+          <td style="text-align: left">锁住某一行具体记录</td>
+          <td style="text-align: left">行级互斥</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">意向锁 IS/IX</td>
+          <td style="text-align: left">表</td>
+          <td style="text-align: left">预告要加行锁，方便判断表锁能否加</td>
+          <td style="text-align: left">与表锁互斥，与行锁不互斥</td>
+      </tr>
+  </tbody>
+</table></div>
+</blockquote>
+<h3 id="锁的粒度">锁的粒度
+</h3><p>尽量只锁定包含需要修改的部分数据，而不是所有的资源。更理想的方式是，只对需要修改的数据片段进行精确的锁定。</p>
+<p>但问题是加锁也需要消耗资源，锁的各种操作，包括获取锁、检查锁是否空闲、释放锁等，都会增加系统的开销。如果花费大量时间来管理锁，而不是存取数据，那么系统的性能可能会受到影响。</p>
+<p><strong>锁定策略</strong>就是锁开销和数据安全之间的平衡。大多商业数据库系统一般都是在表中施加行级锁<sup>【1】</sup>（row level lock），为了在锁比较多的情况下尽可能提供更好的性能，锁的实现方式非常复杂。</p>
+<p>MySQL则提供了多种选择。每种MySQL存储引擎都可以实现自己的锁策略和锁粒度。将锁粒度固定在某个级别，可以提高某些应用场景下的性能，但同时会使其不适合另外一些应用场景。</p>
+<p>下面是两种最重要的锁策略：</p>
+<ul>
+<li><strong>表锁</strong></li>
+</ul>
+<p>表锁（table lock）是MySQL中最基本也是开销最小的锁策略。如字面意思，它会锁定整张表。当客户端想对表进行写操作（插入、删除、更新等）时，会获得一个写锁，这会阻塞其他客户端对该表的所有读写操作。只有没有人执行写操作时，其他读取的客户端才能获得读锁，读锁之间不会相互阻塞。</p>
+<p>表锁有一些变体，可以在特定情况下提高性能。例如，READ LOCAL表锁支持某些类型的并发写操作。写锁队列和读锁队列是分开的，但写锁队列的优先级绝对高于读队列。</p>
+<ul>
+<li><strong>行级锁</strong></li>
+</ul>
+<p>使用行级锁（row lock）可以最大程度地支持并发处理（也带来了最大的锁开销）。这种策略允许多人同时编辑不同的行，而不会阻塞彼此。就是 MySQL 只锁住你正在操作的那一行数据，别的行别人照样能改。</p>
+<p>比如你有一张用户表：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">id</th>
+          <th style="text-align: left">name</th>
+          <th style="text-align: left">money</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">张三</td>
+          <td style="text-align: left">100</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">李四</td>
+          <td style="text-align: left">200</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">王五</td>
+          <td style="text-align: left">300</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>事务A在修改<code>id=1</code>这一行，其他事务可以正常修改<code>id=2</code>、<code>id=3</code>的行，不会阻塞</p>
+<p>这使得服务器可以执行更多的并发写操作，带来的代价则是需要承担更多开销，以跟踪谁拥有这些行级锁、已经锁定了多长时间、行级锁的类型，以及何时该清理不再需要的行级锁。</p>
+<p>行级锁是在存储引擎而不是服务器中实现的。服务器<sup id="服务器"><a class="link" href="#%e6%9c%8d%e5%8a%a1%e5%99%a8%e8%af%b4%e6%98%8e" >【1】</a></sup>通常不清楚存储引擎中锁的实现方式。因为每种存储引擎都以自己的方式来实现锁。</p>
+<blockquote>
+<p><span id="服务器说明"><a class="link" href="#%e6%9c%8d%e5%8a%a1%e5%99%a8" >【1】</a></span>：服务器指的是MySQL Server（MySQL 服务层）。MySQL整体分成两层，分别是MySQL Server 层（服务层）和存储引擎层（InnoDB、MyISAM 等）。下图是MySQL服务器架构的逻辑视图：</p>
+<p><img src="/assets/image-20260330200901726.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260330200901726"
+	
+	
+></p>
+<p>简单来说<strong>服务器</strong>负责接收 SQL、解析 SQL、优化 SQL、执行计划、权限校验、连接管理、调用存储引擎去读写数据。</p>
+<p><strong>存储引擎</strong>负责真正把数据写到磁盘、管理索引、实现锁、事务、崩溃恢复。</p>
+</blockquote>
+<h2 id="事务">事务
+</h2><p>事务就是一组SQL语句，作为一个工作单元以原子方式进行处理。如果数据库引擎能够成功地对数据库应用整组语句，那么就执行该组语句。如果其中有任何一条语句因为崩溃或其他原因无法执行，那么整组语句都不执行。也就是说，作为事务的一组语句，要么全部执行成功，要么全部执行失败。</p>
+<p>银行应用是解释事务必要性的经典例子。假设一个银行的数据库有两张表：支票表（checking）和储蓄表（savings）。现在要从用户Jane的支票账户转移200美元到她的储蓄账户，那么需要至少三个步骤：</p>
+<ol>
+<li>确保支票账户的余额高于200美元。</li>
+<li>从支票账户的余额中减去200美元。</li>
+<li>在储蓄账户的余额中增加200美元。</li>
+</ol>
+<p>以上三步操作必须打包在一个事务中，以保证一旦其中任何一步失败，都能够回滚所有的操作。</p>
+<p>可以用<code>START TRANSACTION</code>语句启动事务，然后要么成功执行到<code>COMMIT</code>提交事务将修改的数据持久保留，要么中途失败，使用<code>ROLLBACK</code>撤销所有的修改。本例中的事务的SQL语句可能如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">START</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">checking</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10233276</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="n">checking</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">200</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10233276</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="n">savings</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">200</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10233276</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">COMMIT</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><em>执行上面语句时，若没有事务可能会发生什么？</em></p>
+<p>试想一下，如果数据库在执行第4条语句时崩溃了，客户可能会损失200美元。再假如，在执行到第3条语句和第4条语句之间时，另外一个进程要删除支票账户的所有余额，结果可能是银行不知不觉白白给了Jane 200美元。</p>
+<p>在这一系列操作中，有更多的失败可能性。连接可能会断开、会超时，甚至数据库服务器在操作执行过程中会崩溃。这就是存在高度复杂且缓慢的两阶段提交系统的典型原因：为了应对各种失败场景。</p>
+<p>除非系统通过严格的ACID测试，否则空谈事务的概念是不够的。ACID代表原子性（atomicity）、一致性（consistency）、隔离性（isolation）和持久性（durability）。一个确保数据安全的事务处理系统，必须满足这些密切相关的标准。</p>
+<ul>
+<li><strong>原子性（atomicity）</strong></li>
+</ul>
+<p>一个事务必须被视为一个不可分割的工作单元，整个事务中的所有操作要么全部提交成功，要么全部失败回滚。对于一个事务来说，不可能只执行其中的一部分操作，这就是事务的原子性。</p>
+<ul>
+<li><strong>一致性（consistency）</strong></li>
+</ul>
+<p>数据库总是从一个一致性状态转换到下一个一致性状态。在前面的例子中，一致性确保了，即使在执行第3、4条语句之间时系统崩溃，支票账户中也不会损失200美元。如果事务最终没有提交，该事务所做的任何修改都不会被保存到数据库中。</p>
+<ul>
+<li><strong>隔离性（isolation）</strong></li>
+</ul>
+<p>通常来说，一个事务所做的修改在最终提交以前，对其他事务是不可见的，这就是隔离性带来的结果。在前面的例子中，当执行完第3条语句、第4条语句还未开始时，此时有另外一个账户汇总程序开始运行，其看到的支票账户的余额并没有被减去200美元。</p>
+<ul>
+<li><strong>持久性（durability）</strong></li>
+</ul>
+<p>一旦提交，事务所做的修改就会被永久保存到数据库中。此时即使系统崩溃，数据也不会丢失。持久性是一个有点模糊的概念，实际上持久性也分很多不同的级别。有些持久性策略能够提供非常强的安全保障，而有些则未必。而且不可能有100%的持久性保障（如果数据库本身就能做到真正的持久性，那么备份又怎么能增加持久性呢？）。</p>
+<h3 id="隔离级别">隔离级别
+</h3><p>隔离性在实际操作中比看起来复杂得多。ANSI SQL标准定义了4种隔离级别。</p>
+<h4 id="read-uncommitted未提交读">READ UNCOMMITTED（未提交读）
+</h4><p>这个级别，在事务中可以查看其他事务中还没有提交的修改。这个隔离级别，在性能并没有比其他级别好多少的情况下，不仅导致了很多问题，还缺乏其他级别的很多好处。除非有非常必要的理由，在实际应用中一般很少使用。读取未提交的数据，也称为脏读（dirty read）。</p>
+<h4 id="read-committed提交读">READ COMMITTED（提交读）
+</h4><p>大多数数据库系统的默认隔离级别是这个（但MySQL不是）。这个级别满足前面提到的隔离性的简单定义：一个事务可以看到其他事务在它开始之后提交的修改，但在该事务提交之前，其所做的任何修改对其他事务都是不可见的。这个级别仍然允许不可重复读（nonrepeatable read），这意味着同一事务中两次执行相同语句，可能会看到不同的数据结果，比如第一次查询和第二次查询间，数据被其他事务修改了。</p>
+<h4 id="repeatable-read可重复读">REPEATABLE READ（可重复读）
+</h4><p>可重复读解决了提交读级别的不可重复读问题，保证了在同一个事务中多次读取相同行数据的结果是一样的。但是理论上，可重复读隔离级别还是无法解决另外一个幻读（phantom read）的问题。幻读，指的是当某个事务在读取某个范围内的记录时，另外一个事务又在该范围内插入了新的记录，当之前的事务再次读取该范围的记录时，会产生幻行<sup id="幻行"><a class="link" href="#%e5%b9%bb%e8%a1%8c%e8%af%b4%e6%98%8e" >【1】</a></sup>（phantom row）。InnoDB和XtraDB存储引擎通过多版本并发控制（MVCC，Multiversion Concurrency Control）解决了幻读的问题。</p>
+<h4 id="serializable可串行化">SERIALIZABLE（可串行化）
+</h4><p>这是最高的隔离级别。该级别通过强制事务按序执行，使不同事务之间不可能产生冲突，从而解决了前面说的幻读问题。简单来说，这个级别会在读取的每一行数据上都加锁，所以可能导致大量的超时和锁争用的问题。实际应用中很少用到这个隔离级别，除非需要严格确保数据安全且可以接受并发性能下降的结果。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">隔离级别</th>
+          <th style="text-align: left">脏读</th>
+          <th style="text-align: left">不可重复读</th>
+          <th style="text-align: left">幻读</th>
+          <th style="text-align: left">加锁读</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">READ UNCOMMITTED</td>
+          <td style="text-align: left">是</td>
+          <td style="text-align: left">是</td>
+          <td style="text-align: left">是</td>
+          <td style="text-align: left">否</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">READ COMMITTED</td>
+          <td style="text-align: left">否</td>
+          <td style="text-align: left">是</td>
+          <td style="text-align: left">是</td>
+          <td style="text-align: left">否</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">REPEATABLE READ</td>
+          <td style="text-align: left">否</td>
+          <td style="text-align: left">否</td>
+          <td style="text-align: left">是</td>
+          <td style="text-align: left">否</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">SERIALIZABLE</td>
+          <td style="text-align: left">否</td>
+          <td style="text-align: left">否</td>
+          <td style="text-align: left">否</td>
+          <td style="text-align: left">是</td>
+      </tr>
+  </tbody>
+</table></div>
+<blockquote>
+<p><span id="幻行说明"><a class="link" href="#%e5%b9%bb%e8%a1%8c" >【1】</a></span>：指在同一个事务里，前后两次执行相同的查询，第二次查询结果里多出了之前不存在的行（这些行是其他事务在这期间新插入的）。</p>
+</blockquote>
+<h3 id="死锁">死锁
+</h3><p>死锁是指两个或多个事务相互持有和请求相同资源上的锁，产生了循环依赖（下面会举例说明）。当多个事务试图以不同的顺序锁定资源时会导致死锁。当多个事务锁定相同的资源时，也可能会发生死锁。</p>
+<p>例如，设想运行下面两个针对主键为（stock_id，date）的StockPrice表的事务：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">#</span><span class="w"> </span><span class="err">事务</span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">START</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="n">StockPrice</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="k">close</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">45</span><span class="p">.</span><span class="mi">50</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">stock_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2020-05-01&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="n">StockPrice</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="k">close</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">19</span><span class="p">.</span><span class="mi">80</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">stock_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2020-05-02&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">COMMIT</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">#</span><span class="w"> </span><span class="err">事务</span><span class="mi">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">START</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="n">StockPrice</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">high</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">.</span><span class="mi">12</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">stock_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2020-05-02&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">UPDATE</span><span class="w"> </span><span class="n">StockPrice</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">high</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">47</span><span class="p">.</span><span class="mi">20</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">stock_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2020-05-01&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">COMMIT</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面两个事务都开始执行第一个查询，在处理过程中会更新一行数据，同时在主键索引和其他唯一索引中将该行锁定。然后，每个事务将在第二个查询中尝试更新第二行数据，却发现该行已经被锁定。这两个事务将永远等待对方完成，除非有其他因素介入解除死锁。</p>
+<p>为了解决这个问题，数据库系统实现了各种死锁检测和锁超时机制。更复杂的系统，比如InnoDB存储引擎，检测到循环依赖后会立即返回一个错误信息。</p>
+<p>还有一种方式，当超过锁等待超时的时间限制后直接终止查询，这样做通常来说不太好。InnoDB目前（MySQL8.0版本）处理死锁的方式是将持有最少行级排他锁的事务回滚（这是一种最容易回滚的近似算法）。</p>
+<p>一旦发生死锁，如果不回滚其中一个事务（部分或全部），就无法打破死锁。对于事务型的系统<sup id="事务型系统"><a class="link" href="#%e4%ba%8b%e5%8a%a1%e5%9e%8b%e7%b3%bb%e7%bb%9f%e8%af%b4%e6%98%8e" >【1】</a></sup>，这是无法避免的，所以应用程序在设计时必须考虑如何处理死锁。大多数情况下只需要重新从头开始执行被回滚的事务即可，除非又遇到另一个死锁。</p>
+<blockquote>
+<p><span id="事务型系统说明"><a class="link" href="#%e4%ba%8b%e5%8a%a1%e5%9e%8b%e7%b3%bb%e7%bb%9f" >【1】</a></span>：<strong>事务型系统</strong>（Transaction Processing System, TPS），就是以事务为核心操作单元的业务系统，核心要求是保证数据操作的原子性、一致性、隔离性、持久性（ACID）。可以先简单理解为：必须保证要么全做，要么全不做的系统，如银行转账系统、电商订单系统、股票交易系统等。</p>
+<p>而<strong>非事务型系统</strong>（Non-transactional System）是指不依赖事务（ACID）保障，对数据一致性要求相对宽松的系统。它不需要保证 “要么全做、要么全不做”，更侧重高吞吐、低延迟、简单高效。比如日志系统、内容发布系统、临时数据系统、统计系统等。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">维度</th>
+          <th style="text-align: left">事务型系统</th>
+          <th style="text-align: left">非事务型系统</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>核心目标</strong></td>
+          <td style="text-align: left">强一致性、数据安全</td>
+          <td style="text-align: left">高吞吐、低延迟、简单</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>一致性要求</strong></td>
+          <td style="text-align: left">必须满足 ACID</td>
+          <td style="text-align: left">允许最终一致或短暂不一致</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>死锁风险</strong></td>
+          <td style="text-align: left">高（行级锁 + 并发高）</td>
+          <td style="text-align: left">低（表锁 / 无锁，无复杂锁等待）</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>典型业务</strong></td>
+          <td style="text-align: left">银行转账、电商订单、股票交易</td>
+          <td style="text-align: left">日志系统、统计报表、内容发布</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>代表存储引擎</strong></td>
+          <td style="text-align: left">InnoDB、PostgreSQL</td>
+          <td style="text-align: left">MyISAM、CSV、部分 NoSQL</td>
+      </tr>
+  </tbody>
+</table></div>
+</blockquote>
+<h3 id="事务日志">事务日志
+</h3><p>事务日志有助于提高事务的效率。存储引擎只需要更改内存中的数据副本，而不用每次修改磁盘中的表，这会非常快。然后再把更改的记录写入事务日志中，事务日志会被持久化保存在硬盘上。因为事务日志采用的是追加写操作，是在硬盘中一小块区域内的顺序I/O，而不是需要写多个地方的随机I/O，所以写入事务日志是一种相对较快的操作。顺序读写和随机读写的速度差距在机械硬盘上巨大，即使在固态硬盘上也有一定差距。</p>
+<p>最后会有一个后台进程在某个时间去更新硬盘中的表。因此，大多数使用这种技术（write-ahead logging，预写式日志<sup id="预写式日志"><a class="link" href="#%e9%a2%84%e5%86%99%e5%bc%8f%e6%97%a5%e5%bf%97%e8%af%b4%e6%98%8e" >【1】</a></sup>）的存储引擎修改数据最终需要写入磁盘两次<sup id="写两次磁盘"><a class="link" href="#%e5%86%99%e4%b8%a4%e6%ac%a1%e7%a3%81%e7%9b%98%e8%af%b4%e6%98%8e" >【2】</a></sup>。</p>
+<p>如果修改操作已经写入事务日志，那么即使系统在数据本身写入硬盘之前发生崩溃，存储引擎仍可在重新启动时恢复更改。具体的恢复方法则因存储引擎而异。</p>
+<blockquote>
+<p><span id="预写式日志说明"><a class="link" href="#%e9%a2%84%e5%86%99%e5%bc%8f%e6%97%a5%e5%bf%97" >【1】</a></span>： WAL（预写式日志） 的保险机制：</p>
+<ol>
+<li>修改先在内存完成：执行 <code>UPDATE</code> 时，InnoDB 只改内存里的数据页，这一步非常快。</li>
+<li>立刻把变更写入日志文件：内存里的修改会被记录到 Redo Log（重做日志），并<strong>持久化到磁盘</strong>。这一步是顺序 I/O，很快。</li>
+<li>后台慢慢刷盘：有个后台线程（比如 InnoDB 的 <code>checkpoint</code> 线程）会在系统空闲时，把内存里的脏数据页批量刷到数据库表文件里。如果用户在刷盘前读数据，会优先从内存中读取。</li>
+<li>崩溃恢复：如果系统在后台刷盘前崩溃了，重启时数据库会读取 <strong>已经持久化的 Redo Log</strong>，把所有没来得及刷到磁盘的修改重新应用到数据文件里，保证数据不丢失。</li>
+</ol>
+<p>完整流程拆解：</p>
+<ol>
+<li>应用发起修改：<code>UPDATE user SET money=100 WHERE id=1;</code></li>
+<li>内存修改：InnoDB 找到 <code>id=1</code> 所在的数据页，加载到内存，直接修改内存中的值。这一步极快，因为是内存操作。</li>
+<li>写 Redo Log：把这次修改的内容（比如 “把 id=1 的 money 从 200 改成 100”）写入 Redo Log Buffer，然后刷到磁盘上的 Redo Log 文件。这一步是顺序 I/O，很快。（到这里，事务就可以提交了，客户端收到 “执行成功” 的响应）</li>
+<li>后台刷盘（Checkpoint）：后台线程会定期把内存中修改过的数据页（脏页）批量写入到数据库的 <code>.ibd</code> 数据文件里。这一步是批量的、异步的，不影响用户操作的响应速度。</li>
+<li>崩溃恢复：如果在第 4 步之前系统崩溃，内存里的脏页会丢失，但重启后，数据库会读取磁盘上的 Redo Log，把所有已提交但未刷盘的修改重新执行一遍，把数据恢复到崩溃前的状态。</li>
+</ol>
+<hr>
+<p><span id="写两次磁盘说明"><a class="link" href="#%e5%86%99%e4%b8%a4%e6%ac%a1%e7%a3%81%e7%9b%98" >【2】</a></span>：为什么要设计成 “写两次磁盘”？其实是性能和安全的平衡：</p>
+<ul>
+<li>如果不写日志，直接改数据：每次修改都要做随机 I/O，速度极慢，高并发下系统会卡死。</li>
+<li>如果只写日志，不改数据：日志会无限膨胀，而且查询时要从日志里回放所有修改，查询速度会变得无法忍受。</li>
+<li>WAL 方案：用一次快速的顺序 I/O（写日志）保证数据安全和事务响应速度，再用后台批量的随机 I/O（刷数据）保证查询性能和磁盘空间。</li>
+</ul>
+</blockquote>
+<h3 id="mysql中的事务">MySQL中的事务
+</h3><p>存储引擎是驱动如何从硬盘中存储和检索数据的软件。虽然MySQL传统上提供了许多支持事务的存储引擎，但InnoDB现在已经成为金标准，是推荐使用的引擎。这里描述的事务原语将基于InnoDB引擎中的事务。</p>
+<h4 id="理解autocommit">理解AUTOCOMMIT
+</h4><p>默认情况下，单个INSERT、UPDATE或DELETE语句会被隐式包装在一个事务中并在执行成功后立即提交，这称为自动提交（AUTOCOMMIT）模式。通过禁用此模式，可以在事务中执行一系列语句，并在结束时执行COMMIT提交事务或ROLLBACK回滚事务。</p>
+<p>基于这些内容，就能理解START TRANSACTION（或BEGIN）的工作原理了，就是临时关闭AUTOCOMMIT，把接下来的多条 SQL 打包成一个事务，等到 COMMIT 时一次性提交。不过START TRANSACTION不只是简单关 AUTOCOMMIT，它还会：</p>
+<ul>
+<li>生成一个事务视图<sup id="事务视图"><a class="link" href="#%e4%ba%8b%e5%8a%a1%e8%a7%86%e5%9b%be%e8%af%b4%e6%98%8e" >【1】</a></sup>（Read View）</li>
+<li>用于 MVCC<sup id="MVCC"><a class="link" href="#MVCC%e8%af%b4%e6%98%8e" >【2】</a></sup> 实现可重复读</li>
+<li>记录 undo log 信息，方便回滚</li>
+</ul>
+<p>在当前连接中，可以使用SET命令设置AUTOCOMMIT变量来启用或禁用自动提交模式。启用可以设置为1或者ON，禁用可以设置为0或者OFF。如果设置了AUTOCOMMIT=0，则当前连接总是会处于某个事务中，直到发出COMMIT或者ROLLBACK，然后MySQL会立即启动一个新的事务。</p>
+<p>还有一些命令，当在活动的事务中发出时，会导致MySQL在事务的所有语句执行完毕前提交当前事务。这些通常是进行重大更改的DDL命令<sup id="DDL命令"><a class="link" href="#DDL%e5%91%bd%e4%bb%a4%e8%af%b4%e6%98%8e" >【3】</a></sup>，如ALTER TABLE，但LOCKTABLES和其他一些语句也具有同样的效果。</p>
+<p>MySQL可以通过执行SET TRANSACTION ISOLATION LEVEL命令来设置隔离级别。新的隔离级别会在下一个事务开始的时候生效。可以在配置文件中设置整个服务器的隔离级别，也可以只改变当前会话的隔离级别：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SET</span><span class="w"> </span><span class="k">SESSION</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">COMMITTED</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="隐式锁定和显式锁定">隐式锁定和显式锁定
+</h4><p>InnoDB使用两阶段锁定协议（two-phase locking protocol）。在事务执行期间，随时都可以获取锁，但锁只有在提交或回滚后才会释放，并且所有的锁会同时释放。前面描述的锁定机制都是<strong>隐式</strong>的。InnoDB会根据隔离级别自动处理锁。</p>
+<p>另外，InnoDB还支持通过特定的语句进行<strong>显式</strong>锁定（应当尽量避免使用），如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">SHARE</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="err">对查询到的行加</span><span class="w"> </span><span class="err">共享锁（</span><span class="n">S</span><span class="w"> </span><span class="err">锁）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="err">对查询到的行加</span><span class="w"> </span><span class="err">排他锁（</span><span class="n">X</span><span class="w"> </span><span class="err">锁）</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>简单来说，数据库自动加的就是隐式锁定，自己写SQL手动加锁就是显示锁定。</p>
+<blockquote>
+<p><span id="事务视图说明"><a class="link" href="#%e4%ba%8b%e5%8a%a1%e8%a7%86%e5%9b%be" >【1】</a></span>：事务视图相当于数据库在开启事务那一刻，拍的一张 “数据快照”。作用是决定你在这个事务里，能看见哪些数据，看不见哪些数据。</p>
+<p>比如，在执行START TRANSACTION时生成 Read View，从这一刻起别的事务<strong>已经提交</strong>的修改能看见，别的事务<strong>还没提交或之后提交</strong>的修改就都看不见，这就是可重复读的核心，即在事务里看到的世界，永远停留在 BEGIN 那一刻的样子。</p>
+<hr>
+<p><span id="MVCC说明"><a class="link" href="#MVCC" >【2】</a></span>：全称Multi-Version Concurrency Control，即多版本并发控制。它是让读不加锁、写也不加锁，还能保证数据不乱的一套机制。</p>
+<p>没有MVCC的时候，读写数据都要加锁，高并发下很慢，而有了MVCC后，每条数据会保留多个历史版本，读事务读旧版本，写事务写新版本，读写互不阻塞。这是靠undo log来保存历史版本，read view决定能看见哪个版本，两者共同实现的。</p>
+<hr>
+<p><span id="DDL命令说明"><a class="link" href="#DDL%e5%91%bd%e4%bb%a4" >【3】</a></span>：全称Data Definition Language，即数据定义语言。简单来说DDL 就是用来定义、修改、删除表结构的命令，不操作表里的数据，只操作 “表长什么样”。</p>
+<p>常见的DDL命令有：</p>
+<ul>
+<li><code>CREATE</code>：创建（库、表、索引、视图……）</li>
+<li><code>ALTER</code>：修改表结构（加字段、删字段、改字段类型）</li>
+<li><code>DROP</code>：删除（表、库、索引）</li>
+<li><code>TRUNCATE</code>：清空整张表（删数据但保留表结构，比 DELETE 快）</li>
+<li><code>RENAME</code>：重命名表</li>
+<li><code>CREATE INDEX / DROP INDEX</code>：创建 / 删除索引</li>
+</ul>
+</blockquote>
+<p>未完待续&hellip;</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/mysql%E4%B8%AD%E7%9A%84case%E5%92%8Cif%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MySQL中的case和if函数简介</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%96%E8%BF%9E%E6%8E%A5%E7%AE%80%E4%BB%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数据库外连接简介</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E9%85%8D%E7%BD%AEpowershell%E5%92%8Ccmd%E4%BB%A3%E7%90%86/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">配置PowerShell和CMD代理</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/springai%E5%85%A5%E9%97%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">SpringAI入门</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%88%9D%E8%AF%86%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">初识大模型应用开发</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="IAmYuanyu/IAmYuanyu.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2025 - 
+        
+        2026 缘鱼
+    </section>
+    
+    <section class="powerby">
+        
+            本站于2025年3月26日建立 <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.cfae83801d792be9d4fb17aa7868a6aa54a32407c619c2b109a7cdc0418c1f8c.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
