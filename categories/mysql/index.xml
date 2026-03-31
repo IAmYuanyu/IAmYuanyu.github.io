@@ -8,11 +8,11 @@
         <language>en-us</language>
         <copyright>缘鱼</copyright>
         <lastBuildDate>Mon, 30 Mar 2026 23:44:37 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>《高性能MySQL》读书笔记</title>
-        <link>https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+        <title>《高性能MySQL》读书笔记-第一章-MySQL架构</title>
+        <link>https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%80%E7%AB%A0-mysql%E6%9E%B6%E6%9E%84/</link>
         <pubDate>Mon, 30 Mar 2026 23:44:37 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%80%E7%AB%A0-mysql%E6%9E%B6%E6%9E%84/</guid>
         <description>&lt;h2 id=&#34;并发控制&#34;&gt;并发控制
 &lt;/h2&gt;&lt;h3 id=&#34;读写锁&#34;&gt;读写锁
 &lt;/h3&gt;&lt;p&gt;处理并发读/写访问的系统通常实现一个由两种锁类型组成的锁系统。这两种锁通常被称为&lt;strong&gt;共享锁&lt;/strong&gt;（shared lock）和&lt;strong&gt;排他锁&lt;/strong&gt;（exclusive lock），也叫&lt;strong&gt;读锁&lt;/strong&gt;（read lock）和&lt;strong&gt;写锁&lt;/strong&gt;（write lock）。&lt;/p&gt;
@@ -441,7 +441,54 @@
 &lt;li&gt;&lt;code&gt;CREATE INDEX / DROP INDEX&lt;/code&gt;：创建 / 删除索引&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;未完待续&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;多版本并发控制&#34;&gt;多版本并发控制
+&lt;/h2&gt;&lt;p&gt;MySQL的大多数事务型存储引擎使用的都不是简单的行级锁机制，会结合多版本并发控制（MVCC）技术使用。不就是MySQL，包括Oracle、PostgreSQL以及其他一些数据库系统也都是用了MVCC，但各种的实现方式都不太一样，因为MVCC如何工作并没有统一的标准。&lt;/p&gt;
+&lt;p&gt;MVCC的工作原理是使用数据在某个时间点的快照来实现的。这意味着，无论事务运行多长时间，都可以看到数据的一致视图，也意味着不同的事务可以在同一时间看到同一张表中的不同数据。&lt;/p&gt;
+&lt;p&gt;下方的序列图解释了InnoDB的行为，以此来展示MVCC的一种实现方式：
+&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260331233138105.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260331233138105&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;InnoDB通过为每个事务在启动时分配一个事务ID来实现MVCC。该ID在事务首次读取任何数据时分配。在该事务中修改记录时，将向Undo日志写入一条说明如何恢复该更改的Undo记录，并且事务的回滚指针指向该Undo日志记录。这就是事务如何在需要时执行回滚的方法&lt;sup id=&#34;Undo日志&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;#Undo%e6%97%a5%e5%bf%97%e8%af%b4%e6%98%8e&#34; &gt;【1】&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;当不同的会话读取聚簇主键索引记录时，InnoDB会将该记录的事务ID与该会话的读取视图进行比较。如果当前状态下的记录不应可见（更改它的事务尚未提交），那么Undo日志记录将被跟踪并应用，直到会话达到一个符合可见条件的事务ID。这个过程可以一直循环到完全删除这一行的Undo记录，然后向读取视图发出这一行不存在的信号&lt;sup id=&#34;查找读取视图&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;#%e6%9f%a5%e6%89%be%e8%af%bb%e5%8f%96%e8%a7%86%e5%9b%be%e8%af%b4%e6%98%8e&#34; &gt;【2】&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;事务中的记录可以通过在记录的“info flags”中设置“deleted”位来删除。这在Undo日志中也被作为“删除标记”进行跟踪。&lt;/p&gt;
+&lt;p&gt;值得注意的是，所有Undo日志写入也都会写入Redo日志，因为Undo日志写入是服务器崩溃恢复过程的一部分，并且是事务性的。这些Redo日志和Undo日志的大小也是高并发事务工作机制中的重要影响因素。&lt;/p&gt;
+&lt;p&gt;MVCC仅适用于REPEATABLE READ和READ COMMITTED隔离级别。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span id=&#34;Undo日志说明&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;#Undo%e6%97%a5%e5%bf%97&#34; &gt;【1】&lt;/a&gt;&lt;/span&gt;：InnoDB 不会直接覆盖原数据，而是先把修改操作写到 Undo 日志里，给这条 Undo 日志打上 A 的事务 ID（txn ID A）。原数据行上的回滚指针，会指向这条新的 Undo 日志。这样 A 如果要回滚，顺着指针就能把数据改回去。同时把修改操作写到 Redo 日志，防止数据库突然断电，数据丢了。&lt;/p&gt;
+&lt;p&gt;&lt;span id=&#34;查找读取视图说明&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;#%e6%9f%a5%e6%89%be%e8%af%bb%e5%8f%96%e8%a7%86%e5%9b%be&#34; &gt;【2】&lt;/a&gt;&lt;/span&gt;：当事务B来读数据InnoDB 给它分配事务 ID（比如 ID=101），生成它自己的「读取视图」。此时如果A已经提交了，B就能看见，否则看不见。既然最新版本不可见，InnoDB 就顺着数据行的「回滚指针」，找到 A 写的 Undo 日志，将数据恢复成上个版本，也就是修改前的样子，再检查这个版本对B是否可见，若还不可见，则继续循环这个操作，直到对B可见为止。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;复制&#34;&gt;复制
+&lt;/h2&gt;&lt;p&gt;MySQL被设计用于在任何给定时间只在一个节点上接受写操作。这在管理一致性方面具有优势，但在需要将数据写入多台服务器或多个地区时，会导致需要做出取舍。MySQL提供了一种原生方式来将一个节点执行的写操作分发到其他节点，这被称为复制。在MySQL中，源节点为每个副本节点提供一个线程，该线程作为复制客户端登录，当写入发生时会被唤醒，发送新数据。&lt;/p&gt;
+&lt;p&gt;下图为简单的MySQL服务器拓扑树：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260331233119680.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260331233119680&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;对于在生产环境中运行的任何数据，都应该使用复制并至少有三个以上的副本，理想情况下应该分布在不同的地区（在云托管环境中，称为region）用于灾难恢复计划。&lt;/p&gt;
+&lt;h2 id=&#34;数据文件结构&#34;&gt;数据文件结构
+&lt;/h2&gt;&lt;p&gt;在8.0版本中，MySQL将表的元数据重新设计为一种数据字典，包含在表的.ibd文件中。这使得表结构上的信息支持事务和原子级数据定义更改。&lt;/p&gt;
+&lt;h2 id=&#34;innodb引擎&#34;&gt;InnoDB引擎
+&lt;/h2&gt;&lt;p&gt;InnoDB是MySQL的默认事务型存储引擎，也是最重要、使用最广泛的引擎。它是为处理大量短期事务而设计的，这些事务通常是正常提交的，很少会被回滚。InnoDB的性能和自动崩溃恢复特性，使得它在非事务型存储需求中也很流行。&lt;/p&gt;
+&lt;p&gt;InnoDB是MySQL默认的通用存储引擎。InnoDB使用MVCC来实现高并发性，并实现了所有4个SQL标准隔离级别，默认为REPEATABLE READ隔离级别，并且通过间隙锁（next-key locking）策略来防止在这个隔离级别上的幻读：InnoDB不只锁定在查询中涉及的行，还会对索引结构中的间隙进行锁定，以防止幻行被插入。&lt;/p&gt;
+&lt;h3 id=&#34;json文档支持&#34;&gt;JSON文档支持
+&lt;/h3&gt;&lt;p&gt;JSON类型在5.7版本被首次引入InnoDB，它实现了JSON文档的自动验证，并优化了存储以允许快速读取。除了支持新的数据类型，InnoDB还引入了SQL函数来支持在JSON文档上的丰富操作。MySQL 8.0.7的进一步改进增加了在JSON数组上定义多值索引的能力。&lt;/p&gt;
+&lt;h3 id=&#34;数据字典的变化&#34;&gt;数据字典的变化
+&lt;/h3&gt;&lt;p&gt;MySQL 8.0的另一个主要变化是删除了基于文件的表元数据存储，并将其转移到使用InnoDB表存储的数据字典中。这给所有类似修改表结构这样的操作带来了InnoDB的崩溃恢复事务的好处。&lt;/p&gt;
+&lt;h3 id=&#34;原子ddl&#34;&gt;原子DDL
+&lt;/h3&gt;&lt;p&gt;MySQL 8.0引入了原子数据定义更改。这意味着数据定义语句现在要么全部成功完成，要么全部失败回滚。这是通过创建DDL特定的Undo日志和Redo日志来实现的，InnoDB便依赖这两种日志来跟踪变更。&lt;/p&gt;
 </description>
         </item>
         <item>
