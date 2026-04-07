@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Wed, 01 Apr 2026 15:53:59 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 07 Apr 2026 18:17:19 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Java</title>
+        <link>https://IAmYuanyu.github.io/categories/java/</link>
+        <pubDate>Tue, 07 Apr 2026 18:17:19 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/categories/java/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>日常</title>
+        <link>https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/</link>
+        <pubDate>Tue, 07 Apr 2026 18:17:19 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>MySQL</title>
         <link>https://IAmYuanyu.github.io/categories/mysql/</link>
         <pubDate>Wed, 01 Apr 2026 15:53:59 +0800</pubDate>
@@ -24,27 +40,11 @@
         <description></description>
         </item>
         <item>
-        <title>日常</title>
-        <link>https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/</link>
-        <pubDate>Mon, 30 Mar 2026 12:39:02 +0800</pubDate>
-        
-        <guid>https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>AI</title>
         <link>https://IAmYuanyu.github.io/categories/ai/</link>
         <pubDate>Thu, 12 Mar 2026 23:45:37 +0800</pubDate>
         
         <guid>https://IAmYuanyu.github.io/categories/ai/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Java</title>
-        <link>https://IAmYuanyu.github.io/categories/java/</link>
-        <pubDate>Thu, 12 Mar 2026 23:45:37 +0800</pubDate>
-        
-        <guid>https://IAmYuanyu.github.io/categories/java/</guid>
         <description></description>
         </item>
         <item>
