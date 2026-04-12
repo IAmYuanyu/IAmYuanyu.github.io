@@ -363,7 +363,16 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;字符串索引&#34;&gt;字符串索引
 &lt;/h4&gt;&lt;p&gt;可以使用 &lt;strong&gt;索引&lt;/strong&gt; 获取一个字符串中 指定位置的字符，索引计数从 &lt;strong&gt;0&lt;/strong&gt; 开始。&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250110224036248.png&#34; alt=&#34;image-20250110224036248&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250110224036248.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250110224036248&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -455,7 +464,16 @@
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;运算符优先级&#34;&gt;运算符优先级
-&lt;/h4&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111192708304.png&#34; alt=&#34;image-20250111192708304&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111192708304.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250111192708304&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;赋值运算符&#34;&gt;赋值运算符
 &lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111192826217.png&#34;
 	
@@ -490,11 +508,38 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;成员运算符&#34;&gt;成员运算符
-&lt;/h3&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203600706.png&#34; alt=&#34;image-20250111203600706&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203600706.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250111203600706&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;身份运算符&#34;&gt;身份运算符
-&lt;/h3&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203810020.png&#34; alt=&#34;image-20250111203810020&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203810020.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250111203810020&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;运算符优先级-1&#34;&gt;运算符优先级
-&lt;/h3&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203948909.png&#34; alt=&#34;image-20250111203948909&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203948909.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250111203948909&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;第四章条件判断&#34;&gt;第四章：条件判断
 &lt;/h2&gt;&lt;h3 id=&#34;单分支&#34;&gt;单分支
 &lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111211341720.png&#34;
@@ -2057,7 +2102,16 @@
 &lt;li&gt;如果查询到指定的名片，用户可以选择修改或者删除名片&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;展示菜单：&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250113233452702.png&#34; alt=&#34;image-20250113233452702&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250113233452702.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250113233452702&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -2217,12 +2271,39 @@
 &lt;/h3&gt;&lt;p&gt;• 模块 就好比是 工具包，要想使用这个工具包中的工具，就需要 导入 import 这个模块&lt;/p&gt;
 &lt;p&gt;• 每一个以扩展名 py 结尾的 python 源代码文件都是一个 模块&lt;/p&gt;
 &lt;p&gt;• 在模块中定义的 全局变量 、 函数 都是模块能够提供给外界直接使用的工具&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117214310181.png&#34; alt=&#34;image-20250117214310181&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117214310181.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250117214310181&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;可以只导入一个模块中的部分函数，可以防止导入函数过多导致的重名问题&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117214619265.png&#34; alt=&#34;image-20250117214619265&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117214619265.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250117214619265&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;包的使用&#34;&gt;包的使用
 &lt;/h3&gt;&lt;p&gt;• 包是Python模块的一种组织形式，将多个模块组合在一起，形成一个大的Python工具库。包通常是一个拥有__init__.py文件的目录，它定义了包的属性和方法。&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117215355305.png&#34; alt=&#34;image-20250117215355305&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117215355305.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250117215355305&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;常见的标准库&#34;&gt;常见的标准库
 &lt;/h3&gt;&lt;table&gt;
   &lt;thead&gt;
@@ -2345,7 +2426,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;step&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/绘图演示.gif&#34; alt=&#34;绘图演示&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/%e7%bb%98%e5%9b%be%e6%bc%94%e7%a4%ba.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;绘图演示&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;第十章文件及io操作&#34;&gt;第十章：文件及IO操作
 &lt;/h2&gt;&lt;h3 id=&#34;文件的打开模式&#34;&gt;文件的打开模式
 &lt;/h3&gt;&lt;table&gt;
@@ -2558,7 +2648,16 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;csv表格文件的读取和写入&#34;&gt;csv表格文件的读取和写入
 &lt;/h3&gt;&lt;p&gt;现有一个Test.csv文件，内容如图&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250118205330399.png&#34; alt=&#34;image-20250118205330399&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250118205330399.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250118205330399&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -3174,7 +3273,16 @@
 &lt;p&gt;使用时使用&lt;code&gt;import wx&lt;/code&gt;导入wxpython库&lt;/p&gt;
 &lt;h3 id=&#34;简单布局&#34;&gt;简单布局
 &lt;/h3&gt;&lt;p&gt;一个普通的窗口布局如下图所示&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119212241823.png&#34; alt=&#34;image-20250119212241823&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119212241823.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250119212241823&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;下面是简单演示wxpython库的部分功能&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -3233,7 +3341,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行效果：&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119214153624.png&#34; alt=&#34;image-20250119214153624&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119214153624.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250119214153624&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;窗口类&#34;&gt;窗口类
 &lt;/h3&gt;&lt;p&gt;接下来用面向对象的思想来写窗口&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -3283,7 +3400,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行效果：&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119222458429.png&#34; alt=&#34;image-20250119222458429&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119222458429.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250119222458429&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;抽奖器练习&#34;&gt;抽奖器练习
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

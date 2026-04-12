@@ -1071,7 +1071,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;左外连接就是以左表基础，查询左表和左表与右表相交的部分。右外连接同理。&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250903191209677.png&#34; alt=&#34;image-20250903191209677&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250903191209677.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250903191209677&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;对于外连接，常用的是左外连接，因为右外连接的SQL也可以改造成为左外连接（两张表调换个顺序）&lt;/p&gt;
 &lt;/blockquote&gt;

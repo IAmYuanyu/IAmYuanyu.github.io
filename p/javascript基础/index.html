@@ -1204,7 +1204,16 @@
 <p>在声明一些未来不太会被修改的变量时，一般使用const</p>
 <p>对于复杂类型数据，比如数组一般可以使用const声明，因为此时栈中存放的是数组对象实例所在的地址，对该数组进行增加、删除或修改等操作时，数组依旧是原来的数组，地址并不会变，因此对数组进行增加、删除或修改等操作时并不会报错（但如果修改了数组的地址就会报错）</p>
 <p>如下情况中，就可以把let改为const</p>
-<img src="/assets/image-20241020163119258.png" alt="image-20241020163119258" style="zoom:50%;" />
+<p><img src="/assets/image-20241020163119258.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241020163119258"
+	
+	
+></p>
 <p>而下列左边的情况就不能用const，否则会报错</p>
 <p><img src="/assets/image-20241020163418281.png"
 	
@@ -7154,7 +7163,7 @@
 </span></span><span class="line"><span class="cl">                        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="sb">`
 </span></span></span><span class="line"><span class="cl"><span class="sb">                        &lt;li&gt;
 </span></span></span><span class="line"><span class="cl"><span class="sb">                        &lt;a href=&#34;#&#34;&gt;
-</span></span></span><span class="line"><span class="cl"><span class="sb">                            &lt;img src=&#34;</span><span class="si">${</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">src</span><span class="si">}</span><span class="sb">&#34; title=&#34;</span><span class="si">${</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">title</span><span class="si">}</span><span class="sb">&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">                            ![](</span><span class="si">${</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">src</span><span class="si">}</span><span class="sb">)
 </span></span></span><span class="line"><span class="cl"><span class="sb">                            &lt;h4&gt;
 </span></span></span><span class="line"><span class="cl"><span class="sb">                                </span><span class="si">${</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">title</span><span class="si">}</span><span class="sb">
 </span></span></span><span class="line"><span class="cl"><span class="sb">                            &lt;/h4&gt;

@@ -420,7 +420,16 @@
 <blockquote>
 <p>默认的账号是user，密码会在控制台生成</p>
 </blockquote>
-<img src="/assets/image-20251207151016078.png" alt="image-20251207151016078" style="zoom:67%;" />
+<p><img src="/assets/image-20251207151016078.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251207151016078"
+	
+	
+></p>
 <p><img src="/assets/image-20251207151148772.png"
 	
 	
@@ -432,7 +441,16 @@
 	
 ></p>
 <p>登录后即可正常访问其他页面</p>
-<img src="/assets/image-20251207151335732.png" alt="image-20251207151335732" style="zoom:80%;" />
+<p><img src="/assets/image-20251207151335732.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251207151335732"
+	
+	
+></p>
 <h2 id="认证">认证
 </h2><h3 id="登录校验流程">登录校验流程
 </h3><p><img src="/assets/image-20251207151757284.png"
@@ -689,7 +707,16 @@
 </div>
 </div><blockquote>
 <p>配置下方内容时可以参考图中目录结构</p>
-<img src="/assets/image-20251207175357767.png" alt="image-20251207175357767" style="zoom:80%;" />
+<p><img src="/assets/image-20251207175357767.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251207175357767"
+	
+	
+></p>
 </blockquote>
 <h4 id="配置redis">配置Redis
 </h4><div class="highlight"><div class="chroma">
@@ -2248,7 +2275,16 @@
 </div><h4 id="测试修改结果">测试修改结果
 </h4><p>由于现在还没有修改PasswordEncoder，现在登录时会对密码进行一定的操作，所以现在要测试的话要给存在数据库里的密码前面加上{noop}，后续会详细说明PasswordEncoder</p>
 <p>总之，现在要如图存密码才能通过登录校验</p>
-<img src="/assets/image-20251207181932436.png" alt="image-20251207181932436" style="zoom:67%;" />
+<p><img src="/assets/image-20251207181932436.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251207181932436"
+	
+	
+></p>
 <p>当前在数据库中存成<code>{noop}123456</code>才能在登录页面直接输入123456登录</p>
 <p>此时，启动工程就可以使用数据库里的账号密码进行登录，说明成功对默认登录认证校验进行了修改</p>
 <h4 id="修改密码加密存储模式">修改密码加密存储模式
@@ -2355,7 +2391,16 @@
 </div>
 </div></blockquote>
 <p>此时就可以在数据库中存储加密后的密码（注册时直接把加密后的密码存入数据库），前端也能直接使用密码原文进行登录（登录时会自动进行BCrypt校验），极大提高了数据的安全性</p>
-<img src="/assets/PixPin_2025-12-07_19-53-10.gif" alt="PixPin_2025-12-07_19-53-10" style="zoom:80%;" />
+<p><img src="/assets/PixPin_2025-12-07_19-53-10.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="PixPin_2025-12-07_19-53-10"
+	
+	
+></p>
 <h4 id="编写登录接口">编写登录接口
 </h4><p>接下需要自定义登陆接口，然后让SpringSecurity对这个接口放行,让用户访问这个接口的时候不用登录也能访问</p>
 <p>在接口中通过AuthenticationManager的authenticate方法来进行用户认证,所以需要在SecurityConfig中配置把AuthenticationManager注入容器</p>
@@ -2732,7 +2777,16 @@
 </div>
 </div><p>测试登录接口：（我使用的软件是ApiFox）</p>
 <p>测试时记得开启Redis</p>
-<img src="/assets/image-20251207211021284.png" alt="image-20251207211021284" style="zoom:80%;" />
+<p><img src="/assets/image-20251207211021284.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251207211021284"
+	
+	
+></p>
 <h4 id="定义并配置jwt认证过滤器">定义并配置JWT认证过滤器
 </h4><p>我们需要自定义一个过滤器，这个过滤器会去获取请求头中的token，对token进行解析取出其中的userId(主要作用于除登录外的请求)</p>
 <p>使用userId去redis中获取对应的LoginUser对象</p>
@@ -3124,7 +3178,16 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="结果测试"><strong>结果测试</strong>
-</h5><img src="/assets/PixPin_2025-12-07_22-31-22.gif" alt="PixPin_2025-12-07_22-31-22" style="zoom:80%;" />
+</h5><p><img src="/assets/PixPin_2025-12-07_22-31-22.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="PixPin_2025-12-07_22-31-22"
+	
+	
+></p>
 <h2 id="授权">授权
 </h2><h3 id="授权的基本流程">授权的基本流程
 </h3><p>在SpringSecurity中，会使用默认的FilterSecurityInterceptor来进行权限校验。在FilterSecurityInterceptor中会从SecurityContextHolder获取其中的Authentication，然后获取其中的权限信息。判断当前用户是否拥有访问当前资源所需的权限。</p>

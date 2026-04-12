@@ -4363,7 +4363,16 @@
 <p>从实现思路来分析，肯定是将所有数据排序，找出前1000名，截取其中的990~1000的部分。但问题来了，<em>如何才能找到所有数据中的前1000名呢？</em></p>
 <p>要知道每一片的数据都不一样，第1片上的第900~1000，在另1个节点上并不一定依然是900~1000名。所以只能在每一个分片上都找出排名前1000的数据，然后汇总到一起，重新排序，才能找出整个索引库中真正的前1000名，此时截取990~1000的数据即可。</p>
 <p>如图：</p>
-<img src="./assets/1772290121677-126.png" alt="img" style="zoom:67%;" />
+<p><img src="/assets/1772290121677-126.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
 <p>试想一下，假如现在要查询的是第999页数据呢，是不是要找第9990~10000的数据，那岂不是需要把每个分片中的前10000名数据都查询出来，汇总在一起，在内存中排序？如果查询的分页深度更深呢，需要一次检索的数据岂不是更多？</p>
 <p>由此可知，当查询分页深度较大时，汇总数据过多，对内存和CPU会产生非常大的压力。</p>
 <p>因此elasticsearch会禁止<code>from+ size</code>超过10000的请求。</p>
@@ -4739,7 +4748,16 @@
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><img src="./assets/image-20260301175524844.png" alt="image-20260301175524844" style="zoom:50%;" />
+</div><p><img src="/assets/image-20260301175524844.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260301175524844"
+	
+	
+></p>
 <p>还有<code>range</code>查询：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -4769,7 +4787,16 @@
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><img src="./assets/image-20260301175910067.png" alt="image-20260301175910067" style="zoom:67%;" />
+</div><p><img src="/assets/image-20260301175910067.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260301175910067"
+	
+	
+></p>
 <p>还有<code>term</code>查询：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -4799,7 +4826,16 @@
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><img src="./assets/image-20260301175745994.png" alt="image-20260301175745994" style="zoom:67%;" />
+</div><p><img src="/assets/image-20260301175745994.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260301175745994"
+	
+	
+></p>
 <h3 id="复合查询-1">复合查询
 </h3><p>复合查询也是由<code>QueryBuilders</code>来构建，以<code>bool</code>查询为例，DSL和JavaAPI的对比如图：</p>
 <p><img src="/assets/1772359450592-147.png"

@@ -262,12 +262,39 @@
     
     
     <h2 id="maven依赖下载不完整导致爆红">Maven依赖下载不完整导致爆红
-</h2><img src="/assets/1753803853105.png" alt="75380385310" style="zoom:50%;" />
-<img src="/assets/1753803987463.png" alt="75380398746" style="zoom:50%;" />
+</h2><p><img src="/assets/1753803853105.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="75380385310"
+	
+	
+></p>
+<p><img src="/assets/1753803987463.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="75380398746"
+	
+	
+></p>
 <p>产生原因：由于网络原因，依赖没有下载完整导致的，在maven仓库中生成了xxx.lastUpdated文件，该文件不删除，不会再重新下载。</p>
 <p>解决方案：</p>
 <p>打开Maven的本地仓库</p>
-<img src="/assets/1753804124171.png" alt="75380412417" style="zoom:67%;" />
+<p><img src="/assets/1753804124171.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="75380412417"
+	
+	
+></p>
 <p>然后在命令行中输入</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

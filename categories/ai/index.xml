@@ -255,8 +255,26 @@
 &lt;/h2&gt;&lt;h3 id=&#34;快速入门ollama&#34;&gt;快速入门（Ollama）
 &lt;/h3&gt;&lt;h4 id=&#34;创建工程&#34;&gt;创建工程
 &lt;/h4&gt;&lt;p&gt;创建一个新的SpringBoot工程，并勾选图中依赖：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260308183122899.png&#34; alt=&#34;image-20260308183122899&#34; style=&#34;zoom:50%;&#34; /&gt;
-&lt;img src=&#34;./assets/image-20260309130030205.png&#34; alt=&#34;image-20260309130030205&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260308183122899.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260308183122899&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309130030205.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260309130030205&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;pom.xml&lt;/code&gt;文件：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -680,9 +698,27 @@
 &lt;/h3&gt;&lt;p&gt;默认情况下，应用于AI的交互时不记录日志的，使用者无法得知SpringAI组织的提示词到底长什么样，有没有问题，这样不方便调试。&lt;/p&gt;
 &lt;h4 id=&#34;advisor&#34;&gt;Advisor
 &lt;/h4&gt;&lt;p&gt;SpringAI基于AOP机制实现与大模型对话过程的增强、拦截、修改等功能。所有的增强通知都需要实现Advisor接口。&lt;/p&gt;
-&lt;img src=&#34;./assets/1773049699707-9.png&#34; alt=&#34;img&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773049699707-9.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;Spring提供了一些Advisor的默认实现，来实现一些基本的增强功能：&lt;/p&gt;
-&lt;img src=&#34;./assets/1773049699707-10.png&#34; alt=&#34;img&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773049699707-10.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;SimpleLoggerAdvisor：日志记录的Advisor&lt;/li&gt;
 &lt;li&gt;MessageChatMemoryAdvisor：会话记忆的Advisor&lt;/li&gt;
@@ -961,13 +997,49 @@
 &lt;p&gt;官网有将API Key配置到电脑系统环境变量的详细教程&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;若是不想将其配置到电脑环境变量中，只想配置在当前项目中，可以参考下方操作设置idea&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;首先，点击启动项下拉箭头，然后点击&lt;code&gt;Edit Configurations&lt;/code&gt;:&lt;/p&gt;
-&lt;img src=&#34;./assets/1773146948058-32.png&#34; alt=&#34;img&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773146948058-32.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;然后，在弹出的窗口中点击&lt;code&gt;Modify options&lt;/code&gt;:&lt;/p&gt;
-&lt;img src=&#34;./assets/1773146948058-33.png&#34; alt=&#34;img&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773146948058-33.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;在弹出窗口中，选择&lt;code&gt;Environment variables&lt;/code&gt;:&lt;/p&gt;
-&lt;img src=&#34;./assets/1773146948059-34.png&#34; alt=&#34;img&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773146948059-34.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;然后，在刚才的&lt;code&gt;Run/Debug Configurations&lt;/code&gt;窗口中，就会多出环境变量配置栏：&lt;/p&gt;
-&lt;img src=&#34;./assets/1773146948059-35.png&#34; alt=&#34;img&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773146948059-35.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;在其中配置自己&lt;strong&gt;阿里云百炼&lt;/strong&gt;上的API_KEY：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1241,7 +1313,16 @@
 &lt;p&gt;聊天对话的接口是：POST /ai/chat&lt;/p&gt;
 &lt;p&gt;请确保你的服务端接口也是这样。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;img src=&#34;./assets/image-20260309201058481.png&#34; alt=&#34;image-20260309201058481&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309201058481.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260309201058481&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;会话记忆功能&#34;&gt;会话记忆功能
 &lt;/h3&gt;&lt;p&gt;现在，AI聊天机器人是没有记忆功能的，上一次聊天的内容，下一次就忘掉了。&lt;/p&gt;
 &lt;p&gt;之前说过，让AI有会话记忆的方式就是把每一次历史对话内容拼接到Prompt中，一起发送过去。&lt;/p&gt;
@@ -1625,7 +1706,16 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;查询会话历史&#34;&gt;查询会话历史
 &lt;/h4&gt;&lt;p&gt;页面需要接收的内容：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260310183240830.png&#34; alt=&#34;image-20260310183240830&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260310183240830.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260310183240830&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;com.yuanyu.ai.controller&lt;/code&gt;包下新建一个&lt;code&gt;ChatHistoryController&lt;/code&gt;：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1695,7 +1785,16 @@
 &lt;p&gt;发现确实能保存并查询到会话历史列表了，但会话内容丢失，所以接下来实现查询会话记录详情&lt;/p&gt;
 &lt;p&gt;查询会话历史消息，也就是Message集合。但是由于Message并不符合页面的需要，需要自己定义一个VO&lt;/p&gt;
 &lt;p&gt;页面需要接收的内容：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260310183205891.png&#34; alt=&#34;image-20260310183205891&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260310183205891.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260310183205891&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;定义一个&lt;code&gt;com.yuanyu.entity.vo&lt;/code&gt;包，在其中定义一个&lt;code&gt;MessageVO&lt;/code&gt;类：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -3130,7 +3229,16 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;生成代码：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260311164422656.png&#34; alt=&#34;image-20260311164422656&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260311164422656.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260311164422656&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260311164248377.png&#34;
 	
 	
@@ -3824,7 +3932,16 @@
 &lt;/h4&gt;&lt;p&gt;向量是空间中有方向和长度的量，空间可以是二维，也可以是多维。&lt;/p&gt;
 &lt;p&gt;向量既然是在空间中，两个向量之间就一定能计算距离。&lt;/p&gt;
 &lt;p&gt;以二维向量为例，向量之间的距离有两种计算方法：&lt;/p&gt;
-&lt;img src=&#34;./assets/1773237746476-57.png&#34; alt=&#34;img&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773237746476-57.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;通常，两个向量之间&lt;strong&gt;欧式距离越近&lt;/strong&gt;，认为两个向量的&lt;strong&gt;相似度越高&lt;/strong&gt;。（余弦距离相反，越大相似度越高）&lt;/p&gt;
 &lt;p&gt;所以，如果能&lt;strong&gt;把文本转为向量&lt;/strong&gt;，就可以&lt;strong&gt;通过向量距离来判断文本的相似度&lt;/strong&gt;了。&lt;/p&gt;
 &lt;p&gt;现在，有不少的专门的&lt;strong&gt;向量模型&lt;/strong&gt;，就可以实现将文本向量化。一个好的向量模型，就是要&lt;strong&gt;尽可能让文本含义相似的向量，在空间中距离更近&lt;/strong&gt;：&lt;/p&gt;
@@ -4222,7 +4339,16 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后配置环境变量：&lt;/p&gt;
-&lt;img src=&#34;./assets/1773239264898-67.png&#34; alt=&#34;img&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773239264898-67.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;可以看到，向量相似度确实符合预期。&lt;/p&gt;
 &lt;p&gt;有了比较文本相似度的办法，知识库的问题就可以解决了。&lt;/p&gt;
@@ -6223,7 +6349,16 @@
 &lt;p&gt;配置完可以打开一个命令行窗口，输入：&lt;code&gt;ollama --help&lt;/code&gt;看看是否能成功识别&lt;/p&gt;
 &lt;h4 id=&#34;运行模型&#34;&gt;运行模型
 &lt;/h4&gt;&lt;p&gt;可以在其官网上搜索自己需要的模型：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260305212138497.png&#34; alt=&#34;image-20260305212138497&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260305212138497.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260305212138497&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;以目前最热门的lfm2为例，点击后：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260305213328218.png&#34;
 	

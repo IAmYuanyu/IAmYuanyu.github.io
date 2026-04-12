@@ -813,8 +813,26 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;演示：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;1.找一个Nginx版本并拉取镜像：&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002214815563.png&#34; alt=&#34;image-20251002214815563&#34; style=&#34;zoom:67%;&#34; /&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002215208954.png&#34; alt=&#34;image-20251002215208954&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002214815563.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002214815563&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002215208954.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251002215208954&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如果直接复制粘贴进去提示&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1330,7 +1348,16 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker inspect mysql
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003214409337.png&#34; alt=&#34;image-20251003214409337&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003214409337.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003214409337&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;发现mysql容器的ip地址是172.17.0.3&lt;/p&gt;
 &lt;p&gt;2.进入其他容器中通过&lt;code&gt;ping&lt;/code&gt;命令尝试能否连接&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1424,7 +1451,16 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker network create yuanyu
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003221050488.png&#34; alt=&#34;image-20251003221050488&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003221050488.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003221050488&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;2.让mysql和myapp两个容器都加入刚刚创建的网络&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1442,7 +1478,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker inspect mysql
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003221507194.png&#34; alt=&#34;image-20251003221507194&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003221507194.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003221507194&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;检查后发现确实正常加入了自定义的网络&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在创建容器时也可以指定默认网络&lt;/p&gt;
@@ -1470,7 +1515,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ping mysql
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003222126890.png&#34; alt=&#34;image-20251003222126890&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003222126890.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251003222126890&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;发现可以使用名字成功连通，此时无论ip怎么变都无所谓了&lt;/p&gt;
 </description>
         </item>
@@ -1927,7 +1981,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;FLUSH PRIVILEGES&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250928170733591.png&#34; alt=&#34;image-20250928170733591&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250928170733591.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250928170733591&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;11.此时就可以在Windows上连接Linux中的数据库了&lt;/p&gt;
 &lt;p&gt;在Windows中使用快捷键&lt;code&gt;Win + R&lt;/code&gt;，在弹出的窗口内输入&lt;code&gt;cmd&lt;/code&gt;打开命令行窗口，在其中输入下方命令：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2206,7 +2269,16 @@
 &lt;h4 id=&#34;关闭防火墙-1&#34;&gt;关闭防火墙
 &lt;/h4&gt;&lt;h5 id=&#34;临时关闭防火墙&#34;&gt;临时关闭防火墙
 &lt;/h5&gt;&lt;p&gt;查看防火墙状态：&lt;code&gt;sudo systemctl status ufw&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233325312.png&#34; alt=&#34;image-20250121233325312&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233325312.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250121233325312&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;临时关闭防火墙：&lt;code&gt;sudo systemctl stop ufw&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233435053.png&#34;
 	
@@ -2311,27 +2383,72 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;修改完&lt;code&gt;hosts&lt;/code&gt;文件后就可以在Xshell的连接中将&lt;code&gt;主机&lt;/code&gt;中原本填写的地址改为自己的主机名&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122215049729.png&#34; alt=&#34;image-20250122215049729&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122215049729.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122215049729&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;apt软件包&#34;&gt;APT软件包
 &lt;/h2&gt;&lt;p&gt;在终端输入&lt;code&gt;apt&lt;/code&gt;即可查看apt常用命令&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122215858014.png&#34; alt=&#34;image-20250122215858014&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122215858014.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122215858014&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;例如，当前需要根据名称列出软件包，就可以在终端输入&lt;code&gt;sudo apt list&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;其中&lt;code&gt;sudo&lt;/code&gt;表示以管理员身份执行命令&lt;/p&gt;
 &lt;h2 id=&#34;常用基本命令&#34;&gt;常用基本命令
 &lt;/h2&gt;&lt;h3 id=&#34;帮助命令&#34;&gt;帮助命令
 &lt;/h3&gt;&lt;h4 id=&#34;manual-packages&#34;&gt;Manual Packages
 &lt;/h4&gt;&lt;p&gt;查看手册页说明文档：在终端输入&lt;code&gt;man man&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122220927820.png&#34; alt=&#34;image-20250122220927820&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122220927820.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122220927820&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;man-获得帮助信息&#34;&gt;man 获得帮助信息
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;查看ls命令的帮助信息：&lt;code&gt;man ls&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122222950334.png&#34; alt=&#34;image-20250122222950334&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122222950334.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122222950334&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;help-获取shell内建命令的帮助信息&#34;&gt;help 获取shell内建命令的帮助信息
 &lt;/h4&gt;&lt;p&gt;shell 内建命令：shell 内建命令是 shell 的一部分，他们没有单独的可执行文件或手册页，这类命令的文档通过 help 命令访问。&lt;/p&gt;
 &lt;p&gt;基本语法：&lt;code&gt;help 命令&lt;/code&gt;                （功能描述：获得 shell 内建命令的帮助信息）&lt;/p&gt;
 &lt;p&gt;例如：查看cd命令的帮助信息&lt;code&gt;help cd&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122223245762.png&#34; alt=&#34;image-20250122223245762&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122223245762.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250122223245762&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;常用快捷键&#34;&gt;常用快捷键
 &lt;/h4&gt;&lt;table&gt;
   &lt;thead&gt;
@@ -3100,9 +3217,27 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123224756658.png&#34; alt=&#34;image-20250123224756658&#34; style=&#34;zoom:120%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123224756658.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123224756658&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;示例2：&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225613008.png&#34; alt=&#34;image-20250123225613008&#34; style=&#34;zoom:150%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225613008.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250123225613008&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;date-显示非当前时间&#34;&gt;date 显示非当前时间
 &lt;/h4&gt;&lt;p&gt;基本语法：（很多写法，仅展示其一）&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225848484.png&#34;
@@ -3304,7 +3439,16 @@
 &lt;p&gt;如果查看到是文件：链接数指的是硬链接个数&lt;/p&gt;
 &lt;p&gt;如果查看的是文件夹：链接数指的是子文件夹个数&lt;/p&gt;
 &lt;p&gt;文件属性由从左到右的10 个字符表示&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124213745962.png&#34; alt=&#34;image-20250124213745962&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124213745962.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250124213745962&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;如果没有权限，就会出现减号[ - ]而已。从左至右用 0-9 这些数字来表示：&lt;/p&gt;
 &lt;p&gt;（1）0 首位表示类型&lt;/p&gt;
 &lt;p&gt;在 Linux 中第一个字符代表这个文件是目录、文件或链接文件等等&lt;/p&gt;
@@ -3894,16 +4038,61 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000633597.png&#34; alt=&#34;image-20250125000633597&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000633597.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125000633597&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;输入&lt;code&gt;EDITOR=vim crontab -e&lt;/code&gt;后，打开如下文件，在最后写入命令即可&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125001312349.png&#34; alt=&#34;image-20250125001312349&#34; style=&#34;zoom:67%;&#34; /&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000844146.png&#34; alt=&#34;image-20250125000844146&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000905001.png&#34; alt=&#34;image-20250125000905001&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125001312349.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125001312349&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000844146.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125000844146&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000905001.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125000905001&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;shell&#34;&gt;Shell
 &lt;/h2&gt;&lt;h3 id=&#34;shell概述&#34;&gt;Shell概述
 &lt;/h3&gt;&lt;p&gt;Shell是一个命令行解释器，它接收应用程序/用户命令，然后调用操作系统内核&lt;/p&gt;
 &lt;p&gt;Shell还是一个功能相当强大的编程语言，易编写、易调试、灵活性强&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125155355526.png&#34; alt=&#34;image-20250125155355526&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125155355526.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125155355526&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;shell入门&#34;&gt;Shell入门
 &lt;/h3&gt;&lt;h4 id=&#34;脚本格式&#34;&gt;脚本格式
 &lt;/h4&gt;&lt;p&gt;脚本以&lt;code&gt;#!/bin/bash&lt;/code&gt; 开头（指定解析器）&lt;/p&gt;
@@ -4067,7 +4256,16 @@
 &lt;p&gt;&lt;code&gt;test 条件&lt;/code&gt;或&lt;code&gt;[ 条件 ]&lt;/code&gt;	（注意条件前后有空格）&lt;/p&gt;
 &lt;p&gt;注意：条件非空即为 true，[ atguigu ]返回 true，[ ] 返回 false&lt;/p&gt;
 &lt;h4 id=&#34;常用判断条件&#34;&gt;常用判断条件
-&lt;/h4&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184054189.png&#34; alt=&#34;image-20250125184054189&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184054189.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250125184054189&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184255341.png&#34;
 	

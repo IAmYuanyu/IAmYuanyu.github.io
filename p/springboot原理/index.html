@@ -278,7 +278,16 @@
 </h3><p>在SpringBoot中经常需要导入一些起步依赖，如<code>spring-boot-starter-web</code>、<code>spring-boot-starter-aop</code>、<code>spring-boot-starter-test</code>、<code>mybatis-spring-boot-starter</code>等等</p>
 <p>这些起步依赖会通过Maven的依赖传递，将与之相关的常见依赖自动传递进来</p>
 <p>以<code>spring-boot-starter-web</code>为例，从下方图中可以看出这些起步依赖传递进来了着许多依赖</p>
-<img src="/assets/image-20250923223439250.png" alt="image-20250923223439250" style="zoom: 50%;" />
+<p><img src="/assets/image-20250923223439250.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250923223439250"
+	
+	
+></p>
 <p><img src="/assets/image-20250923223559381.png"
 	
 	
@@ -432,7 +441,16 @@
 <h4 id="为什么第三方类能被自动注入">为什么第三方类能被自动注入
 </h4><p>核心原因是SpringBoot 的自动配置机制与<strong>第三方库的 Starter 支持</strong>共同作用的结果</p>
 <p>很多主流第三方工具（如 MyBatis、Redis、RabbitMQ 等）会提供专门的<code>spring-boot-starter-xxx</code>依赖（Starter）。这些 Starter 中包含了<strong>自动配置类（AutoConfiguration）</strong>，这些配置类会在应用启动时被 Spring Boot 自动扫描并执行，通过<code>@Bean</code>注解将第三方工具的核心类（如<code>RedisTemplate</code>、<code>SqlSessionFactory</code>）注册为 Spring 容器中的 Bean。</p>
-<img src="/assets/image-20250926091430973.png" alt="image-20250926091430973" style="zoom: 67%;" />
+<p><img src="/assets/image-20250926091430973.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250926091430973"
+	
+	
+></p>
 <p>例如，Redis 的 Starter（<code>spring-boot-starter-data-redis</code>）中包含<code>RedisAutoConfiguration</code>类，其内部通过<code>@Bean</code>声明了<code>RedisTemplate</code>的实例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -844,15 +862,60 @@
 </ol>
 <p>步骤：</p>
 <p>1.创建一个新的模块（注意不要在当前项目中创建）：</p>
-<img src="/assets/image-20250926093633859.png" alt="image-20250926093633859" style="zoom: 50%;" />
+<p><img src="/assets/image-20250926093633859.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250926093633859"
+	
+	
+></p>
 <p>2.然后无需勾选任何依赖项，点击创建：</p>
-<img src="/assets/image-20250926093800463.png" alt="image-20250926093800463" style="zoom:50%;" />
+<p><img src="/assets/image-20250926093800463.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250926093800463"
+	
+	
+></p>
 <p>3.创建好项目后，可以把项目中除了<code>pom.xml</code>的文件全部删除：</p>
-<img src="/assets/image-20250926094102994.png" alt="image-20250926094102994" style="zoom:67%;" />
+<p><img src="/assets/image-20250926094102994.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250926094102994"
+	
+	
+></p>
 <p>4.打开<code>pom.xml</code>文件，将版本改为与你的项目相同：</p>
-<img src="/assets/image-20250926094325495.png" alt="image-20250926094325495" style="zoom:67%;" />
+<p><img src="/assets/image-20250926094325495.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250926094325495"
+	
+	
+></p>
 <p>5.再创建一个模块（注意不要在当前项目中创建），然后同样不用选依赖：</p>
-<img src="/assets/image-20250926094631471.png" alt="image-20250926094631471" style="zoom: 50%;" />
+<p><img src="/assets/image-20250926094631471.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250926094631471"
+	
+	
+></p>
 <p>6.可以把该模块中除<code>src</code>目录和<code>pom.xml</code>文件以外的内容全部删除，<code>src</code>下的<code>test</code>目录也可以删除，主目录里的启动类和配置文件也都能删除，并不影响</p>
 <p>7.回到starter模块的<code>pom.xml</code>文件，将新创建的autoconfigure导入</p>
 <div class="highlight"><div class="chroma">
@@ -1196,7 +1259,16 @@
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><img src="/assets/image-20250926173244198.png" alt="image-20250926173244198" style="zoom:50%;" />
+</div><p><img src="/assets/image-20250926173244198.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250926173244198"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1

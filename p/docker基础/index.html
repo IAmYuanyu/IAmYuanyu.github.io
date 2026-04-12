@@ -469,8 +469,26 @@
 </ul>
 <p><strong>演示：</strong></p>
 <p>1.找一个Nginx版本并拉取镜像：</p>
-<img src="/assets/image-20251002214815563.png" alt="image-20251002214815563" style="zoom:67%;" />
-<img src="/assets/image-20251002215208954.png" alt="image-20251002215208954" style="zoom:67%;" />
+<p><img src="/assets/image-20251002214815563.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251002214815563"
+	
+	
+></p>
+<p><img src="/assets/image-20251002215208954.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251002215208954"
+	
+	
+></p>
 <blockquote>
 <p>如果直接复制粘贴进去提示</p>
 <div class="highlight"><div class="chroma">
@@ -986,7 +1004,16 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker inspect mysql
 </span></span></code></pre></td></tr></table>
 </div>
-</div><img src="/assets/image-20251003214409337.png" alt="image-20251003214409337" style="zoom: 67%;" />
+</div><p><img src="/assets/image-20251003214409337.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251003214409337"
+	
+	
+></p>
 <p>发现mysql容器的ip地址是172.17.0.3</p>
 <p>2.进入其他容器中通过<code>ping</code>命令尝试能否连接</p>
 <div class="highlight"><div class="chroma">
@@ -1080,7 +1107,16 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker network create yuanyu
 </span></span></code></pre></td></tr></table>
 </div>
-</div><img src="/assets/image-20251003221050488.png" alt="image-20251003221050488" style="zoom:67%;" />
+</div><p><img src="/assets/image-20251003221050488.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251003221050488"
+	
+	
+></p>
 <p>2.让mysql和myapp两个容器都加入刚刚创建的网络</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1098,7 +1134,16 @@
 </span></span><span class="line"><span class="cl">docker inspect mysql
 </span></span></code></pre></td></tr></table>
 </div>
-</div><img src="/assets/image-20251003221507194.png" alt="image-20251003221507194" style="zoom:67%;" />
+</div><p><img src="/assets/image-20251003221507194.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251003221507194"
+	
+	
+></p>
 <p>检查后发现确实正常加入了自定义的网络</p>
 <blockquote>
 <p>在创建容器时也可以指定默认网络</p>
@@ -1126,7 +1171,16 @@
 </span></span><span class="line"><span class="cl">ping mysql
 </span></span></code></pre></td></tr></table>
 </div>
-</div><img src="/assets/image-20251003222126890.png" alt="image-20251003222126890" style="zoom:67%;" />
+</div><p><img src="/assets/image-20251003222126890.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251003222126890"
+	
+	
+></p>
 <p>发现可以使用名字成功连通，此时无论ip怎么变都无所谓了</p>
 
 </section>

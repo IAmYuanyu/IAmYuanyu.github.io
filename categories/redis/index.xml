@@ -74,7 +74,16 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;需要取消连接的话，输入&lt;code&gt;exit&lt;/code&gt;即可&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005203356205.png&#34; alt=&#34;image-20251005203356205&#34; style=&#34;zoom: 80%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005203356205.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251005203356205&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;连接指定redis&#34;&gt;连接指定Redis
 &lt;/h4&gt;&lt;p&gt;如果需要连接指定ip地址的Redis可以使用下方命令&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -85,11 +94,38 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli.exe -h ip地址 -p 端口号
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005203650980.png&#34; alt=&#34;image-20251005203650980&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005203650980.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251005203650980&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;配置密码&#34;&gt;配置密码
 &lt;/h4&gt;&lt;p&gt;Redis默认是没有密码的，可以在&lt;code&gt;redis.windows.conf&lt;/code&gt;中配置密码，输入&lt;code&gt;requirepass 密码&lt;/code&gt;来设置密码&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005205017620.png&#34; alt=&#34;image-20251005205017620&#34; style=&#34;zoom:67%;&#34; /&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005205229525.png&#34; alt=&#34;image-20251005205229525&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005205017620.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251005205017620&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005205229525.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251005205229525&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;连接Redis没有用户的概念，只需要提供密码即可&lt;/p&gt;
 &lt;h4 id=&#34;设置后台自动启动&#34;&gt;设置后台自动启动
 &lt;/h4&gt;&lt;p&gt;将Redis安装为Windows服务后可通过服务管理器启动，实现后台运行&lt;/p&gt;
@@ -139,7 +175,16 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;p&gt;列表：按照插入顺序排序，可以有重复元素，类似于Java中的LinkedList&lt;/p&gt;
 &lt;p&gt;集合：又称无序集合，没有重复元素，类似于Java中的HashSet&lt;/p&gt;
 &lt;p&gt;有序集合：集合中每个元素关联一个分数（score），根据分数升序排序，没有重复元素&lt;/p&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005211049404.png&#34; alt=&#34;image-20251005211049404&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005211049404.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251005211049404&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;常用命令&#34;&gt;常用命令
 &lt;/h3&gt;&lt;p&gt;在Redis中，与MySQL不同的是，MySQL的增删改查命令都是通用的，不区分数据类型，但在Redis中，不同的数据类型有不同的命令，并不是全部通用的&lt;/p&gt;
 &lt;h4 id=&#34;字符串操作命令&#34;&gt;字符串操作命令
@@ -171,7 +216,16 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;HKEYS key&lt;/code&gt;：获取哈希表中所有字段（也就是下图中的field1和field2）&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;HVALS key&lt;/code&gt;：获取哈希表中所有值（也就是下图中的value1和value2）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005214946227.png&#34; alt=&#34;image-20251005214946227&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005214946227.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251005214946227&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005215841758.png&#34;
 	
 	
@@ -201,7 +255,16 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;LLEN key&lt;/code&gt;：获取列表长度&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;BRPOP key1 [key2 ] timeout&lt;/code&gt;：移出并获取列表的最后一个元素，如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005220248538.png&#34; alt=&#34;image-20251005220248538&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005220248538.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251005220248538&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005220744204.png&#34;
 	
 	
@@ -222,7 +285,16 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;SUNION key1 [key2]&lt;/code&gt;：返回所有给定集合的并集&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;SREM key member1 [member2]&lt;/code&gt;：移除集合中一个或多个成员&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005220910862.png&#34; alt=&#34;image-20251005220910862&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005220910862.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251005220910862&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;有序集合操作命令&#34;&gt;有序集合操作命令
 &lt;/h4&gt;&lt;p&gt;Redis有序集合是string类型元素的集合，且不允许有重复成员。每个元素都会关联一个double类型的分数&lt;/p&gt;
 &lt;p&gt;常用命令：&lt;/p&gt;
@@ -232,7 +304,16 @@ Linux版下载地址:https://download.redis.io/releases/&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;ZINCRBY key increment member&lt;/code&gt;：有序集合中对指定成员的分数加上增量 increment&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ZREM key member [member ...]&lt;/code&gt;：移除有序集合中的一个或多个成员&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005221348200.png&#34; alt=&#34;image-20251005221348200&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005221348200.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251005221348200&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;通用命令&#34;&gt;通用命令
 &lt;/h4&gt;&lt;p&gt;Redis的通用命令是不分数据类型的，都可以使用的命令：&lt;/p&gt;
 &lt;ul&gt;
