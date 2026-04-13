@@ -1701,7 +1701,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Advisors 的原理：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260315192245552.png&#34; alt=&#34;image-20260315192245552&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260315192245552.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260315192245552&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;实际开发中，往往我们会用到多个拦截器，组合在一起相当于一条拦截器链条（责任链模式的设计思想）。每个拦截器是有顺序的，通过 &lt;code&gt;getOrder()&lt;/code&gt; 方法获取到顺序，得到的值越低，越优先执行。&lt;/p&gt;
 &lt;p&gt;比如下面的代码中，如果单独⁠按照代码顺序，可能我们会认为：将首先执行 &lt;code&gt;Messa‌geChatMemoryAdvisor&lt;/code&gt;，将对话历史记录添加到提示词中。然后，&lt;code&gt;QuestionAnswer‎Advisor&lt;/code&gt; 将根据用户的问题和添加的对话历史记录‌执行知识库检索，从而提供更相关的结果：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2520,7 +2529,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;然后在LoveApp使用ReReadingAdvisor后进行测试：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260316221527569.png&#34; alt=&#34;image-20260316221527569&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260316221527569.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260316221527569&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;发现可以正常取用&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;注意：&lt;/p&gt;
@@ -4849,7 +4867,16 @@
 &lt;/h4&gt;&lt;p&gt;我用的是ApiFox进行接口测试，可以直接在Idea插件里下载。&lt;/p&gt;
 &lt;p&gt;测试时别忘了还有prompt参数，截图里没有只是不方便展示而已，毕竟一个在&amp;quot;Query&amp;quot;里一个在&amp;quot;Body&amp;quot;里。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1）识别图片：&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260319183929398.png&#34; alt=&#34;image-20260319183929398&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260319183929398.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260319183929398&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;原图：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/dog_and_girl.jpeg&#34;
 	
@@ -4862,11 +4889,38 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2）识别音频：&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260319183600330.png&#34; alt=&#34;image-20260319183600330&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260319183600330.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260319183600330&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3）识别视频：&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260319183700886.png&#34; alt=&#34;image-20260319183700886&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260319183700886.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260319183700886&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;4）多种类型文件上传：&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260319183510162.png&#34; alt=&#34;image-20260319183510162&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260319183510162.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260319183510162&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;识别准确度还可以，不过除了图片识别，其他不怎么好用，音频好几次识别成了“关于使用阿里云”，视频识别每次输出内容差异较大（虽然基本都没什么错，只是描述方式不同，但也漏了不少信息）&lt;/p&gt;
 &lt;h2 id=&#34;rag-概念&#34;&gt;RAG 概念
 &lt;/h2&gt;&lt;h3 id=&#34;什么是rag&#34;&gt;什么是RAG？
@@ -4926,23 +4980,59 @@
 &lt;li&gt;基于语义边界（如段落、章节）&lt;/li&gt;
 &lt;li&gt;基于递归分割策略（如递归字符 n-gram 切割）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;./assets/image-20260321140017297.png&#34; alt=&#34;image-20260321140017297&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321140017297.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260321140017297&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;向量转换和存储&#34;&gt;向量转换和存储
 &lt;/h4&gt;&lt;p&gt;向量转换：⁠使用 Embedd‌ing 模型将文本块转换为高维向量表‎示，可以捕获到文本‌的语义特征&lt;/p&gt;
 &lt;p&gt;向量存储：⁠将生成的向量和对应‌文本存入向量数据库，支持高效的相似性‎搜索&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260321140053794.png&#34; alt=&#34;image-20260321140053794&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321140053794.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260321140053794&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;文档过滤和检索&#34;&gt;文档过滤和检索
 &lt;/h4&gt;&lt;p&gt;查询处理：将用户问题也转换为向量表示&lt;/p&gt;
 &lt;p&gt;过滤机制：基于元数据、关键词或自定义规则进行过滤&lt;/p&gt;
 &lt;p&gt;相似度搜索⁠：在向量数据库中查‌找与问题向量最相似的文档块，常用的相‎似度搜索算法有余弦‌相似度、欧氏距离等&lt;/p&gt;
 &lt;p&gt;上下文组装：将检索到的多个文档块组装成连贯上下文&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260321140332988.png&#34; alt=&#34;image-20260321140332988&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321140332988.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260321140332988&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;查询增强和关联&#34;&gt;查询增强和关联
 &lt;/h4&gt;&lt;p&gt;提示词组装：将检索到的相关文档与用户问题组合成增强提示&lt;/p&gt;
 &lt;p&gt;上下文融合：大模型基于增强提示生成回答&lt;/p&gt;
 &lt;p&gt;源引用：在回答中添加信息来源引用&lt;/p&gt;
 &lt;p&gt;后处理：格式化、摘要或其他处理以优化最终输出&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260321140418344.png&#34; alt=&#34;image-20260321140418344&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321140418344.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260321140418344&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;完整工作流程&#34;&gt;完整工作流程
 &lt;/h4&gt;&lt;p&gt;分别理解上⁠述 4 个步骤后，‌我们可以将它们组合起来，形成完整的 ‎RAG 检索增强生‌成工作流程：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321140452798.png&#34;
@@ -5236,7 +5326,16 @@
 &lt;h3 id=&#34;向量转换和存储-1&#34;&gt;向量转换和存储
 &lt;/h3&gt;&lt;p&gt;为了实现方便⁠，我们先使用 Spri‌ng AI 内置的、基于内存读写的向量数据库‎ SimpleVect‌orStore 来保存文档。&lt;/p&gt;
 &lt;p&gt;SimpleVe⁠ctorStore 实现了 Ve‌ctorStore 接口，而 VectorStore 接口集成了‎ DocumentWriter，‌所以具备文档写入能力。如图：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260321194931437.png&#34; alt=&#34;image-20260321194931437&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321194931437.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260321194931437&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;简单了解下源⁠码，在将文档写入到数据库‌前，会先调用 Embedding 大模型将文档转‎换为向量，实际保存到数据‌库中的是向量类型的数据：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -5496,7 +5595,16 @@
 &lt;/h3&gt;&lt;p&gt;首先我们可⁠以利用云知识库完成‌文档读取、文档处理、文档加载、保存到‎向量数据库、知识库管‌理等操作。&lt;/p&gt;
 &lt;p&gt;1）准备数据。在 &lt;a class=&#34;link&#34; href=&#34;https://bailian.console.aliyun.com/?tab=app#/data-center&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;应用数据&lt;/a&gt; 模块中，上传原始文档数据到平台，由平台来帮忙解析文档中的内容和结构：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260321221226596.png&#34; alt=&#34;image-20260321221226596&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321221226596.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260321221226596&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;2）进入阿里云百炼平台的 &lt;a class=&#34;link&#34; href=&#34;https://bailian.console.aliyun.com/?tab=app#/knowledge-base&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;知识库&lt;/a&gt;，创建一个知识库：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321221322442.png&#34;
@@ -5768,7 +5876,16 @@
 &lt;h4 id=&#34;文档&#34;&gt;文档
 &lt;/h4&gt;&lt;p&gt;什么是 Spring AI 中的文档呢？&lt;/p&gt;
 &lt;p&gt;文档不仅仅包含文本，还可以包含一系列元信息和多媒体附件：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260322151638044.png&#34; alt=&#34;image-20260322151638044&#34; style=&#34;zoom: 33%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322151638044.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260322151638044&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;etl&#34;&gt;ETL
 &lt;/h4&gt;&lt;p&gt;在 Spr⁠ing AI 中，‌对 Document 的处理通常遵循‎以下流程：&lt;/p&gt;
 &lt;ol&gt;
@@ -6315,7 +6432,16 @@
     &gt;Spring AI 官方&lt;/a&gt; 提供了向量数据库接口 &lt;code&gt;VectorStore&lt;/code&gt; 和向量存储整合包，帮助开发者快速集成各种第三方向量存储，比如 Milvus、Redis、PGVector、Elasticsearch 等。&lt;/p&gt;
 &lt;h4 id=&#34;vectorstore-接口介绍&#34;&gt;VectorStore 接口介绍
 &lt;/h4&gt;&lt;p&gt;VectorS⁠tore 是 Spring‌ AI 中用于与向量数据库交互的核心接口，它继承自 ‎DocumentWrite‌r，提供以下方法：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260322164710905.png&#34; alt=&#34;image-20260322164710905&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322164710905.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260322164710905&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;这个接口定⁠义了向量存储的基本‌操作，简单来说就是 “增删改查”：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;添加文档到向量库&lt;/li&gt;
@@ -6421,7 +6547,16 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260322182643553.png&#34; alt=&#34;image-20260322182643553&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322182643553.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260322182643553&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;然后创建数据库：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322183221219.png&#34;
 	
@@ -6433,7 +6568,16 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260322183321302.png&#34; alt=&#34;image-20260322183321302&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322183321302.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260322183321302&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;进入插件管理，安装 vector 插件：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322193503795.png&#34;
 	
@@ -7731,7 +7875,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;./assets/image-20260323233759539.png&#34; alt=&#34;image-20260323233759539&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260323233759539.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260323233759539&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;获得扩展查⁠询后，可以直接用于‌检索文档、或者提取查询文本来改写提示‎词：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -7915,7 +8068,16 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;阿里云百炼的知识库有提供该功能：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260324203635895.png&#34; alt=&#34;image-20260324203635895&#34; style=&#34;zoom: 80%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260324203635895.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260324203635895&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;检索器配置&#34;&gt;检索器配置
 &lt;/h4&gt;&lt;p&gt;检索器配置⁠是影响检索质量的关‌键因素，主要包括三个方面：相似度阈值‎、返回文档数量和‌过滤规则。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1）设置合理的相似度阈值&lt;/strong&gt;&lt;/p&gt;
@@ -7955,7 +8117,16 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;云平台提供了更便捷的配置界面，&lt;a class=&#34;link&#34; href=&#34;https://help.aliyun.com/zh/model-studio/rag-optimization#861895e8993co&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;参考文档&lt;/a&gt;：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260324204440004.png&#34; alt=&#34;image-20260324204440004&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260324204440004.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260324204440004&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2）控制返回文档数量（召回片段数）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;控制返回给⁠模型的文档数量，平‌衡信息完整性和噪音水平。在编程实现中‎，可以通过文档检索‌器配置：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -8614,15 +8785,42 @@
 &lt;h4 id=&#34;并行混合检索&#34;&gt;并行混合检索
 &lt;/h4&gt;&lt;p&gt;同时使用多⁠种检索方法获取结果‌，然后使用重排模型融合多来源结果。&lt;/p&gt;
 &lt;p&gt;像是同时派出多位专家寻找答案，然后整合他们的发现：&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260325181127811.png&#34; alt=&#34;image-20260325181127811&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325181127811.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260325181127811&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;级联混合检索&#34;&gt;级联混合检索
 &lt;/h4&gt;&lt;p&gt;层层筛选，⁠先使用一种方法进行‌广泛召回，再用另一种方法精确过滤。&lt;/p&gt;
 &lt;p&gt;比如先用向⁠量检索获取语义相似‌文档，再用关键词过滤，最后用元数据进‎一步筛选，逐步‌缩小范围。&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260325181207284.png&#34; alt=&#34;image-20260325181207284&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325181207284.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260325181207284&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h4 id=&#34;动态混合检索&#34;&gt;动态混合检索
 &lt;/h4&gt;&lt;p&gt;通过一个 ⁠“路由器”，根据查‌询类型自动选择最合适的检索方法，更‎加智能。&lt;/p&gt;
 &lt;p&gt;举个例子，对于 “谁⁠是图灵” 这样的人物查询，可能偏向使用‌知识图谱；而处理 “如何编写 Java 项目” 这类教程问题，可能更适合向量‎检索配合全文搜索。这种方法让系统能像人‌类一样智能地选择最佳信息获取途径。&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260325181306072.png&#34; alt=&#34;image-20260325181306072&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325181306072.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260325181306072&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;大模型幻觉&#34;&gt;大模型幻觉
 &lt;/h3&gt;&lt;p&gt;大模型有时⁠会 “自信满满地胡‌说八道”，这就是大模型的经典问题 ——‎ 幻觉。&lt;/p&gt;
 &lt;p&gt;大模型幻觉指的⁠是模型生成看似合理但实际上‌不准确或完全虚构的内容。就像一个信心十足的学生回答了‎一个自己并不真正了解的问题‌。这些幻觉主要有三种表现形式：&lt;/p&gt;
@@ -8664,7 +8862,16 @@
 &lt;li&gt;引用准确性：引用内容是否确实来自检索上下文&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;当然，我们还可以根据具⁠体应用场景，定制专门的评估标准。比如系统性能‌评估、领域适应性评估、多语言评估、时效性评估和用户满意度评估。其中，用户满意度评估在我们‎开发 AI 产品时尤为常见，经常需要引导用户‌针对 AI 大模型的回复进行打分。&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260325190604054.png&#34; alt=&#34;image-20260325190604054&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325190604054.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260325190604054&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;RAG 评估流程通常包括 4 个步骤：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;生成评估数据集：创建覆盖不同问题类型的测试集，为每个问题准备标准答案和相关文档。这些测试问题应包括事实性问题、观点性问题、多步骤推理问题等各种类型。&lt;/li&gt;
@@ -8752,7 +8959,16 @@
 &lt;p&gt;目前工具调⁠用技术发展的已经比较‌成熟了，几乎所有主流的、新出的 AI 大‎模型和 AI 应用开‌发平台都支持工具调用。&lt;/p&gt;
 &lt;h3 id=&#34;工具调用的工作原理&#34;&gt;工具调用的工作原理
 &lt;/h3&gt;&lt;p&gt;其实，工具调用的工作原理非常简单，&lt;strong&gt;并不是 AI 服务器自己调用这些工具、也不是把工具的代码发送给 AI 服务器让它执行&lt;/strong&gt;，它只能提出要求，表示 “我需要执行 XX 工具完成任务”。而真正执行工具的是我们自己的应用程序，执行后再把结果告诉 AI，让它继续工作。&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260329000851554.png&#34; alt=&#34;image-20260329000851554&#34; style=&#34;zoom: 80%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260329000851554.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260329000851554&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;虽然看起来是 AI 在调用工具，但实际上整个过程是 &lt;strong&gt;由我们的应用程序控制的&lt;/strong&gt;。AI 只负责决定什么时候需要用工具，以及需要传递什么参数，真正执行工具的是我们的程序。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;为啥要这么设计‌呢？这样不是要让程序请求 AI 多次‎么？为啥不让 AI‌ 服务器直接调用工具程序？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;问题在于&lt;strong&gt;安全性&lt;/strong&gt;，AI 模型永远无法直接接触你的 API 或系统资源，所有操作都必须通过你的程序来执行，这样你可以完全控制 AI 能做什么、不能做什么。&lt;/p&gt;
@@ -8782,7 +8998,16 @@
 &lt;h2 id=&#34;spring-ai-工具开发&#34;&gt;Spring AI 工具开发
 &lt;/h2&gt;&lt;p&gt;可以先通过 &lt;a class=&#34;link&#34; href=&#34;https://docs.spring.io/spring-ai/reference/api/tools.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Spring AI 官方&lt;/a&gt; 提供的图片来简单理解 Spring AI 在实现工具调用时都帮我们做了哪些事情&lt;/p&gt;
-&lt;img src=&#34;./assets/image-20260329002737388.png&#34; alt=&#34;image-20260329002737388&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260329002737388.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260329002737388&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;工具定义与注册：Spring AI 可以通过简洁的注解自动生成工具定义和 JSON Schema，让 Java 方法轻松转变为 AI 可调用的工具。&lt;/li&gt;
 &lt;li&gt;工具调用请求：Spring AI 自动处理与 AI 模型的通信并解析工具调用请求，并且支持多个工具链式调用。&lt;/li&gt;

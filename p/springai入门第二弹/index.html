@@ -2464,7 +2464,16 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>Advisors 的原理：</p>
-<img src="./assets/image-20260315192245552.png" alt="image-20260315192245552" style="zoom:50%;" />
+<p><img src="/assets/image-20260315192245552.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260315192245552"
+	
+	
+></p>
 <p>实际开发中，往往我们会用到多个拦截器，组合在一起相当于一条拦截器链条（责任链模式的设计思想）。每个拦截器是有顺序的，通过 <code>getOrder()</code> 方法获取到顺序，得到的值越低，越优先执行。</p>
 <p>比如下面的代码中，如果单独⁠按照代码顺序，可能我们会认为：将首先执行 <code>Messa‌geChatMemoryAdvisor</code>，将对话历史记录添加到提示词中。然后，<code>QuestionAnswer‎Advisor</code> 将根据用户的问题和添加的对话历史记录‌执行知识库检索，从而提供更相关的结果：</p>
 <div class="highlight"><div class="chroma">
@@ -3283,7 +3292,16 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后在LoveApp使用ReReadingAdvisor后进行测试：</p>
-<img src="./assets/image-20260316221527569.png" alt="image-20260316221527569" style="zoom:50%;" />
+<p><img src="/assets/image-20260316221527569.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260316221527569"
+	
+	
+></p>
 <p>发现可以正常取用</p>
 <blockquote>
 <p>注意：</p>
@@ -5612,7 +5630,16 @@
 </h4><p>我用的是ApiFox进行接口测试，可以直接在Idea插件里下载。</p>
 <p>测试时别忘了还有prompt参数，截图里没有只是不方便展示而已，毕竟一个在&quot;Query&quot;里一个在&quot;Body&quot;里。</p>
 <p><strong>1）识别图片：</strong></p>
-<img src="./assets/image-20260319183929398.png" alt="image-20260319183929398" style="zoom:50%;" />
+<p><img src="/assets/image-20260319183929398.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260319183929398"
+	
+	
+></p>
 <p>原图：</p>
 <p><img src="/assets/dog_and_girl.jpeg"
 	
@@ -5625,11 +5652,38 @@
 	
 ></p>
 <p><strong>2）识别音频：</strong></p>
-<img src="./assets/image-20260319183600330.png" alt="image-20260319183600330" style="zoom:50%;" />
+<p><img src="/assets/image-20260319183600330.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260319183600330"
+	
+	
+></p>
 <p><strong>3）识别视频：</strong></p>
-<img src="./assets/image-20260319183700886.png" alt="image-20260319183700886" style="zoom:50%;" />
+<p><img src="/assets/image-20260319183700886.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260319183700886"
+	
+	
+></p>
 <p><strong>4）多种类型文件上传：</strong></p>
-<img src="./assets/image-20260319183510162.png" alt="image-20260319183510162" style="zoom:50%;" />
+<p><img src="/assets/image-20260319183510162.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260319183510162"
+	
+	
+></p>
 <p>识别准确度还可以，不过除了图片识别，其他不怎么好用，音频好几次识别成了“关于使用阿里云”，视频识别每次输出内容差异较大（虽然基本都没什么错，只是描述方式不同，但也漏了不少信息）</p>
 <h2 id="rag-概念">RAG 概念
 </h2><h3 id="什么是rag">什么是RAG？
@@ -5689,23 +5743,59 @@
 <li>基于语义边界（如段落、章节）</li>
 <li>基于递归分割策略（如递归字符 n-gram 切割）</li>
 </ul>
-<img src="./assets/image-20260321140017297.png" alt="image-20260321140017297" style="zoom:50%;" />
+<p><img src="/assets/image-20260321140017297.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260321140017297"
+	
+	
+></p>
 <h4 id="向量转换和存储">向量转换和存储
 </h4><p>向量转换：⁠使用 Embedd‌ing 模型将文本块转换为高维向量表‎示，可以捕获到文本‌的语义特征</p>
 <p>向量存储：⁠将生成的向量和对应‌文本存入向量数据库，支持高效的相似性‎搜索</p>
-<img src="./assets/image-20260321140053794.png" alt="image-20260321140053794" style="zoom:50%;" />
+<p><img src="/assets/image-20260321140053794.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260321140053794"
+	
+	
+></p>
 <h4 id="文档过滤和检索">文档过滤和检索
 </h4><p>查询处理：将用户问题也转换为向量表示</p>
 <p>过滤机制：基于元数据、关键词或自定义规则进行过滤</p>
 <p>相似度搜索⁠：在向量数据库中查‌找与问题向量最相似的文档块，常用的相‎似度搜索算法有余弦‌相似度、欧氏距离等</p>
 <p>上下文组装：将检索到的多个文档块组装成连贯上下文</p>
-<img src="./assets/image-20260321140332988.png" alt="image-20260321140332988" style="zoom:50%;" />
+<p><img src="/assets/image-20260321140332988.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260321140332988"
+	
+	
+></p>
 <h4 id="查询增强和关联">查询增强和关联
 </h4><p>提示词组装：将检索到的相关文档与用户问题组合成增强提示</p>
 <p>上下文融合：大模型基于增强提示生成回答</p>
 <p>源引用：在回答中添加信息来源引用</p>
 <p>后处理：格式化、摘要或其他处理以优化最终输出</p>
-<img src="./assets/image-20260321140418344.png" alt="image-20260321140418344" style="zoom:50%;" />
+<p><img src="/assets/image-20260321140418344.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260321140418344"
+	
+	
+></p>
 <h4 id="完整工作流程">完整工作流程
 </h4><p>分别理解上⁠述 4 个步骤后，‌我们可以将它们组合起来，形成完整的 ‎RAG 检索增强生‌成工作流程：</p>
 <p><img src="/assets/image-20260321140452798.png"
@@ -5999,7 +6089,16 @@
 <h3 id="向量转换和存储-1">向量转换和存储
 </h3><p>为了实现方便⁠，我们先使用 Spri‌ng AI 内置的、基于内存读写的向量数据库‎ SimpleVect‌orStore 来保存文档。</p>
 <p>SimpleVe⁠ctorStore 实现了 Ve‌ctorStore 接口，而 VectorStore 接口集成了‎ DocumentWriter，‌所以具备文档写入能力。如图：</p>
-<img src="./assets/image-20260321194931437.png" alt="image-20260321194931437" style="zoom:50%;" />
+<p><img src="/assets/image-20260321194931437.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260321194931437"
+	
+	
+></p>
 <p>简单了解下源⁠码，在将文档写入到数据库‌前，会先调用 Embedding 大模型将文档转‎换为向量，实际保存到数据‌库中的是向量类型的数据：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -6259,7 +6358,16 @@
 </h3><p>首先我们可⁠以利用云知识库完成‌文档读取、文档处理、文档加载、保存到‎向量数据库、知识库管‌理等操作。</p>
 <p>1）准备数据。在 <a class="link" href="https://bailian.console.aliyun.com/?tab=app#/data-center"  target="_blank" rel="noopener"
     >应用数据</a> 模块中，上传原始文档数据到平台，由平台来帮忙解析文档中的内容和结构：</p>
-<img src="./assets/image-20260321221226596.png" alt="image-20260321221226596" style="zoom:67%;" />
+<p><img src="/assets/image-20260321221226596.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260321221226596"
+	
+	
+></p>
 <p>2）进入阿里云百炼平台的 <a class="link" href="https://bailian.console.aliyun.com/?tab=app#/knowledge-base"  target="_blank" rel="noopener"
     >知识库</a>，创建一个知识库：</p>
 <p><img src="/assets/image-20260321221322442.png"
@@ -6531,7 +6639,16 @@
 <h4 id="文档">文档
 </h4><p>什么是 Spring AI 中的文档呢？</p>
 <p>文档不仅仅包含文本，还可以包含一系列元信息和多媒体附件：</p>
-<img src="./assets/image-20260322151638044.png" alt="image-20260322151638044" style="zoom: 33%;" />
+<p><img src="/assets/image-20260322151638044.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260322151638044"
+	
+	
+></p>
 <h4 id="etl">ETL
 </h4><p>在 Spr⁠ing AI 中，‌对 Document 的处理通常遵循‎以下流程：</p>
 <ol>
@@ -7078,7 +7195,16 @@
     >Spring AI 官方</a> 提供了向量数据库接口 <code>VectorStore</code> 和向量存储整合包，帮助开发者快速集成各种第三方向量存储，比如 Milvus、Redis、PGVector、Elasticsearch 等。</p>
 <h4 id="vectorstore-接口介绍">VectorStore 接口介绍
 </h4><p>VectorS⁠tore 是 Spring‌ AI 中用于与向量数据库交互的核心接口，它继承自 ‎DocumentWrite‌r，提供以下方法：</p>
-<img src="./assets/image-20260322164710905.png" alt="image-20260322164710905" style="zoom:50%;" />
+<p><img src="/assets/image-20260322164710905.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260322164710905"
+	
+	
+></p>
 <p>这个接口定⁠义了向量存储的基本‌操作，简单来说就是 “增删改查”：</p>
 <ul>
 <li>添加文档到向量库</li>
@@ -7184,7 +7310,16 @@
 	
 	
 ></p>
-<img src="./assets/image-20260322182643553.png" alt="image-20260322182643553" style="zoom: 67%;" />
+<p><img src="/assets/image-20260322182643553.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260322182643553"
+	
+	
+></p>
 <p>然后创建数据库：</p>
 <p><img src="/assets/image-20260322183221219.png"
 	
@@ -7196,7 +7331,16 @@
 	
 	
 ></p>
-<img src="./assets/image-20260322183321302.png" alt="image-20260322183321302" style="zoom:80%;" />
+<p><img src="/assets/image-20260322183321302.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260322183321302"
+	
+	
+></p>
 <p>进入插件管理，安装 vector 插件：</p>
 <p><img src="/assets/image-20260322193503795.png"
 	
@@ -8494,7 +8638,16 @@
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><img src="./assets/image-20260323233759539.png" alt="image-20260323233759539" style="zoom:67%;" />
+</div><p><img src="/assets/image-20260323233759539.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260323233759539"
+	
+	
+></p>
 <p>获得扩展查⁠询后，可以直接用于‌检索文档、或者提取查询文本来改写提示‎词：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -8678,7 +8831,16 @@
 	
 ></p>
 <p>阿里云百炼的知识库有提供该功能：</p>
-<img src="./assets/image-20260324203635895.png" alt="image-20260324203635895" style="zoom: 80%;" />
+<p><img src="/assets/image-20260324203635895.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260324203635895"
+	
+	
+></p>
 <h4 id="检索器配置">检索器配置
 </h4><p>检索器配置⁠是影响检索质量的关‌键因素，主要包括三个方面：相似度阈值‎、返回文档数量和‌过滤规则。</p>
 <p><strong>1）设置合理的相似度阈值</strong></p>
@@ -8718,7 +8880,16 @@
 </div>
 </div><p>云平台提供了更便捷的配置界面，<a class="link" href="https://help.aliyun.com/zh/model-studio/rag-optimization#861895e8993co"  target="_blank" rel="noopener"
     >参考文档</a>：</p>
-<img src="./assets/image-20260324204440004.png" alt="image-20260324204440004" style="zoom: 67%;" />
+<p><img src="/assets/image-20260324204440004.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260324204440004"
+	
+	
+></p>
 <p><strong>2）控制返回文档数量（召回片段数）</strong></p>
 <p>控制返回给⁠模型的文档数量，平‌衡信息完整性和噪音水平。在编程实现中‎，可以通过文档检索‌器配置：</p>
 <div class="highlight"><div class="chroma">
@@ -9377,15 +9548,42 @@
 <h4 id="并行混合检索">并行混合检索
 </h4><p>同时使用多⁠种检索方法获取结果‌，然后使用重排模型融合多来源结果。</p>
 <p>像是同时派出多位专家寻找答案，然后整合他们的发现：</p>
-<img src="./assets/image-20260325181127811.png" alt="image-20260325181127811" style="zoom:50%;" />
+<p><img src="/assets/image-20260325181127811.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260325181127811"
+	
+	
+></p>
 <h4 id="级联混合检索">级联混合检索
 </h4><p>层层筛选，⁠先使用一种方法进行‌广泛召回，再用另一种方法精确过滤。</p>
 <p>比如先用向⁠量检索获取语义相似‌文档，再用关键词过滤，最后用元数据进‎一步筛选，逐步‌缩小范围。</p>
-<img src="./assets/image-20260325181207284.png" alt="image-20260325181207284" style="zoom:50%;" />
+<p><img src="/assets/image-20260325181207284.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260325181207284"
+	
+	
+></p>
 <h4 id="动态混合检索">动态混合检索
 </h4><p>通过一个 ⁠“路由器”，根据查‌询类型自动选择最合适的检索方法，更‎加智能。</p>
 <p>举个例子，对于 “谁⁠是图灵” 这样的人物查询，可能偏向使用‌知识图谱；而处理 “如何编写 Java 项目” 这类教程问题，可能更适合向量‎检索配合全文搜索。这种方法让系统能像人‌类一样智能地选择最佳信息获取途径。</p>
-<img src="./assets/image-20260325181306072.png" alt="image-20260325181306072" style="zoom:50%;" />
+<p><img src="/assets/image-20260325181306072.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260325181306072"
+	
+	
+></p>
 <h3 id="大模型幻觉">大模型幻觉
 </h3><p>大模型有时⁠会 “自信满满地胡‌说八道”，这就是大模型的经典问题 ——‎ 幻觉。</p>
 <p>大模型幻觉指的⁠是模型生成看似合理但实际上‌不准确或完全虚构的内容。就像一个信心十足的学生回答了‎一个自己并不真正了解的问题‌。这些幻觉主要有三种表现形式：</p>
@@ -9427,7 +9625,16 @@
 <li>引用准确性：引用内容是否确实来自检索上下文</li>
 </ul>
 <p>当然，我们还可以根据具⁠体应用场景，定制专门的评估标准。比如系统性能‌评估、领域适应性评估、多语言评估、时效性评估和用户满意度评估。其中，用户满意度评估在我们‎开发 AI 产品时尤为常见，经常需要引导用户‌针对 AI 大模型的回复进行打分。</p>
-<img src="./assets/image-20260325190604054.png" alt="image-20260325190604054" style="zoom:67%;" />
+<p><img src="/assets/image-20260325190604054.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260325190604054"
+	
+	
+></p>
 <p>RAG 评估流程通常包括 4 个步骤：</p>
 <ol>
 <li>生成评估数据集：创建覆盖不同问题类型的测试集，为每个问题准备标准答案和相关文档。这些测试问题应包括事实性问题、观点性问题、多步骤推理问题等各种类型。</li>
@@ -9515,7 +9722,16 @@
 <p>目前工具调⁠用技术发展的已经比较‌成熟了，几乎所有主流的、新出的 AI 大‎模型和 AI 应用开‌发平台都支持工具调用。</p>
 <h3 id="工具调用的工作原理">工具调用的工作原理
 </h3><p>其实，工具调用的工作原理非常简单，<strong>并不是 AI 服务器自己调用这些工具、也不是把工具的代码发送给 AI 服务器让它执行</strong>，它只能提出要求，表示 “我需要执行 XX 工具完成任务”。而真正执行工具的是我们自己的应用程序，执行后再把结果告诉 AI，让它继续工作。</p>
-<img src="./assets/image-20260329000851554.png" alt="image-20260329000851554" style="zoom: 80%;" />
+<p><img src="/assets/image-20260329000851554.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260329000851554"
+	
+	
+></p>
 <p>虽然看起来是 AI 在调用工具，但实际上整个过程是 <strong>由我们的应用程序控制的</strong>。AI 只负责决定什么时候需要用工具，以及需要传递什么参数，真正执行工具的是我们的程序。</p>
 <p><em>为啥要这么设计‌呢？这样不是要让程序请求 AI 多次‎么？为啥不让 AI‌ 服务器直接调用工具程序？</em></p>
 <p>问题在于<strong>安全性</strong>，AI 模型永远无法直接接触你的 API 或系统资源，所有操作都必须通过你的程序来执行，这样你可以完全控制 AI 能做什么、不能做什么。</p>
@@ -9545,7 +9761,16 @@
 <h2 id="spring-ai-工具开发">Spring AI 工具开发
 </h2><p>可以先通过 <a class="link" href="https://docs.spring.io/spring-ai/reference/api/tools.html"  target="_blank" rel="noopener"
     >Spring AI 官方</a> 提供的图片来简单理解 Spring AI 在实现工具调用时都帮我们做了哪些事情</p>
-<img src="./assets/image-20260329002737388.png" alt="image-20260329002737388" style="zoom:80%;" />
+<p><img src="/assets/image-20260329002737388.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260329002737388"
+	
+	
+></p>
 <ol>
 <li>工具定义与注册：Spring AI 可以通过简洁的注解自动生成工具定义和 JSON Schema，让 Java 方法轻松转变为 AI 可调用的工具。</li>
 <li>工具调用请求：Spring AI 自动处理与 AI 模型的通信并解析工具调用请求，并且支持多个工具链式调用。</li>
