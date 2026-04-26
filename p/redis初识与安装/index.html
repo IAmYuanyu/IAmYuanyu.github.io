@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本文补充了我的另一篇文章《Redis快速入门与使用》中没有提到的基础介绍和Linux安装">
+<title>Redis初识与安装</title>
+
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/redis%E5%88%9D%E8%AF%86%E4%B8%8E%E5%AE%89%E8%A3%85/'>
+
+<link rel="stylesheet" href="/scss/style.min.2921331ce843bea14246fb7c6ab5efb2a6fe41af076150d11c9c869a685745b8.css"><meta property='og:title' content="Redis初识与安装">
+<meta property='og:description' content="本文补充了我的另一篇文章《Redis快速入门与使用》中没有提到的基础介绍和Linux安装">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/redis%E5%88%9D%E8%AF%86%E4%B8%8E%E5%AE%89%E8%A3%85/'>
+<meta property='og:site_name' content='缘鱼的笔记'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-04-26T18:15:59&#43;08:00'/><meta property='article:modified_time' content='2026-04-26T18:15:59&#43;08:00'/>
+<meta name="twitter:title" content="Redis初识与安装">
+<meta name="twitter:description" content="本文补充了我的另一篇文章《Redis快速入门与使用》中没有提到的基础介绍和Linux安装">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_93cee29ac6c6fbb9.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">缘鱼的笔记</a></h1>
+            <h2 class="site-description">缘鱼的博客</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#初识redis">初识Redis</a>
+      <ol>
+        <li><a href="#认识nosql">认识NoSQL</a></li>
+        <li><a href="#结构化与非结构化">结构化与非结构化</a></li>
+        <li><a href="#关联和非关联">关联和非关联</a></li>
+        <li><a href="#查询方式">查询方式</a></li>
+        <li><a href="#事务">事务</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ol>
+    </li>
+    <li><a href="#认识redis">认识Redis</a></li>
+    <li><a href="#安装redis">安装Redis</a>
+      <ol>
+        <li><a href="#安装编译依赖">安装编译依赖</a></li>
+        <li><a href="#下载并解压源码">下载并解压源码</a></li>
+        <li><a href="#编译与安装">编译与安装</a></li>
+        <li><a href="#配置-redis-服务">配置 Redis 服务</a>
+          <ol>
+            <li><a href="#创建配置文件目录和数据目录">创建配置文件目录和数据目录</a></li>
+            <li><a href="#复制默认配置文件">复制默认配置文件</a></li>
+            <li><a href="#修改配置文件">修改配置文件</a></li>
+            <li><a href="#创建系统服务-systemd">创建系统服务 (Systemd)</a></li>
+            <li><a href="#启动并验证">启动并验证</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#redis常见命令">Redis常见命令</a>
+      <ol>
+        <li><a href="#redis数据结构介绍">Redis数据结构介绍</a></li>
+        <li><a href="#redis-常用命令">Redis 常用命令</a></li>
+      </ol>
+    </li>
+    <li><a href="#redis的java客户端">Redis的Java客户端</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+            <a href="/categories/redis/" >
+                Redis
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/redis%E5%88%9D%E8%AF%86%E4%B8%8E%E5%AE%89%E8%A3%85/">Redis初识与安装</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            本文补充了我的另一篇文章《Redis快速入门与使用》中没有提到的基础介绍和Linux安装
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-04-26</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <blockquote>
+<p>本文基于黑马2022的Redis课程基础篇编写，课程地址：<a class="link" href="https://www.bilibili.com/video/BV1cr4y1671t?spm_id_from=333.788.player.switch&amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a"  target="_blank" rel="noopener"
+    >黑马程序员Redis入门到实战教程，深度透析redis底层原理+redis分布式锁+企业解决方案+黑马点评实战项目</a></p>
+<p>课程资料：https://pan.baidu.com/s/1189u6u4icQYHg_9_7ovWmA&amp;pwd=eh11</p>
+<p>教程中将以6.2.6版本的Redis进行演示</p>
+</blockquote>
+<h2 id="初识redis">初识Redis
+</h2><h3 id="认识nosql">认识NoSQL
+</h3><p><strong>NoSql</strong>可以翻译做Not Only Sql（不仅仅是SQL），或者是No Sql（非Sql的）数据库。是相对于传统关系型数据库而言，有很大差异的一种特殊的数据库，因此也称之为<strong>非关系型数据库</strong>。</p>
+<h3 id="结构化与非结构化">结构化与非结构化
+</h3><p>传统关系型数据库是结构化数据，每一张表都有严格的约束信息：字段名.字段数据类型.字段约束等等信息，插入的数据必须遵守这些约束。而NoSql则对数据库格式没有严格约束，往往形式松散，自由，可以是键值型、文档型、图型等。</p>
+<p><img src="/assets/image-20260426152534896.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260426152534896"
+	
+	
+></p>
+<h3 id="关联和非关联">关联和非关联
+</h3><p>传统关系型数据库的表与表之间往往存在关联，例如外键：</p>
+<p><img src="/assets/image-20260426152715374.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260426152715374"
+	
+	
+></p>
+<p>而非关系型数据库不存在关联关系，要维护关系要么靠代码中的业务逻辑，要么靠数据之间的耦合：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="err">id:</span> <span class="err">1,</span>
+</span></span><span class="line"><span class="cl">  <span class="err">name:</span> <span class="nt">&#34;张三&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="err">orders:</span> <span class="err">[</span>
+</span></span><span class="line"><span class="cl">    <span class="err">{</span>
+</span></span><span class="line"><span class="cl">       <span class="err">id:</span> <span class="err">1,</span>
+</span></span><span class="line"><span class="cl">       <span class="err">item:</span> <span class="err">{</span>
+</span></span><span class="line"><span class="cl">	 <span class="err">id:</span> <span class="err">10,</span> <span class="err">title:</span> <span class="nt">&#34;荣耀6&#34;</span><span class="p">,</span> <span class="err">price:</span> <span class="err">4999</span>
+</span></span><span class="line"><span class="cl">       <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="err">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">       <span class="err">id:</span> <span class="err">2,</span>
+</span></span><span class="line"><span class="cl">       <span class="err">item:</span> <span class="err">{</span>
+</span></span><span class="line"><span class="cl">	 <span class="err">id:</span> <span class="err">20,</span> <span class="err">title:</span> <span class="nt">&#34;小米11&#34;</span><span class="p">,</span> <span class="err">price:</span> <span class="err">3999</span>
+</span></span><span class="line"><span class="cl">       <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="err">}</span>
+</span></span><span class="line"><span class="cl">  <span class="err">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此处要维护“张三”的订单与商品“荣耀”和“小米11”的关系，不得不冗余的将这两个商品保存在张三的订单文档中，不够优雅。还是建议在项目中用业务来维护关联关系。</p>
+<h3 id="查询方式">查询方式
+</h3><p>传统关系型数据库会基于Sql语句做查询，语法有统一标准。而不同的非关系数据库查询语法差异极大，五花八门各种各样。</p>
+<p><img src="/assets/image-20260426152911851.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260426152911851"
+	
+	
+></p>
+<h3 id="事务">事务
+</h3><p>传统关系型数据库能满足事务ACID的原则。而非关系型数据库往往不支持事务，或者不能严格保证ACID的特性，只能实现基本的一致性。</p>
+<ul>
+<li>原子性 (Atomicity) —— “要么全做，要么全不做”</li>
+<li>一致性 (Consistency) —— “数据总量不变，规则不破”</li>
+<li>隔离性 (Isolation) —— “各做各的，互不干扰”</li>
+<li>持久性 (Durability) —— “一旦提交，永不丢失”</li>
+</ul>
+<h3 id="总结">总结
+</h3><p>除了上述四点以外，在存储方式.扩展性.查询性能上关系型与非关系型也都有着显著差异，总结如下：</p>
+<p><img src="/assets/image-20260426153510515.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260426153510515"
+	
+	
+></p>
+<ul>
+<li>存储方式
+<ul>
+<li>关系型数据库基于磁盘进行存储，会有大量的磁盘IO，对性能有一定影响</li>
+<li>非关系型数据库，他们的操作更多的是依赖于内存来操作，内存的读写速度会非常快，性能自然会好一些</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>扩展性
+<ul>
+<li>关系型数据库集群模式一般是主从，主从数据一致，起到数据备份的作用，称为垂直扩展。</li>
+<li>非关系型数据库可以将数据拆分，存储在不同机器上，可以保存海量数据，解决内存大小有限的问题。称为水平扩展。</li>
+<li>关系型数据库因为表之间存在关联关系，如果做水平扩展会给数据查询带来很多麻烦</li>
+</ul>
+</li>
+</ul>
+<h2 id="认识redis">认识Redis
+</h2><p>Redis诞生于2009年全称是<strong>Re</strong>mote  <strong>D</strong>ictionary <strong>S</strong>erver，远程词典服务器，是一个基于内存的键值型NoSQL数据库。</p>
+<p><strong>特征</strong>：</p>
+<ul>
+<li>键值（key-value）型，value支持多种不同数据结构，功能丰富</li>
+<li>单线程，每个命令具备原子性</li>
+<li>低延迟，速度快（基于内存.IO多路复用.良好的编码）。</li>
+<li>支持数据持久化</li>
+<li>支持主从集群.分片集群</li>
+<li>支持多语言客户端</li>
+</ul>
+<p>Redis的官方网站地址：https://redis.io/</p>
+<h2 id="安装redis">安装Redis
+</h2><p>大多数企业都是基于Linux服务器来部署项目，而且Redis官方也没有提供Windows版本的安装包。因此接下来会基于Linux系统来安装Redis。</p>
+<p>下面我将基于Ubuntu 24.04来演示Redis 6.2.6版本安装。</p>
+<h3 id="安装编译依赖">安装编译依赖
+</h3><p>在编译 Redis 之前，需要安装 GCC 编译器和 <code>make</code> 工具。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt install -y build-essential tcl-dev
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="下载并解压源码">下载并解压源码
+</h3><p>使用 <code>wget</code> 直接从 Redis 官方源下载 6.2.6 版本的压缩包。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 创建并进入一个临时目录（可选，为了保持系统整洁）</span>
+</span></span><span class="line"><span class="cl">mkdir -p /tmp/redis-build
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /tmp/redis-build
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 下载 Redis 6.2.6</span>
+</span></span><span class="line"><span class="cl">wget http://download.redis.io/releases/redis-6.2.6.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 解压文件</span>
+</span></span><span class="line"><span class="cl">tar xzf redis-6.2.6.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 进入解压后的目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> redis-6.2.6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="编译与安装">编译与安装
+</h3><p>将源码编译成二进制文件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 编译 (使用 -j$(nproc) 可以利用多核 CPU 加速编译)，但配置不高的话仍需要较长时间</span>
+</span></span><span class="line"><span class="cl">make -j<span class="k">$(</span>nproc<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 安装到系统路径</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 默认会将 redis-server, redis-cli 等命令安装到 /usr/local/bin</span>
+</span></span><span class="line"><span class="cl">sudo make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>/usr/local/bin</code>目录已经默认配置到环境变量，因此可以在任意目录下运行这些命令。其中：</p>
+<ul>
+<li>redis-cli：是redis提供的命令行客户端</li>
+<li>redis-server：是redis的服务端启动脚本</li>
+<li>redis-sentinel：是redis的哨兵启动脚本</li>
+</ul>
+<h3 id="配置-redis-服务">配置 Redis 服务
+</h3><p>安装完成后，在任意目录输入<code>redis-server</code>命令即可启动Redis。</p>
+<p><img src="/assets/image-20260426165936046.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260426165936046"
+	
+	
+></p>
+<p>这种启动属于<strong>前台启动</strong>，会阻塞整个会话窗口，窗口关闭或者按下<code>CTRL + C</code>则Redis停止。<strong>不推荐</strong>使用。</p>
+<p>我们需要配置 Redis 以便它能作为一个后台服务运行，而不是每次都要手动启动。</p>
+<h4 id="创建配置文件目录和数据目录">创建配置文件目录和数据目录
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo mkdir -p /etc/redis
+</span></span><span class="line"><span class="cl">sudo mkdir -p /var/lib/redis
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="复制默认配置文件">复制默认配置文件
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 注意，当前目录还是/tmp/redis-build/redis-6.2.6</span>
+</span></span><span class="line"><span class="cl">sudo cp redis.conf /etc/redis/redis.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="修改配置文件">修改配置文件
+</h4><p>使用编辑器打开配置文件，我们需要修改几个关键参数以适配 Ubuntu 系统。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vim /etc/redis/redis.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>找到并修改以下项：</strong></p>
+<ol>
+<li>后台运行模式：
+<ul>
+<li>找到 <code>supervised</code>，将其改为 <code>systemd</code>。</li>
+<li>原文：<code># supervised auto</code> -&gt; 修改为：<code>supervised systemd</code></li>
+</ul>
+</li>
+<li>工作目录：
+<ul>
+<li>找到 <code>dir</code>，将其指向我们刚才创建的数据目录。</li>
+<li>原文：<code>dir ./</code> -&gt; 修改为：<code>dir /var/lib/redis</code></li>
+</ul>
+</li>
+<li>绑定地址（可选）：
+<ul>
+<li>如果你需要远程连接，找到 <code>bind</code>，将其改为 <code>0.0.0.0</code> 或注释掉该行。</li>
+<li>原文：<code>bind 127.0.0.1 -::1</code> -&gt; 修改为：<code>bind 0.0.0.0</code></li>
+</ul>
+</li>
+<li>设置密码（可选）：
+<ul>
+<li>找到 <code>requirepass</code>，取消注释并设置你的密码。</li>
+<li>原文：<code># requirepass foobared</code> -&gt; 修改为：<code>requirepass 你的强密码</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>其他常见配置：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-properties" data-lang="properties"><span class="line"><span class="cl"><span class="c1"># 监听的端口</span>
+</span></span><span class="line"><span class="cl"><span class="na">port</span> <span class="s">6379</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 工作目录，默认是当前目录，也就是运行redis-server时的命令，日志.持久化等文件会保存在这个目录</span>
+</span></span><span class="line"><span class="cl"><span class="na">dir</span> <span class="s">.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 数据库数量，设置为1，代表只使用1个库，默认有16个库，编号0~15</span>
+</span></span><span class="line"><span class="cl"><span class="na">databases</span> <span class="s">1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置redis能够使用的最大内存</span>
+</span></span><span class="line"><span class="cl"><span class="na">maxmemory</span> <span class="s">512mb</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 日志文件，默认为空，不记录日志，可以指定日志文件名</span>
+</span></span><span class="line"><span class="cl"><span class="na">logfile</span> <span class="s">&#34;redis.log&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="创建系统服务-systemd">创建系统服务 (Systemd)
+</h4><p>为了让 Redis 开机自启并使用 <code>systemctl</code> 管理，我们需要创建一个服务文件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vim /etc/systemd/system/redis.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>复制以下内容粘贴进去：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[Unit]</span>
+</span></span><span class="line"><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">Redis In-Memory Data Store</span>
+</span></span><span class="line"><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Service]</span>
+</span></span><span class="line"><span class="cl"><span class="na">User</span><span class="o">=</span><span class="s">root</span>
+</span></span><span class="line"><span class="cl"><span class="na">Group</span><span class="o">=</span><span class="s">root</span>
+</span></span><span class="line"><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/bin/redis-server /etc/redis/redis.conf</span>
+</span></span><span class="line"><span class="cl"><span class="na">ExecStop</span><span class="o">=</span><span class="s">/usr/local/bin/redis-cli -p 6379 shutdown</span>
+</span></span><span class="line"><span class="cl"><span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
+</span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>(注意：为了简单起见，这里直接用 root 运行。生产环境建议创建专门的 <code>redis</code> 用户)</p>
+<h4 id="启动并验证">启动并验证
+</h4><p>一切准备就绪，现在启动服务。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 重新加载 systemd 配置</span>
+</span></span><span class="line"><span class="cl">sudo systemctl daemon-reload
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 启动 Redis</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start redis
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 设置开机自启</span>
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> redis
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 查看状态</span>
+</span></span><span class="line"><span class="cl">sudo systemctl status redis
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果想要关闭 Redis</span>
+</span></span><span class="line"><span class="cl">sudo systemctl stop redis
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/assets/image-20260426172144617.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260426172144617"
+	
+	
+></p>
+<h2 id="redis常见命令">Redis常见命令
+</h2><h3 id="redis数据结构介绍">Redis数据结构介绍
+</h3><p>Redis是一个key-value的数据库，key一般是String类型，不过value的类型多种多样：</p>
+<p><img src="/assets/image-20260426174458981.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260426174458981"
+	
+	
+></p>
+<h3 id="redis-常用命令">Redis 常用命令
+</h3><p>见我的另一篇文章<a class="link" href="https://iamyuanyu.github.io/p/redis%e5%85%a5%e9%97%a8%e4%b8%8e%e4%bd%bf%e7%94%a8/#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4"  target="_blank" rel="noopener"
+    >Redis入门与使用</a>，这里就不再重复写类似内容了</p>
+<h2 id="redis的java客户端">Redis的Java客户端
+</h2><p>在部分内容在我的另一篇文章<a class="link" href="https://iamyuanyu.github.io/p/redis%e5%85%a5%e9%97%a8%e4%b8%8e%e4%bd%bf%e7%94%a8/#%e5%9c%a8java%e4%b8%ad%e6%93%8d%e4%bd%9credis"  target="_blank" rel="noopener"
+    >Redis入门与使用</a>中也有介绍，不再重复。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/redis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%B8%8E%E4%BD%BF%E7%94%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Redis快速入门与使用</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/mysql%E8%BF%9B%E9%98%B6/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MySQL进阶</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/springai%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%8C%E5%BC%B9/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">SpringAI入门·第二弹</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E8%8E%B7%E5%8F%96github%E4%B8%AA%E4%BA%BA%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">获取github个人访问令牌</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%89%E7%AB%A0-performanceschema/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">《高性能MySQL》读书笔记 第三章 PerformanceSchema</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="IAmYuanyu/IAmYuanyu.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2025 - 
+        
+        2026 缘鱼
+    </section>
+    
+    <section class="powerby">
+        
+            本站于2025年3月26日建立 <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.cfae83801d792be9d4fb17aa7868a6aa54a32407c619c2b109a7cdc0418c1f8c.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
