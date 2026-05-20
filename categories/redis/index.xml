@@ -253,7 +253,7 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;redis主从&#34;&gt;Redis主从
 &lt;/h2&gt;&lt;h3 id=&#34;搭建主从架构&#34;&gt;搭建主从架构
-&lt;/h3&gt;&lt;p&gt;单节点Redis的并发能力是有上限的，要进一步提高Redis的并发能力，就需要搭建主从集群，实现读写分离。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;单节点Redis的并发能力是有上限的，要进一步提高Redis的并发能力，就需要搭建主从架构，实现读写分离。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517202827647.png&#34;
 	
 	
@@ -588,7 +588,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;配置主从节点密码&#34;&gt;配置主从节点密码
-&lt;/h3&gt;&lt;p&gt;要给 Redis 主从集群加上密码认证，需要修改两个关键配置项：&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;要给 Redis 主从架构加上密码认证，需要修改两个关键配置项：&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
@@ -800,7 +800,7 @@
 &lt;p&gt;所以需要注意：repl_backlog大小有上限，写满后会覆盖最早的数据。如果slave断开时间过久，导致尚未备份的数据被覆盖，则无法基于log做增量同步，只能再次全量同步。&lt;/p&gt;
 &lt;h3 id=&#34;主从同步优化&#34;&gt;主从同步优化
 &lt;/h3&gt;&lt;p&gt;主从同步可以保证主从数据的一致性，非常重要。&lt;/p&gt;
-&lt;p&gt;可以从以下几个方面来优化Redis主从集群：&lt;/p&gt;
+&lt;p&gt;可以从以下几个方面来优化Redis主从架构：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在master中配置&lt;code&gt;repl-diskless-sync yes&lt;/code&gt;启用无磁盘复制，避免全量同步时在master本地磁盘生成RDB文件的IO开销&lt;/li&gt;
 &lt;li&gt;Redis单节点上的内存占用不要太大，减少RDB生成与传输的时间及开销&lt;/li&gt;
@@ -819,7 +819,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;redis哨兵&#34;&gt;Redis哨兵
-&lt;/h2&gt;&lt;p&gt;Redis提供了**哨兵（Sentinel）**机制来实现主从集群的自动故障恢复。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;Redis提供了**哨兵（Sentinel）**机制来实现主从架构的自动故障恢复。&lt;/p&gt;
 &lt;h3 id=&#34;哨兵的作用与原理&#34;&gt;哨兵的作用与原理
 &lt;/h3&gt;&lt;h4 id=&#34;集群结构和作用&#34;&gt;集群结构和作用
 &lt;/h4&gt;&lt;p&gt;哨兵的结构如图：&lt;/p&gt;
@@ -886,7 +886,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;搭建哨兵集群&#34;&gt;搭建哨兵集群
 &lt;/h3&gt;&lt;h4 id=&#34;集群结构&#34;&gt;集群结构
-&lt;/h4&gt;&lt;p&gt;接下来搭建一个三节点形成的Sentinel集群，来监管之前的Redis主从集群。如图：&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;接下来搭建一个三节点形成的Sentinel集群，来监管之前的Redis主从架构。如图：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519164015661.png&#34;
 	
 	
@@ -1134,7 +1134,7 @@
 &lt;li&gt;&lt;code&gt;+switch-master mymaster 172.24.51.42 7001 172.24.51.42 7002&lt;/code&gt; — 切换主节点&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;redistemplate集成哨兵机制&#34;&gt;RedisTemplate集成哨兵机制
-&lt;/h3&gt;&lt;p&gt;在Sentinel集群监管下的Redis主从集群，其节点会因为自动故障转移而发生变化，Redis的客户端必须感知这种变化，及时更新连接信息。Spring的RedisTemplate底层利用lettuce实现了节点的感知和自动切换。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;在Sentinel集群监管下的Redis主从架构，其节点会因为自动故障转移而发生变化，Redis的客户端必须感知这种变化，及时更新连接信息。Spring的RedisTemplate底层利用lettuce实现了节点的感知和自动切换。&lt;/p&gt;
 &lt;p&gt;下面介绍如何在Spring项目中实现RedisTemplate集成哨兵机制。&lt;/p&gt;
 &lt;h4 id=&#34;引入依赖&#34;&gt;引入依赖
 &lt;/h4&gt;&lt;p&gt;在项目的pom文件中引入依赖：&lt;/p&gt;
