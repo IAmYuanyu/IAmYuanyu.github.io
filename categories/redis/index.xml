@@ -94,6 +94,18 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;其中Nginx编程则会用到OpenResty框架结合Lua这样的语言。&lt;/p&gt;
+&lt;h3 id=&#34;整体架构&#34;&gt;整体架构
+&lt;/h3&gt;&lt;p&gt;下面本教程希望实现的架构，可以看完全文再回来看一遍，会更清晰&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521192135107.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260521192135107&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;jvm进程缓存&#34;&gt;JVM进程缓存
 &lt;/h2&gt;&lt;h3 id=&#34;导入案例&#34;&gt;导入案例
 &lt;/h3&gt;&lt;h4 id=&#34;安装mysql&#34;&gt;安装MySQL
