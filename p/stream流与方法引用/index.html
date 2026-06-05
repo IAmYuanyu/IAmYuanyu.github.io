@@ -426,35 +426,35 @@
 </li>
 </ul>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>获取方式</th>
-          <th>方法名</th>
-          <th>说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>单列集合</td>
-          <td>default Stream<E> stream()</td>
-          <td>Collection 中的默认方法</td>
-      </tr>
-      <tr>
-          <td>双列集合</td>
-          <td>无</td>
-          <td>无法直接使用 stream 流</td>
-      </tr>
-      <tr>
-          <td>数组</td>
-          <td>public static <T> Stream<T> stream(T[] array)</td>
-          <td>Arrays 工具类中的静态方法</td>
-      </tr>
-      <tr>
-          <td>一堆零散数据</td>
-          <td>public static<T> Stream<T> of(T&hellip; values)</td>
-          <td>Stream 接口中的静态方法</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>获取方式</th>
+					<th>方法名</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>单列集合</td>
+					<td>default Stream<E> stream()</td>
+					<td>Collection 中的默认方法</td>
+			</tr>
+			<tr>
+					<td>双列集合</td>
+					<td>无</td>
+					<td>无法直接使用 stream 流</td>
+			</tr>
+			<tr>
+					<td>数组</td>
+					<td>public static <T> Stream<T> stream(T[] array)</td>
+					<td>Arrays 工具类中的静态方法</td>
+			</tr>
+			<tr>
+					<td>一堆零散数据</td>
+					<td>public static<T> Stream<T> of(T&hellip; values)</td>
+					<td>Stream 接口中的静态方法</td>
+			</tr>
+	</tbody>
 </table></div>
 <h4 id="代码演示">代码演示
 </h4><div class="highlight"><div class="chroma">
@@ -548,38 +548,38 @@
 </div><h3 id="stream流的中间操作方法">Stream流的中间操作方法
 </h3><h4 id="常见中间操作简介">常见中间操作简介
 </h4><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>方法名</th>
-          <th>说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Stream<T> <strong>filter</strong>(Predicate predicate)</td>
-          <td>用于对流中的数据进行过滤</td>
-      </tr>
-      <tr>
-          <td>Stream<T> <strong>limit</strong>(long maxSize)</td>
-          <td>返回此流中的元素组成的流，截取前指定参数个数的数据</td>
-      </tr>
-      <tr>
-          <td>Stream<T> <strong>skip</strong>(long n)</td>
-          <td>跳过指定参数个数的数据，返回由该流的剩余元素组成的流</td>
-      </tr>
-      <tr>
-          <td>static <T> Stream<T> <strong>concat</strong>(Stream a, Stream b)</td>
-          <td>合并a和b两个流为一个流，尽量保证a和b数据类型一致</td>
-      </tr>
-      <tr>
-          <td>Stream<T> <strong>distinct</strong>()</td>
-          <td>去重，返回由该流的不同元素（根据Object.equals(Object) ）组成的流</td>
-      </tr>
-      <tr>
-          <td>Stream<R> <strong>map</strong>(Function&lt;T, R&gt; mapper)</td>
-          <td>转换流中的数据类型</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>方法名</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Stream<T> <strong>filter</strong>(Predicate predicate)</td>
+					<td>用于对流中的数据进行过滤</td>
+			</tr>
+			<tr>
+					<td>Stream<T> <strong>limit</strong>(long maxSize)</td>
+					<td>返回此流中的元素组成的流，截取前指定参数个数的数据</td>
+			</tr>
+			<tr>
+					<td>Stream<T> <strong>skip</strong>(long n)</td>
+					<td>跳过指定参数个数的数据，返回由该流的剩余元素组成的流</td>
+			</tr>
+			<tr>
+					<td>static <T> Stream<T> <strong>concat</strong>(Stream a, Stream b)</td>
+					<td>合并a和b两个流为一个流，尽量保证a和b数据类型一致</td>
+			</tr>
+			<tr>
+					<td>Stream<T> <strong>distinct</strong>()</td>
+					<td>去重，返回由该流的不同元素（根据Object.equals(Object) ）组成的流</td>
+			</tr>
+			<tr>
+					<td>Stream<R> <strong>map</strong>(Function&lt;T, R&gt; mapper)</td>
+					<td>转换流中的数据类型</td>
+			</tr>
+	</tbody>
 </table></div>
 <blockquote>
 <ul>
@@ -795,54 +795,54 @@
 </div><h3 id="stream流的终结操作方法">Stream流的终结操作方法
 </h3><h4 id="常见终结方法简介">常见终结方法简介
 </h4><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>方法名</th>
-          <th>说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>void <strong>forEach</strong>(Consumer action)</td>
-          <td>对此流的每个元素执行操作</td>
-      </tr>
-      <tr>
-          <td>long <strong>count</strong>()</td>
-          <td>返回此流中的元素数</td>
-      </tr>
-      <tr>
-          <td>A[] <strong>toArray</strong>()</td>
-          <td>收集流中数据，放入数组中</td>
-      </tr>
-      <tr>
-          <td>R <strong>collect</strong>(Collector collector)</td>
-          <td>收集流中数据，放入集合中</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>方法名</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>void <strong>forEach</strong>(Consumer action)</td>
+					<td>对此流的每个元素执行操作</td>
+			</tr>
+			<tr>
+					<td>long <strong>count</strong>()</td>
+					<td>返回此流中的元素数</td>
+			</tr>
+			<tr>
+					<td>A[] <strong>toArray</strong>()</td>
+					<td>收集流中数据，放入数组中</td>
+			</tr>
+			<tr>
+					<td>R <strong>collect</strong>(Collector collector)</td>
+					<td>收集流中数据，放入集合中</td>
+			</tr>
+	</tbody>
 </table></div>
 <ul>
 <li>工具类Collectors提供了具体的收集到集合的方式
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>方法名</th>
-          <th>说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>public static <T> Collector toList()</td>
-          <td>把元素收集到List集合中</td>
-      </tr>
-      <tr>
-          <td>public static <T> Collector toSet()</td>
-          <td>把元素收集到Set集合中</td>
-      </tr>
-      <tr>
-          <td>public static  Collector toMap(Function keyMapper,Function valueMapper)</td>
-          <td>把元素收集到Map集合中</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>方法名</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>public static <T> Collector toList()</td>
+					<td>把元素收集到List集合中</td>
+			</tr>
+			<tr>
+					<td>public static <T> Collector toSet()</td>
+					<td>把元素收集到Set集合中</td>
+			</tr>
+			<tr>
+					<td>public static  Collector toMap(Function keyMapper,Function valueMapper)</td>
+					<td>把元素收集到Map集合中</td>
+			</tr>
+	</tbody>
 </table></div>
 </li>
 </ul>

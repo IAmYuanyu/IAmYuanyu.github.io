@@ -438,218 +438,218 @@
 <p>大模型应用开发大多数情况下使用的都是基于<strong>对话模型</strong>（Chat Model)，也就是输出结果为自然语言或代码的模型。</p>
 <p>目前SpringAI支持的大约19种对话模型，以下是一些功能对比：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left"><strong>Provider</strong></th>
-          <th style="text-align: left"><strong>Multimodality</strong></th>
-          <th style="text-align: left"><strong>Tools/Functions</strong></th>
-          <th style="text-align: left"><strong>Streaming</strong></th>
-          <th style="text-align: left"><strong>Retry</strong></th>
-          <th style="text-align: left"><strong>Built-in JSON</strong></th>
-          <th style="text-align: left"><strong>Local</strong></th>
-          <th style="text-align: left"><strong>OpenAI API Compatible</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/anthropic-chat.html"  target="_blank" rel="noopener"
+	<thead>
+			<tr>
+					<th style="text-align: left"><strong>Provider</strong></th>
+					<th style="text-align: left"><strong>Multimodality</strong></th>
+					<th style="text-align: left"><strong>Tools/Functions</strong></th>
+					<th style="text-align: left"><strong>Streaming</strong></th>
+					<th style="text-align: left"><strong>Retry</strong></th>
+					<th style="text-align: left"><strong>Built-in JSON</strong></th>
+					<th style="text-align: left"><strong>Local</strong></th>
+					<th style="text-align: left"><strong>OpenAI API Compatible</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/anthropic-chat.html"  target="_blank" rel="noopener"
     >Anthropic Claude</a></td>
-          <td style="text-align: left">text, pdf, image</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/azure-openai-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text, pdf, image</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/azure-openai-chat.html"  target="_blank" rel="noopener"
     >Azure OpenAI</a></td>
-          <td style="text-align: left">text, image</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✔</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/deepseek-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text, image</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✔</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/deepseek-chat.html"  target="_blank" rel="noopener"
     >DeepSeek   (OpenAI-proxy)</a></td>
-          <td style="text-align: left">text</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/vertexai-gemini-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/vertexai-gemini-chat.html"  target="_blank" rel="noopener"
     >Google VertexAI   Gemini</a></td>
-          <td style="text-align: left">text, pdf, image, audio, video</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✔</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/groq-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text, pdf, image, audio, video</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✔</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/groq-chat.html"  target="_blank" rel="noopener"
     >Groq (OpenAI-proxy)</a></td>
-          <td style="text-align: left">text, image</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✔</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/huggingface.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text, image</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✔</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/huggingface.html"  target="_blank" rel="noopener"
     >HuggingFace</a></td>
-          <td style="text-align: left">text</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/mistralai-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/mistralai-chat.html"  target="_blank" rel="noopener"
     >Mistral AI</a></td>
-          <td style="text-align: left">text, image</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✔</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/minimax-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text, image</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✔</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/minimax-chat.html"  target="_blank" rel="noopener"
     >MiniMax</a></td>
-          <td style="text-align: left">text</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/moonshot-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/moonshot-chat.html"  target="_blank" rel="noopener"
     >Moonshot AI</a></td>
-          <td style="text-align: left">text</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/nvidia-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/nvidia-chat.html"  target="_blank" rel="noopener"
     >NVIDIA   (OpenAI-proxy)</a></td>
-          <td style="text-align: left">text, image</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✔</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/oci-genai/cohere-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text, image</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✔</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/oci-genai/cohere-chat.html"  target="_blank" rel="noopener"
     >OCI GenAI/Cohere</a></td>
-          <td style="text-align: left">text</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/ollama-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/ollama-chat.html"  target="_blank" rel="noopener"
     >Ollama</a></td>
-          <td style="text-align: left">text, image</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/openai-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text, image</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/openai-chat.html"  target="_blank" rel="noopener"
     >OpenAI</a></td>
-          <td style="text-align: left">In: text, image, audio Out: text, audio</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✔</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/perplexity-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">In: text, image, audio Out: text, audio</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✔</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/perplexity-chat.html"  target="_blank" rel="noopener"
     >Perplexity   (OpenAI-proxy)</a></td>
-          <td style="text-align: left">text</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✔</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/qianfan-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✔</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/qianfan-chat.html"  target="_blank" rel="noopener"
     >QianFan</a></td>
-          <td style="text-align: left">text</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/zhipuai-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/zhipuai-chat.html"  target="_blank" rel="noopener"
     >ZhiPu AI</a></td>
-          <td style="text-align: left">text</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/watsonx-ai-chat.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/watsonx-ai-chat.html"  target="_blank" rel="noopener"
     >Watsonx.AI</a></td>
-          <td style="text-align: left">text</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/bedrock-converse.html"  target="_blank" rel="noopener"
+					<td style="text-align: left">text</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a class="link" href="https://docs.spring.io/spring-ai/reference/api/chat/bedrock-converse.html"  target="_blank" rel="noopener"
     >Amazon Bedrock   Converse</a></td>
-          <td style="text-align: left">text, image, video, docs (pdf, html,   md, docx …)</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">✔</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-  </tbody>
+					<td style="text-align: left">text, image, video, docs (pdf, html,   md, docx …)</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">✔</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>其中功能最完整的就是OpenAI和Ollama平台的模型了。</p>
 <p>接下来，就以这两个平台为例讲解SpringAI的应用。</p>

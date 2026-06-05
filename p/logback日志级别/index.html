@@ -264,40 +264,40 @@
     <h2 id="logback日志级别">Logback日志级别
 </h2><p>日志级别指的是日志信息的类型，日志都会分级别，常见的日志级别如下（<strong>级别由低到高</strong>）：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>日志级别</th>
-          <th style="text-align: left">说明</th>
-          <th>记录方式</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>trace</td>
-          <td style="text-align: left">追踪，记录程序运行轨迹 【使用很少】</td>
-          <td>log.trace(&quot;&hellip;&quot;)</td>
-      </tr>
-      <tr>
-          <td>debug</td>
-          <td style="text-align: left">调试，记录程序调试过程中的信息，实际应用中一般将其视为最低级别 【使用较多】</td>
-          <td>log.debug(&quot;&hellip;&quot;)</td>
-      </tr>
-      <tr>
-          <td>info</td>
-          <td style="text-align: left">记录一般信息，描述程序运行的关键事件，如：网络连接、io操作 【使用较多】</td>
-          <td>log.info(&quot;&hellip;&quot;)</td>
-      </tr>
-      <tr>
-          <td>warn</td>
-          <td style="text-align: left">警告信息，记录潜在有害的情况 【使用较多】</td>
-          <td>log.warn(&quot;&hellip;&quot;)</td>
-      </tr>
-      <tr>
-          <td>error</td>
-          <td style="text-align: left">错误信息 【使用较多】</td>
-          <td>log.error(&quot;&hellip;&quot;)</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>日志级别</th>
+					<th style="text-align: left">说明</th>
+					<th>记录方式</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>trace</td>
+					<td style="text-align: left">追踪，记录程序运行轨迹 【使用很少】</td>
+					<td>log.trace(&quot;&hellip;&quot;)</td>
+			</tr>
+			<tr>
+					<td>debug</td>
+					<td style="text-align: left">调试，记录程序调试过程中的信息，实际应用中一般将其视为最低级别 【使用较多】</td>
+					<td>log.debug(&quot;&hellip;&quot;)</td>
+			</tr>
+			<tr>
+					<td>info</td>
+					<td style="text-align: left">记录一般信息，描述程序运行的关键事件，如：网络连接、io操作 【使用较多】</td>
+					<td>log.info(&quot;&hellip;&quot;)</td>
+			</tr>
+			<tr>
+					<td>warn</td>
+					<td style="text-align: left">警告信息，记录潜在有害的情况 【使用较多】</td>
+					<td>log.warn(&quot;&hellip;&quot;)</td>
+			</tr>
+			<tr>
+					<td>error</td>
+					<td style="text-align: left">错误信息 【使用较多】</td>
+					<td>log.error(&quot;&hellip;&quot;)</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>可以在配置文件<code>logback.xml</code>中，控制输出哪些类型的日志</p>
 <div class="highlight"><div class="chroma">

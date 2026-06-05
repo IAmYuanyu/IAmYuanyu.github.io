@@ -2954,122 +2954,122 @@
 </ul>
 <p>其中的<code>predicates</code>，也就是路由断言。SpringCloudGateway中支持的断言类型有很多：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left"><strong>名称</strong></th>
-          <th style="text-align: left"><strong>说明</strong></th>
-          <th style="text-align: left"><strong>示例</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">After</td>
-          <td style="text-align: left">是某个时间点后的请求</td>
-          <td style="text-align: left">- After=2037-01-20T17:42:47.789-07:00[America/Denver]</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Before</td>
-          <td style="text-align: left">是某个时间点之前的请求</td>
-          <td style="text-align: left">- Before=2031-04-13T15:14:47.433+08:00[Asia/Shanghai]</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Between</td>
-          <td style="text-align: left">是某两个时间点之前的请求</td>
-          <td style="text-align: left">- Between=2037-01-20T17:42:47.789-07:00[America/Denver], 2037-01-21T17:42:47.789-07:00[America/Denver]</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Cookie</td>
-          <td style="text-align: left">请求必须包含某些cookie</td>
-          <td style="text-align: left">- Cookie=chocolate, ch.p</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Header</td>
-          <td style="text-align: left">请求必须包含某些header</td>
-          <td style="text-align: left">- Header=X-Request-Id, \d+</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Host</td>
-          <td style="text-align: left">请求必须是访问某个host（域名）</td>
-          <td style="text-align: left">- Host=**.somehost.org,**.anotherhost.org</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Method</td>
-          <td style="text-align: left">请求方式必须是指定方式</td>
-          <td style="text-align: left">- Method=GET,POST</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Path</td>
-          <td style="text-align: left">请求路径必须符合指定规则</td>
-          <td style="text-align: left">- Path=/red/{segment},/blue/**</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Query</td>
-          <td style="text-align: left">请求参数必须包含指定参数</td>
-          <td style="text-align: left">- Query=name, Jack或者- Query=name</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">RemoteAddr</td>
-          <td style="text-align: left">请求者的ip必须是指定范围</td>
-          <td style="text-align: left">- RemoteAddr=192.168.1.1/24</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">weight</td>
-          <td style="text-align: left">权重处理</td>
-          <td style="text-align: left">- Weight=group1,2</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">XForwarded Remote Addr</td>
-          <td style="text-align: left">基于请求的来源 IP 做判断</td>
-          <td style="text-align: left">- XForwardedRemoteAddr=192.168.1.1/24</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"><strong>名称</strong></th>
+					<th style="text-align: left"><strong>说明</strong></th>
+					<th style="text-align: left"><strong>示例</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">After</td>
+					<td style="text-align: left">是某个时间点后的请求</td>
+					<td style="text-align: left">- After=2037-01-20T17:42:47.789-07:00[America/Denver]</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Before</td>
+					<td style="text-align: left">是某个时间点之前的请求</td>
+					<td style="text-align: left">- Before=2031-04-13T15:14:47.433+08:00[Asia/Shanghai]</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Between</td>
+					<td style="text-align: left">是某两个时间点之前的请求</td>
+					<td style="text-align: left">- Between=2037-01-20T17:42:47.789-07:00[America/Denver], 2037-01-21T17:42:47.789-07:00[America/Denver]</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Cookie</td>
+					<td style="text-align: left">请求必须包含某些cookie</td>
+					<td style="text-align: left">- Cookie=chocolate, ch.p</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Header</td>
+					<td style="text-align: left">请求必须包含某些header</td>
+					<td style="text-align: left">- Header=X-Request-Id, \d+</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Host</td>
+					<td style="text-align: left">请求必须是访问某个host（域名）</td>
+					<td style="text-align: left">- Host=**.somehost.org,**.anotherhost.org</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Method</td>
+					<td style="text-align: left">请求方式必须是指定方式</td>
+					<td style="text-align: left">- Method=GET,POST</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Path</td>
+					<td style="text-align: left">请求路径必须符合指定规则</td>
+					<td style="text-align: left">- Path=/red/{segment},/blue/**</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Query</td>
+					<td style="text-align: left">请求参数必须包含指定参数</td>
+					<td style="text-align: left">- Query=name, Jack或者- Query=name</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">RemoteAddr</td>
+					<td style="text-align: left">请求者的ip必须是指定范围</td>
+					<td style="text-align: left">- RemoteAddr=192.168.1.1/24</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">weight</td>
+					<td style="text-align: left">权重处理</td>
+					<td style="text-align: left">- Weight=group1,2</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">XForwarded Remote Addr</td>
+					<td style="text-align: left">基于请求的来源 IP 做判断</td>
+					<td style="text-align: left">- XForwardedRemoteAddr=192.168.1.1/24</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>还有<code>filters</code>，也就是过滤器，网关中提供了33种路由过滤器，此处仅展示部分</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>名称</th>
-          <th>说明</th>
-          <th>示例</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>AddRequestHeader</td>
-          <td>给当前请求添加一个请求头</td>
-          <td>AddrequestHeader=headerName,headerValue</td>
-      </tr>
-      <tr>
-          <td>RemoveRequestHeader</td>
-          <td>移除请求中的一个请求头</td>
-          <td>RemoveRequestHeader=headerName</td>
-      </tr>
-      <tr>
-          <td>AddResponseHeader</td>
-          <td>给响应结果中添加一个响应头</td>
-          <td>AddResponseHeader=headerName,headerValue</td>
-      </tr>
-      <tr>
-          <td>RemoveResponseHeader</td>
-          <td>从响应结果中移除一个响应头</td>
-          <td>RemoveResponseHeader=headerName</td>
-      </tr>
-      <tr>
-          <td>RewritePath</td>
-          <td>请求路径重写</td>
-          <td>RewritePath=/red/?(?<segment>.*), /${segment}</td>
-      </tr>
-      <tr>
-          <td>StripPrefix</td>
-          <td>去除请求路径中的 N 段前缀</td>
-          <td>StripPrefix=1，则路径 /a/b 转发时只保留 /b</td>
-      </tr>
-      <tr>
-          <td>……</td>
-          <td>……</td>
-          <td>……</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>名称</th>
+					<th>说明</th>
+					<th>示例</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>AddRequestHeader</td>
+					<td>给当前请求添加一个请求头</td>
+					<td>AddrequestHeader=headerName,headerValue</td>
+			</tr>
+			<tr>
+					<td>RemoveRequestHeader</td>
+					<td>移除请求中的一个请求头</td>
+					<td>RemoveRequestHeader=headerName</td>
+			</tr>
+			<tr>
+					<td>AddResponseHeader</td>
+					<td>给响应结果中添加一个响应头</td>
+					<td>AddResponseHeader=headerName,headerValue</td>
+			</tr>
+			<tr>
+					<td>RemoveResponseHeader</td>
+					<td>从响应结果中移除一个响应头</td>
+					<td>RemoveResponseHeader=headerName</td>
+			</tr>
+			<tr>
+					<td>RewritePath</td>
+					<td>请求路径重写</td>
+					<td>RewritePath=/red/?(?<segment>.*), /${segment}</td>
+			</tr>
+			<tr>
+					<td>StripPrefix</td>
+					<td>去除请求路径中的 N 段前缀</td>
+					<td>StripPrefix=1，则路径 /a/b 转发时只保留 /b</td>
+			</tr>
+			<tr>
+					<td>……</td>
+					<td>……</td>
+					<td>……</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>过滤器可以配置在routes下级作为某个路由的过滤器，也可以配置在routes同级的位置作为全局默认过滤器</p>
 <p><img src="/assets/image-20251216205912664.png"
@@ -4630,30 +4630,30 @@
 </div>
 </div><p>请求参数说明：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left"><strong>参数名</strong></th>
-          <th style="text-align: left"><strong>参数类型</strong></th>
-          <th style="text-align: left"><strong>描述</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">dataId</td>
-          <td style="text-align: left">string</td>
-          <td style="text-align: left">配置 ID，保证全局唯一性，只允许英文字符和 4 种特殊字符（&quot;.&quot;、&quot;:&quot;、&quot;-&quot;、&quot;_&quot;）。不超过 256 字节。</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">group</td>
-          <td style="text-align: left">string</td>
-          <td style="text-align: left">配置分组，一般是默认的DEFAULT_GROUP。</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">listener</td>
-          <td style="text-align: left">Listener</td>
-          <td style="text-align: left">监听器，配置变更进入监听器的回调函数。</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"><strong>参数名</strong></th>
+					<th style="text-align: left"><strong>参数类型</strong></th>
+					<th style="text-align: left"><strong>描述</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">dataId</td>
+					<td style="text-align: left">string</td>
+					<td style="text-align: left">配置 ID，保证全局唯一性，只允许英文字符和 4 种特殊字符（&quot;.&quot;、&quot;:&quot;、&quot;-&quot;、&quot;_&quot;）。不超过 256 字节。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">group</td>
+					<td style="text-align: left">string</td>
+					<td style="text-align: left">配置分组，一般是默认的DEFAULT_GROUP。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">listener</td>
+					<td style="text-align: left">Listener</td>
+					<td style="text-align: left">监听器，配置变更进入监听器的回调函数。</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>官方示例代码：</p>
 <div class="highlight"><div class="chroma">

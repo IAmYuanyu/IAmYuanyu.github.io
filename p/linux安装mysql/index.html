@@ -570,60 +570,60 @@
 </div><blockquote>
 <p>Linux防火墙场景操作：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>操作</th>
-          <th>指令</th>
-          <th>备注</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>查看防火墙状态</td>
-          <td>systemctl status firewalld 或 firewall-cmd &ndash;state</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>暂时关闭防火墙</td>
-          <td>systemctl stop firewalld</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>永久关闭防火墙(禁用开机自启)</td>
-          <td>systemctl disable firewalld</td>
-          <td>下次启动,才生效</td>
-      </tr>
-      <tr>
-          <td>暂时开启防火墙</td>
-          <td>systemctl start firewalld</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>永久开启防火墙(启用开机自启)</td>
-          <td>systemctl enable firewalld</td>
-          <td>下次启动,才生效</td>
-      </tr>
-      <tr>
-          <td>开放指定端口</td>
-          <td>firewall-cmd &ndash;zone=public &ndash;add-port=8080/tcp &ndash;permanent</td>
-          <td>需要重新加载生效</td>
-      </tr>
-      <tr>
-          <td>关闭指定端口</td>
-          <td>firewall-cmd &ndash;zone=public &ndash;remove-port=8080/tcp &ndash;permanent</td>
-          <td>需要重新加载生效</td>
-      </tr>
-      <tr>
-          <td>立即生效(重新加载)</td>
-          <td>firewall-cmd &ndash;reload</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>查看开放端口</td>
-          <td>firewall-cmd &ndash;zone=public &ndash;list-ports</td>
-          <td></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>操作</th>
+					<th>指令</th>
+					<th>备注</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>查看防火墙状态</td>
+					<td>systemctl status firewalld 或 firewall-cmd &ndash;state</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>暂时关闭防火墙</td>
+					<td>systemctl stop firewalld</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>永久关闭防火墙(禁用开机自启)</td>
+					<td>systemctl disable firewalld</td>
+					<td>下次启动,才生效</td>
+			</tr>
+			<tr>
+					<td>暂时开启防火墙</td>
+					<td>systemctl start firewalld</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>永久开启防火墙(启用开机自启)</td>
+					<td>systemctl enable firewalld</td>
+					<td>下次启动,才生效</td>
+			</tr>
+			<tr>
+					<td>开放指定端口</td>
+					<td>firewall-cmd &ndash;zone=public &ndash;add-port=8080/tcp &ndash;permanent</td>
+					<td>需要重新加载生效</td>
+			</tr>
+			<tr>
+					<td>关闭指定端口</td>
+					<td>firewall-cmd &ndash;zone=public &ndash;remove-port=8080/tcp &ndash;permanent</td>
+					<td>需要重新加载生效</td>
+			</tr>
+			<tr>
+					<td>立即生效(重新加载)</td>
+					<td>firewall-cmd &ndash;reload</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>查看开放端口</td>
+					<td>firewall-cmd &ndash;zone=public &ndash;list-ports</td>
+					<td></td>
+			</tr>
+	</tbody>
 </table></div>
 </blockquote>
 <p>14.开放后再执行一次步骤11的操作即可</p>

@@ -5691,40 +5691,40 @@
 <p>可以理解为RAG就是为AI配一个外置的知识库，AI会优先从提供的知识库中检索相关信息，然后将检索到的信息作为额外的上下文进行回复。</p>
 <p>可以简单了解下 RAG 和传统 AI 模型的区别：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>特性</th>
-          <th>传统大语言模型</th>
-          <th>RAG 增强模型</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>知识时效性</td>
-          <td>受训练数据截止日期限制</td>
-          <td>可接入最新知识库</td>
-      </tr>
-      <tr>
-          <td>领域专业性</td>
-          <td>泛化知识⁠，专业深度有限</td>
-          <td>可接入专业领域知识</td>
-      </tr>
-      <tr>
-          <td>响应准‌确性</td>
-          <td>可能产生 “幻觉”</td>
-          <td>基于检索的事实依据</td>
-      </tr>
-      <tr>
-          <td>可控性</td>
-          <td>依赖原始训练</td>
-          <td>可通过知‎识库定制输出</td>
-      </tr>
-      <tr>
-          <td>资源消耗</td>
-          <td>较高（需要大模型参‌数）</td>
-          <td>模型可更小，结合外部知识</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>特性</th>
+					<th>传统大语言模型</th>
+					<th>RAG 增强模型</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>知识时效性</td>
+					<td>受训练数据截止日期限制</td>
+					<td>可接入最新知识库</td>
+			</tr>
+			<tr>
+					<td>领域专业性</td>
+					<td>泛化知识⁠，专业深度有限</td>
+					<td>可接入专业领域知识</td>
+			</tr>
+			<tr>
+					<td>响应准‌确性</td>
+					<td>可能产生 “幻觉”</td>
+					<td>基于检索的事实依据</td>
+			</tr>
+			<tr>
+					<td>可控性</td>
+					<td>依赖原始训练</td>
+					<td>可通过知‎识库定制输出</td>
+			</tr>
+			<tr>
+					<td>资源消耗</td>
+					<td>较高（需要大模型参‌数）</td>
+					<td>模型可更小，结合外部知识</td>
+			</tr>
+	</tbody>
 </table></div>
 <h3 id="rag-工作流程">RAG 工作流程
 </h3><p>RAG 技⁠术实现主要包含以下‌ 4 个核心步骤：</p>
@@ -8846,22 +8846,22 @@
 <p><strong>1）设置合理的相似度阈值</strong></p>
 <p>相似度阈值控制文档被召回的标准，需根据具体问题调整：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>问题</th>
-          <th>解决方案</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>知识库的召回结果不完整，没有包含全部相关的文本切片</td>
-          <td>建议降低 相似度阈值，提高 召回片段数，以召回一些原本应被检索到的信息</td>
-      </tr>
-      <tr>
-          <td>知识库的召⁠回结果中包含大量无‌关的文本切片</td>
-          <td>建议提高相似度阈值‎，以排除与用户提示‌词相似度低的信息</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>问题</th>
+					<th>解决方案</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>知识库的召回结果不完整，没有包含全部相关的文本切片</td>
+					<td>建议降低 相似度阈值，提高 召回片段数，以召回一些原本应被检索到的信息</td>
+			</tr>
+			<tr>
+					<td>知识库的召⁠回结果中包含大量无‌关的文本切片</td>
+					<td>建议提高相似度阈值‎，以排除与用户提示‌词相似度低的信息</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>在编程实现中，可以通过文档检索器配置：</p>
 <div class="highlight"><div class="chroma">
@@ -8913,22 +8913,22 @@
 <p><strong>3）配置文档过滤规则</strong></p>
 <p>通过文档过⁠滤规则可以控制查询‌范围，提高检索精度和效率。主要应用场‎景：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>场景</th>
-          <th>解决方案</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>知识库中包含多个类别的文档，希望限定检索范围</td>
-          <td>建议为文档 添加标签，知识库检索时会先根据标签筛选相关文档</td>
-      </tr>
-      <tr>
-          <td>知识库中有⁠多篇结构相似的文档，‌希望精确定位</td>
-          <td>提取元数据，知识库会先‎使用元数据进行结构化‌搜索，再进行向量检索</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>场景</th>
+					<th>解决方案</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>知识库中包含多个类别的文档，希望限定检索范围</td>
+					<td>建议为文档 添加标签，知识库检索时会先根据标签筛选相关文档</td>
+			</tr>
+			<tr>
+					<td>知识库中有⁠多篇结构相似的文档，‌希望精确定位</td>
+					<td>提取元数据，知识库会先‎使用元数据进行结构化‌搜索，再进行向量检索</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>在编程实现中，运用 Spring 内置的文档检索器提供的 <a class="link" href="https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html#_vectorstoredocumentretriever"  target="_blank" rel="noopener"
     >filterExpression</a> 配置过滤规则。</p>
@@ -9467,30 +9467,30 @@
 <h4 id="其他建议">其他建议
 </h4><p>除了上述优化策略外，还可以考虑以下方面的改进：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>问题类型</th>
-          <th>改进策略</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>大模型并未理解知识和用户提示词之间的关系，答案生硬拼凑</td>
-          <td>建议 选择合适的大模型，提升语义理解能力</td>
-      </tr>
-      <tr>
-          <td>返回的结果没有按照要求，或⁠者不够全面</td>
-          <td>建议 优化提示词模板，引导模型生成更‌符合要求的回答</td>
-      </tr>
-      <tr>
-          <td>返回结果不够准确，混入了模型自身的通用知识</td>
-          <td>建议 开启拒识 功能，限制模型只基于知识‎库回答</td>
-      </tr>
-      <tr>
-          <td>相似提示词，希望控制回答的一致性或多样性</td>
-          <td>‌ 建议 调整大模型参数，如温度值等</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>问题类型</th>
+					<th>改进策略</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>大模型并未理解知识和用户提示词之间的关系，答案生硬拼凑</td>
+					<td>建议 选择合适的大模型，提升语义理解能力</td>
+			</tr>
+			<tr>
+					<td>返回的结果没有按照要求，或⁠者不够全面</td>
+					<td>建议 优化提示词模板，引导模型生成更‌符合要求的回答</td>
+			</tr>
+			<tr>
+					<td>返回结果不够准确，混入了模型自身的通用知识</td>
+					<td>建议 开启拒识 功能，限制模型只基于知识‎库回答</td>
+			</tr>
+			<tr>
+					<td>相似提示词，希望控制回答的一致性或多样性</td>
+					<td>‌ 建议 调整大模型参数，如温度值等</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>如果有必要的话，还可以考虑更高级的优化方向，比如：</p>
 <ol>
@@ -9506,40 +9506,40 @@
 <p>结构化检索支⁠持精确过滤和复杂条件组‌合，但依赖良好的元数据。而知识图谱检索能发现‎实体间隐含关系，适合回‌答复杂问题，但构建成本高。</p>
 <p>主要检索方法比较表：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>检索方法</th>
-          <th>原理</th>
-          <th>优势</th>
-          <th>劣势</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>向量检索</td>
-          <td>基于嵌入向量相似度搜索</td>
-          <td>理解语义关联，适合概念性查询</td>
-          <td>对关键词不敏感，召回可能不准确</td>
-      </tr>
-      <tr>
-          <td>全文检索</td>
-          <td>基于倒排索引，匹配⁠关键词</td>
-          <td>精确匹配关键词，高召回率</td>
-          <td>不理解语义，同义词难‌以匹配</td>
-      </tr>
-      <tr>
-          <td>结构化检索</td>
-          <td>基于元数据或结构化字段查询</td>
-          <td>精确过滤，支持复杂条件组合</td>
-          <td>依赖良好的元数据，灵活性有限</td>
-      </tr>
-      <tr>
-          <td>知识图‎谱检索</td>
-          <td>利用实体间关系进行图遍历</td>
-          <td>发现隐含关系，回答复‌杂问题</td>
-          <td>构建成本高，需要专业知识</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>检索方法</th>
+					<th>原理</th>
+					<th>优势</th>
+					<th>劣势</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>向量检索</td>
+					<td>基于嵌入向量相似度搜索</td>
+					<td>理解语义关联，适合概念性查询</td>
+					<td>对关键词不敏感，召回可能不准确</td>
+			</tr>
+			<tr>
+					<td>全文检索</td>
+					<td>基于倒排索引，匹配⁠关键词</td>
+					<td>精确匹配关键词，高召回率</td>
+					<td>不理解语义，同义词难‌以匹配</td>
+			</tr>
+			<tr>
+					<td>结构化检索</td>
+					<td>基于元数据或结构化字段查询</td>
+					<td>精确过滤，支持复杂条件组合</td>
+					<td>依赖良好的元数据，灵活性有限</td>
+			</tr>
+			<tr>
+					<td>知识图‎谱检索</td>
+					<td>利用实体间关系进行图遍历</td>
+					<td>发现隐含关系，回答复‌杂问题</td>
+					<td>构建成本高，需要专业知识</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>其中，全文检索是后端开发同学要掌握的技能，对应的主流技术实现是 Elasticsearch。</p>
 <p><em>那么到底该选择哪种检索方法呢？</em></p>
@@ -9785,55 +9785,55 @@
 <p>一般情况下是使用<strong>基于 Methods 方法</strong>来定义工具，另一种简单了解即可。原因是 Methods 方式更容易编写、更容易理解、支持的参数和返回类型更多。</p>
 <p>二者对比：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>特性</th>
-          <th>Methods 方式</th>
-          <th>Functions 方式</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>定义方式</td>
-          <td>使用 @Tool 和 @ToolParam 注解标记类方法</td>
-          <td>使用函数式接口并通过 Spring Bean 定义</td>
-      </tr>
-      <tr>
-          <td>语法复杂度</td>
-          <td>简单，直观</td>
-          <td>较复杂，需要定义请求 /⁠响应对象</td>
-      </tr>
-      <tr>
-          <td>支持的参数类型</td>
-          <td>大多数 Java 类型，包括基本类型、POJO、集合等</td>
-          <td>不支持基本类型、O‌ptional、集合类型</td>
-      </tr>
-      <tr>
-          <td>支持的返回类型</td>
-          <td>几乎所有可序列化类型，包括 void</td>
-          <td>不支持基本类型、Optional、集合类型等</td>
-      </tr>
-      <tr>
-          <td>使用场景</td>
-          <td>适合大多数新项目开发</td>
-          <td>适合与现有函数式 API 集成</td>
-      </tr>
-      <tr>
-          <td>注册方式</td>
-          <td>‎支持按需注册和全局注册</td>
-          <td>通常在配置类中预先定义</td>
-      </tr>
-      <tr>
-          <td>类型转换</td>
-          <td>自动处理</td>
-          <td>需要更多手动配置</td>
-      </tr>
-      <tr>
-          <td>文档支持 ‌</td>
-          <td>通过注解提供描述</td>
-          <td>通过 Bean 描述和 JSON 属性注解</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>特性</th>
+					<th>Methods 方式</th>
+					<th>Functions 方式</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>定义方式</td>
+					<td>使用 @Tool 和 @ToolParam 注解标记类方法</td>
+					<td>使用函数式接口并通过 Spring Bean 定义</td>
+			</tr>
+			<tr>
+					<td>语法复杂度</td>
+					<td>简单，直观</td>
+					<td>较复杂，需要定义请求 /⁠响应对象</td>
+			</tr>
+			<tr>
+					<td>支持的参数类型</td>
+					<td>大多数 Java 类型，包括基本类型、POJO、集合等</td>
+					<td>不支持基本类型、O‌ptional、集合类型</td>
+			</tr>
+			<tr>
+					<td>支持的返回类型</td>
+					<td>几乎所有可序列化类型，包括 void</td>
+					<td>不支持基本类型、Optional、集合类型等</td>
+			</tr>
+			<tr>
+					<td>使用场景</td>
+					<td>适合大多数新项目开发</td>
+					<td>适合与现有函数式 API 集成</td>
+			</tr>
+			<tr>
+					<td>注册方式</td>
+					<td>‎支持按需注册和全局注册</td>
+					<td>通常在配置类中预先定义</td>
+			</tr>
+			<tr>
+					<td>类型转换</td>
+					<td>自动处理</td>
+					<td>需要更多手动配置</td>
+			</tr>
+			<tr>
+					<td>文档支持 ‌</td>
+					<td>通过注解提供描述</td>
+					<td>通过 Bean 描述和 JSON 属性注解</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>举个例子来对比这两种定义模式：</p>
 <p>1）Methods 模式：通过 <code>@Tool</code> 注解定义工具，通过 <code>tools</code> 方法绑定工具</p>
@@ -13814,40 +13814,40 @@
 先调用 <code>llm.ask_tool</code> 获取工具调用，然后解析工具参数并执行，之后把结果写入 memory。同时还支持工具选择策略（AUTO / REQUIRED / NONE）</p>
 <h4 id="具体智能体实例">具体智能体实例
 </h4><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>智能体</th>
-          <th>继承关系</th>
-          <th>主要能力</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Manus</td>
-          <td>ToolCallAgent</td>
-          <td>通用任务 + MCP + 浏览器 + 编辑</td>
-      </tr>
-      <tr>
-          <td>BrowserAgent</td>
-          <td>ToolCallAgent</td>
-          <td>浏览器操作</td>
-      </tr>
-      <tr>
-          <td>SWEAgent</td>
-          <td>ToolCallAgent</td>
-          <td>Bash + 编辑</td>
-      </tr>
-      <tr>
-          <td>MCPAgent</td>
-          <td>ToolCallAgent</td>
-          <td>连接 MCP 服务器</td>
-      </tr>
-      <tr>
-          <td>DataAnalysis</td>
-          <td>ToolCallAgent</td>
-          <td>Python 数据分析 + 可视化</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>智能体</th>
+					<th>继承关系</th>
+					<th>主要能力</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Manus</td>
+					<td>ToolCallAgent</td>
+					<td>通用任务 + MCP + 浏览器 + 编辑</td>
+			</tr>
+			<tr>
+					<td>BrowserAgent</td>
+					<td>ToolCallAgent</td>
+					<td>浏览器操作</td>
+			</tr>
+			<tr>
+					<td>SWEAgent</td>
+					<td>ToolCallAgent</td>
+					<td>Bash + 编辑</td>
+			</tr>
+			<tr>
+					<td>MCPAgent</td>
+					<td>ToolCallAgent</td>
+					<td>连接 MCP 服务器</td>
+			</tr>
+			<tr>
+					<td>DataAnalysis</td>
+					<td>ToolCallAgent</td>
+					<td>Python 数据分析 + 可视化</td>
+			</tr>
+	</tbody>
 </table></div>
 <p><img src="/assets/image-20260411000514003.png"
 	

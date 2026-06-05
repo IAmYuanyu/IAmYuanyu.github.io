@@ -965,25 +965,25 @@
 <h3 id="配置主从节点密码">配置主从节点密码
 </h3><p>要给 Redis 主从架构加上密码认证，需要修改两个关键配置项：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>配置项</th>
-          <th>作用</th>
-          <th>配置位置</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>requirepass</code></td>
-          <td>客户端连接后需执行 <code>AUTH &lt;密码&gt;</code> 才能操作</td>
-          <td><strong>所有节点</strong>（master + slave）</td>
-      </tr>
-      <tr>
-          <td><code>masterauth</code></td>
-          <td>从节点自动用此密码向主节点认证</td>
-          <td><strong>所有节点</strong>（主从都配，防止主从切换后失效）</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>配置项</th>
+					<th>作用</th>
+					<th>配置位置</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>requirepass</code></td>
+					<td>客户端连接后需执行 <code>AUTH &lt;密码&gt;</code> 才能操作</td>
+					<td><strong>所有节点</strong>（master + slave）</td>
+			</tr>
+			<tr>
+					<td><code>masterauth</code></td>
+					<td>从节点自动用此密码向主节点认证</td>
+					<td><strong>所有节点</strong>（主从都配，防止主从切换后失效）</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>需要修改配置文件，在所有三个节点的 <code>redis.conf</code> 末尾追加密码与从节点认证：</p>
 <div class="highlight"><div class="chroma">
@@ -1274,30 +1274,30 @@
 ></p>
 <p>三个 sentinel 实例信息如下：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>节点</th>
-          <th style="text-align: center">IP</th>
-          <th style="text-align: center">PORT</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>s1</td>
-          <td style="text-align: center">172.24.51.42</td>
-          <td style="text-align: center">27001</td>
-      </tr>
-      <tr>
-          <td>s2</td>
-          <td style="text-align: center">172.24.51.42</td>
-          <td style="text-align: center">27002</td>
-      </tr>
-      <tr>
-          <td>s3</td>
-          <td style="text-align: center">172.24.51.42</td>
-          <td style="text-align: center">27003</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>节点</th>
+					<th style="text-align: center">IP</th>
+					<th style="text-align: center">PORT</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>s1</td>
+					<td style="text-align: center">172.24.51.42</td>
+					<td style="text-align: center">27001</td>
+			</tr>
+			<tr>
+					<td>s2</td>
+					<td style="text-align: center">172.24.51.42</td>
+					<td style="text-align: center">27002</td>
+			</tr>
+			<tr>
+					<td>s3</td>
+					<td style="text-align: center">172.24.51.42</td>
+					<td style="text-align: center">27003</td>
+			</tr>
+	</tbody>
 </table></div>
 <h4 id="准备实例和配置">准备实例和配置
 </h4><p>在同一台虚拟机上开启三个 sentinel 实例，需要准备三份不同的配置文件及目录。</p>
@@ -1626,45 +1626,45 @@
 ></p>
 <p>接下来将会在同一台虚拟机中开启6个redis实例，模拟分片集群，信息如下：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: center">IP</th>
-          <th style="text-align: center">PORT</th>
-          <th style="text-align: center">角色</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center">172.24.51.42</td>
-          <td style="text-align: center">7001</td>
-          <td style="text-align: center">master</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">172.24.51.42</td>
-          <td style="text-align: center">7002</td>
-          <td style="text-align: center">master</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">172.24.51.42</td>
-          <td style="text-align: center">7003</td>
-          <td style="text-align: center">master</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">172.24.51.42</td>
-          <td style="text-align: center">8001</td>
-          <td style="text-align: center">slave</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">172.24.51.42</td>
-          <td style="text-align: center">8002</td>
-          <td style="text-align: center">slave</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">172.24.51.42</td>
-          <td style="text-align: center">8003</td>
-          <td style="text-align: center">slave</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: center">IP</th>
+					<th style="text-align: center">PORT</th>
+					<th style="text-align: center">角色</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center">172.24.51.42</td>
+					<td style="text-align: center">7001</td>
+					<td style="text-align: center">master</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">172.24.51.42</td>
+					<td style="text-align: center">7002</td>
+					<td style="text-align: center">master</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">172.24.51.42</td>
+					<td style="text-align: center">7003</td>
+					<td style="text-align: center">master</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">172.24.51.42</td>
+					<td style="text-align: center">8001</td>
+					<td style="text-align: center">slave</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">172.24.51.42</td>
+					<td style="text-align: center">8002</td>
+					<td style="text-align: center">slave</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">172.24.51.42</td>
+					<td style="text-align: center">8003</td>
+					<td style="text-align: center">slave</td>
+			</tr>
+	</tbody>
 </table></div>
 <h4 id="准备实例和配置-1">准备实例和配置
 </h4><p>删除之前的7001、7002、7003这几个目录（先关闭redis集群），重新创建出7001、7002、7003、8001、8002、8003目录：</p>
@@ -2393,12 +2393,12 @@
             
                 
 <article class="">
-    <a href="/p/redis%E5%88%9D%E8%AF%86%E4%B8%8E%E5%AE%89%E8%A3%85/">
+    <a href="/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Redis初识与安装</h2>
+            <h2 class="article-title">Redis原理篇-数据结构</h2>
         </div>
     </a>
 </article>

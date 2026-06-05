@@ -613,40 +613,40 @@
 </h4><p>先来回顾一下正向索引。</p>
 <p>例如有一张名为<code>tb_goods</code>的表：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left"><strong>id</strong></th>
-          <th style="text-align: left"><strong>title</strong></th>
-          <th style="text-align: left"><strong>price</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">1</td>
-          <td style="text-align: left">小米手机</td>
-          <td style="text-align: left">3499</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">2</td>
-          <td style="text-align: left">华为手机</td>
-          <td style="text-align: left">4999</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">3</td>
-          <td style="text-align: left">华为小米充电器</td>
-          <td style="text-align: left">49</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">4</td>
-          <td style="text-align: left">小米手环</td>
-          <td style="text-align: left">49</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">&hellip;</td>
-          <td style="text-align: left">&hellip;</td>
-          <td style="text-align: left">&hellip;</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"><strong>id</strong></th>
+					<th style="text-align: left"><strong>title</strong></th>
+					<th style="text-align: left"><strong>price</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">1</td>
+					<td style="text-align: left">小米手机</td>
+					<td style="text-align: left">3499</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">2</td>
+					<td style="text-align: left">华为手机</td>
+					<td style="text-align: left">4999</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">3</td>
+					<td style="text-align: left">华为小米充电器</td>
+					<td style="text-align: left">49</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">4</td>
+					<td style="text-align: left">小米手环</td>
+					<td style="text-align: left">49</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">&hellip;</td>
+					<td style="text-align: left">&hellip;</td>
+					<td style="text-align: left">&hellip;</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>其中的<code>id</code>字段已经创建了索引，由于索引底层采用了B+树结构，因此根据id搜索的速度会非常快。但是其他字段例如<code>title</code>，只在叶子节点上存在。</p>
 <p>因此要根据<code>title</code>搜索的时候只能遍历树中的每一个叶子节点，判断title数据是否符合要求。</p>
@@ -696,71 +696,71 @@
 <p>此时形成的这张以词条为索引的表，就是倒排索引表，两者对比如下：</p>
 <p><strong>正向索引</strong></p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left"><strong>id（索引）</strong></th>
-          <th style="text-align: left"><strong>title</strong></th>
-          <th style="text-align: left"><strong>price</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">1</td>
-          <td style="text-align: left">小米手机</td>
-          <td style="text-align: left">3499</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">2</td>
-          <td style="text-align: left">华为手机</td>
-          <td style="text-align: left">4999</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">3</td>
-          <td style="text-align: left">华为小米充电器</td>
-          <td style="text-align: left">49</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">4</td>
-          <td style="text-align: left">小米手环</td>
-          <td style="text-align: left">49</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">&hellip;</td>
-          <td style="text-align: left">&hellip;</td>
-          <td style="text-align: left">&hellip;</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"><strong>id（索引）</strong></th>
+					<th style="text-align: left"><strong>title</strong></th>
+					<th style="text-align: left"><strong>price</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">1</td>
+					<td style="text-align: left">小米手机</td>
+					<td style="text-align: left">3499</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">2</td>
+					<td style="text-align: left">华为手机</td>
+					<td style="text-align: left">4999</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">3</td>
+					<td style="text-align: left">华为小米充电器</td>
+					<td style="text-align: left">49</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">4</td>
+					<td style="text-align: left">小米手环</td>
+					<td style="text-align: left">49</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">&hellip;</td>
+					<td style="text-align: left">&hellip;</td>
+					<td style="text-align: left">&hellip;</td>
+			</tr>
+	</tbody>
 </table></div>
 <p><strong>倒排索引</strong></p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left"><strong>词条（索引）</strong></th>
-          <th style="text-align: left"><strong>文档id</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">小米</td>
-          <td style="text-align: left">1，3，4</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">手机</td>
-          <td style="text-align: left">1，2</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">华为</td>
-          <td style="text-align: left">2，3</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">充电器</td>
-          <td style="text-align: left">3</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">手环</td>
-          <td style="text-align: left">4</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"><strong>词条（索引）</strong></th>
+					<th style="text-align: left"><strong>文档id</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">小米</td>
+					<td style="text-align: left">1，3，4</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">手机</td>
+					<td style="text-align: left">1，2</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">华为</td>
+					<td style="text-align: left">2，3</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">充电器</td>
+					<td style="text-align: left">3</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">手环</td>
+					<td style="text-align: left">4</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>倒排索引的<strong>搜索流程</strong>如下（以搜索&quot;华为手机&quot;为例），如图：</p>
 <p><img src="/assets/1772118214403-36.jpeg"
@@ -1631,40 +1631,40 @@
 <h4 id="mysql与elasticsearch">mysql与elasticsearch
 </h4><p>mysql与elasticsearch的概念对比：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left"><strong>MySQL</strong></th>
-          <th style="text-align: left"><strong>Elasticsearch</strong></th>
-          <th style="text-align: left"><strong>说明</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">Table</td>
-          <td style="text-align: left">Index</td>
-          <td style="text-align: left">索引(index)，就是文档的集合，类似数据库的表(table)</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Row</td>
-          <td style="text-align: left">Document</td>
-          <td style="text-align: left">文档（Document），就是一条条的数据，类似数据库中的行（Row），文档都是JSON格式</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Column</td>
-          <td style="text-align: left">Field</td>
-          <td style="text-align: left">字段（Field），就是JSON文档中的字段，类似数据库中的列（Column）</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Schema</td>
-          <td style="text-align: left">Mapping</td>
-          <td style="text-align: left">Mapping（映射）是索引中文档的约束，例如字段类型约束。类似数据库的表结构（Schema）</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SQL</td>
-          <td style="text-align: left">DSL</td>
-          <td style="text-align: left">DSL是elasticsearch提供的JSON风格的请求语句，用来操作elasticsearch，实现CRUD</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"><strong>MySQL</strong></th>
+					<th style="text-align: left"><strong>Elasticsearch</strong></th>
+					<th style="text-align: left"><strong>说明</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Table</td>
+					<td style="text-align: left">Index</td>
+					<td style="text-align: left">索引(index)，就是文档的集合，类似数据库的表(table)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Row</td>
+					<td style="text-align: left">Document</td>
+					<td style="text-align: left">文档（Document），就是一条条的数据，类似数据库中的行（Row），文档都是JSON格式</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Column</td>
+					<td style="text-align: left">Field</td>
+					<td style="text-align: left">字段（Field），就是JSON文档中的字段，类似数据库中的列（Column）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Schema</td>
+					<td style="text-align: left">Mapping</td>
+					<td style="text-align: left">Mapping（映射）是索引中文档的约束，例如字段类型约束。类似数据库的表结构（Schema）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">SQL</td>
+					<td style="text-align: left">DSL</td>
+					<td style="text-align: left">DSL是elasticsearch提供的JSON风格的请求语句，用来操作elasticsearch，实现CRUD</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>如图：</p>
 <p><img src="/assets/1772120734625-51.png"
@@ -1750,91 +1750,91 @@
 </div>
 </div><p>对应的每个字段映射（Mapping）：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left"><strong>字段名</strong></th>
-          <th style="text-align: left"><strong>字段类型</strong></th>
-          <th style="text-align: left"><strong>类型说明</strong></th>
-          <th style="text-align: left"><strong>是否参与搜索</strong></th>
-          <th style="text-align: left"><strong>是否参与分词</strong></th>
-          <th style="text-align: left"><strong>分词器</strong></th>
-          <th></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">age</td>
-          <td style="text-align: left"><code>integer</code></td>
-          <td style="text-align: left">整数</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left">——</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">weight</td>
-          <td style="text-align: left"><code>float</code></td>
-          <td style="text-align: left">浮点数</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left">——</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">isMarried</td>
-          <td style="text-align: left"><code>boolean</code></td>
-          <td style="text-align: left">布尔</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left">——</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">info</td>
-          <td style="text-align: left"><code>text</code></td>
-          <td style="text-align: left">字符串，但需要分词</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left">IK</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">email</td>
-          <td style="text-align: left"><code>keyword</code></td>
-          <td style="text-align: left">字符串，但是不分词</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left">——</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">score</td>
-          <td style="text-align: left"><code>float</code></td>
-          <td style="text-align: left">只看数组中元素类型</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left">——</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">name</td>
-          <td style="text-align: left">firstName</td>
-          <td style="text-align: left"><code>keyword</code></td>
-          <td style="text-align: left">字符串，但是不分词</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-          <td>——</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">lastName</td>
-          <td style="text-align: left"><code>keyword</code></td>
-          <td style="text-align: left">字符串，但是不分词</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left">——</td>
-          <td></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"><strong>字段名</strong></th>
+					<th style="text-align: left"><strong>字段类型</strong></th>
+					<th style="text-align: left"><strong>类型说明</strong></th>
+					<th style="text-align: left"><strong>是否参与搜索</strong></th>
+					<th style="text-align: left"><strong>是否参与分词</strong></th>
+					<th style="text-align: left"><strong>分词器</strong></th>
+					<th></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">age</td>
+					<td style="text-align: left"><code>integer</code></td>
+					<td style="text-align: left">整数</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left">——</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">weight</td>
+					<td style="text-align: left"><code>float</code></td>
+					<td style="text-align: left">浮点数</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left">——</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">isMarried</td>
+					<td style="text-align: left"><code>boolean</code></td>
+					<td style="text-align: left">布尔</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left">——</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">info</td>
+					<td style="text-align: left"><code>text</code></td>
+					<td style="text-align: left">字符串，但需要分词</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left">IK</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">email</td>
+					<td style="text-align: left"><code>keyword</code></td>
+					<td style="text-align: left">字符串，但是不分词</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left">——</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">score</td>
+					<td style="text-align: left"><code>float</code></td>
+					<td style="text-align: left">只看数组中元素类型</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left">——</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">name</td>
+					<td style="text-align: left">firstName</td>
+					<td style="text-align: left"><code>keyword</code></td>
+					<td style="text-align: left">字符串，但是不分词</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+					<td>——</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">lastName</td>
+					<td style="text-align: left"><code>keyword</code></td>
+					<td style="text-align: left">字符串，但是不分词</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left">——</td>
+					<td></td>
+			</tr>
+	</tbody>
 </table></div>
 <h3 id="索引库的crud">索引库的CRUD
 </h3><p>由于Elasticsearch采用的是Restful风格的API，因此其请求方式和路径相对都比较规范，而且请求参数也都采用JSON风格。</p>
@@ -2587,106 +2587,106 @@
 ></p>
 <p>结合数据库表结构，以上字段对应的mapping映射属性如下：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th><strong>字段名</strong></th>
-          <th><strong>字段类型</strong></th>
-          <th><strong>类型说明</strong></th>
-          <th><strong>是否参与搜索</strong></th>
-          <th><strong>是否参与分词</strong></th>
-          <th><strong>分词器</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>id</td>
-          <td><code>long</code></td>
-          <td>长整数</td>
-          <td>√</td>
-          <td></td>
-          <td>——</td>
-      </tr>
-      <tr>
-          <td>name</td>
-          <td><code>text</code></td>
-          <td>字符串，参与分词搜索</td>
-          <td>√</td>
-          <td>√</td>
-          <td>IK</td>
-      </tr>
-      <tr>
-          <td>price</td>
-          <td><code>integer</code></td>
-          <td>以分为单位，所以是整数</td>
-          <td>√</td>
-          <td></td>
-          <td>——</td>
-      </tr>
-      <tr>
-          <td>stock</td>
-          <td><code>integer</code></td>
-          <td>字符串，但需要分词</td>
-          <td>√</td>
-          <td></td>
-          <td>——</td>
-      </tr>
-      <tr>
-          <td>image</td>
-          <td><code>keyword</code></td>
-          <td>字符串，但是不分词</td>
-          <td></td>
-          <td></td>
-          <td>——</td>
-      </tr>
-      <tr>
-          <td>category</td>
-          <td><code>keyword</code></td>
-          <td>字符串，但是不分词</td>
-          <td>√</td>
-          <td></td>
-          <td>——</td>
-      </tr>
-      <tr>
-          <td>brand</td>
-          <td><code>keyword</code></td>
-          <td>字符串，但是不分词</td>
-          <td>√</td>
-          <td></td>
-          <td>——</td>
-      </tr>
-      <tr>
-          <td>sold</td>
-          <td><code>integer</code></td>
-          <td>销量，整数</td>
-          <td>√</td>
-          <td></td>
-          <td>——</td>
-      </tr>
-      <tr>
-          <td>commentCount</td>
-          <td><code>integer</code></td>
-          <td>评价，整数</td>
-          <td></td>
-          <td></td>
-          <td>——</td>
-      </tr>
-      <tr>
-          <td>isAD</td>
-          <td><code>boolean</code></td>
-          <td>布尔类型</td>
-          <td>√</td>
-          <td></td>
-          <td>——</td>
-      </tr>
-      <tr>
-          <td>updateTime</td>
-          <td><code>Date</code></td>
-          <td>更新时间</td>
-          <td>√</td>
-          <td></td>
-          <td>——</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>字段名</strong></th>
+					<th><strong>字段类型</strong></th>
+					<th><strong>类型说明</strong></th>
+					<th><strong>是否参与搜索</strong></th>
+					<th><strong>是否参与分词</strong></th>
+					<th><strong>分词器</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>id</td>
+					<td><code>long</code></td>
+					<td>长整数</td>
+					<td>√</td>
+					<td></td>
+					<td>——</td>
+			</tr>
+			<tr>
+					<td>name</td>
+					<td><code>text</code></td>
+					<td>字符串，参与分词搜索</td>
+					<td>√</td>
+					<td>√</td>
+					<td>IK</td>
+			</tr>
+			<tr>
+					<td>price</td>
+					<td><code>integer</code></td>
+					<td>以分为单位，所以是整数</td>
+					<td>√</td>
+					<td></td>
+					<td>——</td>
+			</tr>
+			<tr>
+					<td>stock</td>
+					<td><code>integer</code></td>
+					<td>字符串，但需要分词</td>
+					<td>√</td>
+					<td></td>
+					<td>——</td>
+			</tr>
+			<tr>
+					<td>image</td>
+					<td><code>keyword</code></td>
+					<td>字符串，但是不分词</td>
+					<td></td>
+					<td></td>
+					<td>——</td>
+			</tr>
+			<tr>
+					<td>category</td>
+					<td><code>keyword</code></td>
+					<td>字符串，但是不分词</td>
+					<td>√</td>
+					<td></td>
+					<td>——</td>
+			</tr>
+			<tr>
+					<td>brand</td>
+					<td><code>keyword</code></td>
+					<td>字符串，但是不分词</td>
+					<td>√</td>
+					<td></td>
+					<td>——</td>
+			</tr>
+			<tr>
+					<td>sold</td>
+					<td><code>integer</code></td>
+					<td>销量，整数</td>
+					<td>√</td>
+					<td></td>
+					<td>——</td>
+			</tr>
+			<tr>
+					<td>commentCount</td>
+					<td><code>integer</code></td>
+					<td>评价，整数</td>
+					<td></td>
+					<td></td>
+					<td>——</td>
+			</tr>
+			<tr>
+					<td>isAD</td>
+					<td><code>boolean</code></td>
+					<td>布尔类型</td>
+					<td>√</td>
+					<td></td>
+					<td>——</td>
+			</tr>
+			<tr>
+					<td>updateTime</td>
+					<td><code>Date</code></td>
+					<td>更新时间</td>
+					<td>√</td>
+					<td></td>
+					<td>——</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>因此，最终的索引库文档结构应该是这样：</p>
 <div class="highlight"><div class="chroma">

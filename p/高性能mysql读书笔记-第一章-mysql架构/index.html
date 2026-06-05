@@ -305,25 +305,25 @@
 <p>其他锁补充：</p>
 <p><strong>记录锁</strong>（Record Lock）：属于行级锁，只锁具体某一条记录。必须命中索引（主键 / 唯一索引）才会是真正的记录锁，比如有如下一张表，其中id是主键</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left">id</th>
-          <th style="text-align: left">name</th>
-          <th style="text-align: left">money</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">1</td>
-          <td style="text-align: left">张三</td>
-          <td style="text-align: left">100</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">2</td>
-          <td style="text-align: left">李四</td>
-          <td style="text-align: left">200</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">id</th>
+					<th style="text-align: left">name</th>
+					<th style="text-align: left">money</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">1</td>
+					<td style="text-align: left">张三</td>
+					<td style="text-align: left">100</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">2</td>
+					<td style="text-align: left">李四</td>
+					<td style="text-align: left">200</td>
+			</tr>
+	</tbody>
 </table></div>
 <ul>
 <li>情况1：条件用主键（命中索引）</li>
@@ -372,40 +372,40 @@
 <hr>
 <p><strong>总结：</strong></p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left">锁</th>
-          <th style="text-align: left">级别</th>
-          <th style="text-align: left">作用</th>
-          <th style="text-align: left">互斥关系</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">共享锁 S</td>
-          <td style="text-align: left">行</td>
-          <td style="text-align: left">允许读，禁止写</td>
-          <td style="text-align: left">S-S 兼容，S-X 互斥</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">排他锁 X</td>
-          <td style="text-align: left">行</td>
-          <td style="text-align: left">独占，禁止读写</td>
-          <td style="text-align: left">与所有锁互斥</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">记录锁</td>
-          <td style="text-align: left">行</td>
-          <td style="text-align: left">锁住某一行具体记录</td>
-          <td style="text-align: left">行级互斥</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">意向锁 IS/IX</td>
-          <td style="text-align: left">表</td>
-          <td style="text-align: left">预告要加行锁，方便判断表锁能否加</td>
-          <td style="text-align: left">与表锁互斥，与行锁不互斥</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">锁</th>
+					<th style="text-align: left">级别</th>
+					<th style="text-align: left">作用</th>
+					<th style="text-align: left">互斥关系</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">共享锁 S</td>
+					<td style="text-align: left">行</td>
+					<td style="text-align: left">允许读，禁止写</td>
+					<td style="text-align: left">S-S 兼容，S-X 互斥</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">排他锁 X</td>
+					<td style="text-align: left">行</td>
+					<td style="text-align: left">独占，禁止读写</td>
+					<td style="text-align: left">与所有锁互斥</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">记录锁</td>
+					<td style="text-align: left">行</td>
+					<td style="text-align: left">锁住某一行具体记录</td>
+					<td style="text-align: left">行级互斥</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">意向锁 IS/IX</td>
+					<td style="text-align: left">表</td>
+					<td style="text-align: left">预告要加行锁，方便判断表锁能否加</td>
+					<td style="text-align: left">与表锁互斥，与行锁不互斥</td>
+			</tr>
+	</tbody>
 </table></div>
 </blockquote>
 <h3 id="锁的粒度">锁的粒度
@@ -425,30 +425,30 @@
 <p>使用行级锁（row lock）可以最大程度地支持并发处理（也带来了最大的锁开销）。这种策略允许多人同时编辑不同的行，而不会阻塞彼此。就是 MySQL 只锁住你正在操作的那一行数据，别的行别人照样能改。</p>
 <p>比如你有一张用户表：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left">id</th>
-          <th style="text-align: left">name</th>
-          <th style="text-align: left">money</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">1</td>
-          <td style="text-align: left">张三</td>
-          <td style="text-align: left">100</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">2</td>
-          <td style="text-align: left">李四</td>
-          <td style="text-align: left">200</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">3</td>
-          <td style="text-align: left">王五</td>
-          <td style="text-align: left">300</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">id</th>
+					<th style="text-align: left">name</th>
+					<th style="text-align: left">money</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">1</td>
+					<td style="text-align: left">张三</td>
+					<td style="text-align: left">100</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">2</td>
+					<td style="text-align: left">李四</td>
+					<td style="text-align: left">200</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">3</td>
+					<td style="text-align: left">王五</td>
+					<td style="text-align: left">300</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>事务A在修改<code>id=1</code>这一行，其他事务可以正常修改<code>id=2</code>、<code>id=3</code>的行，不会阻塞</p>
 <p>这使得服务器可以执行更多的并发写操作，带来的代价则是需要承担更多开销，以跟踪谁拥有这些行级锁、已经锁定了多长时间、行级锁的类型，以及何时该清理不再需要的行级锁。</p>
@@ -525,45 +525,45 @@
 <h4 id="serializable可串行化">SERIALIZABLE（可串行化）
 </h4><p>这是最高的隔离级别。该级别通过强制事务按序执行，使不同事务之间不可能产生冲突，从而解决了前面说的幻读问题。简单来说，这个级别会在读取的每一行数据上都加锁，所以可能导致大量的超时和锁争用的问题。实际应用中很少用到这个隔离级别，除非需要严格确保数据安全且可以接受并发性能下降的结果。</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left">隔离级别</th>
-          <th style="text-align: left">脏读</th>
-          <th style="text-align: left">不可重复读</th>
-          <th style="text-align: left">幻读</th>
-          <th style="text-align: left">加锁读</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">READ UNCOMMITTED</td>
-          <td style="text-align: left">是</td>
-          <td style="text-align: left">是</td>
-          <td style="text-align: left">是</td>
-          <td style="text-align: left">否</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">READ COMMITTED</td>
-          <td style="text-align: left">否</td>
-          <td style="text-align: left">是</td>
-          <td style="text-align: left">是</td>
-          <td style="text-align: left">否</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">REPEATABLE READ</td>
-          <td style="text-align: left">否</td>
-          <td style="text-align: left">否</td>
-          <td style="text-align: left">是</td>
-          <td style="text-align: left">否</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SERIALIZABLE</td>
-          <td style="text-align: left">否</td>
-          <td style="text-align: left">否</td>
-          <td style="text-align: left">否</td>
-          <td style="text-align: left">是</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">隔离级别</th>
+					<th style="text-align: left">脏读</th>
+					<th style="text-align: left">不可重复读</th>
+					<th style="text-align: left">幻读</th>
+					<th style="text-align: left">加锁读</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">READ UNCOMMITTED</td>
+					<td style="text-align: left">是</td>
+					<td style="text-align: left">是</td>
+					<td style="text-align: left">是</td>
+					<td style="text-align: left">否</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">READ COMMITTED</td>
+					<td style="text-align: left">否</td>
+					<td style="text-align: left">是</td>
+					<td style="text-align: left">是</td>
+					<td style="text-align: left">否</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">REPEATABLE READ</td>
+					<td style="text-align: left">否</td>
+					<td style="text-align: left">否</td>
+					<td style="text-align: left">是</td>
+					<td style="text-align: left">否</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">SERIALIZABLE</td>
+					<td style="text-align: left">否</td>
+					<td style="text-align: left">否</td>
+					<td style="text-align: left">否</td>
+					<td style="text-align: left">是</td>
+			</tr>
+	</tbody>
 </table></div>
 <blockquote>
 <p><span id="幻行说明"><a class="link" href="#%e5%b9%bb%e8%a1%8c" >【1】</a></span>：指在同一个事务里，前后两次执行相同的查询，第二次查询结果里多出了之前不存在的行（这些行是其他事务在这期间新插入的）。</p>
@@ -607,40 +607,40 @@
 <p><span id="事务型系统说明"><a class="link" href="#%e4%ba%8b%e5%8a%a1%e5%9e%8b%e7%b3%bb%e7%bb%9f" >【1】</a></span>：<strong>事务型系统</strong>（Transaction Processing System, TPS），就是以事务为核心操作单元的业务系统，核心要求是保证数据操作的原子性、一致性、隔离性、持久性（ACID）。可以先简单理解为：必须保证要么全做，要么全不做的系统，如银行转账系统、电商订单系统、股票交易系统等。</p>
 <p>而<strong>非事务型系统</strong>（Non-transactional System）是指不依赖事务（ACID）保障，对数据一致性要求相对宽松的系统。它不需要保证 “要么全做、要么全不做”，更侧重高吞吐、低延迟、简单高效。比如日志系统、内容发布系统、临时数据系统、统计系统等。</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left">维度</th>
-          <th style="text-align: left">事务型系统</th>
-          <th style="text-align: left">非事务型系统</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>核心目标</strong></td>
-          <td style="text-align: left">强一致性、数据安全</td>
-          <td style="text-align: left">高吞吐、低延迟、简单</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>一致性要求</strong></td>
-          <td style="text-align: left">必须满足 ACID</td>
-          <td style="text-align: left">允许最终一致或短暂不一致</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>死锁风险</strong></td>
-          <td style="text-align: left">高（行级锁 + 并发高）</td>
-          <td style="text-align: left">低（表锁 / 无锁，无复杂锁等待）</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>典型业务</strong></td>
-          <td style="text-align: left">银行转账、电商订单、股票交易</td>
-          <td style="text-align: left">日志系统、统计报表、内容发布</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>代表存储引擎</strong></td>
-          <td style="text-align: left">InnoDB、PostgreSQL</td>
-          <td style="text-align: left">MyISAM、CSV、部分 NoSQL</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">维度</th>
+					<th style="text-align: left">事务型系统</th>
+					<th style="text-align: left">非事务型系统</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>核心目标</strong></td>
+					<td style="text-align: left">强一致性、数据安全</td>
+					<td style="text-align: left">高吞吐、低延迟、简单</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>一致性要求</strong></td>
+					<td style="text-align: left">必须满足 ACID</td>
+					<td style="text-align: left">允许最终一致或短暂不一致</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>死锁风险</strong></td>
+					<td style="text-align: left">高（行级锁 + 并发高）</td>
+					<td style="text-align: left">低（表锁 / 无锁，无复杂锁等待）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>典型业务</strong></td>
+					<td style="text-align: left">银行转账、电商订单、股票交易</td>
+					<td style="text-align: left">日志系统、统计报表、内容发布</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>代表存储引擎</strong></td>
+					<td style="text-align: left">InnoDB、PostgreSQL</td>
+					<td style="text-align: left">MyISAM、CSV、部分 NoSQL</td>
+			</tr>
+	</tbody>
 </table></div>
 </blockquote>
 <h3 id="事务日志">事务日志

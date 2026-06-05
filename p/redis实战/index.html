@@ -10560,7 +10560,7 @@
 </li>
 </ol>
 <p><strong>核心考量：误差率（哈希冲突）</strong> 采用这种方式需要重点考虑<strong>误差率</strong>的问题。由于Bitmap的空间是有限的，不同的ID经过哈希计算后可能会映射到同一个索引位置（即发生<strong>哈希冲突</strong>）。这会导致一种情况：某个ID实际上并不存在，但因为其他ID占用了它对应的位（将其置为了1），系统会误判该ID“可能存在”。这种误判的概率，就是我们所说的误差率。</p>
-<p>著名的布隆过滤器就是“Bitmap + 哈希思想”方案的深度优化和标准化实现，不过它并不是简单地把 <code>id % bitmap.size</code> 算出一个位置，而是采用了**“一个超长的位数组（Bit Array） + 多个相互独立的哈希函数”**的组合方案，显著降低了哈希冲突发生的概率。</p>
+<p>著名的布隆过滤器就是“Bitmap + 哈希思想”方案的深度优化和标准化实现，不过它并不是简单地把 <code>id % bitmap.size</code> 算出一个位置，而是采用了<strong>一个超长的位数组（Bit Array） + 多个相互独立的哈希函数</strong>的组合方案，显著降低了哈希冲突发生的概率。</p>
 <h2 id="uv统计">UV统计
 </h2><h3 id="hyperloglog">HyperLogLog
 </h3><p>首先我们搞懂两个概念：</p>
@@ -10570,7 +10570,8 @@
 </ul>
 <p>通常来说UV会比PV大很多，所以衡量同一个网站的访问量，我们需要综合考虑很多因素，所以我们只是单纯的把这两个值作为一个参考值</p>
 <p>UV统计在服务端做会比较麻烦，因为要判断该用户是否已经统计过了，需要将统计过的用户信息保存。但是如果每个访问的用户都保存到Redis中，数据量会非常恐怖，<em>那该怎么处理呢？</em></p>
-<p>Hyperloglog(HLL)是从Loglog算法派生的概率算法，用于确定非常大的集合的基数，而不需要存储其所有值。相关算法原理大家可以参考：https://juejin.cn/post/6844903785744056333#heading-0 Redis中的HLL是基于string结构实现的，单个HLL的内存<strong>永远小于16kb</strong>，<strong>内存占用低</strong>得令人发指！作为代价，其测量结果是概率性的，<strong>有小于0.81％的误差</strong>。不过对于UV统计来说，这完全可以忽略。</p>
+<p>Hyperloglog(HLL)是从Loglog算法派生的概率算法，用于确定非常大的集合的基数，而不需要存储其所有值。相关算法原理可以参考：https://juejin.cn/post/6844903785744056333#heading-0</p>
+<p>Redis中的HLL是基于string结构实现的，单个HLL的内存<strong>永远小于16kb</strong>，<strong>内存占用低</strong>得令人发指！作为代价，其测量结果是概率性的，<strong>有小于0.81％的误差</strong>。不过对于UV统计来说，这完全可以忽略。</p>
 <p>Redis中的命令如下：</p>
 <p><img src="/assets/image-20260516235448852-1778947940463-48.png"
 	
@@ -10716,12 +10717,12 @@
             
                 
 <article class="">
-    <a href="/p/redis%E5%88%9D%E8%AF%86%E4%B8%8E%E5%AE%89%E8%A3%85/">
+    <a href="/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Redis初识与安装</h2>
+            <h2 class="article-title">Redis原理篇-数据结构</h2>
         </div>
     </a>
 </article>

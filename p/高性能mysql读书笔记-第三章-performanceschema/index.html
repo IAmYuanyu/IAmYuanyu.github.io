@@ -339,45 +339,45 @@
 </ul>
 <p>各列的含义：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>列名</th>
-          <th>作用</th>
-          <th>核心说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>NAME</strong></td>
-          <td>插桩的唯一名称</td>
-          <td>用 <code>/</code> 分层命名，比如 <code>statement/sql/error</code>，一眼就能看出是「SQL 语句类 → SQL 执行 → 错误」相关的监控</td>
-      </tr>
-      <tr>
-          <td><strong>ENABLED</strong></td>
-          <td>插桩是否启用</td>
-          <td><code>YES</code>= 开启（采集数据），<code>NO</code>= 关闭（不采集，零开销）</td>
-      </tr>
-      <tr>
-          <td><strong>TIMED</strong></td>
-          <td>是否记录耗时</td>
-          <td><code>YES</code>= 采集事件的执行时间（用于统计耗时、慢查询），<code>NULL</code>= 该插桩不支持计时（比如内存类插桩）</td>
-      </tr>
-      <tr>
-          <td><strong>PROPERTIES</strong></td>
-          <td>插桩的属性标签</td>
-          <td>标注插桩的特性，比如 <code>mutable</code>（可动态修改）、<code>global_statistics</code>（全局统计类）</td>
-      </tr>
-      <tr>
-          <td><strong>VOLATILITY</strong></td>
-          <td>插桩的稳定性 / 开销等级</td>
-          <td>0 = 稳定、低开销（默认开启）；1 = 可能有额外开销 / 不稳定（按需开启）</td>
-      </tr>
-      <tr>
-          <td><strong>DOCUMENTATION</strong></td>
-          <td>插桩的官方说明</td>
-          <td>用自然语言解释这个插桩到底监控什么，是理解插桩作用的关键</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>列名</th>
+					<th>作用</th>
+					<th>核心说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>NAME</strong></td>
+					<td>插桩的唯一名称</td>
+					<td>用 <code>/</code> 分层命名，比如 <code>statement/sql/error</code>，一眼就能看出是「SQL 语句类 → SQL 执行 → 错误」相关的监控</td>
+			</tr>
+			<tr>
+					<td><strong>ENABLED</strong></td>
+					<td>插桩是否启用</td>
+					<td><code>YES</code>= 开启（采集数据），<code>NO</code>= 关闭（不采集，零开销）</td>
+			</tr>
+			<tr>
+					<td><strong>TIMED</strong></td>
+					<td>是否记录耗时</td>
+					<td><code>YES</code>= 采集事件的执行时间（用于统计耗时、慢查询），<code>NULL</code>= 该插桩不支持计时（比如内存类插桩）</td>
+			</tr>
+			<tr>
+					<td><strong>PROPERTIES</strong></td>
+					<td>插桩的属性标签</td>
+					<td>标注插桩的特性，比如 <code>mutable</code>（可动态修改）、<code>global_statistics</code>（全局统计类）</td>
+			</tr>
+			<tr>
+					<td><strong>VOLATILITY</strong></td>
+					<td>插桩的稳定性 / 开销等级</td>
+					<td>0 = 稳定、低开销（默认开启）；1 = 可能有额外开销 / 不稳定（按需开启）</td>
+			</tr>
+			<tr>
+					<td><strong>DOCUMENTATION</strong></td>
+					<td>插桩的官方说明</td>
+					<td>用自然语言解释这个插桩到底监控什么，是理解插桩作用的关键</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>查询示例：</p>
 <div class="highlight"><div class="chroma">
@@ -484,38 +484,38 @@
 <p><code>*_history</code> 和<code>*_history_long</code> 表的大小是可配置的。</p>
 <p>总结：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: center">后缀</th>
-          <th style="text-align: center">全称</th>
-          <th style="text-align: center">核心作用</th>
-          <th style="text-align: center">存储范围</th>
-          <th style="text-align: center">可配置性</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center"><code>*_current</code></td>
-          <td style="text-align: center">当前表</td>
-          <td style="text-align: center">存储<strong>正在执行中</strong>的事件</td>
-          <td style="text-align: center">仅记录当前服务器上「未完成」的操作，事件执行完成后会从该表移除</td>
-          <td style="text-align: center">不可手动配置大小，由 MySQL 自动维护</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>*_history</code></td>
-          <td style="text-align: center">历史表</td>
-          <td style="text-align: center">存储<strong>最近完成</strong>的短周期事件</td>
-          <td style="text-align: center">每个线程最多保留<strong>最近完成的 10 个</strong>事件（默认值），新事件会覆盖旧事件</td>
-          <td style="text-align: center">可配置，通过 <code>performance_schema_events_waits_history_size</code> 等参数调整每个线程的保留条数</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>*_history_long</code></td>
-          <td style="text-align: center">长历史表</td>
-          <td style="text-align: center">存储<strong>长期留存</strong>的全量事件</td>
-          <td style="text-align: center">全局维度，每个线程最多保留<strong>最近完成的 10000 个</strong>事件（默认值），适合做历史分析</td>
-          <td style="text-align: center">可配置，通过 <code>performance_schema_events_waits_history_long_size</code> 等参数调整全局保留条数</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: center">后缀</th>
+					<th style="text-align: center">全称</th>
+					<th style="text-align: center">核心作用</th>
+					<th style="text-align: center">存储范围</th>
+					<th style="text-align: center">可配置性</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center"><code>*_current</code></td>
+					<td style="text-align: center">当前表</td>
+					<td style="text-align: center">存储<strong>正在执行中</strong>的事件</td>
+					<td style="text-align: center">仅记录当前服务器上「未完成」的操作，事件执行完成后会从该表移除</td>
+					<td style="text-align: center">不可手动配置大小，由 MySQL 自动维护</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><code>*_history</code></td>
+					<td style="text-align: center">历史表</td>
+					<td style="text-align: center">存储<strong>最近完成</strong>的短周期事件</td>
+					<td style="text-align: center">每个线程最多保留<strong>最近完成的 10 个</strong>事件（默认值），新事件会覆盖旧事件</td>
+					<td style="text-align: center">可配置，通过 <code>performance_schema_events_waits_history_size</code> 等参数调整每个线程的保留条数</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><code>*_history_long</code></td>
+					<td style="text-align: center">长历史表</td>
+					<td style="text-align: center">存储<strong>长期留存</strong>的全量事件</td>
+					<td style="text-align: center">全局维度，每个线程最多保留<strong>最近完成的 10000 个</strong>事件（默认值），适合做历史分析</td>
+					<td style="text-align: center">可配置，通过 <code>performance_schema_events_waits_history_long_size</code> 等参数调整全局保留条数</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>比如（以 SQL 语句为例）：</p>
 <p><code>events_statements_current</code>：记录<strong>当前正在执行</strong>的 SQL，比如一个慢查询还没跑完，就能在这个表里看到它的执行进度、耗时等信息。</p>

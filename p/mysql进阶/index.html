@@ -653,76 +653,76 @@ xxx.MYI：存储索引</p>
 <p>在本地以 xxx.sdi 形式存储表结构信息</p>
 <h4 id="区别及特点">区别及特点
 </h4><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>特点</th>
-          <th>InnoDB</th>
-          <th>MyISAM</th>
-          <th>Memory</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>存储限制</td>
-          <td>64TB</td>
-          <td>有</td>
-          <td>有</td>
-      </tr>
-      <tr>
-          <td>事务安全</td>
-          <td>支持</td>
-          <td>-</td>
-          <td>-</td>
-      </tr>
-      <tr>
-          <td>锁机制</td>
-          <td>行锁</td>
-          <td>表锁</td>
-          <td>表锁</td>
-      </tr>
-      <tr>
-          <td>B+tree索引</td>
-          <td>支持</td>
-          <td>支持</td>
-          <td>支持</td>
-      </tr>
-      <tr>
-          <td>Hash索引</td>
-          <td>-</td>
-          <td>-</td>
-          <td>支持</td>
-      </tr>
-      <tr>
-          <td>全文索引</td>
-          <td>支持(5.6版本之后)</td>
-          <td>支持</td>
-          <td>-</td>
-      </tr>
-      <tr>
-          <td>空间使用</td>
-          <td>高</td>
-          <td>低</td>
-          <td>N/A</td>
-      </tr>
-      <tr>
-          <td>内存使用</td>
-          <td>高</td>
-          <td>低</td>
-          <td>中等</td>
-      </tr>
-      <tr>
-          <td>批量插入速度</td>
-          <td>低</td>
-          <td>高</td>
-          <td>高</td>
-      </tr>
-      <tr>
-          <td>支持外键</td>
-          <td>支持</td>
-          <td>-</td>
-          <td>-</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>特点</th>
+					<th>InnoDB</th>
+					<th>MyISAM</th>
+					<th>Memory</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>存储限制</td>
+					<td>64TB</td>
+					<td>有</td>
+					<td>有</td>
+			</tr>
+			<tr>
+					<td>事务安全</td>
+					<td>支持</td>
+					<td>-</td>
+					<td>-</td>
+			</tr>
+			<tr>
+					<td>锁机制</td>
+					<td>行锁</td>
+					<td>表锁</td>
+					<td>表锁</td>
+			</tr>
+			<tr>
+					<td>B+tree索引</td>
+					<td>支持</td>
+					<td>支持</td>
+					<td>支持</td>
+			</tr>
+			<tr>
+					<td>Hash索引</td>
+					<td>-</td>
+					<td>-</td>
+					<td>支持</td>
+			</tr>
+			<tr>
+					<td>全文索引</td>
+					<td>支持(5.6版本之后)</td>
+					<td>支持</td>
+					<td>-</td>
+			</tr>
+			<tr>
+					<td>空间使用</td>
+					<td>高</td>
+					<td>低</td>
+					<td>N/A</td>
+			</tr>
+			<tr>
+					<td>内存使用</td>
+					<td>高</td>
+					<td>低</td>
+					<td>中等</td>
+			</tr>
+			<tr>
+					<td>批量插入速度</td>
+					<td>低</td>
+					<td>高</td>
+					<td>高</td>
+			</tr>
+			<tr>
+					<td>支持外键</td>
+					<td>支持</td>
+					<td>-</td>
+					<td>-</td>
+			</tr>
+	</tbody>
 </table></div>
 <blockquote>
 <p><em>InnoDB引擎与MyISAM引擎的区别？</em></p>
@@ -768,65 +768,65 @@ xxx.MYI：存储索引</p>
 <h4 id="演示">演示
 </h4><p>假如现在有这样一张表：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>age</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>金庸</td>
-          <td>36</td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>张无忌</td>
-          <td>22</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>杨逍</td>
-          <td>33</td>
-      </tr>
-      <tr>
-          <td>4</td>
-          <td>韦一笑</td>
-          <td>48</td>
-      </tr>
-      <tr>
-          <td>5</td>
-          <td>常遇春</td>
-          <td>53</td>
-      </tr>
-      <tr>
-          <td>6</td>
-          <td>小昭</td>
-          <td>19</td>
-      </tr>
-      <tr>
-          <td>7</td>
-          <td>灭绝</td>
-          <td>45</td>
-      </tr>
-      <tr>
-          <td>8</td>
-          <td>周芷若</td>
-          <td>17</td>
-      </tr>
-      <tr>
-          <td>9</td>
-          <td>丁敏君</td>
-          <td>23</td>
-      </tr>
-      <tr>
-          <td>10</td>
-          <td>赵敏</td>
-          <td>20</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>id</th>
+					<th>name</th>
+					<th>age</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>金庸</td>
+					<td>36</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>张无忌</td>
+					<td>22</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>杨逍</td>
+					<td>33</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>韦一笑</td>
+					<td>48</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>常遇春</td>
+					<td>53</td>
+			</tr>
+			<tr>
+					<td>6</td>
+					<td>小昭</td>
+					<td>19</td>
+			</tr>
+			<tr>
+					<td>7</td>
+					<td>灭绝</td>
+					<td>45</td>
+			</tr>
+			<tr>
+					<td>8</td>
+					<td>周芷若</td>
+					<td>17</td>
+			</tr>
+			<tr>
+					<td>9</td>
+					<td>丁敏君</td>
+					<td>23</td>
+			</tr>
+			<tr>
+					<td>10</td>
+					<td>赵敏</td>
+					<td>20</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>然后现在要执行如下语句，查找45岁的人</p>
 <div class="highlight"><div class="chroma">
@@ -857,88 +857,88 @@ xxx.MYI：存储索引</p>
 </blockquote>
 <h4 id="特点">特点
 </h4><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>优势</th>
-          <th>劣势</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>提高数据检索的效率，降低数据库的IO成本</td>
-          <td>索引列也是要占用空间的。</td>
-      </tr>
-      <tr>
-          <td>通过索引列对数据进行排序，降低数据排序的成本，降低CPU的消耗。</td>
-          <td>索引大大提高了查询效率，同时却也降低更新表的速度，如对表进行INSERT、UPDATE、DELETE时，效率降低。</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>优势</th>
+					<th>劣势</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>提高数据检索的效率，降低数据库的IO成本</td>
+					<td>索引列也是要占用空间的。</td>
+			</tr>
+			<tr>
+					<td>通过索引列对数据进行排序，降低数据排序的成本，降低CPU的消耗。</td>
+					<td>索引大大提高了查询效率，同时却也降低更新表的速度，如对表进行INSERT、UPDATE、DELETE时，效率降低。</td>
+			</tr>
+	</tbody>
 </table></div>
 <h3 id="索引结构">索引结构
 </h3><h4 id="概述">概述
 </h4><p>MySQL的索引是在存储引擎层实现的，不同的存储引擎有不同的索引结构，主要包含以下几种：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>索引结构</th>
-          <th>描述</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>B+Tree索引</strong></td>
-          <td><strong>最常见的索引类型，大部分引擎都支持 B+ 树索引</strong></td>
-      </tr>
-      <tr>
-          <td>Hash索引</td>
-          <td>底层数据结构是用哈希表实现的，只有精确匹配索引列的查询才有效，不支持范围查询</td>
-      </tr>
-      <tr>
-          <td>R - tree(空间索引)</td>
-          <td>空间索引是MyISAM引擎的一个特殊索引类型，主要用于地理空间数据类型，通常使用较少</td>
-      </tr>
-      <tr>
-          <td>Full - text(全文索引)</td>
-          <td>是一种通过建立倒排索引，快速匹配文档的方式。类似于Lucene, Solr, ES</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>索引结构</th>
+					<th>描述</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>B+Tree索引</strong></td>
+					<td><strong>最常见的索引类型，大部分引擎都支持 B+ 树索引</strong></td>
+			</tr>
+			<tr>
+					<td>Hash索引</td>
+					<td>底层数据结构是用哈希表实现的，只有精确匹配索引列的查询才有效，不支持范围查询</td>
+			</tr>
+			<tr>
+					<td>R - tree(空间索引)</td>
+					<td>空间索引是MyISAM引擎的一个特殊索引类型，主要用于地理空间数据类型，通常使用较少</td>
+			</tr>
+			<tr>
+					<td>Full - text(全文索引)</td>
+					<td>是一种通过建立倒排索引，快速匹配文档的方式。类似于Lucene, Solr, ES</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>上述是MySQL中所支持的所有的索引结构，下面是不同的存储引擎对于索引结构的支持情况：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>索引</th>
-          <th>InnoDB</th>
-          <th>MyISAM</th>
-          <th>Memory</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>B+tree索引</td>
-          <td>支持</td>
-          <td>支持</td>
-          <td>支持</td>
-      </tr>
-      <tr>
-          <td>Hash 索引</td>
-          <td>不支持</td>
-          <td>不支持</td>
-          <td>支持</td>
-      </tr>
-      <tr>
-          <td>R - tree 索引</td>
-          <td>不支持</td>
-          <td>支持</td>
-          <td>不支持</td>
-      </tr>
-      <tr>
-          <td>Full - text</td>
-          <td>5.6版本之后支持</td>
-          <td>支持</td>
-          <td>不支持</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>索引</th>
+					<th>InnoDB</th>
+					<th>MyISAM</th>
+					<th>Memory</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>B+tree索引</td>
+					<td>支持</td>
+					<td>支持</td>
+					<td>支持</td>
+			</tr>
+			<tr>
+					<td>Hash 索引</td>
+					<td>不支持</td>
+					<td>不支持</td>
+					<td>支持</td>
+			</tr>
+			<tr>
+					<td>R - tree 索引</td>
+					<td>不支持</td>
+					<td>支持</td>
+					<td>不支持</td>
+			</tr>
+			<tr>
+					<td>Full - text</td>
+					<td>5.6版本之后支持</td>
+					<td>支持</td>
+					<td>不支持</td>
+			</tr>
+	</tbody>
 </table></div>
 <blockquote>
 <p>注意： 平常所说的索引，如果没有特别指明，都是指B+树结构组织的索引。</p>
@@ -1093,63 +1093,63 @@ xxx.MYI：存储索引</p>
 </h3><h4 id="索引分类-1">索引分类
 </h4><p>在MySQL数据库，将索引的具体类型主要分为以下几类：主键索引、唯一索引、常规索引、全文索引。</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>分类</th>
-          <th>含义</th>
-          <th>特点</th>
-          <th>关键字</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>主键索引</td>
-          <td>针对于表中主键创建的索引</td>
-          <td>默认自动创建，只能有一个</td>
-          <td>PRIMARY</td>
-      </tr>
-      <tr>
-          <td>唯一索引</td>
-          <td>避免同一个表中某数据列中的值重复</td>
-          <td>可以有多个</td>
-          <td>UNIQUE</td>
-      </tr>
-      <tr>
-          <td>常规索引</td>
-          <td>快速定位特定数据</td>
-          <td>可以有多个</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>全文索引</td>
-          <td>全文索引查找的是文本中的关键词，而不是比较索引中的值</td>
-          <td>可以有多个</td>
-          <td>FULLTEXT</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>分类</th>
+					<th>含义</th>
+					<th>特点</th>
+					<th>关键字</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>主键索引</td>
+					<td>针对于表中主键创建的索引</td>
+					<td>默认自动创建，只能有一个</td>
+					<td>PRIMARY</td>
+			</tr>
+			<tr>
+					<td>唯一索引</td>
+					<td>避免同一个表中某数据列中的值重复</td>
+					<td>可以有多个</td>
+					<td>UNIQUE</td>
+			</tr>
+			<tr>
+					<td>常规索引</td>
+					<td>快速定位特定数据</td>
+					<td>可以有多个</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>全文索引</td>
+					<td>全文索引查找的是文本中的关键词，而不是比较索引中的值</td>
+					<td>可以有多个</td>
+					<td>FULLTEXT</td>
+			</tr>
+	</tbody>
 </table></div>
 <h4 id="聚集索引二级索引">聚集索引&amp;二级索引
 </h4><p>而在InnoDB存储引擎中，根据索引的存储形式，又可以分为以下两种：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>分类</th>
-          <th>含义</th>
-          <th>特点</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>聚集索引 (Clustered Index)</td>
-          <td>将数据存储与索引放到了一块，索引结构的叶子节点保存了行数据</td>
-          <td>必须有，而且只有一个</td>
-      </tr>
-      <tr>
-          <td>二级索引 (Secondary Index)</td>
-          <td>将数据与索引分开存储，索引结构的叶子节点关联的是对应的主键</td>
-          <td>可以存在多个</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>分类</th>
+					<th>含义</th>
+					<th>特点</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>聚集索引 (Clustered Index)</td>
+					<td>将数据存储与索引放到了一块，索引结构的叶子节点保存了行数据</td>
+					<td>必须有，而且只有一个</td>
+			</tr>
+			<tr>
+					<td>二级索引 (Secondary Index)</td>
+					<td>将数据与索引分开存储，索引结构的叶子节点关联的是对应的主键</td>
+					<td>可以存在多个</td>
+			</tr>
+	</tbody>
 </table></div>
 <p><strong>聚集索引选取规则：</strong></p>
 <ul>
@@ -1584,46 +1584,46 @@ xxx.MYI：存储索引</p>
 ></p>
 <p>Explain 执行计划中各个字段的含义:</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>字段</th>
-          <th>含义</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>id</td>
-          <td>select查询的序列号，表示查询中执行select子句或者是操作表的顺序（id相同，执行顺序从上到下；id不同，值越大，越先执行）。</td>
-      </tr>
-      <tr>
-          <td>select_type</td>
-          <td>表示 SELECT 的类型，常见的取值有 SIMPLE（简单表，即不使用表连接或者子查询）、PRIMARY（主查询，即外层的查询）、UNION（UNION 中的第二个或者后面的查询语句）、SUBQUERY（SELECT/WHERE之后包含了子查询）等</td>
-      </tr>
-      <tr>
-          <td>type</td>
-          <td>表示连接类型，性能由好到差的连接类型为NULL、system、const、eq_ref、ref、range、 index、all 。</td>
-      </tr>
-      <tr>
-          <td>possible_key</td>
-          <td>显示可能应用在这张表上的索引，一个或多个。</td>
-      </tr>
-      <tr>
-          <td>key</td>
-          <td>实际使用的索引，如果为NULL，则没有使用索引。</td>
-      </tr>
-      <tr>
-          <td>key_len</td>
-          <td>表示索引中使用的字节数， 该值为索引字段最大可能长度，并非实际使用长度，在不损失精确性的前提下， 长度越短越好 。</td>
-      </tr>
-      <tr>
-          <td>rows</td>
-          <td>MySQL认为必须要执行查询的行数，在innodb引擎的表中，是一个估计值，可能并不总是准确的。</td>
-      </tr>
-      <tr>
-          <td>filtered</td>
-          <td>表示返回结果的行数占需读取行数的百分比， filtered 的值越大越好。</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>字段</th>
+					<th>含义</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>id</td>
+					<td>select查询的序列号，表示查询中执行select子句或者是操作表的顺序（id相同，执行顺序从上到下；id不同，值越大，越先执行）。</td>
+			</tr>
+			<tr>
+					<td>select_type</td>
+					<td>表示 SELECT 的类型，常见的取值有 SIMPLE（简单表，即不使用表连接或者子查询）、PRIMARY（主查询，即外层的查询）、UNION（UNION 中的第二个或者后面的查询语句）、SUBQUERY（SELECT/WHERE之后包含了子查询）等</td>
+			</tr>
+			<tr>
+					<td>type</td>
+					<td>表示连接类型，性能由好到差的连接类型为NULL、system、const、eq_ref、ref、range、 index、all 。</td>
+			</tr>
+			<tr>
+					<td>possible_key</td>
+					<td>显示可能应用在这张表上的索引，一个或多个。</td>
+			</tr>
+			<tr>
+					<td>key</td>
+					<td>实际使用的索引，如果为NULL，则没有使用索引。</td>
+			</tr>
+			<tr>
+					<td>key_len</td>
+					<td>表示索引中使用的字节数， 该值为索引字段最大可能长度，并非实际使用长度，在不损失精确性的前提下， 长度越短越好 。</td>
+			</tr>
+			<tr>
+					<td>rows</td>
+					<td>MySQL认为必须要执行查询的行数，在innodb引擎的表中，是一个估计值，可能并不总是准确的。</td>
+			</tr>
+			<tr>
+					<td>filtered</td>
+					<td>表示返回结果的行数占需读取行数的百分比， filtered 的值越大越好。</td>
+			</tr>
+	</tbody>
 </table></div>
 <h3 id="索引使用">索引使用
 </h3><h4 id="验证索引效率">验证索引效率
@@ -2183,22 +2183,22 @@ xxx.MYI：存储索引</p>
 ></p>
 <p>从上述的执行计划可以看到，这四条SQL语句的执行计划前面所有的指标都是一样的，看不出来差异。但是此时，主要关注的是后面的Extra，前面两条SQL的结果为 <strong>Using where; Using Index</strong> ; 而后面两条SQL的结果为: <strong>Using index condition</strong>。而Using where; Using Index的效率更高。</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Extra</th>
-          <th>含义</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Using where; Using Index</td>
-          <td>查找使用了索引，但是需要的数据都在索引列中能找到，所以不需要回表查询数据</td>
-      </tr>
-      <tr>
-          <td>Using index condition</td>
-          <td>查找使用了索引，但是需要回表查询数据</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Extra</th>
+					<th>含义</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Using where; Using Index</td>
+					<td>查找使用了索引，但是需要的数据都在索引列中能找到，所以不需要回表查询数据</td>
+			</tr>
+			<tr>
+					<td>Using index condition</td>
+					<td>查找使用了索引，但是需要回表查询数据</td>
+			</tr>
+	</tbody>
 </table></div>
 <blockquote>
 <p>一张表, 共有四个字段(id, username, password, status), 由于数据量大, 需要对以下SQL语句进行优化：<code>select id,username,password from tb_user where username = 'itcast';</code><em>该如何进行才是最优方案？</em></p>
@@ -2976,30 +2976,30 @@ xxx.MYI：存储索引</p>
 </h4><p>count() 是一个聚合函数，对于返回的结果集，一行行地判断，如果 count 函数的参数不是 NULL，累计值就加 1，否则不加，最后返回累计值。</p>
 <p>用法：count（*）、count（主键）、count（字段）、count（数字）</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>count用法</th>
-          <th>含义</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>count(主键)</td>
-          <td>InnoDB 引擎会遍历整张表，把每一行的 主键id 值都取出来，返回给服务层。服务层拿到主键后，直接按行进行累加(主键不可能为null)</td>
-      </tr>
-      <tr>
-          <td>count(字段)</td>
-          <td>没有not null 约束 ：InnoDB 引擎会遍历整张表把每一行的字段值都取出来，返回给服务层，服务层判断是否为null，不为null，计数累加。 有not null 约束：InnoDB 引擎会遍历整张表把每一行的字段值都取出来，返回给服务层，直接按行进行累加。</td>
-      </tr>
-      <tr>
-          <td>count(数字)</td>
-          <td>InnoDB 引擎遍历整张表，但不取值。服务层对于返回的每一行，放一个数字“1”进去，直接按行进行累加。</td>
-      </tr>
-      <tr>
-          <td>count(*)</td>
-          <td>InnoDB引擎并不会把全部字段取出来，而是专门做了优化，不取值，服务层直接按行进行累加。</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>count用法</th>
+					<th>含义</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>count(主键)</td>
+					<td>InnoDB 引擎会遍历整张表，把每一行的 主键id 值都取出来，返回给服务层。服务层拿到主键后，直接按行进行累加(主键不可能为null)</td>
+			</tr>
+			<tr>
+					<td>count(字段)</td>
+					<td>没有not null 约束 ：InnoDB 引擎会遍历整张表把每一行的字段值都取出来，返回给服务层，服务层判断是否为null，不为null，计数累加。 有not null 约束：InnoDB 引擎会遍历整张表把每一行的字段值都取出来，返回给服务层，直接按行进行累加。</td>
+			</tr>
+			<tr>
+					<td>count(数字)</td>
+					<td>InnoDB 引擎遍历整张表，但不取值。服务层对于返回的每一行，放一个数字“1”进去，直接按行进行累加。</td>
+			</tr>
+			<tr>
+					<td>count(*)</td>
+					<td>InnoDB引擎并不会把全部字段取出来，而是专门做了优化，不取值，服务层直接按行进行累加。</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>按照效率排序的话，count(字段) &lt; count(主键 id) &lt; count(1) ≈ count(*)，所以尽量使用 count(*)</p>
 <h3 id="update优化">update优化
@@ -3199,35 +3199,35 @@ xxx.MYI：存储索引</p>
 <p>在MySQL5.5中引入了MDL，当对一张表进行增删改查的时候，加MDL读锁（共享）；当对表结构进行变更操作的时候，加MDL写锁（排他）。</p>
 <p>常见的SQL操作时，所添加的元数据锁：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>对应SQL</th>
-          <th>锁类型</th>
-          <th>说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>lock tables xxx read / write</td>
-          <td>SHARED_READ_ONLY / SHARED_NO_READ_WRITE</td>
-          <td>当我们手动加锁时，MySQL会自动加上对应的元数据锁</td>
-      </tr>
-      <tr>
-          <td>select、select &hellip; lock in share mode</td>
-          <td>SHARED_READ</td>
-          <td>与SHARED_READ、SHARED_WRITE兼容，与EXCLUSIVE互斥</td>
-      </tr>
-      <tr>
-          <td>insert、update、delete、select &hellip; for update</td>
-          <td>SHARED_WRITE</td>
-          <td>与SHARED_READ、SHARED_WRITE兼容，与EXCLUSIVE互斥</td>
-      </tr>
-      <tr>
-          <td>alter table &hellip;</td>
-          <td>EXCLUSIVE</td>
-          <td>与其他的MDL都互斥</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>对应SQL</th>
+					<th>锁类型</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>lock tables xxx read / write</td>
+					<td>SHARED_READ_ONLY / SHARED_NO_READ_WRITE</td>
+					<td>当我们手动加锁时，MySQL会自动加上对应的元数据锁</td>
+			</tr>
+			<tr>
+					<td>select、select &hellip; lock in share mode</td>
+					<td>SHARED_READ</td>
+					<td>与SHARED_READ、SHARED_WRITE兼容，与EXCLUSIVE互斥</td>
+			</tr>
+			<tr>
+					<td>insert、update、delete、select &hellip; for update</td>
+					<td>SHARED_WRITE</td>
+					<td>与SHARED_READ、SHARED_WRITE兼容，与EXCLUSIVE互斥</td>
+			</tr>
+			<tr>
+					<td>alter table &hellip;</td>
+					<td>EXCLUSIVE</td>
+					<td>与其他的MDL都互斥</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>可以通过下面的SQL，来查看数据库中的元数据锁的情况：</p>
 <div class="highlight"><div class="chroma">
@@ -3367,67 +3367,67 @@ xxx.MYI：存储索引</p>
 </ul>
 <p>两种行锁的兼容情况如下：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>当前锁类型↓\请求锁类型→</th>
-          <th>S（共享锁）</th>
-          <th>X（排他锁）</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>S（共享锁）</td>
-          <td>兼容</td>
-          <td>冲突</td>
-      </tr>
-      <tr>
-          <td>X（排他锁）</td>
-          <td>冲突</td>
-          <td>冲突</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>当前锁类型↓\请求锁类型→</th>
+					<th>S（共享锁）</th>
+					<th>X（排他锁）</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>S（共享锁）</td>
+					<td>兼容</td>
+					<td>冲突</td>
+			</tr>
+			<tr>
+					<td>X（排他锁）</td>
+					<td>冲突</td>
+					<td>冲突</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>常见的SQL语句，在执行时，所加的行锁如下：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>SQL</th>
-          <th>行锁类型</th>
-          <th>说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>INSERT &hellip;</td>
-          <td>排他锁</td>
-          <td>自动加锁</td>
-      </tr>
-      <tr>
-          <td>UPDATE &hellip;</td>
-          <td>排他锁</td>
-          <td>自动加锁</td>
-      </tr>
-      <tr>
-          <td>DELETE &hellip;</td>
-          <td>排他锁</td>
-          <td>自动加锁</td>
-      </tr>
-      <tr>
-          <td>SELECT（正常）</td>
-          <td>不加任何锁</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>SELECT &hellip; LOCK IN SHARE MODE</td>
-          <td>共享锁</td>
-          <td>需要手动在SELECT之后加LOCK IN SHARE MODE</td>
-      </tr>
-      <tr>
-          <td>SELECT &hellip; FOR UPDATE</td>
-          <td>排他锁</td>
-          <td>需要手动在SELECT之后加FOR UPDATE</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>SQL</th>
+					<th>行锁类型</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>INSERT &hellip;</td>
+					<td>排他锁</td>
+					<td>自动加锁</td>
+			</tr>
+			<tr>
+					<td>UPDATE &hellip;</td>
+					<td>排他锁</td>
+					<td>自动加锁</td>
+			</tr>
+			<tr>
+					<td>DELETE &hellip;</td>
+					<td>排他锁</td>
+					<td>自动加锁</td>
+			</tr>
+			<tr>
+					<td>SELECT（正常）</td>
+					<td>不加任何锁</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>SELECT &hellip; LOCK IN SHARE MODE</td>
+					<td>共享锁</td>
+					<td>需要手动在SELECT之后加LOCK IN SHARE MODE</td>
+			</tr>
+			<tr>
+					<td>SELECT &hellip; FOR UPDATE</td>
+					<td>排他锁</td>
+					<td>需要手动在SELECT之后加FOR UPDATE</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>默认情况下，InnoDB在 REPEATABLE READ事务隔离级别运行，InnoDB使用 next-key 锁进行搜索和索引扫描，以防止幻读。</p>
 <ul>
@@ -3725,35 +3725,35 @@ xxx.MYI：存储索引</p>
 <p><strong>2）IO Thread</strong></p>
 <p>在InnoDB存储引擎中大量使用了AIO（异步IO）来处理IO请求, 这样可以极大地提高数据库的性能，而IO Thread主要负责这些异步IO请求的回调。</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>线程类型</th>
-          <th>默认个数</th>
-          <th>职责</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Read thread</td>
-          <td>4</td>
-          <td>负责读操作</td>
-      </tr>
-      <tr>
-          <td>Write thread</td>
-          <td>4</td>
-          <td>负责写操作</td>
-      </tr>
-      <tr>
-          <td>Log thread</td>
-          <td>1</td>
-          <td>负责将日志缓冲区刷新到磁盘</td>
-      </tr>
-      <tr>
-          <td>Insert buffer thread</td>
-          <td>1</td>
-          <td>负责将写缓冲区内容刷新到磁盘</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>线程类型</th>
+					<th>默认个数</th>
+					<th>职责</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Read thread</td>
+					<td>4</td>
+					<td>负责读操作</td>
+			</tr>
+			<tr>
+					<td>Write thread</td>
+					<td>4</td>
+					<td>负责写操作</td>
+			</tr>
+			<tr>
+					<td>Log thread</td>
+					<td>1</td>
+					<td>负责将日志缓冲区刷新到磁盘</td>
+			</tr>
+			<tr>
+					<td>Insert buffer thread</td>
+					<td>1</td>
+					<td>负责将写缓冲区内容刷新到磁盘</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>可以通过以下的这条指令，查看到InnoDB的状态信息，其中就包含IO Thread信息。</p>
 <div class="highlight"><div class="chroma">
@@ -3862,48 +3862,48 @@ xxx.MYI：存储索引</p>
 <h4 id="隐藏字段">隐藏字段
 </h4><p>假设创建了这样一张表：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>id</th>
-          <th>age</th>
-          <th>name</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>18</td>
-          <td>tom</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>38</td>
-          <td>cat</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>id</th>
+					<th>age</th>
+					<th>name</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>18</td>
+					<td>tom</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>38</td>
+					<td>cat</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>当我们创建了上面的这张表，我们在查看表结构的时候，就可以显式的看到这三个字段。 实际上除了这三个字段以外，InnoDB还会自动添加两个或三个隐藏字段及其含义分别是：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>隐藏字段</th>
-          <th>含义</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>DB_TRX_ID</td>
-          <td>最近修改事务ID，记录插入这条记录或最后一次修改该记录的事务ID。</td>
-      </tr>
-      <tr>
-          <td>DB_ROLL_PTR</td>
-          <td>回滚指针，指向这条记录的上一个版本，用于配合undo log，指向上一个版本。</td>
-      </tr>
-      <tr>
-          <td>DB_ROW_ID</td>
-          <td>隐藏主键，如果表结构没有指定主键，将会生成该隐藏字段。</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>隐藏字段</th>
+					<th>含义</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>DB_TRX_ID</td>
+					<td>最近修改事务ID，记录插入这条记录或最后一次修改该记录的事务ID。</td>
+			</tr>
+			<tr>
+					<td>DB_ROLL_PTR</td>
+					<td>回滚指针，指向这条记录的上一个版本，用于配合undo log，指向上一个版本。</td>
+			</tr>
+			<tr>
+					<td>DB_ROW_ID</td>
+					<td>隐藏主键，如果表结构没有指定主键，将会生成该隐藏字段。</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>而上述的前两个字段是肯定会添加的，是否添加最后一个字段DB_ROW_ID，得看当前表有没有主键，如果有主键，则不会添加该隐藏字段。</p>
 <h4 id="undo-log-1">undo log
@@ -3913,24 +3913,24 @@ xxx.MYI：存储索引</p>
 <p><strong>2）版本链</strong></p>
 <p>假设现在有一张表：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>id</th>
-          <th>age</th>
-          <th>name</th>
-          <th>DB_TRX_ID</th>
-          <th>DB_ROLL_PTR</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>30</td>
-          <td>30</td>
-          <td>A30</td>
-          <td>1</td>
-          <td>null</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>id</th>
+					<th>age</th>
+					<th>name</th>
+					<th>DB_TRX_ID</th>
+					<th>DB_ROLL_PTR</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>30</td>
+					<td>30</td>
+					<td>A30</td>
+					<td>1</td>
+					<td>null</td>
+			</tr>
+	</tbody>
 </table></div>
 <ul>
 <li>DB_TRX_ID ：代表最近修改事务ID，记录插入这条记录或最后一次修改该记录的事务ID，是自增的。</li>
@@ -3938,82 +3938,82 @@ xxx.MYI：存储索引</p>
 </ul>
 <p>然后，假设现在有四个并发事务同时在访问这张表。</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>事务2</th>
-          <th>事务3</th>
-          <th>事务4</th>
-          <th>事务5</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>开始事务</td>
-          <td>开始事务</td>
-          <td>开始事务</td>
-          <td>开始事务</td>
-      </tr>
-      <tr>
-          <td>修改id为30记录，age改为3</td>
-          <td></td>
-          <td>查询id为30的记录</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>提交事务</td>
-          <td></td>
-          <td></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td></td>
-          <td>修改id为30记录，name改为A3</td>
-          <td></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>查询id为30的记录</td>
-      </tr>
-      <tr>
-          <td></td>
-          <td>提交事务</td>
-          <td></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td></td>
-          <td></td>
-          <td>修改id为30记录，age改为10</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td></td>
-          <td></td>
-          <td>查询id为30的记录</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>查询id为30的记录</td>
-      </tr>
-      <tr>
-          <td></td>
-          <td></td>
-          <td>提交事务</td>
-          <td></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>事务2</th>
+					<th>事务3</th>
+					<th>事务4</th>
+					<th>事务5</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>开始事务</td>
+					<td>开始事务</td>
+					<td>开始事务</td>
+					<td>开始事务</td>
+			</tr>
+			<tr>
+					<td>修改id为30记录，age改为3</td>
+					<td></td>
+					<td>查询id为30的记录</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>提交事务</td>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td></td>
+					<td>修改id为30记录，name改为A3</td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>查询id为30的记录</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td>提交事务</td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td></td>
+					<td></td>
+					<td>修改id为30记录，age改为10</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td></td>
+					<td></td>
+					<td>查询id为30的记录</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>查询id为30的记录</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td></td>
+					<td>提交事务</td>
+					<td></td>
+			</tr>
+	</tbody>
 </table></div>
 <p>首先执行事务2：</p>
 <p>当事务2执行第一条修改语句时，会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针，回滚指针用来指定如果发生回滚，回滚到哪一个版本。</p>
@@ -4045,62 +4045,62 @@ xxx.MYI：存储索引</p>
 </h4><p>ReadView（读视图）是 <strong>快照读</strong> SQL执行时MVCC提取数据的依据，也就是说ReadView决定了快照读时读取的版本，记录并维护系统当前活跃的事务（未提交的）id。</p>
 <p>ReadView中包含了四个核心字段：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>字段</th>
-          <th>含义</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>m_ids</td>
-          <td>当前活跃的（未提交的）事务ID集合</td>
-      </tr>
-      <tr>
-          <td>min_trx_id</td>
-          <td>最小活跃事务ID（越小越早）</td>
-      </tr>
-      <tr>
-          <td>max_trx_id</td>
-          <td>预分配事务ID，当前最大事务ID+1（因为事务ID是自增的）</td>
-      </tr>
-      <tr>
-          <td>creator_trx_id</td>
-          <td>ReadView创建者的事务ID</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>字段</th>
+					<th>含义</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>m_ids</td>
+					<td>当前活跃的（未提交的）事务ID集合</td>
+			</tr>
+			<tr>
+					<td>min_trx_id</td>
+					<td>最小活跃事务ID（越小越早）</td>
+			</tr>
+			<tr>
+					<td>max_trx_id</td>
+					<td>预分配事务ID，当前最大事务ID+1（因为事务ID是自增的）</td>
+			</tr>
+			<tr>
+					<td>creator_trx_id</td>
+					<td>ReadView创建者的事务ID</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>而在readview中就规定了版本链数据的访问规则：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>条件</th>
-          <th>是否可以访问</th>
-          <th>说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>trx_id == creator_trx_id</td>
-          <td>可以访问该版本</td>
-          <td>说明数据是当前这个事务更改的</td>
-      </tr>
-      <tr>
-          <td>trx_id &lt; min_trx_id</td>
-          <td>可以访问该版本</td>
-          <td>说明数据已经提交了</td>
-      </tr>
-      <tr>
-          <td>trx_id &gt; max_trx_id</td>
-          <td>不可以访问该版本</td>
-          <td>说明该事务是在ReadView生成后才开启</td>
-      </tr>
-      <tr>
-          <td>min_trx_id &lt;= trx_id &lt;= max_trx_id</td>
-          <td>如果trx_id不在m_ids中，则可以访问该版本</td>
-          <td>说明数据已经提交</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>条件</th>
+					<th>是否可以访问</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>trx_id == creator_trx_id</td>
+					<td>可以访问该版本</td>
+					<td>说明数据是当前这个事务更改的</td>
+			</tr>
+			<tr>
+					<td>trx_id &lt; min_trx_id</td>
+					<td>可以访问该版本</td>
+					<td>说明数据已经提交了</td>
+			</tr>
+			<tr>
+					<td>trx_id &gt; max_trx_id</td>
+					<td>不可以访问该版本</td>
+					<td>说明该事务是在ReadView生成后才开启</td>
+			</tr>
+			<tr>
+					<td>min_trx_id &lt;= trx_id &lt;= max_trx_id</td>
+					<td>如果trx_id不在m_ids中，则可以访问该版本</td>
+					<td>说明数据已经提交</td>
+			</tr>
+	</tbody>
 </table></div>
 <p><code>trx_id</code> 代表当前undo log版本链对应事务ID。（这部分不太理解可以结合下面原理分析部分的案例来理解）</p>
 <p>不同的隔离级别，生成ReadView的时机不同：</p>
@@ -4185,30 +4185,30 @@ xxx.MYI：存储索引</p>
 </h2><h3 id="系统数据库">系统数据库
 </h3><p>Mysql数据库安装完成后，自带了一下四个数据库，大致作用如下（以8.0版本为例）：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>数据库</th>
-          <th>含义</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>mysql</td>
-          <td>存储MySQL服务器正常运行所需要的各种信息 （时区、主从、用户、权限等）</td>
-      </tr>
-      <tr>
-          <td>information_schema</td>
-          <td>提供了访问数据库元数据的各种表和视图，包含数据库、表、字段类型及访问权限等</td>
-      </tr>
-      <tr>
-          <td>performance_schema</td>
-          <td>为MySQL服务器运行时状态提供了一个底层监控功能，主要用于收集数据库服务器性能参数</td>
-      </tr>
-      <tr>
-          <td>sys</td>
-          <td>包含了一系列方便 DBA 和开发人员利用 performance_schema 性能数据库进行性能调优和诊断的视图</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>数据库</th>
+					<th>含义</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>mysql</td>
+					<td>存储MySQL服务器正常运行所需要的各种信息 （时区、主从、用户、权限等）</td>
+			</tr>
+			<tr>
+					<td>information_schema</td>
+					<td>提供了访问数据库元数据的各种表和视图，包含数据库、表、字段类型及访问权限等</td>
+			</tr>
+			<tr>
+					<td>performance_schema</td>
+					<td>为MySQL服务器运行时状态提供了一个底层监控功能，主要用于收集数据库服务器性能参数</td>
+			</tr>
+			<tr>
+					<td>sys</td>
+					<td>包含了一系列方便 DBA 和开发人员利用 performance_schema 性能数据库进行性能调优和诊断的视图</td>
+			</tr>
+	</tbody>
 </table></div>
 <h3 id="常用工具">常用工具
 </h3><p>下面简单提及一些常用工具，并不详细介绍</p>
