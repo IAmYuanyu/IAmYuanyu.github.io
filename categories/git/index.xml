@@ -7,7 +7,168 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Sun, 19 Oct 2025 22:44:36 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 06 Jun 2026 11:35:24 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Git基础使用</title>
+        <link>https://IAmYuanyu.github.io/p/git%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Sat, 06 Jun 2026 11:35:24 +0800</pubDate>
+        
+        <guid>https://IAmYuanyu.github.io/p/git%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</guid>
+        <description>&lt;h1 id=&#34;git基础教程&#34;&gt;Git基础教程
+&lt;/h1&gt;&lt;p&gt;具体的操作本文不会提及，在AI时代知道这些概念即可，具体操作交给AI来完成&lt;/p&gt;
+&lt;h2 id=&#34;什么是git&#34;&gt;什么是Git
+&lt;/h2&gt;&lt;p&gt;Git 是目前最流行的&lt;strong&gt;分布式版本控制系统&lt;/strong&gt;，由 Linux 之父 Linus Torvalds 在 2005 年开发。它就像一个项目的&amp;quot;超级存档&amp;quot;，能精准记录每个文件的每次改动，并让多人协作高效协同。&lt;/p&gt;
+&lt;p&gt;被 Git 管理的文件夹，会在根目录生成隐藏子文件夹 &lt;code&gt;.git&lt;/code&gt;，存放所有版本控制信息。&lt;/p&gt;
+&lt;p&gt;Git有两种仓库类型，分为&lt;strong&gt;本地仓库&lt;/strong&gt;和&lt;strong&gt;远端仓库&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本地仓库：即本地受 Git 管理的项目目录，版本记录存放在项目根目录的&lt;code&gt;.git&lt;/code&gt;文件夹下。&lt;/li&gt;
+&lt;li&gt;远端仓库：将本地仓库上传到远端托管平台，如 GitHub、Gitee 等。一般分为公开(public)仓库和私有(private)仓库，公开仓库所有人都能够访问与下载，私有仓库只有仓库所有者及被授权的协作者能够访问与下载。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以&lt;strong&gt;Git 是工具本身&lt;/strong&gt;，用于在本地进行版本控制。&lt;strong&gt;GitHub（以及 GitLab、Gitee）是远端托管平台&lt;/strong&gt;，两者是完全不同的概念。&lt;/p&gt;
+&lt;h2 id=&#34;如何使用&#34;&gt;如何使用
+&lt;/h2&gt;&lt;p&gt;要使用Git首先要安装Git，Windows可以在&lt;a class=&#34;link&#34; href=&#34;https://git-scm.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Git官网&lt;/a&gt;下载。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606092848303.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260606092848303&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;基本概念&#34;&gt;基本概念
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;如何开始让Git管理文件？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;在需要被管理的目录下打开命令行窗口，在其中输入&lt;code&gt;git init&lt;/code&gt;，然后在当前目录下就会生成一个隐藏的 &lt;code&gt;.git&lt;/code&gt; 子文件夹，删除这个文件夹就可以取消 Git 管理&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;有不想被管理的文件怎么办？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;若有不希望被管理的文件，可以创建一个&lt;code&gt;.gitignore&lt;/code&gt;文件，在其中指定需要忽略的文件或目录，比如包含敏感信息的文件、项目依赖文件等。&lt;/p&gt;
+&lt;p&gt;注意，&lt;code&gt;.gitignore&lt;/code&gt; 只能忽略&lt;strong&gt;未被跟踪&lt;/strong&gt;的文件，对已被 Git 跟踪的文件无效，需先 &lt;code&gt;git rm --cached&lt;/code&gt; 移除跟踪，所以建议在最初就写好需要忽略的文件。&lt;/p&gt;
+&lt;h2 id=&#34;版本控制&#34;&gt;版本控制
+&lt;/h2&gt;&lt;p&gt;Git不会时刻自动保存你的修改，每个存档点需要手动提交(commit)。&lt;/p&gt;
+&lt;p&gt;以IDEA的图像界面为例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606094937785.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260606094937785&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击提交后，会保存仓库当前状态的快照，并记录提交信息和生成一个唯一的Commit ID。&lt;/p&gt;
+&lt;p&gt;同样可以在IDEA中直观地看见提交历史。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606095318864.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20260606095318864&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;若需要撤销已提交的commit，有以下三种策略：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Discard&lt;/strong&gt;：放弃尚未 Commit 的本地修改。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reset&lt;/strong&gt;：将仓库强制回退到某个历史 Commit，适用于单人分支或未推送远端的场景。若已推送远端，则需要 &lt;code&gt;--force&lt;/code&gt; 强制推送，存在覆盖他人代码的风险，多人协作禁止使用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Revert&lt;/strong&gt;：生成一个反向 Commit 来抵消某次 Commit 的改动，安全且适合多人协作，推荐在多人协作场景下使用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;分支&#34;&gt;分支
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;分支（Branch）&lt;/strong&gt; 是你项目的一条独立开发线。可以把 Git 分支想象成一个 &lt;strong&gt;可移动的指针&lt;/strong&gt;，指向某次提交的&amp;quot;快照&amp;quot;。当你新建分支时，Git 只是创建了一个新指针，并不会拷贝整个项目，这也是它速度极快的原因。&lt;/p&gt;
+&lt;p&gt;默认分支名通常为&lt;code&gt;main&lt;/code&gt;，早期通常为&lt;code&gt;master&lt;/code&gt;。可以在任意一个历史提交创建一个新分支。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HEAD&lt;/strong&gt;就是一个特殊的指针，表示你当前所在的分支。切换分支，其实就是移动 HEAD。&lt;/p&gt;
+&lt;p&gt;不同分支上新产生的提交不会自动出现在其他分支上，比如创建了一个新分支后，在新分支的新的提交记录不会出现在原分支上（创建分支前的提交记录会被新分支共享）。&lt;/p&gt;
+&lt;p&gt;可以把分支的改动并入另一分支，合并后通常会删除已完成使命的分支，注意不能删除当前所处的分支，需先切换到其他分支再删除。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;问题来了，两个分支的内容相互冲突怎么办，比如一开始有段内容是&amp;quot;吃饭&amp;quot;，主分支将其改为了&amp;quot;睡觉&amp;quot;，新分支将其改为了&amp;quot;喝水&amp;quot;，那合并的时候应该听谁的呢？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;当两个分支修改了同一个文件的同一行代码时，合并时 Git 无法自动确认该保留哪个改动，就会产生合并冲突。若修改的是同一文件的不同行，Git 则可以自动合并。&lt;strong&gt;冲突需要人工解决&lt;/strong&gt;，通常有三种选择：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;保留 A 分支的修改，丢弃 B 分支。&lt;/li&gt;
+&lt;li&gt;保留 B 分支的修改，丢弃 A 分支。&lt;/li&gt;
+&lt;li&gt;两个都保留，手动编辑成最终想要的内容。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果只想将部分提交合并入主干，可以使用 &lt;code&gt;cherry-pick&lt;/code&gt;（拣选提交）：将某个或多个 Commit 的改动单独应用到当前分支，而不合并整个分支。&lt;/p&gt;
+&lt;p&gt;可以复制想要拣选的提交 ID，然后使用 &lt;code&gt;git cherry-pick &amp;lt;commit-id&amp;gt;&lt;/code&gt; 命令将其提交到当前分支。&lt;/p&gt;
+&lt;p&gt;如果遇到问题需要马上切换到别的分支，但当前分支还有未完成的代码，不想让这些代码并入到别的分支，这时候可以利用 &lt;code&gt;git stash&lt;/code&gt;（暂存工作现场）临时保存一下，到时候切换回来再取出来即可。&lt;/p&gt;
+&lt;p&gt;还有一种操作，叫做 &lt;code&gt;rebase&lt;/code&gt;（变基），作用是将一个分支的提交“嫁接”到另一个分支的最新提交之后，使提交历史保持线性，避免产生额外的 Merge 提交。比如将 &lt;code&gt;temp&lt;/code&gt; 变基到 &lt;code&gt;main&lt;/code&gt; 上后，&lt;code&gt;temp&lt;/code&gt; 的提交会被移至 &lt;code&gt;main&lt;/code&gt; 最新的提交之后，原来的 &lt;code&gt;temp&lt;/code&gt; 分支依然存在，只是其提交历史被重写了，不会再产生额外的 Merge 提交。&lt;/p&gt;
+&lt;p&gt;需要注意的是，如果该分支之前已推送到远端，变基后必须使用 &lt;strong&gt;强制推送 (&lt;code&gt;git push --force&lt;/code&gt; 或 &lt;code&gt;--force-with-lease&lt;/code&gt;)&lt;/strong&gt; 来更新远端分支。严禁在多人共享的分支上执行变基，否则会覆盖他人代码，导致严重协作问题。仅适用于自己一个人使用的分支。&lt;/p&gt;
+&lt;h2 id=&#34;四个关键区域&#34;&gt;四个关键区域
+&lt;/h2&gt;&lt;p&gt;Git 涉及四个区域：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;工作目录（Working Directory）&lt;/strong&gt;：本地磁盘上的项目文件夹。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;暂存区（Staging Area/Index）&lt;/strong&gt;：Commit 前的检查点，用于精细控制哪些修改被提交。传统流程先 &lt;code&gt;git add&lt;/code&gt; 将文件加入暂存区，再 &lt;code&gt;git commit&lt;/code&gt; 提交暂存区中的所有内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;本地仓库（Local Repository）&lt;/strong&gt;：通过 Commit 将暂存区的改动存入本地版本库。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;远端仓库（Remote Repository）&lt;/strong&gt;：托管在 GitHub 等服务器上的仓库。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最常用的操作命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git clone&lt;/code&gt;：把远端仓库克隆到本地，同时创建本地仓库和工作目录。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add&lt;/code&gt; + &lt;code&gt;git commit&lt;/code&gt;：工作区 → 暂存区 → 本地仓库。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push&lt;/code&gt;：本地仓库 → 远端仓库。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git pull&lt;/code&gt; = &lt;code&gt;git fetch&lt;/code&gt; + &lt;code&gt;git merge&lt;/code&gt;：将远端改动拉取并合并到本地分支，同时更新工作目录。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;github核心功能&#34;&gt;Github核心功能
+&lt;/h2&gt;&lt;p&gt;绑定远端仓库通常有两种方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本地已有仓库，关联到远端空仓库&lt;/li&gt;
+&lt;li&gt;克隆远端仓库，自动完成绑定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;多人协作时，通常先 &lt;code&gt;pull&lt;/code&gt; 远端最新改动，然后再继续开发。&lt;/p&gt;
+&lt;p&gt;GitHub 仓库有以下核心模块：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;代码区 (Code)&lt;/strong&gt;：显示项目全部源代码，可按文件名搜索（快捷键 &lt;code&gt;T&lt;/code&gt;），点击文件可查看内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;提交信息与日期&lt;/strong&gt;：每个文件旁边显示最后一次 Commit 的说明和更新时间。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;README.md&lt;/strong&gt;：自动渲染的项目说明文档，介绍项目用途、使用方法等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Release&lt;/strong&gt;：项目发布版本，通常提供可直接下载的软件包。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Star&lt;/strong&gt;：类似收藏，反映项目热度，可以在个人主页找到自己点过Star的仓库。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fork&lt;/strong&gt;：将项目复制一份到自己账号下，便于学习或贡献。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;：用于报告 Bug、提出新功能或讨论问题，分为 Open 和 Closed 两种状态。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pull Request (合并请求)&lt;/strong&gt;：向项目贡献代码的方式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GitHub 仓库页面还可以使用一些快捷键：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;按 &lt;code&gt;/&lt;/code&gt;：快速聚焦搜索栏。&lt;/li&gt;
+&lt;li&gt;按 &lt;code&gt;T&lt;/code&gt;：文件查找。&lt;/li&gt;
+&lt;li&gt;按 &lt;code&gt;L&lt;/code&gt;：跳转到指定行号。&lt;/li&gt;
+&lt;li&gt;按 &lt;code&gt;?&lt;/code&gt;：查看所有快捷键列表。&lt;/li&gt;
+&lt;li&gt;按 &lt;code&gt;.&lt;/code&gt;：在浏览器中打开网页版 VS Code 在线编辑环境。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;贡献代码&#34;&gt;贡献代码
+&lt;/h2&gt;&lt;p&gt;为开源项目贡献代码的流程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Fork&lt;/strong&gt;：将目标开源仓库 fork 到自己的 GitHub 账号下，得到一份副本。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Clone&lt;/strong&gt;：将自己账号下的仓库克隆到本地。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;同步主线并创建分支&lt;/strong&gt;：先将上游（源项目）的最新改动拉取到本地，确保自己仓库的 &lt;code&gt;main&lt;/code&gt; 分支与上游同步，然后基于 &lt;code&gt;main&lt;/code&gt; 分支创建新的功能分支。&lt;strong&gt;严禁直接在主分支上修改&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;开发与提交&lt;/strong&gt;：在新分支上进行代码修改，完成 Commit 并 Push 到自己的远端仓库。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;同步上游&lt;/strong&gt;：在发起 PR 前，先将上游的最新改动同步合并到当前分支，并在本地解决可能产生的冲突。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;创建 Pull Request (PR)&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;在 GitHub 上进入自己 Fork 的仓库，点击&amp;quot;Pull Request&amp;quot;，确保合并方向是从自己仓库的分支到源项目的 &lt;code&gt;main&lt;/code&gt; 分支，填写标题和描述后提交。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Code Review 与合并&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;源项目的维护者收到 PR 通知，可以在&amp;quot;Files changed&amp;quot;中审查代码，提出修改意见或直接批准。维护者点击&amp;quot;Merge pull request&amp;quot;并 confirm，贡献的代码就会合并进上游主干。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;若是在自己团队内部合作开发就无需 fork 代码了，项目管理员在仓库设置中的&amp;quot;Collaborators&amp;quot;添加团队成员，成员被授权后可直接 Push 到仓库。成员直接创建分支进行开发，推送后仍通过 PR 方式进行代码审查与合并，以保证代码质量。&lt;/p&gt;
+&lt;p&gt;多人开发中的关键原则就是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;始终在分支上开发，保持主线干净。&lt;/li&gt;
+&lt;li&gt;发起 PR 前必须先同步上游最新代码并在本地解决冲突，避免 PR 被阻塞。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Git修改commit信息</title>
         <link>https://IAmYuanyu.github.io/p/git%E4%BF%AE%E6%94%B9commit%E4%BF%A1%E6%81%AF/</link>
         <pubDate>Sun, 19 Oct 2025 22:44:36 +0800</pubDate>
