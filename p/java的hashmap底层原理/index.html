@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍了HashMap的底层数据结构、Hash扰动函数、put流程与resize扩容机制，详解JDK 1.7到1.8的关键设计演进与线程安全问题">
+<title>Java的HashMap底层原理</title>
+
+<link rel='canonical' href='https://IAmYuanyu.github.io/p/java%E7%9A%84hashmap%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/'>
+
+<link rel="stylesheet" href="/scss/style.min.77b4feda27b80cc8d6451043445983d7d0172304c8161be1dcba522ed5cfd7e1.css"><meta property='og:title' content="Java的HashMap底层原理">
+<meta property='og:description' content="介绍了HashMap的底层数据结构、Hash扰动函数、put流程与resize扩容机制，详解JDK 1.7到1.8的关键设计演进与线程安全问题">
+<meta property='og:url' content='https://IAmYuanyu.github.io/p/java%E7%9A%84hashmap%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/'>
+<meta property='og:site_name' content='缘鱼的笔记'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-06-13T23:21:51&#43;08:00'/><meta property='article:modified_time' content='2026-06-13T23:21:51&#43;08:00'/>
+<meta name="twitter:title" content="Java的HashMap底层原理">
+<meta name="twitter:description" content="介绍了HashMap的底层数据结构、Hash扰动函数、put流程与resize扩容机制，详解JDK 1.7到1.8的关键设计演进与线程安全问题">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_93cee29ac6c6fbb9.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">缘鱼的笔记</a></h1>
+            <h2 class="site-description">缘鱼的博客</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#内部结构">内部结构</a>
+      <ol>
+        <li><a href="#node-结构">Node 结构</a></li>
+        <li><a href="#关键常量">关键常量</a></li>
+        <li><a href="#容量为什么必须是-2-的幂">容量为什么必须是 2 的幂</a></li>
+        <li><a href="#树化条件">树化条件</a></li>
+      </ol>
+    </li>
+    <li><a href="#hash-扰动函数">Hash 扰动函数</a>
+      <ol>
+        <li><a href="#为什么异或能同时携带双方信息">为什么异或能同时携带双方信息</a></li>
+        <li><a href="#jdk-17-的扰动函数">JDK 1.7 的扰动函数</a></li>
+      </ol>
+    </li>
+    <li><a href="#put-流程">put 流程</a>
+      <ol>
+        <li><a href="#链表尾插法">链表尾插法</a></li>
+      </ol>
+    </li>
+    <li><a href="#resize-扩容机制">resize 扩容机制</a>
+      <ol>
+        <li><a href="#何时触发">何时触发</a></li>
+        <li><a href="#jdk-7-扩容全部重新-hash">JDK 7 扩容：全部重新 hash</a></li>
+        <li><a href="#jdk-8-扩容一个-bit-决定去向">JDK 8 扩容：一个 bit 决定去向</a></li>
+        <li><a href="#负载因子为什么是-075">负载因子为什么是 0.75</a></li>
+      </ol>
+    </li>
+    <li><a href="#jdk-17-vs-18-对比">JDK 1.7 vs 1.8 对比</a></li>
+    <li><a href="#线程安全问题">线程安全问题</a>
+      <ol>
+        <li><a href="#数据覆盖">数据覆盖</a></li>
+        <li><a href="#size-不准确">size 不准确</a></li>
+        <li><a href="#get-返回过期数据">get 返回过期数据</a></li>
+        <li><a href="#什么时候用-concurrenthashmap">什么时候用 ConcurrentHashMap</a></li>
+      </ol>
+    </li>
+    <li><a href="#cas-与分段锁">CAS 与分段锁</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/java/" >
+                Java
+            </a>
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/java%E7%9A%84hashmap%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/">Java的HashMap底层原理</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            介绍了HashMap的底层数据结构、Hash扰动函数、put流程与resize扩容机制，详解JDK 1.7到1.8的关键设计演进与线程安全问题
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-06-13</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="内部结构">内部结构
+</h2><p>HashMap 是一个基于哈希表实现的键值对容器，允许 null 键和 null 值，不保证元素顺序，非线程安全。JDK 8 的内部结构为<strong>数组 + 链表 + 红黑树</strong>。</p>
+<p><img src="/assets/image-20260613231437243.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260613231437243"
+	
+	
+></p>
+<p>每个&quot;桶&quot;就是数组中的一个格子。put 时通过哈希函数算出下标，将节点放入对应的桶中。多个 key 碰撞到同一个桶时串成链表，超过 8 个再转红黑树。</p>
+<p>注意，是将节点超过8个的桶中的整个链表转为红黑树，不是将超过8的部分转为红黑树，图画的可能有歧义</p>
+<h3 id="node-结构">Node 结构
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span><span class="n">V</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span><span class="n">V</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">hash</span><span class="p">;</span><span class="w">   </span><span class="c1">// key 的哈希值（经过扰动处理）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">V</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span><span class="n">V</span><span class="o">&gt;</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w">   </span><span class="c1">// 指向下一个节点（链表）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="关键常量">关键常量
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>常量</th>
+					<th>值</th>
+					<th>作用</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>DEFAULT_INITIAL_CAPACITY</code></td>
+					<td>16</td>
+					<td>初始数组大小</td>
+			</tr>
+			<tr>
+					<td><code>DEFAULT_LOAD_FACTOR</code></td>
+					<td>0.75</td>
+					<td>负载因子：触发扩容的阈值比例</td>
+			</tr>
+			<tr>
+					<td><code>TREEIFY_THRESHOLD</code></td>
+					<td>8</td>
+					<td>链表长度 ≥ 8 时尝试转为红黑树</td>
+			</tr>
+			<tr>
+					<td><code>UNTREEIFY_THRESHOLD</code></td>
+					<td>6</td>
+					<td>红黑树节点 ≤ 6 时退化为链表</td>
+			</tr>
+			<tr>
+					<td><code>MIN_TREEIFY_CAPACITY</code></td>
+					<td>64</td>
+					<td>数组容量 ≥ 64 才允许树化（否则先扩容）</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="容量为什么必须是-2-的幂">容量为什么必须是 2 的幂
+</h3><p>计算桶索引时使用位运算代替取模：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">hash</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 当 n = 16 时，n - 1 = 15 = 0000 1111</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 与运算等价于取模，但速度快得多</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>只有当 <code>n</code> 是 2 的幂时，<code>n - 1</code> 的二进制全为 1，<code>(n - 1) &amp; hash</code> 才等价于 <code>hash % n</code>。</p>
+<h3 id="树化条件">树化条件
+</h3><p>链表转为红黑树需要<strong>两个条件同时满足</strong>：</p>
+<ol>
+<li>链表长度 ≥ 8</li>
+<li>数组容量 ≥ 64</li>
+</ol>
+<p>如果链表长度达到 8 但数组容量不足 64，HashMap 会选择<strong>先扩容</strong>而不是树化。因为数组扩容后，链表中的节点会被重新分配到不同的桶中，链表自然变短，无需树化。</p>
+<h2 id="hash-扰动函数">Hash 扰动函数
+</h2><p>Java 的 <code>Object.hashCode()</code> 返回一个 32 位 int，但 HashMap 的桶数组通常很小，只用 hash 的低几位来定位桶。如果两个 key 只有高位不同，低几位相同，就会全部挤进同一个桶，哈希冲突剧增。</p>
+<p>JDK 8 的扰动函数极其简单：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hash</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">.</span><span class="na">hashCode</span><span class="p">())</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">16</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>把 hash 值的高 16 位与低 16 位做异或（XOR），让低位也携带高位信息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">原始 hash:     0001 0010 0011 0100 | 0101 0110 0111 1000
+</span></span><span class="line"><span class="cl">                    高 16 位          |     低 16 位
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">hash &gt;&gt;&gt; 16:   0000 0000 0000 0000 | 0001 0010 0011 0100
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">XOR 结果:      0001 0010 0011 0100 | 0100 0100 0100 1100
+</span></span><span class="line"><span class="cl">                                              ↑
+</span></span><span class="line"><span class="cl">                              低 16 位现在包含了高位的信息
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="为什么异或能同时携带双方信息">为什么异或能同时携带双方信息
+</h3><p>异或的运算规则：任何一位，只要 A 或 B 任一为 1，结果就为 1。虽然无法从结果反推是高位还是低位为 1，但目的不是还原原始 hash，而是让<strong>低位受到高位影响</strong>，使得原本低位相同的两个 hash 变得不同。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">key1.hash = 0000 ... 0001 | 1111 1111 1111 1111
+</span></span><span class="line"><span class="cl">key2.hash = 0000 ... 0010 | 1111 1111 1111 1111
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">扰动前，低4位都是 1111，进同一个桶
+</span></span><span class="line"><span class="cl">扰动后：key1 低4位 = 1110，key2 低4位 = 1101，进了不同的桶
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="jdk-17-的扰动函数">JDK 1.7 的扰动函数
+</h3><p>JDK 1.7 做了 4 次位移 + 5 次异或，分散更彻底但计算开销更大：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">h</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="na">hashCode</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">h</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">20</span><span class="p">)</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">12</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">return</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">7</span><span class="p">)</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">4</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>JDK 8 验证了简化版分散效果已经足够好，就砍掉了冗余计算。</p>
+<h2 id="put-流程">put 流程
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">putVal</span><span class="p">(</span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">),</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>进入 <code>putVal()</code> 后，完整流程如下：</p>
+<ol>
+<li><strong>检查 table 是否为空</strong>：为空则调用 <code>resize()</code> 初始化（默认长度 16）</li>
+<li><strong>计算桶索引</strong>：<code>i = (n - 1) &amp; hash</code>，定位到具体的桶</li>
+<li><strong>桶为空</strong>：直接放入新节点，完成</li>
+<li><strong>桶不为空，检查第一个节点的 key</strong>：如果 <code>hash</code> 和 <code>equals</code> 都相同，记住这个节点，后面统一覆盖 value</li>
+<li><strong>判断节点类型插入</strong>：是 TreeNode 走红黑树插入；是链表则尾插法遍历</li>
+<li><strong>第 4 步发现 key 已存在</strong>：覆盖 value，返回旧值，不增加 size</li>
+<li><strong>检查是否需要扩容</strong>：<code>if (++size &gt; threshold)</code> 则调用 <code>resize()</code></li>
+</ol>
+<h3 id="链表尾插法">链表尾插法
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">binCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">binCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">next</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">p</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">(</span><span class="n">hash</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">binCount</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">TREEIFY_THRESHOLD</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">treeifyBin</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span><span class="w"> </span><span class="n">hash</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">hash</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">hash</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">key</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">key</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>尾插法 vs 头插法（JDK 7）</strong>：头插法将新节点插入链表头部，扩容时链表顺序反转；尾插法追加到末尾，扩容时顺序保持不变。JDK 7 的头插法在多线程扩容时可能导致环形链表（死循环），JDK 8 改用尾插法修复了这个问题。</p>
+<h2 id="resize-扩容机制">resize 扩容机制
+</h2><h3 id="何时触发">何时触发
+</h3><p>每次 <code>put</code> 之后都会检查 <code>if (++size &gt; threshold)</code>，其中 <code>threshold = capacity × 0.75</code>。超过阈值时容量翻倍，保证始终是 2 的幂。</p>
+<h3 id="jdk-7-扩容全部重新-hash">JDK 7 扩容：全部重新 hash
+</h3><p>对每个元素重新计算 <code>hash &amp; (newCap - 1)</code>，开销较大。</p>
+<h3 id="jdk-8-扩容一个-bit-决定去向">JDK 8 扩容：一个 bit 决定去向
+</h3><p>观察规律：扩容后 index 只比扩容前多看了一位。元素的新位置只有两种可能：</p>
+<ul>
+<li><code>hash &amp; oldCap == 0</code> → 留在原位 <code>j</code></li>
+<li><code>hash &amp; oldCap != 0</code> → 移到 <code>j + oldCap</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 拆分成两条链：lo 链（原位）和 hi 链（原位+oldCap）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">Node</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span><span class="n">V</span><span class="o">&gt;</span><span class="w"> </span><span class="n">loHead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="n">loTail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">Node</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span><span class="n">V</span><span class="o">&gt;</span><span class="w"> </span><span class="n">hiHead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="n">hiTail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">do</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">next</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">e</span><span class="p">.</span><span class="na">hash</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">oldCap</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// X = 0 → 留在原位</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">loTail</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="n">loHead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">loTail</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">loTail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// X = 1 → 移到 原位+oldCap</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hiTail</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="n">hiHead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">hiTail</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">hiTail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">loTail</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">loTail</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="n">newTab</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">loHead</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hiTail</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">hiTail</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="n">newTab</span><span class="o">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">oldCap</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hiHead</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>链表内节点相对顺序不变，彻底避免了环形链表问题。</p>
+<h3 id="负载因子为什么是-075">负载因子为什么是 0.75
+</h3><p>时间和空间的折中。更小的负载因子（如 0.5）冲突少但浪费内存，更大的负载因子（如 1.0）内存利用率高但冲突多。0.75 使链表长度达到 8 的概率约为 0.00000006（泊松分布），是最优折中点。</p>
+<h2 id="jdk-17-vs-18-对比">JDK 1.7 vs 1.8 对比
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>特性</th>
+					<th>JDK 1.7</th>
+					<th>JDK 1.8</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>数据结构</td>
+					<td>数组 + 链表</td>
+					<td>数组 + 链表 + 红黑树</td>
+			</tr>
+			<tr>
+					<td>插入方式</td>
+					<td>头插法</td>
+					<td>尾插法</td>
+			</tr>
+			<tr>
+					<td>hash 扰动</td>
+					<td>4 次位移 + 5 次异或</td>
+					<td>1 次异或（高16位 ^ 低16位）</td>
+			</tr>
+			<tr>
+					<td>扩容 rehash</td>
+					<td>每个元素重新计算 index</td>
+					<td>检查 <code>hash &amp; oldCap</code>，一个 bit 定去向</td>
+			</tr>
+			<tr>
+					<td>扩容后链表顺序</td>
+					<td>反转</td>
+					<td>保持不变</td>
+			</tr>
+			<tr>
+					<td>多线程死循环</td>
+					<td>有（头插法导致环形链表）</td>
+					<td>无（尾插法不会形成环）</td>
+			</tr>
+	</tbody>
+</table></div>
+<p>JDK 8 改动的核心目标：在保持 O(1) 平均性能的前提下，解决 JDK 7 的三个痛点——哈希冲突时性能退化（加红黑树）、头插法扩容效率低且危险（改尾插法）、hash 计算开销过大（简化扰动函数）。</p>
+<h2 id="线程安全问题">线程安全问题
+</h2><p>HashMap <strong>不是线程安全的</strong>，JDK 8 只是不再会死循环，但仍有数据问题。</p>
+<h3 id="数据覆盖">数据覆盖
+</h3><p>两个线程同时对同一个空桶执行 put，都读到&quot;桶为空&quot;，都认为自己应该写入，后写入的覆盖先写入的，数据丢失。根本原因是 put 操作不是原子的。</p>
+<h3 id="size-不准确">size 不准确
+</h3><p><code>++size</code> 不是原子操作，两个线程都读到相同的 size 值，各自加 1 后写回，实际插入了两个元素但 size 只增加了 1。</p>
+<h3 id="get-返回过期数据">get 返回过期数据
+</h3><p>HashMap 不保证内存可见性。线程 A 修改了 value，线程 B 的 get 可能仍然读到旧值，因为没有 <code>volatile</code> 或内存屏障来保证可见性。</p>
+<h3 id="什么时候用-concurrenthashmap">什么时候用 ConcurrentHashMap
+</h3><p>单线程或读多写少用 HashMap（性能最好），需要线程安全用 ConcurrentHashMap，需要全局排序用 TreeMap，需要插入顺序用 LinkedHashMap。</p>
+<h2 id="cas-与分段锁">CAS 与分段锁
+</h2><p>CAS（Compare-And-Swap，比较并交换）是一种硬件级别的原子操作：先看一眼值有没有被别人改过，没改过才写入。整个过程是一条 CPU 指令（如 x86 的 <code>CMPXCHG</code>），if 判断和赋值不可分割，不存在两个线程同时通过判断的情况。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// ConcurrentHashMap 中的应用</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tab</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span><span class="n">V</span><span class="o">&gt;</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">hash</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">casTabAt</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="n">newNode</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 失败 → 说明别的线程已经插入，重新走循环</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>JDK 7 的 ConcurrentHashMap 使用<strong>分段锁</strong>（Segment）：整个 Map 分成多个 Segment（默认 16 个），每个 Segment 是一把 ReentrantLock，保护一部分桶。写入桶 3 时锁住 Segment[0]，同时写入桶 20 时锁住 Segment[1]，互不阻塞。最大并发度等于 Segment 数量（默认 16）。</p>
+<p>JDK 8 去掉 Segment，改为直接锁单个桶（<code>synchronized</code> 锁桶的头节点），并发度等于桶的数量（可达几千），远优于 JDK 7。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-resp%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Redis原理篇-RESP通信协议</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/redis-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Redis 最佳实践</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/redis-%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Redis 多级缓存</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/redis-%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Redis 分布式缓存</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/redis%E5%AE%9E%E6%88%98/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Redis实战</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="IAmYuanyu/IAmYuanyu.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2025 - 
+        
+        2026 缘鱼
+    </section>
+    
+    <section class="powerby">
+        
+            本站于2025年3月26日建立 <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.8ae4cfb0d8fc9dafdb2f97912da96c0e5fd1380d6e18ab45d0e9444aad72dc43.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
