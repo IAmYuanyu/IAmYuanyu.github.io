@@ -879,7 +879,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 <p>虽然发生的概率不大，但还是可能会发生，所以Redis 从 <strong>7.0</strong> 版本开始正式使用 ListPack 替代了 ZipList。</p>
 <p>在 Redis 6.2 中，ListPack 已被引入并用于 Stream 数据结构的内部存储，但尚未全面替代 ZipList。直到 <strong>7.0</strong>，List、Hash、ZSet 等数据结构中的 ZipList 才被统一替换为 ListPack。</p>
 <h3 id="小结">小结
-</h3><p><strong>ZipList特性：</strong></p>
+</h3><p><strong>ZipList特性</strong>：</p>
 <ul>
 <li>压缩列表的可以看做一种连续内存空间的&quot;双向链表&quot;</li>
 <li>列表的节点之间不是通过指针连接，而是记录上一节点和本节点长度来寻址，内存占用较低</li>
@@ -1099,13 +1099,13 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 	
 ></p>
-<p><strong>Entry-1（字符串&quot;hello&quot;）：</strong></p>
+<p><strong>Entry-1（字符串&quot;hello&quot;）</strong>：</p>
 <ul>
 <li><code>encoding-type</code>：<code>10000101</code>，其中前两位<code>10</code>表示这是短字符串编码，后6位<code>000101</code>=5表示字符串长度</li>
 <li><code>element-data</code>：<code>hello</code>（5个字节）</li>
 <li><code>element-total-len</code>：<code>00000110</code>，第一位为0表示这是最后一个字节，剩余7位<code>0000110</code>=6表示前两部分共6字节</li>
 </ul>
-<p><strong>Entry-2（整数1024）：</strong></p>
+<p><strong>Entry-2（整数1024）</strong>：</p>
 <ul>
 <li><code>encoding-type</code>：<code>11000100 00000000</code>，前三位<code>110</code>表示这是13位整数编码，后13位<code>00100 00000000</code>=1024</li>
 <li><code>element-data</code>：无（整数直接编码在encoding-type中）</li>
