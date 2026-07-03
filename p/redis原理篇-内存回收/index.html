@@ -408,12 +408,12 @@
 <li>
 <p>删除后，会检查两个停止条件：（若不满足停止条件，则会继续循环）</p>
 <ul>
-<li><strong>时间限制：</strong> SLOW模式总执行时间不超过周期（100ms）的25%（即25ms）；FAST模式不超过1ms。</li>
+<li><strong>时间限制</strong>： SLOW模式总执行时间不超过周期（100ms）的25%（即25ms）；FAST模式不超过1ms。</li>
 </ul>
 </li>
 </ol>
 <ul>
-<li><strong>比例限制：</strong> 如果本次抽样中，<strong>过期key的比例低于10%</strong>，则认为过期key已不多，可以提前结束本次清理任务。</li>
+<li><strong>比例限制</strong>： 如果本次抽样中，<strong>过期key的比例低于10%</strong>，则认为过期key已不多，可以提前结束本次清理任务。</li>
 </ul>
 <h4 id="对比">对比
 </h4><div class="table-wrapper"><table>
@@ -452,7 +452,7 @@
 			</tr>
 	</tbody>
 </table></div>
-<p><strong>关键参数与公式：</strong></p>
+<p><strong>关键参数与公式</strong>：</p>
 <ul>
 <li>SLOW模式下任务执行周期 <code>period</code> = <code>1000 / server.hz</code> ms。若 <code>server.hz=10</code>，则 <code>period=100ms</code></li>
 <li>SLOW模式单次清理最大耗时为period×25%</li>

@@ -140,12 +140,12 @@
 &lt;li&gt;
 &lt;p&gt;删除后，会检查两个停止条件：（若不满足停止条件，则会继续循环）&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;时间限制：&lt;/strong&gt; SLOW模式总执行时间不超过周期（100ms）的25%（即25ms）；FAST模式不超过1ms。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;时间限制&lt;/strong&gt;： SLOW模式总执行时间不超过周期（100ms）的25%（即25ms）；FAST模式不超过1ms。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;比例限制：&lt;/strong&gt; 如果本次抽样中，&lt;strong&gt;过期key的比例低于10%&lt;/strong&gt;，则认为过期key已不多，可以提前结束本次清理任务。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;比例限制&lt;/strong&gt;： 如果本次抽样中，&lt;strong&gt;过期key的比例低于10%&lt;/strong&gt;，则认为过期key已不多，可以提前结束本次清理任务。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;对比&#34;&gt;对比
 &lt;/h4&gt;&lt;table&gt;
@@ -184,7 +184,7 @@
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;关键参数与公式：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键参数与公式&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;SLOW模式下任务执行周期 &lt;code&gt;period&lt;/code&gt; = &lt;code&gt;1000 / server.hz&lt;/code&gt; ms。若 &lt;code&gt;server.hz=10&lt;/code&gt;，则 &lt;code&gt;period=100ms&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;SLOW模式单次清理最大耗时为period×25%&lt;/li&gt;
