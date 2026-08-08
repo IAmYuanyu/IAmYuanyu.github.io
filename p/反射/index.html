@@ -354,7 +354,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">方式2</span><span class="p">:</span><span class="n">不管是基本类型还是引用类型</span><span class="p">,</span><span class="n">jvm都为其提供了一个静态成员</span><span class="p">:</span><span class="kd">class</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl"><span class="nc">3</span><span class="p">.</span><span class="na">方式3</span><span class="p">:</span><span class="n">Class类中的静态方法</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="kd">static</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">forName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">className</span><span class="p">)</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="kd">static</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="nf">forName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">className</span><span class="p">)</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="w">                           </span><span class="n">className</span><span class="p">:</span><span class="n">传递的是类的全限定名</span><span class="p">(</span><span class="n">包名</span><span class="p">.</span><span class="na">类名</span><span class="p">)</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -563,7 +563,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="p">.</span><span class="w"> </span><span class="n">方式3</span><span class="p">:</span><span class="n">Class类中的静态方法</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="kd">static</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">forName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">className</span><span class="p">)</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="kd">static</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="nf">forName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">className</span><span class="p">)</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="w">                           </span><span class="n">className</span><span class="p">:</span><span class="n">传递的是类的全限定名</span><span class="p">(</span><span class="n">包名</span><span class="p">.</span><span class="na">类名</span><span class="p">)</span><span class="w"> 
 </span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">原因</span><span class="p">:</span><span class="n">参数为String形式</span><span class="p">,</span><span class="n">可以和properties文件结合使用</span><span class="w">                               
 </span></span></span></code></pre></td></tr></table>
@@ -641,7 +641,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="p">.</span><span class="na">Class类中的方法</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Constructor</span><span class="o">&lt;?&gt;[]</span><span class="w"> </span><span class="n">getConstructors</span><span class="p">()</span><span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取所有public的构造</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Constructor</span><span class="o">&lt;?&gt;[]</span><span class="w"> </span><span class="nf">getConstructors</span><span class="p">()</span><span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取所有public的构造</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -932,7 +932,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="p">.</span><span class="na">Constructor</span><span class="o">&lt;?&gt;[]</span><span class="w"> </span><span class="n">getDeclaredConstructors</span><span class="p">()</span><span class="n">获取所有构造方法</span><span class="p">,</span><span class="n">包括private</span><span class="w">  
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">1</span><span class="p">.</span><span class="na">Constructor</span><span class="o">&lt;?&gt;[]</span><span class="w"> </span><span class="nf">getDeclaredConstructors</span><span class="p">()</span><span class="n">获取所有构造方法</span><span class="p">,</span><span class="n">包括private</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="n">2</span><span class="p">.</span><span class="na">Constructor</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getDeclaredConstructor</span><span class="p">(</span><span class="n">类</span><span class="o">&lt;?&gt;</span><span class="p">...</span><span class="w"> </span><span class="n">parameterTypes</span><span class="p">)</span><span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">获取指定构造</span><span class="p">,</span><span class="n">包括private</span><span class="w">   
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">parameterTypes</span><span class="p">:</span><span class="n">参数类型的class对象</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="w">      
