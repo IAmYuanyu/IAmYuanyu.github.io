@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Python on 缘鱼的笔记</title>
-        <link>https://IAmYuanyu.github.io/categories/python/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/python/</link>
         <description>Recent content in Python on 缘鱼的笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Sat, 08 Aug 2026 14:59:01 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 08 Aug 2026 14:59:01 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/python/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Langchain学习</title>
-        <link>https://IAmYuanyu.github.io/p/langchain%E5%AD%A6%E4%B9%A0/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/langchain%E5%AD%A6%E4%B9%A0/</link>
         <pubDate>Sat, 08 Aug 2026 14:59:01 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/langchain%E5%AD%A6%E4%B9%A0/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/langchain%E5%AD%A6%E4%B9%A0/</guid>
         <description>&lt;p&gt;本文基于&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1rv7A6oEeP?spm_id_from=333.788.player.switch&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;尚硅谷2026Langchain课程&lt;/a&gt;编写，Langchain版本为1.2。&lt;/p&gt;
 &lt;p&gt;涉及到的资料：https://pan.baidu.com/s/1kB3jdw2oPHwQNGDJbSGlog?pwd=yyds&lt;/p&gt;
@@ -173,7 +173,7 @@
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;我的PyCharm是2025.2.1版本的&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260711225833947.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260711225833947.png&#34;
 	
 	
 	
@@ -184,7 +184,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后打印一下当前版本号，如果能正常输出版本号，环境就准备好了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260711230436165.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260711230436165.png&#34;
 	
 	
 	
@@ -4452,7 +4452,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;大模型能根据对话上下文决定何时调用工具以及传递哪些参数。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260727171039990.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260727171039990.png&#34;
 	
 	
 	
@@ -8675,7 +8675,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;实例化字典时若给出的字段名称和TypedDict不完全一致，此时IDE的静态类型检查会标记。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260728162800692.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260728162800692.png&#34;
 	
 	
 	
@@ -9515,7 +9515,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;p&gt;一般认为Agent需要有的关键能力：&lt;/p&gt;
 &lt;p&gt;理解用户问题 → 如何拆解任务 → 判断是否需要工具 → 需要调用哪些工具 → 如何利用好工具结果生成回答&amp;amp;推进任务&lt;/p&gt;
 &lt;p&gt;常见的agent架构：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260728183518203.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260728183518203.png&#34;
 	
 	
 	
@@ -16362,7 +16362,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2026-07-30_14-52-37.gif&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2026-07-30_14-52-37.gif&#34;
 	
 	
 	
@@ -17006,7 +17006,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2026-07-30_14-58-12.gif&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2026-07-30_14-58-12.gif&#34;
 	
 	
 	
@@ -17370,7 +17370,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;chunk&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flush&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2026-07-30_15-04-50.gif&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2026-07-30_15-04-50.gif&#34;
 	
 	
 	
@@ -17404,7 +17404,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2026-07-30_15-14-38.gif&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2026-07-30_15-14-38.gif&#34;
 	
 	
 	
@@ -18518,7 +18518,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2026-07-30_15-16-18.gif&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2026-07-30_15-16-18.gif&#34;
 	
 	
 	
@@ -19896,7 +19896,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2026-07-30_15-19-06.gif&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2026-07-30_15-19-06.gif&#34;
 	
 	
 	
@@ -20840,7 +20840,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2026-07-30_15-34-01.gif&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2026-07-30_15-34-01.gif&#34;
 	
 	
 	
@@ -22044,7 +22044,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;p&gt;钩子是框架或系统在某些关键执行点暴露的扩展接口。开发者可以“挂上”自己的逻辑，在那些点上插入、修改或替换行为，而无需改变主流程代码。就像在流水线上某个环节设置了一个“检查点”或“插入器”。&lt;/p&gt;
 &lt;p&gt;借助中间件，开发者可以高度定制和控制Agent运行的每一个环节，是处理Agent生命周期的标准方式。&lt;/p&gt;
 &lt;p&gt;没有中间件的Agent架构：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260730185124590.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260730185124590.png&#34;
 	
 	
 	
@@ -22055,7 +22055,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;添加中间件之后的Agent架构变为：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260730185159256.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260730185159256.png&#34;
 	
 	
 	
@@ -26834,7 +26834,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;li&gt;它的作用是你在不改主流程源码的前提下插入自己的逻辑。例如做日志、鉴权、修改输入、拦截输出、清理资源等。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;LangChain的中间件作用在Agent架构中，后者是基于LangGraph构建的流程图。如下列出了六个hook函数（钩子函数）：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260801200525001.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260801200525001.png&#34;
 	
 	
 	
@@ -30647,7 +30647,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;li&gt;&lt;strong&gt;短期记忆（Short-term memory、会话级记忆、thread-scoped memory）&lt;/strong&gt;：作用范围是单个对话线程（Thread）内，一旦开启新对话（更换 thread_id），记忆即消失。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;长期记忆（Long-term memory，跨会话级记忆）&lt;/strong&gt;：在会话间存储用户特定或应用级数据， 并在会话线程间共享。它可以随时在任何线程中被调用。记忆的范围是任意自定义命名空间，而不仅仅是单一线程 ID。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260802155026878.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260802155026878.png&#34;
 	
 	
 	
@@ -31073,7 +31073,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/div&gt;&lt;p&gt;别忘了还要在服务器防火墙开放5432这个端口&lt;/p&gt;
 &lt;p&gt;4.测试数据库连接&lt;/p&gt;
 &lt;p&gt;我已PyCharm为例，用PyCharm自带的数据库管理工具新建一个PostgreSQL的数据源，然后如下图填写&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260803185305720.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260803185305720.png&#34;
 	
 	
 	
@@ -34088,7 +34088,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;p&gt;首先，为大模型提供一定的上下文信息，让其输出会变得更稳定。其次，利用本章的RAG，将检索出来的文档和提示词输送给大模型，生成更可靠的答案。&lt;/p&gt;
 &lt;h4 id=&#34;什么是rag&#34;&gt;什么是RAG
 &lt;/h4&gt;&lt;p&gt;RAG（Retrieval-Augmented Generation，检索增强生成）是一种结合信息检索（Retrieval）与文本生成（Generation）的技术，旨在提升大语言模型在回答专业问题时的准确性和可靠性。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260806210754405.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260806210754405.png&#34;
 	
 	
 	
@@ -34107,7 +34107,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;p&gt;1）由于每次问答都涉及外部系统数据检索，因此RAG的响应时延相对较高。&lt;/p&gt;
 &lt;p&gt;2）引用的外部知识数据会消耗大量的模型Token 资源。&lt;/p&gt;
 &lt;h4 id=&#34;rag工作流程&#34;&gt;RAG工作流程
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260806211013861.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260806211013861.png&#34;
 	
 	
 	
@@ -36202,7 +36202,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;li&gt;separator ：分割使用的分隔符，默认值为&amp;rdquo;\n\n&amp;rdquo;。&lt;/li&gt;
 &lt;li&gt;length_function ：用于计算切块长度的方法。默认赋值为父类TextSplitter的len函数。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260807154502466.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260807154502466.png&#34;
 	
 	
 	
@@ -38019,10 +38019,10 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
         </item>
         <item>
         <title>Python基础学习笔记</title>
-        <link>https://IAmYuanyu.github.io/p/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Wed, 27 Mar 2024 13:56:38 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;第一章初识python&#34;&gt;第一章：初识Python
 &lt;/h2&gt;&lt;h3 id=&#34;注释&#34;&gt;注释
 &lt;/h3&gt;&lt;h4 id=&#34;块注释&#34;&gt;块注释
@@ -38194,7 +38194,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;输出：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250109232110024.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250109232110024.png&#34;
 	
 	
 	
@@ -38219,7 +38219,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;输出：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250109232732812.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250109232732812.png&#34;
 	
 	
 	
@@ -38279,7 +38279,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Python中的数据类型有如下几个&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250110214715999.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250110214715999.png&#34;
 	
 	
 	
@@ -38373,7 +38373,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;字符串索引&#34;&gt;字符串索引
 &lt;/h4&gt;&lt;p&gt;可以使用 &lt;strong&gt;索引&lt;/strong&gt; 获取一个字符串中 指定位置的字符，索引计数从 &lt;strong&gt;0&lt;/strong&gt; 开始。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250110224036248.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250110224036248.png&#34;
 	
 	
 	
@@ -38417,7 +38417,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;数据类型转换&#34;&gt;数据类型转换
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250110230043835.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250110230043835.png&#34;
 	
 	
 	
@@ -38463,7 +38463,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;第三章运算符与表达式&#34;&gt;第三章：运算符与表达式
 &lt;/h2&gt;&lt;h3 id=&#34;算数运算符&#34;&gt;算数运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111192422827.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111192422827.png&#34;
 	
 	
 	
@@ -38474,7 +38474,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;运算符优先级&#34;&gt;运算符优先级
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111192708304.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111192708304.png&#34;
 	
 	
 	
@@ -38485,7 +38485,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;赋值运算符&#34;&gt;赋值运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111192826217.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111192826217.png&#34;
 	
 	
 	
@@ -38496,7 +38496,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;逻辑运算符&#34;&gt;逻辑运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111193253619.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111193253619.png&#34;
 	
 	
 	
@@ -38507,7 +38507,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;位运算符&#34;&gt;位运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111194255881.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111194255881.png&#34;
 	
 	
 	
@@ -38518,7 +38518,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;成员运算符&#34;&gt;成员运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203600706.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111203600706.png&#34;
 	
 	
 	
@@ -38529,7 +38529,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;身份运算符&#34;&gt;身份运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203810020.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111203810020.png&#34;
 	
 	
 	
@@ -38540,7 +38540,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;运算符优先级-1&#34;&gt;运算符优先级
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203948909.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111203948909.png&#34;
 	
 	
 	
@@ -38552,7 +38552,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;第四章条件判断&#34;&gt;第四章：条件判断
 &lt;/h2&gt;&lt;h3 id=&#34;单分支&#34;&gt;单分支
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111211341720.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111211341720.png&#34;
 	
 	
 	
@@ -38563,7 +38563,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;双分支&#34;&gt;双分支
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111211636184.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111211636184.png&#34;
 	
 	
 	
@@ -38574,7 +38574,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;多分支&#34;&gt;多分支
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111212042781.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111212042781.png&#34;
 	
 	
 	
@@ -38586,7 +38586,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;match语句&#34;&gt;match语句
 &lt;/h3&gt;&lt;p&gt;与其他语言中的&lt;code&gt;switch&lt;/code&gt;分支类似&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111212715086.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111212715086.png&#34;
 	
 	
 	
@@ -38598,7 +38598,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;第五章循环&#34;&gt;第五章：循环
 &lt;/h2&gt;&lt;h3 id=&#34;while循环&#34;&gt;while循环
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111213558908.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111213558908.png&#34;
 	
 	
 	
@@ -38629,7 +38629,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;for循环&#34;&gt;for循环
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111214247628.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111214247628.png&#34;
 	
 	
 	
@@ -38671,7 +38671,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;循环控制&#34;&gt;循环控制
 &lt;/h3&gt;&lt;h4 id=&#34;break&#34;&gt;break
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111221106779.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111221106779.png&#34;
 	
 	
 	
@@ -38682,7 +38682,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;continue&#34;&gt;continue
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111221134540.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111221134540.png&#34;
 	
 	
 	
@@ -38693,7 +38693,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;pass&#34;&gt;pass
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111223859763.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111223859763.png&#34;
 	
 	
 	
@@ -38708,7 +38708,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/h3&gt;&lt;p&gt;在python中，有这样一些类型，它们的成员是有序排列的，并且可以通过下标访问成员，这些类型称之为序列。&lt;/p&gt;
 &lt;p&gt;包括：列表、range、元组和字符串；&lt;/p&gt;
 &lt;h4 id=&#34;序列的通用操作&#34;&gt;序列的通用操作
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250112181727572.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250112181727572.png&#34;
 	
 	
 	
@@ -38718,7 +38718,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250112181758910.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250112181758910.png&#34;
 	
 	
 	
@@ -40112,7 +40112,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;li&gt;如果查询到指定的名片，用户可以选择修改或者删除名片&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;展示菜单：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250113233452702.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250113233452702.png&#34;
 	
 	
 	
@@ -40281,7 +40281,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/h3&gt;&lt;p&gt;• 模块 就好比是 工具包，要想使用这个工具包中的工具，就需要 导入 import 这个模块&lt;/p&gt;
 &lt;p&gt;• 每一个以扩展名 py 结尾的 python 源代码文件都是一个 模块&lt;/p&gt;
 &lt;p&gt;• 在模块中定义的 全局变量 、 函数 都是模块能够提供给外界直接使用的工具&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117214310181.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250117214310181.png&#34;
 	
 	
 	
@@ -40292,7 +40292,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以只导入一个模块中的部分函数，可以防止导入函数过多导致的重名问题&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117214619265.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250117214619265.png&#34;
 	
 	
 	
@@ -40304,7 +40304,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;包的使用&#34;&gt;包的使用
 &lt;/h3&gt;&lt;p&gt;• 包是Python模块的一种组织形式，将多个模块组合在一起，形成一个大的Python工具库。包通常是一个拥有__init__.py文件的目录，它定义了包的属性和方法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117215355305.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250117215355305.png&#34;
 	
 	
 	
@@ -40362,7 +40362,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h4 id=&#34;re库的正则表达式&#34;&gt;re库的正则表达式
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117222025963.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250117222025963.png&#34;
 	
 	
 	
@@ -40436,7 +40436,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;step&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/%e7%bb%98%e5%9b%be%e6%bc%94%e7%a4%ba.gif&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/%e7%bb%98%e5%9b%be%e6%bc%94%e7%a4%ba.gif&#34;
 	
 	
 	
@@ -40658,7 +40658,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;csv表格文件的读取和写入&#34;&gt;csv表格文件的读取和写入
 &lt;/h3&gt;&lt;p&gt;现有一个Test.csv文件，内容如图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250118205330399.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250118205330399.png&#34;
 	
 	
 	
@@ -40754,7 +40754,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;第十一章面向对象程序设计&#34;&gt;第十一章：面向对象程序设计
 &lt;/h2&gt;&lt;h3 id=&#34;类的定义&#34;&gt;类的定义
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250118214618051.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250118214618051.png&#34;
 	
 	
 	
@@ -41283,7 +41283,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;p&gt;使用时使用&lt;code&gt;import wx&lt;/code&gt;导入wxpython库&lt;/p&gt;
 &lt;h3 id=&#34;简单布局&#34;&gt;简单布局
 &lt;/h3&gt;&lt;p&gt;一个普通的窗口布局如下图所示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119212241823.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250119212241823.png&#34;
 	
 	
 	
@@ -41351,7 +41351,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119214153624.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250119214153624.png&#34;
 	
 	
 	
@@ -41410,7 +41410,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119222458429.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250119222458429.png&#34;
 	
 	
 	
@@ -41530,7 +41530,7 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/%e6%8a%bd%e5%a5%96%e6%bc%94%e7%a4%ba.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/%e6%8a%bd%e5%a5%96%e6%bc%94%e7%a4%ba.gif&#34;
 	
 	
 	

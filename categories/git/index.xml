@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Git on 缘鱼的笔记</title>
-        <link>https://IAmYuanyu.github.io/categories/git/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/git/</link>
         <description>Recent content in Git on 缘鱼的笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Sat, 06 Jun 2026 11:35:24 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 06 Jun 2026 11:35:24 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/git/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Git基础使用</title>
-        <link>https://IAmYuanyu.github.io/p/git%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/git%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Sat, 06 Jun 2026 11:35:24 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/git%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/git%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</guid>
         <description>&lt;h1 id=&#34;git基础教程&#34;&gt;Git基础教程
 &lt;/h1&gt;&lt;p&gt;具体的操作本文不会提及，在AI时代知道这些概念即可，具体操作交给AI来完成&lt;/p&gt;
 &lt;h2 id=&#34;什么是git&#34;&gt;什么是Git
@@ -27,7 +27,7 @@
 &lt;h2 id=&#34;如何使用&#34;&gt;如何使用
 &lt;/h2&gt;&lt;p&gt;要使用Git首先要安装Git，Windows可以在&lt;a class=&#34;link&#34; href=&#34;https://git-scm.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Git官网&lt;/a&gt;下载。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606092848303.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606092848303.png&#34;
 	
 	
 	
@@ -46,7 +46,7 @@
 &lt;h2 id=&#34;版本控制&#34;&gt;版本控制
 &lt;/h2&gt;&lt;p&gt;Git不会时刻自动保存你的修改，每个存档点需要手动提交(commit)。&lt;/p&gt;
 &lt;p&gt;以IDEA的图像界面为例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606094937785.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606094937785.png&#34;
 	
 	
 	
@@ -58,7 +58,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;点击提交后，会保存仓库当前状态的快照，并记录提交信息和生成一个唯一的Commit ID。&lt;/p&gt;
 &lt;p&gt;同样可以在IDEA中直观地看见提交历史。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606095318864.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606095318864.png&#34;
 	
 	
 	
@@ -170,10 +170,10 @@
         </item>
         <item>
         <title>Git修改commit信息</title>
-        <link>https://IAmYuanyu.github.io/p/git%E4%BF%AE%E6%94%B9commit%E4%BF%A1%E6%81%AF/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/git%E4%BF%AE%E6%94%B9commit%E4%BF%A1%E6%81%AF/</link>
         <pubDate>Sun, 19 Oct 2025 22:44:36 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/git%E4%BF%AE%E6%94%B9commit%E4%BF%A1%E6%81%AF/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/git%E4%BF%AE%E6%94%B9commit%E4%BF%A1%E6%81%AF/</guid>
         <description>&lt;h2 id=&#34;git修改commit信息&#34;&gt;Git修改commit信息
 &lt;/h2&gt;&lt;h3 id=&#34;只提交到本地&#34;&gt;只提交到本地
 &lt;/h3&gt;&lt;p&gt;如果只是修改&lt;strong&gt;最近一次&lt;/strong&gt;只提交到本地尚未push的commit信息可以直接使用&lt;code&gt;git commit --amend&lt;/code&gt;进行修改&lt;/p&gt;
@@ -227,10 +227,10 @@
         </item>
         <item>
         <title>部署Vue3项目到GithubPages</title>
-        <link>https://IAmYuanyu.github.io/p/%E9%83%A8%E7%BD%B2vue3%E9%A1%B9%E7%9B%AE%E5%88%B0githubpages/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%83%A8%E7%BD%B2vue3%E9%A1%B9%E7%9B%AE%E5%88%B0githubpages/</link>
         <pubDate>Wed, 18 Jun 2025 18:46:48 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E9%83%A8%E7%BD%B2vue3%E9%A1%B9%E7%9B%AE%E5%88%B0githubpages/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%83%A8%E7%BD%B2vue3%E9%A1%B9%E7%9B%AE%E5%88%B0githubpages/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本教程默认已经连上github仓库&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -301,7 +301,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;在github上将gh-pages分支作为github-page&#34;&gt;在github上将gh-pages分支作为Github Page
 &lt;/h2&gt;&lt;p&gt;打开项目所在的仓库，如图操作&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250618190414572.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250618190414572.png&#34;
 	
 	
 	
@@ -434,10 +434,10 @@
         </item>
         <item>
         <title>Git将当前分支并入主分支</title>
-        <link>https://IAmYuanyu.github.io/p/git%E5%B0%86%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E5%B9%B6%E5%85%A5%E4%B8%BB%E5%88%86%E6%94%AF/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/git%E5%B0%86%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E5%B9%B6%E5%85%A5%E4%B8%BB%E5%88%86%E6%94%AF/</link>
         <pubDate>Wed, 18 Jun 2025 16:01:49 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/git%E5%B0%86%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E5%B9%B6%E5%85%A5%E4%B8%BB%E5%88%86%E6%94%AF/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/git%E5%B0%86%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E5%B9%B6%E5%85%A5%E4%B8%BB%E5%88%86%E6%94%AF/</guid>
         <description>&lt;h2 id=&#34;步骤&#34;&gt;步骤：
 &lt;/h2&gt;&lt;h3 id=&#34;确保当前分支的修改已提交&#34;&gt;确保当前分支的修改已提交
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -481,10 +481,10 @@
         </item>
         <item>
         <title>Github仓库修改默认分支</title>
-        <link>https://IAmYuanyu.github.io/p/github%E4%BB%93%E5%BA%93%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E5%88%86%E6%94%AF/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/github%E4%BB%93%E5%BA%93%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E5%88%86%E6%94%AF/</link>
         <pubDate>Fri, 11 Apr 2025 00:24:59 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/github%E4%BB%93%E5%BA%93%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E5%88%86%E6%94%AF/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/github%E4%BB%93%E5%BA%93%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E5%88%86%E6%94%AF/</guid>
         <description>&lt;h2 id=&#34;修改本地-git-的全局默认分支名称&#34;&gt;修改本地 Git 的全局默认分支名称
 &lt;/h2&gt;&lt;p&gt;在终端运行以下命令，设置 &lt;code&gt;main&lt;/code&gt; 为未来所有新仓库的默认分支：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -593,13 +593,13 @@
         </item>
         <item>
         <title>同步远程仓库</title>
-        <link>https://IAmYuanyu.github.io/p/%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</link>
         <pubDate>Wed, 02 Apr 2025 21:33:26 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</guid>
         <description>&lt;h2 id=&#34;将本地仓库同步远程仓库&#34;&gt;将本地仓库同步远程仓库
 &lt;/h2&gt;&lt;p&gt;push代码的时候可能出现下方情况&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250402213725119.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250402213725119.png&#34;
 	
 	
 	
@@ -649,10 +649,10 @@
         </item>
         <item>
         <title>在Gitee上传其他分支</title>
-        <link>https://IAmYuanyu.github.io/p/%E5%9C%A8gitee%E4%B8%8A%E4%BC%A0%E5%85%B6%E4%BB%96%E5%88%86%E6%94%AF/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%9C%A8gitee%E4%B8%8A%E4%BC%A0%E5%85%B6%E4%BB%96%E5%88%86%E6%94%AF/</link>
         <pubDate>Wed, 02 Apr 2025 20:44:40 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E5%9C%A8gitee%E4%B8%8A%E4%BC%A0%E5%85%B6%E4%BB%96%E5%88%86%E6%94%AF/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%9C%A8gitee%E4%B8%8A%E4%BC%A0%E5%85%B6%E4%BB%96%E5%88%86%E6%94%AF/</guid>
         <description>&lt;h2 id=&#34;创建新分支&#34;&gt;创建新分支
 &lt;/h2&gt;&lt;h3 id=&#34;创建想要的分支其中branch01为想要创建的分支名&#34;&gt;创建想要的分支，其中&lt;code&gt;branch01&lt;/code&gt;为想要创建的分支名
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -748,15 +748,15 @@
         </item>
         <item>
         <title>将本地代码发送到Gitee团队仓库</title>
-        <link>https://IAmYuanyu.github.io/p/%E5%B0%86%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%8F%91%E9%80%81%E5%88%B0gitee%E5%9B%A2%E9%98%9F%E4%BB%93%E5%BA%93/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%B0%86%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%8F%91%E9%80%81%E5%88%B0gitee%E5%9B%A2%E9%98%9F%E4%BB%93%E5%BA%93/</link>
         <pubDate>Wed, 02 Apr 2025 20:44:07 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E5%B0%86%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%8F%91%E9%80%81%E5%88%B0gitee%E5%9B%A2%E9%98%9F%E4%BB%93%E5%BA%93/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%B0%86%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%8F%91%E9%80%81%E5%88%B0gitee%E5%9B%A2%E9%98%9F%E4%BB%93%E5%BA%93/</guid>
         <description>&lt;h2 id=&#34;将代码发送到团队仓库&#34;&gt;将代码发送到团队仓库
 &lt;/h2&gt;&lt;h3 id=&#34;设置个人信息&#34;&gt;设置个人信息
 &lt;/h3&gt;&lt;p&gt;上传代码前，要先设置个人信息，个人信息配置代码如下所示&lt;/p&gt;
 &lt;p&gt;先找到团队的仓库页面，打开如图位置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250402202237171.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250402202237171.png&#34;
 	
 	
 	
@@ -787,7 +787,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;注：上传代码的时候应该会验证账号和密码，账号名是个人主页@后面的名字&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250402204052992.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250402204052992.png&#34;
 	
 	
 	
@@ -802,11 +802,11 @@
         </item>
         <item>
         <title>暴力解决git上传代码报错</title>
-        <link>https://IAmYuanyu.github.io/p/%E6%9A%B4%E5%8A%9B%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E6%9A%B4%E5%8A%9B%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/</link>
         <pubDate>Wed, 26 Mar 2025 21:44:16 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E6%9A%B4%E5%8A%9B%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/</guid>
-        <description>&lt;img src="https://IAmYuanyu.github.io/p/%E6%9A%B4%E5%8A%9B%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/%E4%BB%A3%E7%A0%81%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4.png" alt="Featured image of post 暴力解决git上传代码报错" /&gt;&lt;p&gt;刚弄完前一篇的教程就遇到了这个问题，头疼了半天，结果发现了一个简单无脑的解决方式&lt;/p&gt;
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E6%9A%B4%E5%8A%9B%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/</guid>
+        <description>&lt;img src="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E6%9A%B4%E5%8A%9B%E8%A7%A3%E5%86%B3git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99/%E4%BB%A3%E7%A0%81%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4.png" alt="Featured image of post 暴力解决git上传代码报错" /&gt;&lt;p&gt;刚弄完前一篇的教程就遇到了这个问题，头疼了半天，结果发现了一个简单无脑的解决方式&lt;/p&gt;
 &lt;p&gt;push代码的时候加上-f，即用&lt;code&gt;git push -f&lt;/code&gt;提交代码&lt;/p&gt;
 &lt;p&gt;此方法有诸多风险，如数据可能丢失，破坏团队其他人代码，历史版本难以恢复等等，只建议用于自己的个人小作坊，并且确定旧代码完全没用了&lt;/p&gt;
 &lt;blockquote&gt;

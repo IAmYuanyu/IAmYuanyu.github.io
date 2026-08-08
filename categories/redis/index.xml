@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Redis on 缘鱼的笔记</title>
-        <link>https://IAmYuanyu.github.io/categories/redis/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/redis/</link>
         <description>Recent content in Redis on 缘鱼的笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Wed, 10 Jun 2026 22:20:04 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/redis/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 10 Jun 2026 22:20:04 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/redis/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Redis原理篇-内存回收</title>
-        <link>https://IAmYuanyu.github.io/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6/</link>
         <pubDate>Wed, 10 Jun 2026 22:20:04 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文基于黑马2022的Redis课程原理篇编写，课程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1cr4y1671t?spm_id_from=333.788.player.switch&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;黑马程序员Redis入门到实战教程，深度透析redis底层原理+redis分布式锁+企业解决方案+黑马点评实战项目&lt;/a&gt;&lt;/p&gt;
@@ -50,7 +50,7 @@
 &lt;/ol&gt;
 &lt;h3 id=&#34;数据库结构&#34;&gt;数据库结构
 &lt;/h3&gt;&lt;p&gt;Redis内部默认有16个数据库（编号0-15），每个数据库对应一个 &lt;code&gt;redisDb&lt;/code&gt; 结构体。该结构体是理解过期策略的基础。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260610203725826.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260610203725826.png&#34;
 	
 	
 	
@@ -66,7 +66,7 @@
 &lt;li&gt;其他属性如 &lt;code&gt;blocking_keys&lt;/code&gt;, &lt;code&gt;watched_keys&lt;/code&gt;, &lt;code&gt;id&lt;/code&gt;, &lt;code&gt;avg_ttl&lt;/code&gt; 等用于特定功能或统计，当前阶段非核心。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;下面是&lt;code&gt;redisDb&lt;/code&gt; 两个核心字典 &lt;code&gt;dict&lt;/code&gt; 和 &lt;code&gt;expires&lt;/code&gt;的结构关系图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260610205126613.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260610205126613.png&#34;
 	
 	
 	
@@ -94,7 +94,7 @@
 &lt;/h4&gt;&lt;p&gt;并非在TTL到期后立即删除，而是在&lt;strong&gt;下一次访问该key时&lt;/strong&gt;，再检查其是否过期。如果过期，则执行删除操作。&lt;/p&gt;
 &lt;p&gt;Redis在执行任何对key的增删改查（如 &lt;code&gt;lookupKeyWriteWithFlags&lt;/code&gt;, &lt;code&gt;lookupKeyReadWithFlags&lt;/code&gt;）操作时，都会先调用 &lt;code&gt;expireIfNeeded(db, key)&lt;/code&gt; 函数。&lt;/p&gt;
 &lt;p&gt;该函数的核心逻辑是，在 &lt;code&gt;expires&lt;/code&gt; 字典中查找key，获取过期时间，与当前时间比较。若已过期，则调用 &lt;code&gt;deleteExpiredKeyAndPropagate(db, key)&lt;/code&gt; 进行删除并同步（如有必要），然后返回删除结果。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260610210001417.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260610210001417.png&#34;
 	
 	
 	
@@ -113,7 +113,7 @@
 &lt;li&gt;&lt;strong&gt;SLOW模式（慢模式）&lt;/strong&gt;： 在Redis服务器初始化时设置一个定时任务，执行 &lt;code&gt;serverCron()&lt;/code&gt; 函数。其执行频率由 &lt;code&gt;server.hz&lt;/code&gt; 配置（默认为10，即每秒10次，每100ms执行一次）。此模式&lt;strong&gt;执行时间较长&lt;/strong&gt;（但受控），&lt;strong&gt;频率较低&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;FAST模式（快模式）&lt;/strong&gt;： 在Redis事件循环的每一个周期开始前，调用 &lt;code&gt;beforeSleep()&lt;/code&gt; 函数，其中会执行一次 &lt;code&gt;activeExpireCycle(ACTIVE_EXPIRE_CYCLE_FAST)&lt;/code&gt;。此模式&lt;strong&gt;执行时间极短&lt;/strong&gt;（不超过1ms），&lt;strong&gt;频率高&lt;/strong&gt;（与事件循环频率相同，但两次间隔不低于2ms）。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260610211042247.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260610211042247.png&#34;
 	
 	
 	
@@ -378,7 +378,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;performevictions-淘汰流程&#34;&gt;performEvictions 淘汰流程
 &lt;/h3&gt;&lt;p&gt;Redis 采用了&lt;strong&gt;近似 LRU/LFU 算法&lt;/strong&gt;，通过维护一个 &lt;strong&gt;eviction pool（淘汰池）&lt;/strong&gt; 和采样比较来高效执行淘汰，避免全量扫描所有 key。大致流程如下图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260610220224450.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260610220224450.png&#34;
 	
 	
 	
@@ -404,10 +404,10 @@
         </item>
         <item>
         <title>Redis原理篇-RESP通信协议</title>
-        <link>https://IAmYuanyu.github.io/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-resp%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-resp%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</link>
         <pubDate>Wed, 10 Jun 2026 20:21:35 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-resp%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-resp%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文基于黑马2022的Redis课程原理篇编写，课程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1cr4y1671t?spm_id_from=333.788.player.switch&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;黑马程序员Redis入门到实战教程，深度透析redis底层原理+redis分布式锁+企业解决方案+黑马点评实战项目&lt;/a&gt;&lt;/p&gt;
@@ -490,7 +490,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260609204349491.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260609204349491.png&#34;
 	
 	
 	
@@ -524,7 +524,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260609210305150.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260609210305150.png&#34;
 	
 	
 	
@@ -1017,10 +1017,10 @@
         </item>
         <item>
         <title>Redis原理篇-网络模型</title>
-        <link>https://IAmYuanyu.github.io/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</link>
         <pubDate>Mon, 08 Jun 2026 23:06:14 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文基于黑马2022的Redis课程原理篇编写，课程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1cr4y1671t?spm_id_from=333.788.player.switch&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;黑马程序员Redis入门到实战教程，深度透析redis底层原理+redis分布式锁+企业解决方案+黑马点评实战项目&lt;/a&gt;&lt;/p&gt;
@@ -1031,7 +1031,7 @@
 &lt;p&gt;Ubuntu 和 CentOS 都是 Linux 的发行版，发行版可以看成对 Linux 包了一层壳，任何 Linux 发行版，其系统内核都是 Linux。我们的应用都需要通过 Linux 内核与硬件交互。&lt;/p&gt;
 &lt;p&gt;用户应用（如 MySQL、Redis）无法直接访问硬件设备（CPU、内存、网卡等），必须通过内核来操作硬件。内核包含设备驱动、内存管理、进程管理、文件系统、网络管理等模块，并封装成系统调用接口供用户应用使用。&lt;/p&gt;
 &lt;p&gt;计算机硬件包括 CPU、内存、网卡等，内核（通过寻址空间）可以操作硬件，但是内核需要不同设备的驱动，有了这些驱动之后，内核就可以对计算机硬件进行内存管理、文件系统管理、进程管理等。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606211206856.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606211206856.png&#34;
 	
 	
 	
@@ -1048,7 +1048,7 @@
 &lt;p&gt;&lt;em&gt;什么是寻址空间呢？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;应用程序也好，内核也好，都无法直接访问物理内存，而是通过虚拟地址来使用内存，由内核负责将虚拟地址映射到物理内存上。&lt;/p&gt;
 &lt;p&gt;内核和应用程序访问虚拟内存时，就需要一个虚拟地址，这个地址是一个无符号的整数。比如一个32位的操作系统，其地址总线宽度为32位，虚拟地址空间大小就是2的32次方，也就是说它的寻址范围是0到2³²−1，这片寻址空间对应的就是2的32次方个字节，也就是4 GB。这个4 GB，通常会有3 GB分给用户空间，1 GB分给内核空间。这样在内存层面上将用户应用和内核隔离开，从而杜绝冲突和崩溃。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606215909963.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606215909963.png&#34;
 	
 	
 	
@@ -1091,7 +1091,7 @@
 &lt;li&gt;从内核缓冲区拷贝数据到用户缓冲区。&lt;/li&gt;
 &lt;li&gt;切换回用户态，对数据进行处理。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606221740255.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606221740255.png&#34;
 	
 	
 	
@@ -1131,7 +1131,7 @@
 &lt;li&gt;&lt;strong&gt;数据拷贝阶段&lt;/strong&gt;：内核将数据从内核缓冲区复制到用户缓冲区。此阶段用户进程&lt;strong&gt;依然阻塞&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;系统调用返回成功结果，用户进程恢复运行并开始处理数据。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607012053755.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607012053755.png&#34;
 	
 	
 	
@@ -1150,7 +1150,7 @@
 &lt;li&gt;&lt;strong&gt;非阻塞IO&lt;/strong&gt;：在调用 &lt;code&gt;recvfrom&lt;/code&gt; 系统函数时，如果内核没有准备好数据，&lt;strong&gt;不会阻塞用户进程&lt;/strong&gt;，而是立即返回一个失败的信息（例如错误码 &lt;code&gt;EWOULDBLOCK&lt;/code&gt;）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;下图展示了非阻塞IO的完整流程，主要分为两个阶段：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607013933139.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607013933139.png&#34;
 	
 	
 	
@@ -1199,7 +1199,7 @@
 &lt;p&gt;FD是一个从0开始递增的无符号整数，用来关联Linux中的一个文件。在Linux中，“&lt;strong&gt;一切皆文件&lt;/strong&gt;”。这包括普通文件、视频、硬件设备等，当然也包括网络套接字（&lt;strong&gt;Socket&lt;/strong&gt;）。&lt;/p&gt;
 &lt;p&gt;当每个客户端与服务器建立连接时，都会产生一个对应的Socket，也就有了一个对应的FD。因此，IO多路复用监听多个FD，本质上就是同时监听多个网络连接。&lt;/p&gt;
 &lt;p&gt;IO多路复用的流程可以清晰地分为两个阶段，这两个阶段&lt;strong&gt;都是阻塞&lt;/strong&gt;的，但关键在于监听的粒度不同，从而避免了无效等待。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607142152766.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607142152766.png&#34;
 	
 	
 	
@@ -1316,7 +1316,7 @@
 &lt;li&gt;&lt;strong&gt;创建 fd_set&lt;/strong&gt;：在用户空间创建并初始化一个 &lt;code&gt;fd_set&lt;/code&gt; 结构体，例如 &lt;code&gt;rfds&lt;/code&gt;，用于存放要监听“可读事件”的 FD。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;设置比特位&lt;/strong&gt;：使用宏（如 &lt;code&gt;FD_SET(fd, &amp;amp;rfds)&lt;/code&gt;）将需要监听的 FD 对应的比特位设置为 1。例如，要监听 FD 1、2、5，则将 &lt;code&gt;rfds&lt;/code&gt; 中索引为 1、2、5 的比特位置为 1。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607150957347.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607150957347.png&#34;
 	
 	
 	
@@ -1344,7 +1344,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607151621152.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607151621152.png&#34;
 	
 	
 	
@@ -1371,7 +1371,7 @@
 &lt;p&gt;&lt;strong&gt;返回值&lt;/strong&gt;：&lt;code&gt;select&lt;/code&gt; 返回一个整数，表示就绪的 FD 总数（例如，有 2 个 FD 可读，就返回 2）。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607152022296.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607152022296.png&#34;
 	
 	
 	
@@ -1387,7 +1387,7 @@
 &lt;li&gt;&lt;strong&gt;识别并处理&lt;/strong&gt;：检查每个比特位是否为 1。如果是，则说明该比特位对应的 FD 已就绪，可以对其进行非阻塞的读/写操作。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;循环&lt;/strong&gt;：处理完一次 &lt;code&gt;select&lt;/code&gt; 的结果后，如果还需要继续监听，需要&lt;strong&gt;重新创建并设置&lt;/strong&gt; &lt;code&gt;fd_set&lt;/code&gt;（因为上一次调用已经改变了 &lt;code&gt;rfds&lt;/code&gt; 的内容），然后再次调用 &lt;code&gt;select&lt;/code&gt;，进入下一轮循环&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607152245569.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607152245569.png&#34;
 	
 	
 	
@@ -1537,7 +1537,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607200252983.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607200252983.png&#34;
 	
 	
 	
@@ -1622,7 +1622,7 @@
 &lt;li&gt;用户空间调用&lt;code&gt;epoll_wait&lt;/code&gt;，内核检查&lt;code&gt;rdllist&lt;/code&gt;，发现有元素6和8，于是将这两个FD的信息拷贝到用户传入的空数组&lt;code&gt;events&lt;/code&gt;中并返回数量：2。此后用户程序通常会循环再次调用 &lt;code&gt;epoll_wait&lt;/code&gt; 继续等待新事件。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;与select/poll的关键区别&lt;/strong&gt;：拷贝回用户空间的&lt;strong&gt;仅仅是就绪的FD&lt;/strong&gt;，而不是所有监听的FD。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607202152971.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607202152971.png&#34;
 	
 	
 	
@@ -1832,7 +1832,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607233432225.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607233432225.png&#34;
 	
 	
 	
@@ -1855,7 +1855,7 @@
 &lt;li&gt;&lt;strong&gt;主动发起读取&lt;/strong&gt;：在信号处理函数中，用户进程主动调用 &lt;code&gt;recvfrom&lt;/code&gt; 等函数去读取数据。&lt;strong&gt;此时是阻塞的&lt;/strong&gt;，需要等待数据从内核空间拷贝到用户空间完成。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;数据处理&lt;/strong&gt;：读取完成后，进行数据处理。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260608151302314.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260608151302314.png&#34;
 	
 	
 	
@@ -1884,7 +1884,7 @@
 &lt;li&gt;&lt;strong&gt;内核全程处理并通知&lt;/strong&gt;：内核接管了整个IO过程：等待数据就绪 -&amp;gt; 将数据从内核空间拷贝到用户空间指定的缓冲区，完成后通过指定的信号或回调函数通知用户进程“数据已准备就绪”。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;直接处理数据&lt;/strong&gt;：用户进程收到通知时，数据已经在用户空间的缓冲区中，可以直接处理，无需再发起读取操作。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260608153122536.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260608153122536.png&#34;
 	
 	
 	
@@ -2029,7 +2029,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260608203915234.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260608203915234.png&#34;
 	
 	
 	
@@ -2238,7 +2238,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260608212105279.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260608212105279.png&#34;
 	
 	
 	
@@ -2262,7 +2262,7 @@
 &lt;li&gt;&lt;strong&gt;命令解析&lt;/strong&gt;：在读取数据后，将其解析为Redis命令的过程，依然由主线程执行。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;命令执行&lt;/strong&gt;：纯粹的内存操作，速度极快，由主线程执行。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260608213709514.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260608213709514.png&#34;
 	
 	
 	
@@ -2286,10 +2286,10 @@
         </item>
         <item>
         <title>Redis原理篇-数据结构</title>
-        <link>https://IAmYuanyu.github.io/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
         <pubDate>Sat, 06 Jun 2026 01:01:17 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文基于黑马2022的Redis课程原理篇编写，课程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1cr4y1671t?spm_id_from=333.788.player.switch&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;黑马程序员Redis入门到实战教程，深度透析redis底层原理+redis分布式锁+企业解决方案+黑马点评实战项目&lt;/a&gt;&lt;/p&gt;
@@ -2308,7 +2308,7 @@
 &lt;p&gt;修改效率低且不安全（缺乏空间预分配机制，修改时容易发生缓冲区溢出或内存浪费）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260523145931601.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260523145931601.png&#34;
 	
 	
 	
@@ -2322,7 +2322,7 @@
 &lt;p&gt;例如，我们执行命令：&lt;code&gt;set name 缘鱼&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;那么Redis将在底层创建两个SDS，其中一个是包含“name”的SDS，另一个是包含“缘鱼”的SDS。&lt;/p&gt;
 &lt;p&gt;Redis是C语言实现的，其中SDS是一个结构体，源码如下，其中的8表示8个比特位：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260523151631022.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260523151631022.png&#34;
 	
 	
 	
@@ -2333,7 +2333,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;例如，一个包含字符串“name”的sds结构如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260523151754295.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260523151754295.png&#34;
 	
 	
 	
@@ -2345,7 +2345,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;现在读这个sds结构的字符串时会直接从数据部分读len个字符，这样就不存在二进制安全问题了，而且字符串长度也是包含在header中的，无需再计算&lt;/p&gt;
 &lt;p&gt;SDS之所以叫做动态字符串，是因为它具备动态扩容的能力，例如一个内容为“hi”的SDS：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260523152912544.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260523152912544.png&#34;
 	
 	
 	
@@ -2360,7 +2360,7 @@
 &lt;li&gt;如果新字符串小于1M，则新空间为扩展后字符串长度的两倍+1；（扩展后为hi,Amy，6个字节，所以新空间为6×2+1=13字节）&lt;/li&gt;
 &lt;li&gt;如果新字符串大于1M，则新空间为扩展后字符串长度+1M+1。称为内存预分配。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260523153128309.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260523153128309.png&#34;
 	
 	
 	
@@ -2379,7 +2379,7 @@
 &lt;h2 id=&#34;intset&#34;&gt;IntSet
 &lt;/h2&gt;&lt;p&gt;IntSet是Redis中set集合的一种实现方式，基于整数数组来实现，并且具备长度可变、有序等特征。&lt;/p&gt;
 &lt;p&gt;结构如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260523155515916.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260523155515916.png&#34;
 	
 	
 	
@@ -2390,7 +2390,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;其中的encoding包含三种模式，表示存储的整数大小不同：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260523155540826.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260523155540826.png&#34;
 	
 	
 	
@@ -2401,7 +2401,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;为了方便查找，Redis会将intset中所有的整数按照升序依次保存在contents数组中，结构如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260523160044207.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260523160044207.png&#34;
 	
 	
 	
@@ -2421,7 +2421,7 @@
 &lt;hr&gt;
 &lt;p&gt;intset还具有自动升级功能&lt;/p&gt;
 &lt;p&gt;假设现在有一个 intset, 元素为｛5，10，20｝采用的编码是 INTSET-ENC-INT16, 则每个整数占2字节：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530102502032.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530102502032.png&#34;
 	
 	
 	
@@ -2439,7 +2439,7 @@
 &lt;li&gt;将待添加的元素放入数组末尾&lt;/li&gt;
 &lt;li&gt;最后，将inset的encoding属性改为INTSET_ENC_INT32，将length属性改为4&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530102753722.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530102753722.png&#34;
 	
 	
 	
@@ -2449,7 +2449,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530102838357.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530102838357.png&#34;
 	
 	
 	
@@ -2470,7 +2470,7 @@
 &lt;/h2&gt;&lt;h3 id=&#34;dict介绍&#34;&gt;Dict介绍
 &lt;/h3&gt;&lt;p&gt;Redis是一个键值型（Key-Value Pair）的数据库，我们可以根据键实现快速的增删改查。而键与值的映射关系正是通过Dict来实现的。
 Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点（DictEntry）、字典（Dict）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530114513049.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530114513049.png&#34;
 	
 	
 	
@@ -2480,7 +2480,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530114548349.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530114548349.png&#34;
 	
 	
 	
@@ -2492,7 +2492,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &gt;&lt;/p&gt;
 &lt;p&gt;当我们向Dict添加键值对时，Redis首先根据key计算出hash值（h），然后利用 h &amp;amp; sizemask（效果和求余一样，但效率更高）来计算元素应该存储到数组中的哪个索引位置。&lt;/p&gt;
 &lt;p&gt;现在存储k1=v1，假设k1的哈希值h =1，则1&amp;amp;3 =1，因此k1=v1要存储到数组角标1位置：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530113521464.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530113521464.png&#34;
 	
 	
 	
@@ -2503,7 +2503,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;假如又要存储一个k2=v2，计算后的数组角标位置同样是1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530114016304.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530114016304.png&#34;
 	
 	
 	
@@ -2520,7 +2520,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;li&gt;哈希表的 LoadFactor &amp;gt;= 1，并且服务器没有执行 BGSAVE 或者 BGREWRITEAOF 等后台进程；&lt;/li&gt;
 &lt;li&gt;哈希表的 LoadFactor &amp;gt; 5 ；&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530144557709.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530144557709.png&#34;
 	
 	
 	
@@ -2532,7 +2532,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;dict收缩&#34;&gt;Dict收缩
 &lt;/h3&gt;&lt;p&gt;DIct除了扩容外，每次删除元素时，也会对负载因子做检查，当LoadFactor &amp;lt; 0.1时，会做哈希表收缩：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530152217332.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530152217332.png&#34;
 	
 	
 	
@@ -2560,7 +2560,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;/ul&gt;
 &lt;p&gt;举个例子，整个过程可以描述成：&lt;/p&gt;
 &lt;p&gt;当前有一个大小为4且已装满的数组，现在需要新插入一个元素，所以就需要rehash：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530161353570.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530161353570.png&#34;
 	
 	
 	
@@ -2571,7 +2571,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;创建新数组并迁移元素：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530162103112.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530162103112.png&#34;
 	
 	
 	
@@ -2582,7 +2582,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;修改ht[0]中的指针：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260530162310349.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260530162310349.png&#34;
 	
 	
 	
@@ -2607,7 +2607,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;h2 id=&#34;ziplist&#34;&gt;ZipList
 &lt;/h2&gt;&lt;h3 id=&#34;简介&#34;&gt;简介
 &lt;/h3&gt;&lt;p&gt;ZipList 是一种特殊的“双端链表” ，由一系列特殊编码的连续内存块组成。可以在任意一端进行压入/弹出操作，并且该操作的时间复杂度为 O(1)。还可以正向或逆向遍历&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260603194202226.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260603194202226.png&#34;
 	
 	
 	
@@ -2662,7 +2662,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;p&gt;ZipList中所有存储长度的数值均采用小端字节序，即低位字节在前，高位字节在后。例如：数值0x1234，采用小端字节序后，在内存中实际存储的字节序列为：0x3412（其逻辑值仍为0x1234）。&lt;/p&gt;
 &lt;h3 id=&#34;ziplistentry&#34;&gt;ZipListEntry
 &lt;/h3&gt;&lt;p&gt;ZipList 中的Entry并不像普通链表那样记录前后节点的指针，因为记录两个指针要占用16个字节，浪费内存。而是采用了下面的结构：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260603194947526.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260603194947526.png&#34;
 	
 	
 	
@@ -2723,7 +2723,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;p&gt;注意，第三种以10开头的编码，编码长度为5字节，但第一个字节空着作为标识，用后面4个字节来记录字符串，所以能记录的字符串大小为2的32次方减1，即4294967295字节&lt;/p&gt;
 &lt;p&gt;例如，现在要保存字符串：“ab”和 “bc”，因为一个字符占用1字节，“ab”和 “bc”分别占用2字节，所以用00开头，长度为1字节的编码就行&lt;/p&gt;
 &lt;p&gt;所以“ab”这个字符串的entry如下，共占用4字节：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260603214813309.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260603214813309.png&#34;
 	
 	
 	
@@ -2734,7 +2734,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;所以“ab”和 “bc”的entry如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260603220437707.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260603220437707.png&#34;
 	
 	
 	
@@ -2745,7 +2745,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;所以保存了“ab”和 “bc”的整个ZipList结构如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260603221329905.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260603221329905.png&#34;
 	
 	
 	
@@ -2801,7 +2801,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;/table&gt;
 &lt;p&gt;当存的整数在0到12之间时（闭区间），就可以用最后一种编码形式，既是编码也记录了数值&lt;/p&gt;
 &lt;p&gt;例如，一个ZipList中包含两个整数值：“2”和“5”，entry如下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260603222547897.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260603222547897.png&#34;
 	
 	
 	
@@ -2812,7 +2812,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;所以保存了2和5的整个ZipList结构如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260603222900364.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260603222900364.png&#34;
 	
 	
 	
@@ -2829,7 +2829,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;li&gt;如果前一节点的长度大于等于254字节，则采用5个字节来保存这个长度值，第一个字节为0xfe，后四个字节才是真实长度数据&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;假设现在有&lt;strong&gt;N个连续的、长度为250~253字节之间的entry&lt;/strong&gt;，因此entry的previous_entry_length属性用1个字节即可表示，如图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260603230729189.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260603230729189.png&#34;
 	
 	
 	
@@ -2840,7 +2840,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;现在要在队首插入一个长度为254字节的entry，所以原本的第一个，即现在的第二个entry的previous_entry_length需要从1个字节变成5个字节，导致这个entry的长度从250字节变成254字节，进而导致它的下一个entry也需要修改previous_entry_length的长度，以此类推，会产生一连串的空间拓展操作：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260603231345101.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260603231345101.png&#34;
 	
 	
 	
@@ -2903,7 +2903,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604002727562.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604002727562.png&#34;
 	
 	
 	
@@ -2915,7 +2915,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;entry结构&#34;&gt;Entry结构
 &lt;/h3&gt;&lt;p&gt;每个元素由三部分组成：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604004756193.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604004756193.png&#34;
 	
 	
 	
@@ -3027,7 +3027,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604010005122.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604010005122.png&#34;
 	
 	
 	
@@ -3052,7 +3052,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;作用&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;这个字段主要是为了&lt;strong&gt;反向遍历&lt;/strong&gt;而设计的。通过&lt;code&gt;element-total-len&lt;/code&gt;，可以从后向前逐个解析entry，而不需要像ziplist那样依赖&lt;code&gt;previous_entry_length&lt;/code&gt;字段。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604011430148.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604011430148.png&#34;
 	
 	
 	
@@ -3064,7 +3064,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;示例演示&#34;&gt;示例演示
 &lt;/h3&gt;&lt;p&gt;假设要用listpack结构存放字符串&amp;quot;hello&amp;quot;以及整数1024，表示如下图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604012146878.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604012146878.png&#34;
 	
 	
 	
@@ -3141,7 +3141,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;blockquote&gt;
 &lt;p&gt;从 &lt;strong&gt;Redis 7.0&lt;/strong&gt; 版本开始，QuickList 的每个节点已经从 &lt;strong&gt;ZipList&lt;/strong&gt; 替换成了 &lt;strong&gt;ListPack&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604161807738.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604161807738.png&#34;
 	
 	
 	
@@ -3201,7 +3201,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;/table&gt;
 &lt;p&gt;简单来说，压缩是把整个 ZipList/ListPack 节点用 LZF 算法压缩成更小的二进制块，首尾节点始终保持解压状态以保证常用操作性能，中间的&amp;quot;冷&amp;quot;数据压缩以节省内存。&lt;/p&gt;
 &lt;p&gt;以下是QuickList的和QuickListNode的结构源码：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604163449443.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604163449443.png&#34;
 	
 	
 	
@@ -3212,7 +3212,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;内存结构大致如下，此时compress为1，所以首尾不压缩，中间两个节点压缩：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604163748672.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604163748672.png&#34;
 	
 	
 	
@@ -3237,7 +3237,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;li&gt;节点可能包含多个指针，指针跨度不同&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;指针示意图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604165554223.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604165554223.png&#34;
 	
 	
 	
@@ -3289,7 +3289,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;SkipList节点源码：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604170216928.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604170216928.png&#34;
 	
 	
 	
@@ -3300,7 +3300,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;SkipList内存结构示意图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604170716399.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604170716399.png&#34;
 	
 	
 	
@@ -3381,7 +3381,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;/blockquote&gt;
 &lt;p&gt;简单来说，&lt;strong&gt;redisObject 就是一个&amp;quot;万能外壳&amp;quot;&lt;/strong&gt;，它让底层的哈希表（dict）可以用完全相同的方式去管理 string、list、hash、set、zset 这些完全不同类型的数据——哈希表只认 redisObject，至于里面具体是什么，由 type 和 encoding 这两个&amp;quot;标签&amp;quot;来告诉上层应该怎么解读。&lt;/p&gt;
 &lt;p&gt;Redis中的任意数据类型的键和值都会被封装为一个RedisObject，也叫做Redis对象，源码如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604174308473.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604174308473.png&#34;
 	
 	
 	
@@ -3515,7 +3515,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;p&gt;如果存储的字符串是整数值，并且可以用 long 类型表示（即值在 LONG_MIN 与 LONG_MAX 之间），则会采用 &lt;strong&gt;INT&lt;/strong&gt; 编码：直接将该整数值保存在 RedisObject 的 ptr 指针中（将整数值直接转为 void* 存进 ptr，ptr 的值就是该整数，刚好 8 字节），不再需要 SDS 了。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604204928860.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604204928860.png&#34;
 	
 	
 	
@@ -3525,7 +3525,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604205142105.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604205142105.png&#34;
 	
 	
 	
@@ -3590,7 +3590,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;p&gt;&lt;strong&gt;两种解读方式下，同一个 bit 位置对应的是完全不同的含义&lt;/strong&gt;，所以直接对 long long 做位操作会得到错误结果。这就是为什么 append、setbit、getrange 这些命令会&lt;strong&gt;先把 long long 整数转成 SDS 字符串，再进行操作&lt;/strong&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;list&#34;&gt;List
 &lt;/h3&gt;&lt;p&gt;Redis的List类型可以从首、尾操作列表中的元素：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604213323410.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604213323410.png&#34;
 	
 	
 	
@@ -3616,7 +3616,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;p&gt;在3.2版本之后，Redis统一采用QuickList来实现List：&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604214238954.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604214238954.png&#34;
 	
 	
 	
@@ -3629,7 +3629,7 @@ Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点
 &lt;ul&gt;
 &lt;li&gt;在 7.0之后，将QuickList中的ZipList替换为ListPack，下图由AI生成，仅供参考：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260604221925972.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260604221925972.png&#34;
 	
 	
 	
@@ -3652,7 +3652,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;Set是Redis中的集合，不保证元素有序，可以满足元素唯一、查询效率极高。当元素数量较多或不满足紧凑编码条件时，Set采用&lt;strong&gt;HT&lt;/strong&gt;编码（Dict）。Dict中的key用来存储元素，value统一为NULL。&lt;/li&gt;
 &lt;li&gt;如果存储的所有数据都是整数，并且元素数量不超过set-max-intset-entries（默认512），Set会采用&lt;strong&gt;IntSet&lt;/strong&gt;编码，以节省内存。后续每次插入元素都会再次判断是否符合条件，若不符合则会转换为HT编码。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260605123225265.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260605123225265.png&#34;
 	
 	
 	
@@ -3664,7 +3664,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;流程演示：&lt;/p&gt;
 &lt;p&gt;现有一个IntSet编码的Set集合，现在要往里面插入一个字符串&amp;quot;m1&amp;quot;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260605124036173.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260605124036173.png&#34;
 	
 	
 	
@@ -3675,7 +3675,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;会先转换为HT编码，然后再向其中插入这个字符串&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260605124154855.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260605124154855.png&#34;
 	
 	
 	
@@ -3692,7 +3692,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;member必须唯一&lt;/li&gt;
 &lt;li&gt;可以根据member查询分数&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606000015633.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606000015633.png&#34;
 	
 	
 	
@@ -3725,7 +3725,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;&lt;strong&gt;HashTable 只管 member → score 的快速映射&lt;/strong&gt;：O(1) 找到某个 member 对应的 score，同时利用 key 唯一性保证 member 不重复。当需要更新一个已有 member 的 score 时，HT 先 O(1) 查到旧 score，再去 SkipList 里定位并修改节点——没有 HT 这一步就会退化成 O(n)。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;两者各司其职，互相补齐对方的短板。不够由于编码只能写一种，源码里写的编码格式只有SkipList&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606001436478.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606001436478.png&#34;
 	
 	
 	
@@ -3736,7 +3736,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;结构如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606002207573.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606002207573.png&#34;
 	
 	
 	
@@ -3754,7 +3754,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;ZipList/ListPack 本身只是紧凑的连续内存结构，不提供排序和键值对语义。因此在 ZSet 使用这种编码时，由 ZSet 的代码逻辑来手动维护：&lt;/p&gt;
 &lt;p&gt;插入时遍历找到正确的排序位置，member 和 score 成对紧挨存储（member 在前、score 在后），整体按 score 升序排列。元素少时 O(n) 的插入成本完全可以接受，换来的是内存的显著节省。&lt;/p&gt;
 &lt;p&gt;ListPack同理。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606003433489.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606003433489.png&#34;
 	
 	
 	
@@ -3776,7 +3776,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;ZSet 的键是 member（字符串类型），值是 score（数字类型）；Hash 的键和值都是字符串，但值不像 ZSet 那样被约束为数字&lt;/li&gt;
 &lt;li&gt;ZSet 要根据 score 排序；Hash 则无需排序&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606004225008.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606004225008.png&#34;
 	
 	
 	
@@ -3815,7 +3815,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;这也是为什么 Redis 在小数据量时用 ZipList（省内存，拷贝成本低），大数据量时切换为 HT（链表/跳表的修改成本是 O(1)，不存在整块拷贝问题）。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;默认使用ZipList时：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606005016411.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606005016411.png&#34;
 	
 	
 	
@@ -3826,7 +3826,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;被转换为HT编码时：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606005126406.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606005126406.png&#34;
 	
 	
 	
@@ -3840,10 +3840,10 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
         </item>
         <item>
         <title>Redis 最佳实践</title>
-        <link>https://IAmYuanyu.github.io/p/redis-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
         <pubDate>Fri, 22 May 2026 17:42:36 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/redis-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文基于黑马2022的Redis课程高级篇编写，课程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1cr4y1671t?spm_id_from=333.788.player.switch&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;黑马程序员Redis入门到实战教程，深度透析redis底层原理+redis分布式锁+企业解决方案+黑马点评实战项目&lt;/a&gt;&lt;/p&gt;
@@ -3859,7 +3859,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;不包含特殊字符&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;例如：我们的登录业务，保存用户信息，其key可以设计成如下格式：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521225827338.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521225827338.png&#34;
 	
 	
 	
@@ -3876,7 +3876,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;方便管理&lt;/li&gt;
 &lt;li&gt;更节省内存：key是string类型，底层编码包含int、embstr和raw三种。embstr在小于44字节使用，采用连续内存空间，内存占用更小。当字节数大于44字节时，会转为raw模式存储，在raw模式下，内存空间不是连续的，而是采用一个指针指向了另外一段内存空间，在这段空间里存储SDS内容，这样空间不连续，访问的时候性能也就会受到影响，还有可能产生内存碎片&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521230442475.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521230442475.png&#34;
 	
 	
 	
@@ -3895,7 +3895,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;Key中成员的数据量过大：一个Hash类型的Key，它的成员数量虽然只有1,000个但这些成员的Value（值）总大小为100 MB&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;*那么如何判断元素的大小呢？*redis也给我们提供了命令&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521230615156.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521230615156.png&#34;
 	
 	
 	
@@ -3937,7 +3937,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;1）redis-cli &amp;ndash;bigkeys&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;利用redis-cli提供的&amp;ndash;bigkeys参数，可以遍历分析所有key，并返回Key的整体统计信息与每个数据的Top1的big key&lt;/p&gt;
 &lt;p&gt;命令：&lt;code&gt;redis-cli -a 密码 --bigkeys&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521231240899.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521231240899.png&#34;
 	
 	
 	
@@ -3965,7 +3965,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521231528572.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521231528572.png&#34;
 	
 	
 	
@@ -4159,7 +4159,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
     &gt;Redis-Rdb-Tools&lt;/a&gt; 分析RDB快照文件，全面分析内存使用情况&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;4）网络监控&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;自定义工具，监控进出Redis的网络数据，超出预警值时主动告警，一般阿里云搭建的云服务器就有相关监控页面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521232456696.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521232456696.png&#34;
 	
 	
 	
@@ -4175,7 +4175,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;redis 3.0 及以下版本&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;如果是集合类型，则遍历BigKey的元素，先逐个删除子元素，最后删除BigKey。Redis也有提供专门对集合的scan：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521232758871.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521232758871.png&#34;
 	
 	
 	
@@ -4193,7 +4193,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h3&gt;&lt;h4 id=&#34;选择存储方式&#34;&gt;选择存储方式
 &lt;/h4&gt;&lt;p&gt;比如存储一个User对象，有三种存储方式，&lt;em&gt;应该选择哪种？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;①方式一：json字符串&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521233842511.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521233842511.png&#34;
 	
 	
 	
@@ -4206,7 +4206,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;优点：实现简单粗暴&lt;/p&gt;
 &lt;p&gt;缺点：数据耦合，不够灵活&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;②方式二：字段打散&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521233855111.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521233855111.png&#34;
 	
 	
 	
@@ -4219,7 +4219,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;优点：可以灵活访问对象任意字段&lt;/p&gt;
 &lt;p&gt;缺点：占用空间大、没办法做统一控制&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;③方式三：hash（推荐）&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521233923804.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521233923804.png&#34;
 	
 	
 	
@@ -4233,7 +4233,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;缺点：代码相对复杂&lt;/p&gt;
 &lt;h4 id=&#34;优化hash类型key&#34;&gt;优化hash类型key
 &lt;/h4&gt;&lt;p&gt;假如有hash类型的key，其中有100万对field和value，field是自增id，&lt;em&gt;这个key存在什么问题？如何优化？&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521234311158.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521234311158.png&#34;
 	
 	
 	
@@ -4250,7 +4250,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;方案一&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;拆分为string类型：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521234826578.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521234826578.png&#34;
 	
 	
 	
@@ -4267,7 +4267,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;方案二&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;拆分为小的hash，将 id / 100 作为key，将id % 100 作为field，这样每100个元素为一个Hash（不一定要是100，只要entry小于hash-max-ziplist-entries配置的entry上限即可）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521235201458.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521235201458.png&#34;
 	
 	
 	
@@ -4301,7 +4301,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h3&gt;&lt;p&gt;Redis 的 Pipeline（管道）本质上是一种批量命令优化机制。它的核心作用非常单一且明确：通过减少客户端与 Redis 服务器之间的网络往返次数（RTT, Round-Trip Time），来大幅提升批量操作的吞吐量。&lt;/p&gt;
 &lt;p&gt;我们的客户端与redis服务器是这样交互的：&lt;/p&gt;
 &lt;p&gt;单个命令的执行流程↓&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260522120119044.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260522120119044.png&#34;
 	
 	
 	
@@ -4312,7 +4312,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;N条命令的执行流程↓&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260522120133924.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260522120133924.png&#34;
 	
 	
 	
@@ -4323,7 +4323,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;redis处理指令是很快的，主要花费的时候在于网络传输。于是乎很容易想到将多条指令批量的传输给redis&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260522120203843.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260522120203843.png&#34;
 	
 	
 	
@@ -4424,7 +4424,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h3&gt;&lt;p&gt;在 Redis 集群模式下，执行 &lt;code&gt;MSET&lt;/code&gt; 或 &lt;code&gt;Pipeline&lt;/code&gt; 等批处理操作时，存在一个关键限制：&lt;strong&gt;所有涉及的 Key 必须通过哈希槽（Hash Slot）计算并映射到同一个节点上&lt;/strong&gt;。如果批处理中的多个 Key 分散在不同的节点，集群将无法在单次请求中完成路由，从而导致执行失败。&lt;/p&gt;
 &lt;p&gt;这一限制在实际开发中往往带来极大的挑战。因为在常规的批量写入场景中，业务数据通常是随机或自然分布的，很难天然地满足“全部落在同一插槽”的苛刻条件。这极易引发跨槽（Cross-slot）错误，导致批量操作无法顺利执行。&lt;/p&gt;
 &lt;p&gt;有4种解决方案：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260522133538156.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260522133538156.png&#34;
 	
 	
 	
@@ -4481,7 +4481,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;&lt;code&gt;slowlog-log-slower-than&lt;/code&gt;：慢查询阈值，单位是微秒。默认是10000，建议1000&lt;/p&gt;
 &lt;p&gt;慢查询会被放入慢查询日志中，日志的长度有上限，可以通过配置指定：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;slowlog-max-len&lt;/code&gt;：慢查询日志（本质是一个队列）的长度。默认是128，建议1000&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260522143119749.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260522143119749.png&#34;
 	
 	
 	
@@ -4492,7 +4492,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;修改这两个配置可以使用：config set&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260522143139231.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260522143139231.png&#34;
 	
 	
 	
@@ -4509,7 +4509,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;slowlog get [n]：读取n条慢查询日志&lt;/li&gt;
 &lt;li&gt;slowlog reset：清空慢查询列表&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260522143527499.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260522143527499.png&#34;
 	
 	
 	
@@ -4575,7 +4575,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;ul&gt;
 &lt;li&gt;info memory：查看内存分配的情况&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260522152618196.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260522152618196.png&#34;
 	
 	
 	
@@ -4588,7 +4588,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;ul&gt;
 &lt;li&gt;memory usage &lt;key&gt;：查看key的主要占用情况&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260522152614995.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260522152614995.png&#34;
 	
 	
 	
@@ -4607,7 +4607,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;p&gt;以上复制缓冲区和AOF缓冲区通常不会有问题，最关键就是客户端缓冲区的问题&lt;/p&gt;
 &lt;p&gt;客户端缓冲区：指的就是我们发送命令时，客户端用来缓存命令的一个缓冲区，也就是我们向redis输入数据的输入端缓冲区和redis向客户端返回数据的响应缓存区，输入缓冲区最大1G且不能设置，所以这一块我们根本不用担心，如果超过了这个空间，redis会直接断开该客户端连接，因为本来此时此刻就代表着redis处理不过来了，我们需要担心的就是输出端缓冲区，其配置如下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260522160357202.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260522160357202.png&#34;
 	
 	
 	
@@ -4625,7 +4625,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h2 id=&#34;集群最佳实践&#34;&gt;集群最佳实践
 &lt;/h2&gt;&lt;h3 id=&#34;集群完整性问题&#34;&gt;集群完整性问题
 &lt;/h3&gt;&lt;p&gt;在Redis的默认配置中，如果发现任意一个插槽不可用，则整个集群都会停止对外服务：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260522162502446.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260522162502446.png&#34;
 	
 	
 	
@@ -4659,10 +4659,10 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
         </item>
         <item>
         <title>Redis 多级缓存</title>
-        <link>https://IAmYuanyu.github.io/p/redis-%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis-%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/</link>
         <pubDate>Thu, 21 May 2026 19:08:11 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/redis-%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis-%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/</guid>
         <description>&lt;h2 id=&#34;引言&#34;&gt;引言
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;本文基于黑马2022的Redis课程高级篇编写，课程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1cr4y1671t?spm_id_from=333.788.player.switch&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -4672,7 +4672,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;什么是多级缓存&#34;&gt;什么是多级缓存
 &lt;/h3&gt;&lt;p&gt;传统的缓存策略一般是请求到达Tomcat后，先查询Redis，如果未命中则查询数据库，如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520113314169.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520113314169.png&#34;
 	
 	
 	
@@ -4701,7 +4701,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;请求进入Tomcat后，优先查询JVM进程缓存&lt;/li&gt;
 &lt;li&gt;如果JVM进程缓存未命中，则查询数据库&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520113511953.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520113511953.png&#34;
 	
 	
 	
@@ -4713,7 +4713,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;在多级缓存架构中，Nginx内部需要编写本地缓存查询、Redis查询、Tomcat查询的业务逻辑，因此这样的nginx服务不再是一个&lt;strong&gt;反向代理服务器&lt;/strong&gt;，而是一个编写&lt;strong&gt;业务的Web服务器了&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;因此这样的业务Nginx服务也需要搭建集群来提高并发，再有专门的nginx服务来做反向代理，如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520114030533.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520114030533.png&#34;
 	
 	
 	
@@ -4724,7 +4724,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;另外，Tomcat服务将来也会部署为集群模式：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520114047469.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520114047469.png&#34;
 	
 	
 	
@@ -4746,7 +4746,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;其中Nginx编程则会用到OpenResty框架结合Lua这样的语言。&lt;/p&gt;
 &lt;h3 id=&#34;整体架构&#34;&gt;整体架构
 &lt;/h3&gt;&lt;p&gt;下面本教程希望实现的架构，可以看完全文再回来看一遍，会更清晰&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521192135107.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521192135107.png&#34;
 	
 	
 	
@@ -4841,7 +4841,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;用客户端进行连接时提示：服务器已终止握手。设置了协议列表选项(&lt;code&gt;enabledTLSProtocols&lt;/code&gt;)&lt;/p&gt;
 &lt;p&gt;可以尝试关闭SSL验证，以Datagrip为例，可以在连接设置页的”高级“中找到”useSSL“将其值设置为FALSE&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521171158250.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521171158250.png&#34;
 	
 	
 	
@@ -4863,7 +4863,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h4 id=&#34;导入demo工程&#34;&gt;导入Demo工程
 &lt;/h4&gt;&lt;p&gt;导入资料提供的工程：item-service&lt;/p&gt;
 &lt;p&gt;注意修改application.yml文件中配置的mysql地址信息：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521170927935.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521170927935.png&#34;
 	
 	
 	
@@ -4916,7 +4916,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;下面就学习利用Caffeine框架来实现JVM进程缓存。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Caffeine&lt;/strong&gt;是一个基于Java8开发的，提供了近乎最佳命中率的高性能的&lt;strong&gt;本地缓存库&lt;/strong&gt;。目前Spring内部的缓存使用的就是Caffeine。GitHub地址：https://github.com/ben-manes/caffeine&lt;/p&gt;
 &lt;p&gt;Caffeine的性能非常好，下图是官方给出的性能对比：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520123354020.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520123354020.png&#34;
 	
 	
 	
@@ -5175,7 +5175,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lua hello.lua
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520163700162.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520163700162.png&#34;
 	
 	
 	
@@ -5188,7 +5188,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h3 id=&#34;变量和循环&#34;&gt;变量和循环
 &lt;/h3&gt;&lt;h4 id=&#34;lua的数据类型&#34;&gt;Lua的数据类型
 &lt;/h4&gt;&lt;p&gt;Lua中支持的常见数据类型包括：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520164058200.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520164058200.png&#34;
 	
 	
 	
@@ -5199,7 +5199,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;另外，Lua提供了type()函数来判断一个变量的数据类型：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520164915395.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520164915395.png&#34;
 	
 	
 	
@@ -5368,7 +5368,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;与java不同，布尔表达式中的逻辑运算是基于英文单词而不是符号：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520174649362.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520174649362.png&#34;
 	
 	
 	
@@ -5662,7 +5662,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;启动后访问 &lt;code&gt;http://你的虚拟机IP:8081&lt;/code&gt;出现下方页面就是正常的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520182839888.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520182839888.png&#34;
 	
 	
 	
@@ -5674,7 +5674,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;openresty快速入门&#34;&gt;OpenResty快速入门
 &lt;/h3&gt;&lt;p&gt;我们希望达到的多级缓存架构如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520182951921.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520182951921.png&#34;
 	
 	
 	
@@ -5695,7 +5695,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;h4 id=&#34;配置反向代理&#34;&gt;配置反向代理
 &lt;/h4&gt;&lt;p&gt;在本地的nginx配置文件中配置反向代理，让本地的nginx将请求转发到前面配置的OpenResty中（本文中只用单OpenResty进行演示），如下图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520210257818.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520210257818.png&#34;
 	
 	
 	
@@ -5707,7 +5707,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;如上图配置后，就会将本地80端口包含/api的请求转发到OpenResty集群的方式&lt;/p&gt;
 &lt;p&gt;此时，如下图中的请求就会被本地的nginx转发&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520210452070.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520210452070.png&#34;
 	
 	
 	
@@ -5786,7 +5786,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;&lt;em&gt;那么如何获取前端传递的参数呢？&lt;/em&gt;&lt;/p&gt;
 &lt;h4 id=&#34;获取参数的api&#34;&gt;获取参数的API
 &lt;/h4&gt;&lt;p&gt;OpenResty中提供了一些API用来获取不同类型的前端请求参数：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520212256331.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520212256331.png&#34;
 	
 	
 	
@@ -5798,7 +5798,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;获取参数并返回&#34;&gt;获取参数并返回
 &lt;/h4&gt;&lt;p&gt;下面演示路径占位符的获取方式，假设请求如下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260520215055318.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260520215055318.png&#34;
 	
 	
 	
@@ -5857,7 +5857,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;查询tomcat&#34;&gt;查询Tomcat
 &lt;/h3&gt;&lt;p&gt;目前还未建立nginx、redis缓存，现在先实现根据id去tomcat查询信息功能，后面再将查询到的信息存入缓存。如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521141757928.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521141757928.png&#34;
 	
 	
 	
@@ -5868,7 +5868,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;需要注意的是，我们的OpenResty是在Linux，Tomcat是在本地电脑上。两者IP一定不要搞错了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521142058987.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521142058987.png&#34;
 	
 	
 	
@@ -5920,7 +5920,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;原理如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521143020129.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521143020129.png&#34;
 	
 	
 	
@@ -5950,7 +5950,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;&lt;p&gt;以后，只要我们调用&lt;code&gt;ngx.location.capture(&amp;quot;/item&amp;quot;)&lt;/code&gt;，就一定能发送请求到windows的tomcat服务。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2）封装工具类&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;前面（&lt;a class=&#34;link&#34; href=&#34;#OpenResty%e7%9b%91%e5%90%ac%e8%af%b7%e6%b1%82&#34; &gt;OpenResty监听请求&lt;/a&gt;）配置过，OpenResty启动时会加载以下两个目录中的工具文件：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521143728180.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521143728180.png&#34;
 	
 	
 	
@@ -6044,7 +6044,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;假设这里查询到的结果是json字符串，并且包含商品、库存两个json字符串，页面最终需要的是把两个json拼接为一个json：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521144336401.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521144336401.png&#34;
 	
 	
 	
@@ -6158,7 +6158,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;基于id负载均衡&#34;&gt;基于ID负载均衡
 &lt;/h4&gt;&lt;p&gt;刚才的代码中，我们的tomcat是单机部署。而实际开发中，tomcat一定是集群模式：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521150526620.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521150526620.png&#34;
 	
 	
 	
@@ -6387,7 +6387,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;查询redis缓存&#34;&gt;查询Redis缓存
 &lt;/h3&gt;&lt;p&gt;现在，Redis缓存已经准备就绪，可以在OpenResty中实现查询Redis的逻辑了。如下图红框所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521153434145.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521153434145.png&#34;
 	
 	
 	
@@ -6797,7 +6797,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;nginx本地缓存&#34;&gt;Nginx本地缓存
 &lt;/h3&gt;&lt;p&gt;现在，整个多级缓存中只差最后一环，也就是nginx的本地缓存了。如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521155349667.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521155349667.png&#34;
 	
 	
 	
@@ -7043,7 +7043,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;hr&gt;
 &lt;p&gt;而异步实现又可以基于MQ或者Canal来实现：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1）基于MQ的异步通知&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521161736870.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521161736870.png&#34;
 	
 	
 	
@@ -7060,7 +7060,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;p&gt;依然有少量的代码侵入。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2）基于Canal的通知&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521161804968.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521161804968.png&#34;
 	
 	
 	
@@ -7082,7 +7082,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h3&gt;&lt;h4 id=&#34;什么是canal&#34;&gt;什么是Canal
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Canal [kə&amp;rsquo;næl]&lt;/strong&gt;，译意为水道/管道/沟渠，canal是阿里巴巴旗下的一款开源项目，基于Java开发。基于数据库增量日志解析，提供增量数据订阅和消费。GitHub的地址：https://github.com/alibaba/canal&lt;/p&gt;
 &lt;p&gt;Canal是基于mysql的主从同步来实现的，MySQL主从同步的原理如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521162411142.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521162411142.png&#34;
 	
 	
 	
@@ -7104,7 +7104,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;而Canal就是把自己伪装成MySQL的一个slave节点，从而监听master的binary log变化。再把得到的变化信息通知给Canal的客户端，进而完成对其它数据库的同步&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521162720079.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521162720079.png&#34;
 	
 	
 	
@@ -7201,7 +7201,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;正常结果如下：（file不一定要是mysql-bin.000003，只要有内容就行）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521182535730.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521182535730.png&#34;
 	
 	
 	
@@ -7221,7 +7221,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;正常应该是ON，若为OFF可能是哪里出问题了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521182645627.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521182645627.png&#34;
 	
 	
 	
@@ -7349,7 +7349,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;监听canal&#34;&gt;监听Canal
 &lt;/h4&gt;&lt;p&gt;Canal提供了各种语言的客户端，当Canal监听到binlog变化时，会通知Canal的客户端&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521184526811.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521184526811.png&#34;
 	
 	
 	
@@ -7463,7 +7463,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;item表：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260521190101283.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260521190101283.png&#34;
 	
 	
 	
@@ -7672,10 +7672,10 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
         </item>
         <item>
         <title>Redis 分布式缓存</title>
-        <link>https://IAmYuanyu.github.io/p/redis-%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis-%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98/</link>
         <pubDate>Tue, 19 May 2026 22:32:26 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/redis-%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis-%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98/</guid>
         <description>&lt;h2 id=&#34;引言&#34;&gt;引言
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;本文基于黑马2022的Redis课程高级篇编写，课程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1cr4y1671t?spm_id_from=333.788.player.switch&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -7691,7 +7691,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;存储能力问题&lt;/li&gt;
 &lt;li&gt;故障恢复问题&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517155529831.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517155529831.png&#34;
 	
 	
 	
@@ -7715,7 +7715,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;1）save命令&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;执行下面的命令，可以立即执行一次RDB：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517162257616.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517162257616.png&#34;
 	
 	
 	
@@ -7728,7 +7728,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;save命令会导致主进程执行RDB，这个过程中其它所有命令都会被阻塞。只有在数据迁移时可能用到。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2）bgsave命令&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;下面的命令可以异步执行RDB：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517162334878.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517162334878.png&#34;
 	
 	
 	
@@ -7787,7 +7787,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;在写RDB文件时，当主进程执行读操作时，访问的是共享内存；&lt;/li&gt;
 &lt;li&gt;在写RDB文件时，当主进程执行写操作时，&lt;strong&gt;操作系统会触发写时复制（COW）机制&lt;/strong&gt;，将对应的内存页拷贝一份数据，&lt;strong&gt;主进程在副本上&lt;/strong&gt;执行写操作。在子进程写完RDB之前，主进程读的是拷贝出来的这一份数据。（所以最极端的情况下内存占用会翻倍，所以一般要给Redis预留一点内存空间）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517164639380.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517164639380.png&#34;
 	
 	
 	
@@ -7817,7 +7817,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h3 id=&#34;aof持久化&#34;&gt;AOF持久化
 &lt;/h3&gt;&lt;h4 id=&#34;aof原理&#34;&gt;AOF原理
 &lt;/h4&gt;&lt;p&gt;AOF全称为&lt;strong&gt;Append Only File（追加文件）&lt;/strong&gt;。Redis处理的每一个写命令都会记录在AOF文件，可以看做是命令日志文件。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517172823850.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517172823850.png&#34;
 	
 	
 	
@@ -7863,7 +7863,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;三种策略对比：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517173255200.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517173255200.png&#34;
 	
 	
 	
@@ -7875,7 +7875,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;aof文件重写&#34;&gt;AOF文件重写
 &lt;/h4&gt;&lt;p&gt;因为是记录命令，AOF文件会比RDB文件大的多。而且AOF会记录对同一个key的多次写操作，但只有最后一次写操作才有意义。通过执行&lt;strong&gt;bgrewriteaof&lt;/strong&gt;命令，可以让AOF文件执行重写功能，用最少的命令达到相同效果。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517175413610.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517175413610.png&#34;
 	
 	
 	
@@ -7904,7 +7904,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;rdb与aof对比&#34;&gt;RDB与AOF对比
 &lt;/h3&gt;&lt;p&gt;RDB和AOF各有自己的优缺点，如果对数据安全性要求较高，在实际开发中往往会&lt;strong&gt;结合&lt;/strong&gt;两者来使用。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517175554474.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517175554474.png&#34;
 	
 	
 	
@@ -7917,7 +7917,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h2 id=&#34;redis主从&#34;&gt;Redis主从
 &lt;/h2&gt;&lt;h3 id=&#34;搭建主从架构&#34;&gt;搭建主从架构
 &lt;/h3&gt;&lt;p&gt;单节点Redis的并发能力是有上限的，要进一步提高Redis的并发能力，就需要搭建主从架构，实现读写分离。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517202827647.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517202827647.png&#34;
 	
 	
 	
@@ -8240,7 +8240,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;从节点默认只读，无法写入数据，符合主从架构的设计。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517215913052.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517215913052.png&#34;
 	
 	
 	
@@ -8321,7 +8321,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;&lt;h3 id=&#34;主从数据同步原理&#34;&gt;主从数据同步原理
 &lt;/h3&gt;&lt;h4 id=&#34;全量同步&#34;&gt;全量同步
 &lt;/h4&gt;&lt;p&gt;主从第一次建立连接时，会执行&lt;strong&gt;全量同步（Full Sync）&lt;/strong&gt;，将master节点的所有数据都拷贝给slave节点，流程如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517221329995.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517221329995.png&#34;
 	
 	
 	
@@ -8367,7 +8367,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/blockquote&gt;
 &lt;p&gt;master判断发现slave发送来的replid与自己的不一致，说明 Slave 缺少当前 Master 的数据上下文，就知道要做全量同步了。master会将自己的replid和offset都发送给这个slave，slave保存这些信息。以后slave的replid就与master一致了。&lt;/p&gt;
 &lt;p&gt;因此，&lt;strong&gt;master判断一个节点是否是第一次同步的依据，就是看replid是否一致&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260518150919001.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260518150919001.png&#34;
 	
 	
 	
@@ -8389,7 +8389,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h4 id=&#34;增量同步部分同步&#34;&gt;增量同步(部分同步)
 &lt;/h4&gt;&lt;p&gt;全量同步需要先做RDB，然后将RDB文件通过网络传输个slave，成本太高了。因此除了第一次做全量同步，其它大多数时候slave与master都是做&lt;strong&gt;增量同步（PSYNC，又称部分同步）&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;*什么是增量同步？*就是只更新slave与master存在差异的部分数据。如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260518223710794.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260518223710794.png&#34;
 	
 	
 	
@@ -8403,7 +8403,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;这就要说到增量同步时的&lt;strong&gt;repl_backlog&lt;/strong&gt;文件了。&lt;/p&gt;
 &lt;p&gt;这个文件是一个固定大小的数组，只不过数组是环形，也就是说&lt;strong&gt;角标到达数组末尾后，会再次从0开始读写&lt;/strong&gt;，这样数组头部的数据就会被覆盖。&lt;/p&gt;
 &lt;p&gt;repl_backlog中会记录Redis处理过的命令日志及offset，包括master当前的offset，和slave已经拷贝到的offset：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260518224033793.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260518224033793.png&#34;
 	
 	
 	
@@ -8415,7 +8415,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;slave与master的offset之间的差异，就是salve需要增量拷贝的数据了。&lt;/p&gt;
 &lt;p&gt;随着不断有数据写入，master的offset逐渐变大，slave也不断的拷贝，追赶master的offset：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260518224834559.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260518224834559.png&#34;
 	
 	
 	
@@ -8426,7 +8426,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;直到数组被填满：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260518224347644.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260518224347644.png&#34;
 	
 	
 	
@@ -8438,7 +8438,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;此时，如果有新的数据写入，master就会覆盖数组中的旧数据。不过，旧的数据只要是绿色的，说明是已经被同步到slave的数据，即便被覆盖了也没什么影响。因为未同步的仅仅是红色部分。&lt;/p&gt;
 &lt;p&gt;但是，如果slave出现网络阻塞，导致master的offset远远超过了slave的offset：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260518224437568.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260518224437568.png&#34;
 	
 	
 	
@@ -8449,7 +8449,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;如果此时master继续写入新数据，其offset就会继续覆盖旧的数据，直到将slave现在的offset也覆盖：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260518224537155.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260518224537155.png&#34;
 	
 	
 	
@@ -8471,7 +8471,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;限制一个master上的slave节点数量，如果实在是太多slave，则可以采用主-从-从链式结构，减少master压力&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;主从从架构图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260518230053131.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260518230053131.png&#34;
 	
 	
 	
@@ -8486,7 +8486,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h3 id=&#34;哨兵的作用与原理&#34;&gt;哨兵的作用与原理
 &lt;/h3&gt;&lt;h4 id=&#34;集群结构和作用&#34;&gt;集群结构和作用
 &lt;/h4&gt;&lt;p&gt;哨兵的结构如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260518232709329.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260518232709329.png&#34;
 	
 	
 	
@@ -8512,7 +8512,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;客观下线：若超过指定数量（quorum）的sentinel都认为该实例主观下线，则认为该实例&lt;strong&gt;客观下线&lt;/strong&gt;。quorum值最好超过Sentinel实例数量的一半。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260518233228738.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260518233228738.png&#34;
 	
 	
 	
@@ -8537,7 +8537,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;sentinel给所有其它slave发送&lt;code&gt;slaveof 172.24.51.42 7002&lt;/code&gt;命令，让这些slave成为新master的从节点，开始从新的master上同步数据。&lt;/li&gt;
 &lt;li&gt;最后，sentinel会修改故障节点的配置，当故障节点恢复后，会作为新的master的slave节点加入集群&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260518233810094.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260518233810094.png&#34;
 	
 	
 	
@@ -8550,7 +8550,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h3 id=&#34;搭建哨兵集群&#34;&gt;搭建哨兵集群
 &lt;/h3&gt;&lt;h4 id=&#34;集群结构&#34;&gt;集群结构
 &lt;/h4&gt;&lt;p&gt;接下来搭建一个三节点形成的Sentinel集群，来监管之前的Redis主从架构。如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519164015661.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519164015661.png&#34;
 	
 	
 	
@@ -8712,7 +8712,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* +monitor master mymaster 172.24.51.42 7001 quorum 2
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519204652388.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519204652388.png&#34;
 	
 	
 	
@@ -8874,7 +8874,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;使用分片集群可以解决上述问题，如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519203419508.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519203419508.png&#34;
 	
 	
 	
@@ -8902,7 +8902,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h3 id=&#34;搭建分片集群&#34;&gt;搭建分片集群
 &lt;/h3&gt;&lt;h4 id=&#34;集群结构-1&#34;&gt;集群结构
 &lt;/h4&gt;&lt;p&gt;分片集群需要的节点数量较多，下面就搭建一个最小的分片集群，包含3个master节点，每个master包含一个slave节点，结构如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519204325277.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519204325277.png&#34;
 	
 	
 	
@@ -9079,7 +9079,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;发现服务都已经正常启动：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519205218053.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519205218053.png&#34;
 	
 	
 	
@@ -9164,7 +9164,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;&lt;code&gt;--replicas 1&lt;/code&gt;或者&lt;code&gt;--cluster-replicas 1&lt;/code&gt;：指定集群中每个master的副本个数为1，此时&lt;code&gt;节点总数 ÷ (replicas + 1)&lt;/code&gt; 得到的就是master的数量。这里replicas传的是1，因此节点列表中的前6 ÷ (1 + 1) = 3个就是master，其它节点都是slave节点，自动分配到不同master&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;运行后的样子：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519210942422.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519210942422.png&#34;
 	
 	
 	
@@ -9183,7 +9183,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli -p &lt;span class=&#34;m&#34;&gt;7001&lt;/span&gt; cluster nodes
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519211105184.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519211105184.png&#34;
 	
 	
 	
@@ -9196,7 +9196,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h3 id=&#34;散列插槽&#34;&gt;散列插槽
 &lt;/h3&gt;&lt;h4 id=&#34;插槽原理&#34;&gt;插槽原理
 &lt;/h4&gt;&lt;p&gt;Redis会把每一个master节点映射到0~16383共16384个插槽（hash slot）上，查看集群信息时就能看到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519212004764.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519212004764.png&#34;
 	
 	
 	
@@ -9237,7 +9237,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行结果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519212501475.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519212501475.png&#34;
 	
 	
 	
@@ -9249,7 +9249,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;发现“a”这个key存不了，因为计算后得到的slot值是15495，而7001这个节点存的是0-5460&lt;/p&gt;
 &lt;p&gt;所以在分片集群模式下不能直接用redis-cli -p 7001连接，而是要用&lt;code&gt;redis-cli -c -p 7001&lt;/code&gt;连接&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519212806407.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519212806407.png&#34;
 	
 	
 	
@@ -9262,7 +9262,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;此时就能正常存取了，&lt;code&gt;-c&lt;/code&gt; 代表开启集群模式（Cluster mode），此时存取key时会自动重定向到对应插槽所在的节点&lt;/p&gt;
 &lt;h3 id=&#34;集群伸缩&#34;&gt;集群伸缩
 &lt;/h3&gt;&lt;p&gt;redis-cli &amp;ndash;cluster提供了很多操作集群的命令，可以通过&lt;code&gt;redis-cli --cluster help&lt;/code&gt;查看，其中就有添加节点的命令：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519213924055.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519213924055.png&#34;
 	
 	
 	
@@ -9327,7 +9327,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;添加新节点到redis&#34;&gt;添加新节点到redis
 &lt;/h4&gt;&lt;p&gt;添加节点的语法如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519214801775.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519214801775.png&#34;
 	
 	
 	
@@ -9356,7 +9356,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如图，7004加入了集群，并且默认是一个master节点，但7004节点的插槽数量为0，因此没有任何数据可以存储到7004上：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519215107958.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519215107958.png&#34;
 	
 	
 	
@@ -9368,7 +9368,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;转移插槽&#34;&gt;转移插槽
 &lt;/h4&gt;&lt;p&gt;要将num存储到7004节点，因此需要先看看num的插槽是多少：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519215717875.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519215717875.png&#34;
 	
 	
 	
@@ -9380,7 +9380,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;如上图所示，num的插槽为2765&lt;/p&gt;
 &lt;p&gt;所以可以将0~3000的插槽从7001转移到7004，命令格式如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519215748511.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519215748511.png&#34;
 	
 	
 	
@@ -9401,7 +9401,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;然后会询问你希望移动多少插槽：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519220157344.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519220157344.png&#34;
 	
 	
 	
@@ -9412,7 +9412,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;这里输入3000个，然后回车，又会询问要用哪个节点接收这些插槽，此处选择7004节点接收，填入7004节点的id：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519220353142.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519220353142.png&#34;
 	
 	
 	
@@ -9423,7 +9423,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后会询问你的插槽要从哪里移动过来&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519220635552.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519220635552.png&#34;
 	
 	
 	
@@ -9439,7 +9439,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;done：没有了&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;此处选择转移7001的插槽，所以填入7001的id，回车后再输入done，然后再回车&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519220809122.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519220809122.png&#34;
 	
 	
 	
@@ -9459,7 +9459,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli -p &lt;span class=&#34;m&#34;&gt;7001&lt;/span&gt; cluster nodes
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519221107968.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519221107968.png&#34;
 	
 	
 	
@@ -9470,7 +9470,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;确认转移成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519221203264.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519221203264.png&#34;
 	
 	
 	
@@ -9485,7 +9485,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h3&gt;&lt;h4 id=&#34;自动故障转移&#34;&gt;自动故障转移
 &lt;/h4&gt;&lt;p&gt;当集群中有一个master宕机会发生什么呢？&lt;/p&gt;
 &lt;p&gt;当前集群情况：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519221949627.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519221949627.png&#34;
 	
 	
 	
@@ -9497,7 +9497,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;手动停止7002节点：&lt;code&gt;redis-cli -p 7002 shutdown&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;再次查看集群情况：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519221955927.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519221955927.png&#34;
 	
 	
 	
@@ -9508,7 +9508,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;一开始是疑似宕机，过一会就是确认宕机，自动提升一个slave为新的master：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519222038929.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519222038929.png&#34;
 	
 	
 	
@@ -9519,7 +9519,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;当7002再次启动，就会变为一个slave节点了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519222051417.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519222051417.png&#34;
 	
 	
 	
@@ -9531,7 +9531,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;手动故障转移&#34;&gt;手动故障转移
 &lt;/h4&gt;&lt;p&gt;利用 &lt;code&gt;cluster failover&lt;/code&gt; 命令可以在从节点上手动触发故障转移，将执行该命令的 slave 节点提升为新的 master 节点，实现平滑的主从切换，可以以此实现服务升级。其流程如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519222150978.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519222150978.png&#34;
 	
 	
 	
@@ -9552,7 +9552,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;1）利用redis-cli连接7002这个节点&lt;/p&gt;
 &lt;p&gt;2）执行cluster failover命令&lt;/p&gt;
 &lt;p&gt;如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519222745728.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519222745728.png&#34;
 	
 	
 	
@@ -9563,7 +9563,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260519222754283.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260519222754283.png&#34;
 	
 	
 	
@@ -9609,10 +9609,10 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
         </item>
         <item>
         <title>Redis实战</title>
-        <link>https://IAmYuanyu.github.io/p/redis%E5%AE%9E%E6%88%98/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%AE%9E%E6%88%98/</link>
         <pubDate>Sun, 17 May 2026 00:18:01 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/redis%E5%AE%9E%E6%88%98/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%AE%9E%E6%88%98/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文基于黑马2022的Redis课程实战篇编写，课程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1cr4y1671t?spm_id_from=333.788.player.switch&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;黑马程序员Redis入门到实战教程，深度透析redis底层原理+redis分布式锁+企业解决方案+黑马点评实战项目&lt;/a&gt;&lt;/p&gt;
@@ -9653,7 +9653,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;打人探店&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;基于List来完成点赞列表的操作，同时基于SortedSet来完成点赞的排行榜功能&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426183125836.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426183125836.png&#34;
 	
 	
 	
@@ -9666,7 +9666,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h2 id=&#34;短信登录&#34;&gt;短信登录
 &lt;/h2&gt;&lt;h3 id=&#34;导入黑马点评项目&#34;&gt;导入黑马点评项目
 &lt;/h3&gt;&lt;h4 id=&#34;导入mysql表&#34;&gt;导入MySQL表
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426220925570.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426220925570.png&#34;
 	
 	
 	
@@ -9678,7 +9678,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;导入后端项目&#34;&gt;导入后端项目
 &lt;/h4&gt;&lt;p&gt;资料中提供了一个项目源码：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426221334276.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426221334276.png&#34;
 	
 	
 	
@@ -9690,7 +9690,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;注意，jdk版本为1.8，启动失败可能是没设置好jdk版本&lt;/p&gt;
 &lt;h4 id=&#34;导入前端工程&#34;&gt;导入前端工程
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426221819482.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426221819482.png&#34;
 	
 	
 	
@@ -9701,7 +9701,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在文件目录下打开cmd窗口，输入&lt;code&gt;start nginx.exe&lt;/code&gt;启动前端项目&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426222644766.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426222644766.png&#34;
 	
 	
 	
@@ -9719,7 +9719,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;用户将验证码和手机号进行输入，后台从session中拿到当前验证码，然后和用户输入的验证码进行校验，如果不一致，则无法通过校验，如果一致，则后台根据手机号查询用户，如果用户不存在，则为用户创建账号信息，保存到数据库，无论是否存在，都会将用户信息保存到session中，方便后续获得当前登录信息&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;校验登录状态&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;用户在请求时候，会从cookie中携带者JsessionId到后台，后台通过JsessionId从session中拿到用户信息，如果没有session信息，则进行拦截，如果有session信息，则将用户信息保存到threadLocal中，并且放行&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426223500250.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426223500250.png&#34;
 	
 	
 	
@@ -9731,7 +9731,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;实现模拟发送短信验证码功能&#34;&gt;实现模拟发送短信验证码功能
 &lt;/h3&gt;&lt;p&gt;页面流程：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426225827597.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426225827597.png&#34;
 	
 	
 	
@@ -9913,7 +9913,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;实现登录校验拦截功能&#34;&gt;实现登录校验拦截功能
 &lt;/h3&gt;&lt;p&gt;tomcat的运行原理：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260428205030037.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260428205030037.png&#34;
 	
 	
 	
@@ -9925,7 +9925,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;当用户发起请求时，会访问我们像tomcat注册的端口，任何程序想要运行，都需要有一个线程对当前端口号进行监听，tomcat也不例外，当监听线程知道用户想要和tomcat连接连接时，那会由监听线程创建socket连接，socket都是成对出现的，用户通过socket互相传递数据，当tomcat端的socket接受到数据后，此时监听线程会从tomcat的线程池中取出一个线程执行用户请求，在我们的服务部署到tomcat后，线程会找到用户想要访问的工程，然后用这个线程转发到工程中的controller，service，dao中，并且访问对应的DB，在用户执行完请求后，再统一返回，再找到tomcat端的socket，再将数据写回到用户端的socket，完成请求和响应。&lt;/p&gt;
 &lt;p&gt;通过以上讲解，我们可以得知：每个用户其实对应都是去找tomcat线程池中的一个线程来完成工作的， 使用完成后再进行回收，既然每个请求都是独立的，所以在每个用户去访问我们的工程时，我们可以使用threadlocal来做到线程隔离，每个线程操作自己的一份数据&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260428205138638.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260428205138638.png&#34;
 	
 	
 	
@@ -10102,7 +10102,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;1、每台服务器中都有完整的一份session数据，服务器压力过大。&lt;/p&gt;
 &lt;p&gt;2、session拷贝数据时，可能会出现延迟&lt;/p&gt;
 &lt;p&gt;所以后来采用的方案都是基于redis来完成，把session换成redis，redis数据本身就是共享的，就可以避免session共享的问题了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260429202418657.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260429202418657.png&#34;
 	
 	
 	
@@ -10115,7 +10115,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h3 id=&#34;redis代替session的业务流程&#34;&gt;Redis代替session的业务流程
 &lt;/h3&gt;&lt;h4 id=&#34;设计key的结构&#34;&gt;设计key的结构
 &lt;/h4&gt;&lt;p&gt;首先要思考一下*此处redis到底使用哪种结构来存储数据呢？*由于存入的数据比较简单，可以考虑使用String，或者是使用哈希，如下图，如果使用String，value会多占用一点空间，如果使用哈希，则它的value中只会存储数据本身，而且可以单独对某个字段进行修改。不过如果不是特别在意内存，其实使用String就可以了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260429203245756.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260429203245756.png&#34;
 	
 	
 	
@@ -10132,7 +10132,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;如果采用&lt;code&gt;phone:手机号&lt;/code&gt;这种形式存储当然是可以的，但是如果把这样的敏感数据存储到redis中并且从页面中带过来毕竟不太合适，所以选择在后台生成一个随机串token，然后让前端带来这个token就能完成我们的整体逻辑了&lt;/p&gt;
 &lt;h4 id=&#34;整体访问流程&#34;&gt;整体访问流程
 &lt;/h4&gt;&lt;p&gt;当注册完成后，用户去登录会去校验用户提交的手机号和验证码，是否一致，如果一致，则根据手机号查询用户信息，不存在则新建，最后将用户数据保存到redis，并且生成token作为redis的key，当我们校验用户是否登录时，会去携带着token进行访问，从redis中取出token对应的value，判断是否存在这个数据，如果没有则拦截，如果存在则将其保存到threadLocal中，并且放行。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260429204823330.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260429204823330.png&#34;
 	
 	
 	
@@ -10611,7 +10611,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;注意，在拦截器中添加刷新token有效期功能，每次校验通过后重置token过期时间，不然用户正常使用过程中突然token过期，要重新登录就很不友好了&lt;/p&gt;
 &lt;p&gt;现在就可以基于redis保存验证码和用户信息了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260429215337165.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260429215337165.png&#34;
 	
 	
 	
@@ -10623,7 +10623,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;解决状态登录刷新问题&#34;&gt;解决状态登录刷新问题
 &lt;/h3&gt;&lt;p&gt;还是前面提到的token过期问题，前面的拦截器只是对需要登录的路径进行拦截，也就是&lt;strong&gt;只会在需要登录的路径下刷新token过期时间&lt;/strong&gt;，如果用户一直不亦乐乎地看不需要登录的路径（如主页）的话，等到一段时间后点开个人中心却发现要重新登录，那就很难受了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260429220326322.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260429220326322.png&#34;
 	
 	
 	
@@ -10635,7 +10635,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;优化方案&#34;&gt;优化方案
 &lt;/h4&gt;&lt;p&gt;既然之前的拦截器无法对不需要拦截的路径生效，那么我们可以添加一个拦截器，在第一个拦截器中拦截所有的路径，把第二个拦截器做的事情放入到第一个拦截器中，同时刷新令牌，因为第一个拦截器有了threadLocal的数据，所以此时第二个拦截器只需要判断拦截器中的user对象是否存在即可，完成整体刷新功能。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260429220423441.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260429220423441.png&#34;
 	
 	
 	
@@ -10907,7 +10907,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h4&gt;&lt;p&gt;因为&lt;strong&gt;速度快,好用&lt;/strong&gt;。缓存数据存储于代码中，而代码运行在内存中，内存的读写性能远高于磁盘，缓存可以大大降低&lt;strong&gt;用户访问并发量带来的&lt;/strong&gt;服务器读写压力&lt;/p&gt;
 &lt;p&gt;实际开发过程中，企业的数据量，少则几十万，多则几千万，这么大数据量，如果没有缓存来作为缓冲，系统是几乎撑不住的，所以企业会大量运用到缓存技术&lt;/p&gt;
 &lt;p&gt;但是缓存也会增加代码复杂度和运营的成本：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260501220025381.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260501220025381.png&#34;
 	
 	
 	
@@ -10923,7 +10923,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;&lt;strong&gt;应用层缓存&lt;/strong&gt;：可以分为tomcat本地缓存，比如之前提到的map，或者是使用redis作为缓存&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;数据库缓存&lt;/strong&gt;：在数据库中有一片空间是 buffer pool，增改查数据都会先加载到mysql的缓存中&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;CPU缓存&lt;/strong&gt;：当代计算机最大的问题是 cpu性能提升了，但内存读写速度没有跟上，所以为了适应当下的情况，增加了cpu的L1，L2，L3级的缓存&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260501220205584.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260501220205584.png&#34;
 	
 	
 	
@@ -10954,7 +10954,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;缓存模型和思路&#34;&gt;缓存模型和思路
 &lt;/h4&gt;&lt;p&gt;标准的操作方式就是查询数据库之前先查询缓存，如果缓存数据存在，则直接从缓存中返回，如果缓存数据不存在，再查询数据库，然后将数据存入redis。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260501221528001.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260501221528001.png&#34;
 	
 	
 	
@@ -11167,7 +11167,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;&lt;strong&gt;内存淘汰&lt;/strong&gt;：redis自动进行，当redis内存达到设定的max-memery的时候，会自动触发淘汰机制，淘汰掉一些不重要的数据(可以自己设置策略方式)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;超时剔除&lt;/strong&gt;：当我们给redis设置了过期时间ttl之后，redis会将超时的数据进行删除，方便我们继续使用缓存&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;主动更新&lt;/strong&gt;：我们可以手动调用方法把缓存删掉，通常用于解决缓存和数据库不一致问题&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260502150010640.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260502150010640.png&#34;
 	
 	
 	
@@ -11184,7 +11184,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;Cache Aside Pattern：人工编码方式：缓存调用者在更新完数据库后再去更新缓存，也称之为双写方案&lt;/p&gt;
 &lt;p&gt;Read/Write Through Pattern：由系统本身完成，数据库与缓存的问题交由系统本身去处理&lt;/p&gt;
 &lt;p&gt;Write Behind Caching Pattern：调用者只操作缓存，其他线程去异步处理数据库，实现最终一致&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260502150818930.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260502150818930.png&#34;
 	
 	
 	
@@ -11345,7 +11345,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;&lt;strong&gt;布隆过滤&lt;/strong&gt;：布隆过滤器其实采用的是哈希思想来解决这个问题，通过一个庞大的二进制数组，走哈希思想去判断当前这个要查询的这个数据是否存在，如果布隆过滤器判断存在，则放行，这个请求会去访问redis，哪怕此时redis中的数据过期了，但是数据库中一定存在这个数据，在数据库中查询出来这个数据后，再将其放入到redis中，&lt;/p&gt;
 &lt;p&gt;假设布隆过滤器判断这个数据不存在，则直接返回&lt;/p&gt;
 &lt;p&gt;这种方式优点在于节约内存空间，存在误判，误判原因在于：布隆过滤器走的是哈希思想，只要哈希思想，就可能存在哈希冲突&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260503164322705.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260503164322705.png&#34;
 	
 	
 	
@@ -11361,7 +11361,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;核心思路如下：&lt;/p&gt;
 &lt;p&gt;在原来的逻辑中，如果发现这个数据在mysql中不存在，直接就返回查询失败了，这样是会存在缓存穿透问题&lt;/p&gt;
 &lt;p&gt;优化后的逻辑：如果这个数据不存在，会把这个数据写入到Redis中，并且将value设置为空，当再次发起查询时，如果查到的value不是null，则判断这个value是否是空字符串，如果是空字符串，则证明是缓存穿透数据，如果不是，则直接返回数据。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260503165235665.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260503165235665.png&#34;
 	
 	
 	
@@ -11469,7 +11469,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;给缓存业务添加降级限流策略&lt;/li&gt;
 &lt;li&gt;给业务添加多级缓存&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260503184243948.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260503184243948.png&#34;
 	
 	
 	
@@ -11481,7 +11481,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;缓存击穿问题&#34;&gt;缓存击穿问题
 &lt;/h3&gt;&lt;p&gt;缓存击穿问题也叫热点Key问题，就是一个被高并发访问并且缓存重建业务较复杂的key突然失效了，无数的请求访问会在瞬间给数据库带来巨大的冲击。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260503213522815.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260503213522815.png&#34;
 	
 	
 	
@@ -11499,7 +11499,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;h4 id=&#34;利用互斥锁解决缓存击穿问题&#34;&gt;利用互斥锁解决缓存击穿问题
 &lt;/h4&gt;&lt;p&gt;因为锁能实现互斥性。假设线程过来，只能一个人一个人的来访问数据库，从而避免对于数据库访问压力过大，但这也会影响查询的性能，因为此时会让查询的性能从并行变成了串行，我们可以采用tryLock方法 + double check来解决这样的问题。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260503213853300.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260503213853300.png&#34;
 	
 	
 	
@@ -11513,7 +11513,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;代码实现&lt;/strong&gt;：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260503220358876.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260503220358876.png&#34;
 	
 	
 	
@@ -11731,7 +11731,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;可以使用Jmeter进行压力测试，正常情况下日志里最多只会有一条mysql查询记录&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260503234423115.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260503234423115.png&#34;
 	
 	
 	
@@ -11741,7 +11741,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260503234430020.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260503234430020.png&#34;
 	
 	
 	
@@ -11751,7 +11751,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260503234439385.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260503234439385.png&#34;
 	
 	
 	
@@ -11763,7 +11763,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;利用逻辑过期解决缓存击穿问题&#34;&gt;利用逻辑过期解决缓存击穿问题
 &lt;/h4&gt;&lt;p&gt;之所以会出现这个缓存击穿问题，主要原因是在于我们对key设置了过期时间，假设我们不设置过期时间，其实就不会有缓存击穿的问题，但是不设置过期时间，这样数据不就一直占用内存了吗，所以我们可以采用逻辑过期方案。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260503215308371.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260503215308371.png&#34;
 	
 	
 	
@@ -11779,7 +11779,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;&lt;strong&gt;代码实现&lt;/strong&gt;：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;需求：修改根据id查询商铺的业务，基于逻辑过期方式来解决缓存击穿问题&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260504200053886.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260504200053886.png&#34;
 	
 	
 	
@@ -12060,7 +12060,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;接下来就可以运行项目使用Jmeter进行测试了，这次调整为100个线程，然后我把数据库中的商铺名从“102茶餐厅”改为“103茶餐厅”&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260504211219290.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260504211219290.png&#34;
 	
 	
 	
@@ -12070,7 +12070,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260504211411556.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260504211411556.png&#34;
 	
 	
 	
@@ -12080,7 +12080,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260504211449277.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260504211449277.png&#34;
 	
 	
 	
@@ -12090,7 +12090,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260504211525652.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260504211525652.png&#34;
 	
 	
 	
@@ -12100,7 +12100,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260504211714431.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260504211714431.png&#34;
 	
 	
 	
@@ -12114,7 +12114,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h4 id=&#34;两者对比&#34;&gt;两者对比
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;互斥锁方案&lt;/strong&gt;：由于保证了互斥性，所以数据一致，且实现简单，因为仅仅只需要加一把锁而已，也没其他的事情需要操心，所以没有额外的内存消耗，缺点在于有锁就有死锁问题的发生，且只能串行执行性能肯定受到影响&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;逻辑过期方案&lt;/strong&gt;：线程读取过程中不需要等待，性能好，有一个额外的线程持有锁去进行重构数据，但是在重构数据完成前，其他的线程只能返回之前的数据，且实现起来麻烦&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260503213655802.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260503213655802.png&#34;
 	
 	
 	
@@ -12606,7 +12606,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;场景分析一：如果我们的id具有太明显的规则，用户或者说商业对手很容易猜测出来我们的一些敏感信息，比如商城在一天时间内，卖出了多少单，这明显不合适。&lt;/p&gt;
 &lt;p&gt;场景分析二：随着我们商城规模越来越大，mysql的单表的容量不宜超过500W，数据量过大之后，我们要进行拆库拆表，但拆分表了之后，他们从逻辑上讲他们是同一张表，所以他们的id是不能一样的， 于是乎我们需要保证id的唯一性。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;全局ID生成器&lt;/strong&gt;，是一种在分布式系统下用来生成全局唯一ID的工具，一般要满足下列特性：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260505174231906.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260505174231906.png&#34;
 	
 	
 	
@@ -12617,7 +12617,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;为了增加ID的安全性，我们可以不直接使用Redis自增的数值，而是拼接一些其它信息：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260505174245677.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260505174245677.png&#34;
 	
 	
 	
@@ -12843,7 +12843,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;&lt;p&gt;可以从输出结果中看出，即使有300个线程一起获取id也不会出现重复id&lt;/p&gt;
 &lt;h3 id=&#34;添加优惠券功能介绍&#34;&gt;添加优惠券功能介绍
 &lt;/h3&gt;&lt;p&gt;每个店铺都可以发布优惠券，分为平价券和特价券。平价券可以任意购买，而特价券需要秒杀抢购：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260505185710148.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260505185710148.png&#34;
 	
 	
 	
@@ -12938,7 +12938,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;实现秒杀券下单功能&#34;&gt;实现秒杀券下单功能
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260506212706097.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260506212706097.png&#34;
 	
 	
 	
@@ -12956,7 +12956,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;下单核心逻辑分析：&lt;/p&gt;
 &lt;p&gt;当用户开始进行下单，我们应当去查询优惠卷信息，查询到优惠卷信息，判断是否满足秒杀条件&lt;/p&gt;
 &lt;p&gt;比如时间是否充足，如果时间充足，则进一步判断库存是否足够，如果两者都满足，则扣减库存，创建订单，然后返回订单id，如果有一个条件不满足则直接结束。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260506212800462.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260506212800462.png&#34;
 	
 	
 	
@@ -13105,7 +13105,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;现在就可以在下图页面中完成简单的秒杀券下单功能了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260506221902579.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260506221902579.png&#34;
 	
 	
 	
@@ -13145,7 +13145,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;假设线程1过来查询库存，判断出来库存大于1，正准备去扣减库存，但是还没有来得及去扣减，此时线程2过来，线程2也去查询库存，发现这个数量一定也大于1，那么这两个线程都会去扣减库存，最终多个线程相当于一起去扣减库存，此时就会出现库存的超卖问题。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260506222804717.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260506222804717.png&#34;
 	
 	
 	
@@ -13157,7 +13157,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;解决方案&#34;&gt;解决方案
 &lt;/h4&gt;&lt;p&gt;超卖问题是典型的多线程安全问题，针对这一问题的常见解决方案就是加锁，而对于加锁，通常有两种解决方案&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260506222842038.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260506222842038.png&#34;
 	
 	
 	
@@ -13170,7 +13170,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;&lt;strong&gt;悲观锁&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;悲观锁可以实现对于数据的串行化执行（一个一个依次执行），比如syn，和lock都是悲观锁的代表，同时，悲观锁中又可以再细分为公平锁，非公平锁，可重入锁，等等。但性能较低&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;乐观锁&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260506224410609.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260506224410609.png&#34;
 	
 	
 	
@@ -13180,7 +13180,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260506224846003.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260506224846003.png&#34;
 	
 	
 	
@@ -13232,7 +13232,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;现在只要库存小于零，就会下单失败，大于0时不影响正常下单&lt;/p&gt;
 &lt;p&gt;使用200个线程来测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260506231342610.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260506231342610.png&#34;
 	
 	
 	
@@ -13249,7 +13249,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;&lt;strong&gt;现在的问题在于&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;优惠卷是为了引流，但是目前的情况是，一个人可以无限制的抢这个优惠卷，所以我们应当增加一层逻辑，让一个用户只能下一个单，而不是让一个用户下多个单&lt;/p&gt;
 &lt;p&gt;具体操作逻辑如下：根据优惠卷id和用户id查询是否已经下过这个订单，如果下过这个订单，则无法再下单&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260507201511582.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260507201511582.png&#34;
 	
 	
 	
@@ -13288,7 +13288,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在其中添加上述逻辑后，继续用JMeter进行并发测试看看，期望结果应该是库存只扣减了1。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260507204348926.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260507204348926.png&#34;
 	
 	
 	
@@ -13826,7 +13826,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260507220424982.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260507220424982.png&#34;
 	
 	
 	
@@ -13838,7 +13838,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;测试&#34;&gt;测试
 &lt;/h4&gt;&lt;p&gt;同样使用同一个用户账号，开200个线程对&lt;code&gt;/voucher-order/seckill/{id}&lt;/code&gt;接口进行测试&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260507221641123.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260507221641123.png&#34;
 	
 	
 	
@@ -13855,7 +13855,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;接下来模拟集群环境，进行测试&lt;/p&gt;
 &lt;p&gt;1.将服务启动两份，端口分别为8081和8082：&lt;/p&gt;
 &lt;p&gt;找到idea的服务菜单：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260507230815902.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260507230815902.png&#34;
 	
 	
 	
@@ -13865,7 +13865,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260507225925784.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260507225925784.png&#34;
 	
 	
 	
@@ -13982,7 +13982,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260507225940875.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260507225940875.png&#34;
 	
 	
 	
@@ -13994,7 +13994,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;如果在修改前已经启动nginx，可以在nginx根目录打开命令行输入&lt;code&gt;nginx.exe -s reload&lt;/code&gt;重新加载配置&lt;/p&gt;
 &lt;p&gt;可以在synchronized锁内部打个断点，此时用一个用户的id连续对&lt;code&gt;/voucher-order/seckill/{id}&lt;/code&gt;接口发起两次请求（先清空之前的购买记录），会发现两个请求都进到断点里面了，并没有成功锁住第二个请求&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260507232656106.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260507232656106.png&#34;
 	
 	
 	
@@ -14006,7 +14006,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;有关锁失效原因分析&#34;&gt;有关锁失效原因分析
 &lt;/h4&gt;&lt;p&gt;由于现在我们部署了多个tomcat，每个tomcat都有一个属于自己的jvm，那么假设在服务器A的tomcat内部，有两个线程，这两个线程由于使用的是同一份代码，那么他们的锁对象是同一个，是可以实现互斥的，但是如果现在是服务器B的tomcat内部，又有两个线程，但是他们的锁对象写的虽然和服务器A一样，但是锁对象却不是同一个，所以线程3和线程4可以实现互斥，但是却无法和线程1和线程2实现互斥，这就是集群环境下，syn锁失效的原因，在这种情况下，我们就需要使用分布式锁来解决这个问题。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260507233012442.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260507233012442.png&#34;
 	
 	
 	
@@ -14020,7 +14020,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h2&gt;&lt;h3 id=&#34;基本原理和实现方式&#34;&gt;基本原理和实现方式
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;分布式锁&lt;/strong&gt;：满足分布式系统或集群模式下多进程可见并且互斥的锁。&lt;/p&gt;
 &lt;p&gt;分布式锁的核心思想就是让大家都使用同一把锁，只要大家使用的是同一把锁，那么就能锁住不同JVM的线程，不让线程并行，让程序串行执行，这就是分布式锁的核心思路&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508134303906.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508134303906.png&#34;
 	
 	
 	
@@ -14060,7 +14060,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;&lt;strong&gt;Zookeeper&lt;/strong&gt;：zookeeper也是企业级开发中较好的一个实现分布式锁的方案，由于本篇文章并不讲解zookeeper的原理和分布式锁的实现，所以不过多阐述&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508134649375.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508134649375.png&#34;
 	
 	
 	
@@ -14103,7 +14103,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;大致流程如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508143258952.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508143258952.png&#34;
 	
 	
 	
@@ -14348,7 +14348,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在39行&lt;code&gt;if (!isLock)&lt;/code&gt;这行打个断点测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508150820283.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508150820283.png&#34;
 	
 	
 	
@@ -14358,7 +14358,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508150833544.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508150833544.png&#34;
 	
 	
 	
@@ -14372,7 +14372,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h3 id=&#34;redis分布式锁的误删问题&#34;&gt;Redis分布式锁的误删问题
 &lt;/h3&gt;&lt;h4 id=&#34;出现误删的情况&#34;&gt;出现误删的情况
 &lt;/h4&gt;&lt;p&gt;持有锁的线程在锁的内部出现了阻塞，导致它的锁超时自动释放，这时线程2来尝试获得锁，就拿到了这把锁，然后线程2在持有锁执行过程中，线程1反应过来，继续执行，而线程1执行过程中，走到了删除锁逻辑，此时就会把本应该属于线程2的锁进行删除，这就是误删别人锁的情况&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508193731128.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508193731128.png&#34;
 	
 	
 	
@@ -14384,7 +14384,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;解决方案-1&#34;&gt;解决方案
 &lt;/h4&gt;&lt;p&gt;在每个线程释放锁的时候，去判断一下当前这把锁是否属于自己，如果不属于自己，则不进行锁的删除。假设还是上边的情况，线程1卡顿，锁自动释放，线程2进入到锁的内部执行逻辑，此时线程1反应过来，然后准备删除锁，但是线程1一看当前这把锁不是属于自己，于是不进行删除锁逻辑，当线程2走到删除锁逻辑时，如果没有卡过自动释放锁的时间点，则判断当前这把锁是属于自己的，于是删除这把锁。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508194245978.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508194245978.png&#34;
 	
 	
 	
@@ -14395,7 +14395,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;修改后的流程：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508194212154.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508194212154.png&#34;
 	
 	
 	
@@ -14517,7 +14517,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h4&gt;&lt;p&gt;更为极端的误删逻辑说明：&lt;/p&gt;
 &lt;p&gt;线程1现在持有锁之后，在执行业务逻辑过程中，已经通过了锁标识是否一致的条件判断，正准备释放锁的时候被阻塞了（比如JVM在执行Full GC时会触发“Stop-The-World”（STW），暂停所有应用线程），阻塞期间它的锁到期了，那么此时线程2进来开始执行业务，但是线程1阻塞结束后会接着往后执行，就会执行释放锁的那行代码，相当于条件判断并没有起到作用，这就是释放锁时的原子性问题。&lt;/p&gt;
 &lt;p&gt;之所以有这个问题，是因为线程1的拿锁，比锁，删锁，实际上并不是原子性的&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508201502644.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508201502644.png&#34;
 	
 	
 	
@@ -14571,7 +14571,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;写好脚本以后，需要用Redis命令来调用脚本&lt;/p&gt;
 &lt;p&gt;例如，要执行 redis.call(&amp;lsquo;set&amp;rsquo;, &amp;rsquo;name&amp;rsquo;, &amp;lsquo;jack&amp;rsquo;) 这个脚本，语法如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508203606986.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508203606986.png&#34;
 	
 	
 	
@@ -14582,7 +14582,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;如果脚本中的key、value不想写死，也可以作为参数传递。key类型参数会放入KEYS数组，其它参数会放入ARGV数组，在脚本中可以从KEYS和ARGV数组获取这些参数：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508203647474.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508203647474.png&#34;
 	
 	
 	
@@ -14622,7 +14622,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;利用java代码调用lua脚本改造分布式锁&#34;&gt;利用Java代码调用Lua脚本改造分布式锁
 &lt;/h4&gt;&lt;p&gt;RedisTemplate中，可以利用execute方法去执行lua脚本&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508224904967.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508224904967.png&#34;
 	
 	
 	
@@ -14633,7 +14633,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;resources&lt;/code&gt;目录下编写释放锁的lua脚本：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260508230815393.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260508230815393.png&#34;
 	
 	
 	
@@ -14766,7 +14766,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h2 id=&#34;分布式锁-redisson&#34;&gt;分布式锁-redisson
 &lt;/h2&gt;&lt;h3 id=&#34;当前存在的问题&#34;&gt;当前存在的问题
 &lt;/h3&gt;&lt;p&gt;基于setnx实现的分布式锁存在下面的问题：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260510155241095-1778947940461-2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260510155241095-1778947940461-2.png&#34;
 	
 	
 	
@@ -15040,7 +15040,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260510174806759-1778947940461-3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260510174806759-1778947940461-3.png&#34;
 	
 	
 	
@@ -15059,7 +15059,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;获取锁的lua脚本：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260510185947837-1778947940461-1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260510185947837-1778947940461-1.png&#34;
 	
 	
 	
@@ -15078,7 +15078,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;释放锁的lua脚本：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260510185604639-1778947940461-4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260510185604639-1778947940461-4.png&#34;
 	
 	
 	
@@ -15089,7 +15089,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;通过这种方式，Redisson 利用 Redis 的 Hash 结构和保证原子性的 Lua 脚本，完美地在分布式环境中实现了与本地 &lt;code&gt;ReentrantLock&lt;/code&gt; 类似的可重入特性，有效避免了同一线程因重复获取锁而导致的死锁问题。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260510174400648-1778947940461-5.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260510174400648-1778947940461-5.png&#34;
 	
 	
 	
@@ -15109,7 +15109,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;4、校验是否是一人一单&lt;/p&gt;
 &lt;p&gt;5、扣减库存&lt;/p&gt;
 &lt;p&gt;6、创建订单&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260510201039928-1778947940461-9.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260510201039928-1778947940461-9.png&#34;
 	
 	
 	
@@ -15121,7 +15121,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;在这六步操作中，又有很多操作是要去操作数据库的，而且还是一个线程串行执行，这样就会导致我们的程序执行的很慢，所以我们需要通过程序异步执行来优化响应速度&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;优化方案&lt;/strong&gt;：我们将耗时的数据库操作（如创建订单、扣减库存）与快速的资格校验（如库存判断、一人一单）进行解耦。资格校验通过 Redis 和 Lua 脚本原子性地完成，一旦校验通过，我们便将订单信息放入一个&lt;strong&gt;阻塞队列&lt;/strong&gt;中，并立即向用户返回成功。同时，我们启动一个&lt;strong&gt;独立的后台线程池&lt;/strong&gt;，它持续地从队列中获取订单信息，并异步地完成后续的下单流程。这种方式极大地提升了接口的响应速度，并且通过线程池管理后台任务，有效避免了资源耗尽的风险。不过这里边有两个难点&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260510201856983-1778947940461-7.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260510201856983-1778947940461-7.png&#34;
 	
 	
 	
@@ -15141,7 +15141,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;p&gt;可以在redis操作完之后，我们会将一些信息返回给前端，同时也会把这些信息丢到异步queue中去，后续操作中，可以通过这个id来查询我们tomcat中的下单逻辑是否完成了。&lt;/p&gt;
 &lt;p&gt;我们现在来看看整体思路：当用户下单之后，判断库存是否充足只需要到redis中去根据key找对应的value是否大于0即可，如果不充足，则直接结束，如果充足，继续在redis中判断用户是否可以下单，如果set集合中没有这条数据，说明他可以下单，并将userId和优惠卷存入到redis中，并且返回0。整个过程需要保证是原子性的，我们可以使用lua来操作&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260510204015271-1778947940461-6.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260510204015271-1778947940461-6.png&#34;
 	
 	
 	
@@ -15737,7 +15737,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;生产者：发送消息到消息队列&lt;/li&gt;
 &lt;li&gt;消费者：从消息队列获取消息并处理消息&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260511143842262-1778947940461-8.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260511143842262-1778947940461-8.png&#34;
 	
 	
 	
@@ -15788,7 +15788,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;&lt;strong&gt;PUBLISH channel msg&lt;/strong&gt;：这是&lt;strong&gt;发布者&lt;/strong&gt;的动作。就像电台主持人向“新闻台”播报一条新闻，消息发出后，Redis 会立刻把这条消息推送给所有正在收听的人。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;PSUBSCRIBE pattern&lt;/strong&gt;：这是&lt;strong&gt;模糊订阅&lt;/strong&gt;。如果你不想只听“新闻台”，而是想听所有带“音乐”二字的频道（比如“音乐台”、“经典音乐台”），就可以使用通配符（如 &lt;code&gt;music.*&lt;/code&gt;）一次性订阅一类频道。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260511145755247-1778947940462-10.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260511145755247-1778947940462-10.png&#34;
 	
 	
 	
@@ -15812,7 +15812,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h3&gt;&lt;p&gt;Stream 是 Redis 5.0 引入的一种新数据类型，可以实现一个功能非常完善的消息队列。&lt;/p&gt;
 &lt;h4 id=&#34;发送消息&#34;&gt;发送消息
 &lt;/h4&gt;&lt;p&gt;发送消息的命令：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260511160937269-1778947940462-11.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260511160937269-1778947940462-11.png&#34;
 	
 	
 	
@@ -15823,7 +15823,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;例如：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260511161000266-1778947940462-14.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260511161000266-1778947940462-14.png&#34;
 	
 	
 	
@@ -15835,7 +15835,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;读消息&#34;&gt;读消息
 &lt;/h4&gt;&lt;p&gt;读取消息的方式之一：XREAD&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260511161040995-1778947940462-12.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260511161040995-1778947940462-12.png&#34;
 	
 	
 	
@@ -15848,7 +15848,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;注意，等待时长如果传入0，将一直等待，直到有人发送消息&lt;/p&gt;
 &lt;p&gt;并且读取消息后依旧可以再次读取，消息会永久存在，并不会在读取后消失&lt;/p&gt;
 &lt;p&gt;例如，使用XREAD读取第一个消息：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260511161133773-1778947940462-17.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260511161133773-1778947940462-17.png&#34;
 	
 	
 	
@@ -15859,7 +15859,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;XREAD阻塞方式，读取最新的消息，$表示最新消息：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260511161207142-1778947940462-13.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260511161207142-1778947940462-13.png&#34;
 	
 	
 	
@@ -15870,7 +15870,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在业务开发中，我们可以循环的调用XREAD阻塞方式来查询最新消息，从而实现持续监听队列的效果，伪代码如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260511162138092-1778947940462-15.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260511162138092-1778947940462-15.png&#34;
 	
 	
 	
@@ -15894,7 +15894,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h3&gt;&lt;h4 id=&#34;消费者组简介&#34;&gt;消费者组简介
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;消费者组（Consumer Group）&lt;/strong&gt;：将多个消费者划分到一个组中，监听同一个队列。&lt;/p&gt;
 &lt;p&gt;具备下列特点：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260511220236500-1778947940462-16.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260511220236500-1778947940462-16.png&#34;
 	
 	
 	
@@ -16045,7 +16045,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;有消息确认机制，保证消息至少被消费一次&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;三种方式对比&#34;&gt;三种方式对比
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260511223604351-1778947940462-19.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260511223604351-1778947940462-19.png&#34;
 	
 	
 	
@@ -16633,7 +16633,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;&lt;h2 id=&#34;达人探店&#34;&gt;达人探店
 &lt;/h2&gt;&lt;h3 id=&#34;发布探店笔记&#34;&gt;发布探店笔记
 &lt;/h3&gt;&lt;p&gt;探店笔记类似点评网站的评价，往往是图文结合。对应的表有两个： tb_blog：探店笔记表，包含笔记中的标题、文字、图片等 tb_blog_comments：其他用户对探店笔记的评价&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260512111944123-1778947940462-20.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260512111944123-1778947940462-20.png&#34;
 	
 	
 	
@@ -16669,7 +16669,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;&lt;h3 id=&#34;查看探店笔记&#34;&gt;查看探店笔记
 &lt;/h3&gt;&lt;h4 id=&#34;实现探店笔记查看接口&#34;&gt;实现探店笔记查看接口
 &lt;/h4&gt;&lt;p&gt;实现查看发布探店笔记的接口&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260512130148856-1778947940462-18.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260512130148856-1778947940462-18.png&#34;
 	
 	
 	
@@ -16925,7 +16925,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;问题分析：当前并没有做用户校验，发送请求赞的数量就会+1，这种方式会导致一个用户无限点赞，明显是不合理的，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260513163706424-1778947940462-22.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260513163706424-1778947940462-22.png&#34;
 	
 	
 	
@@ -17170,7 +17170,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h3&gt;&lt;h4 id=&#34;业务分析-1&#34;&gt;业务分析
 &lt;/h4&gt;&lt;p&gt;在探店笔记的详情页面，应该把给该笔记点赞的人显示出来，比如最早点赞的TOP5，形成点赞列表&lt;/p&gt;
 &lt;p&gt;之前的点赞是放到set集合，但是set集合是不能排序的，所以此时可以采用一个可以排序的set集合，就是sortedSet&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260513173634394-1778947940462-21.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260513173634394-1778947940462-21.png&#34;
 	
 	
 	
@@ -17181,7 +17181,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;下图是Redis中List、Set、SortedSet的简单对比：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260513173934307-1778947940462-23.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260513173934307-1778947940462-23.png&#34;
 	
 	
 	
@@ -17495,7 +17495,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h2&gt;&lt;h3 id=&#34;关注和取消关注&#34;&gt;关注和取消关注
 &lt;/h3&gt;&lt;h4 id=&#34;业务分析-2&#34;&gt;业务分析
 &lt;/h4&gt;&lt;p&gt;可以对其他用户进行关注和取消关注。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260514002555133-1778947940462-24.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260514002555133-1778947940462-24.png&#34;
 	
 	
 	
@@ -17710,7 +17710,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h4&gt;&lt;p&gt;想要去看共同关注的好友，需要首先进入到这个页面，这个页面会发起两个请求&lt;/p&gt;
 &lt;p&gt;1、去查询用户的详情&lt;/p&gt;
 &lt;p&gt;2、去查询用户的笔记&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260514230511546-1778947940462-25.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260514230511546-1778947940462-25.png&#34;
 	
 	
 	
@@ -17781,7 +17781,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h4&gt;&lt;p&gt;接下来我们来看看共同关注如何实现：&lt;/p&gt;
 &lt;p&gt;需求：利用Redis中恰当的数据结构，实现共同关注功能。在博主个人页面展示出当前用户与博主的共同关注。&lt;/p&gt;
 &lt;p&gt;可以使用set集合，在set集合中，有交集并集补集的api，我们可以把两人的关注的人分别放入到一个set集合中，然后再通过api去查看这两个set集合中的交集数据。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260514231217179-1778947940462-26.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260514231217179-1778947940462-26.png&#34;
 	
 	
 	
@@ -18009,7 +18009,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h3&gt;&lt;h4 id=&#34;简介&#34;&gt;简介
 &lt;/h4&gt;&lt;p&gt;关注推送也叫做Feed流，直译为投喂。为用户持续提供新的信息。&lt;/p&gt;
 &lt;p&gt;对于传统的模式的内容解锁：需要用户去通过搜索引擎或者是其他的方式去解锁想要看的内容&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515141955527-1778947940462-27.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515141955527-1778947940462-27.png&#34;
 	
 	
 	
@@ -18020,7 +18020,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;对于新型的Feed流的的效果：不需要用户自己去搜索信息，而是系统分析用户到底想要什么，然后直接把内容推送给用户，从而使用户能够更加的节约时间，不用主动去寻找。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515142044912-1778947940462-28.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515142044912-1778947940462-28.png&#34;
 	
 	
 	
@@ -18049,7 +18049,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;推模式&lt;/li&gt;
 &lt;li&gt;推拉结合&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515145238634-1778947940462-31.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515145238634-1778947940462-31.png&#34;
 	
 	
 	
@@ -18063,7 +18063,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;该模式的核心含义就是：当张三和李四和王五发了消息后，都会保存在自己的发件箱中，假设赵六要读取他自己的收件箱，此时系统会拉取他关注的人发布的信息，然后再进行排序&lt;/p&gt;
 &lt;p&gt;优点：比较节约空间，因为赵六在读信息时，并没有重复读取，而且读取完之后可以把他的收件箱进行清除。&lt;/p&gt;
 &lt;p&gt;缺点：延迟较高，当用户读取数据时才去关注的人里边去读取数据，假设用户关注了大量的用户，那么此时就会拉取海量的内容，对服务器压力巨大。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515142946395-1778947940462-29.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515142946395-1778947940462-29.png&#34;
 	
 	
 	
@@ -18077,7 +18077,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;推模式是没有发件箱的，当张三发送了一个内容后，此时系统会主动把张三写的内容发送到他粉丝的收件箱中，此时张三的粉丝再来读取，就不用再去临时拉取了&lt;/p&gt;
 &lt;p&gt;优点：时效快，不用临时拉取&lt;/p&gt;
 &lt;p&gt;缺点：内存压力大，假设一个大V写信息，很多人关注他， 就会写很多分数据到粉丝那边去&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515143709669-1778947940462-33.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515143709669-1778947940462-33.png&#34;
 	
 	
 	
@@ -18089,7 +18089,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;推拉结合模式&lt;/strong&gt;：也叫做读写混合，兼具推和拉两种模式的优点。&lt;/p&gt;
 &lt;p&gt;推拉模式是一个折中的方案，在发件人这一端，如果是个普通的人，那么采用写扩散的方式，直接把数据写入到他的粉丝的收件箱中去，因为普通人的粉丝量比较少，所以这样做没有压力。如果是大V，那么先将数据写入一份到他的发件箱里去，然后再写一份到活跃粉丝的收件箱里去。现在站在收件人这端来看，如果是大V的活跃粉丝，那么大V和普通人发的内容都会直接写入到自己的收件箱里边来，而如果是大V的普通粉丝（不常上线），他们关注的普通博主平时依旧直接发送消息到他们的收件箱，由于他们上线不是很频繁，所以等他们上线时，再拉取大V的信息到收件箱中。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515145137473-1778947940462-30.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515145137473-1778947940462-30.png&#34;
 	
 	
 	
@@ -18109,7 +18109,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;查询收件箱数据时，可以实现分页查询&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;但Feed流中的数据会不断更新，所以数据的下标也在变化，因此不能采用传统的分页模式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515150328262-1778947940462-32.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515150328262-1778947940462-32.png&#34;
 	
 	
 	
@@ -18121,7 +18121,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;假设在t1时刻，我们去读取第一页，此时page = 1 ，size = 5，那么我们拿到的就是10&lt;del&gt;6这几条记录，假设t2时刻又发布了一条记录，然后到了t3时刻，我们来读取第二页，读取第二页传入的参数是page=2 ，size=5，那么此时读取到的第二页实际上是从6开始，结果是6&lt;/del&gt;2，那么我们就读取到了重复的数据，所以feed流的分页，不能采用原始方案来做。&lt;/p&gt;
 &lt;p&gt;所以Feed流应该采用&lt;strong&gt;滚动分页&lt;/strong&gt;的方式来查询，我们需要记录每次操作的最后一条，然后从这个位置开始去读取数据&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515150652756-1778947940462-35.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515150652756-1778947940462-35.png&#34;
 	
 	
 	
@@ -18254,7 +18254,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;2、我们需要找到与上一次查询相同的查询个数作为偏移量，下次查询时，跳过这些查询过的数据，拿到我们需要的数据&lt;/p&gt;
 &lt;p&gt;综上：我们的请求参数中就需要携带&lt;code&gt;上一次查询的最小时间戳&lt;/code&gt;和&lt;code&gt;偏移量&lt;/code&gt;这两个参数。&lt;/p&gt;
 &lt;p&gt;这两个参数第一次会由前端来指定，以后的查询就根据后端结果作为条件，再次传递到后台。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515154247619-1778947940462-38.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515154247619-1778947940462-38.png&#34;
 	
 	
 	
@@ -18266,7 +18266,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;p&gt;第一次查询时偏移量是0，因为要从头开始查，&lt;em&gt;但为什么后续查询时需要找到与上一次查询相同的查询个数作为偏移量，而不是直接用1作偏移量呢？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;举个例子：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515165222503-1778947940462-34.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515165222503-1778947940462-34.png&#34;
 	
 	
 	
@@ -18277,7 +18277,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;当偏移量固定为1的话，如果有多个重复的score就有可能出现重复查询的情况&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515165348307-1778947940462-36.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515165348307-1778947940462-36.png&#34;
 	
 	
 	
@@ -18531,7 +18531,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;搜索天安门（ 116.397904 39.909005 ）附近10km内的所有火车站，并按照距离升序排序&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;添加数据：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515211604099-1778947940462-37.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515211604099-1778947940462-37.png&#34;
 	
 	
 	
@@ -18542,7 +18542,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;计算距离：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515211747941-1778947940462-39.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515211747941-1778947940462-39.png&#34;
 	
 	
 	
@@ -18553,7 +18553,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;搜索天安门附近火车站：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515212027504-1778947940462-40.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515212027504-1778947940462-40.png&#34;
 	
 	
 	
@@ -18566,7 +18566,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h3 id=&#34;导入店铺数据到geo&#34;&gt;导入店铺数据到GEO
 &lt;/h3&gt;&lt;h4 id=&#34;业务分析-5&#34;&gt;业务分析
 &lt;/h4&gt;&lt;p&gt;在首页点击某个频道后，会自动发送一个携带当前坐标的请求&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515212539110-1778947940462-41.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515212539110-1778947940462-41.png&#34;
 	
 	
 	
@@ -18580,7 +18580,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;现在需要把各个店铺的坐标导入到Redis的GEO中，GEO在redis中的存储结构是一个member和一个经纬度，我们把x和y轴传入到redis的经纬度位置去，但我们不能把所有的数据都放入到member中去，毕竟作为redis是一个内存级数据库，如果存海量数据，redis还是力不从心，所以我们在这个地方存储他的id即可。&lt;/p&gt;
 &lt;p&gt;但是这个时候还有一个问题，就是在redis中并没有存储店铺的类型，所以我们无法根据type来对数据进行筛选&lt;/p&gt;
 &lt;p&gt;解决办法：可以按照商户类型做分组，类型相同的商户作为同一组，以typeId为key存入同一个GEO集合中即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260515214240763-1778947940462-45.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260515214240763-1778947940462-45.png&#34;
 	
 	
 	
@@ -19221,7 +19221,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;可以按月来统计用户签到信息，每天签到记录为1，未签到则记录为0。&lt;/p&gt;
 &lt;p&gt;把每一个bit位对应当月的每一天，形成了映射关系。用0和1表示业务状态，这种思路就称为&lt;strong&gt;位图（BitMap）&lt;/strong&gt;。这样我们就用极小的空间，来实现了大量数据的表示&lt;/p&gt;
 &lt;p&gt;Redis中是利用string类型数据结构实现BitMap，因此最大上限是512M，转换为bit则是 2^32个bit位。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260516202742819-1778947940462-42.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260516202742819-1778947940462-42.png&#34;
 	
 	
 	
@@ -19245,7 +19245,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h3&gt;&lt;h4 id=&#34;业务分析-6&#34;&gt;业务分析
 &lt;/h4&gt;&lt;p&gt;需求：实现签到接口，将当前用户当天签到信息保存到Redis中&lt;/p&gt;
 &lt;p&gt;思路：我们可以把年和月作为bitMap的key，然后保存到一个bitMap中，每次签到就到对应的位上把数字从0变成1，只要对应是1，就表明说明这一天已经签到了，反之则没有签到。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260516220540224-1778947940462-44.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260516220540224-1778947940462-44.png&#34;
 	
 	
 	
@@ -19353,7 +19353,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;我然后测试这个接口，我现在是16号，所以应该是15个0，然后是1&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260516222142135-1778947940462-43.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260516222142135-1778947940462-43.png&#34;
 	
 	
 	
@@ -19370,7 +19370,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;问题1：&lt;em&gt;什么叫做连续签到天数？&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;从最后一次签到开始向前统计，直到遇到第一次未签到为止，计算总的签到次数，就是连续签到天数。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260516222532331-1778947940463-46.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260516222532331-1778947940463-46.png&#34;
 	
 	
 	
@@ -19399,7 +19399,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;问题3：&lt;em&gt;如何从后向前遍历每个bit位？&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;注意：bitMap返回的数据是10进制，假如返回8，*那么如何知道哪些是0，哪些是1呢？*只需要让得到的10进制数字和1做与运算就可以了，因为与运算时，1只有遇见1才是1，其他数字都是0。把签到结果和1进行与运算，每与一次，就把签到结果向右移动一位，以此类推，就能完成从后往前逐个遍历的效果了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260516225222417-1778947940463-47.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260516225222417-1778947940463-47.png&#34;
 	
 	
 	
@@ -19410,7 +19410,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;需求：实现下面接口，统计当前用户截止当前时间在本月的连续签到天数&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260516225344021-1778947940463-49.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260516225344021-1778947940463-49.png&#34;
 	
 	
 	
@@ -19614,7 +19614,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;如果集合中&lt;strong&gt;不包含&lt;/strong&gt;该 ID，说明该数据在数据库中绝对不存在，直接拦截并返回，不再访问 Redis 和数据库。&lt;/li&gt;
 &lt;li&gt;如果集合中&lt;strong&gt;包含&lt;/strong&gt;该 ID，说明这是一次合法的查询请求，则直接放行，按正常流程继续访问缓存或数据库。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260516234017709-1778947940463-50.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260516234017709-1778947940463-50.png&#34;
 	
 	
 	
@@ -19650,7 +19650,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;Hyperloglog(HLL)是从Loglog算法派生的概率算法，用于确定非常大的集合的基数，而不需要存储其所有值。相关算法原理可以参考：https://juejin.cn/post/6844903785744056333#heading-0&lt;/p&gt;
 &lt;p&gt;Redis中的HLL是基于string结构实现的，单个HLL的内存&lt;strong&gt;永远小于16kb&lt;/strong&gt;，&lt;strong&gt;内存占用低&lt;/strong&gt;得令人发指！作为代价，其测量结果是概率性的，&lt;strong&gt;有小于0.81％的误差&lt;/strong&gt;。不过对于UV统计来说，这完全可以忽略。&lt;/p&gt;
 &lt;p&gt;Redis中的命令如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260516235448852-1778947940463-48.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260516235448852-1778947940463-48.png&#34;
 	
 	
 	
@@ -19707,7 +19707,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;输出结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260517000919925-1778947940463-51.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260517000919925-1778947940463-51.png&#34;
 	
 	
 	
@@ -19722,10 +19722,10 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
         </item>
         <item>
         <title>Redis初识与安装</title>
-        <link>https://IAmYuanyu.github.io/p/redis%E5%88%9D%E8%AF%86%E4%B8%8E%E5%AE%89%E8%A3%85/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%88%9D%E8%AF%86%E4%B8%8E%E5%AE%89%E8%A3%85/</link>
         <pubDate>Sun, 26 Apr 2026 18:15:59 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/redis%E5%88%9D%E8%AF%86%E4%B8%8E%E5%AE%89%E8%A3%85/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%88%9D%E8%AF%86%E4%B8%8E%E5%AE%89%E8%A3%85/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文基于黑马2022的Redis课程基础篇编写，课程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1cr4y1671t?spm_id_from=333.788.player.switch&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;黑马程序员Redis入门到实战教程，深度透析redis底层原理+redis分布式锁+企业解决方案+黑马点评实战项目&lt;/a&gt;&lt;/p&gt;
@@ -19737,7 +19737,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;NoSql&lt;/strong&gt;可以翻译做Not Only Sql（不仅仅是SQL），或者是No Sql（非Sql的）数据库。是相对于传统关系型数据库而言，有很大差异的一种特殊的数据库，因此也称之为&lt;strong&gt;非关系型数据库&lt;/strong&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;结构化与非结构化&#34;&gt;结构化与非结构化
 &lt;/h3&gt;&lt;p&gt;传统关系型数据库是结构化数据，每一张表都有严格的约束信息：字段名.字段数据类型.字段约束等等信息，插入的数据必须遵守这些约束。而NoSql则对数据库格式没有严格约束，往往形式松散，自由，可以是键值型、文档型、图型等。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426152534896.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426152534896.png&#34;
 	
 	
 	
@@ -19749,7 +19749,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;关联和非关联&#34;&gt;关联和非关联
 &lt;/h3&gt;&lt;p&gt;传统关系型数据库的表与表之间往往存在关联，例如外键：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426152715374.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426152715374.png&#34;
 	
 	
 	
@@ -19805,7 +19805,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/div&gt;&lt;p&gt;此处要维护“张三”的订单与商品“荣耀”和“小米11”的关系，不得不冗余的将这两个商品保存在张三的订单文档中，不够优雅。还是建议在项目中用业务来维护关联关系。&lt;/p&gt;
 &lt;h3 id=&#34;查询方式&#34;&gt;查询方式
 &lt;/h3&gt;&lt;p&gt;传统关系型数据库会基于Sql语句做查询，语法有统一标准。而不同的非关系数据库查询语法差异极大，五花八门各种各样。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426152911851.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426152911851.png&#34;
 	
 	
 	
@@ -19825,7 +19825,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;h3 id=&#34;总结&#34;&gt;总结
 &lt;/h3&gt;&lt;p&gt;除了上述四点以外，在存储方式.扩展性.查询性能上关系型与非关系型也都有着显著差异，总结如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426153510515.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426153510515.png&#34;
 	
 	
 	
@@ -19939,7 +19939,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/ul&gt;
 &lt;h3 id=&#34;配置-redis-服务&#34;&gt;配置 Redis 服务
 &lt;/h3&gt;&lt;p&gt;安装完成后，在任意目录输入&lt;code&gt;redis-server&lt;/code&gt;命令即可启动Redis。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426165936046.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426165936046.png&#34;
 	
 	
 	
@@ -20117,7 +20117,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl stop redis
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426172144617.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426172144617.png&#34;
 	
 	
 	
@@ -20130,7 +20130,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;h2 id=&#34;redis常见命令&#34;&gt;Redis常见命令
 &lt;/h2&gt;&lt;h3 id=&#34;redis数据结构介绍&#34;&gt;Redis数据结构介绍
 &lt;/h3&gt;&lt;p&gt;Redis是一个key-value的数据库，key一般是String类型，不过value的类型多种多样：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260426174458981.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260426174458981.png&#34;
 	
 	
 	
@@ -20150,10 +20150,10 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
         </item>
         <item>
         <title>Redis快速入门与使用</title>
-        <link>https://IAmYuanyu.github.io/p/redis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Mon, 06 Oct 2025 00:07:55 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/redis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
         <description>&lt;h2 id=&#34;redis入门&#34;&gt;Redis入门
 &lt;/h2&gt;&lt;h3 id=&#34;简介&#34;&gt;简介
 &lt;/h3&gt;&lt;p&gt;Redis是一个基于&lt;strong&gt;内存&lt;/strong&gt;的键值对（key-value）结构数据库&lt;/p&gt;
@@ -20171,7 +20171,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;启动redis&#34;&gt;启动Redis
 &lt;/h4&gt;&lt;p&gt;解压下载好的压缩包，在解压出来的文件夹打开命令行窗口&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2025-10-05_18-48-02.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2025-10-05_18-48-02.gif&#34;
 	
 	
 	
@@ -20190,7 +20190,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-server.exe redis.windows.conf
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005184957748.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005184957748.png&#34;
 	
 	
 	
@@ -20215,7 +20215,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;需要取消连接的话，输入&lt;code&gt;exit&lt;/code&gt;即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005203356205.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005203356205.png&#34;
 	
 	
 	
@@ -20235,7 +20235,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli.exe -h ip地址 -p 端口号
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005203650980.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005203650980.png&#34;
 	
 	
 	
@@ -20247,7 +20247,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;配置密码&#34;&gt;配置密码
 &lt;/h4&gt;&lt;p&gt;Redis默认是没有密码的，可以在&lt;code&gt;redis.windows.conf&lt;/code&gt;中配置密码，输入&lt;code&gt;requirepass 密码&lt;/code&gt;来设置密码&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005205017620.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005205017620.png&#34;
 	
 	
 	
@@ -20257,7 +20257,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005205229525.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005205229525.png&#34;
 	
 	
 	
@@ -20316,7 +20316,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;p&gt;列表：按照插入顺序排序，可以有重复元素，类似于Java中的LinkedList&lt;/p&gt;
 &lt;p&gt;集合：又称无序集合，没有重复元素，类似于Java中的HashSet&lt;/p&gt;
 &lt;p&gt;有序集合：集合中每个元素关联一个分数（score），根据分数升序排序，没有重复元素&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005211049404.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005211049404.png&#34;
 	
 	
 	
@@ -20337,7 +20337,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;&lt;code&gt;SETNX key value&lt;/code&gt;：只有在 key 不存在时设置 key 的值&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;更多命令可以参考Redis中文网：https://www.redis.net.cn&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005214502067.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005214502067.png&#34;
 	
 	
 	
@@ -20357,7 +20357,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;&lt;code&gt;HKEYS key&lt;/code&gt;：获取哈希表中所有字段（也就是下图中的field1和field2）&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;HVALS key&lt;/code&gt;：获取哈希表中所有值（也就是下图中的value1和value2）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005214946227.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005214946227.png&#34;
 	
 	
 	
@@ -20367,7 +20367,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005215841758.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005215841758.png&#34;
 	
 	
 	
@@ -20377,7 +20377,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005220152357.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005220152357.png&#34;
 	
 	
 	
@@ -20396,7 +20396,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;&lt;code&gt;LLEN key&lt;/code&gt;：获取列表长度&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;BRPOP key1 [key2 ] timeout&lt;/code&gt;：移出并获取列表的最后一个元素，如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005220248538.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005220248538.png&#34;
 	
 	
 	
@@ -20406,7 +20406,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005220744204.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005220744204.png&#34;
 	
 	
 	
@@ -20426,7 +20426,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;&lt;code&gt;SUNION key1 [key2]&lt;/code&gt;：返回所有给定集合的并集&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;SREM key member1 [member2]&lt;/code&gt;：移除集合中一个或多个成员&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005220910862.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005220910862.png&#34;
 	
 	
 	
@@ -20445,7 +20445,7 @@ HashTable，也就是Redis中的Dict，不过Dict是双列集合（可以存键�
 &lt;li&gt;&lt;code&gt;ZINCRBY key increment member&lt;/code&gt;：有序集合中对指定成员的分数加上增量 increment&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ZREM key member [member ...]&lt;/code&gt;：移除有序集合中的一个或多个成员&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251005221348200.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251005221348200.png&#34;
 	
 	
 	

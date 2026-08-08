@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>MySQL on 缘鱼的笔记</title>
-        <link>https://IAmYuanyu.github.io/categories/mysql/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/mysql/</link>
         <description>Recent content in MySQL on 缘鱼的笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Tue, 21 Apr 2026 23:44:34 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 21 Apr 2026 23:44:34 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>MySQL进阶</title>
-        <link>https://IAmYuanyu.github.io/p/mysql%E8%BF%9B%E9%98%B6/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/mysql%E8%BF%9B%E9%98%B6/</link>
         <pubDate>Tue, 21 Apr 2026 23:44:34 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/mysql%E8%BF%9B%E9%98%B6/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/mysql%E8%BF%9B%E9%98%B6/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;该系列笔记基于黑马MySQL课程编写&lt;/p&gt;
 &lt;p&gt;课程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Kr4y1i7ru?spm_id_from=333.788.videopod.episodes&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -22,7 +22,7 @@
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;存储引擎&#34;&gt;存储引擎
 &lt;/h2&gt;&lt;h3 id=&#34;mysql体系结构&#34;&gt;MySQL体系结构
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260414203755068.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260414203755068.png&#34;
 	
 	
 	
@@ -78,7 +78,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;table&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;表名&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/89b640d2f8fa2dee.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/89b640d2f8fa2dee.png&#34;
 	
 	
 	
@@ -101,7 +101,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;engines&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260414214517507.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260414214517507.png&#34;
 	
 	
 	
@@ -142,7 +142,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;variables&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;like&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;innodb_file_per_table&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260414220535772.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260414220535772.png&#34;
 	
 	
 	
@@ -163,7 +163,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;通过该指令就可以从ibd文件中提取sdi信息，而sdi数据字典信息中就包含该表的表结构。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260414221012151.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260414221012151.png&#34;
 	
 	
 	
@@ -174,7 +174,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;4）逻辑存储结构&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260414221639807.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260414221639807.png&#34;
 	
 	
 	
@@ -414,7 +414,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;在无索引情况下，就需要从第一行开始扫描，一直扫描到最后一行，称之为&lt;strong&gt;全表扫描&lt;/strong&gt;，性能很低。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2）有索引&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;如果针对于这张表建立了索引，&lt;strong&gt;假设&lt;/strong&gt;索引结构就是二叉树，那么也就意味着，会对age这个字段建立一个二叉树的索引结构。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260415170740338.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260415170740338.png&#34;
 	
 	
 	
@@ -518,7 +518,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;二叉树&#34;&gt;二叉树
 &lt;/h4&gt;&lt;p&gt;假如说MySQL的索引结构采用二叉树的数据结构，比较理想的结构如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260415172708335.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260415172708335.png&#34;
 	
 	
 	
@@ -529,7 +529,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;但如果主键是顺序插入的，则会形成一个单向链表，结构如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260415172720322.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260415172720322.png&#34;
 	
 	
 	
@@ -545,7 +545,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;li&gt;大数据量情况下，层级较深，检索速度慢。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;可能有人此时会想到红黑树，红黑树是一颗自平衡二叉树，那这样即使是顺序插入数据，最终形成的数据结构也是一颗平衡的二叉树,结构如下:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260415173308738.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260415173308738.png&#34;
 	
 	
 	
@@ -562,7 +562,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;h4 id=&#34;b-tree&#34;&gt;B-Tree
 &lt;/h4&gt;&lt;p&gt;B-Tree，B树是一种多叉路衡查找树，相对于二叉树，B树每个节点可以有多个分支，即多叉。&lt;/p&gt;
 &lt;p&gt;以一颗最大度数（max-degree）为5(5阶)的b-tree为例，那这个B树每个节点最多存储4个key，5个指针：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260415174711411.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260415174711411.png&#34;
 	
 	
 	
@@ -589,7 +589,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;btree&#34;&gt;B+Tree
 &lt;/h4&gt;&lt;p&gt;B+Tree是B-Tree的变种，以一颗最大度数（max-degree）为4（4阶）的b+tree为例，其结构示意图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260415231608402.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260415231608402.png&#34;
 	
 	
 	
@@ -611,7 +611,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;这里介绍的是标准的B+Tree数据结构，接下来介绍MySQL优化后的B+Tree。&lt;/p&gt;
 &lt;p&gt;MySQL在原B+Tree的基础上，增加一个指向相邻叶子节点的链表指针，就形成了带有顺序指针的B+Tree，提高区间访问的性能，利于排序。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260415232429856.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260415232429856.png&#34;
 	
 	
 	
@@ -625,7 +625,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/h4&gt;&lt;p&gt;MySQL中除了支持B+Tree索引，还支持一种索引类型&amp;mdash;Hash索引。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1）结构&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;哈希索引就是采用一定的hash算法，将键值换算成新的hash值，映射到对应的槽位上，然后存储在hash表中。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260415233058769.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260415233058769.png&#34;
 	
 	
 	
@@ -636,7 +636,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;如果两个(或多个)键值，映射到一个相同的槽位上，他们就产生了hash冲突（也称为hash碰撞），可以通过链表来解决。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260415233117569.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260415233117569.png&#34;
 	
 	
 	
@@ -731,7 +731,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;li&gt;如果表没有主键，或没有合适的唯一索引，则InnoDB会自动生成一个rowid作为隐藏的聚集索引。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;聚集索引和二级索引的具体结构如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260417164818298.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260417164818298.png&#34;
 	
 	
 	
@@ -755,7 +755,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Arm&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260417165445113.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260417165445113.png&#34;
 	
 	
 	
@@ -890,7 +890,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;可以先查看当前tb_user的索引&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260417194338820.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260417194338820.png&#34;
 	
 	
 	
@@ -937,7 +937,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;完成上述的需求之后，再查看tb_user表的所有的索引数据&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260417195246330.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260417195246330.png&#34;
 	
 	
 	
@@ -963,7 +963,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;SHOW&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;GLOBAL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STATUS&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;LIKE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Com_______&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260417200659264.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260417200659264.png&#34;
 	
 	
 	
@@ -992,7 +992,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;variables&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;like&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;slow_query_log&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260417203315419.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260417203315419.png&#34;
 	
 	
 	
@@ -1029,7 +1029,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;重启后再次查看，正常会看见慢查询日志已开启：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260417204417429.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260417204417429.png&#34;
 	
 	
 	
@@ -1060,7 +1060,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;@@&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;have_profiling&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260417212830106.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260417212830106.png&#34;
 	
 	
 	
@@ -1080,7 +1080,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;SET&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profiling&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260417213033970.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260417213033970.png&#34;
 	
 	
 	
@@ -1145,7 +1145,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;EXPLAIN&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;字段列表&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;表名&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;条件&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260417223313017.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260417223313017.png&#34;
 	
 	
 	
@@ -1210,7 +1210,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_sku&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;G&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;G表示垂直输出&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418184120246.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418184120246.png&#34;
 	
 	
 	
@@ -1229,7 +1229,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_sku&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sn&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;100000003145001&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418185342686.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418185342686.png&#34;
 	
 	
 	
@@ -1250,7 +1250,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;idx_sku_sn&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_sku&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418195212049.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418195212049.png&#34;
 	
 	
 	
@@ -1261,7 +1261,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后再次执行相同的SQL语句，再次查看SQL的耗时：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418195309238.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418195309238.png&#34;
 	
 	
 	
@@ -1275,7 +1275,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;h4 id=&#34;最左前缀法则&#34;&gt;最左前缀法则
 &lt;/h4&gt;&lt;p&gt;如果索引了多列（联合索引），要遵守最左前缀法则。最左前缀法则指的是查询从索引的最左列开始，并且不跳过索引中的列。如果跳跃某一列，&lt;strong&gt;索引将会部分失效(后面的字段索引失效)&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;以 tb_user 表为例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418201253658.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418201253658.png&#34;
 	
 	
 	
@@ -1310,7 +1310,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;软件工程&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418201751051.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418201751051.png&#34;
 	
 	
 	
@@ -1344,7 +1344,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;软件工程&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418202110196.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418202110196.png&#34;
 	
 	
 	
@@ -1357,7 +1357,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;前两个测试可以看到，不使用profession时就没有使用索引，而最后一个测试中可以看出，跳过了age的话，索引长度是47，说明只使用了profession的索引，status的索引并没有生效。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;当执行SQL语句: &lt;code&gt;explain select * from tb_user where age = 31 and status = &#39;0&#39; and profession = &#39;软件工程&#39;;&lt;/code&gt;时，&lt;em&gt;是否满足最左前缀法则，走不走上述的联合索引，索引长度是多少？&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418202807895.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418202807895.png&#34;
 	
 	
 	
@@ -1380,7 +1380,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;软件工程&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418205309357.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418205309357.png&#34;
 	
 	
 	
@@ -1399,7 +1399,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;软件工程&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418205621583.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418205621583.png&#34;
 	
 	
 	
@@ -1431,7 +1431,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;substring&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;15&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418210722475.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418210722475.png&#34;
 	
 	
 	
@@ -1460,7 +1460,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;软件工程&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;31&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418211657209.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418211657209.png&#34;
 	
 	
 	
@@ -1492,7 +1492,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;like&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;%工%&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418211923890.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418211923890.png&#34;
 	
 	
 	
@@ -1521,7 +1521,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;17799990017&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;or&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;23&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418214200232.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418214200232.png&#34;
 	
 	
 	
@@ -1540,7 +1540,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;idx_user_age&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418214407940.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418214407940.png&#34;
 	
 	
 	
@@ -1569,7 +1569,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;17799990015&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418214634166.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418214634166.png&#34;
 	
 	
 	
@@ -1600,7 +1600,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;is&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;not&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418214935976.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418214935976.png&#34;
 	
 	
 	
@@ -1619,7 +1619,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;update&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418215144652.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418215144652.png&#34;
 	
 	
 	
@@ -1632,7 +1632,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;最终看到，一模一样的SQL语句，先后执行了两次，结果查询计划是不一样的，*为什么会出现这种现象？*这是和数据库的数据分布有关系。查询时MySQL会评估，走索引快，还是全表扫描快，如果全表扫描更快，则放弃索引走全表扫描。 因此，is null 、is not null是否走索引，得具体情况具体分析，并不是固定的。&lt;/p&gt;
 &lt;h4 id=&#34;sql提示&#34;&gt;SQL提示
 &lt;/h4&gt;&lt;p&gt;目前tb_user表的数据和索引情况如下:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418220702976.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418220702976.png&#34;
 	
 	
 	
@@ -1668,7 +1668,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;idx_user_pro&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418221124058.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418221124058.png&#34;
 	
 	
 	
@@ -1710,7 +1710,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;覆盖索引&#34;&gt;覆盖索引
 &lt;/h4&gt;&lt;p&gt;尽量使用覆盖索引，减少使用&lt;code&gt;select *&lt;/code&gt;。 &lt;em&gt;那么什么是覆盖索引呢？&lt;/em&gt; 覆盖索引是指查询使用了索引，并且需要返回的列，在该索引中已经全部能够找到 。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418230559119.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418230559119.png&#34;
 	
 	
 	
@@ -1744,7 +1744,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;软件工程&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;31&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260418225401624.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260418225401624.png&#34;
 	
 	
 	
@@ -1822,7 +1822,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;distinct&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;email&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;email&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;as&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;选择性&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419000819691.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419000819691.png&#34;
 	
 	
 	
@@ -1833,7 +1833,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3）前缀索引的查询流程&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419001053906.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419001053906.png&#34;
 	
 	
 	
@@ -1848,7 +1848,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;联合索引：即一个索引包含了多个列。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;平时创建索引时应该优先创建单列索引还是联合索引呢？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;接下来我将根据下方查询示例来回答：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419002459689.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419002459689.png&#34;
 	
 	
 	
@@ -1862,7 +1862,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;所以在业务场景中，如果存在&lt;strong&gt;多个查询条件&lt;/strong&gt;，考虑针对于查询字段建立索引时，&lt;strong&gt;建议建立联合索引&lt;/strong&gt;，而非单列索引。如果此时创建name和phone的联合索引，MySQL依旧有可能会使用单列索引，需要手动指定。&lt;/p&gt;
 &lt;p&gt;因为有最左前缀法则，所以创建联合索引时需要注意顺序。&lt;/p&gt;
 &lt;p&gt;联合索引结构示意图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419003430792.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419003430792.png&#34;
 	
 	
 	
@@ -1948,7 +1948,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;load&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;local&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;infile&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/root/sql1.log&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;into&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;table&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fields&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;terminated&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lines&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;terminated&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419151709514.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419151709514.png&#34;
 	
 	
 	
@@ -1966,7 +1966,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;h4 id=&#34;数据组织方式&#34;&gt;数据组织方式
 &lt;/h4&gt;&lt;p&gt;在InnoDB存储引擎中，表数据都是根据主键顺序组织存放的，这种存储方式的表称为&lt;strong&gt;索引组织表&lt;/strong&gt;(index organized table，简称&lt;strong&gt;IOT&lt;/strong&gt;)。&lt;/p&gt;
 &lt;p&gt;行数据，都是存储在聚集索引的叶子节点上的。在InnoDB引擎中，数据行是记录在逻辑结构 page 页中的，而每一个页的大小是固定的，默认16K。那也就意味着，一个页中所存储的行也是有限的，如果插入的数据行row在该页存储不下，将会存储到下一个页中，页与页之间会通过指针连接。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260414221639807.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260414221639807.png&#34;
 	
 	
 	
@@ -1982,7 +1982,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;li&gt;主键顺序插入时：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;一个个数据依次放入，若当前页中剩余空间不够，则放入新的一页，并建立两页之间的连接&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419153242962.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419153242962.png&#34;
 	
 	
 	
@@ -1996,7 +1996,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;li&gt;主键乱序插入时：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;假设当前数据情况如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419153553282.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419153553282.png&#34;
 	
 	
 	
@@ -2007,7 +2007,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;此时希望插入id为50的记录，&lt;em&gt;会如何插入呢？&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419153709659.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419153709659.png&#34;
 	
 	
 	
@@ -2018,7 +2018,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;由于索引结构的叶子节点是有顺序的，id为50的记录并不会直接插入到末尾，而是按顺序放在47之后&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419153852209.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419153852209.png&#34;
 	
 	
 	
@@ -2029,7 +2029,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;但在1#页中，47后面剩余的空间不够放入50，那么此时会新开辟一个3#页，然后将1#页后一半的数据移动到3#页中，然后在47后面插入50&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419154110511.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419154110511.png&#34;
 	
 	
 	
@@ -2040,7 +2040,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;完成上述操作后，页之间的数据顺序又出现问题了，现在1#页的后面应该是3#页，3#页的后面才是2#页，所以此时需要重新设置链表指针&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419154342955.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419154342955.png&#34;
 	
 	
 	
@@ -2053,7 +2053,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;这些操作就称之为“页分裂”，是比较耗费性能的操作。&lt;/p&gt;
 &lt;h4 id=&#34;页合并&#34;&gt;页合并
 &lt;/h4&gt;&lt;p&gt;假设目前表中已有数据的索引结构(叶子节点)如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419154907972.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419154907972.png&#34;
 	
 	
 	
@@ -2068,7 +2068,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;MERGE_THRESHOLD：合并页的阈值，可以自己设置，在创建表或者创建索引时指定。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419155235831.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419155235831.png&#34;
 	
 	
 	
@@ -2079,7 +2079,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;发现2#页的数据已删除过半，开始尝试合并&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419155336011.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419155336011.png&#34;
 	
 	
 	
@@ -2090,7 +2090,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;再次插入新的数据21，则直接插入3#页&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419155352509.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419155352509.png&#34;
 	
 	
 	
@@ -2144,7 +2144,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;现在的索引如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419170525916.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419170525916.png&#34;
 	
 	
 	
@@ -2169,7 +2169,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;order&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419170705201.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419170705201.png&#34;
 	
 	
 	
@@ -2191,7 +2191,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;idx_user_age_phone&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419173919531.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419173919531.png&#34;
 	
 	
 	
@@ -2216,7 +2216,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;order&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419171152027.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419171152027.png&#34;
 	
 	
 	
@@ -2238,7 +2238,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;order&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;desc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;desc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419171801553.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419171801553.png&#34;
 	
 	
 	
@@ -2260,7 +2260,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;order&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419173020375.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419173020375.png&#34;
 	
 	
 	
@@ -2282,7 +2282,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;order&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;asc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;desc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419175448735.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419175448735.png&#34;
 	
 	
 	
@@ -2293,7 +2293,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;因为创建索引时，如果未指定顺序，默认都是按照升序排序的，而查询时，一个升序，一个降序，此时就会出现Using filesort。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419175714990.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419175714990.png&#34;
 	
 	
 	
@@ -2314,7 +2314,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;idx_user_age_phone_ad&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;asc&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;desc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419180016409.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419180016409.png&#34;
 	
 	
 	
@@ -2325,7 +2325,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后再次根据age升序, phone降序进行排序&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419180201808.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419180201808.png&#34;
 	
 	
 	
@@ -2336,7 +2336,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;升序/降序联合索引结构图示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419180334520.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419180334520.png&#34;
 	
 	
 	
@@ -2346,7 +2346,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419180342384.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419180342384.png&#34;
 	
 	
 	
@@ -2395,7 +2395,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;drop&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;idx_user_pro&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419194909337.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419194909337.png&#34;
 	
 	
 	
@@ -2416,7 +2416,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;group&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419220438887.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419220438887.png&#34;
 	
 	
 	
@@ -2437,7 +2437,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;idx_user_pro_age_sta&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;profession&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419220749171.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419220749171.png&#34;
 	
 	
 	
@@ -2464,7 +2464,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;explain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;group&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419224023432.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419224023432.png&#34;
 	
 	
 	
@@ -2496,7 +2496,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_sku&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;limit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1000000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419231631719.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419231631719.png&#34;
 	
 	
 	
@@ -2526,7 +2526,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_sku&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;9000000&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;order&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;limit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260419234025241.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260419234025241.png&#34;
 	
 	
 	
@@ -2624,7 +2624,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;li&gt;最后，又备份了tb_orderlog表。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;此时备份出来的数据，是存在问题的。因为备份出来的数据，tb_stock表与tb_order表的数据不一致（有最新操作的订单信息，但是库存数没减）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420135729612.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420135729612.png&#34;
 	
 	
 	
@@ -2635,7 +2635,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;加了全局锁后：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420140155425.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420140155425.png&#34;
 	
 	
 	
@@ -2669,7 +2669,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;mysqldump&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;uroot&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p1234&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;itcast&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;itcast&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;sql&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420143944748.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420143944748.png&#34;
 	
 	
 	
@@ -2679,7 +2679,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420144222777.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420144222777.png&#34;
 	
 	
 	
@@ -2741,7 +2741,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;特点：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;1）读锁：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420145313701.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420145313701.png&#34;
 	
 	
 	
@@ -2753,7 +2753,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;左侧为客户端一，对指定表加了读锁，不会影响其他客户端的读，但是会阻塞所有（包括自己）客户端的写。&lt;/p&gt;
 &lt;p&gt;2）写锁&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420145422054.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420145422054.png&#34;
 	
 	
 	
@@ -2818,7 +2818,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;li&gt;假如没有意向锁，客户端一对表加了行锁后，客户端二如何给表加表锁呢，来通过示意图简单分析一下：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;首先客户端一，开启一个事务，然后执行DML操作，在执行DML语句时，会对涉及到的行加行锁。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420150911337.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420150911337.png&#34;
 	
 	
 	
@@ -2829,7 +2829,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;当客户端二，想对这张表加表锁时，会检查当前表是否有对应的行锁，如果没有，则添加表锁，此时就会从第一行数据，检查到最后一行数据，效率较低。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420150938546.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420150938546.png&#34;
 	
 	
 	
@@ -2843,7 +2843,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;li&gt;有了意向锁之后:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;客户端一，在执行DML操作时，会对涉及的行加行锁，同时也会对该表加上意向锁。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420151011067.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420151011067.png&#34;
 	
 	
 	
@@ -2854,7 +2854,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;而其他客户端，在对这张表加表锁的时候，会根据该表上所加的意向锁来判定是否可以成功加表锁，而不用逐行判断行锁情况了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420151130942.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420151130942.png&#34;
 	
 	
 	
@@ -2879,7 +2879,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;object_schema&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;object_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;index_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lock_type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lock_mode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lock_data&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;performance_schema&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data_locks&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420182806581.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420182806581.png&#34;
 	
 	
 	
@@ -2896,7 +2896,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;行锁（Record Lock）：锁定单个行记录的锁，防止其他事务对此行进行update和delete。在RC（Read Committed，读已提交）、RR（Repeatable Read，可重复读）隔离级别下都支持。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420183539493.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420183539493.png&#34;
 	
 	
 	
@@ -2909,7 +2909,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;间隙锁（Gap Lock）：锁定索引记录间隙（不含该记录），确保索引记录间隙不变，防止其他事务在这个间隙进行insert，产生幻读（前后两次执行相同的范围查询，却发现结果集的行数不一致）。在RR隔离级别下都支持。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420183551259.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420183551259.png&#34;
 	
 	
 	
@@ -2922,7 +2922,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;临键锁（Next-Key Lock）：行锁和间隙锁组合，同时锁住数据，并锁住数据前面的间隙Gap。在RR隔离级别下支持。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420183559231.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420183559231.png&#34;
 	
 	
 	
@@ -3012,7 +3012,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;索引上的等值查询（唯一索引），给不存在的记录加锁时，优化为间隙锁。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420221452420.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420221452420.png&#34;
 	
 	
 	
@@ -3027,7 +3027,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;li&gt;索引上的等值查询（非唯一普通索引），向右遍历时最后一个值不满足查询需求时，next-key lock 退化为间隙锁。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;InnoDB的B+树索引中，叶子节点是有序的双向链表。 假如，要根据这个二级索引查询值为18的数据，并加上共享锁，&lt;em&gt;是只锁定18这一行就可以了吗？&lt;/em&gt; 并不是，因为是非唯一索引，这个结构中可能有多个18的存在，所以，在加锁时会继续往后找，找到一个不满足条件的值（当前案例中也就是29）。此时会对18加临键锁，并对29之前的间隙加锁。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420223500160.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420223500160.png&#34;
 	
 	
 	
@@ -3041,7 +3041,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;li&gt;索引上的范围查询（唯一索引）会访问到不满足条件的第一个值为止。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;查询的条件为id&amp;gt;=19，并添加共享锁。 此时我们可以根据数据库表中现有的数据，将数据分为三个部分：[19]、(19,25]、(25,+∞]，所以数据库数据在加锁是，就是将19加了行锁，25的临键锁（包含25及25之前的间隙），正无穷的临键锁(正无穷及之前的间隙)。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420224354702.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420224354702.png&#34;
 	
 	
 	
@@ -3057,7 +3057,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;h2 id=&#34;innodb引擎&#34;&gt;InnoDB引擎
 &lt;/h2&gt;&lt;h3 id=&#34;逻辑存储结构&#34;&gt;逻辑存储结构
 &lt;/h3&gt;&lt;p&gt;InnoDB的逻辑存储结构如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420224613162.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420224613162.png&#34;
 	
 	
 	
@@ -3084,7 +3084,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;h3 id=&#34;架构&#34;&gt;架构
 &lt;/h3&gt;&lt;h4 id=&#34;概述-3&#34;&gt;概述
 &lt;/h4&gt;&lt;p&gt;MySQL5.5版本开始，默认使用InnoDB存储引擎，它擅长事务处理，具有崩溃恢复特性，在日常开发中使用非常广泛。下面是InnoDB架构图，左侧为内存结构，右侧为磁盘结构。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420230044518.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420230044518.png&#34;
 	
 	
 	
@@ -3095,7 +3095,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;内存结构&#34;&gt;内存结构
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420230148829.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420230148829.png&#34;
 	
 	
 	
@@ -3118,7 +3118,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;在专用服务器上，通常将多达80%的物理内存分配给缓冲池。&lt;/p&gt;
 &lt;p&gt;参数查看： &lt;code&gt;show variables like &#39;innodb_buffer_pool_size&#39;;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420230516435.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420230516435.png&#34;
 	
 	
 	
@@ -3137,7 +3137,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;InnoDB存储引擎会监控对表上各索引页的查询，如果观察到在特定的条件下hash索引可以提升速度，则建立hash索引，称之为自适应hash索引。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;自适应哈希索引，无需人工干预，是系统根据情况自动完成。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;参数： &lt;code&gt;innodb_adaptive_hash_index&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420231444619.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420231444619.png&#34;
 	
 	
 	
@@ -3155,7 +3155,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;1：日志在每次事务提交时写入并刷新到磁盘，默认值。&lt;/p&gt;
 &lt;p&gt;0：每秒将日志写入并刷新到磁盘一次。&lt;/p&gt;
 &lt;p&gt;2：日志在每次事务提交后写入，并每秒刷新到磁盘一次。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420231849100.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420231849100.png&#34;
 	
 	
 	
@@ -3167,7 +3167,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;磁盘结构&#34;&gt;磁盘结构
 &lt;/h4&gt;&lt;p&gt;接下来，再来看看InnoDB体系结构的右边部分，也就是磁盘结构：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420232037802.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420232037802.png&#34;
 	
 	
 	
@@ -3180,7 +3180,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1）System Tablespace&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;系统表空间是更改缓冲区的存储区域。如果表是在系统表空间而不是每个表文件或通用表空间中创建的，它也可能包含表和索引数据。(在MySQL5.x版本中还包含InnoDB数据字典、undolog等)&lt;/p&gt;
 &lt;p&gt;参数：&lt;code&gt;innodb_data_file_path&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420232933065.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420232933065.png&#34;
 	
 	
 	
@@ -3194,7 +3194,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2）File-Per-Table Tablespaces&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;如果开启了innodb_file_per_table开关 ，则每个表的文件表空间包含单个InnoDB表的数据和索引，并存储在文件系统上的单个数据文件中。&lt;/p&gt;
 &lt;p&gt;开关参数：innodb_file_per_table ，该参数默认开启。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420233021241.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420233021241.png&#34;
 	
 	
 	
@@ -3205,7 +3205,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;也就是说，每创建一个表，都会产生一个表空间文件，如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420233047239.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420233047239.png&#34;
 	
 	
 	
@@ -3231,7 +3231,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;CREATE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;TABLE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;xxx&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;TABLESPACE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ts_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420233143590.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420233143590.png&#34;
 	
 	
 	
@@ -3241,7 +3241,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420233156028.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420233156028.png&#34;
 	
 	
 	
@@ -3257,7 +3257,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;InnoDB 使用会话临时表空间和全局临时表空间。存储用户创建的临时表等数据。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;6）Doublewrite Buffer Files&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;双写缓冲区，innoDB引擎将数据页从Buffer Pool刷新到磁盘前，先将数据页写入双写缓冲区文件中，便于系统异常时恢复数据。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420233302662.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420233302662.png&#34;
 	
 	
 	
@@ -3270,7 +3270,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;7）Redo Log&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;重做日志，是用来实现事务的持久性。该日志文件由两部分组成：重做日志缓冲（redo log buffer）以及重做日志文件（redo log），前者是在内存中，后者在磁盘中。当事务提交之后会把所有修改信息都会存到该日志中, 用于在刷新脏页到磁盘发生错误时, 进行数据恢复使用。&lt;/p&gt;
 &lt;p&gt;以循环方式写入重做日志文件，涉及两个文件：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420233341088.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420233341088.png&#34;
 	
 	
 	
@@ -3282,7 +3282,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;那么内存中更新的数据，又是如何到磁盘中的呢？&lt;/em&gt; 此时，就涉及到一组后台线程，接下来，就来介绍一些InnoDB中涉及到的后台线程。&lt;/p&gt;
 &lt;h4 id=&#34;后台线程&#34;&gt;后台线程
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420233553443.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420233553443.png&#34;
 	
 	
 	
@@ -3337,7 +3337,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;engine&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;innodb&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;G&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260420234010782.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260420234010782.png&#34;
 	
 	
 	
@@ -3363,7 +3363,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;li&gt;持久性 (Durability)：事务一旦提交或回滚，它对数据库中的数据的改变就是永久的。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;对于这四大特性，实际上分为两个部分。其中的原子性、一致性、持久化，实际上是由InnoDB中的两份日志来保证的，一份是redo log日志，一份是undo log日志。 而持久性是通过数据库的锁，加上MVCC来保证的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421105237762.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421105237762.png&#34;
 	
 	
 	
@@ -3378,7 +3378,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;该日志文件由两部分组成：重做日志缓冲（redo log buffer）以及重做日志文件（redo log file），前者是在内存中，后者在磁盘中。当事务提交之后会把所有修改信息都存到该日志文件中，用于在刷新脏页到磁盘，发生错误时，进行数据恢复使用。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;如果没有redo log，可能会存在什么问题的？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;在InnoDB引擎中的内存结构中，主要的内存区域就是缓冲池，在缓冲池中缓存了很多的数据页。当我们在一个事务中，执行多个增删改的操作时，InnoDB引擎会先操作缓冲池中的数据，如果缓冲区没有对应的数据，会通过后台线程将磁盘中的数据加载出来，存放在缓冲区中，然后将缓冲池中的数据修改，修改后的数据页称为脏页。而脏页则会在一定的时机，通过后台线程刷新到磁盘中，从而保证缓冲区与磁盘的数据一致。而缓冲区的脏页数据并不是实时刷新的，而是一段时间之后将缓冲区的数据刷新到磁盘中，假如刷新到磁盘的过程出错了，而提示给用户事务提交成功，而数据却没有持久化下来，这就出现问题了，没有保证事务的持久性。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421123412175.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421123412175.png&#34;
 	
 	
 	
@@ -3391,7 +3391,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;那么，如何解决上述的问题呢？&lt;/em&gt; 在InnoDB中提供了一份日志 redo log，通过redo log解决这个问题。&lt;/p&gt;
 &lt;p&gt;有了redo log之后，当对缓冲区的数据进行增删改之后，会首先将操作的数据页的变化，记录在redo log buffer中。在事务提交时，会将redo log buffer中的数据刷新到redo log磁盘文件中。&lt;/p&gt;
 &lt;p&gt;过一段时间之后，如果刷新缓冲区的脏页到磁盘时，发生错误，此时就可以借助于redo log进行数据恢复，这样就保证了事务的持久性。而如果脏页成功刷新到磁盘或或者涉及到的数据已经落盘，此时redo log就没有作用了，就可以删除了，所以存在的两个redolog文件是循环写的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421123525737.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421123525737.png&#34;
 	
 	
 	
@@ -3412,7 +3412,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/h3&gt;&lt;h4 id=&#34;基本概念&#34;&gt;基本概念
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;1）当前读&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;当前读读取的是记录的最新版本，读取时还要保证其他并发事务不能修改当前记录，会对读取的记录进行加锁。我们日常的操作，如：select &amp;hellip; lock in share mode(共享锁)，select &amp;hellip; for update、update、insert、delete(排他锁)都是一种当前读。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421175806537.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421175806537.png&#34;
 	
 	
 	
@@ -3590,7 +3590,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/table&gt;
 &lt;p&gt;首先执行事务2：&lt;/p&gt;
 &lt;p&gt;当事务2执行第一条修改语句时，会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针，回滚指针用来指定如果发生回滚，回滚到哪一个版本。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421183157062.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421183157062.png&#34;
 	
 	
 	
@@ -3602,7 +3602,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;然后执行事务3：&lt;/p&gt;
 &lt;p&gt;当事务3执行第一条修改语句时，也会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针，回滚指针用来指定如果发生回滚，回滚到哪一个版本。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421191710244.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421191710244.png&#34;
 	
 	
 	
@@ -3686,7 +3686,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;RC隔离级别下，在事务中每一次执行快照读时生成ReadView。&lt;/p&gt;
 &lt;p&gt;接下来就分析，在RC隔离级别下，前面案例中的事务5是如何获取两次快照读的数据：&lt;/p&gt;
 &lt;p&gt;在事务5中，查询了两次id为30的记录，由于隔离级别为Read Committed，所以每一次进行快照读都会生成一个ReadView，那么两次生成的ReadView如下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421194656708.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421194656708.png&#34;
 	
 	
 	
@@ -3698,7 +3698,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;那么这两次快照读在获取数据时，就需要根据所生成的ReadView以及ReadView的版本链访问规则，到undo log版本链中匹配数据，最终决定此次快照读返回的数据。&lt;/p&gt;
 &lt;p&gt;先来看第一次快照读具体的读取过程：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421195503102.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421195503102.png&#34;
 	
 	
 	
@@ -3715,7 +3715,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;li&gt;匹配第三条，也就是DB_TRX_ID=2这条，这里记录对应的trx_id为2，将其代入右边的匹配规则中，发现②匹配上了，则此次快照读的就是DB_TRX_ID=2这个版本的数据&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;再来看第二次快照读具体的读取过程：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421200025566.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421200025566.png&#34;
 	
 	
 	
@@ -3732,7 +3732,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;2）RR（REPEATABLE READ）隔离级别&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;RR隔离级别下，仅在事务中第一次执行快照读时生成ReadView，后续复用该ReadView。RR是可重复读，在一个事务中，执行两次相同的select语句，查询到的结果是一样的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421200302646.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421200302646.png&#34;
 	
 	
 	
@@ -3744,7 +3744,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;在RR隔离级别下，后续都是复用第一次快照读时的ReadView，那么既然ReadView都一样，ReadView的版本链匹配规则也一样，那么最终快照读返回的结果也是一样的。&lt;/p&gt;
 &lt;p&gt;所以，MVCC的实现原理就是通过InnoDB表的隐藏字段、Undo Log 版本链、ReadView来实现的。MVCC + 锁，则实现了事务的隔离性。而一致性则是由redo log 与undo log保证。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421200822476.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421200822476.png&#34;
 	
 	
 	
@@ -3819,7 +3819,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;uroot&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p123456&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;db_demo&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;select * from stu&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260421232134149.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260421232134149.png&#34;
 	
 	
 	
@@ -3979,10 +3979,10 @@ xxx.MYI：存储索引&lt;/p&gt;
         </item>
         <item>
         <title>《高性能MySQL》读书笔记 第三章 PerformanceSchema</title>
-        <link>https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%89%E7%AB%A0-performanceschema/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%89%E7%AB%A0-performanceschema/</link>
         <pubDate>Tue, 07 Apr 2026 20:06:24 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%89%E7%AB%A0-performanceschema/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%89%E7%AB%A0-performanceschema/</guid>
         <description>&lt;h2 id=&#34;引言&#34;&gt;引言
 &lt;/h2&gt;&lt;p&gt;在高负载下调优数据库性能是一个迭代循环的过程。每次进行更改以调优数据库的性能时，都需要了解更改是否有什么影响。*查询速度比以前快吗？锁是否会减慢应用程序的速度，或者是否已经完全消失了？内存使用情况改变了吗？等待磁盘的时间改变了吗？*一旦理解了如何回答这些问题，你将能够更快地评估和应对日常情况。&lt;/p&gt;
 &lt;p&gt;Performance Schema 是一个存储回答上述问题所需数据的数据库。本章将帮助你了解 Performance Schema 的工作原理、局限性，以及如何更好地使用它和 sys Schema 来搞清楚 MySQL 内部的运行细节。&lt;/p&gt;
@@ -4283,10 +4283,10 @@ xxx.MYI：存储索引&lt;/p&gt;
         </item>
         <item>
         <title>《高性能MySQL》读书笔记 第二章 可靠性工程世界中的监控</title>
-        <link>https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E7%9B%91%E6%8E%A7/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E7%9B%91%E6%8E%A7/</link>
         <pubDate>Wed, 01 Apr 2026 15:53:59 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E7%9B%91%E6%8E%A7/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E7%9B%91%E6%8E%A7/</guid>
         <description>&lt;h2 id=&#34;定义服务水平目标&#34;&gt;定义服务水平目标
 &lt;/h2&gt;&lt;p&gt;在衡量数据库性能之前，得先知道目标是什么，可以用以下问题来引出目标：&lt;/p&gt;
 &lt;ul&gt;
@@ -4425,10 +4425,10 @@ xxx.MYI：存储索引&lt;/p&gt;
         </item>
         <item>
         <title>《高性能MySQL》读书笔记 第一章 MySQL架构</title>
-        <link>https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%80%E7%AB%A0-mysql%E6%9E%B6%E6%9E%84/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%80%E7%AB%A0-mysql%E6%9E%B6%E6%9E%84/</link>
         <pubDate>Mon, 30 Mar 2026 23:44:37 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%80%E7%AB%A0-mysql%E6%9E%B6%E6%9E%84/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%AB%98%E6%80%A7%E8%83%BDmysql%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%80%E7%AB%A0-mysql%E6%9E%B6%E6%9E%84/</guid>
         <description>&lt;h2 id=&#34;并发控制&#34;&gt;并发控制
 &lt;/h2&gt;&lt;h3 id=&#34;读写锁&#34;&gt;读写锁
 &lt;/h3&gt;&lt;p&gt;处理并发读/写访问的系统通常实现一个由两种锁类型组成的锁系统。这两种锁通常被称为&lt;strong&gt;共享锁&lt;/strong&gt;（shared lock）和&lt;strong&gt;排他锁&lt;/strong&gt;（exclusive lock），也叫&lt;strong&gt;读锁&lt;/strong&gt;（read lock）和&lt;strong&gt;写锁&lt;/strong&gt;（write lock）。&lt;/p&gt;
@@ -4588,7 +4588,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;p&gt;行级锁是在存储引擎而不是服务器中实现的。服务器&lt;sup id=&#34;服务器&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;#%e6%9c%8d%e5%8a%a1%e5%99%a8%e8%af%b4%e6%98%8e&#34; &gt;【1】&lt;/a&gt;&lt;/sup&gt;通常不清楚存储引擎中锁的实现方式。因为每种存储引擎都以自己的方式来实现锁。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;span id=&#34;服务器说明&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;#%e6%9c%8d%e5%8a%a1%e5%99%a8&#34; &gt;【1】&lt;/a&gt;&lt;/span&gt;：服务器指的是MySQL Server（MySQL 服务层）。MySQL整体分成两层，分别是MySQL Server 层（服务层）和存储引擎层（InnoDB、MyISAM 等）。下图是MySQL服务器架构的逻辑视图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260330200901726.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260330200901726.png&#34;
 	
 	
 	
@@ -4861,7 +4861,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/h2&gt;&lt;p&gt;MySQL的大多数事务型存储引擎使用的都不是简单的行级锁机制，会结合多版本并发控制（MVCC）技术使用。不就是MySQL，包括Oracle、PostgreSQL以及其他一些数据库系统也都是用了MVCC，但各种的实现方式都不太一样，因为MVCC如何工作并没有统一的标准。&lt;/p&gt;
 &lt;p&gt;MVCC的工作原理是使用数据在某个时间点的快照来实现的。这意味着，无论事务运行多长时间，都可以看到数据的一致视图，也意味着不同的事务可以在同一时间看到同一张表中的不同数据。&lt;/p&gt;
 &lt;p&gt;下方的序列图解释了InnoDB的行为，以此来展示MVCC的一种实现方式：
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260331233138105.png&#34;
+&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260331233138105.png&#34;
 	
 	
 	
@@ -4883,7 +4883,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;h2 id=&#34;复制&#34;&gt;复制
 &lt;/h2&gt;&lt;p&gt;MySQL被设计用于在任何给定时间只在一个节点上接受写操作。这在管理一致性方面具有优势，但在需要将数据写入多台服务器或多个地区时，会导致需要做出取舍。MySQL提供了一种原生方式来将一个节点执行的写操作分发到其他节点，这被称为复制。在MySQL中，源节点为每个副本节点提供一个线程，该线程作为复制客户端登录，当写入发生时会被唤醒，发送新数据。&lt;/p&gt;
 &lt;p&gt;下图为简单的MySQL服务器拓扑树：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260331233119680.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260331233119680.png&#34;
 	
 	
 	
@@ -4909,10 +4909,10 @@ xxx.MYI：存储索引&lt;/p&gt;
         </item>
         <item>
         <title>MySQL中的case和if函数简介</title>
-        <link>https://IAmYuanyu.github.io/p/mysql%E4%B8%AD%E7%9A%84case%E5%92%8Cif%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/mysql%E4%B8%AD%E7%9A%84case%E5%92%8Cif%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B/</link>
         <pubDate>Sat, 13 Sep 2025 15:13:57 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/mysql%E4%B8%AD%E7%9A%84case%E5%92%8Cif%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/mysql%E4%B8%AD%E7%9A%84case%E5%92%8Cif%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B/</guid>
         <description>&lt;h2 id=&#34;mysql中的case和if函数简介&#34;&gt;MySQL中的case和if函数简介
 &lt;/h2&gt;&lt;h3 id=&#34;case&#34;&gt;case
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -5010,10 +5010,10 @@ xxx.MYI：存储索引&lt;/p&gt;
         </item>
         <item>
         <title>MySQL外连接简介</title>
-        <link>https://IAmYuanyu.github.io/p/mysql%E5%A4%96%E8%BF%9E%E6%8E%A5%E7%AE%80%E4%BB%8B/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/mysql%E5%A4%96%E8%BF%9E%E6%8E%A5%E7%AE%80%E4%BB%8B/</link>
         <pubDate>Wed, 03 Sep 2025 22:36:54 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/mysql%E5%A4%96%E8%BF%9E%E6%8E%A5%E7%AE%80%E4%BB%8B/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/mysql%E5%A4%96%E8%BF%9E%E6%8E%A5%E7%AE%80%E4%BB%8B/</guid>
         <description>&lt;h2 id=&#34;数据库外连接&#34;&gt;数据库外连接
 &lt;/h2&gt;&lt;p&gt;外连接分为左外连接和右外连接。具体语法为：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -5041,7 +5041,7 @@ xxx.MYI：存储索引&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;左外连接就是以左表基础，查询左表和左表与右表相交的部分。右外连接同理。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250903191209677.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250903191209677.png&#34;
 	
 	
 	

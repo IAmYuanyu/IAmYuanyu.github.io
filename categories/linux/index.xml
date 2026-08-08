@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Linux on 缘鱼的笔记</title>
-        <link>https://IAmYuanyu.github.io/categories/linux/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/linux/</link>
         <description>Recent content in Linux on 缘鱼的笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Mon, 08 Jun 2026 23:06:14 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 08 Jun 2026 23:06:14 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Redis原理篇-网络模型</title>
-        <link>https://IAmYuanyu.github.io/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</link>
         <pubDate>Mon, 08 Jun 2026 23:06:14 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/redis%E5%8E%9F%E7%90%86%E7%AF%87-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文基于黑马2022的Redis课程原理篇编写，课程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1cr4y1671t?spm_id_from=333.788.player.switch&amp;amp;vd_source=5d30cbe8a5e5c1e21aa0b0a536d3829a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;黑马程序员Redis入门到实战教程，深度透析redis底层原理+redis分布式锁+企业解决方案+黑马点评实战项目&lt;/a&gt;&lt;/p&gt;
@@ -23,7 +23,7 @@
 &lt;p&gt;Ubuntu 和 CentOS 都是 Linux 的发行版，发行版可以看成对 Linux 包了一层壳，任何 Linux 发行版，其系统内核都是 Linux。我们的应用都需要通过 Linux 内核与硬件交互。&lt;/p&gt;
 &lt;p&gt;用户应用（如 MySQL、Redis）无法直接访问硬件设备（CPU、内存、网卡等），必须通过内核来操作硬件。内核包含设备驱动、内存管理、进程管理、文件系统、网络管理等模块，并封装成系统调用接口供用户应用使用。&lt;/p&gt;
 &lt;p&gt;计算机硬件包括 CPU、内存、网卡等，内核（通过寻址空间）可以操作硬件，但是内核需要不同设备的驱动，有了这些驱动之后，内核就可以对计算机硬件进行内存管理、文件系统管理、进程管理等。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606211206856.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606211206856.png&#34;
 	
 	
 	
@@ -40,7 +40,7 @@
 &lt;p&gt;&lt;em&gt;什么是寻址空间呢？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;应用程序也好，内核也好，都无法直接访问物理内存，而是通过虚拟地址来使用内存，由内核负责将虚拟地址映射到物理内存上。&lt;/p&gt;
 &lt;p&gt;内核和应用程序访问虚拟内存时，就需要一个虚拟地址，这个地址是一个无符号的整数。比如一个32位的操作系统，其地址总线宽度为32位，虚拟地址空间大小就是2的32次方，也就是说它的寻址范围是0到2³²−1，这片寻址空间对应的就是2的32次方个字节，也就是4 GB。这个4 GB，通常会有3 GB分给用户空间，1 GB分给内核空间。这样在内存层面上将用户应用和内核隔离开，从而杜绝冲突和崩溃。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606215909963.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606215909963.png&#34;
 	
 	
 	
@@ -83,7 +83,7 @@
 &lt;li&gt;从内核缓冲区拷贝数据到用户缓冲区。&lt;/li&gt;
 &lt;li&gt;切换回用户态，对数据进行处理。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260606221740255.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260606221740255.png&#34;
 	
 	
 	
@@ -123,7 +123,7 @@
 &lt;li&gt;&lt;strong&gt;数据拷贝阶段&lt;/strong&gt;：内核将数据从内核缓冲区复制到用户缓冲区。此阶段用户进程&lt;strong&gt;依然阻塞&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;系统调用返回成功结果，用户进程恢复运行并开始处理数据。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607012053755.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607012053755.png&#34;
 	
 	
 	
@@ -142,7 +142,7 @@
 &lt;li&gt;&lt;strong&gt;非阻塞IO&lt;/strong&gt;：在调用 &lt;code&gt;recvfrom&lt;/code&gt; 系统函数时，如果内核没有准备好数据，&lt;strong&gt;不会阻塞用户进程&lt;/strong&gt;，而是立即返回一个失败的信息（例如错误码 &lt;code&gt;EWOULDBLOCK&lt;/code&gt;）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;下图展示了非阻塞IO的完整流程，主要分为两个阶段：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607013933139.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607013933139.png&#34;
 	
 	
 	
@@ -191,7 +191,7 @@
 &lt;p&gt;FD是一个从0开始递增的无符号整数，用来关联Linux中的一个文件。在Linux中，“&lt;strong&gt;一切皆文件&lt;/strong&gt;”。这包括普通文件、视频、硬件设备等，当然也包括网络套接字（&lt;strong&gt;Socket&lt;/strong&gt;）。&lt;/p&gt;
 &lt;p&gt;当每个客户端与服务器建立连接时，都会产生一个对应的Socket，也就有了一个对应的FD。因此，IO多路复用监听多个FD，本质上就是同时监听多个网络连接。&lt;/p&gt;
 &lt;p&gt;IO多路复用的流程可以清晰地分为两个阶段，这两个阶段&lt;strong&gt;都是阻塞&lt;/strong&gt;的，但关键在于监听的粒度不同，从而避免了无效等待。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607142152766.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607142152766.png&#34;
 	
 	
 	
@@ -308,7 +308,7 @@
 &lt;li&gt;&lt;strong&gt;创建 fd_set&lt;/strong&gt;：在用户空间创建并初始化一个 &lt;code&gt;fd_set&lt;/code&gt; 结构体，例如 &lt;code&gt;rfds&lt;/code&gt;，用于存放要监听“可读事件”的 FD。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;设置比特位&lt;/strong&gt;：使用宏（如 &lt;code&gt;FD_SET(fd, &amp;amp;rfds)&lt;/code&gt;）将需要监听的 FD 对应的比特位设置为 1。例如，要监听 FD 1、2、5，则将 &lt;code&gt;rfds&lt;/code&gt; 中索引为 1、2、5 的比特位置为 1。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607150957347.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607150957347.png&#34;
 	
 	
 	
@@ -336,7 +336,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607151621152.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607151621152.png&#34;
 	
 	
 	
@@ -363,7 +363,7 @@
 &lt;p&gt;&lt;strong&gt;返回值&lt;/strong&gt;：&lt;code&gt;select&lt;/code&gt; 返回一个整数，表示就绪的 FD 总数（例如，有 2 个 FD 可读，就返回 2）。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607152022296.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607152022296.png&#34;
 	
 	
 	
@@ -379,7 +379,7 @@
 &lt;li&gt;&lt;strong&gt;识别并处理&lt;/strong&gt;：检查每个比特位是否为 1。如果是，则说明该比特位对应的 FD 已就绪，可以对其进行非阻塞的读/写操作。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;循环&lt;/strong&gt;：处理完一次 &lt;code&gt;select&lt;/code&gt; 的结果后，如果还需要继续监听，需要&lt;strong&gt;重新创建并设置&lt;/strong&gt; &lt;code&gt;fd_set&lt;/code&gt;（因为上一次调用已经改变了 &lt;code&gt;rfds&lt;/code&gt; 的内容），然后再次调用 &lt;code&gt;select&lt;/code&gt;，进入下一轮循环&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607152245569.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607152245569.png&#34;
 	
 	
 	
@@ -529,7 +529,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607200252983.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607200252983.png&#34;
 	
 	
 	
@@ -614,7 +614,7 @@
 &lt;li&gt;用户空间调用&lt;code&gt;epoll_wait&lt;/code&gt;，内核检查&lt;code&gt;rdllist&lt;/code&gt;，发现有元素6和8，于是将这两个FD的信息拷贝到用户传入的空数组&lt;code&gt;events&lt;/code&gt;中并返回数量：2。此后用户程序通常会循环再次调用 &lt;code&gt;epoll_wait&lt;/code&gt; 继续等待新事件。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;与select/poll的关键区别&lt;/strong&gt;：拷贝回用户空间的&lt;strong&gt;仅仅是就绪的FD&lt;/strong&gt;，而不是所有监听的FD。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607202152971.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607202152971.png&#34;
 	
 	
 	
@@ -824,7 +824,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260607233432225.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260607233432225.png&#34;
 	
 	
 	
@@ -847,7 +847,7 @@
 &lt;li&gt;&lt;strong&gt;主动发起读取&lt;/strong&gt;：在信号处理函数中，用户进程主动调用 &lt;code&gt;recvfrom&lt;/code&gt; 等函数去读取数据。&lt;strong&gt;此时是阻塞的&lt;/strong&gt;，需要等待数据从内核空间拷贝到用户空间完成。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;数据处理&lt;/strong&gt;：读取完成后，进行数据处理。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260608151302314.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260608151302314.png&#34;
 	
 	
 	
@@ -876,7 +876,7 @@
 &lt;li&gt;&lt;strong&gt;内核全程处理并通知&lt;/strong&gt;：内核接管了整个IO过程：等待数据就绪 -&amp;gt; 将数据从内核空间拷贝到用户空间指定的缓冲区，完成后通过指定的信号或回调函数通知用户进程“数据已准备就绪”。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;直接处理数据&lt;/strong&gt;：用户进程收到通知时，数据已经在用户空间的缓冲区中，可以直接处理，无需再发起读取操作。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260608153122536.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260608153122536.png&#34;
 	
 	
 	
@@ -1021,7 +1021,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260608203915234.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260608203915234.png&#34;
 	
 	
 	
@@ -1230,7 +1230,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260608212105279.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260608212105279.png&#34;
 	
 	
 	
@@ -1254,7 +1254,7 @@
 &lt;li&gt;&lt;strong&gt;命令解析&lt;/strong&gt;：在读取数据后，将其解析为Redis命令的过程，依然由主线程执行。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;命令执行&lt;/strong&gt;：纯粹的内存操作，速度极快，由主线程执行。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260608213709514.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260608213709514.png&#34;
 	
 	
 	
@@ -1278,10 +1278,10 @@
         </item>
         <item>
         <title>使用Frp和云服务器实现内网穿透</title>
-        <link>https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%92%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E4%BD%BF%E7%94%A8frp%E5%92%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
         <pubDate>Mon, 22 Dec 2025 13:32:50 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%92%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E4%BD%BF%E7%94%A8frp%E5%92%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
         <description>&lt;h1 id=&#34;使用frp和云服务器实现内网穿透&#34;&gt;使用Frp和云服务器实现内网穿透
 &lt;/h1&gt;&lt;h2 id=&#34;准备ssh客户端&#34;&gt;准备SSH客户端
 &lt;/h2&gt;&lt;p&gt;可以下载一个FinalShell&lt;/p&gt;
@@ -1290,7 +1290,7 @@
 &lt;h2 id=&#34;准备云服务器&#34;&gt;准备云服务器
 &lt;/h2&gt;&lt;p&gt;先去阿里云、腾讯云、火山引擎等各家云平台买个符合自己要求的云服务器，下面我将使用阿里云演示&lt;/p&gt;
 &lt;p&gt;云服务器选择ubuntu系统&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251221225536918.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251221225536918.png&#34;
 	
 	
 	
@@ -1302,7 +1302,7 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;连接服务器&#34;&gt;连接服务器
 &lt;/h2&gt;&lt;p&gt;打开FinalShell，连接服务器&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251221225845498.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251221225845498.png&#34;
 	
 	
 	
@@ -1323,7 +1323,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;到这里，输入一个y，然后按回车&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251221230748547.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251221230748547.png&#34;
 	
 	
 	
@@ -1334,7 +1334,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;安装好后如图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251221231401544.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251221231401544.png&#34;
 	
 	
 	
@@ -1345,7 +1345,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;现在直接访问给出的地址是访问不到的，需要先回到阿里云放行对应端口（也可以直接在服务器防火墙添加规则，不用一定和我一样）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251221231838847.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251221231838847.png&#34;
 	
 	
 	
@@ -1356,7 +1356,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;创建后点击操作里的&lt;code&gt;应用至实例&lt;/code&gt;，然后再访问就可以了，输入命令行中给出的用户名和密码&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251221232107543.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251221232107543.png&#34;
 	
 	
 	
@@ -1372,7 +1372,7 @@
     &gt;Releases · fatedier/frp&lt;/a&gt;](&lt;a class=&#34;link&#34; href=&#34;https://github.com/fatedier/frp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/fatedier/frp&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;我的电脑是Window系统，所以分别下载&lt;code&gt;frp_0.65.0_linux_amd64.tar.gz&lt;/code&gt;和&lt;code&gt;frp_0.65.0_windows_amd64.zip&lt;/code&gt;，分别用于服务器和本地电脑&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251221230457380.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251221230457380.png&#34;
 	
 	
 	
@@ -1416,7 +1416,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;然后在FinalShell中root目录下创建一个文件夹，可以取名为frp，然后将三个文件拖进去（应该是&lt;code&gt;start.sh&lt;/code&gt;，图中我写错了，别写成bat文件了）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251221234216241.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251221234216241.png&#34;
 	
 	
 	
@@ -1450,7 +1450,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;然后同样去阿里云放行7000和7500端口，还要去宝塔控制台里也放行这两个端口，然后访问在电脑浏览器中&lt;code&gt;服务器公网ip:7500&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251221234949463.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251221234949463.png&#34;
 	
 	
 	
@@ -1461,7 +1461,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;嫌麻烦也可以直接关掉宝塔的防火墙&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251221235548017.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251221235548017.png&#34;
 	
 	
 	
@@ -1473,7 +1473,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;这里的用户名和密码就是前面在&lt;code&gt;frps.toml&lt;/code&gt;文件中编写的&lt;/p&gt;
 &lt;p&gt;登录后页面如下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251221235640297.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251221235640297.png&#34;
 	
 	
 	
@@ -1521,7 +1521,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;双击执行&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251222121254147.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251222121254147.png&#34;
 	
 	
 	
@@ -1573,7 +1573,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;配置后重启脚本，打开frp的控制台，如图说明配置成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251222122808174.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251222122808174.png&#34;
 	
 	
 	
@@ -1585,7 +1585,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;测试：&lt;/p&gt;
 &lt;p&gt;本地运行我的博客：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251222122937853.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251222122937853.png&#34;
 	
 	
 	
@@ -1596,7 +1596,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;不使用localhost而是使用服务器公网ip尝试访问&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251222122847302.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251222122847302.png&#34;
 	
 	
 	
@@ -1667,7 +1667,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;screen -r 会话名或id
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251222124504815.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251222124504815.png&#34;
 	
 	
 	
@@ -1706,15 +1706,15 @@
         </item>
         <item>
         <title>DockerCompose简介</title>
-        <link>https://IAmYuanyu.github.io/p/dockercompose%E7%AE%80%E4%BB%8B/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/dockercompose%E7%AE%80%E4%BB%8B/</link>
         <pubDate>Fri, 03 Oct 2025 23:35:14 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/dockercompose%E7%AE%80%E4%BB%8B/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/dockercompose%E7%AE%80%E4%BB%8B/</guid>
         <description>&lt;h2 id=&#34;dockercompose简介&#34;&gt;DockerCompose简介
 &lt;/h2&gt;&lt;h3 id=&#34;简介&#34;&gt;简介
 &lt;/h3&gt;&lt;p&gt;Docker Compose通过一个单独的docker-compose.yml 模板文件（YAML 格式）来定义一组相关联的应用容器，实现多个相互关联的Docker容器的&lt;strong&gt;快速部署&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;手动与DockerCompose对比&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003230248658.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003230248658.png&#34;
 	
 	
 	
@@ -1896,10 +1896,10 @@
         </item>
         <item>
         <title>Docker基础</title>
-        <link>https://IAmYuanyu.github.io/p/docker%E5%9F%BA%E7%A1%80/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/docker%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Fri, 03 Oct 2025 22:42:27 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/docker%E5%9F%BA%E7%A1%80/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/docker%E5%9F%BA%E7%A1%80/</guid>
         <description>&lt;h2 id=&#34;docker基础&#34;&gt;Docker基础
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;本文基于Ubuntu系统演示&lt;/p&gt;
@@ -2054,7 +2054,7 @@
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002210203737.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002210203737.png&#34;
 	
 	
 	
@@ -2082,7 +2082,7 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;演示：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;1.找一个Nginx版本并拉取镜像：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002214815563.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002214815563.png&#34;
 	
 	
 	
@@ -2092,7 +2092,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002215208954.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002215208954.png&#34;
 	
 	
 	
@@ -2115,7 +2115,7 @@
 &lt;/div&gt;&lt;p&gt;可以试着在带代码前面加个&lt;code&gt;sudo&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;2.查看本地镜像列表：&lt;code&gt;docker images&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002220326318.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002220326318.png&#34;
 	
 	
 	
@@ -2130,7 +2130,7 @@
 &lt;p&gt;输入此命令后会把本地镜像打包到当前目录&lt;/p&gt;
 &lt;p&gt;4.将打包好的tar文件内容加载到本地镜像&lt;/p&gt;
 &lt;p&gt;为了演示此处先删除刚刚下载好的Nginx镜像&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002221658205.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002221658205.png&#34;
 	
 	
 	
@@ -2141,7 +2141,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;加载tar文件：&lt;code&gt;docker load -i nginx-stable-perl.tar&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002222056960.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002222056960.png&#34;
 	
 	
 	
@@ -2152,7 +2152,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;5.创建容器：&lt;code&gt;docker run -d --name nginx -p 80:80 nginx:stable-perl&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002222433261.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002222433261.png&#34;
 	
 	
 	
@@ -2163,7 +2163,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;6.查看容器：&lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002222641971.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002222641971.png&#34;
 	
 	
 	
@@ -2175,7 +2175,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;此时就可以直接在Windows的浏览器中输入Linux主机的ip地址访问到Nginx页面了（http默认端口号是80所以可以不用输入端口号）&lt;/p&gt;
 &lt;p&gt;7.停止容器：&lt;code&gt;docker stop nginx&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002223113339.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002223113339.png&#34;
 	
 	
 	
@@ -2186,7 +2186,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;8.再次启动Nginx容器：&lt;code&gt;docker start nginx&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002223307896.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002223307896.png&#34;
 	
 	
 	
@@ -2210,7 +2210,7 @@
 &lt;p&gt;两者结合实现了 “交互式终端” 的效果，缺一不可（否则无法正常输入命令）&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;bash&lt;/code&gt;：要在容器内执行的命令，即启动 Bash 解释器（Linux 系统中常用的命令行 shell）&lt;/p&gt;
 &lt;p&gt;如果是启动&lt;code&gt;sh&lt;/code&gt;终端就是：&lt;code&gt;docker exec -it nginx sh&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002224009764.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002224009764.png&#34;
 	
 	
 	
@@ -2221,7 +2221,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;10.退出容器回到宿主机：&lt;code&gt;exit&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002224108173.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002224108173.png&#34;
 	
 	
 	
@@ -2233,7 +2233,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;11.删除容器：&lt;code&gt;docker rm nginx&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;先stop容器然后删除，或是直接强制删除正在运行的容器：&lt;code&gt;docker rm -f nginx&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251002224335734.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251002224335734.png&#34;
 	
 	
 	
@@ -2253,7 +2253,7 @@
 &lt;p&gt;如果要让Nginx代理静态资源，最好是放到&lt;code&gt;html&lt;/code&gt;目录；如果要修改Nginx的配置，最好是找到&lt;code&gt;conf&lt;/code&gt;下的&lt;code&gt;nginx.conf&lt;/code&gt;文件&lt;/p&gt;
 &lt;p&gt;容器运行的Nginx所有的文件都在容器内部，但容器内部缺少很多工具，使得操作不便&lt;/p&gt;
 &lt;p&gt;所以利用数据卷将两个目录与宿主机目录关联，方便操作&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003184107986.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003184107986.png&#34;
 	
 	
 	
@@ -2328,7 +2328,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;容器内目录的位置可以查看Docker官网：https://hub.docker.com/&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003185659027.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003185659027.png&#34;
 	
 	
 	
@@ -2347,7 +2347,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker volume ls
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003190150595.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003190150595.png&#34;
 	
 	
 	
@@ -2371,7 +2371,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker volume inspect html
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003190357261.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003190357261.png&#34;
 	
 	
 	
@@ -2391,7 +2391,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ll /var/lib/docker/volumes/html/_data
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003190558390.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003190558390.png&#34;
 	
 	
 	
@@ -2414,7 +2414,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;6.在Windows的浏览器中输入Linux服务器的ip地址&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003191141021.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003191141021.png&#34;
 	
 	
 	
@@ -2467,7 +2467,7 @@
 &lt;p&gt;上述步骤中的每一次操作其实都是在生产一些文件（系统运行环境、函数库、配置最终都是磁盘文件），所以&lt;strong&gt;镜像就是一堆文件的集合&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;但需要注意的是，镜像文件不是随意堆放的，而是按照操作的步骤分层叠加而成，每一层形成的文件都会单独打包并标记一个唯一id，称为&lt;strong&gt;Layer&lt;/strong&gt;（&lt;strong&gt;层&lt;/strong&gt;），这样的好处是，如果在构建时用到的某些层其他人已经制作够，就可以直接拷贝使用这些层，而不用重复制作，也就是便于复用&lt;/p&gt;
 &lt;p&gt;例如，第一步中需要的Linux运行环境，通用性就很强，所以Docker官方就制作了这样的只包含Linux运行环境的镜像。在制作java镜像时，就无需重复制作，直接使用Docker官方提供的CentOS或Ubuntu镜像作为基础镜像。然后再搭建其它层即可，这样逐层搭建，最终整个Java项目的镜像结构如图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003202147681.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003202147681.png&#34;
 	
 	
 	
@@ -2595,7 +2595,7 @@
 &lt;/ul&gt;
 &lt;h5 id=&#34;演示&#34;&gt;演示
 &lt;/h5&gt;&lt;p&gt;准备好打包好的jar包、Dockerfile文件、需要的jdk后即可开始创建镜像&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003205653695.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003205653695.png&#34;
 	
 	
 	
@@ -2617,7 +2617,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker inspect mysql
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003214409337.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003214409337.png&#34;
 	
 	
 	
@@ -2657,7 +2657,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
 &lt;p&gt;安装成功后再次使用ping命令尝试连接，发现确实可以连接上&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003215923345.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003215923345.png&#34;
 	
 	
 	
@@ -2720,7 +2720,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker network create yuanyu
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003221050488.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003221050488.png&#34;
 	
 	
 	
@@ -2747,7 +2747,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker inspect mysql
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003221507194.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003221507194.png&#34;
 	
 	
 	
@@ -2784,7 +2784,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ping mysql
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251003222126890.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251003222126890.png&#34;
 	
 	
 	
@@ -2799,10 +2799,10 @@
         </item>
         <item>
         <title>配置Docker国内镜像</title>
-        <link>https://IAmYuanyu.github.io/p/%E9%85%8D%E7%BD%AEdocker%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%85%8D%E7%BD%AEdocker%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</link>
         <pubDate>Sun, 28 Sep 2025 22:03:01 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E9%85%8D%E7%BD%AEdocker%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%85%8D%E7%BD%AEdocker%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</guid>
         <description>&lt;h2 id=&#34;配置docker国内镜像&#34;&gt;配置Docker国内镜像
 &lt;/h2&gt;&lt;p&gt;镜像地址可能会变更，如果失效可以找最新的docker镜像地址&lt;/p&gt;
 &lt;p&gt;配置镜像步骤如下：&lt;/p&gt;
@@ -2862,10 +2862,10 @@
         </item>
         <item>
         <title>FinalShell无法登录root用户</title>
-        <link>https://IAmYuanyu.github.io/p/finalshell%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95root%E7%94%A8%E6%88%B7/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/finalshell%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95root%E7%94%A8%E6%88%B7/</link>
         <pubDate>Sun, 28 Sep 2025 21:01:56 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/finalshell%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95root%E7%94%A8%E6%88%B7/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/finalshell%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95root%E7%94%A8%E6%88%B7/</guid>
         <description>&lt;h2 id=&#34;finalshell无法登录root用户&#34;&gt;FinalShell无法登录root用户
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;本文基于Ubuntu系统演示&lt;/p&gt;
@@ -2907,10 +2907,10 @@
         </item>
         <item>
         <title>Linux安装Nginx</title>
-        <link>https://IAmYuanyu.github.io/p/linux%E5%AE%89%E8%A3%85nginx/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/linux%E5%AE%89%E8%A3%85nginx/</link>
         <pubDate>Sun, 28 Sep 2025 18:18:24 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/linux%E5%AE%89%E8%A3%85nginx/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/linux%E5%AE%89%E8%A3%85nginx/</guid>
         <description>&lt;h2 id=&#34;linux安装nginx&#34;&gt;Linux安装Nginx
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;本文基于Ubuntu系统演示&lt;/p&gt;
@@ -2980,7 +2980,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;此时就可以在Windows的浏览器中输入Linux的ip地址访问到Nginx页面了（可以在Linux中通过&lt;code&gt;ip addr show&lt;/code&gt;查询，具体细节不多赘述）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250928181511762.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250928181511762.png&#34;
 	
 	
 	
@@ -3017,10 +3017,10 @@
         </item>
         <item>
         <title>Linux安装MySQL</title>
-        <link>https://IAmYuanyu.github.io/p/linux%E5%AE%89%E8%A3%85mysql/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/linux%E5%AE%89%E8%A3%85mysql/</link>
         <pubDate>Sun, 28 Sep 2025 17:40:00 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/linux%E5%AE%89%E8%A3%85mysql/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/linux%E5%AE%89%E8%A3%85mysql/</guid>
         <description>&lt;h2 id=&#34;linux安装mysql&#34;&gt;Linux安装MySQL
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;本文基于Ubuntu系统演示&lt;/p&gt;
@@ -3153,7 +3153,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;可以通过&lt;code&gt;systemctl status mysql&lt;/code&gt;查看是否启动，如下图就是启动成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250928164224908.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250928164224908.png&#34;
 	
 	
 	
@@ -3197,7 +3197,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
 &lt;p&gt;如果正常连接上应该和下图差不多&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250928165738390.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250928165738390.png&#34;
 	
 	
 	
@@ -3217,7 +3217,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ALTER USER &lt;span class=&#34;s1&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt;@&lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt; IDENTIFIED WITH mysql_native_password BY &lt;span class=&#34;s1&#34;&gt;&amp;#39;123456&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250928170105308.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250928170105308.png&#34;
 	
 	
 	
@@ -3250,7 +3250,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;FLUSH PRIVILEGES&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250928170733591.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250928170733591.png&#34;
 	
 	
 	
@@ -3275,7 +3275,7 @@
 &lt;p&gt;&lt;strong&gt;-P&lt;/strong&gt;后面的3306是MySQL的端口号，默认是3306，不放心也可以在MySQL输入&lt;code&gt;show global variables like &#39;port&#39;;&lt;/code&gt;查询&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;输入命令后如果出现下图内容则说明连接成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250928172829986.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250928172829986.png&#34;
 	
 	
 	
@@ -3287,7 +3287,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;防火墙设置&#34;&gt;防火墙设置
 &lt;/h3&gt;&lt;p&gt;12.如果执行上面的命令后出现下方提示，则说明连接失败，因为Linux系统的防火墙，将访问拦截了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250928172624784.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250928172624784.png&#34;
 	
 	
 	
@@ -3384,10 +3384,10 @@
         </item>
         <item>
         <title>Linux安装JDK</title>
-        <link>https://IAmYuanyu.github.io/p/linux%E5%AE%89%E8%A3%85jdk/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/linux%E5%AE%89%E8%A3%85jdk/</link>
         <pubDate>Sat, 27 Sep 2025 23:48:31 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/linux%E5%AE%89%E8%A3%85jdk/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/linux%E5%AE%89%E8%A3%85jdk/</guid>
         <description>&lt;h2 id=&#34;linux安装jdk&#34;&gt;Linux安装JDK
 &lt;/h2&gt;&lt;p&gt;1.在Linux中下载JDK或用FinalShell之类的工具将jdk安装包传入Linux中&lt;/p&gt;
 &lt;p&gt;2.然后解压jdk到&lt;code&gt;/usr/local&lt;/code&gt;&lt;/p&gt;
@@ -3446,13 +3446,13 @@
         </item>
         <item>
         <title>Ubuntu基础学习笔记</title>
-        <link>https://IAmYuanyu.github.io/p/ubuntu%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/ubuntu%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Wed, 27 Mar 2024 14:54:42 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/ubuntu%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/ubuntu%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;系统网络配置&#34;&gt;系统网络配置
 &lt;/h2&gt;&lt;h3 id=&#34;手动设置网络地址&#34;&gt;手动设置网络地址
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121224944116.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121224944116.png&#34;
 	
 	
 	
@@ -3462,7 +3462,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121225105441.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121225105441.png&#34;
 	
 	
 	
@@ -3472,7 +3472,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121225257806.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121225257806.png&#34;
 	
 	
 	
@@ -3492,7 +3492,7 @@
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;systemctl start | stop | restart | status 服务名&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;其中，服务名不用一个个记，查看&lt;code&gt;/usr/lib/systemd/system&lt;/code&gt; 目录下的文件列表，该目录下每个文件都&lt;/p&gt;
 &lt;p&gt;对应一个服务&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121231538463.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121231538463.png&#34;
 	
 	
 	
@@ -3507,7 +3507,7 @@
 &lt;li&gt;查看网络服务的状态&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;在终端输入&lt;code&gt;sudo systemctl status NetworkManager&lt;/code&gt;后可查看网络管理服务&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121232047740.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121232047740.png&#34;
 	
 	
 	
@@ -3538,7 +3538,7 @@
 &lt;h4 id=&#34;关闭防火墙-1&#34;&gt;关闭防火墙
 &lt;/h4&gt;&lt;h5 id=&#34;临时关闭防火墙&#34;&gt;临时关闭防火墙
 &lt;/h5&gt;&lt;p&gt;查看防火墙状态：&lt;code&gt;sudo systemctl status ufw&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233325312.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121233325312.png&#34;
 	
 	
 	
@@ -3549,7 +3549,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;临时关闭防火墙：&lt;code&gt;sudo systemctl stop ufw&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233435053.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121233435053.png&#34;
 	
 	
 	
@@ -3562,7 +3562,7 @@
 &lt;h5 id=&#34;长期关闭防火墙&#34;&gt;长期关闭防火墙
 &lt;/h5&gt;&lt;p&gt;设置开机时启动防火墙：&lt;code&gt;sudo systemctl enable ufw&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;设置开机时关闭防火墙：&lt;code&gt;sudo systemctl disable ufw&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233526692.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121233526692.png&#34;
 	
 	
 	
@@ -3629,7 +3629,7 @@
 &lt;h3 id=&#34;修改主机名&#34;&gt;修改主机名
 &lt;/h3&gt;&lt;p&gt;在终端执行：&lt;code&gt;sudo hostnamectl --static set-hostname 新名字&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;执行完上述命令，重启后生效&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122212801697.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122212801697.png&#34;
 	
 	
 	
@@ -3641,7 +3641,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;通过主机名连接xshell&#34;&gt;通过主机名连接Xshell
 &lt;/h4&gt;&lt;p&gt;找到电脑位于&lt;code&gt;C:\Windows\System32\drivers\etc&lt;/code&gt;目录下的&lt;code&gt;hosts&lt;/code&gt;文件，在最下方输入地址和主机名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122214858368.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122214858368.png&#34;
 	
 	
 	
@@ -3652,7 +3652,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;修改完&lt;code&gt;hosts&lt;/code&gt;文件后就可以在Xshell的连接中将&lt;code&gt;主机&lt;/code&gt;中原本填写的地址改为自己的主机名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122215049729.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122215049729.png&#34;
 	
 	
 	
@@ -3664,7 +3664,7 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;apt软件包&#34;&gt;APT软件包
 &lt;/h2&gt;&lt;p&gt;在终端输入&lt;code&gt;apt&lt;/code&gt;即可查看apt常用命令&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122215858014.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122215858014.png&#34;
 	
 	
 	
@@ -3680,7 +3680,7 @@
 &lt;/h2&gt;&lt;h3 id=&#34;帮助命令&#34;&gt;帮助命令
 &lt;/h3&gt;&lt;h4 id=&#34;manual-packages&#34;&gt;Manual Packages
 &lt;/h4&gt;&lt;p&gt;查看手册页说明文档：在终端输入&lt;code&gt;man man&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122220927820.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122220927820.png&#34;
 	
 	
 	
@@ -3694,7 +3694,7 @@
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;查看ls命令的帮助信息：&lt;code&gt;man ls&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122222950334.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122222950334.png&#34;
 	
 	
 	
@@ -3708,7 +3708,7 @@
 &lt;/h4&gt;&lt;p&gt;shell 内建命令：shell 内建命令是 shell 的一部分，他们没有单独的可执行文件或手册页，这类命令的文档通过 help 命令访问。&lt;/p&gt;
 &lt;p&gt;基本语法：&lt;code&gt;help 命令&lt;/code&gt;                （功能描述：获得 shell 内建命令的帮助信息）&lt;/p&gt;
 &lt;p&gt;例如：查看cd命令的帮助信息&lt;code&gt;help cd&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122223245762.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122223245762.png&#34;
 	
 	
 	
@@ -3757,7 +3757,7 @@
 &lt;/h3&gt;&lt;h4 id=&#34;pwd-显示当前工作目录的绝对路径&#34;&gt;pwd 显示当前工作目录的绝对路径
 &lt;/h4&gt;&lt;p&gt;pwd即print working directory 打印工作目录&lt;/p&gt;
 &lt;p&gt;显示当前工作目录的绝对路径：&lt;code&gt;pwd&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122225309652.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122225309652.png&#34;
 	
 	
 	
@@ -3790,7 +3790,7 @@
 &lt;/table&gt;
 &lt;p&gt;显示说明：&lt;/p&gt;
 &lt;p&gt;每行列出的信息依次是：&lt;em&gt;文件类型与权限&lt;/em&gt;  &lt;em&gt;链接数&lt;/em&gt;  &lt;em&gt;文件属主&lt;/em&gt;  &lt;em&gt;文件属组&lt;/em&gt;  &lt;em&gt;文件大小&lt;/em&gt;(用byte来表示)  &lt;em&gt;建立或最近修改的时间&lt;/em&gt;  &lt;em&gt;名字&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122230435107.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122230435107.png&#34;
 	
 	
 	
@@ -3838,7 +3838,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;例如：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122230744431.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122230744431.png&#34;
 	
 	
 	
@@ -3864,7 +3864,7 @@
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122231323509.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122231323509.png&#34;
 	
 	
 	
@@ -3875,7 +3875,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;touch-创建一个文件&#34;&gt;touch 创建一个文件
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122231506459.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122231506459.png&#34;
 	
 	
 	
@@ -3902,7 +3902,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;强制覆盖不提示的方法：\cp&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122233113308.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122233113308.png&#34;
 	
 	
 	
@@ -3935,7 +3935,7 @@
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122233644256.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122233644256.png&#34;
 	
 	
 	
@@ -3949,7 +3949,7 @@
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
 &lt;p&gt;① &lt;code&gt;mv oldNameFile newNameFile&lt;/code&gt; （功能描述：重命名）&lt;/p&gt;
 &lt;p&gt;② &lt;code&gt;mv /temp/movefile /targetFolder&lt;/code&gt; （功能描述：移动文件）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122234207091.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122234207091.png&#34;
 	
 	
 	
@@ -4060,7 +4060,7 @@
 &lt;h5 id=&#34;tail-输出文件尾部内容&#34;&gt;tail 输出文件尾部内容
 &lt;/h5&gt;&lt;p&gt;tail 用于输出文件中尾部的内容，默认情况下 tail 指令显示文件的后 10 行内容&lt;/p&gt;
 &lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123195214454.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123195214454.png&#34;
 	
 	
 	
@@ -4175,7 +4175,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：（记得加双引号）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123201150157.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123201150157.png&#34;
 	
 	
 	
@@ -4187,7 +4187,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;-输出重定向和--追加&#34;&gt;&amp;gt; 输出重定向和 &amp;raquo; 追加
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123201421217.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123201421217.png&#34;
 	
 	
 	
@@ -4198,7 +4198,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/%e8%a6%86%e5%86%99%e6%bc%94%e7%a4%ba.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/%e8%a6%86%e5%86%99%e6%bc%94%e7%a4%ba.gif&#34;
 	
 	
 	
@@ -4216,7 +4216,7 @@
 &lt;p&gt;删除软链接： rm -rf 软链接名，而不是 rm -rf 软链接名/&lt;/p&gt;
 &lt;p&gt;查询：通过 ll 就可以查看，列表属性第 1 位是 l，尾部会有位置指向。&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123214916006.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123214916006.png&#34;
 	
 	
 	
@@ -4228,7 +4228,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;history-查看已执行的历史命令&#34;&gt;history 查看已执行的历史命令
 &lt;/h4&gt;&lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123215204087.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123215204087.png&#34;
 	
 	
 	
@@ -4397,7 +4397,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h4 id=&#34;模式间的转换图&#34;&gt;模式间的转换图
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123224026649.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123224026649.png&#34;
 	
 	
 	
@@ -4475,7 +4475,7 @@
 &lt;/table&gt;
 &lt;h4 id=&#34;date-显示当前时间&#34;&gt;date 显示当前时间
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123224530961.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123224530961.png&#34;
 	
 	
 	
@@ -4486,7 +4486,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123224756658.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123224756658.png&#34;
 	
 	
 	
@@ -4497,7 +4497,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例2：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225613008.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123225613008.png&#34;
 	
 	
 	
@@ -4509,7 +4509,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;date-显示非当前时间&#34;&gt;date 显示非当前时间
 &lt;/h4&gt;&lt;p&gt;基本语法：（很多写法，仅展示其一）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225848484.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123225848484.png&#34;
 	
 	
 	
@@ -4520,7 +4520,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225946821.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123225946821.png&#34;
 	
 	
 	
@@ -4539,7 +4539,7 @@
 &lt;p&gt;应用场景 1：企业开发，多人协同（也会有多人使用相同的一个低权限用户）。&lt;/p&gt;
 &lt;p&gt;应用场景 2：框架协同 gitlab mysql redis&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123231840565.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123231840565.png&#34;
 	
 	
 	
@@ -4561,7 +4561,7 @@
 &lt;p&gt;&lt;code&gt;su 用户名称&lt;/code&gt;	（功能描述：切换用户，只能获得用户的执行权限，不能获得环境变量）&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;su - 用户名称&lt;/code&gt;	（功能描述：切换到用户并获得该用户的环境变量及执行权限）&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123232638635.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123232638635.png&#34;
 	
 	
 	
@@ -4573,7 +4573,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;userdel-删除用户&#34;&gt;userdel 删除用户
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123232915179.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123232915179.png&#34;
 	
 	
 	
@@ -4599,7 +4599,7 @@
 &lt;/table&gt;
 &lt;h4 id=&#34;usermod-修改用户&#34;&gt;usermod 修改用户
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123233334523.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123233334523.png&#34;
 	
 	
 	
@@ -4628,7 +4628,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123233428178.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123233428178.png&#34;
 	
 	
 	
@@ -4652,7 +4652,7 @@
 &lt;/h4&gt;&lt;p&gt;​	在 Linux 和 Unix 系统中，每个用户都有一个主组（primary group）和可能的多个附加组（secondary groups 或 additional groups）&lt;/p&gt;
 &lt;p&gt;​	用户的主组在用户创建时被指定，默认与用户名称相同，当用户创建一个新文件或目录时，默认情况下，这些文件或目录会被分配给用户的主组&lt;/p&gt;
 &lt;p&gt;基本语法：&lt;code&gt;usermod -g 组名 用户名&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123234554600.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123234554600.png&#34;
 	
 	
 	
@@ -4667,7 +4667,7 @@
 &lt;p&gt;操作：&lt;code&gt;cat /etc/group&lt;/code&gt;&lt;/p&gt;
 &lt;h4 id=&#34;将用户添加到附加组&#34;&gt;将用户添加到附加组
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;usermod -aG 组名 用户名&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123235227862.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123235227862.png&#34;
 	
 	
 	
@@ -4677,7 +4677,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123235237223.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123235237223.png&#34;
 	
 	
 	
@@ -4695,7 +4695,7 @@
 &lt;h3 id=&#34;文件权限类&#34;&gt;文件权限类
 &lt;/h3&gt;&lt;h4 id=&#34;文件属性&#34;&gt;文件属性
 &lt;/h4&gt;&lt;p&gt;文件基本属性介绍：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124214443509.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124214443509.png&#34;
 	
 	
 	
@@ -4708,7 +4708,7 @@
 &lt;p&gt;如果查看到是文件：链接数指的是硬链接个数&lt;/p&gt;
 &lt;p&gt;如果查看的是文件夹：链接数指的是子文件夹个数&lt;/p&gt;
 &lt;p&gt;文件属性由从左到右的10 个字符表示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124213745962.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124213745962.png&#34;
 	
 	
 	
@@ -4737,7 +4737,7 @@
 &lt;p&gt;[ w ]代表可写（write）：可以修改，目录内创建+删除+重命名目录&lt;/p&gt;
 &lt;p&gt;[ x ]代表可执行（execute）：可以进入该目录&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124214329663.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124214329663.png&#34;
 	
 	
 	
@@ -4754,7 +4754,7 @@
 &lt;p&gt;u：所有者 	g：所有组 	o：其他人 	a：所有人（u、g、o 的总和）&lt;/p&gt;
 &lt;p&gt;而在第二种方式中，r=4， w=2， x=1 ，rwx=4+2+1=7&lt;/p&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124215907595.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124215907595.png&#34;
 	
 	
 	
@@ -4765,7 +4765,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例2：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124220144848.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124220144848.png&#34;
 	
 	
 	
@@ -4792,7 +4792,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124220940294.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124220940294.png&#34;
 	
 	
 	
@@ -4830,7 +4830,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124222700911.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124222700911.png&#34;
 	
 	
 	
@@ -4858,7 +4858,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124222838933.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124222838933.png&#34;
 	
 	
 	
@@ -4907,7 +4907,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124224635450.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124224635450.png&#34;
 	
 	
 	
@@ -4936,7 +4936,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124231543105.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124231543105.png&#34;
 	
 	
 	
@@ -4963,7 +4963,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124232032349.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124232032349.png&#34;
 	
 	
 	
@@ -5104,7 +5104,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124233123613.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124233123613.png&#34;
 	
 	
 	
@@ -5115,7 +5115,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例2：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124233450090.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124233450090.png&#34;
 	
 	
 	
@@ -5200,7 +5200,7 @@
 &lt;/table&gt;
 &lt;p&gt;查询结果字段解释：&lt;/p&gt;
 &lt;p&gt;（1）第一行信息为任务队列信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235050039.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124235050039.png&#34;
 	
 	
 	
@@ -5211,7 +5211,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;（2）第二行为进程信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235108517.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124235108517.png&#34;
 	
 	
 	
@@ -5222,7 +5222,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;（3）第三行为 CPU 信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235128006.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124235128006.png&#34;
 	
 	
 	
@@ -5233,7 +5233,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;（4）第四行为物理内存信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235148689.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124235148689.png&#34;
 	
 	
 	
@@ -5244,7 +5244,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;（5）第五行为交换分区（swap）信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235213524.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124235213524.png&#34;
 	
 	
 	
@@ -5307,7 +5307,7 @@
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000633597.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125000633597.png&#34;
 	
 	
 	
@@ -5318,7 +5318,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;输入&lt;code&gt;EDITOR=vim crontab -e&lt;/code&gt;后，打开如下文件，在最后写入命令即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125001312349.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125001312349.png&#34;
 	
 	
 	
@@ -5328,7 +5328,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000844146.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125000844146.png&#34;
 	
 	
 	
@@ -5338,7 +5338,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000905001.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125000905001.png&#34;
 	
 	
 	
@@ -5352,7 +5352,7 @@
 &lt;/h2&gt;&lt;h3 id=&#34;shell概述&#34;&gt;Shell概述
 &lt;/h3&gt;&lt;p&gt;Shell是一个命令行解释器，它接收应用程序/用户命令，然后调用操作系统内核&lt;/p&gt;
 &lt;p&gt;Shell还是一个功能相当强大的编程语言，易编写、易调试、灵活性强&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125155355526.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125155355526.png&#34;
 	
 	
 	
@@ -5368,7 +5368,7 @@
 &lt;h4 id=&#34;创建并执行一个脚本&#34;&gt;创建并执行一个脚本
 &lt;/h4&gt;&lt;p&gt;要创建并执行一个Shell脚本，需要先在终端输入&lt;code&gt;vim hello.sh&lt;/code&gt;创建并编辑一个Shell脚本&lt;/p&gt;
 &lt;p&gt;在hello.sh中输入如图内容（按&amp;rsquo;a&amp;rsquo;开始编辑，按&amp;rsquo;esc&amp;rsquo;退出编辑，输入&amp;rsquo;:wq&amp;rsquo;保存并退出，忘记了看笔记VIM编辑器部分）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125165424109.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125165424109.png&#34;
 	
 	
 	
@@ -5380,7 +5380,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;编辑成功后，有两种运行方式&lt;/p&gt;
 &lt;p&gt;方法一：不赋予脚本执行权限时，用&lt;code&gt;sh 脚本&lt;/code&gt;或&lt;code&gt;bash 脚本&lt;/code&gt;即可运行（效果一样）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125165859260.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125165859260.png&#34;
 	
 	
 	
@@ -5391,7 +5391,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;方法二：赋予脚本执行权限，可直接执行&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125170110499.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125170110499.png&#34;
 	
 	
 	
@@ -5407,7 +5407,7 @@
 &lt;p&gt;一般系统变量都是由全大写字母构成，所以自定义变量的时候尽量避免全部用大写字母&lt;/p&gt;
 &lt;p&gt;要获取变量的值可以用&lt;code&gt;$变量名&lt;/code&gt;，$和变量名之间不能有空格&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125170721845.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125170721845.png&#34;
 	
 	
 	
@@ -5428,7 +5428,7 @@
 &lt;p&gt;（3）在 bash 中，变量默认类型都是字符串类型，无法直接进行数值运算。&lt;/p&gt;
 &lt;p&gt;（4）变量的值如果有空格，需要使用双引号或单引号括起来。&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2025-01-25_17-18-56.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2025-01-25_17-18-56.png&#34;
 	
 	
 	
@@ -5438,7 +5438,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125172027486.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125172027486.png&#34;
 	
 	
 	
@@ -5453,7 +5453,7 @@
 &lt;/h5&gt;&lt;p&gt;基本语法：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;$n&lt;/code&gt; （功能描述：n 为数字，&lt;code&gt;$0&lt;/code&gt; 代表该脚本名称，&lt;code&gt;$1-$9&lt;/code&gt; 代表第一到第九个参数，十以上的参数需要用大括号包含，如${10}）&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125173400066.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125173400066.png&#34;
 	
 	
 	
@@ -5466,7 +5466,7 @@
 &lt;h5 id=&#34;heading&#34;&gt;$#
 &lt;/h5&gt;&lt;p&gt;&lt;code&gt;$#&lt;/code&gt; 	（功能描述：获取所有输入参数个数，常用于循环,判断参数的个数是否正确以及加强脚本的健壮性）&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125173915110.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125173915110.png&#34;
 	
 	
 	
@@ -5482,7 +5482,7 @@
 &lt;p&gt;&lt;code&gt;$@&lt;/code&gt; 	（功能描述：这个变量也代表命令行中所有的参数，不过$@把每个参数区分对待。）&lt;/p&gt;
 &lt;p&gt;（具体区别会在后续学习中了解）&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125181241350.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125181241350.png&#34;
 	
 	
 	
@@ -5496,7 +5496,7 @@
 &lt;/h5&gt;&lt;p&gt;基本语法：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;$？&lt;/code&gt;  （功能描述：最后一次执行的命令的返回状态。如果这个变量的值为 0，证明上一个命令正确执行；如果这个变量的值为非 0（具体是哪个数，由命令自己来决定，表示错误代码），则证明上一个命令执行不正确了）&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125181605791.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125181605791.png&#34;
 	
 	
 	
@@ -5510,7 +5510,7 @@
 &lt;/h3&gt;&lt;p&gt;基本语法：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;$((运算式))&lt;/code&gt;或&lt;code&gt;$[运算式]&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;示例：计算 （2 + 3）× 4 的值&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125182018286.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125182018286.png&#34;
 	
 	
 	
@@ -5525,7 +5525,7 @@
 &lt;p&gt;&lt;code&gt;test 条件&lt;/code&gt;或&lt;code&gt;[ 条件 ]&lt;/code&gt;	（注意条件前后有空格）&lt;/p&gt;
 &lt;p&gt;注意：条件非空即为 true，[ atguigu ]返回 true，[ ] 返回 false&lt;/p&gt;
 &lt;h4 id=&#34;常用判断条件&#34;&gt;常用判断条件
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184054189.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125184054189.png&#34;
 	
 	
 	
@@ -5536,7 +5536,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184255341.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125184255341.png&#34;
 	
 	
 	
@@ -5547,7 +5547,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例2：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184738999.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125184738999.png&#34;
 	
 	
 	
@@ -5558,7 +5558,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例3：多条件判断（&lt;strong&gt;&amp;amp;&amp;amp;&lt;/strong&gt; 表示前一条命令执行成功时，才执行后一条命令，&lt;strong&gt;||&lt;/strong&gt; 表示上一条命令执行失败后，才执行下一条命令）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125185251176.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125185251176.png&#34;
 	
 	
 	
@@ -5571,7 +5571,7 @@
 &lt;h3 id=&#34;流程控制&#34;&gt;流程控制
 &lt;/h3&gt;&lt;h4 id=&#34;if判断&#34;&gt;if判断
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125221736607.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125221736607.png&#34;
 	
 	
 	
@@ -5581,7 +5581,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125221758530.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125221758530.png&#34;
 	
 	
 	
@@ -5595,7 +5595,7 @@
 &lt;p&gt;① [ 条件判断式 ]，中括号和条件判断式之间必须有空格&lt;/p&gt;
 &lt;p&gt;② if 后要有空格&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125222805470.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125222805470.png&#34;
 	
 	
 	
@@ -5607,7 +5607,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;case-语句&#34;&gt;case 语句
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125225423369.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125225423369.png&#34;
 	
 	
 	
@@ -5622,7 +5622,7 @@
 &lt;p&gt;（2）双分号“;;”表示命令序列结束，相当于 C 中的 break。&lt;/p&gt;
 &lt;p&gt;（3）最后的“*）”表示默认模式，相当于 C 中的 defaul。&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125231916854.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125231916854.png&#34;
 	
 	
 	
@@ -5632,7 +5632,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125231942799.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125231942799.png&#34;
 	
 	
 	
@@ -5644,7 +5644,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;for-循环&#34;&gt;for 循环
 &lt;/h4&gt;&lt;p&gt;基本语法1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232110733.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125232110733.png&#34;
 	
 	
 	
@@ -5655,7 +5655,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;基本语法2：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232146742.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125232146742.png&#34;
 	
 	
 	
@@ -5666,7 +5666,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232257501.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125232257501.png&#34;
 	
 	
 	
@@ -5677,7 +5677,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例2：打印所有输入参数&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232555465.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125232555465.png&#34;
 	
 	
 	
@@ -5687,7 +5687,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232618766.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125232618766.png&#34;
 	
 	
 	
@@ -5731,7 +5731,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233153445.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125233153445.png&#34;
 	
 	
 	
@@ -5778,7 +5778,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233426867.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125233426867.png&#34;
 	
 	
 	
@@ -5790,7 +5790,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;while-循环&#34;&gt;while 循环
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233551530.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125233551530.png&#34;
 	
 	
 	
@@ -5829,7 +5829,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233726611.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125233726611.png&#34;
 	
 	
 	
@@ -5870,7 +5870,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126211739621.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126211739621.png&#34;
 	
 	
 	
@@ -5888,7 +5888,7 @@
 &lt;p&gt;basename 可以理解为取路径里的文件名称。&lt;/p&gt;
 &lt;p&gt;suffix 为后缀，如果 suffix 被指定了，basename 会将 pathname 或 string 中的 suffix 去掉。&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212039885.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126212039885.png&#34;
 	
 	
 	
@@ -5903,7 +5903,7 @@
 &lt;p&gt;&lt;code&gt;dirname 文件绝对路径 &lt;/code&gt;	（功能描述：从给定的包含绝对路径的文件名中去除文件名（非目录的部分），然后返回剩下的路径（目录的部分））&lt;/p&gt;
 &lt;p&gt;dirname 可以理解为取文件路径的绝对路径名称。&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212211976.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126212211976.png&#34;
 	
 	
 	
@@ -5915,7 +5915,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;自定义函数&#34;&gt;自定义函数
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212643723.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126212643723.png&#34;
 	
 	
 	
@@ -5956,7 +5956,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212822161.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126212822161.png&#34;
 	
 	
 	
@@ -5994,7 +5994,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126213807207.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126213807207.png&#34;
 	
 	
 	
@@ -6031,7 +6031,7 @@
 &lt;h3 id=&#34;正则表达式入门&#34;&gt;正则表达式入门
 &lt;/h3&gt;&lt;h4 id=&#34;常用特殊字符&#34;&gt;常用特殊字符
 &lt;/h4&gt;&lt;p&gt;1）特殊字符：&lt;code&gt;^&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126214638430.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126214638430.png&#34;
 	
 	
 	
@@ -6042,7 +6042,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;2）特殊字符：&lt;code&gt;$&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126214705322.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126214705322.png&#34;
 	
 	
 	
@@ -6053,7 +6053,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;3）特殊字符：&lt;code&gt;.&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220524399.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126220524399.png&#34;
 	
 	
 	
@@ -6064,7 +6064,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;4）特殊字符：&lt;code&gt;*&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220559421.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126220559421.png&#34;
 	
 	
 	
@@ -6075,7 +6075,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;5）特殊字符：&lt;code&gt;[ ]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220631176.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126220631176.png&#34;
 	
 	
 	
@@ -6086,7 +6086,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;6）特殊字符：&lt;code&gt;\&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220812299.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126220812299.png&#34;
 	
 	
 	
@@ -6119,11 +6119,11 @@
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_63594197/article/details/138069939&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://blog.csdn.net/weixin_63594197/article/details/138069939&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;链接失效时可以看下方视频&lt;/p&gt;
-&lt;p&gt;&lt;video src=&#34;https://IAmYuanyu.github.io/虚拟机代理配置.mp4&#34; width=&#34;100%&#34; controls=&#34;true&#34;&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/虚拟机代理配置.mp4&#34; width=&#34;100%&#34; controls=&#34;true&#34;&gt;&lt;/video&gt;&lt;/p&gt;
 &lt;h3 id=&#34;设置使用sudo时不需要密码&#34;&gt;设置使用sudo时不需要密码
 &lt;/h3&gt;&lt;p&gt;在终端输入：&lt;code&gt;sudo vim /etc/sudoers&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;找到文件最下面，修改为如图所示的样子：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124000253152.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124000253152.png&#34;
 	
 	
 	
@@ -6135,7 +6135,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;-在下一行继续输入&#34;&gt;\ 在下一行继续输入
 &lt;/h3&gt;&lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125190002468.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125190002468.png&#34;
 	
 	
 	

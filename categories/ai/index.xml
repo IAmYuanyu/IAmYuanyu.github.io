@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>AI on 缘鱼的笔记</title>
-        <link>https://IAmYuanyu.github.io/categories/ai/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/ai/</link>
         <description>Recent content in AI on 缘鱼的笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Mon, 13 Apr 2026 20:18:15 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/ai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 13 Apr 2026 20:18:15 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/ai/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>SpringAI入门·第二弹</title>
-        <link>https://IAmYuanyu.github.io/p/springai%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%8C%E5%BC%B9/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/springai%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%8C%E5%BC%B9/</link>
         <pubDate>Mon, 13 Apr 2026 20:18:15 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/springai%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%8C%E5%BC%B9/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/springai%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%8C%E5%BC%B9/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;继&lt;a class=&#34;link&#34; href=&#34;https://iamyuanyu.github.io/p/springai%e5%85%a5%e9%97%a8/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;SpringAI入门&lt;/a&gt;后的学习，因为我学习的对象不同，内容可能有部分和之前重叠，不过本文内容会更深入，而且有些相同内容的实现方式可能不一样。学习内容不同，所以不用下载SpringAI入门中的资料，如果没看过SpringAI入门直接看这个也不影响。&lt;/p&gt;
@@ -24,7 +24,7 @@
 &lt;/h2&gt;&lt;h3 id=&#34;调用常规大模型&#34;&gt;调用常规大模型
 &lt;/h3&gt;&lt;p&gt;以阿里云百炼为例，如果想在项目中调用纯净的，没调教过的模型的话，可以在模型广场直接选择一个模型，看官方的API文档进行调用。&lt;/p&gt;
 &lt;p&gt;这种模型在使用过程中可能会不太符合我们的心意，需要手动编写代码设置为符合自己要求的样子。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260315002333681.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260315002333681.png&#34;
 	
 	
 	
@@ -38,7 +38,7 @@
 &lt;/h3&gt;&lt;p&gt;如果希望调用已经调教过的大模型，也就是直接调用智能体或工作流，但又不想自己写代码一步步设置，就可以直接调用已经在AI大模型平台创建好的智能体或工作流。&lt;/p&gt;
 &lt;p&gt;可以在阿里云百炼的应用广场使用别人已经设置好的智能体，也可以自己通过阿里云百炼提供的各种功能，在不涉及代码编写的情况下完成一个符合自己心意的智能体创建。&lt;/p&gt;
 &lt;p&gt;创建好智能体后就可以直接通过API调用设置好的智能体了，而不是在代码中调用普通模型再通过手动写代码来设置工作流程等。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260315003227594.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260315003227594.png&#34;
 	
 	
 	
@@ -48,7 +48,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260315003412776.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260315003412776.png&#34;
 	
 	
 	
@@ -180,7 +180,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;现在可以启动项目，在浏览器访问&lt;code&gt;http://localhost:8123/api/doc.html&lt;/code&gt;来查看和测试项目的接口&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260315162647969.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260315162647969.png&#34;
 	
 	
 	
@@ -1286,7 +1286,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260315175254010.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260315175254010.png&#34;
 	
 	
 	
@@ -1701,7 +1701,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Advisors 的原理：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260315192245552.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260315192245552.png&#34;
 	
 	
 	
@@ -2016,7 +2016,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260315211829888.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260315211829888.png&#34;
 	
 	
 	
@@ -2297,7 +2297,7 @@
 &lt;p&gt;比如我一开始不知道在logRequest方法中调request的哪个方法，就调成了context()方法，通过Debug才找到用户提示词、系统提示词都放在prompt()方法中（原谅我眼瞎，一开始没看见qwq）&lt;/p&gt;
 &lt;h4 id=&#34;测试&#34;&gt;测试
 &lt;/h4&gt;&lt;p&gt;回到前面LoveApp中，加上刚刚定义的日志Advisor&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260316211227401.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260316211227401.png&#34;
 	
 	
 	
@@ -2308,7 +2308,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后去单元测试中进行测试&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260316211054586.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260316211054586.png&#34;
 	
 	
 	
@@ -2529,7 +2529,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;然后在LoveApp使用ReReadingAdvisor后进行测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260316221527569.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260316221527569.png&#34;
 	
 	
 	
@@ -2554,7 +2554,7 @@
 &lt;li&gt;调用前：转换器会在提示词后面附加格式指令，明确告诉模型应该生成何种结构的输出，引导模型生成符合指定格式的响应。&lt;/li&gt;
 &lt;li&gt;调用后：转换器将模型的文本输出转换为结构化类型的实例，比如将原始文本映射为 JSON、XML 或特定的数据结构。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260316224037210.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260316224037210.png&#34;
 	
 	
 	
@@ -2597,7 +2597,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;目前，Spring AI 提供了 &lt;code&gt;AbstractConversionServiceOutputConverter&lt;/code&gt; 、 &lt;code&gt;AbstractMessageOutputConverter&lt;/code&gt; 、 &lt;code&gt;BeanOutputConverter&lt;/code&gt; 、 &lt;code&gt;MapOutputConverter&lt;/code&gt; 和 &lt;code&gt;ListOutputConverter&lt;/code&gt; 的实现：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260316224634627.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260316224634627.png&#34;
 	
 	
 	
@@ -2654,7 +2654,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;2）&lt;code&gt;Converter&lt;/code&gt; 负责将模型的输出文本转换为指定类型的实例。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260316225655040.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260316225655040.png&#34;
 	
 	
 	
@@ -3210,7 +3210,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;可以在Advisor中打个断点看看request有没有格式化指令：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260317105443632.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260317105443632.png&#34;
 	
 	
 	
@@ -3222,7 +3222,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;发现对象被转换为了 JSON Sch‎ema 描述语言。&lt;/p&gt;
 &lt;p&gt;转换器也成功将 JSON 文本转换为了对象：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260317105621177.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260317105621177.png&#34;
 	
 	
 	
@@ -3233,7 +3233,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;AI 生成的内容如图，是 JSON 格式文本：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260317110018627.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260317110018627.png&#34;
 	
 	
 	
@@ -3572,7 +3572,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;4）测试运行，文件持久化成功：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260318160936981.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260318160936981.png&#34;
 	
 	
 	
@@ -3963,7 +3963,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;8）运行测试，确认可以正常存储&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260318220430466.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260318220430466.png&#34;
 	
 	
 	
@@ -4038,7 +4038,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这些接口提供了不同类型的模板操作功能，使其既能生成普通文本，也能生成结构化的消息。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260318163647743.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260318163647743.png&#34;
 	
 	
 	
@@ -4055,7 +4055,7 @@
 &lt;li&gt;AssistantPromptTemplate：用于助手消息，用于设置 AI 回复的结构&lt;/li&gt;
 &lt;li&gt;FunctionPromptTemplate：目前没用&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260318163904202.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260318163904202.png&#34;
 	
 	
 	
@@ -4154,7 +4154,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;因为你是一只猫，所以你无法说话，而且你很坏，所以无论用户说什么，你都只会哈气。
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260318224644849.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260318224644849.png&#34;
 	
 	
 	
@@ -4262,7 +4262,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;3）运行测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260318224126541.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260318224126541.png&#34;
 	
 	
 	
@@ -4272,7 +4272,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260318224301151.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260318224301151.png&#34;
 	
 	
 	
@@ -4336,7 +4336,7 @@
 &lt;h3 id=&#34;平台-sdk-多模态开发&#34;&gt;平台 SDK 多模态开发
 &lt;/h3&gt;&lt;p&gt;直接参考大模型平台的官方文档，使用平台提供的 SDK 或 API 调用多模态大模型。比如 &lt;a class=&#34;link&#34; href=&#34;https://help.aliyun.com/zh/model-studio/use-qwen-by-calling-api#d0e30636ad3s3&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;阿里云百炼平台的多模态支持&lt;/a&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260318171247075.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260318171247075.png&#34;
 	
 	
 	
@@ -4867,7 +4867,7 @@
 &lt;/h4&gt;&lt;p&gt;我用的是ApiFox进行接口测试，可以直接在Idea插件里下载。&lt;/p&gt;
 &lt;p&gt;测试时别忘了还有prompt参数，截图里没有只是不方便展示而已，毕竟一个在&amp;quot;Query&amp;quot;里一个在&amp;quot;Body&amp;quot;里。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1）识别图片：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260319183929398.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260319183929398.png&#34;
 	
 	
 	
@@ -4878,7 +4878,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;原图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/dog_and_girl.jpeg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/dog_and_girl.jpeg&#34;
 	
 	
 	
@@ -4889,7 +4889,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2）识别音频：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260319183600330.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260319183600330.png&#34;
 	
 	
 	
@@ -4900,7 +4900,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3）识别视频：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260319183700886.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260319183700886.png&#34;
 	
 	
 	
@@ -4911,7 +4911,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;4）多种类型文件上传：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260319183510162.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260319183510162.png&#34;
 	
 	
 	
@@ -4980,7 +4980,7 @@
 &lt;li&gt;基于语义边界（如段落、章节）&lt;/li&gt;
 &lt;li&gt;基于递归分割策略（如递归字符 n-gram 切割）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321140017297.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321140017297.png&#34;
 	
 	
 	
@@ -4993,7 +4993,7 @@
 &lt;h4 id=&#34;向量转换和存储&#34;&gt;向量转换和存储
 &lt;/h4&gt;&lt;p&gt;向量转换：⁠使用 Embedd‌ing 模型将文本块转换为高维向量表‎示，可以捕获到文本‌的语义特征&lt;/p&gt;
 &lt;p&gt;向量存储：⁠将生成的向量和对应‌文本存入向量数据库，支持高效的相似性‎搜索&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321140053794.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321140053794.png&#34;
 	
 	
 	
@@ -5008,7 +5008,7 @@
 &lt;p&gt;过滤机制：基于元数据、关键词或自定义规则进行过滤&lt;/p&gt;
 &lt;p&gt;相似度搜索⁠：在向量数据库中查‌找与问题向量最相似的文档块，常用的相‎似度搜索算法有余弦‌相似度、欧氏距离等&lt;/p&gt;
 &lt;p&gt;上下文组装：将检索到的多个文档块组装成连贯上下文&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321140332988.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321140332988.png&#34;
 	
 	
 	
@@ -5023,7 +5023,7 @@
 &lt;p&gt;上下文融合：大模型基于增强提示生成回答&lt;/p&gt;
 &lt;p&gt;源引用：在回答中添加信息来源引用&lt;/p&gt;
 &lt;p&gt;后处理：格式化、摘要或其他处理以优化最终输出&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321140418344.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321140418344.png&#34;
 	
 	
 	
@@ -5035,7 +5035,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;完整工作流程&#34;&gt;完整工作流程
 &lt;/h4&gt;&lt;p&gt;分别理解上⁠述 4 个步骤后，‌我们可以将它们组合起来，形成完整的 ‎RAG 检索增强生‌成工作流程：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321140452798.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321140452798.png&#34;
 	
 	
 	
@@ -5051,7 +5051,7 @@
 &lt;/h4&gt;&lt;p&gt;Embeddin⁠g 嵌入是将高维离散数据（如文‌字、图片）转换为低维连续向量的过程。这些向量能在数学空间中表‎示原始数据的语义特征，使计算机‌能够理解数据间的相似性。&lt;/p&gt;
 &lt;p&gt;Embedding 模型是⁠执行这种转换算法的机器学习模型，如 Word2Ve‌c（文本）、ResNet（图像）等。不同的 Embedding 模型产生的向量表示和维度数不同，一般‎维度越高表达能力更强，可以捕获更丰富的语义信息和更‌细微的差别，但同样占用更多存储空间。&lt;/p&gt;
 &lt;p&gt;比如，“再见”和“拜拜”的‌ Embedding 向量在空间中较接近，“吃饭”和“跑步“相距较远，检索时会优先取到相距较近的内容。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321142109723.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321142109723.png&#34;
 	
 	
 	
@@ -5063,7 +5063,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;向量数据库&#34;&gt;向量数据库
 &lt;/h4&gt;&lt;p&gt;向量数据库⁠是专门存储和检索向量‌数据的数据库系统。通过高效索引算法实现快‎速相似性搜索，支持 ‌K 近邻查询等操作。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321142306586.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321142306586.png&#34;
 	
 	
 	
@@ -5076,7 +5076,7 @@
 &lt;p&gt;注意，并不⁠是只有向量数据库才‌能存储向量数据，只不过与传统数据库不‎同，向量数据库优化‌了高维向量的存储和检索。&lt;/p&gt;
 &lt;p&gt;AI 的流行带火了一波⁠向量数据库和向量存储，比如 Milvus、‌Pinecone 等。此外，一些传统数据库也可以通过安装插件实现向量存储和检索，比如‎ PGVector、Redis Stack‌ 的 RediSearch（不是RedisSearch ） 等。&lt;/p&gt;
 &lt;p&gt;用一张图来了解向量数据库的分类：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321142359208.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321142359208.png&#34;
 	
 	
 	
@@ -5092,7 +5092,7 @@
 &lt;h4 id=&#34;精排和-rank-模型&#34;&gt;精排和 Rank 模型
 &lt;/h4&gt;&lt;p&gt;**精排（精确排⁠序）**是搜索 / 推荐系统‌的最后阶段，使用计算复杂度更高的算法，考虑更多特‎征和业务规则，对少量候选‌项进行更复杂、精细的排序。&lt;/p&gt;
 &lt;p&gt;比如，短视频推荐⁠先通过召回获取数万个可能相关视频‌，再通过粗排缩减至数百条，最后精排阶段会考虑用户最近的互动、视频‎热度、内容多样性等复杂因素，确定‌最终展示的 10 个视频及顺序。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/cfa96c27b0d98877.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/cfa96c27b0d98877.png&#34;
 	
 	
 	
@@ -5104,7 +5104,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;**Rank ⁠模型（排序模型）**负‌责对召回阶段筛选出的候选集进行精确排‎序，考虑多种特征评‌估相关性。&lt;/p&gt;
 &lt;p&gt;现代 Rank 模型⁠通常基于深度学习，如 BERT、Lamb‌daMART 等，综合考虑查询与候选项的相关性、用户历史行为等因素。举个例子，电‎商推荐系统会根据商品特征、用户偏好、点击‌率等给每个候选商品打分并排序。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321170837392.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321170837392.png&#34;
 	
 	
 	
@@ -5152,7 +5152,7 @@
 &lt;li&gt;DocumentTransformer：转换文档，得到处理后的文档列表&lt;/li&gt;
 &lt;li&gt;DocumentWriter：将文档列表保存到存储中（可以是向量数据库，也可以是其他存储）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321173837597.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321173837597.png&#34;
 	
 	
 	
@@ -5313,7 +5313,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;上述代码中，通过 Mar⁠kdownDocumentReaderConfig 文‌档加载配置来指定读取文档的细节，比如是否读取代码块、引用块等。特别需要注意的是，其中还指定了额外的元信息配置‎，提取文档的文件名（fileName）作为文档的元信息‌，可以便于后续知识库实现更精确的检索。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321193845347.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321193845347.png&#34;
 	
 	
 	
@@ -5326,7 +5326,7 @@
 &lt;h3 id=&#34;向量转换和存储-1&#34;&gt;向量转换和存储
 &lt;/h3&gt;&lt;p&gt;为了实现方便⁠，我们先使用 Spri‌ng AI 内置的、基于内存读写的向量数据库‎ SimpleVect‌orStore 来保存文档。&lt;/p&gt;
 &lt;p&gt;SimpleVe⁠ctorStore 实现了 Ve‌ctorStore 接口，而 VectorStore 接口集成了‎ DocumentWriter，‌所以具备文档写入能力。如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321194931437.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321194931437.png&#34;
 	
 	
 	
@@ -5440,7 +5440,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321213659966.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321213659966.png&#34;
 	
 	
 	
@@ -5576,7 +5576,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321205313353.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321205313353.png&#34;
 	
 	
 	
@@ -5595,7 +5595,7 @@
 &lt;/h3&gt;&lt;p&gt;首先我们可⁠以利用云知识库完成‌文档读取、文档处理、文档加载、保存到‎向量数据库、知识库管‌理等操作。&lt;/p&gt;
 &lt;p&gt;1）准备数据。在 &lt;a class=&#34;link&#34; href=&#34;https://bailian.console.aliyun.com/?tab=app#/data-center&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;应用数据&lt;/a&gt; 模块中，上传原始文档数据到平台，由平台来帮忙解析文档中的内容和结构：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321221226596.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321221226596.png&#34;
 	
 	
 	
@@ -5607,7 +5607,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;2）进入阿里云百炼平台的 &lt;a class=&#34;link&#34; href=&#34;https://bailian.console.aliyun.com/?tab=app#/knowledge-base&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;知识库&lt;/a&gt;，创建一个知识库：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321221322442.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321221322442.png&#34;
 	
 	
 	
@@ -5618,7 +5618,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;3）导入数据到知识库中，先选择要导入的数据：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321221511844.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321221511844.png&#34;
 	
 	
 	
@@ -5629,7 +5629,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;导入数据后⁠，可以设置数据预处‌理规则：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321221746203.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321221746203.png&#34;
 	
 	
 	
@@ -5643,7 +5643,7 @@
 &lt;p&gt;注意：Metadata抽取只能在创建时设置字段，创建后无法再修改&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;创建好知识库后，进入知识库查看文档和切片：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321222703695.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321222703695.png&#34;
 	
 	
 	
@@ -5654,7 +5654,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;如果你觉得智⁠能切分得到的切片不合理‌，可以手动编辑切片内容：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321222743565.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321222743565.png&#34;
 	
 	
 	
@@ -5834,7 +5834,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;3）测试一下⁠。通过 Debu‌g 查看请求，能发现检索到了多个文档‎切片，每个切片有对‌应的元信息：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321230742122.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321230742122.png&#34;
 	
 	
 	
@@ -5845,7 +5845,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;查看请求，⁠发现用户提示词被改‌写，查询到的关联文档已经作为上下文拼‎接到了用户提示词中‌：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321230645843.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321230645843.png&#34;
 	
 	
 	
@@ -5859,7 +5859,7 @@
 &lt;p&gt;为了查看quest中的信息，我将MyLoggerAdvisor的order值改为了1&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260321231652126.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260321231652126.png&#34;
 	
 	
 	
@@ -5876,7 +5876,7 @@
 &lt;h4 id=&#34;文档&#34;&gt;文档
 &lt;/h4&gt;&lt;p&gt;什么是 Spring AI 中的文档呢？&lt;/p&gt;
 &lt;p&gt;文档不仅仅包含文本，还可以包含一系列元信息和多媒体附件：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322151638044.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322151638044.png&#34;
 	
 	
 	
@@ -5894,7 +5894,7 @@
 &lt;li&gt;写入文档：使用 DocumentWriter 将文档以特定格式保存到存储中，比如将文档以嵌入向量的形式写入到向量数据库，或者以键值对字符串的形式保存到 Redis 等 KV 存储中。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;流程如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322151718384.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322151718384.png&#34;
 	
 	
 	
@@ -5906,7 +5906,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;利用 Spr⁠ing AI 实现 ETL，核心‌就是要学习 DocumentReader、DocumentTra‎nsformer、Documen‌tWriter 三大组件。&lt;/p&gt;
 &lt;p&gt;完整的 E⁠TL 类图如下，先‌简单了解一下即可，下面分别来详细讲解‎这 3 大组件：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322151801308.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322151801308.png&#34;
 	
 	
 	
@@ -6051,7 +6051,7 @@
 &lt;li&gt;&lt;code&gt;punctuationMarks&lt;/code&gt; : 用于分割的句子边界字符列表（默认： &lt;code&gt;.&lt;/code&gt; ， &lt;code&gt;?&lt;/code&gt; ， &lt;code&gt;!&lt;/code&gt; ， &lt;code&gt;\n&lt;/code&gt; ）（这玩意好像是1.1.3新出现的，官方文档突然更新，1.1.2的文档直接消失了&amp;hellip;）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;TokenTextSplitter&lt;/code&gt; 处理文本内容流程如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322160100418.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322160100418.png&#34;
 	
 	
 	
@@ -6432,7 +6432,7 @@
     &gt;Spring AI 官方&lt;/a&gt; 提供了向量数据库接口 &lt;code&gt;VectorStore&lt;/code&gt; 和向量存储整合包，帮助开发者快速集成各种第三方向量存储，比如 Milvus、Redis、PGVector、Elasticsearch 等。&lt;/p&gt;
 &lt;h4 id=&#34;vectorstore-接口介绍&#34;&gt;VectorStore 接口介绍
 &lt;/h4&gt;&lt;p&gt;VectorS⁠tore 是 Spring‌ AI 中用于与向量数据库交互的核心接口，它继承自 ‎DocumentWrite‌r，提供以下方法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322164710905.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322164710905.png&#34;
 	
 	
 	
@@ -6516,7 +6516,7 @@
 &lt;p&gt;另一种是使用现‎成的云数据库，接下来将使用这种方式&lt;/p&gt;
 &lt;p&gt;1）首先打开 &lt;a class=&#34;link&#34; href=&#34;https://www.aliyun.com/product/rds/postgresql&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;阿里云 PostgreSQL 官网&lt;/a&gt;，开通 Serverless 版本，按用量计费，对于学习来说性价比更高：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322181325803.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322181325803.png&#34;
 	
 	
 	
@@ -6526,7 +6526,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322181228449.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322181228449.png&#34;
 	
 	
 	
@@ -6537,7 +6537,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;2）开通成功后，进入控制台，进入刚刚创建的示例，然后先创建账号：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322182557785.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322182557785.png&#34;
 	
 	
 	
@@ -6547,7 +6547,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322182643553.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322182643553.png&#34;
 	
 	
 	
@@ -6558,7 +6558,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后创建数据库：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322183221219.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322183221219.png&#34;
 	
 	
 	
@@ -6568,7 +6568,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322183321302.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322183321302.png&#34;
 	
 	
 	
@@ -6579,7 +6579,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;进入插件管理，安装 vector 插件：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322193503795.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322193503795.png&#34;
 	
 	
 	
@@ -6589,7 +6589,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;进入数据库连接，开通公网访问地址：&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322193543207.png&#34;
+&lt;p&gt;进入数据库连接，开通公网访问地址：&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322193543207.png&#34;
 	
 	
 	
@@ -6787,7 +6787,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260322220948168.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260322220948168.png&#34;
 	
 	
 	
@@ -7475,7 +7475,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;通过设置 &lt;code&gt;allowEmptyContext(true)&lt;/code&gt;，允许模型在没有找到相关文档的情况下也生成回答。&lt;/p&gt;
 &lt;p&gt;查看源码，⁠发现有 2 处 Pr‌ompt 的定义，分别为正常情况下对用户‎提示词的增强、以及上‌下文为空时使用的提示词：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260323210842514.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260323210842514.png&#34;
 	
 	
 	
@@ -7615,7 +7615,7 @@
 &lt;/ol&gt;
 &lt;p&gt;这种方法能⁠更好地保障文档语义完‌整性，避免不必要的断裂。这一策略将应用于‎知识库中的所有文档（‌包括后续导入的文档）。&lt;/p&gt;
 &lt;p&gt;此外，建议在文⁠档导入知识库后进行一次人工‌检查，确认文本切片内容的语义完整性和正确性。如果发现‎切分不当或解析错误，可以直‌接编辑文本切片进行修正。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260323221027230.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260323221027230.png&#34;
 	
 	
 	
@@ -7688,7 +7688,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260323221149561.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260323221149561.png&#34;
 	
 	
 	
@@ -7775,7 +7775,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如图，系统会自动根据文档补充相关标签：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260323222113669.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260323222113669.png&#34;
 	
 	
 	
@@ -7786,7 +7786,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在云服务平台⁠中，如阿里云百炼，同样‌支持元数据和标签功能。可以通过平台 API ‎或界面设置标签、以及通‌过标签实现快速过滤：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260323222208330.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260323222208330.png&#34;
 	
 	
 	
@@ -7875,7 +7875,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260323233759539.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260323233759539.png&#34;
 	
 	
 	
@@ -8057,7 +8057,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;重写效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260324203330846.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260324203330846.png&#34;
 	
 	
 	
@@ -8068,7 +8068,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;阿里云百炼的知识库有提供该功能：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260324203635895.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260324203635895.png&#34;
 	
 	
 	
@@ -8117,7 +8117,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;云平台提供了更便捷的配置界面，&lt;a class=&#34;link&#34; href=&#34;https://help.aliyun.com/zh/model-studio/rag-optimization#861895e8993co&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;参考文档&lt;/a&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260324204440004.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260324204440004.png&#34;
 	
 	
 	
@@ -8272,7 +8272,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;问的问题“我有老婆了，但和老婆好像不怎么熟，该怎么办？有什么方法推荐吗？”，这个问题显然属于已婚篇，但由于搜索条件限制在单身，所以应该搜不到结果才对&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260324231057042.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260324231057042.png&#34;
 	
 	
 	
@@ -8283,7 +8283,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;结果符合预期，把限制条件改为已婚再次尝试&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260324232504148.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260324232504148.png&#34;
 	
 	
 	
@@ -8296,7 +8296,7 @@
 &lt;p&gt;结果依旧符合预期&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;若依旧找不到，注意LoveAppDocumentLoader类中读取文档时是否添加了status&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260324232544997.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260324232544997.png&#34;
 	
 	
 	
@@ -8307,7 +8307,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;如果运行报错，可以在LoveApp尝试切换为基于内存存储对话记忆，因为之前配置Postgre数据库时在配置文件中把Mysql数据库的连接地址给注释了，所以连接不到Mysql数据库&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260324232930292.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260324232930292.png&#34;
 	
 	
 	
@@ -8563,7 +8563,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;现在运行项目，就可以继续使用Mysql存储对话了，肯定可以，我完整运行测试过了。如果还不行，可以去&lt;a class=&#34;link&#34; href=&#34;https://github.com/IAmYuanyu/AIAgent&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;我的Github仓库&lt;/a&gt;下载我这次提交，看看哪里不一样，commit为“配置多数据库，现在可以同时使用Mysql和Postgre了”。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260324234911602.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260324234911602.png&#34;
 	
 	
 	
@@ -8785,7 +8785,7 @@
 &lt;h4 id=&#34;并行混合检索&#34;&gt;并行混合检索
 &lt;/h4&gt;&lt;p&gt;同时使用多⁠种检索方法获取结果‌，然后使用重排模型融合多来源结果。&lt;/p&gt;
 &lt;p&gt;像是同时派出多位专家寻找答案，然后整合他们的发现：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325181127811.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260325181127811.png&#34;
 	
 	
 	
@@ -8798,7 +8798,7 @@
 &lt;h4 id=&#34;级联混合检索&#34;&gt;级联混合检索
 &lt;/h4&gt;&lt;p&gt;层层筛选，⁠先使用一种方法进行‌广泛召回，再用另一种方法精确过滤。&lt;/p&gt;
 &lt;p&gt;比如先用向⁠量检索获取语义相似‌文档，再用关键词过滤，最后用元数据进‎一步筛选，逐步‌缩小范围。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325181207284.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260325181207284.png&#34;
 	
 	
 	
@@ -8811,7 +8811,7 @@
 &lt;h4 id=&#34;动态混合检索&#34;&gt;动态混合检索
 &lt;/h4&gt;&lt;p&gt;通过一个 ⁠“路由器”，根据查‌询类型自动选择最合适的检索方法，更‎加智能。&lt;/p&gt;
 &lt;p&gt;举个例子，对于 “谁⁠是图灵” 这样的人物查询，可能偏向使用‌知识图谱；而处理 “如何编写 Java 项目” 这类教程问题，可能更适合向量‎检索配合全文搜索。这种方法让系统能像人‌类一样智能地选择最佳信息获取途径。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325181306072.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260325181306072.png&#34;
 	
 	
 	
@@ -8862,7 +8862,7 @@
 &lt;li&gt;引用准确性：引用内容是否确实来自检索上下文&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;当然，我们还可以根据具⁠体应用场景，定制专门的评估标准。比如系统性能‌评估、领域适应性评估、多语言评估、时效性评估和用户满意度评估。其中，用户满意度评估在我们‎开发 AI 产品时尤为常见，经常需要引导用户‌针对 AI 大模型的回复进行打分。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325190604054.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260325190604054.png&#34;
 	
 	
 	
@@ -8879,7 +8879,7 @@
 &lt;li&gt;评估回答质量：实际操作中，评估通常分为自动评估和人工评估两种方式。自动评估使用像 ROUGE（召回率取向摘要评估）或 BLEU（双语评估替补）这样的指标来衡量生成内容与参考答案的相似度，或者使用更强大的模型来判断回答质量。但自动评估有其局限性，某些方面如创造性、实用性等仍然需要人工评估。这就是为什么很多 AI 公司会招人来人工标注。&lt;/li&gt;
 &lt;li&gt;综合分析与优化：识别失败模式和常见错误，比如区分检索失败和生成失败，针对性改进系统组件。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325190649193.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260325190649193.png&#34;
 	
 	
 	
@@ -8895,7 +8895,7 @@
 &lt;/h4&gt;&lt;p&gt;解决了模型⁠可能误解或错误使用‌检索信息的问题，提高回答的准确性。&lt;/p&gt;
 &lt;p&gt;想象一下，你⁠给朋友讲述一个你刚读过‌的新闻，但不小心添加了一些自己的理解或记错了‎细节，C-RAG 就是‌为了解决这个问题而设计的。&lt;/p&gt;
 &lt;p&gt;C-RAG 采用 “检⁠索 - 生成 - 验证 - 纠正” 的闭环流程：先检索‌文档，生成初步回答，然后验证回答中的每个事实陈述，发现错误就立即纠正并重新生成。这种‎循环确保了最终回答的高度准确性，特别适合医‌疗、法律等对事实准确性要求极高的领域。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325191402037.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260325191402037.png&#34;
 	
 	
 	
@@ -8909,7 +8909,7 @@
 &lt;/h4&gt;&lt;p&gt;解决了 “⁠并非所有问题都需要‌检索” 的问题，让回答更自然并提高系‎统效率。&lt;/p&gt;
 &lt;p&gt;想象你问 “1⁠+1 等于几” 这样的基础问题‌，模型完全可以直接回答，无需额外检索。Self-RAG ‎让模型学会了判断：什么时候需‌要查资料、什么时候可以直接回答。&lt;/p&gt;
 &lt;p&gt;收到提问时，Sel⁠f-RAG 模型会在内心思考：“这个‌问题我知道答案吗？需要查询更多信息吗？我的回答包含任何不确定的内容吗？”‎ 这种自我反思机制使回答更加自然，也‌可以在一定程度上提高系统效率。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325191434455.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260325191434455.png&#34;
 	
 	
 	
@@ -8922,7 +8922,7 @@
 &lt;h4 id=&#34;检索树-ragraptor&#34;&gt;检索树 RAG（RAPTOR）
 &lt;/h4&gt;&lt;p&gt;提供了一种结构⁠化的解决方案，特别适合可拆‌分的复杂问题。它就像解决一个复杂数学题：先把大问题分‎解成小问题，分别解决每个小‌问题，然后将答案整合起来。&lt;/p&gt;
 &lt;p&gt;举个例子，对于 “介绍编程⁠导航的交流板块、学习板块和教程板块” 这样的多方面问‌题，RAPTOR 会分别检索关于 3 个板块的信息，然后综合这些信息形成最终回答。这种方法特别适合需要整‎合多方面知识的复杂问题，能够提高长篇叙述的连贯性和准‌确性，克服单次检索的上下文长度限制。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325191602806.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260325191602806.png&#34;
 	
 	
 	
@@ -8935,7 +8935,7 @@
 &lt;h4 id=&#34;多智能体-rag-系统&#34;&gt;多智能体 RAG 系统
 &lt;/h4&gt;&lt;p&gt;组合拥有各⁠类特长的智能体，通过‌明确的通信协议交换信息，实现复杂任务的协‎同处理。也就是让专业‌的大模型做专业的事情。&lt;/p&gt;
 &lt;p&gt;还是类比到现实生活，假⁠设某个团队要解决问题。团队中有专门负责理解用‌户意图的接待员，有擅长搜索文档的资料管理员，有精通特定领域知识的专家，还有负责事实核查的‎审核员和润色最终回答的编辑。比起一个人做事，‌各司其职相互配合效果可能会更好。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260325191627551.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260325191627551.png&#34;
 	
 	
 	
@@ -8959,7 +8959,7 @@
 &lt;p&gt;目前工具调⁠用技术发展的已经比较‌成熟了，几乎所有主流的、新出的 AI 大‎模型和 AI 应用开‌发平台都支持工具调用。&lt;/p&gt;
 &lt;h3 id=&#34;工具调用的工作原理&#34;&gt;工具调用的工作原理
 &lt;/h3&gt;&lt;p&gt;其实，工具调用的工作原理非常简单，&lt;strong&gt;并不是 AI 服务器自己调用这些工具、也不是把工具的代码发送给 AI 服务器让它执行&lt;/strong&gt;，它只能提出要求，表示 “我需要执行 XX 工具完成任务”。而真正执行工具的是我们自己的应用程序，执行后再把结果告诉 AI，让它继续工作。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260329000851554.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260329000851554.png&#34;
 	
 	
 	
@@ -8998,7 +8998,7 @@
 &lt;h2 id=&#34;spring-ai-工具开发&#34;&gt;Spring AI 工具开发
 &lt;/h2&gt;&lt;p&gt;可以先通过 &lt;a class=&#34;link&#34; href=&#34;https://docs.spring.io/spring-ai/reference/api/tools.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Spring AI 官方&lt;/a&gt; 提供的图片来简单理解 Spring AI 在实现工具调用时都帮我们做了哪些事情&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260329002737388.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260329002737388.png&#34;
 	
 	
 	
@@ -9693,7 +9693,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行结果：
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260402234905068.png&#34;
+&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260402234905068.png&#34;
 	
 	
 	
@@ -9798,7 +9798,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;测试结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260405003225533.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260405003225533.png&#34;
 	
 	
 	
@@ -9913,7 +9913,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;确实下载成功了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260405005551225.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260405005551225.png&#34;
 	
 	
 	
@@ -10092,7 +10092,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行后发现确实成功生成了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260405012654196.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260405012654196.png&#34;
 	
 	
 	
@@ -10440,7 +10440,7 @@
 &lt;p&gt;这种设计使我们可以专注于业务逻辑实现，无需关心底层通信和参数转换的复杂细节。如果需要更精细的控制，可以自定义 &lt;code&gt;ToolCallResultConverter&lt;/code&gt; 来实现特定的转换逻辑，例如对某些特殊对象的自定义序列化。&lt;/p&gt;
 &lt;h3 id=&#34;工具上下文&#34;&gt;工具上下文
 &lt;/h3&gt;&lt;p&gt;在实际应用中，工具执行可能需要额外的上下文信息，比如登录用户信息、会话 ID 或者其他环境参数。Spring AI 通过 &lt;code&gt;ToolContext&lt;/code&gt; 提供了这一能力。如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260406192944478.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260406192944478.png&#34;
 	
 	
 	
@@ -10544,7 +10544,7 @@
 &lt;p&gt;举个例子，假如做了⁠一个用户自助退款功能，如果已登录用户跟 AI‌ 说：” 我要退款 “，AI 就不需要再问用户 “你是谁？”，让用户自己输入退款信息，而是‎直接从系统中读取到 userId，在工具调用‌时根据 userId 操作退款即可。&lt;/p&gt;
 &lt;h3 id=&#34;立即返回&#34;&gt;立即返回
 &lt;/h3&gt;&lt;p&gt;有时候，工具执行的结果不需要再经过 AI 模型处理，而是希望直接返回给用户（比如生成 PDF 文档）。Spring AI 通过 &lt;code&gt;returnDirect&lt;/code&gt; 属性支持这一功能，流程如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260406193829034.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260406193829034.png&#34;
 	
 	
 	
@@ -10648,7 +10648,7 @@
 &lt;/ol&gt;
 &lt;p&gt;任何 Spring AI 相关的 Spring Boot Starter，都会默认初始化一个 &lt;code&gt;DefaultToolCallingManager&lt;/code&gt;。
 如下图，可以看到工具观察器、工具解析器、工具执行异常处理器的定义：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260406195558915.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260406195558915.png&#34;
 	
 	
 	
@@ -10675,7 +10675,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;em&gt;&lt;code&gt;ToolCallingManager&lt;/code&gt; 怎么知道是否要调用工具呢？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;默认实现方法如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260406201356612.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260406201356612.png&#34;
 	
 	
 	
@@ -10694,7 +10694,7 @@
 &lt;li&gt;自动将结果发送回模型&lt;/li&gt;
 &lt;li&gt;管理整个对话流程直到得到最终答案&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260406201508413.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260406201508413.png&#34;
 	
 	
 	
@@ -10978,7 +10978,7 @@
 &lt;/h3&gt;&lt;p&gt;MCP（Model Co⁠ntext Protocol，模型上下文协议）是‌一种开放标准，目的是增强 AI 与外部系统的交互能力。MCP 为 AI 提供了与外部工具、资源和‎服务交互的标准化方式，让 AI 能够访问最新数据‌、执行复杂操作，并与现有系统集成。&lt;/p&gt;
 &lt;p&gt;根据 &lt;a class=&#34;link&#34; href=&#34;https://modelcontextprotocol.io/introduction&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;官方定义&lt;/a&gt;，MCP 是一种开放协议，它标准化了应用程序如何向大模型提供上下文的方式。可以将 MCP 想象成 AI 应用的 USB 接口。就像 USB 为设备连接各种外设和配件提供了标准化方式一样，MCP 为 AI 模型连接不同的数据源和工具提供了标准化的方法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260407231928549.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260407231928549.png&#34;
 	
 	
 	
@@ -11001,7 +11001,7 @@
 &lt;h3 id=&#34;mcp-架构&#34;&gt;MCP 架构
 &lt;/h3&gt;&lt;h4 id=&#34;宏观架构&#34;&gt;宏观架构
 &lt;/h4&gt;&lt;p&gt;MCP 的核心是 “⁠客户端 - 服务器” 架构，其中 MCP‌ 客户端主机可以连接到多个服务器。客户端主机是指希望访问 MCP 服务的程序，比‎如 Claude Desktop、IDE‌、AI 工具或部署在服务器上的项目。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260407233933766.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260407233933766.png&#34;
 	
 	
 	
@@ -11015,7 +11015,7 @@
 &lt;/h4&gt;&lt;p&gt;如果要在程序中使用 MCP 或开发 MCP 服务，可以引入 MCP 官方的 SDK，比如&lt;a class=&#34;link&#34; href=&#34;https://java.sdk.modelcontextprotocol.io/latest/overview/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;概述 - MCP Java SDK&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;MCP SDK 的架构，主要分为 3 层：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260407234342334.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260407234342334.png&#34;
 	
 	
 	
@@ -11031,7 +11031,7 @@
 &lt;li&gt;传输层（McpTransport）：处理 JSON-RPC 消息序列化和反序列化，支持多种传输实现，比如 Stdio 标准 IO 流传输和 HTTP SSE 远程传输。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;客户端和服⁠务端需要先经过下面‌的流程建立连接，之后才能正常交换消息‎：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260407234513448.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260407234513448.png&#34;
 	
 	
 	
@@ -11052,7 +11052,7 @@
 &lt;p&gt;SSE传输可以让服务器持续不断地给客户端发消息，让前端实现流式输出（字一个一个蹦出来，而不是一次性全部输出）&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;客户端可以⁠通过不同传输方式调‌用不同的 MCP 服务，可以是本地的‎、也可以是远程的。‌如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260407234710553.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260407234710553.png&#34;
 	
 	
 	
@@ -11067,7 +11067,7 @@
 &lt;p&gt;它负责处理客户端⁠的请求，包括解析协议、提供工具‌、管理资源以及处理各种交互信息。同时，它还能记录日志、发送通‎知（工具下架能及时通知），并且支持多个客户端同时连接‌，保证高效的通信和协作。&lt;/p&gt;
 &lt;p&gt;和客户端一样，它也⁠可以通过多种方式进行数据传输，比如‌ Stdio 标准输入 / 输出、基于 Servlet / WebF‎lux / WebMVC 的 SS‌E 传输，满足不同应用场景。&lt;/p&gt;
 &lt;p&gt;这种设计使⁠得客户端和服务端完‌全解耦，任何语言开发的客户端都可以调‎用 MCP 服务。‌如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260407235558695.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260407235558695.png&#34;
 	
 	
 	
@@ -11094,7 +11094,7 @@
     &gt;Transports 传输&lt;/a&gt;：定义客户端和服务器间的通信方式，包括 Stdio（本地进程间通信）和 SSE（网络实时通信），确保不同环境下的可靠信息交换。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;如果要开发⁠ MCP 服务主要关注前 3 个概念，To‎ols 工具是重中‌之重！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408151059808.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408151059808.png&#34;
 	
 	
 	
@@ -11106,7 +11106,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;根据&lt;a class=&#34;link&#34; href=&#34;https://modelcontextprotocol.io/clients&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;官方文档&lt;/a&gt;也可以发现，支持Tools工具的客户端最多（全都支持）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408151400154.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408151400154.png&#34;
 	
 	
 	
@@ -11145,7 +11145,7 @@
 &lt;/h3&gt;&lt;p&gt;以阿里云百炼为例，参考 &lt;a class=&#34;link&#34; href=&#34;https://help.aliyun.com/zh/model-studio/mcp-introduction&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;官方 MCP 文档&lt;/a&gt;，我们可以直接使用官方预置的 MCP 服务，或者部署自己的 MCP 服务到阿里云平台上。&lt;/p&gt;
 &lt;p&gt;如图，官方提供了很多现成的 MCP 服务：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408154148714.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408154148714.png&#34;
 	
 	
 	
@@ -11157,7 +11157,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;进入一个智⁠能体应用，在左侧可以点击添加 ‌MCP 服务，然后选择想要使用的 MCP 服务即可，比如使用‎高德地图 MCP 服务，提供地‌理信息查询等 12 个工具。&lt;/p&gt;
 &lt;p&gt;随意选择一个工具进行测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408154513555.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408154513555.png&#34;
 	
 	
 	
@@ -11175,7 +11175,7 @@
 &lt;p&gt;比如到 &lt;a class=&#34;link&#34; href=&#34;https://mcp.so/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;MCP 市场&lt;/a&gt; 找到 &lt;a class=&#34;link&#34; href=&#34;https://mcp.so/server/amap-maps/amap&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;高德地图 MCP&lt;/a&gt;，发现 Server Config 中定义了使用 &lt;code&gt;npx&lt;/code&gt; 命令行工具来安装和运行服务端代码，之后配置时就参考这个填：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408222516004.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408222516004.png&#34;
 	
 	
 	
@@ -11189,7 +11189,7 @@
     &gt;官网&lt;/a&gt; 傻瓜式安装即可。&lt;/p&gt;
 &lt;p&gt;从配置中我们发现，使用地图 MCP 需要 API Key，我们可以到&lt;a class=&#34;link&#34; href=&#34;https://lbs.amap.com/?ref=https://console.amap.com/dev/key/app&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;高德开放平台&lt;/a&gt;创建应用并添加 API Key：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408223149904.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408223149904.png&#34;
 	
 	
 	
@@ -11202,7 +11202,7 @@
 &lt;h4 id=&#34;claude-code接入mcp&#34;&gt;Claude Code接入MCP
 &lt;/h4&gt;&lt;p&gt;首先下载一个&lt;a class=&#34;link&#34; href=&#34;https://github.com/farion1231/cc-switch/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;cc-switch&lt;/a&gt;，打开后找到右上角“MCP管理”，进入后再点击右上角&amp;quot;添加MCP&amp;rdquo;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408224046380.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408224046380.png&#34;
 	
 	
 	
@@ -11213,7 +11213,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408224106306.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408224106306.png&#34;
 	
 	
 	
@@ -11224,7 +11224,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408230543956.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408230543956.png&#34;
 	
 	
 	
@@ -11236,7 +11236,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;测试使用-mcp&#34;&gt;测试使用 MCP
 &lt;/h4&gt;&lt;p&gt;接下来就可以⁠使用 MCP 服务了，打开Claude Code进行测试&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408230036180.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408230036180.png&#34;
 	
 	
 	
@@ -11375,7 +11375,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;从这段代码能够看出，&lt;strong&gt;MCP 调用的本质就是类似工具调用&lt;/strong&gt;，并不是让 AI 服务器主动去调用 MCP 服务，而是告诉 AI “MCP 服务提供了哪些工具”，如果 AI 想要使用这些工具完成任务，就会告诉我们的后端程序，后端程序在执行工具后将结果返回给 AI，最后由 AI 总结并回复。流程图如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408234601979.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408234601979.png&#34;
 	
 	
 	
@@ -11411,7 +11411,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;测试结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260408235610780.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260408235610780.png&#34;
 	
 	
 	
@@ -12122,7 +12122,7 @@
 &lt;/h3&gt;&lt;p&gt;Spring AI 还提供了一系列 &lt;a class=&#34;link&#34; href=&#34;https://docs.spring.io/spring-ai/reference/api/mcp/mcp-helpers.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;辅助 MCP 开发的工具类&lt;/a&gt;，用于 MCP 和 ToolCallback 之间的互相转换。&lt;/p&gt;
 &lt;p&gt;也就是说，⁠开发者可以直接将之‌前开发的工具转换为 MCP 服务，极‎大提高了代码复用性‌：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409144916120.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409144916120.png&#34;
 	
 	
 	
@@ -12139,7 +12139,7 @@
 &lt;h4 id=&#34;前置准备&#34;&gt;前置准备
 &lt;/h4&gt;&lt;p&gt;1）首先在&lt;a class=&#34;link&#34; href=&#34;https://www.pexels.com/zh-cn/api/key/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Pexels官网&lt;/a&gt;生成 API Key：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409174220533.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409174220533.png&#34;
 	
 	
 	
@@ -12150,7 +12150,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;2）在项目⁠根目录下新建 mo‌dule，依赖的话可以先引入一个Lombok：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409174836654.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409174836654.png&#34;
 	
 	
 	
@@ -12407,7 +12407,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;测试结果，确认可以搜索到图片：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409182331015.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409182331015.png&#34;
 	
 	
 	
@@ -12459,7 +12459,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;打包&#34;&gt;打包
 &lt;/h4&gt;&lt;p&gt;7）至此就开发⁠完成了，最后使用 Maven‌ Package 命令打包，会在 target 目录下生‎成可执行的 JAR 包，等会‌儿客户端调用时会依赖这个文件。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409195747186.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409195747186.png&#34;
 	
 	
 	
@@ -12557,7 +12557,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行结果（可能比较慢，稍微等个一两分钟）：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/014655d1cccfed20.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/014655d1cccfed20.png&#34;
 	
 	
 	
@@ -12568,7 +12568,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;随便搜索一个看看是否正确：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/476d2afd4a97a944.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/476d2afd4a97a944.png&#34;
 	
 	
 	
@@ -12602,7 +12602,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;然后启动Mcp服务（运行项目）：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409201758616.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409201758616.png&#34;
 	
 	
 	
@@ -12635,7 +12635,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;              &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;http://localhost:8127&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409202056989.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409202056989.png&#34;
 	
 	
 	
@@ -12646,7 +12646,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;测试运行，发现 MCP 服务端的代码被成功执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409202522816.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409202522816.png&#34;
 	
 	
 	
@@ -12739,7 +12739,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在 MCP 服务端可以通过 &lt;code&gt;System.getenv()&lt;/code&gt; 获取环境变量。可以通过这个方法来测试自己编写的Mcp服务是否能正确接收环境变量。&lt;/p&gt;
 &lt;p&gt;注意不能直接通过 &lt;code&gt;System.out.println&lt;/code&gt; 来输出环境变量，因为 stdio 使用标准输入输出流进行通信，自己输出的内容会干扰通信。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409221936574.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409221936574.png&#34;
 	
 	
 	
@@ -12848,7 +12848,7 @@
 &lt;li&gt;循环迭代：不断重复上述 3 个过程，直到任务完成或达到终止条件。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;ReAct 流程如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260410192551093.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260410192551093.png&#34;
 	
 	
 	
@@ -12906,7 +12906,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└─ assets/              # 资源文件（logo、社区图等）
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260411000108058.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260411000108058.png&#34;
 	
 	
 	
@@ -13086,7 +13086,7 @@
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260411000514003.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260411000514003.png&#34;
 	
 	
 	
@@ -13097,7 +13097,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;执行流程&#34;&gt;执行流程
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260411000935277.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260411000935277.png&#34;
 	
 	
 	
@@ -14030,7 +14030,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260411210117991.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260411210117991.png&#34;
 	
 	
 	
@@ -14041,7 +14041,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;查看pdf文件：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260411210154288.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260411210154288.png&#34;
 	
 	
 	
@@ -14340,7 +14340,7 @@
 &lt;/div&gt;&lt;p&gt;正常情况下，需要对接口返回值进行封装、并且添加全局异常处理机制来完善整个项目，提高系统的健壮性。这里仅作演示。&lt;/p&gt;
 &lt;h3 id=&#34;测试接口&#34;&gt;测试接口
 &lt;/h3&gt;&lt;p&gt;打开http://localhost:8123/api/doc.html#/，进行测试&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260412002618128.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260412002618128.png&#34;
 	
 	
 	
@@ -14352,7 +14352,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;浏览器虽然看不见实时输出，但可以通过控制台看出来。确认运行结果正常，确实是流式输出。&lt;/p&gt;
 &lt;p&gt;也可以通过cmd窗口来实时查看输出：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260412002712883.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260412002712883.png&#34;
 	
 	
 	
@@ -14362,7 +14362,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260412002747160.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260412002747160.png&#34;
 	
 	
 	
@@ -14726,7 +14726,7 @@
     &gt;腾讯云托管&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://serverless.aliyun.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;阿里云 serverless&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://railway.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Railway&lt;/a&gt; 等，我们只需要把自己的项目打包成 Docker 容器镜像（理解为安装包），就能快速在平台上启动和扩缩容了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260413111342430.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260413111342430.png&#34;
 	
 	
 	
@@ -14846,7 +14846,7 @@
 &lt;/h4&gt;&lt;p&gt;打开 &lt;a class=&#34;link&#34; href=&#34;https://cloud.weixin.qq.com/cloudrun&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;微信云托管&lt;/a&gt;，点击主页的免费试用&lt;/p&gt;
 &lt;p&gt;选择模版时选择自定义部署：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260413125707232.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260413125707232.png&#34;
 	
 	
 	
@@ -14858,7 +14858,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;进入后点击右上角创建服务。&lt;/p&gt;
 &lt;p&gt;然后填写一些信息：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260413132928245.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260413132928245.png&#34;
 	
 	
 	
@@ -14876,7 +14876,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;然后点击发布，进入漫长的等待环节，如果部署失败可以看看运行日志找原因。&lt;/p&gt;
 &lt;p&gt;注意，部署后微信云托管会给一个临时域名供测试，但如果要长期使用，需要去“自定义域名”里给当前服务绑定一个自己的域名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260413145147339.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260413145147339.png&#34;
 	
 	
 	
@@ -14899,7 +14899,7 @@
     &gt;https://yu.com/api/xxx&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;前端生产环境配置&#34;&gt;前端生产环境配置
 &lt;/h4&gt;&lt;p&gt;需要修改前端代码中的请求地址，使其能够根据不同环境使用不同请求地址，一般会放在&lt;code&gt;**/api.js&lt;/code&gt;里&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260413152332202.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260413152332202.png&#34;
 	
 	
 	
@@ -15196,7 +15196,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*.log
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260413150646129.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260413150646129.png&#34;
 	
 	
 	
@@ -15208,7 +15208,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;使用平台部署容器-1&#34;&gt;使用平台部署容器
 &lt;/h4&gt;&lt;p&gt;1）同样，在微信云托管创建一个服务&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260413150933048.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260413150933048.png&#34;
 	
 	
 	
@@ -15219,7 +15219,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;2）打包前端文件，建议别把依赖打包进去，参考打包内容如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260413151104581.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260413151104581.png&#34;
 	
 	
 	
@@ -15231,7 +15231,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;如果代码上传到了远程仓库，也可以使用远程仓库&lt;/p&gt;
 &lt;p&gt;还可以在“服务设置”里把CPU规格降低点省钱&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260413151341723.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260413151341723.png&#34;
 	
 	
 	
@@ -15242,7 +15242,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;3）等待一段时间后成功部署，然后打开访问页面测试能否成功请求后端&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260413153311208.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260413153311208.png&#34;
 	
 	
 	
@@ -15253,7 +15253,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;如果AI没有正常回复，先检查请求是否正常转发。如果正常转发，但AI还是没有正常回复，就去微信云托管看看后端服务是否在正常运行，微信云托管默认30分钟无请求后就关闭服务，这样比较省钱。当收到请求后，服务会重新启动，不过启动要一段时间，等服务启动成功后，再次回到前端进行测试，正常情况下，AI此时就能正常回复了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/62c6fed8ea4df8e8.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/62c6fed8ea4df8e8.png&#34;
 	
 	
 	
@@ -15267,10 +15267,10 @@
         </item>
         <item>
         <title>SpringAI入门</title>
-        <link>https://IAmYuanyu.github.io/p/springai%E5%85%A5%E9%97%A8/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/springai%E5%85%A5%E9%97%A8/</link>
         <pubDate>Thu, 12 Mar 2026 23:45:37 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/springai%E5%85%A5%E9%97%A8/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/springai%E5%85%A5%E9%97%A8/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文内容基于黑马SpringAI课程：https://www.bilibili.com/video/BV1MtZnYtEB3&lt;/p&gt;
 &lt;p&gt;资料：https://www.123865.com/s/SQzhTd-1NXld&lt;/p&gt;
@@ -15281,7 +15281,7 @@
 &lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;SpringAI整合了全球（主要是国外）的大多数大模型，而且对于大模型开发的三种技术架构都有比较好的封装和支持，开发起来非常方便。&lt;/p&gt;
 &lt;p&gt;不同的模型能够接收的输入类型、输出类型不一定相同。SpringAI根据模型的输入和输出类型不同对模型进行了分类：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772975686879-1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772975686879-1.png&#34;
 	
 	
 	
@@ -15513,7 +15513,7 @@
 &lt;/h2&gt;&lt;h3 id=&#34;快速入门ollama&#34;&gt;快速入门（Ollama）
 &lt;/h3&gt;&lt;h4 id=&#34;创建工程&#34;&gt;创建工程
 &lt;/h4&gt;&lt;p&gt;创建一个新的SpringBoot工程，并勾选图中依赖：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260308183122899.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260308183122899.png&#34;
 	
 	
 	
@@ -15523,7 +15523,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309130030205.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309130030205.png&#34;
 	
 	
 	
@@ -15730,7 +15730,7 @@
 &lt;/h4&gt;&lt;p&gt;&lt;code&gt;ChatClient&lt;/code&gt;中封装了与AI大模型对话的各种API，同时支持同步式或响应式交互。&lt;/p&gt;
 &lt;p&gt;不过，在使用之前，首先需要声明一个&lt;code&gt;ChatClient&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;com.yuanyu.ai.config&lt;/code&gt;包下新建一个&lt;code&gt;CommonConfiguration&lt;/code&gt;类：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260308221136496.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260308221136496.png&#34;
 	
 	
 	
@@ -15788,7 +15788,7 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;同步调用&#34;&gt;同步调用
 &lt;/h4&gt;&lt;p&gt;先创建一个&lt;code&gt;ChatController&lt;/code&gt;类&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309134206691.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309134206691.png&#34;
 	
 	
 	
@@ -15855,7 +15855,7 @@
 &lt;p&gt;注意：基于call()方法的调用属于同步调用，需要所有响应结果全部返回后才能返回给前端。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;启动项目，在浏览器中访问：http://localhost:8080/ai/chat?prompt=你是谁？&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309134341189.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309134341189.png&#34;
 	
 	
 	
@@ -15903,7 +15903,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;重启测试，再次访问：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773035101922-6.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773035101922-6.gif&#34;
 	
 	
 	
@@ -15936,7 +15936,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;我们再次询问“你是谁？”&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309135308260.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309135308260.png&#34;
 	
 	
 	
@@ -15956,7 +15956,7 @@
 &lt;/h3&gt;&lt;p&gt;默认情况下，应用于AI的交互时不记录日志的，使用者无法得知SpringAI组织的提示词到底长什么样，有没有问题，这样不方便调试。&lt;/p&gt;
 &lt;h4 id=&#34;advisor&#34;&gt;Advisor
 &lt;/h4&gt;&lt;p&gt;SpringAI基于AOP机制实现与大模型对话过程的增强、拦截、修改等功能。所有的增强通知都需要实现Advisor接口。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773049699707-9.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773049699707-9.png&#34;
 	
 	
 	
@@ -15967,7 +15967,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;Spring提供了一些Advisor的默认实现，来实现一些基本的增强功能：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773049699707-10.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773049699707-10.png&#34;
 	
 	
 	
@@ -16022,7 +16022,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;重启项目，再次聊天就能看到AI对话的日志信息了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309175908648.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309175908648.png&#34;
 	
 	
 	
@@ -16242,7 +16242,7 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;阿里云百炼中的API Key，官网位置：&lt;a class=&#34;link&#34; href=&#34;https://bailian.console.aliyun.com/cn-beijing/?tab=model#/api-key&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;大模型服务平台百炼控制台&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309203718700.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309203718700.png&#34;
 	
 	
 	
@@ -16255,7 +16255,7 @@
 &lt;p&gt;官网有将API Key配置到电脑系统环境变量的详细教程&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;若是不想将其配置到电脑环境变量中，只想配置在当前项目中，可以参考下方操作设置idea&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;首先，点击启动项下拉箭头，然后点击&lt;code&gt;Edit Configurations&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773146948058-32.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773146948058-32.png&#34;
 	
 	
 	
@@ -16266,7 +16266,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后，在弹出的窗口中点击&lt;code&gt;Modify options&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773146948058-33.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773146948058-33.png&#34;
 	
 	
 	
@@ -16277,7 +16277,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在弹出窗口中，选择&lt;code&gt;Environment variables&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773146948059-34.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773146948059-34.png&#34;
 	
 	
 	
@@ -16288,7 +16288,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后，在刚才的&lt;code&gt;Run/Debug Configurations&lt;/code&gt;窗口中，就会多出环境变量配置栏：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773146948059-35.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773146948059-35.png&#34;
 	
 	
 	
@@ -16409,7 +16409,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;参考目录：（&lt;code&gt;MvcConfiguration&lt;/code&gt;类是接下来要说的跨域问题解决）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309203929913.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309203929913.png&#34;
 	
 	
 	
@@ -16420,7 +16420,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309204400411.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309204400411.png&#34;
 	
 	
 	
@@ -16430,7 +16430,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309204438347.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309204438347.png&#34;
 	
 	
 	
@@ -16445,7 +16445,7 @@
 &lt;p&gt;所以，黑马准备了一个前端页面。而且有两种不同的运行方式。&lt;/p&gt;
 &lt;h4 id=&#34;npm运行&#34;&gt;npm运行
 &lt;/h4&gt;&lt;p&gt;在资料中提供了前端的源代码：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773050846487-15.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773050846487-15.png&#34;
 	
 	
 	
@@ -16471,7 +16471,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;启动后，访问 http://localhost:5173即可看到页面：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773050846487-16.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773050846487-16.png&#34;
 	
 	
 	
@@ -16483,7 +16483,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;nginx运行&#34;&gt;Nginx运行
 &lt;/h4&gt;&lt;p&gt;如果你不关心源码，黑马也提供了构建好的Nginx程序：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773050879158-21.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773050879158-21.png&#34;
 	
 	
 	
@@ -16511,7 +16511,7 @@
 &lt;/div&gt;&lt;p&gt;启动后，访问 http://localhost:5173即可看到页面&lt;/p&gt;
 &lt;h4 id=&#34;解决cors跨域问题&#34;&gt;解决CORS（跨域）问题
 &lt;/h4&gt;&lt;p&gt;前后端在不同域名，存在跨域问题，因此需要在服务端解决cors问题。在&lt;code&gt;com.yuanyu.ai.config&lt;/code&gt;包中添加一个&lt;code&gt;MvcConfiguration&lt;/code&gt;类：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773057920657-24.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773057920657-24.png&#34;
 	
 	
 	
@@ -16571,7 +16571,7 @@
 &lt;p&gt;聊天对话的接口是：POST /ai/chat&lt;/p&gt;
 &lt;p&gt;请确保你的服务端接口也是这样。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309201058481.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309201058481.png&#34;
 	
 	
 	
@@ -16633,7 +16633,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309212018986.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309212018986.png&#34;
 	
 	
 	
@@ -16671,7 +16671,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;此时就能隔离不同会话了&lt;/p&gt;
 &lt;p&gt;测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309220305440.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309220305440.png&#34;
 	
 	
 	
@@ -16681,7 +16681,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260309220411432.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260309220411432.png&#34;
 	
 	
 	
@@ -16696,7 +16696,7 @@
 &lt;p&gt;&lt;strong&gt;会话记忆&lt;/strong&gt;：是指让大模型记住每一轮对话的内容，不至于前一句刚问完，下一句就忘了。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;会话历史&lt;/strong&gt;：是指要记录总共有多少不同的对话&lt;/p&gt;
 &lt;p&gt;以DeepSeek为例，页面上的会话历史：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773062710801-27.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773062710801-27.png&#34;
 	
 	
 	
@@ -16964,7 +16964,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;查询会话历史&#34;&gt;查询会话历史
 &lt;/h4&gt;&lt;p&gt;页面需要接收的内容：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260310183240830.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260310183240830.png&#34;
 	
 	
 	
@@ -17030,7 +17030,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;现在重启启动项目，在网页测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2026-03-10_18-16-24.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2026-03-10_18-16-24.gif&#34;
 	
 	
 	
@@ -17043,7 +17043,7 @@
 &lt;p&gt;发现确实能保存并查询到会话历史列表了，但会话内容丢失，所以接下来实现查询会话记录详情&lt;/p&gt;
 &lt;p&gt;查询会话历史消息，也就是Message集合。但是由于Message并不符合页面的需要，需要自己定义一个VO&lt;/p&gt;
 &lt;p&gt;页面需要接收的内容：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260310183205891.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260310183205891.png&#34;
 	
 	
 	
@@ -17212,7 +17212,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;重启服务，现在AI聊天机器人就具备会话记忆和会话历史功能了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2026-03-10_18-41-49.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2026-03-10_18-41-49.gif&#34;
 	
 	
 	
@@ -17889,7 +17889,7 @@
 &lt;p&gt;注意：这里的请求路径必须是/ai/game，因为前端已经写死了请求的路径。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;测试&#34;&gt;测试
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260310212752446.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260310212752446.png&#34;
 	
 	
 	
@@ -18136,7 +18136,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;测试-1&#34;&gt;测试
 &lt;/h3&gt;&lt;p&gt;现在就可以在配置类中同时启用&lt;code&gt;chatClient&lt;/code&gt;和&lt;code&gt;gameChatClient&lt;/code&gt;的bean了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2026-03-10_22-15-20.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2026-03-10_22-15-20.gif&#34;
 	
 	
 	
@@ -18152,7 +18152,7 @@
 &lt;p&gt;接下来通过智能客服的案例来学习FunctionCalling&lt;/p&gt;
 &lt;p&gt;假如我要开发一个24小时在线的AI智能客服，可以给用户提供黑马的培训课程咨询服务，帮用户预约线下课程试听。&lt;/p&gt;
 &lt;p&gt;整个业务的流程如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260311122628104.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260311122628104.png&#34;
 	
 	
 	
@@ -18236,7 +18236,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;也就是说，在提示词中告诉大模型，什么情况下需要调用什么工具，将来用户在与大模型交互的时候，大模型就可以在适当的时候调用工具了。&lt;/p&gt;
 &lt;p&gt;流程如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260311122723268.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260311122723268.png&#34;
 	
 	
 	
@@ -18258,7 +18258,7 @@
 &lt;p&gt;听起来是不是挺复杂，还要解析响应结果，调用对应函数。&lt;/p&gt;
 &lt;p&gt;不过，有了SpringAI，中间这些复杂的步骤就都不用做了！&lt;/p&gt;
 &lt;p&gt;由于解析大模型响应，找到函数名称、参数，调用函数等这些动作都是固定的，所以SpringAI再次利用AOP的能力，把中间调用函数的部分自动完成了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773203159572-45.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773203159572-45.png&#34;
 	
 	
 	
@@ -18455,7 +18455,7 @@
 &lt;/div&gt;&lt;h4 id=&#34;基础代码&#34;&gt;基础代码
 &lt;/h4&gt;&lt;p&gt;基础代码可以使用mybatisplus插件一键生成&lt;/p&gt;
 &lt;p&gt;插件：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260311164313585.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260311164313585.png&#34;
 	
 	
 	
@@ -18466,7 +18466,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;配置数据库连接：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260311164804446.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260311164804446.png&#34;
 	
 	
 	
@@ -18476,7 +18476,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260311164730979.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260311164730979.png&#34;
 	
 	
 	
@@ -18487,7 +18487,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;生成代码：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260311164422656.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260311164422656.png&#34;
 	
 	
 	
@@ -18497,7 +18497,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260311164248377.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260311164248377.png&#34;
 	
 	
 	
@@ -18518,7 +18518,7 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;查询条件分析&#34;&gt;查询条件分析
 &lt;/h4&gt;&lt;p&gt;课程表的字段：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773219209574-48.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773219209574-48.png&#34;
 	
 	
 	
@@ -19083,7 +19083,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260311175440825.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260311175440825.png&#34;
 	
 	
 	
@@ -19096,7 +19096,7 @@
 &lt;p&gt;发现可以正常使用（此时我用的模型是qwen-max）&lt;/p&gt;
 &lt;p&gt;下面是黑马给出的示例：&lt;/p&gt;
 &lt;p&gt;AI客服可以智能地自己查询数据库、查询校区，给学生推荐课程、生成预约单：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773222977714-51.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773222977714-51.png&#34;
 	
 	
 	
@@ -19158,7 +19158,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;数据库中确实有预约的数据了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773223060879-54.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773223060879-54.png&#34;
 	
 	
 	
@@ -19190,7 +19190,7 @@
 &lt;/h4&gt;&lt;p&gt;向量是空间中有方向和长度的量，空间可以是二维，也可以是多维。&lt;/p&gt;
 &lt;p&gt;向量既然是在空间中，两个向量之间就一定能计算距离。&lt;/p&gt;
 &lt;p&gt;以二维向量为例，向量之间的距离有两种计算方法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773237746476-57.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773237746476-57.png&#34;
 	
 	
 	
@@ -19203,7 +19203,7 @@
 &lt;p&gt;通常，两个向量之间&lt;strong&gt;欧式距离越近&lt;/strong&gt;，认为两个向量的&lt;strong&gt;相似度越高&lt;/strong&gt;。（余弦距离相反，越大相似度越高）&lt;/p&gt;
 &lt;p&gt;所以，如果能&lt;strong&gt;把文本转为向量&lt;/strong&gt;，就可以&lt;strong&gt;通过向量距离来判断文本的相似度&lt;/strong&gt;了。&lt;/p&gt;
 &lt;p&gt;现在，有不少的专门的&lt;strong&gt;向量模型&lt;/strong&gt;，就可以实现将文本向量化。一个好的向量模型，就是要&lt;strong&gt;尽可能让文本含义相似的向量，在空间中距离更近&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773237746476-58.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773237746476-58.png&#34;
 	
 	
 	
@@ -19215,7 +19215,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;接下来，就准备一个向量模型，用于将文本向量化。&lt;/p&gt;
 &lt;p&gt;阿里云百炼平台就提供了这样的模型：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773237862131-63.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773237862131-63.png&#34;
 	
 	
 	
@@ -19586,7 +19586,7 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;注意：如果前面是把API Key配置在idea中的，现在需要在测试类中再配置一次&lt;/p&gt;
 &lt;p&gt;首先，点击单元测试左侧运行按钮：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773239264898-66.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773239264898-66.png&#34;
 	
 	
 	
@@ -19597,7 +19597,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后配置环境变量：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773239264898-67.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773239264898-67.png&#34;
 	
 	
 	
@@ -19915,7 +19915,7 @@
 &lt;li&gt;将检索到的片段、用户的问题一起拼接为提示词&lt;/li&gt;
 &lt;li&gt;发送提示词给大模型，得到响应&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260312151504768.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260312151504768.png&#34;
 	
 	
 	
@@ -19927,7 +19927,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;目标&#34;&gt;目标
 &lt;/h4&gt;&lt;p&gt;接下来，就来实现一个个人知识库AI应用，ChatPDF，原网站如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1773299724248-72.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1773299724248-72.png&#34;
 	
 	
 	
@@ -20641,7 +20641,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;测试-3&#34;&gt;测试
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260312164835762.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260312164835762.png&#34;
 	
 	
 	
@@ -20829,7 +20829,7 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;注意：&lt;/p&gt;
 &lt;p&gt;在SpringAI的当前版本（1.1.2)中，qwen-omni与SpringAI中的OpenAI模块的兼容性有问题，目前仅支持文本和图片两种模态。音频会有数据格式错误问题，视频完全不支持。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260312214336091.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260312214336091.png&#34;
 	
 	
 	
@@ -20846,7 +20846,7 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;测试-4&#34;&gt;测试
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260312214850508.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260312214850508.png&#34;
 	
 	
 	
@@ -20857,7 +20857,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;上传的图片：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/%e9%a3%8e%e6%99%af%e5%9b%be2603122149.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/%e9%a3%8e%e6%99%af%e5%9b%be2603122149.png&#34;
 	
 	
 	
@@ -21325,10 +21325,10 @@
         </item>
         <item>
         <title>初识大模型应用开发</title>
-        <link>https://IAmYuanyu.github.io/p/%E5%88%9D%E8%AF%86%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%88%9D%E8%AF%86%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/</link>
         <pubDate>Sat, 07 Mar 2026 16:52:05 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E5%88%9D%E8%AF%86%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%88%9D%E8%AF%86%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文内容基于黑马SpringAI课程：https://www.bilibili.com/video/BV1MtZnYtEB3&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -21336,7 +21336,7 @@
 &lt;/h2&gt;&lt;h3 id=&#34;ai发展&#34;&gt;AI发展
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;AI&lt;/strong&gt;，人工智能（&lt;strong&gt;A&lt;/strong&gt;rtificial &lt;strong&gt;I&lt;/strong&gt;ntelligence），使机器能够像人类一样思考、学习和解决问题的技术。&lt;/p&gt;
 &lt;p&gt;AI发展至今大概可以分为三个阶段：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772714299061-2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772714299061-2.png&#34;
 	
 	
 	
@@ -21349,7 +21349,7 @@
 &lt;p&gt;其中，深度学习领域的自然语言处理(&lt;strong&gt;N&lt;/strong&gt;atural &lt;strong&gt;L&lt;/strong&gt;anguage &lt;strong&gt;P&lt;/strong&gt;rocessing, NLP)有一个关键技术叫做&lt;strong&gt;Transformer&lt;/strong&gt;，这是一种由多层感知机组成的神经网络模型，是现如今AI高速发展的最主要原因。&lt;/p&gt;
 &lt;p&gt;我们所熟知的&lt;strong&gt;大模型&lt;/strong&gt;（&lt;strong&gt;L&lt;/strong&gt;arge &lt;strong&gt;L&lt;/strong&gt;anguage &lt;strong&gt;M&lt;/strong&gt;odels, LLM），例如GPT、DeepSeek底层都是采用Transformer神经网络模型。&lt;/p&gt;
 &lt;p&gt;以GPT模型为例，其三个字母的缩写分别是Generative、Pre-trained、Transformer：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772714299057-1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772714299057-1.png&#34;
 	
 	
 	
@@ -21362,7 +21362,7 @@
 &lt;p&gt;&lt;em&gt;那么问题来， Transformer神经网络有什么神奇的地方，可以实现如此强大的能力呢？&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;大模型原理&#34;&gt;大模型原理
 &lt;/h3&gt;&lt;p&gt;其实，最早Transformer是由Google在2017年提出的一种神经网络模型，一开始的作用是把它作为&lt;strong&gt;机器翻译&lt;/strong&gt;的核心：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772714338076-7.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772714338076-7.gif&#34;
 	
 	
 	
@@ -21374,7 +21374,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;Transformer中提出的&lt;strong&gt;注意力机制&lt;/strong&gt;使得神经网络在处理信息时可以根据上下内容调整对数据的理解，变得更加智能化。这不仅仅是说人类的文字，包括图片、音频数据都可以交给Transformer来处理。于是，越来越多的模型开始基于Transformer实现了各种神奇的功能。&lt;/p&gt;
 &lt;p&gt;例如，有的模型可以根据音频生成文本，或者根据文本生成音频：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772714338076-8.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772714338076-8.gif&#34;
 	
 	
 	
@@ -21385,7 +21385,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;还有的模型则可以根据文字生成图片，比如Dall-E、MidJourney：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772714338076-9.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772714338076-9.gif&#34;
 	
 	
 	
@@ -21397,7 +21397,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;不过，今天要聊的&lt;strong&gt;大语言模型&lt;/strong&gt;（&lt;strong&gt;L&lt;/strong&gt;arge &lt;strong&gt;L&lt;/strong&gt;anguage &lt;strong&gt;M&lt;/strong&gt;odels, 以下简称LLM）是对Transformer的另一种用法：&lt;strong&gt;推理预测。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;LLM在训练Transformer时会尝试输入一些文本、音频、图片等信息，然后让Transformer推理接下来跟着的应该是什么内容。推理的结果会以概率分布的形式出现：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772714338076-10.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772714338076-10.gif&#34;
 	
 	
 	
@@ -21410,7 +21410,7 @@
 &lt;p&gt;&lt;em&gt;问题来了，仅仅是推测接下来的内容，怎么能让ChatGPT在对话中&lt;strong&gt;生成大段的有关联的文字内容&lt;/strong&gt;呢？&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;其实LLM采用的就是笨办法，答案就是：持续生成&lt;/p&gt;
 &lt;p&gt;根据前文推测出接下来的一个词语后，把这个词语加入前文，再次交给大模型处理，推测下一个字，然后不断重复前面的过程，就可以生成大段的内容了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772714338076-11.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772714338076-11.gif&#34;
 	
 	
 	
@@ -21476,7 +21476,7 @@
 &lt;h4 id=&#34;申请api_key&#34;&gt;申请API_KEY
 &lt;/h4&gt;&lt;p&gt;注册账号以后还需要申请一个API_KEY才能访问百炼平台的大模型。&lt;/p&gt;
 &lt;p&gt;在阿里云百炼平台的右上角，鼠标悬停在用户图标上，可以看到下拉菜单：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772715159799-22.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772715159799-22.png&#34;
 	
 	
 	
@@ -21487,7 +21487,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;选择&lt;code&gt;API-KEY&lt;/code&gt;，进入&lt;code&gt;API-KEY&lt;/code&gt;管理页面：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772715159800-23.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772715159800-23.png&#34;
 	
 	
 	
@@ -21498,7 +21498,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;选择&lt;code&gt;创建我的API-KEY&lt;/code&gt;，会弹出表单：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772715159800-24.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772715159800-24.png&#34;
 	
 	
 	
@@ -21509,7 +21509,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;填写完毕，点击确定，即可生成一个新的&lt;code&gt;API-KEY&lt;/code&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772715159800-25.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772715159800-25.png&#34;
 	
 	
 	
@@ -21522,7 +21522,7 @@
 &lt;p&gt;后续开发中就需要用到这个&lt;code&gt;API-KEY&lt;/code&gt;了，一定要记牢。而且要&lt;strong&gt;保密&lt;/strong&gt;，不能告诉别人。&lt;/p&gt;
 &lt;h4 id=&#34;体验模型&#34;&gt;体验模型
 &lt;/h4&gt;&lt;p&gt;访问百炼平台，可以看到如下内容：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772715183593-34.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772715183593-34.png&#34;
 	
 	
 	
@@ -21533,7 +21533,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点击&lt;code&gt;模型调用&lt;/code&gt; -&amp;gt;&lt;code&gt;立即调用&lt;/code&gt; 就能进入模型广场：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772715183593-35.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772715183593-35.png&#34;
 	
 	
 	
@@ -21544,7 +21544,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;选择一个自己喜欢的模型，然后点击&lt;code&gt;API调用示例&lt;/code&gt;，即可进入API文档页：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772715183594-36.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772715183594-36.png&#34;
 	
 	
 	
@@ -21555,7 +21555,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点击&lt;code&gt;立即体验&lt;/code&gt;，就可以进入API调用大模型的试验台：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772715183594-37.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772715183594-37.png&#34;
 	
 	
 	
@@ -21594,7 +21594,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;环境变量配置，如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772716370986-46.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772716370986-46.png&#34;
 	
 	
 	
@@ -21607,7 +21607,7 @@
 &lt;p&gt;配置完可以打开一个命令行窗口，输入：&lt;code&gt;ollama --help&lt;/code&gt;看看是否能成功识别&lt;/p&gt;
 &lt;h4 id=&#34;运行模型&#34;&gt;运行模型
 &lt;/h4&gt;&lt;p&gt;可以在其官网上搜索自己需要的模型：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260305212138497.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260305212138497.png&#34;
 	
 	
 	
@@ -21618,7 +21618,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;以目前最热门的lfm2为例，点击后：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260305213328218.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260305213328218.png&#34;
 	
 	
 	
@@ -21629,7 +21629,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;模型名字里的b，表示billion，数字越小说明模型阉割越严重（越大对配置要求越高，谨慎选择），运行结果类似：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772717712433-49.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772717712433-49.png&#34;
 	
 	
 	
@@ -21830,7 +21830,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;调用模型-1&#34;&gt;调用模型
 &lt;/h4&gt;&lt;p&gt;部分平台提供了图形化的试验台，可以方便测试模型接口。比如阿里云百炼平台：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260307161107296.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260307161107296.png&#34;
 	
 	
 	
@@ -21842,7 +21842,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;也可以用普通的http客户端来发起请求大模型，以Ollama为例：&lt;/p&gt;
 &lt;p&gt;Ollama在本地部署时，会自动提供模型对应的Http接口，访问地址是：http://localhost:11434/api/chat&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772871232694-1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772871232694-1.png&#34;
 	
 	
 	
@@ -21956,7 +21956,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;当然，除了AI对话应用之外，大模型还可以开发很多其它的AI应用，常见的领域包括：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772872103681-4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772872103681-4.png&#34;
 	
 	
 	
@@ -21970,7 +21970,7 @@
 &lt;h3 id=&#34;大模型应用开发技术架构&#34;&gt;大模型应用开发技术架构
 &lt;/h3&gt;&lt;h4 id=&#34;技术架构&#34;&gt;技术架构
 &lt;/h4&gt;&lt;p&gt;目前，大模型应用开发的技术架构主要有四种：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1772872198906-7.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1772872198906-7.png&#34;
 	
 	
 	
@@ -21985,7 +21985,7 @@
 &lt;p&gt;&lt;strong&gt;不断雕琢提示词，使大模型能给出最理想的答案&lt;/strong&gt;，这个过程就叫做&lt;strong&gt;提示词工程&lt;/strong&gt;（&lt;strong&gt;Prompt Engineering&lt;/strong&gt;）。&lt;/p&gt;
 &lt;p&gt;很多简单的AI应用，仅仅靠一段足够好的提示词就能实现了，这就是&lt;strong&gt;纯Prompt模式&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;其流程如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260307163211958.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260307163211958.png&#34;
 	
 	
 	
@@ -22006,7 +22006,7 @@
 &lt;li&gt;以此类推，逐步执行，直到达成最终结果。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;流程如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260307163221172.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260307163221172.png&#34;
 	
 	
 	
@@ -22049,7 +22049,7 @@
 &lt;/ul&gt;
 &lt;p&gt;由于每次都是从向量库中找出与用户问题相关的数据，而不是整个知识库，所以上下文就不会超过大模型的限制，同时又保证了大模型回答问题是基于知识库中的内容。&lt;/p&gt;
 &lt;p&gt;流程如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260307164023643.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260307164023643.png&#34;
 	
 	
 	
@@ -22080,7 +22080,7 @@
 &lt;/h4&gt;&lt;p&gt;从开发成本由低到高来看，四种方案排序如下：&lt;/p&gt;
 &lt;p&gt;Prompt &amp;lt; Function Calling &amp;lt; RAG &amp;lt; Fine-tuning&lt;/p&gt;
 &lt;p&gt;所以在选择技术时通常也应该遵循&amp;quot;在达成目标效果的前提下，尽量降低开发成本&amp;quot;这一首要原则。然后可以参考以下流程来思考：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260307164618976.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260307164618976.png&#34;
 	
 	
 	

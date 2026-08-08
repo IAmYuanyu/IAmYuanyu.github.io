@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Vue3 on 缘鱼的笔记</title>
-        <link>https://IAmYuanyu.github.io/categories/vue3/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/vue3/</link>
         <description>Recent content in Vue3 on 缘鱼的笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Sun, 25 May 2025 15:06:25 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/vue3/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 25 May 2025 15:06:25 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/vue3/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>删除创建vue3后页面下方的devtools</title>
-        <link>https://IAmYuanyu.github.io/p/%E5%88%A0%E9%99%A4%E5%88%9B%E5%BB%BAvue3%E5%90%8E%E9%A1%B5%E9%9D%A2%E4%B8%8B%E6%96%B9%E7%9A%84devtools/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%88%A0%E9%99%A4%E5%88%9B%E5%BB%BAvue3%E5%90%8E%E9%A1%B5%E9%9D%A2%E4%B8%8B%E6%96%B9%E7%9A%84devtools/</link>
         <pubDate>Sun, 25 May 2025 15:06:25 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E5%88%A0%E9%99%A4%E5%88%9B%E5%BB%BAvue3%E5%90%8E%E9%A1%B5%E9%9D%A2%E4%B8%8B%E6%96%B9%E7%9A%84devtools/</guid>
-        <description>&lt;img src="https://IAmYuanyu.github.io/p/%E5%88%A0%E9%99%A4%E5%88%9B%E5%BB%BAvue3%E5%90%8E%E9%A1%B5%E9%9D%A2%E4%B8%8B%E6%96%B9%E7%9A%84devtools/Snipaste_2025-05-25_15-11-59.png" alt="Featured image of post 删除创建vue3后页面下方的devtools" /&gt;&lt;p&gt;找到项目下的&lt;code&gt;vite.config.js&lt;/code&gt;或&lt;code&gt;vite.config.ts&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250525151030271.png&#34;
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%88%A0%E9%99%A4%E5%88%9B%E5%BB%BAvue3%E5%90%8E%E9%A1%B5%E9%9D%A2%E4%B8%8B%E6%96%B9%E7%9A%84devtools/</guid>
+        <description>&lt;img src="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%88%A0%E9%99%A4%E5%88%9B%E5%BB%BAvue3%E5%90%8E%E9%A1%B5%E9%9D%A2%E4%B8%8B%E6%96%B9%E7%9A%84devtools/Snipaste_2025-05-25_15-11-59.png" alt="Featured image of post 删除创建vue3后页面下方的devtools" /&gt;&lt;p&gt;找到项目下的&lt;code&gt;vite.config.js&lt;/code&gt;或&lt;code&gt;vite.config.ts&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250525151030271.png&#34;
 	
 	
 	
@@ -28,10 +28,10 @@
         </item>
         <item>
         <title>将Vue项目打包为apk文件</title>
-        <link>https://IAmYuanyu.github.io/p/%E5%B0%86vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B8%BAapk%E6%96%87%E4%BB%B6/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%B0%86vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B8%BAapk%E6%96%87%E4%BB%B6/</link>
         <pubDate>Thu, 27 Mar 2025 15:25:58 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E5%B0%86vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B8%BAapk%E6%96%87%E4%BB%B6/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%B0%86vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B8%BAapk%E6%96%87%E4%BB%B6/</guid>
         <description>&lt;h2 id=&#34;使用-capacitor&#34;&gt;使用 Capacitor
 &lt;/h2&gt;&lt;h3 id=&#34;1-安装-capacitor&#34;&gt;1. 安装 Capacitor
 &lt;/h3&gt;&lt;p&gt;在 Vue 项目中安装 Capacitor 相关依赖：&lt;/p&gt;
@@ -98,10 +98,10 @@
         </item>
         <item>
         <title>Vue3快速上手</title>
-        <link>https://IAmYuanyu.github.io/p/vue3%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/vue3%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</link>
         <pubDate>Wed, 27 Mar 2024 13:52:16 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/vue3%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/vue3%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</guid>
         <description>&lt;h2 id=&#34;1-vue3简介&#34;&gt;1. Vue3简介
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -120,7 +120,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;截止2023年10月，最新的公开版本为：&lt;code&gt;3.3.4&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1695089947298-161c1b47-eb86-42fb-b1f8-d6a4fcab8ee2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1695089947298-161c1b47-eb86-42fb-b1f8-d6a4fcab8ee2.png&#34;
 	
 	
 	
@@ -261,7 +261,7 @@
 &lt;li&gt;对 &lt;code&gt;TypeScript&lt;/code&gt;、&lt;code&gt;JSX&lt;/code&gt;、&lt;code&gt;CSS&lt;/code&gt; 等支持开箱即用。&lt;/li&gt;
 &lt;li&gt;真正的按需编译，不再等待整个应用编译完成。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;webpack&lt;/code&gt;构建 与 &lt;code&gt;vite&lt;/code&gt;构建对比图如下：&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1683167182037-71c78210-8217-4e7d-9a83-e463035efbbe.png&#34;
+&lt;li&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1683167182037-71c78210-8217-4e7d-9a83-e463035efbbe.png&#34;
 	
 	
 	
@@ -270,7 +270,7 @@
 		alt=&#34;webpack构建&#34;
 	
 	
-&gt;	&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1683167204081-582dc237-72bc-499e-9589-2cdfd452e62f.png&#34;
+&gt;	&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1683167204081-582dc237-72bc-499e-9589-2cdfd452e62f.png&#34;
 	
 	
 	
@@ -337,7 +337,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;221-安装依赖&#34;&gt;2.2.1. 安装依赖
 &lt;/h4&gt;&lt;p&gt;创建后用vscode打开，发现有的文件冒红，可以在终端输入&lt;code&gt;npm i&lt;/code&gt;安装依赖后重新启动来解决&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250219184723761.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250219184723761.png&#34;
 	
 	
 	
@@ -397,7 +397,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;安装官方推荐的&lt;code&gt;vscode&lt;/code&gt;插件：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250219184521064.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250219184521064.png&#34;
 	
 	
 	
@@ -415,7 +415,7 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;222-如何运行&#34;&gt;2.2.2. 如何运行
 &lt;/h4&gt;&lt;p&gt;查看&lt;code&gt;package.json&lt;/code&gt;文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250219192339879.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250219192339879.png&#34;
 	
 	
 	
@@ -426,7 +426,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;发现是&lt;code&gt;dev&lt;/code&gt;，则在终端输入&lt;code&gt;npm run dev&lt;/code&gt;后，点开生成的链接即可查看&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250219192519483.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250219192519483.png&#34;
 	
 	
 	
@@ -524,7 +524,7 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;options-api-的弊端&#34;&gt;Options API 的弊端
 &lt;/h4&gt;&lt;p&gt;&lt;code&gt;Options&lt;/code&gt;类型的 &lt;code&gt;API&lt;/code&gt;，数据、方法、计算属性等，是分散在：&lt;code&gt;data&lt;/code&gt;、&lt;code&gt;methods&lt;/code&gt;、&lt;code&gt;computed&lt;/code&gt;中的，若想新增或者修改一个需求，就需要分别修改：&lt;code&gt;data&lt;/code&gt;、&lt;code&gt;methods&lt;/code&gt;、&lt;code&gt;computed&lt;/code&gt;，不便于维护和复用。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1696662197101-55d2b251-f6e5-47f4-b3f1-d8531bbf9279.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1696662197101-55d2b251-f6e5-47f4-b3f1-d8531bbf9279.gif&#34;
 	
 	
 	
@@ -533,7 +533,7 @@
 		alt=&#34;1.gif&#34;
 	
 	
-&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1696662200734-1bad8249-d7a2-423e-a3c3-ab4c110628be.gif&#34;
+&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1696662200734-1bad8249-d7a2-423e-a3c3-ab4c110628be.gif&#34;
 	
 	
 	
@@ -545,7 +545,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;composition-api-的优势&#34;&gt;Composition API 的优势
 &lt;/h4&gt;&lt;p&gt;可以用函数的方式，更加优雅的组织代码，让相关功能的代码更加有序的组织在一起。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1696662249851-db6403a1-acb5-481a-88e0-e1e34d2ef53a.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1696662249851-db6403a1-acb5-481a-88e0-e1e34d2ef53a.gif&#34;
 	
 	
 	
@@ -554,7 +554,7 @@
 		alt=&#34;3.gif&#34;
 	
 	
-&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1696662256560-7239b9f9-a770-43c1-9386-6cc12ef1e9c0.gif&#34;
+&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1696662256560-7239b9f9-a770-43c1-9386-6cc12ef1e9c0.gif&#34;
 	
 	
 	
@@ -1102,7 +1102,7 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;ref&lt;/code&gt;创建的变量必须使用&lt;code&gt;.value&lt;/code&gt;（可以使用&lt;code&gt;Vue - Official&lt;/code&gt;插件自动添加&lt;code&gt;.value&lt;/code&gt;）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250223210254796.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250223210254796.png&#34;
 	
 	
 	
@@ -1115,7 +1115,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;reactive&lt;/code&gt;重新分配一个新对象，会&lt;strong&gt;失去&lt;/strong&gt;响应式（可以使用&lt;code&gt;Object.assign&lt;/code&gt;去整体替换）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250223211333335.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250223211333335.png&#34;
 	
 	
 	
@@ -1224,7 +1224,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;38-computed&#34;&gt;3.8. 【computed】
 &lt;/h3&gt;&lt;p&gt;作用：根据已有数据计算出新数据（和&lt;code&gt;Vue2&lt;/code&gt;中的&lt;code&gt;computed&lt;/code&gt;作用一致）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/computed.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/computed.gif&#34;
 	
 	
 	
@@ -2404,7 +2404,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;示例代码：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250227223103545.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250227223103545.png&#34;
 	
 	
 	
@@ -2594,7 +2594,7 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;4-路由&#34;&gt;4. 路由
 &lt;/h2&gt;&lt;h3 id=&#34;41-对路由的理解&#34;&gt;4.1. 【对路由的理解】
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20231018144351536.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20231018144351536.png&#34;
 	
 	
 	
@@ -3054,7 +3054,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250302151507104.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250302151507104.png&#34;
 	
 	
 	
@@ -3125,7 +3125,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250302170358160.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250302170358160.png&#34;
 	
 	
 	
@@ -3180,7 +3180,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250302172545977.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250302172545977.png&#34;
 	
 	
 	
@@ -3215,7 +3215,7 @@
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;push和replace区别演示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2025-03-02_17-35-39.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2025-03-02_17-35-39.gif&#34;
 	
 	
 	
@@ -3418,7 +3418,7 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;5-pinia&#34;&gt;5. pinia
 &lt;/h2&gt;&lt;h3 id=&#34;51准备一个效果&#34;&gt;5.1【准备一个效果】
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/pinia_example.gif&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/pinia_example.gif&#34;
 	
 	
 	
@@ -3665,7 +3665,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;此时开发者工具中已经有了&lt;code&gt;pinia&lt;/code&gt;选项&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1684309952481-c67f67f9-d1a3-4d69-8bd6-2b381e003f31.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1684309952481-c67f67f9-d1a3-4d69-8bd6-2b381e003f31.png&#34;
 	
 	
 	
@@ -3809,7 +3809,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250303200553737.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250303200553737.png&#34;
 	
 	
 	
@@ -3940,7 +3940,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;下图为&lt;code&gt;console.log(this)&lt;/code&gt;的结果&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250303204203262.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250303204203262.png&#34;
 	
 	
 	
@@ -4015,7 +4015,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;toRefs与storeToRefs对比：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250303205905641.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250303205905641.png&#34;
 	
 	
 	
@@ -4129,7 +4129,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250303212916386.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250303212916386.png&#34;
 	
 	
 	
@@ -4206,7 +4206,7 @@
 &lt;li&gt;&lt;code&gt;$children&lt;/code&gt;被砍掉了。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;常见搭配形式：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20231119185900990.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20231119185900990.png&#34;
 	
 	
 	
@@ -4361,7 +4361,7 @@
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;案例演示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250304194956556.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250304194956556.png&#34;
 	
 	
 	
@@ -4964,7 +4964,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250305171225984.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250305171225984.png&#34;
 	
 	
 	
@@ -5053,7 +5053,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250305172147967.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250305172147967.png&#34;
 	
 	
 	
@@ -5194,7 +5194,7 @@
 &lt;/h3&gt;&lt;p&gt;参考之前&lt;code&gt;pinia&lt;/code&gt;部分的讲解&lt;/p&gt;
 &lt;h3 id=&#34;69-slot&#34;&gt;6.9. 【slot】
 &lt;/h3&gt;&lt;h4 id=&#34;1-默认插槽&#34;&gt;1. 默认插槽
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/default_slot.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/default_slot.png&#34;
 	
 	
 	
@@ -5590,7 +5590,7 @@
 &lt;p&gt;特点：对象的顶层属性是响应式的，但嵌套对象的属性不是。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250306205411531.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250306205411531.png&#34;
 	
 	
 	
@@ -5608,7 +5608,7 @@
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;注意&#34;&gt;注意
 &lt;/h4&gt;&lt;p&gt;不是响应式不代表数据不变，当页面中有响应式数据发生了变化，这些被修改的非响应式数据也会跟着变化&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2025-03-06_20-59-07.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2025-03-06_20-59-07.gif&#34;
 	
 	
 	
@@ -6208,7 +6208,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;使用演示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250306225454937.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250306225454937.png&#34;
 	
 	
 	
@@ -6260,7 +6260,7 @@
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;app.use&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;安装插件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250306225755089.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250306225755089.png&#34;
 	
 	
 	

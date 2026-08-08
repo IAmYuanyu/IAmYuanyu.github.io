@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Nginx on 缘鱼的笔记</title>
-        <link>https://IAmYuanyu.github.io/categories/nginx/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/nginx/</link>
         <description>Recent content in Nginx on 缘鱼的笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Thu, 09 Oct 2025 22:25:14 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/nginx/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 09 Oct 2025 22:25:14 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/nginx/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Nginx反向代理与负载均衡</title>
-        <link>https://IAmYuanyu.github.io/p/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
         <pubDate>Thu, 09 Oct 2025 22:25:14 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
         <description>&lt;h2 id=&#34;nginx反向代理与负载均衡&#34;&gt;Nginx反向代理与负载均衡
 &lt;/h2&gt;&lt;h3 id=&#34;反向代理&#34;&gt;反向代理
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;nginx 反向代理&lt;/strong&gt;，就是将前端发送的动态请求由 nginx 转发到后端服务器&lt;/p&gt;
 &lt;p&gt;这样就可以让前端请求的地址与后端接口的地址不一致&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251009221517876.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251009221517876.png&#34;
 	
 	
 	
@@ -27,7 +27,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251009221527829.png&#34;
+&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251009221527829.png&#34;
 	
 	
 	

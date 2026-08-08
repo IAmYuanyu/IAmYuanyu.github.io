@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>作者自用 on 缘鱼的笔记</title>
-        <link>https://IAmYuanyu.github.io/categories/%E4%BD%9C%E8%80%85%E8%87%AA%E7%94%A8/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/%E4%BD%9C%E8%80%85%E8%87%AA%E7%94%A8/</link>
         <description>Recent content in 作者自用 on 缘鱼的笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Wed, 27 Mar 2024 15:07:19 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/%E4%BD%9C%E8%80%85%E8%87%AA%E7%94%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 27 Mar 2024 15:07:19 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/%E4%BD%9C%E8%80%85%E8%87%AA%E7%94%A8/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>JavaScript进阶</title>
-        <link>https://IAmYuanyu.github.io/p/javascript%E8%BF%9B%E9%98%B6/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/javascript%E8%BF%9B%E9%98%B6/</link>
         <pubDate>Wed, 27 Mar 2024 15:07:19 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/javascript%E8%BF%9B%E9%98%B6/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/javascript%E8%BF%9B%E9%98%B6/</guid>
         <description>&lt;h2 id=&#34;javascript-进阶---第1天&#34;&gt;JavaScript 进阶 - 第1天
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;学习作用域、变量提升、闭包等语言特征，加深对 JavaScript 的理解，掌握变量赋值、函数声明的简洁语法，降低代码的冗余度。&lt;/p&gt;
@@ -1071,7 +1071,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h5 id=&#34;数组解构的几种情况&#34;&gt;数组解构的几种情况
 &lt;/h5&gt;&lt;p&gt;&lt;strong&gt;利用剩余参数解决变量少 单元值多的情况：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241107235151333.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241107235151333.png&#34;
 	
 	
 	
@@ -1083,7 +1083,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;剩余参数返回的还是一个数组&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;防止有undefined传递单元值的情况，可以设置默认值：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241107235223120.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241107235223120.png&#34;
 	
 	
 	
@@ -1095,7 +1095,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;允许初始化变量的默认值，且只有单元值为 undefined 时默认值才会生效&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;按需导入，忽略某些返回值：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241107235256179.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241107235256179.png&#34;
 	
 	
 	
@@ -1106,7 +1106,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;支持多维数组的结构：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241107235532045.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241107235532045.png&#34;
 	
 	
 	
@@ -1423,7 +1423,7 @@
 &lt;p&gt;②：拿到数据，利用字符串拼接生成结构添加到页面中&lt;/p&gt;
 &lt;p&gt;③：注意：传递参数的时候，可以使用对象解构&lt;/p&gt;
 &lt;p&gt;效果图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241109230338051.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241109230338051.png&#34;
 	
 	
 	
@@ -3016,7 +3016,7 @@
 &lt;h6 id=&#34;小练习显示赠品&#34;&gt;小练习：显示赠品
 &lt;/h6&gt;&lt;p&gt;请将下面字符串渲染到准备好的 p标签内部，结构必须如左下图所示，展示效果如图所示：&lt;/p&gt;
 &lt;p&gt;const gift = &amp;lsquo;50g茶叶,清洗球&amp;rsquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241111212003607.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241111212003607.png&#34;
 	
 	
 	
@@ -3114,7 +3114,7 @@
 &lt;h3 id=&#34;综合案例购物车展示&#34;&gt;综合案例：购物车展示
 &lt;/h3&gt;&lt;p&gt;需求：&lt;/p&gt;
 &lt;p&gt;根据后台提供的数据，渲染购物车页面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241111215150465.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241111215150465.png&#34;
 	
 	
 	
@@ -3528,7 +3528,7 @@
 &lt;/h4&gt;&lt;p&gt;面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候再一个一个的依次&lt;/p&gt;
 &lt;p&gt;调用就可以了。&lt;/p&gt;
 &lt;p&gt;举个栗子：蛋炒饭&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676792906898.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676792906898.png&#34;
 	
 	
 	
@@ -3540,7 +3540,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;面向对象&#34;&gt;面向对象
 &lt;/h4&gt;&lt;p&gt;面向对象是把事务分解成为一个个对象，然后由对象之间分工与合作。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676792930329.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676792930329.png&#34;
 	
 	
 	
@@ -3973,7 +3973,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;输出结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241112220300369.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241112220300369.png&#34;
 	
 	
 	
@@ -4009,7 +4009,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;输出结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241112220542399.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241112220542399.png&#34;
 	
 	
 	
@@ -4047,7 +4047,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;temp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;__proto__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;constructor&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// true
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241112223034164.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241112223034164.png&#34;
 	
 	
 	
@@ -4146,7 +4146,7 @@
 &lt;/div&gt;&lt;h4 id=&#34;原型链&#34;&gt;原型链
 &lt;/h4&gt;&lt;p&gt;基于原型对象的继承使得不同构造函数的原型对象关联在一起，并且这种关联的关系是一种链状的结构，我们将原型对&lt;/p&gt;
 &lt;p&gt;象的链状结构关系称为原型链&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676793388695.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676793388695.png&#34;
 	
 	
 	
@@ -4687,7 +4687,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;输出结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241113230213500.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241113230213500.png&#34;
 	
 	
 	
@@ -4902,7 +4902,7 @@
 &lt;/ol&gt;
 &lt;h4 id=&#34;debugger&#34;&gt;debugger
 &lt;/h4&gt;&lt;p&gt;相当于断点调试，执行到该语句时相当于遇到了断点调试&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241114000907459.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241114000907459.png&#34;
 	
 	
 	
@@ -5135,7 +5135,7 @@
 &lt;/h4&gt;&lt;p&gt;以上归纳了普通函数和箭头函数中关于 &lt;code&gt;this&lt;/code&gt; 默认值的情形，不仅如此 JavaScript 中还允许指定函数中 &lt;code&gt;this&lt;/code&gt; 的指向，有 3 个方法可以动态指定普通函数中 &lt;code&gt;this&lt;/code&gt; 的指向：&lt;/p&gt;
 &lt;h5 id=&#34;call&#34;&gt;call
 &lt;/h5&gt;&lt;p&gt;使用 &lt;code&gt;call&lt;/code&gt; 方法调用函数，同时指定函数中 &lt;code&gt;this&lt;/code&gt; 的值，使用方法如下代码所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241114125045795.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241114125045795.png&#34;
 	
 	
 	
@@ -5217,7 +5217,7 @@
 &lt;/ol&gt;
 &lt;h5 id=&#34;apply&#34;&gt;apply
 &lt;/h5&gt;&lt;p&gt;使用 &lt;code&gt;call&lt;/code&gt; 方法&lt;strong&gt;调用函数&lt;/strong&gt;，同时指定函数中 &lt;code&gt;this&lt;/code&gt; 的值，使用方法如下代码所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241114125403378.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241114125403378.png&#34;
 	
 	
 	
@@ -5307,7 +5307,7 @@
 &lt;/ol&gt;
 &lt;h5 id=&#34;bind&#34;&gt;bind
 &lt;/h5&gt;&lt;p&gt;&lt;code&gt;bind&lt;/code&gt; 方法并&lt;strong&gt;不会调用函数&lt;/strong&gt;，而是创建一个指定了 &lt;code&gt;this&lt;/code&gt; 值的新函数，使用方法如下代码所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241114134733146.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241114134733146.png&#34;
 	
 	
 	
@@ -5373,7 +5373,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;注：&lt;code&gt;bind&lt;/code&gt; 方法创建新的函数，与原函数的唯一的变化是改变了 &lt;code&gt;this&lt;/code&gt; 的值。&lt;/p&gt;
 &lt;h5 id=&#34;callapplybind的总结&#34;&gt;call、apply、bind的总结
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241114140441536.png&#34;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241114140441536.png&#34;
 	
 	
 	
@@ -5386,7 +5386,7 @@
 &lt;h3 id=&#34;防抖节流&#34;&gt;防抖节流
 &lt;/h3&gt;&lt;h4 id=&#34;防抖debounce&#34;&gt;防抖（debounce）
 &lt;/h4&gt;&lt;p&gt;所谓防抖，就是指触发事件后在 n 秒内函数只能执行一次，如果在 n 秒内又触发了事件，则会重新计算函数执行时间&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241114140942188.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241114140942188.png&#34;
 	
 	
 	
@@ -5486,7 +5486,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;②自己手写一个防抖函数来处理&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241114143258790.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241114143258790.png&#34;
 	
 	
 	
@@ -5596,7 +5596,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;节流throttle&#34;&gt;节流（throttle）
 &lt;/h4&gt;&lt;p&gt;所谓节流，就是指连续触发事件但是在 n 秒中只执行一次函数&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241114174516840.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241114174516840.png&#34;
 	
 	
 	
@@ -5697,7 +5697,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;②自己手写一个节流函数来处理&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241114181346348.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241114181346348.png&#34;
 	
 	
 	
@@ -5808,7 +5808,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;防抖和节流总结&#34;&gt;防抖和节流总结
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241114183020635.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241114183020635.png&#34;
 	
 	
 	
@@ -6007,10 +6007,10 @@
         </item>
         <item>
         <title>JavaScriptAPIs</title>
-        <link>https://IAmYuanyu.github.io/p/javascriptapis/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/javascriptapis/</link>
         <pubDate>Wed, 27 Mar 2024 15:07:06 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/javascriptapis/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/javascriptapis/</guid>
         <description>&lt;h2 id=&#34;web-apis---第1天笔记&#34;&gt;Web APIs - 第1天笔记
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;了解 DOM 的结构并掌握其基本的操作，体验 DOM 的在开发中的作用&lt;/p&gt;
@@ -6027,7 +6027,7 @@
 &lt;p&gt;知道 ECMAScript 与 JavaScript 的关系，Web APIs 是浏览器扩展的功能。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;严格意义上讲，我们在 JavaScript 阶段学习的知识绝大部分属于 ECMAScript 的知识体系，ECMAScript 简称 ES 它提供了一套语言标准规范，如变量、数据类型、表达式、语句、函数等语法规则都是由 ECMAScript 规定的。浏览器将 ECMAScript 大部分的规范加以实现，并且在此基础上又扩展一些实用的功能，这些被扩展出来的内容我们称为 Web APIs。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/guide.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/guide.png&#34;
 	
 	
 	
@@ -6047,7 +6047,7 @@
 &lt;p&gt;DOM（Document Object Model）是将整个 HTML 文档的每一个标签元素视为一个对象，这个对象下包含了许多的属性和方法，通过操作这些属性或者调用这些方法实现对 HTML 的动态更新，为实现网页特效以及用户交互提供技术支撑。&lt;/p&gt;
 &lt;p&gt;简言之 DOM 是用来动态修改 HTML 的，其目的是开发网页特效及用户交互。&lt;/p&gt;
 &lt;p&gt;观察一个小例子：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/demo.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/demo.gif&#34;
 	
 	
 	
@@ -6093,7 +6093,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如下图所示，将 HTML 文档以树状结构直观的表现出来，我们称之为文档树或 DOM 树，&lt;strong&gt;文档树直观的体现了标签与标签之间的关系。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/web-api.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/web-api.jpg&#34;
 	
 	
 	
@@ -6187,7 +6187,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：
-&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241020202842745.png&#34;
+&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241020202842745.png&#34;
 	
 	
 	
@@ -6253,7 +6253,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241020203416531.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241020203416531.png&#34;
 	
 	
 	
@@ -6421,7 +6421,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241020220049107.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241020220049107.png&#34;
 	
 	
 	
@@ -6479,7 +6479,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241020220147216.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241020220147216.png&#34;
 	
 	
 	
@@ -6498,7 +6498,7 @@
 &lt;p&gt;③：通过innerText 或者 innerHTML 将名字写入span元素内部&lt;/p&gt;
 &lt;p&gt;④： 二等奖依次类推&lt;/p&gt;
 &lt;p&gt;效果图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241020223338233.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241020223338233.png&#34;
 	
 	
 	
@@ -9272,7 +9272,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;事件对象效果展示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241022235451019.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241022235451019.png&#34;
 	
 	
 	
@@ -10363,7 +10363,7 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;事件流&#34;&gt;事件流
 &lt;/h3&gt;&lt;p&gt;事件流是对事件执行过程的描述，了解事件的执行过程有助于加深对事件的理解，提升开发实践中对事件运用的灵活度。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/event.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/event.png&#34;
 	
 	
 	
@@ -10737,7 +10737,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;我们的最终目的是保证只有点击 button 子元素才去执行事件的回调函数，如何判断用户点击是哪一个子元素呢？&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/event.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/event.png&#34;
 	
 	
 	
@@ -11079,7 +11079,7 @@
 &lt;ul&gt;
 &lt;li&gt;尽量在scroll事件里面获取被卷去的距离&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241027222134756.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241027222134756.png&#34;
 	
 	
 	
@@ -11118,7 +11118,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241027223352181.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241027223352181.png&#34;
 	
 	
 	
@@ -11213,7 +11213,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241027231638483.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241027231638483.png&#34;
 	
 	
 	
@@ -11230,7 +11230,7 @@
 &lt;p&gt;​	前面案例滚动多少距离，都是我们自己算的，最好是页面滚动到某个元素，就可以做某些事。&lt;/p&gt;
 &lt;p&gt;​	简单说，就是通过js的方式，得到元素在页面中的位置&lt;/p&gt;
 &lt;p&gt;​	这样我们可以做，页面滚动到这个位置，就可以做某些操作，省去计算了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241027233705553.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241027233705553.png&#34;
 	
 	
 	
@@ -11384,7 +11384,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241028181934835.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241028181934835.png&#34;
 	
 	
 	
@@ -11394,7 +11394,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241027233928579.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241027233928579.png&#34;
 	
 	
 	
@@ -11405,7 +11405,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;总结：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241028181611456.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241028181611456.png&#34;
 	
 	
 	
@@ -12055,7 +12055,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241030174011676.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241030174011676.png&#34;
 	
 	
 	
@@ -12400,7 +12400,7 @@
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;掌握元素节点创建、复制、插入、删除等操作的方法，能够依据元素节点的结构关系查找节点&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241030214231033.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241030214231033.png&#34;
 	
 	
 	
@@ -12899,7 +12899,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241031001050463.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241031001050463.png&#34;
 	
 	
 	
@@ -13194,7 +13194,7 @@
 &lt;p&gt;常见的触屏事件如下：&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241031003415586.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241031003415586.png&#34;
 	
 	
 	
@@ -13311,7 +13311,7 @@
 &lt;p&gt;​	(1). 获取所有需要填写的表单， 他们共同特点都有 name属性&lt;/p&gt;
 &lt;p&gt;​	(2). 遍历这些表单，如果有一个值为空，则return 返回提示输入为空中断程序&lt;/p&gt;
 &lt;p&gt;​	(3). 注意书写的位置，应该放到新增数据的前面， 阻止默认行为的后面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241031151514663.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241031151514663.png&#34;
 	
 	
 	
@@ -13780,7 +13780,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676047389456.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676047389456.png&#34;
 	
 	
 	
@@ -13798,7 +13798,7 @@
 &lt;li&gt;所有通过var定义在全局作用域中的变量、函数都会变成window对象的属性和方法&lt;/li&gt;
 &lt;li&gt;window对象下的属性和方法调用的时候可以省略window&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676047436362.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676047436362.png&#34;
 	
 	
 	
@@ -13962,7 +13962,7 @@
 &lt;li&gt;异步任务放入任务队列中。&lt;/li&gt;
 &lt;li&gt;一旦执行栈中的所有同步任务执行完毕，系统就会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，进入执行栈，开始执行。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241101194236943.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241101194236943.png&#34;
 	
 	
 	
@@ -13972,7 +13972,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241101194943240.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241101194943240.png&#34;
 	
 	
 	
@@ -14214,7 +14214,7 @@
 &lt;/h3&gt;&lt;p&gt;history (历史)是对象，主要管理历史记录， 该对象与浏览器地址栏的操作相对应，如前进、后退等&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;使用场景&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;history对象一般在实际开发中比较少用，但是会在一些OA 办公系统中见到。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676047834796.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676047834796.png&#34;
 	
 	
 	
@@ -14225,7 +14225,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;常见方法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676047846593.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676047846593.png&#34;
 	
 	
 	
@@ -14292,7 +14292,7 @@
 &lt;h4 id=&#34;localstorage重点&#34;&gt;localStorage（重点）
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;作用:&lt;/strong&gt; 数据可以长期保留在本地浏览器中，刷新页面和关闭页面，数据也不会丢失&lt;/p&gt;
 &lt;p&gt;**特性：**同一浏览器共享，以键值对的形式存储，并且存储的是字符串， 省略了window&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676049635087.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676049635087.png&#34;
 	
 	
 	
@@ -15177,7 +15177,7 @@
 &lt;li&gt;例如验证表单：手机号表单要求用户只能输入11位的数字 (匹配)&lt;/li&gt;
 &lt;li&gt;过滤掉页面内容中的一些敏感词(替换)，或从字符串中获取我们想要的特定部分(提取)等&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676079666366.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676079666366.png&#34;
 	
 	
 	
@@ -15246,7 +15246,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;exec()&lt;/code&gt; 方法 在一个指定字符串中执行一个搜索匹配&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241103223854712.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241103223854712.png&#34;
 	
 	
 	
@@ -15278,7 +15278,7 @@
     &gt;http://tool.oschina.net/regex&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&#34;边界符&#34;&gt;边界符
 &lt;/h5&gt;&lt;p&gt;正则表达式中的边界符（位置符）用来提示字符所处的位置，主要有两个字符&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676080081650.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676080081650.png&#34;
 	
 	
 	
@@ -15353,7 +15353,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h5 id=&#34;量词&#34;&gt;量词
 &lt;/h5&gt;&lt;p&gt;量词用来设定某个模式重复次数&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676080185383.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676080185383.png&#34;
 	
 	
 	
@@ -15482,7 +15482,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h5 id=&#34;范围&#34;&gt;范围
 &lt;/h5&gt;&lt;p&gt;表示字符的范围，定义的规则限定在某个范围，比如只能是英文字母，或者数字等等，用表示范围&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676080296168.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676080296168.png&#34;
 	
 	
 	
@@ -15578,7 +15578,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h5 id=&#34;字符类&#34;&gt;字符类
 &lt;/h5&gt;&lt;p&gt;某些常见模式的简写方式，区分字母和数字&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676080353637.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676080353637.png&#34;
 	
 	
 	
@@ -15588,7 +15588,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676080372325.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676080372325.png&#34;
 	
 	
 	
@@ -15709,7 +15709,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;替换和修饰符&#34;&gt;替换和修饰符
 &lt;/h3&gt;&lt;p&gt;&lt;code&gt;replace()&lt;/code&gt; 替换方法，可以完成字符的替换&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676080437160.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676080437160.png&#34;
 	
 	
 	
@@ -15860,7 +15860,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;正则插件&#34;&gt;正则插件
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676080548639.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676080548639.png&#34;
 	
 	
 	
@@ -15873,7 +15873,7 @@
 &lt;h3 id=&#34;change-事件&#34;&gt;change 事件
 &lt;/h3&gt;&lt;p&gt;给input注册 change 事件，值被修改并且失去焦点后触发&lt;/p&gt;
 &lt;h3 id=&#34;判断是否有类&#34;&gt;判断是否有类
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1676080618794.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1676080618794.png&#34;
 	
 	
 	
@@ -15942,10 +15942,10 @@
         </item>
         <item>
         <title>JavaScript基础</title>
-        <link>https://IAmYuanyu.github.io/p/javascript%E5%9F%BA%E7%A1%80/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/javascript%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Wed, 27 Mar 2024 15:06:23 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/javascript%E5%9F%BA%E7%A1%80/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/javascript%E5%9F%BA%E7%A1%80/</guid>
         <description>&lt;h2 id=&#34;javascript-基础---第1天&#34;&gt;JavaScript 基础 - 第1天
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;了解变量、数据类型、运算符等基础概念，能够实现数据类型的转换，结合四则运算体会如何编程。&lt;/p&gt;
@@ -16240,7 +16240,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241014205511824.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241014205511824.png&#34;
 	
 	
 	
@@ -16282,7 +16282,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241014204951701.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241014204951701.png&#34;
 	
 	
 	
@@ -16322,7 +16322,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241014210231148.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241014210231148.png&#34;
 	
 	
 	
@@ -16406,7 +16406,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241014210803345.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241014210803345.png&#34;
 	
 	
 	
@@ -16699,7 +16699,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets./image-20241014230601104.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets./image-20241014230601104.png&#34;
 	
 	
 	
@@ -16742,7 +16742,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241014231535204.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241014231535204.png&#34;
 	
 	
 	
@@ -16771,7 +16771,7 @@
 &lt;p&gt;在声明一些未来不太会被修改的变量时，一般使用const&lt;/p&gt;
 &lt;p&gt;对于复杂类型数据，比如数组一般可以使用const声明，因为此时栈中存放的是数组对象实例所在的地址，对该数组进行增加、删除或修改等操作时，数组依旧是原来的数组，地址并不会变，因此对数组进行增加、删除或修改等操作时并不会报错（但如果修改了数组的地址就会报错）&lt;/p&gt;
 &lt;p&gt;如下情况中，就可以把let改为const&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241020163119258.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241020163119258.png&#34;
 	
 	
 	
@@ -16782,7 +16782,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;而下列左边的情况就不能用const，否则会报错&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241020163418281.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241020163418281.png&#34;
 	
 	
 	
@@ -16913,7 +16913,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241015112501024.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241015112501024.png&#34;
 	
 	
 	
@@ -17673,7 +17673,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;常见错误&#34;&gt;常见错误
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241015172436292.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241015172436292.png&#34;
 	
 	
 	
@@ -17684,7 +17684,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241015172606382.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241015172606382.png&#34;
 	
 	
 	
@@ -17695,7 +17695,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241015172627989.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241015172627989.png&#34;
 	
 	
 	
@@ -17706,7 +17706,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;4.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241015172643750.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241015172643750.png&#34;
 	
 	
 	
@@ -17717,7 +17717,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;5.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241015172655991.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241015172655991.png&#34;
 	
 	
 	
@@ -18071,7 +18071,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/script&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241015212546085.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241015212546085.png&#34;
 	
 	
 	
@@ -18332,7 +18332,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;运算符优先级&#34;&gt;运算符优先级
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241015214725364.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241015214725364.png&#34;
 	
 	
 	
@@ -18347,7 +18347,7 @@
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;语句&#34;&gt;语句
 &lt;/h3&gt;&lt;h4 id=&#34;表达式和语句&#34;&gt;表达式和语句
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1671017924981.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1671017924981.png&#34;
 	
 	
 	
@@ -18995,7 +18995,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;综合案例-atm存取款机&#34;&gt;综合案例-ATM存取款机
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1671018781557.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1671018781557.png&#34;
 	
 	
 	
@@ -19328,7 +19328,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241016220831593.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241016220831593.png&#34;
 	
 	
 	
@@ -19340,7 +19340,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;循环嵌套&#34;&gt;循环嵌套
 &lt;/h4&gt;&lt;p&gt;利用循环的知识来对比一个简单的天文知识，我们知道地球在自转的同时也在围绕太阳公转，如果把自转和公转都看成是循环的话，就相当于是循环中又嵌套了另一个循环。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/universe.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/universe.gif&#34;
 	
 	
 	
@@ -19351,7 +19351,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;实际上 JavaScript 中任何一种循环语句都支持循环的嵌套，如下代码所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1647918261399.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1647918261399.png&#34;
 	
 	
 	
@@ -19386,7 +19386,7 @@
 &lt;/div&gt;&lt;p&gt;记住，外层循环循环一次，里层循环循环全部&lt;/p&gt;
 &lt;p&gt;&lt;span style=&#34;color: #FF0000;&#34;&gt;例：&lt;/span&gt;每天背5个单词，一共背三天&lt;/p&gt;
 &lt;p&gt;要求效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241016222852441.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241016222852441.png&#34;
 	
 	
 	
@@ -19458,7 +19458,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1647918678956.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1647918678956.png&#34;
 	
 	
 	
@@ -19529,7 +19529,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1647918734677.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1647918734677.png&#34;
 	
 	
 	
@@ -19575,7 +19575,7 @@
 &lt;/h5&gt;&lt;p&gt;使用数组存放数据并不是最终目的，关键是能够随时的访问到数组中的数据（单元）。其实 JavaScript 为数组中的每一个数据单元都编了号，通过数据单元在数组中的编号便可以轻松访问到数组中的数据单元了。&lt;/p&gt;
 &lt;p&gt;我们将数据单元在数组中的编号称为索引值，也有人称其为下标。&lt;/p&gt;
 &lt;p&gt;索引值实际是按着数据单元在数组中的位置依次排列的，注意是从&lt;code&gt; 0&lt;/code&gt; 开始的，如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/array.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/array.jpg&#34;
 	
 	
 	
@@ -19716,7 +19716,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241016233024240.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241016233024240.png&#34;
 	
 	
 	
@@ -20063,7 +20063,7 @@
 &lt;/h4&gt;&lt;p&gt;函数可以把具有相同或相似逻辑的代码“包裹”起来，通过函数调用执行这些被“包裹”的代码逻辑，这么做的优势是有利于精简代码方便复用。&lt;/p&gt;
 &lt;h5 id=&#34;声明定义&#34;&gt;声明（定义）
 &lt;/h5&gt;&lt;p&gt;声明（定义）一个完整函数包括关键字、函数名、形式参数、函数体、返回值5个部分&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/function.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/function.jpg&#34;
 	
 	
 	
@@ -20886,7 +20886,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;逻辑中断&#34;&gt;逻辑中断
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241017234714751.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241017234714751.png&#34;
 	
 	
 	
@@ -20898,7 +20898,7 @@
 &gt;&lt;/p&gt;
 &lt;h5 id=&#34;逻辑运算符里的短路&#34;&gt;逻辑运算符里的短路
 &lt;/h5&gt;&lt;p&gt;短路：只存在于 &amp;amp;&amp;amp; 和 || 中，当满足一定条件会让右边代码不执行&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241017233934337.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241017233934337.png&#34;
 	
 	
 	
@@ -20965,7 +20965,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;小练习：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241017235942641.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241017235942641.png&#34;
 	
 	
 	
@@ -20984,7 +20984,7 @@
 &lt;li&gt;null 经过数字转换之后会变为 0&lt;/li&gt;
 &lt;li&gt;undefined 经过数字转换之后会变为 NaN&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241018000334386.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241018000334386.png&#34;
 	
 	
 	
@@ -20994,7 +20994,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241018000351862.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241018000351862.png&#34;
 	
 	
 	
@@ -21641,7 +21641,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241019170125259.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241019170125259.png&#34;
 	
 	
 	
@@ -21698,7 +21698,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241019171123292.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241019171123292.png&#34;
 	
 	
 	
@@ -21711,7 +21711,7 @@
 &lt;h5 id=&#34;学生信息表案例练习&#34;&gt;学生信息表案例练习
 &lt;/h5&gt;&lt;p&gt;将学生信息数据渲染到页面中&lt;/p&gt;
 &lt;p&gt;效果图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241019172530230.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241019172530230.png&#34;
 	
 	
 	
@@ -22320,7 +22320,7 @@
 &lt;p&gt;简单数据类型存放到栈里面&lt;/p&gt;
 &lt;p&gt;2、堆（操作系统）：存储复杂类型(对象)，一般由程序员分配释放，若程序员不释放，由垃圾回收机制回收。&lt;/p&gt;
 &lt;p&gt;引用数据类型存放到堆里面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241019221812916.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241019221812916.png&#34;
 	
 	
 	
@@ -22339,7 +22339,7 @@
 &lt;p&gt;值类型变量的数据直接存放在变量（栈空间）中&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241019222042620.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241019222042620.png&#34;
 	
 	
 	
@@ -22358,7 +22358,7 @@
 &lt;p&gt;引用类型变量（栈空间）里存放的是地址，真正的对象实例存放在堆空间中&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20241019222159635.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20241019222159635.png&#34;
 	
 	
 	
@@ -22753,13 +22753,13 @@
         </item>
         <item>
         <title>Ubuntu基础学习笔记</title>
-        <link>https://IAmYuanyu.github.io/p/ubuntu%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/ubuntu%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Wed, 27 Mar 2024 14:54:42 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/ubuntu%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/ubuntu%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;系统网络配置&#34;&gt;系统网络配置
 &lt;/h2&gt;&lt;h3 id=&#34;手动设置网络地址&#34;&gt;手动设置网络地址
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121224944116.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121224944116.png&#34;
 	
 	
 	
@@ -22769,7 +22769,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121225105441.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121225105441.png&#34;
 	
 	
 	
@@ -22779,7 +22779,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121225257806.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121225257806.png&#34;
 	
 	
 	
@@ -22799,7 +22799,7 @@
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;systemctl start | stop | restart | status 服务名&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;其中，服务名不用一个个记，查看&lt;code&gt;/usr/lib/systemd/system&lt;/code&gt; 目录下的文件列表，该目录下每个文件都&lt;/p&gt;
 &lt;p&gt;对应一个服务&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121231538463.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121231538463.png&#34;
 	
 	
 	
@@ -22814,7 +22814,7 @@
 &lt;li&gt;查看网络服务的状态&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;在终端输入&lt;code&gt;sudo systemctl status NetworkManager&lt;/code&gt;后可查看网络管理服务&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121232047740.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121232047740.png&#34;
 	
 	
 	
@@ -22845,7 +22845,7 @@
 &lt;h4 id=&#34;关闭防火墙-1&#34;&gt;关闭防火墙
 &lt;/h4&gt;&lt;h5 id=&#34;临时关闭防火墙&#34;&gt;临时关闭防火墙
 &lt;/h5&gt;&lt;p&gt;查看防火墙状态：&lt;code&gt;sudo systemctl status ufw&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233325312.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121233325312.png&#34;
 	
 	
 	
@@ -22856,7 +22856,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;临时关闭防火墙：&lt;code&gt;sudo systemctl stop ufw&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233435053.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121233435053.png&#34;
 	
 	
 	
@@ -22869,7 +22869,7 @@
 &lt;h5 id=&#34;长期关闭防火墙&#34;&gt;长期关闭防火墙
 &lt;/h5&gt;&lt;p&gt;设置开机时启动防火墙：&lt;code&gt;sudo systemctl enable ufw&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;设置开机时关闭防火墙：&lt;code&gt;sudo systemctl disable ufw&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250121233526692.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250121233526692.png&#34;
 	
 	
 	
@@ -22936,7 +22936,7 @@
 &lt;h3 id=&#34;修改主机名&#34;&gt;修改主机名
 &lt;/h3&gt;&lt;p&gt;在终端执行：&lt;code&gt;sudo hostnamectl --static set-hostname 新名字&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;执行完上述命令，重启后生效&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122212801697.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122212801697.png&#34;
 	
 	
 	
@@ -22948,7 +22948,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;通过主机名连接xshell&#34;&gt;通过主机名连接Xshell
 &lt;/h4&gt;&lt;p&gt;找到电脑位于&lt;code&gt;C:\Windows\System32\drivers\etc&lt;/code&gt;目录下的&lt;code&gt;hosts&lt;/code&gt;文件，在最下方输入地址和主机名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122214858368.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122214858368.png&#34;
 	
 	
 	
@@ -22959,7 +22959,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;修改完&lt;code&gt;hosts&lt;/code&gt;文件后就可以在Xshell的连接中将&lt;code&gt;主机&lt;/code&gt;中原本填写的地址改为自己的主机名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122215049729.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122215049729.png&#34;
 	
 	
 	
@@ -22971,7 +22971,7 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;apt软件包&#34;&gt;APT软件包
 &lt;/h2&gt;&lt;p&gt;在终端输入&lt;code&gt;apt&lt;/code&gt;即可查看apt常用命令&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122215858014.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122215858014.png&#34;
 	
 	
 	
@@ -22987,7 +22987,7 @@
 &lt;/h2&gt;&lt;h3 id=&#34;帮助命令&#34;&gt;帮助命令
 &lt;/h3&gt;&lt;h4 id=&#34;manual-packages&#34;&gt;Manual Packages
 &lt;/h4&gt;&lt;p&gt;查看手册页说明文档：在终端输入&lt;code&gt;man man&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122220927820.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122220927820.png&#34;
 	
 	
 	
@@ -23001,7 +23001,7 @@
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;查看ls命令的帮助信息：&lt;code&gt;man ls&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122222950334.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122222950334.png&#34;
 	
 	
 	
@@ -23015,7 +23015,7 @@
 &lt;/h4&gt;&lt;p&gt;shell 内建命令：shell 内建命令是 shell 的一部分，他们没有单独的可执行文件或手册页，这类命令的文档通过 help 命令访问。&lt;/p&gt;
 &lt;p&gt;基本语法：&lt;code&gt;help 命令&lt;/code&gt;                （功能描述：获得 shell 内建命令的帮助信息）&lt;/p&gt;
 &lt;p&gt;例如：查看cd命令的帮助信息&lt;code&gt;help cd&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122223245762.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122223245762.png&#34;
 	
 	
 	
@@ -23064,7 +23064,7 @@
 &lt;/h3&gt;&lt;h4 id=&#34;pwd-显示当前工作目录的绝对路径&#34;&gt;pwd 显示当前工作目录的绝对路径
 &lt;/h4&gt;&lt;p&gt;pwd即print working directory 打印工作目录&lt;/p&gt;
 &lt;p&gt;显示当前工作目录的绝对路径：&lt;code&gt;pwd&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122225309652.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122225309652.png&#34;
 	
 	
 	
@@ -23097,7 +23097,7 @@
 &lt;/table&gt;
 &lt;p&gt;显示说明：&lt;/p&gt;
 &lt;p&gt;每行列出的信息依次是：&lt;em&gt;文件类型与权限&lt;/em&gt;  &lt;em&gt;链接数&lt;/em&gt;  &lt;em&gt;文件属主&lt;/em&gt;  &lt;em&gt;文件属组&lt;/em&gt;  &lt;em&gt;文件大小&lt;/em&gt;(用byte来表示)  &lt;em&gt;建立或最近修改的时间&lt;/em&gt;  &lt;em&gt;名字&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122230435107.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122230435107.png&#34;
 	
 	
 	
@@ -23145,7 +23145,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;例如：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122230744431.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122230744431.png&#34;
 	
 	
 	
@@ -23171,7 +23171,7 @@
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122231323509.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122231323509.png&#34;
 	
 	
 	
@@ -23182,7 +23182,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;touch-创建一个文件&#34;&gt;touch 创建一个文件
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122231506459.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122231506459.png&#34;
 	
 	
 	
@@ -23209,7 +23209,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;强制覆盖不提示的方法：\cp&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122233113308.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122233113308.png&#34;
 	
 	
 	
@@ -23242,7 +23242,7 @@
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122233644256.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122233644256.png&#34;
 	
 	
 	
@@ -23256,7 +23256,7 @@
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
 &lt;p&gt;① &lt;code&gt;mv oldNameFile newNameFile&lt;/code&gt; （功能描述：重命名）&lt;/p&gt;
 &lt;p&gt;② &lt;code&gt;mv /temp/movefile /targetFolder&lt;/code&gt; （功能描述：移动文件）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250122234207091.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250122234207091.png&#34;
 	
 	
 	
@@ -23367,7 +23367,7 @@
 &lt;h5 id=&#34;tail-输出文件尾部内容&#34;&gt;tail 输出文件尾部内容
 &lt;/h5&gt;&lt;p&gt;tail 用于输出文件中尾部的内容，默认情况下 tail 指令显示文件的后 10 行内容&lt;/p&gt;
 &lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123195214454.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123195214454.png&#34;
 	
 	
 	
@@ -23482,7 +23482,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：（记得加双引号）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123201150157.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123201150157.png&#34;
 	
 	
 	
@@ -23494,7 +23494,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;-输出重定向和--追加&#34;&gt;&amp;gt; 输出重定向和 &amp;raquo; 追加
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123201421217.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123201421217.png&#34;
 	
 	
 	
@@ -23505,7 +23505,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/%e8%a6%86%e5%86%99%e6%bc%94%e7%a4%ba.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/%e8%a6%86%e5%86%99%e6%bc%94%e7%a4%ba.gif&#34;
 	
 	
 	
@@ -23523,7 +23523,7 @@
 &lt;p&gt;删除软链接： rm -rf 软链接名，而不是 rm -rf 软链接名/&lt;/p&gt;
 &lt;p&gt;查询：通过 ll 就可以查看，列表属性第 1 位是 l，尾部会有位置指向。&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123214916006.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123214916006.png&#34;
 	
 	
 	
@@ -23535,7 +23535,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;history-查看已执行的历史命令&#34;&gt;history 查看已执行的历史命令
 &lt;/h4&gt;&lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123215204087.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123215204087.png&#34;
 	
 	
 	
@@ -23704,7 +23704,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h4 id=&#34;模式间的转换图&#34;&gt;模式间的转换图
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123224026649.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123224026649.png&#34;
 	
 	
 	
@@ -23782,7 +23782,7 @@
 &lt;/table&gt;
 &lt;h4 id=&#34;date-显示当前时间&#34;&gt;date 显示当前时间
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123224530961.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123224530961.png&#34;
 	
 	
 	
@@ -23793,7 +23793,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123224756658.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123224756658.png&#34;
 	
 	
 	
@@ -23804,7 +23804,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例2：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225613008.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123225613008.png&#34;
 	
 	
 	
@@ -23816,7 +23816,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;date-显示非当前时间&#34;&gt;date 显示非当前时间
 &lt;/h4&gt;&lt;p&gt;基本语法：（很多写法，仅展示其一）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225848484.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123225848484.png&#34;
 	
 	
 	
@@ -23827,7 +23827,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123225946821.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123225946821.png&#34;
 	
 	
 	
@@ -23846,7 +23846,7 @@
 &lt;p&gt;应用场景 1：企业开发，多人协同（也会有多人使用相同的一个低权限用户）。&lt;/p&gt;
 &lt;p&gt;应用场景 2：框架协同 gitlab mysql redis&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123231840565.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123231840565.png&#34;
 	
 	
 	
@@ -23868,7 +23868,7 @@
 &lt;p&gt;&lt;code&gt;su 用户名称&lt;/code&gt;	（功能描述：切换用户，只能获得用户的执行权限，不能获得环境变量）&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;su - 用户名称&lt;/code&gt;	（功能描述：切换到用户并获得该用户的环境变量及执行权限）&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123232638635.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123232638635.png&#34;
 	
 	
 	
@@ -23880,7 +23880,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;userdel-删除用户&#34;&gt;userdel 删除用户
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123232915179.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123232915179.png&#34;
 	
 	
 	
@@ -23906,7 +23906,7 @@
 &lt;/table&gt;
 &lt;h4 id=&#34;usermod-修改用户&#34;&gt;usermod 修改用户
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123233334523.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123233334523.png&#34;
 	
 	
 	
@@ -23935,7 +23935,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123233428178.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123233428178.png&#34;
 	
 	
 	
@@ -23959,7 +23959,7 @@
 &lt;/h4&gt;&lt;p&gt;​	在 Linux 和 Unix 系统中，每个用户都有一个主组（primary group）和可能的多个附加组（secondary groups 或 additional groups）&lt;/p&gt;
 &lt;p&gt;​	用户的主组在用户创建时被指定，默认与用户名称相同，当用户创建一个新文件或目录时，默认情况下，这些文件或目录会被分配给用户的主组&lt;/p&gt;
 &lt;p&gt;基本语法：&lt;code&gt;usermod -g 组名 用户名&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123234554600.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123234554600.png&#34;
 	
 	
 	
@@ -23974,7 +23974,7 @@
 &lt;p&gt;操作：&lt;code&gt;cat /etc/group&lt;/code&gt;&lt;/p&gt;
 &lt;h4 id=&#34;将用户添加到附加组&#34;&gt;将用户添加到附加组
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;code&gt;usermod -aG 组名 用户名&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123235227862.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123235227862.png&#34;
 	
 	
 	
@@ -23984,7 +23984,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250123235237223.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250123235237223.png&#34;
 	
 	
 	
@@ -24002,7 +24002,7 @@
 &lt;h3 id=&#34;文件权限类&#34;&gt;文件权限类
 &lt;/h3&gt;&lt;h4 id=&#34;文件属性&#34;&gt;文件属性
 &lt;/h4&gt;&lt;p&gt;文件基本属性介绍：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124214443509.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124214443509.png&#34;
 	
 	
 	
@@ -24015,7 +24015,7 @@
 &lt;p&gt;如果查看到是文件：链接数指的是硬链接个数&lt;/p&gt;
 &lt;p&gt;如果查看的是文件夹：链接数指的是子文件夹个数&lt;/p&gt;
 &lt;p&gt;文件属性由从左到右的10 个字符表示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124213745962.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124213745962.png&#34;
 	
 	
 	
@@ -24044,7 +24044,7 @@
 &lt;p&gt;[ w ]代表可写（write）：可以修改，目录内创建+删除+重命名目录&lt;/p&gt;
 &lt;p&gt;[ x ]代表可执行（execute）：可以进入该目录&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124214329663.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124214329663.png&#34;
 	
 	
 	
@@ -24061,7 +24061,7 @@
 &lt;p&gt;u：所有者 	g：所有组 	o：其他人 	a：所有人（u、g、o 的总和）&lt;/p&gt;
 &lt;p&gt;而在第二种方式中，r=4， w=2， x=1 ，rwx=4+2+1=7&lt;/p&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124215907595.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124215907595.png&#34;
 	
 	
 	
@@ -24072,7 +24072,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例2：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124220144848.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124220144848.png&#34;
 	
 	
 	
@@ -24099,7 +24099,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124220940294.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124220940294.png&#34;
 	
 	
 	
@@ -24137,7 +24137,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124222700911.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124222700911.png&#34;
 	
 	
 	
@@ -24165,7 +24165,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124222838933.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124222838933.png&#34;
 	
 	
 	
@@ -24214,7 +24214,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124224635450.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124224635450.png&#34;
 	
 	
 	
@@ -24243,7 +24243,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124231543105.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124231543105.png&#34;
 	
 	
 	
@@ -24270,7 +24270,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124232032349.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124232032349.png&#34;
 	
 	
 	
@@ -24411,7 +24411,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124233123613.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124233123613.png&#34;
 	
 	
 	
@@ -24422,7 +24422,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例2：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124233450090.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124233450090.png&#34;
 	
 	
 	
@@ -24507,7 +24507,7 @@
 &lt;/table&gt;
 &lt;p&gt;查询结果字段解释：&lt;/p&gt;
 &lt;p&gt;（1）第一行信息为任务队列信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235050039.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124235050039.png&#34;
 	
 	
 	
@@ -24518,7 +24518,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;（2）第二行为进程信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235108517.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124235108517.png&#34;
 	
 	
 	
@@ -24529,7 +24529,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;（3）第三行为 CPU 信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235128006.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124235128006.png&#34;
 	
 	
 	
@@ -24540,7 +24540,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;（4）第四行为物理内存信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235148689.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124235148689.png&#34;
 	
 	
 	
@@ -24551,7 +24551,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;（5）第五行为交换分区（swap）信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124235213524.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124235213524.png&#34;
 	
 	
 	
@@ -24614,7 +24614,7 @@
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000633597.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125000633597.png&#34;
 	
 	
 	
@@ -24625,7 +24625,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;输入&lt;code&gt;EDITOR=vim crontab -e&lt;/code&gt;后，打开如下文件，在最后写入命令即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125001312349.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125001312349.png&#34;
 	
 	
 	
@@ -24635,7 +24635,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000844146.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125000844146.png&#34;
 	
 	
 	
@@ -24645,7 +24645,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125000905001.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125000905001.png&#34;
 	
 	
 	
@@ -24659,7 +24659,7 @@
 &lt;/h2&gt;&lt;h3 id=&#34;shell概述&#34;&gt;Shell概述
 &lt;/h3&gt;&lt;p&gt;Shell是一个命令行解释器，它接收应用程序/用户命令，然后调用操作系统内核&lt;/p&gt;
 &lt;p&gt;Shell还是一个功能相当强大的编程语言，易编写、易调试、灵活性强&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125155355526.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125155355526.png&#34;
 	
 	
 	
@@ -24675,7 +24675,7 @@
 &lt;h4 id=&#34;创建并执行一个脚本&#34;&gt;创建并执行一个脚本
 &lt;/h4&gt;&lt;p&gt;要创建并执行一个Shell脚本，需要先在终端输入&lt;code&gt;vim hello.sh&lt;/code&gt;创建并编辑一个Shell脚本&lt;/p&gt;
 &lt;p&gt;在hello.sh中输入如图内容（按&amp;rsquo;a&amp;rsquo;开始编辑，按&amp;rsquo;esc&amp;rsquo;退出编辑，输入&amp;rsquo;:wq&amp;rsquo;保存并退出，忘记了看笔记VIM编辑器部分）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125165424109.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125165424109.png&#34;
 	
 	
 	
@@ -24687,7 +24687,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;编辑成功后，有两种运行方式&lt;/p&gt;
 &lt;p&gt;方法一：不赋予脚本执行权限时，用&lt;code&gt;sh 脚本&lt;/code&gt;或&lt;code&gt;bash 脚本&lt;/code&gt;即可运行（效果一样）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125165859260.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125165859260.png&#34;
 	
 	
 	
@@ -24698,7 +24698,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;方法二：赋予脚本执行权限，可直接执行&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125170110499.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125170110499.png&#34;
 	
 	
 	
@@ -24714,7 +24714,7 @@
 &lt;p&gt;一般系统变量都是由全大写字母构成，所以自定义变量的时候尽量避免全部用大写字母&lt;/p&gt;
 &lt;p&gt;要获取变量的值可以用&lt;code&gt;$变量名&lt;/code&gt;，$和变量名之间不能有空格&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125170721845.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125170721845.png&#34;
 	
 	
 	
@@ -24735,7 +24735,7 @@
 &lt;p&gt;（3）在 bash 中，变量默认类型都是字符串类型，无法直接进行数值运算。&lt;/p&gt;
 &lt;p&gt;（4）变量的值如果有空格，需要使用双引号或单引号括起来。&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2025-01-25_17-18-56.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2025-01-25_17-18-56.png&#34;
 	
 	
 	
@@ -24745,7 +24745,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125172027486.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125172027486.png&#34;
 	
 	
 	
@@ -24760,7 +24760,7 @@
 &lt;/h5&gt;&lt;p&gt;基本语法：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;$n&lt;/code&gt; （功能描述：n 为数字，&lt;code&gt;$0&lt;/code&gt; 代表该脚本名称，&lt;code&gt;$1-$9&lt;/code&gt; 代表第一到第九个参数，十以上的参数需要用大括号包含，如${10}）&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125173400066.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125173400066.png&#34;
 	
 	
 	
@@ -24773,7 +24773,7 @@
 &lt;h5 id=&#34;heading&#34;&gt;$#
 &lt;/h5&gt;&lt;p&gt;&lt;code&gt;$#&lt;/code&gt; 	（功能描述：获取所有输入参数个数，常用于循环,判断参数的个数是否正确以及加强脚本的健壮性）&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125173915110.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125173915110.png&#34;
 	
 	
 	
@@ -24789,7 +24789,7 @@
 &lt;p&gt;&lt;code&gt;$@&lt;/code&gt; 	（功能描述：这个变量也代表命令行中所有的参数，不过$@把每个参数区分对待。）&lt;/p&gt;
 &lt;p&gt;（具体区别会在后续学习中了解）&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125181241350.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125181241350.png&#34;
 	
 	
 	
@@ -24803,7 +24803,7 @@
 &lt;/h5&gt;&lt;p&gt;基本语法：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;$？&lt;/code&gt;  （功能描述：最后一次执行的命令的返回状态。如果这个变量的值为 0，证明上一个命令正确执行；如果这个变量的值为非 0（具体是哪个数，由命令自己来决定，表示错误代码），则证明上一个命令执行不正确了）&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125181605791.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125181605791.png&#34;
 	
 	
 	
@@ -24817,7 +24817,7 @@
 &lt;/h3&gt;&lt;p&gt;基本语法：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;$((运算式))&lt;/code&gt;或&lt;code&gt;$[运算式]&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;示例：计算 （2 + 3）× 4 的值&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125182018286.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125182018286.png&#34;
 	
 	
 	
@@ -24832,7 +24832,7 @@
 &lt;p&gt;&lt;code&gt;test 条件&lt;/code&gt;或&lt;code&gt;[ 条件 ]&lt;/code&gt;	（注意条件前后有空格）&lt;/p&gt;
 &lt;p&gt;注意：条件非空即为 true，[ atguigu ]返回 true，[ ] 返回 false&lt;/p&gt;
 &lt;h4 id=&#34;常用判断条件&#34;&gt;常用判断条件
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184054189.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125184054189.png&#34;
 	
 	
 	
@@ -24843,7 +24843,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184255341.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125184255341.png&#34;
 	
 	
 	
@@ -24854,7 +24854,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例2：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125184738999.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125184738999.png&#34;
 	
 	
 	
@@ -24865,7 +24865,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例3：多条件判断（&lt;strong&gt;&amp;amp;&amp;amp;&lt;/strong&gt; 表示前一条命令执行成功时，才执行后一条命令，&lt;strong&gt;||&lt;/strong&gt; 表示上一条命令执行失败后，才执行下一条命令）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125185251176.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125185251176.png&#34;
 	
 	
 	
@@ -24878,7 +24878,7 @@
 &lt;h3 id=&#34;流程控制&#34;&gt;流程控制
 &lt;/h3&gt;&lt;h4 id=&#34;if判断&#34;&gt;if判断
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125221736607.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125221736607.png&#34;
 	
 	
 	
@@ -24888,7 +24888,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125221758530.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125221758530.png&#34;
 	
 	
 	
@@ -24902,7 +24902,7 @@
 &lt;p&gt;① [ 条件判断式 ]，中括号和条件判断式之间必须有空格&lt;/p&gt;
 &lt;p&gt;② if 后要有空格&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125222805470.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125222805470.png&#34;
 	
 	
 	
@@ -24914,7 +24914,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;case-语句&#34;&gt;case 语句
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125225423369.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125225423369.png&#34;
 	
 	
 	
@@ -24929,7 +24929,7 @@
 &lt;p&gt;（2）双分号“;;”表示命令序列结束，相当于 C 中的 break。&lt;/p&gt;
 &lt;p&gt;（3）最后的“*）”表示默认模式，相当于 C 中的 defaul。&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125231916854.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125231916854.png&#34;
 	
 	
 	
@@ -24939,7 +24939,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125231942799.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125231942799.png&#34;
 	
 	
 	
@@ -24951,7 +24951,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;for-循环&#34;&gt;for 循环
 &lt;/h4&gt;&lt;p&gt;基本语法1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232110733.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125232110733.png&#34;
 	
 	
 	
@@ -24962,7 +24962,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;基本语法2：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232146742.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125232146742.png&#34;
 	
 	
 	
@@ -24973,7 +24973,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例1：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232257501.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125232257501.png&#34;
 	
 	
 	
@@ -24984,7 +24984,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;示例2：打印所有输入参数&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232555465.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125232555465.png&#34;
 	
 	
 	
@@ -24994,7 +24994,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125232618766.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125232618766.png&#34;
 	
 	
 	
@@ -25038,7 +25038,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233153445.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125233153445.png&#34;
 	
 	
 	
@@ -25085,7 +25085,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233426867.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125233426867.png&#34;
 	
 	
 	
@@ -25097,7 +25097,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;while-循环&#34;&gt;while 循环
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233551530.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125233551530.png&#34;
 	
 	
 	
@@ -25136,7 +25136,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125233726611.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125233726611.png&#34;
 	
 	
 	
@@ -25177,7 +25177,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126211739621.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126211739621.png&#34;
 	
 	
 	
@@ -25195,7 +25195,7 @@
 &lt;p&gt;basename 可以理解为取路径里的文件名称。&lt;/p&gt;
 &lt;p&gt;suffix 为后缀，如果 suffix 被指定了，basename 会将 pathname 或 string 中的 suffix 去掉。&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212039885.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126212039885.png&#34;
 	
 	
 	
@@ -25210,7 +25210,7 @@
 &lt;p&gt;&lt;code&gt;dirname 文件绝对路径 &lt;/code&gt;	（功能描述：从给定的包含绝对路径的文件名中去除文件名（非目录的部分），然后返回剩下的路径（目录的部分））&lt;/p&gt;
 &lt;p&gt;dirname 可以理解为取文件路径的绝对路径名称。&lt;/p&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212211976.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126212211976.png&#34;
 	
 	
 	
@@ -25222,7 +25222,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;自定义函数&#34;&gt;自定义函数
 &lt;/h4&gt;&lt;p&gt;基本语法：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212643723.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126212643723.png&#34;
 	
 	
 	
@@ -25263,7 +25263,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如下执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126212822161.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126212822161.png&#34;
 	
 	
 	
@@ -25301,7 +25301,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126213807207.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126213807207.png&#34;
 	
 	
 	
@@ -25338,7 +25338,7 @@
 &lt;h3 id=&#34;正则表达式入门&#34;&gt;正则表达式入门
 &lt;/h3&gt;&lt;h4 id=&#34;常用特殊字符&#34;&gt;常用特殊字符
 &lt;/h4&gt;&lt;p&gt;1）特殊字符：&lt;code&gt;^&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126214638430.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126214638430.png&#34;
 	
 	
 	
@@ -25349,7 +25349,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;2）特殊字符：&lt;code&gt;$&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126214705322.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126214705322.png&#34;
 	
 	
 	
@@ -25360,7 +25360,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;3）特殊字符：&lt;code&gt;.&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220524399.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126220524399.png&#34;
 	
 	
 	
@@ -25371,7 +25371,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;4）特殊字符：&lt;code&gt;*&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220559421.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126220559421.png&#34;
 	
 	
 	
@@ -25382,7 +25382,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;5）特殊字符：&lt;code&gt;[ ]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220631176.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126220631176.png&#34;
 	
 	
 	
@@ -25393,7 +25393,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;6）特殊字符：&lt;code&gt;\&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250126220812299.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250126220812299.png&#34;
 	
 	
 	
@@ -25426,11 +25426,11 @@
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_63594197/article/details/138069939&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://blog.csdn.net/weixin_63594197/article/details/138069939&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;链接失效时可以看下方视频&lt;/p&gt;
-&lt;p&gt;&lt;video src=&#34;https://IAmYuanyu.github.io/虚拟机代理配置.mp4&#34; width=&#34;100%&#34; controls=&#34;true&#34;&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/虚拟机代理配置.mp4&#34; width=&#34;100%&#34; controls=&#34;true&#34;&gt;&lt;/video&gt;&lt;/p&gt;
 &lt;h3 id=&#34;设置使用sudo时不需要密码&#34;&gt;设置使用sudo时不需要密码
 &lt;/h3&gt;&lt;p&gt;在终端输入：&lt;code&gt;sudo vim /etc/sudoers&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;找到文件最下面，修改为如图所示的样子：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250124000253152.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250124000253152.png&#34;
 	
 	
 	
@@ -25442,7 +25442,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;-在下一行继续输入&#34;&gt;\ 在下一行继续输入
 &lt;/h3&gt;&lt;p&gt;示例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250125190002468.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250125190002468.png&#34;
 	
 	
 	
@@ -25456,10 +25456,10 @@
         </item>
         <item>
         <title>Python基础学习笔记</title>
-        <link>https://IAmYuanyu.github.io/p/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Wed, 27 Mar 2024 13:56:38 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;第一章初识python&#34;&gt;第一章：初识Python
 &lt;/h2&gt;&lt;h3 id=&#34;注释&#34;&gt;注释
 &lt;/h3&gt;&lt;h4 id=&#34;块注释&#34;&gt;块注释
@@ -25631,7 +25631,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;输出：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250109232110024.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250109232110024.png&#34;
 	
 	
 	
@@ -25656,7 +25656,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;输出：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250109232732812.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250109232732812.png&#34;
 	
 	
 	
@@ -25716,7 +25716,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Python中的数据类型有如下几个&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250110214715999.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250110214715999.png&#34;
 	
 	
 	
@@ -25810,7 +25810,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;字符串索引&#34;&gt;字符串索引
 &lt;/h4&gt;&lt;p&gt;可以使用 &lt;strong&gt;索引&lt;/strong&gt; 获取一个字符串中 指定位置的字符，索引计数从 &lt;strong&gt;0&lt;/strong&gt; 开始。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250110224036248.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250110224036248.png&#34;
 	
 	
 	
@@ -25854,7 +25854,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;数据类型转换&#34;&gt;数据类型转换
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250110230043835.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250110230043835.png&#34;
 	
 	
 	
@@ -25900,7 +25900,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;第三章运算符与表达式&#34;&gt;第三章：运算符与表达式
 &lt;/h2&gt;&lt;h3 id=&#34;算数运算符&#34;&gt;算数运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111192422827.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111192422827.png&#34;
 	
 	
 	
@@ -25911,7 +25911,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;运算符优先级&#34;&gt;运算符优先级
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111192708304.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111192708304.png&#34;
 	
 	
 	
@@ -25922,7 +25922,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;赋值运算符&#34;&gt;赋值运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111192826217.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111192826217.png&#34;
 	
 	
 	
@@ -25933,7 +25933,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;逻辑运算符&#34;&gt;逻辑运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111193253619.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111193253619.png&#34;
 	
 	
 	
@@ -25944,7 +25944,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;位运算符&#34;&gt;位运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111194255881.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111194255881.png&#34;
 	
 	
 	
@@ -25955,7 +25955,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;成员运算符&#34;&gt;成员运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203600706.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111203600706.png&#34;
 	
 	
 	
@@ -25966,7 +25966,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;身份运算符&#34;&gt;身份运算符
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203810020.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111203810020.png&#34;
 	
 	
 	
@@ -25977,7 +25977,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;运算符优先级-1&#34;&gt;运算符优先级
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111203948909.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111203948909.png&#34;
 	
 	
 	
@@ -25989,7 +25989,7 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;第四章条件判断&#34;&gt;第四章：条件判断
 &lt;/h2&gt;&lt;h3 id=&#34;单分支&#34;&gt;单分支
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111211341720.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111211341720.png&#34;
 	
 	
 	
@@ -26000,7 +26000,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;双分支&#34;&gt;双分支
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111211636184.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111211636184.png&#34;
 	
 	
 	
@@ -26011,7 +26011,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;多分支&#34;&gt;多分支
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111212042781.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111212042781.png&#34;
 	
 	
 	
@@ -26023,7 +26023,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;match语句&#34;&gt;match语句
 &lt;/h3&gt;&lt;p&gt;与其他语言中的&lt;code&gt;switch&lt;/code&gt;分支类似&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111212715086.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111212715086.png&#34;
 	
 	
 	
@@ -26035,7 +26035,7 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;第五章循环&#34;&gt;第五章：循环
 &lt;/h2&gt;&lt;h3 id=&#34;while循环&#34;&gt;while循环
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111213558908.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111213558908.png&#34;
 	
 	
 	
@@ -26066,7 +26066,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;for循环&#34;&gt;for循环
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111214247628.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111214247628.png&#34;
 	
 	
 	
@@ -26108,7 +26108,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;循环控制&#34;&gt;循环控制
 &lt;/h3&gt;&lt;h4 id=&#34;break&#34;&gt;break
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111221106779.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111221106779.png&#34;
 	
 	
 	
@@ -26119,7 +26119,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;continue&#34;&gt;continue
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111221134540.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111221134540.png&#34;
 	
 	
 	
@@ -26130,7 +26130,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;pass&#34;&gt;pass
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250111223859763.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250111223859763.png&#34;
 	
 	
 	
@@ -26145,7 +26145,7 @@
 &lt;/h3&gt;&lt;p&gt;在python中，有这样一些类型，它们的成员是有序排列的，并且可以通过下标访问成员，这些类型称之为序列。&lt;/p&gt;
 &lt;p&gt;包括：列表、range、元组和字符串；&lt;/p&gt;
 &lt;h4 id=&#34;序列的通用操作&#34;&gt;序列的通用操作
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250112181727572.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250112181727572.png&#34;
 	
 	
 	
@@ -26155,7 +26155,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250112181758910.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250112181758910.png&#34;
 	
 	
 	
@@ -27549,7 +27549,7 @@
 &lt;li&gt;如果查询到指定的名片，用户可以选择修改或者删除名片&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;展示菜单：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250113233452702.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250113233452702.png&#34;
 	
 	
 	
@@ -27718,7 +27718,7 @@
 &lt;/h3&gt;&lt;p&gt;• 模块 就好比是 工具包，要想使用这个工具包中的工具，就需要 导入 import 这个模块&lt;/p&gt;
 &lt;p&gt;• 每一个以扩展名 py 结尾的 python 源代码文件都是一个 模块&lt;/p&gt;
 &lt;p&gt;• 在模块中定义的 全局变量 、 函数 都是模块能够提供给外界直接使用的工具&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117214310181.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250117214310181.png&#34;
 	
 	
 	
@@ -27729,7 +27729,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以只导入一个模块中的部分函数，可以防止导入函数过多导致的重名问题&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117214619265.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250117214619265.png&#34;
 	
 	
 	
@@ -27741,7 +27741,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;包的使用&#34;&gt;包的使用
 &lt;/h3&gt;&lt;p&gt;• 包是Python模块的一种组织形式，将多个模块组合在一起，形成一个大的Python工具库。包通常是一个拥有__init__.py文件的目录，它定义了包的属性和方法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117215355305.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250117215355305.png&#34;
 	
 	
 	
@@ -27799,7 +27799,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h4 id=&#34;re库的正则表达式&#34;&gt;re库的正则表达式
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250117222025963.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250117222025963.png&#34;
 	
 	
 	
@@ -27873,7 +27873,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;step&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/%e7%bb%98%e5%9b%be%e6%bc%94%e7%a4%ba.gif&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/%e7%bb%98%e5%9b%be%e6%bc%94%e7%a4%ba.gif&#34;
 	
 	
 	
@@ -28095,7 +28095,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;csv表格文件的读取和写入&#34;&gt;csv表格文件的读取和写入
 &lt;/h3&gt;&lt;p&gt;现有一个Test.csv文件，内容如图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250118205330399.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250118205330399.png&#34;
 	
 	
 	
@@ -28191,7 +28191,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;第十一章面向对象程序设计&#34;&gt;第十一章：面向对象程序设计
 &lt;/h2&gt;&lt;h3 id=&#34;类的定义&#34;&gt;类的定义
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250118214618051.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250118214618051.png&#34;
 	
 	
 	
@@ -28720,7 +28720,7 @@
 &lt;p&gt;使用时使用&lt;code&gt;import wx&lt;/code&gt;导入wxpython库&lt;/p&gt;
 &lt;h3 id=&#34;简单布局&#34;&gt;简单布局
 &lt;/h3&gt;&lt;p&gt;一个普通的窗口布局如下图所示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119212241823.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250119212241823.png&#34;
 	
 	
 	
@@ -28788,7 +28788,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119214153624.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250119214153624.png&#34;
 	
 	
 	
@@ -28847,7 +28847,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250119222458429.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250119222458429.png&#34;
 	
 	
 	
@@ -28967,7 +28967,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/%e6%8a%bd%e5%a5%96%e6%bc%94%e7%a4%ba.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/%e6%8a%bd%e5%a5%96%e6%bc%94%e7%a4%ba.gif&#34;
 	
 	
 	
@@ -28981,10 +28981,10 @@
         </item>
         <item>
         <title>Vue3快速上手</title>
-        <link>https://IAmYuanyu.github.io/p/vue3%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/vue3%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</link>
         <pubDate>Wed, 27 Mar 2024 13:52:16 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/vue3%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/vue3%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</guid>
         <description>&lt;h2 id=&#34;1-vue3简介&#34;&gt;1. Vue3简介
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -29003,7 +29003,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;截止2023年10月，最新的公开版本为：&lt;code&gt;3.3.4&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1695089947298-161c1b47-eb86-42fb-b1f8-d6a4fcab8ee2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1695089947298-161c1b47-eb86-42fb-b1f8-d6a4fcab8ee2.png&#34;
 	
 	
 	
@@ -29144,7 +29144,7 @@
 &lt;li&gt;对 &lt;code&gt;TypeScript&lt;/code&gt;、&lt;code&gt;JSX&lt;/code&gt;、&lt;code&gt;CSS&lt;/code&gt; 等支持开箱即用。&lt;/li&gt;
 &lt;li&gt;真正的按需编译，不再等待整个应用编译完成。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;webpack&lt;/code&gt;构建 与 &lt;code&gt;vite&lt;/code&gt;构建对比图如下：&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1683167182037-71c78210-8217-4e7d-9a83-e463035efbbe.png&#34;
+&lt;li&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1683167182037-71c78210-8217-4e7d-9a83-e463035efbbe.png&#34;
 	
 	
 	
@@ -29153,7 +29153,7 @@
 		alt=&#34;webpack构建&#34;
 	
 	
-&gt;	&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1683167204081-582dc237-72bc-499e-9589-2cdfd452e62f.png&#34;
+&gt;	&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1683167204081-582dc237-72bc-499e-9589-2cdfd452e62f.png&#34;
 	
 	
 	
@@ -29220,7 +29220,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;221-安装依赖&#34;&gt;2.2.1. 安装依赖
 &lt;/h4&gt;&lt;p&gt;创建后用vscode打开，发现有的文件冒红，可以在终端输入&lt;code&gt;npm i&lt;/code&gt;安装依赖后重新启动来解决&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250219184723761.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250219184723761.png&#34;
 	
 	
 	
@@ -29280,7 +29280,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;安装官方推荐的&lt;code&gt;vscode&lt;/code&gt;插件：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250219184521064.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250219184521064.png&#34;
 	
 	
 	
@@ -29298,7 +29298,7 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;222-如何运行&#34;&gt;2.2.2. 如何运行
 &lt;/h4&gt;&lt;p&gt;查看&lt;code&gt;package.json&lt;/code&gt;文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250219192339879.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250219192339879.png&#34;
 	
 	
 	
@@ -29309,7 +29309,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;发现是&lt;code&gt;dev&lt;/code&gt;，则在终端输入&lt;code&gt;npm run dev&lt;/code&gt;后，点开生成的链接即可查看&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250219192519483.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250219192519483.png&#34;
 	
 	
 	
@@ -29407,7 +29407,7 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;options-api-的弊端&#34;&gt;Options API 的弊端
 &lt;/h4&gt;&lt;p&gt;&lt;code&gt;Options&lt;/code&gt;类型的 &lt;code&gt;API&lt;/code&gt;，数据、方法、计算属性等，是分散在：&lt;code&gt;data&lt;/code&gt;、&lt;code&gt;methods&lt;/code&gt;、&lt;code&gt;computed&lt;/code&gt;中的，若想新增或者修改一个需求，就需要分别修改：&lt;code&gt;data&lt;/code&gt;、&lt;code&gt;methods&lt;/code&gt;、&lt;code&gt;computed&lt;/code&gt;，不便于维护和复用。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1696662197101-55d2b251-f6e5-47f4-b3f1-d8531bbf9279.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1696662197101-55d2b251-f6e5-47f4-b3f1-d8531bbf9279.gif&#34;
 	
 	
 	
@@ -29416,7 +29416,7 @@
 		alt=&#34;1.gif&#34;
 	
 	
-&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1696662200734-1bad8249-d7a2-423e-a3c3-ab4c110628be.gif&#34;
+&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1696662200734-1bad8249-d7a2-423e-a3c3-ab4c110628be.gif&#34;
 	
 	
 	
@@ -29428,7 +29428,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;composition-api-的优势&#34;&gt;Composition API 的优势
 &lt;/h4&gt;&lt;p&gt;可以用函数的方式，更加优雅的组织代码，让相关功能的代码更加有序的组织在一起。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1696662249851-db6403a1-acb5-481a-88e0-e1e34d2ef53a.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1696662249851-db6403a1-acb5-481a-88e0-e1e34d2ef53a.gif&#34;
 	
 	
 	
@@ -29437,7 +29437,7 @@
 		alt=&#34;3.gif&#34;
 	
 	
-&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1696662256560-7239b9f9-a770-43c1-9386-6cc12ef1e9c0.gif&#34;
+&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1696662256560-7239b9f9-a770-43c1-9386-6cc12ef1e9c0.gif&#34;
 	
 	
 	
@@ -29985,7 +29985,7 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;ref&lt;/code&gt;创建的变量必须使用&lt;code&gt;.value&lt;/code&gt;（可以使用&lt;code&gt;Vue - Official&lt;/code&gt;插件自动添加&lt;code&gt;.value&lt;/code&gt;）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250223210254796.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250223210254796.png&#34;
 	
 	
 	
@@ -29998,7 +29998,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;reactive&lt;/code&gt;重新分配一个新对象，会&lt;strong&gt;失去&lt;/strong&gt;响应式（可以使用&lt;code&gt;Object.assign&lt;/code&gt;去整体替换）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250223211333335.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250223211333335.png&#34;
 	
 	
 	
@@ -30107,7 +30107,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;38-computed&#34;&gt;3.8. 【computed】
 &lt;/h3&gt;&lt;p&gt;作用：根据已有数据计算出新数据（和&lt;code&gt;Vue2&lt;/code&gt;中的&lt;code&gt;computed&lt;/code&gt;作用一致）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/computed.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/computed.gif&#34;
 	
 	
 	
@@ -31287,7 +31287,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;示例代码：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250227223103545.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250227223103545.png&#34;
 	
 	
 	
@@ -31477,7 +31477,7 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;4-路由&#34;&gt;4. 路由
 &lt;/h2&gt;&lt;h3 id=&#34;41-对路由的理解&#34;&gt;4.1. 【对路由的理解】
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20231018144351536.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20231018144351536.png&#34;
 	
 	
 	
@@ -31937,7 +31937,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250302151507104.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250302151507104.png&#34;
 	
 	
 	
@@ -32008,7 +32008,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250302170358160.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250302170358160.png&#34;
 	
 	
 	
@@ -32063,7 +32063,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250302172545977.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250302172545977.png&#34;
 	
 	
 	
@@ -32098,7 +32098,7 @@
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;push和replace区别演示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2025-03-02_17-35-39.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2025-03-02_17-35-39.gif&#34;
 	
 	
 	
@@ -32301,7 +32301,7 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;5-pinia&#34;&gt;5. pinia
 &lt;/h2&gt;&lt;h3 id=&#34;51准备一个效果&#34;&gt;5.1【准备一个效果】
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/pinia_example.gif&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/pinia_example.gif&#34;
 	
 	
 	
@@ -32548,7 +32548,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;此时开发者工具中已经有了&lt;code&gt;pinia&lt;/code&gt;选项&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1684309952481-c67f67f9-d1a3-4d69-8bd6-2b381e003f31.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1684309952481-c67f67f9-d1a3-4d69-8bd6-2b381e003f31.png&#34;
 	
 	
 	
@@ -32692,7 +32692,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250303200553737.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250303200553737.png&#34;
 	
 	
 	
@@ -32823,7 +32823,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;下图为&lt;code&gt;console.log(this)&lt;/code&gt;的结果&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250303204203262.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250303204203262.png&#34;
 	
 	
 	
@@ -32898,7 +32898,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;toRefs与storeToRefs对比：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250303205905641.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250303205905641.png&#34;
 	
 	
 	
@@ -33012,7 +33012,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250303212916386.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250303212916386.png&#34;
 	
 	
 	
@@ -33089,7 +33089,7 @@
 &lt;li&gt;&lt;code&gt;$children&lt;/code&gt;被砍掉了。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;常见搭配形式：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20231119185900990.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20231119185900990.png&#34;
 	
 	
 	
@@ -33244,7 +33244,7 @@
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;案例演示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250304194956556.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250304194956556.png&#34;
 	
 	
 	
@@ -33847,7 +33847,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250305171225984.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250305171225984.png&#34;
 	
 	
 	
@@ -33936,7 +33936,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250305172147967.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250305172147967.png&#34;
 	
 	
 	
@@ -34077,7 +34077,7 @@
 &lt;/h3&gt;&lt;p&gt;参考之前&lt;code&gt;pinia&lt;/code&gt;部分的讲解&lt;/p&gt;
 &lt;h3 id=&#34;69-slot&#34;&gt;6.9. 【slot】
 &lt;/h3&gt;&lt;h4 id=&#34;1-默认插槽&#34;&gt;1. 默认插槽
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/default_slot.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/default_slot.png&#34;
 	
 	
 	
@@ -34473,7 +34473,7 @@
 &lt;p&gt;特点：对象的顶层属性是响应式的，但嵌套对象的属性不是。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250306205411531.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250306205411531.png&#34;
 	
 	
 	
@@ -34491,7 +34491,7 @@
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;注意&#34;&gt;注意
 &lt;/h4&gt;&lt;p&gt;不是响应式不代表数据不变，当页面中有响应式数据发生了变化，这些被修改的非响应式数据也会跟着变化&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/PixPin_2025-03-06_20-59-07.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/PixPin_2025-03-06_20-59-07.gif&#34;
 	
 	
 	
@@ -35091,7 +35091,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;使用演示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250306225454937.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250306225454937.png&#34;
 	
 	
 	
@@ -35143,7 +35143,7 @@
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;app.use&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;安装插件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250306225755089.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250306225755089.png&#34;
 	
 	
 	

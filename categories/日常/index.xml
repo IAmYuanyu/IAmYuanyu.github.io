@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>日常 on 缘鱼的笔记</title>
-        <link>https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/%E6%97%A5%E5%B8%B8/</link>
         <description>Recent content in 日常 on 缘鱼的笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Fri, 03 Jul 2026 00:15:18 +0800</lastBuildDate><atom:link href="https://IAmYuanyu.github.io/categories/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 03 Jul 2026 00:15:18 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>解决音响砰砰响</title>
-        <link>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3%E9%9F%B3%E5%93%8D%E7%A0%B0%E7%A0%B0%E5%93%8D/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%A3%E5%86%B3%E9%9F%B3%E5%93%8D%E7%A0%B0%E7%A0%B0%E5%93%8D/</link>
         <pubDate>Fri, 03 Jul 2026 00:15:18 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3%E9%9F%B3%E5%93%8D%E7%A0%B0%E7%A0%B0%E5%93%8D/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%A3%E5%86%B3%E9%9F%B3%E5%93%8D%E7%A0%B0%E7%A0%B0%E5%93%8D/</guid>
         <description>&lt;h2 id=&#34;问题&#34;&gt;问题
 &lt;/h2&gt;&lt;p&gt;我的音响连接我的win11系统的笔记本时，时常发出“砰”的一声响，频繁出现在一段时间没有播放声音后再播放声音时&lt;/p&gt;
 &lt;p&gt;我将音响接入手机和台式电脑后并没有出现这种情况，推测是笔记本的省电策略让音响一直在正常运行和休眠模式中切换导致音响出现“砰”的声音&lt;/p&gt;
 &lt;h2 id=&#34;解决方法-1&#34;&gt;解决方法-1
 &lt;/h2&gt;&lt;p&gt;1.找到并打开电脑中的“选择电源计划”，如下图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260703000541261.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260703000541261.png&#34;
 	
 	
 	
@@ -29,7 +29,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;2.点击“更改计划设置”&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260703000632217.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260703000632217.png&#34;
 	
 	
 	
@@ -40,7 +40,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;3.点击“更改高级电源设置”&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260703000722921.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260703000722921.png&#34;
 	
 	
 	
@@ -51,7 +51,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;4.找到“PCI Express”，将里面的选项改为“关闭”，然后点击窗口右下角的“应用”（我不接电源的时候也不会用音响，所以我只改了一个）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260703000920365.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260703000920365.png&#34;
 	
 	
 	
@@ -69,13 +69,13 @@
         </item>
         <item>
         <title>获取github个人访问令牌</title>
-        <link>https://IAmYuanyu.github.io/p/%E8%8E%B7%E5%8F%96github%E4%B8%AA%E4%BA%BA%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%8E%B7%E5%8F%96github%E4%B8%AA%E4%BA%BA%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C/</link>
         <pubDate>Fri, 10 Apr 2026 00:04:14 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E8%8E%B7%E5%8F%96github%E4%B8%AA%E4%BA%BA%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%8E%B7%E5%8F%96github%E4%B8%AA%E4%BA%BA%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C/</guid>
         <description>&lt;h2 id=&#34;获取个人访问令牌&#34;&gt;获取个人访问令牌
 &lt;/h2&gt;&lt;p&gt;1）在github首页，点击头像下方的&lt;code&gt;Settings&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409235519420.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409235519420.png&#34;
 	
 	
 	
@@ -86,7 +86,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;2）进入设置页面后，在左边的菜单里找到&lt;code&gt;Developer settings&lt;/code&gt;并点击&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409235731105.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409235731105.png&#34;
 	
 	
 	
@@ -97,7 +97,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409235901305.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409235901305.png&#34;
 	
 	
 	
@@ -108,7 +108,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;3）然后点击&lt;code&gt;Personal access tokens&lt;/code&gt;下的&lt;code&gt;Fine-grained tokens&lt;/code&gt;，然后点右上方的&lt;code&gt;Generate new token&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409235959437.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409235959437.png&#34;
 	
 	
 	
@@ -123,10 +123,10 @@
         </item>
         <item>
         <title>缘鱼的Java刷题记录</title>
-        <link>https://IAmYuanyu.github.io/p/%E7%BC%98%E9%B1%BC%E7%9A%84java%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E7%BC%98%E9%B1%BC%E7%9A%84java%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
         <pubDate>Tue, 07 Apr 2026 18:17:19 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E7%BC%98%E9%B1%BC%E7%9A%84java%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E7%BC%98%E9%B1%BC%E7%9A%84java%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
         <description>&lt;h2 id=&#34;简单题&#34;&gt;简单题
 &lt;/h2&gt;&lt;h3 id=&#34;两数之和&#34;&gt;两数之和
 &lt;/h3&gt;&lt;p&gt;标签：数组、哈希表&lt;/p&gt;
@@ -957,7 +957,7 @@
     &gt;21. 合并两个有序链表 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;将两个升序链表合并为一个新的 &lt;strong&gt;升序&lt;/strong&gt; 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260409213426190.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260409213426190.png&#34;
 	
 	
 	
@@ -1841,7 +1841,7 @@
     &gt;94. 二叉树的中序遍历 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;给定一个二叉树的根节点 &lt;code&gt;root&lt;/code&gt; ，返回 &lt;em&gt;它的 &lt;strong&gt;中序&lt;/strong&gt; 遍历&lt;/em&gt; 。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260415223007221.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260415223007221.png&#34;
 	
 	
 	
@@ -2384,7 +2384,7 @@
 &lt;p&gt;给你两个单链表的头节点 &lt;code&gt;headA&lt;/code&gt; 和 &lt;code&gt;headB&lt;/code&gt; ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 &lt;code&gt;null&lt;/code&gt; 。&lt;/p&gt;
 &lt;p&gt;图示两个链表在节点 &lt;code&gt;c1&lt;/code&gt; 开始相交：&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://assets.leetcode.cn/aliyun-lc-upload/uploads/2018/12/14/160_statement.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/160_statement.png&#34;
+    &gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/160_statement.png&#34;
 	
 	
 	
@@ -2408,7 +2408,7 @@
 &lt;p&gt;评测系统将根据这些输入创建链式数据结构，并将两个头节点 &lt;code&gt;headA&lt;/code&gt; 和 &lt;code&gt;headB&lt;/code&gt; 传递给你的程序。如果程序能够正确返回相交节点，那么你的解决方案将被 &lt;strong&gt;视作正确答案&lt;/strong&gt; 。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://assets.leetcode.com/uploads/2018/12/13/160_example_1.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/160_example_1_1.png&#34;
+    &gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/160_example_1_1.png&#34;
 	
 	
 	
@@ -2438,7 +2438,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://assets.leetcode.com/uploads/2018/12/13/160_example_2.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/160_example_2.png&#34;
+    &gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/160_example_2.png&#34;
 	
 	
 	
@@ -2466,7 +2466,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://assets.leetcode.com/uploads/2018/12/13/160_example_3.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/160_example_3.png&#34;
+    &gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/160_example_3.png&#34;
 	
 	
 	
@@ -2684,7 +2684,7 @@
     &gt;206. 反转链表 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;给你单链表的头节点 &lt;code&gt;head&lt;/code&gt; ，请你反转链表，并返回反转后的链表。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/rev1ex1.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/rev1ex1.jpg&#34;
 	
 	
 	
@@ -2705,7 +2705,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/rev1ex2.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/rev1ex2.jpg&#34;
 	
 	
 	
@@ -2896,7 +2896,7 @@
     &gt;234. 回文链表 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;给你一个单链表的头节点 &lt;code&gt;head&lt;/code&gt; ，请你判断该链表是否为回文链表。如果是，返回 &lt;code&gt;true&lt;/code&gt; ；否则，返回 &lt;code&gt;false&lt;/code&gt; 。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/pal1linked-list.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/pal1linked-list.jpg&#34;
 	
 	
 	
@@ -2917,7 +2917,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/pal2linked-list.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/pal2linked-list.jpg&#34;
 	
 	
 	
@@ -3172,7 +3172,7 @@
 &lt;p&gt;给定一个二叉树 &lt;code&gt;root&lt;/code&gt; ，返回其最大深度。&lt;/p&gt;
 &lt;p&gt;二叉树的 &lt;strong&gt;最大深度&lt;/strong&gt; 是指从根节点到最远叶子节点的最长路径上的节点数。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/tmp-tree.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/tmp-tree.jpg&#34;
 	
 	
 	
@@ -3304,7 +3304,7 @@
 &lt;p&gt;如果链表中有某个节点，可以通过连续跟踪 &lt;code&gt;next&lt;/code&gt; 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 &lt;code&gt;pos&lt;/code&gt; 来表示链表尾连接到链表中的位置（索引从 0 开始）。&lt;strong&gt;注意：&lt;code&gt;pos&lt;/code&gt; 不作为参数进行传递&lt;/strong&gt; 。仅仅是为了标识链表的实际情况。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;如果链表中存在环&lt;/em&gt; ，则返回 &lt;code&gt;true&lt;/code&gt; 。 否则，返回 &lt;code&gt;false&lt;/code&gt; 。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/circularlinkedlist.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/circularlinkedlist.png&#34;
 	
 	
 	
@@ -3327,7 +3327,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/circularlinkedlist_test2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/circularlinkedlist_test2.png&#34;
 	
 	
 	
@@ -3350,7 +3350,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/circularlinkedlist_test3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/circularlinkedlist_test3.png&#34;
 	
 	
 	
@@ -3533,7 +3533,7 @@
     &gt;226. 翻转二叉树 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;给你一棵二叉树的根节点 &lt;code&gt;root&lt;/code&gt; ，翻转这棵二叉树，并返回其根节点。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/invert1-tree.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/invert1-tree.jpg&#34;
 	
 	
 	
@@ -3554,7 +3554,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/invert2-tree.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/invert2-tree.jpg&#34;
 	
 	
 	
@@ -3692,7 +3692,7 @@
 &lt;h4 id=&#34;题目-19&#34;&gt;题目
 &lt;/h4&gt;&lt;p&gt;给你一个二叉树的根节点 &lt;code&gt;root&lt;/code&gt; ， 检查它是否轴对称。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1698026966-JDYPDU-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1698026966-JDYPDU-image.png&#34;
 	
 	
 	
@@ -3713,7 +3713,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1698027008-nPFLbM-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1698027008-nPFLbM-image.png&#34;
 	
 	
 	
@@ -3901,7 +3901,7 @@
 &lt;p&gt;二叉树的 &lt;strong&gt;直径&lt;/strong&gt; 是指树中任意两个节点之间最长路径的 &lt;strong&gt;长度&lt;/strong&gt; 。这条路径可能经过也可能不经过根节点 &lt;code&gt;root&lt;/code&gt; 。&lt;/p&gt;
 &lt;p&gt;两节点之间路径的 &lt;strong&gt;长度&lt;/strong&gt; 由它们之间边数表示。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/diamtree.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/diamtree.jpg&#34;
 	
 	
 	
@@ -4098,7 +4098,7 @@
     &gt;108. 将有序数组转换为二叉搜索树 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;给你一个整数数组 &lt;code&gt;nums&lt;/code&gt; ，其中元素已经按 &lt;strong&gt;升序&lt;/strong&gt; 排列，请你将其转换为一棵 平衡 二叉搜索树。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/btree1.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/btree1.jpg&#34;
 	
 	
 	
@@ -4121,7 +4121,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/btree.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/btree.jpg&#34;
 	
 	
 	
@@ -4358,7 +4358,7 @@
     &gt;118. 杨辉三角 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;给定一个非负整数 *&lt;code&gt;numRows&lt;/code&gt;，*生成「杨辉三角」的前 &lt;em&gt;&lt;code&gt;numRows&lt;/code&gt;&lt;/em&gt; 行。&lt;/p&gt;
 &lt;p&gt;在**「杨辉三角」**中，每个数是它左上方和右上方的数的和。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/1626927345-DZmfxB-PascalTriangleAnimated2.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/1626927345-DZmfxB-PascalTriangleAnimated2.gif&#34;
 	
 	
 	
@@ -4780,7 +4780,7 @@
 &lt;p&gt;返回容器可以储存的最大水量。&lt;/p&gt;
 &lt;p&gt;**说明：**你不能倾斜容器。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/question_11.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/question_11.jpg&#34;
 	
 	
 	
@@ -4966,7 +4966,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;答案-27&#34;&gt;答案
 &lt;/h4&gt;&lt;p&gt;力扣评论区的答案：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260424204528474.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260424204528474.png&#34;
 	
 	
 	
@@ -5288,7 +5288,7 @@
 &lt;p&gt;如果链表中有某个节点，可以通过连续跟踪 &lt;code&gt;next&lt;/code&gt; 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 &lt;code&gt;pos&lt;/code&gt; 来表示链表尾连接到链表中的位置（&lt;strong&gt;索引从 0 开始&lt;/strong&gt;）。如果 &lt;code&gt;pos&lt;/code&gt; 是 &lt;code&gt;-1&lt;/code&gt;，则在该链表中没有环。&lt;strong&gt;注意：&lt;code&gt;pos&lt;/code&gt; 不作为参数进行传递&lt;/strong&gt;，仅仅是为了标识链表的实际情况。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;不允许修改&lt;/strong&gt; 链表。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/circularlinkedlist.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/circularlinkedlist.png&#34;
 	
 	
 	
@@ -5311,7 +5311,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/circularlinkedlist_test2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/circularlinkedlist_test2.png&#34;
 	
 	
 	
@@ -5334,7 +5334,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例 3：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/circularlinkedlist_test3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/circularlinkedlist_test3.png&#34;
 	
 	
 	
@@ -5616,10 +5616,10 @@
         </item>
         <item>
         <title>配置PowerShell和CMD代理</title>
-        <link>https://IAmYuanyu.github.io/p/%E9%85%8D%E7%BD%AEpowershell%E5%92%8Ccmd%E4%BB%A3%E7%90%86/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%85%8D%E7%BD%AEpowershell%E5%92%8Ccmd%E4%BB%A3%E7%90%86/</link>
         <pubDate>Mon, 30 Mar 2026 12:39:02 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E9%85%8D%E7%BD%AEpowershell%E5%92%8Ccmd%E4%BB%A3%E7%90%86/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E9%85%8D%E7%BD%AEpowershell%E5%92%8Ccmd%E4%BB%A3%E7%90%86/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;h3 id=&#34;为什么要单独配&#34;&gt;为什么要单独配
 &lt;/h3&gt;&lt;p&gt;使用PowerShell或CMD时，明明给电脑开了代理，浏览器都能访问的网站，用命令行却访问不了，&lt;em&gt;为什么呢？&lt;/em&gt;&lt;/p&gt;
@@ -5647,7 +5647,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;分别在PowerShell中执行上面两行命令，其中的代理端口就填代理工具的端口号&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260329235111811.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260329235111811.png&#34;
 	
 	
 	
@@ -5682,7 +5682,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;curl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;exe&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;google&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;com&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260330000243495.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260330000243495.png&#34;
 	
 	
 	
@@ -5769,7 +5769,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;分别在CMD中执行上面两行命令，其中的代理端口就填代理工具的端口号&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260329235111811.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260329235111811.png&#34;
 	
 	
 	
@@ -5804,7 +5804,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;curl &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;google&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;com&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260330122412273.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260330122412273.png&#34;
 	
 	
 	
@@ -5884,14 +5884,14 @@
         </item>
         <item>
         <title>MouseWithoutBorders分享以及关闭其开机自启</title>
-        <link>https://IAmYuanyu.github.io/p/mousewithoutborders%E5%88%86%E4%BA%AB%E4%BB%A5%E5%8F%8A%E5%85%B3%E9%97%AD%E5%85%B6%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/mousewithoutborders%E5%88%86%E4%BA%AB%E4%BB%A5%E5%8F%8A%E5%85%B3%E9%97%AD%E5%85%B6%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/</link>
         <pubDate>Sun, 01 Mar 2026 21:30:57 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/mousewithoutborders%E5%88%86%E4%BA%AB%E4%BB%A5%E5%8F%8A%E5%85%B3%E9%97%AD%E5%85%B6%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/mousewithoutborders%E5%88%86%E4%BA%AB%E4%BB%A5%E5%8F%8A%E5%85%B3%E9%97%AD%E5%85%B6%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/</guid>
         <description>&lt;h2 id=&#34;软件安装&#34;&gt;软件安装
 &lt;/h2&gt;&lt;p&gt;Mouse Without Borders是一款支持跨PC共享键鼠的软件，可以实现多台电脑间无缝切换键鼠操作，共享剪贴板，拖拽文件传输等功能，具体功能可以见官网或自行开发&lt;/p&gt;
 &lt;p&gt;官网部分介绍：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260301213955404.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260301213955404.png&#34;
 	
 	
 	
@@ -5909,7 +5909,7 @@
 &lt;p&gt;1.首先&lt;code&gt;win+r&lt;/code&gt;键呼出运行窗口，输入&lt;code&gt;services.msc&lt;/code&gt;后点击确认，打开服务窗口&lt;/p&gt;
 &lt;p&gt;2.在其中找到Mouse Without Borders Service，双击点开&lt;/p&gt;
 &lt;p&gt;3.将启动类型改为&lt;strong&gt;手动&lt;/strong&gt;，然后点击右下角&lt;code&gt;应用&lt;/code&gt;即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20260301214506535.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20260301214506535.png&#34;
 	
 	
 	
@@ -5923,57 +5923,57 @@
         </item>
         <item>
         <title>StarUML汉化文件</title>
-        <link>https://IAmYuanyu.github.io/p/staruml%E6%B1%89%E5%8C%96%E6%96%87%E4%BB%B6/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/staruml%E6%B1%89%E5%8C%96%E6%96%87%E4%BB%B6/</link>
         <pubDate>Sun, 23 Nov 2025 23:37:57 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/staruml%E6%B1%89%E5%8C%96%E6%96%87%E4%BB%B6/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/staruml%E6%B1%89%E5%8C%96%E6%96%87%E4%BB%B6/</guid>
         <description>&lt;p&gt;下载地址：https://wwwm.lanzoue.com/iLUEP3bzbnfe&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>C盘文件移动工具FolderMove</title>
-        <link>https://IAmYuanyu.github.io/p/c%E7%9B%98%E6%96%87%E4%BB%B6%E7%A7%BB%E5%8A%A8%E5%B7%A5%E5%85%B7foldermove/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/c%E7%9B%98%E6%96%87%E4%BB%B6%E7%A7%BB%E5%8A%A8%E5%B7%A5%E5%85%B7foldermove/</link>
         <pubDate>Sun, 23 Nov 2025 23:32:37 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/c%E7%9B%98%E6%96%87%E4%BB%B6%E7%A7%BB%E5%8A%A8%E5%B7%A5%E5%85%B7foldermove/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/c%E7%9B%98%E6%96%87%E4%BB%B6%E7%A7%BB%E5%8A%A8%E5%B7%A5%E5%85%B7foldermove/</guid>
         <description>&lt;p&gt;下载地址：https://wwwm.lanzoue.com/inpgC3bza91a&lt;/p&gt;
 &lt;p&gt;密码:72dp&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>视频播放器РotРlayer</title>
-        <link>https://IAmYuanyu.github.io/p/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%D1%80ot%D1%80layer/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%D1%80ot%D1%80layer/</link>
         <pubDate>Sun, 23 Nov 2025 23:16:24 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%D1%80ot%D1%80layer/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%D1%80ot%D1%80layer/</guid>
         <description>&lt;p&gt;下载地址：https://wwwm.lanzoue.com/i8YO53bz0r3a&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>文本编辑器SublimeText</title>
-        <link>https://IAmYuanyu.github.io/p/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8sublimetext/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8sublimetext/</link>
         <pubDate>Sun, 23 Nov 2025 23:15:28 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8sublimetext/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8sublimetext/</guid>
         <description>&lt;p&gt;下载地址：https://wwwm.lanzoue.com/ixyg33bz3asb&lt;/p&gt;
 &lt;p&gt;密码:5xeu&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>解压软件Bandizip</title>
-        <link>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%8E%8B%E8%BD%AF%E4%BB%B6bandizip/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%A3%E5%8E%8B%E8%BD%AF%E4%BB%B6bandizip/</link>
         <pubDate>Sun, 23 Nov 2025 23:14:08 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%8E%8B%E8%BD%AF%E4%BB%B6bandizip/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%A3%E5%8E%8B%E8%BD%AF%E4%BB%B6bandizip/</guid>
         <description>&lt;p&gt;下载地址：https://wwwm.lanzoue.com/ir2HE3bz3qti&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>JetBrains系列常用软件Crack</title>
-        <link>https://IAmYuanyu.github.io/p/jetbrains%E7%B3%BB%E5%88%97%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6crack/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/jetbrains%E7%B3%BB%E5%88%97%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6crack/</link>
         <pubDate>Sun, 23 Nov 2025 23:07:36 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/jetbrains%E7%B3%BB%E5%88%97%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6crack/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/jetbrains%E7%B3%BB%E5%88%97%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6crack/</guid>
         <description>&lt;p&gt;使用这个后可能会影响原有已破解的Jetbrains系列软件&lt;/p&gt;
 &lt;p&gt;若要不影响已破解软件，可以尝试如下操作：&lt;/p&gt;
 &lt;p&gt;解压后打开&lt;code&gt;\jetbra\vmoptions&lt;/code&gt;，可以看见很多以&lt;code&gt;vmoptions&lt;/code&gt;为后缀的文件，删除其中文件名为你不想破解(已破解过)的文件&lt;/p&gt;
@@ -5983,10 +5983,10 @@
         </item>
         <item>
         <title>Win10与win11一键关闭防火墙工具</title>
-        <link>https://IAmYuanyu.github.io/p/win10%E4%B8%8Ewin11%E4%B8%80%E9%94%AE%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99%E5%B7%A5%E5%85%B7/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/win10%E4%B8%8Ewin11%E4%B8%80%E9%94%AE%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Sun, 23 Nov 2025 23:04:40 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/win10%E4%B8%8Ewin11%E4%B8%80%E9%94%AE%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99%E5%B7%A5%E5%85%B7/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/win10%E4%B8%8Ewin11%E4%B8%80%E9%94%AE%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99%E5%B7%A5%E5%85%B7/</guid>
         <description>&lt;p&gt;win10：https://wwwm.lanzoue.com/iClCU3bz3k0d&lt;/p&gt;
 &lt;p&gt;win11：https://wwwm.lanzoue.com/iBdUd3bz0huh&lt;/p&gt;
 &lt;p&gt;密码:8b6f&lt;/p&gt;
@@ -5994,10 +5994,10 @@
         </item>
         <item>
         <title>下载工具InternetDownloadManager</title>
-        <link>https://IAmYuanyu.github.io/p/%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7internetdownloadmanager/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7internetdownloadmanager/</link>
         <pubDate>Sun, 23 Nov 2025 23:02:37 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7internetdownloadmanager/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7internetdownloadmanager/</guid>
         <description>&lt;p&gt;提供了三个版本，其中有一个只会偶尔提示更新，并不会时不时弹窗提示文件缺失跳转浏览器，但到底是哪一个作者忘记了，按作者记忆里的可能性排序&lt;/p&gt;
 &lt;h2 id=&#34;1&#34;&gt;1.
 &lt;/h2&gt;&lt;p&gt;不是第一个就是第二个，至少在作者的电脑里不会跳转浏览器&lt;/p&gt;
@@ -6013,19 +6013,19 @@
         </item>
         <item>
         <title>批量重命名工具zRenamer</title>
-        <link>https://IAmYuanyu.github.io/p/%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D%E5%B7%A5%E5%85%B7zrenamer/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D%E5%B7%A5%E5%85%B7zrenamer/</link>
         <pubDate>Sun, 23 Nov 2025 22:58:10 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D%E5%B7%A5%E5%85%B7zrenamer/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D%E5%B7%A5%E5%85%B7zrenamer/</guid>
         <description>&lt;p&gt;下载地址：https://wwwm.lanzoue.com/iPPrq3bma24d&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>解决win10没声音</title>
-        <link>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3win10%E6%B2%A1%E5%A3%B0%E9%9F%B3/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%A3%E5%86%B3win10%E6%B2%A1%E5%A3%B0%E9%9F%B3/</link>
         <pubDate>Sun, 23 Nov 2025 22:20:40 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3win10%E6%B2%A1%E5%A3%B0%E9%9F%B3/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%A3%E5%86%B3win10%E6%B2%A1%E5%A3%B0%E9%9F%B3/</guid>
         <description>&lt;p&gt;作者的电脑重装系统后，发现没声音了，驱动反反复复装了好多次，各种版本也依旧没声音。弄了一天终于解决了。&lt;/p&gt;
 &lt;h2 id=&#34;解决前的情况&#34;&gt;解决前的情况
 &lt;/h2&gt;&lt;p&gt;win10系统，台式机，声卡驱动已安装，蓝牙设备连接是有声音的，但使用有线音响连接主板就没声音了（音响是一根USB线+一根3.5mm音频线）&lt;/p&gt;
@@ -6035,7 +6035,7 @@
 &lt;p&gt;运行完没什么明显反应是正常的（也可以顺手运行下旁边的&lt;code&gt;RtkNGUI64.exe&lt;/code&gt;）&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;然后打开系统控制面板，如图操作&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251123173039410.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251123173039410.png&#34;
 	
 	
 	
@@ -6045,7 +6045,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251123173102973.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251123173102973.png&#34;
 	
 	
 	
@@ -6056,7 +6056,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;正常情况下，会如图出现一个&lt;strong&gt;Realtek高清晰音频管理器&lt;/strong&gt;，如果没有出现，请根据自己的主板去对应品牌官网下载主板对应的官方驱动，然后重新执行上述步骤&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251123173442499.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251123173442499.png&#34;
 	
 	
 	
@@ -6066,7 +6066,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251123173523454.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251123173523454.png&#34;
 	
 	
 	
@@ -6081,10 +6081,10 @@
         </item>
         <item>
         <title>使用Cpolar实现内网穿透</title>
-        <link>https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8cpolar%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E4%BD%BF%E7%94%A8cpolar%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
         <pubDate>Sun, 19 Oct 2025 12:29:42 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8cpolar%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E4%BD%BF%E7%94%A8cpolar%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
         <description>&lt;h2 id=&#34;使用cpolar实现内网穿透&#34;&gt;使用Cpolar实现内网穿透
 &lt;/h2&gt;&lt;h3 id=&#34;注册登录cpolar&#34;&gt;注册登录cpolar
 &lt;/h3&gt;&lt;p&gt;官网地址：&lt;a class=&#34;link&#34; href=&#34;https://www.cpolar.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -6092,7 +6092,7 @@
 &lt;p&gt;登录后在首页下载，不多赘述&lt;/p&gt;
 &lt;h3 id=&#34;绑定token&#34;&gt;绑定token
 &lt;/h3&gt;&lt;p&gt;先在官网获取自己的token&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251019121610789.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251019121610789.png&#34;
 	
 	
 	
@@ -6103,7 +6103,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后打开刚刚下载的cpolar的目录，在目录处打开命令行窗口&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251019121926977.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251019121926977.png&#34;
 	
 	
 	
@@ -6136,14 +6136,14 @@
         </item>
         <item>
         <title>TODO待办事项</title>
-        <link>https://IAmYuanyu.github.io/p/todo%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/todo%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9/</link>
         <pubDate>Thu, 09 Oct 2025 22:55:16 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/todo%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/todo%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9/</guid>
         <description>&lt;h2 id=&#34;todo待办事项&#34;&gt;TODO待办事项
 &lt;/h2&gt;&lt;p&gt;在IntelliJ IDEA中，提供的&lt;code&gt;TODO&lt;/code&gt; 是一种特殊的注释标记，用于标记代码中需要完成、优化、修复或注意的事项，本质是&lt;strong&gt;开发者为自己或团队成员留下的 “待办事项” 标记&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在未来要修改的代码上添加&lt;code&gt;TODO&lt;/code&gt;，即可以避免忘记，之后也可以快速定位&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251009224327135.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251009224327135.png&#34;
 	
 	
 	
@@ -6154,7 +6154,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;todo功能默认可能被隐藏，可以在下图位置找出（我的版本是2024.3.6）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20251009224458683.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20251009224458683.png&#34;
 	
 	
 	
@@ -6168,13 +6168,13 @@
         </item>
         <item>
         <title>解决idea快捷键注释没有缩进</title>
-        <link>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3idea%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B3%A8%E9%87%8A%E6%B2%A1%E6%9C%89%E7%BC%A9%E8%BF%9B/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%A3%E5%86%B3idea%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B3%A8%E9%87%8A%E6%B2%A1%E6%9C%89%E7%BC%A9%E8%BF%9B/</link>
         <pubDate>Thu, 11 Sep 2025 17:08:50 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E8%A7%A3%E5%86%B3idea%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B3%A8%E9%87%8A%E6%B2%A1%E6%9C%89%E7%BC%A9%E8%BF%9B/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%A3%E5%86%B3idea%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B3%A8%E9%87%8A%E6%B2%A1%E6%9C%89%E7%BC%A9%E8%BF%9B/</guid>
         <description>&lt;h2 id=&#34;解决idea快捷键注释没有缩进&#34;&gt;解决idea快捷键注释没有缩进
 &lt;/h2&gt;&lt;p&gt;如果你在idea用&lt;code&gt;ctrl+/&lt;/code&gt;快捷键注释时，注释情况如下图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250911171454236.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250911171454236.png&#34;
 	
 	
 	
@@ -6185,7 +6185,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;希望让自动注释成下方这样&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250911171603285.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250911171603285.png&#34;
 	
 	
 	
@@ -6196,7 +6196,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以进行如下设置，其中第三步选择你想设置的语言，此处以Java为例&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250911172013425.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250911172013425.png&#34;
 	
 	
 	
@@ -6210,13 +6210,13 @@
         </item>
         <item>
         <title>使用火绒控制软件联网</title>
-        <link>https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8%E7%81%AB%E7%BB%92%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E8%81%94%E7%BD%91/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E4%BD%BF%E7%94%A8%E7%81%AB%E7%BB%92%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E8%81%94%E7%BD%91/</link>
         <pubDate>Sat, 17 May 2025 13:51:37 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E4%BD%BF%E7%94%A8%E7%81%AB%E7%BB%92%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E8%81%94%E7%BD%91/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E4%BD%BF%E7%94%A8%E7%81%AB%E7%BB%92%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E8%81%94%E7%BD%91/</guid>
         <description>&lt;p&gt;如果电脑有下载“火绒安全软件”，可以使用火绒进行电脑软件的联网控制&lt;/p&gt;
 &lt;p&gt;火绒官网：https://www.huorong.cn/&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250517135551410.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250517135551410.png&#34;
 	
 	
 	
@@ -6226,7 +6226,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250517135726613.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250517135726613.png&#34;
 	
 	
 	
@@ -6236,7 +6236,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250517140055643.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250517140055643.png&#34;
 	
 	
 	
@@ -6250,11 +6250,11 @@
         </item>
         <item>
         <title>右键创建Markdown文档</title>
-        <link>https://IAmYuanyu.github.io/p/%E5%8F%B3%E9%94%AE%E5%88%9B%E5%BB%BAmarkdown%E6%96%87%E6%A1%A3/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%8F%B3%E9%94%AE%E5%88%9B%E5%BB%BAmarkdown%E6%96%87%E6%A1%A3/</link>
         <pubDate>Sun, 13 Apr 2025 18:58:10 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E5%8F%B3%E9%94%AE%E5%88%9B%E5%BB%BAmarkdown%E6%96%87%E6%A1%A3/</guid>
-        <description>&lt;img src="https://IAmYuanyu.github.io/p/%E5%8F%B3%E9%94%AE%E5%88%9B%E5%BB%BAmarkdown%E6%96%87%E6%A1%A3/image-20250413190421751.png" alt="Featured image of post 右键创建Markdown文档" /&gt;&lt;ul&gt;
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%8F%B3%E9%94%AE%E5%88%9B%E5%BB%BAmarkdown%E6%96%87%E6%A1%A3/</guid>
+        <description>&lt;img src="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E5%8F%B3%E9%94%AE%E5%88%9B%E5%BB%BAmarkdown%E6%96%87%E6%A1%A3/image-20250413190421751.png" alt="Featured image of post 右键创建Markdown文档" /&gt;&lt;ul&gt;
 &lt;li&gt;创建一个.txt文件，将下方内容复制进去&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -6277,7 +6277,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Markdown 文档&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250413183956964.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250413183956964.png&#34;
 	
 	
 	
@@ -6294,7 +6294,7 @@
 &lt;ul&gt;
 &lt;li&gt;然后修改后缀名&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250413184207997.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250413184207997.png&#34;
 	
 	
 	
@@ -6308,7 +6308,7 @@
 &lt;ul&gt;
 &lt;li&gt;运行修改名字后的文件&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250413184649825.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250413184649825.png&#34;
 	
 	
 	
@@ -6321,7 +6321,7 @@
 &lt;ul&gt;
 &lt;li&gt;运行成功后，之后右键新建就可以创建Markdown类型文件了&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250413185000767.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250413185000767.png&#34;
 	
 	
 	
@@ -6332,7 +6332,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;注：若依旧没有，可以打开任务管理器（快捷键&lt;code&gt;Ctrl+Shift+Esc&lt;/code&gt;），然后如图操作&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250413185240716.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250413185240716.png&#34;
 	
 	
 	
@@ -6346,12 +6346,12 @@
         </item>
         <item>
         <title>用VScode快速定位目标</title>
-        <link>https://IAmYuanyu.github.io/p/%E7%94%A8vscode%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87/</link>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E7%94%A8vscode%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87/</link>
         <pubDate>Sun, 06 Apr 2025 18:09:30 +0800</pubDate>
         
-        <guid>https://IAmYuanyu.github.io/p/%E7%94%A8vscode%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87/</guid>
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E7%94%A8vscode%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87/</guid>
         <description>&lt;p&gt;VScode中间正上方的搜索框输入&lt;code&gt;%&lt;/code&gt;后，再输入想要找到的内容，会直接搜索整个项目中所有文件的内容，符合目标的内容会直接标出来文件名与文件位置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://IAmYuanyu.github.io/assets/image-20250406181319682.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/image-20250406181319682.png&#34;
 	
 	
 	
@@ -6361,7 +6361,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;之前真不知道可以全局查找内容，看别人的项目都是根据文件名猜对应内容，然后一个个找&lt;img src=&#34;https://IAmYuanyu.github.io/assets/14D840CF.png&#34;
+&lt;p&gt;之前真不知道可以全局查找内容，看别人的项目都是根据文件名猜对应内容，然后一个个找&lt;img src=&#34;https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/assets/14D840CF.png&#34;
 	
 	
 	
