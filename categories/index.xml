@@ -7,18 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>缘鱼</copyright>
-        <lastBuildDate>Sat, 08 Aug 2026 14:59:01 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Python</title>
-        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/python/</link>
-        <pubDate>Sat, 08 Aug 2026 14:59:01 +0800</pubDate>
-        
-        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/python/</guid>
-        <description></description>
-        </item>
-        <item>
+        <lastBuildDate>Sat, 22 Aug 2026 21:29:51 +0800</lastBuildDate><atom:link href="https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>教程</title>
         <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/%E6%95%99%E7%A8%8B/</link>
-        <pubDate>Sat, 08 Aug 2026 14:59:01 +0800</pubDate>
+        <pubDate>Sat, 22 Aug 2026 21:29:51 +0800</pubDate>
         
         <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/%E6%95%99%E7%A8%8B/</guid>
         <description></description>
@@ -26,9 +18,17 @@
         <item>
         <title>日常</title>
         <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/%E6%97%A5%E5%B8%B8/</link>
-        <pubDate>Fri, 03 Jul 2026 00:15:18 +0800</pubDate>
+        <pubDate>Sat, 22 Aug 2026 21:29:51 +0800</pubDate>
         
         <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/%E6%97%A5%E5%B8%B8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Python</title>
+        <link>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/python/</link>
+        <pubDate>Sat, 08 Aug 2026 14:59:01 +0800</pubDate>
+        
+        <guid>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/python/</guid>
         <description></description>
         </item>
         <item>

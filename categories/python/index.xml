@@ -196,7 +196,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;安装第三方依赖包&#34;&gt;安装第三方依赖包
 &lt;/h3&gt;&lt;p&gt;先安装一些之后可能会用到的包。&lt;/p&gt;
-&lt;p&gt;在当前项目的根目录下创建一个**&lt;code&gt;requirements.txt&lt;/code&gt;**文件，复制下方内容到其中&lt;/p&gt;
+&lt;p&gt;在当前项目的根目录下创建一个&lt;code&gt;requirements.txt&lt;/code&gt;文件，复制下方内容到其中&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;  1
@@ -2609,27 +2609,27 @@ config参数：&lt;strong&gt;允许在调用模型时，动态地配置和控制
 	&lt;/thead&gt;
 	&lt;tbody&gt;
 			&lt;tr&gt;
-					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;&lt;code&gt;content&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;content&lt;/code&gt;&lt;/td&gt;
 					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;str&lt;/code&gt; 或 &lt;code&gt;list&lt;/code&gt;&lt;/td&gt;
 					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;消息的主要内容&lt;/strong&gt;。通常是文本字符串，也支持多模态内容（如图片、音频）的列表。&lt;/td&gt;
 			&lt;/tr&gt;
 			&lt;tr&gt;
-					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;&lt;code&gt;id&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;id&lt;/code&gt;&lt;/td&gt;
 					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;str&lt;/code&gt;&lt;/td&gt;
 					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;可选的消息唯一标识符&lt;/strong&gt;。理想情况下应为UUID格式，用于追踪和去重。&lt;/td&gt;
 			&lt;/tr&gt;
 			&lt;tr&gt;
-					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;&lt;code&gt;name&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;name&lt;/code&gt;&lt;/td&gt;
 					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;str&lt;/code&gt;&lt;/td&gt;
 					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;可选的消息发送者名称&lt;/strong&gt;。用于在对话中区分不同角色，如 &lt;code&gt;&amp;quot;Alice&amp;quot;&lt;/code&gt; 或 &lt;code&gt;&amp;quot;Bob&amp;quot;&lt;/code&gt;。&lt;/td&gt;
 			&lt;/tr&gt;
 			&lt;tr&gt;
-					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;&lt;code&gt;response_metadata&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;response_metadata&lt;/code&gt;&lt;/td&gt;
 					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;dict&lt;/code&gt;&lt;/td&gt;
 					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;与模型响应相关的元数据&lt;/strong&gt;。例如，可以包含模型返回的响应头、logprobs（对数概率）、token计数等额外信息。&lt;/td&gt;
 			&lt;/tr&gt;
 			&lt;tr&gt;
-					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;&lt;code&gt;additional_kwargs&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;additional_kwargs&lt;/code&gt;&lt;/td&gt;
 					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;dict&lt;/code&gt;&lt;/td&gt;
 					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;用于存储特定提供商（provider）的额外信息&lt;/strong&gt;。这是一个灵活的字段，可以存放任何与消息相关的、未在其他参数中定义的附加数据。&lt;/td&gt;
 			&lt;/tr&gt;
