@@ -3,18 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/</loc>
-    <lastmod>2026-08-22T21:29:51+08:00</lastmod>
+    <lastmod>2026-09-07T16:47:10+08:00</lastmod>
   </url><url>
     <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/</loc>
-    <lastmod>2026-08-22T21:29:51+08:00</lastmod>
+    <lastmod>2026-09-07T16:47:10+08:00</lastmod>
   </url><url>
-    <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/codex%E6%A1%8C%E9%9D%A2%E7%AB%AF%E5%8F%8D%E5%A4%8D%E8%A6%81%E6%B1%82%E9%87%8D%E6%96%B0%E7%99%BB%E5%BD%95/</loc>
-    <lastmod>2026-08-22T21:29:51+08:00</lastmod>
+    <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/langgraph%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2026-09-07T16:47:10+08:00</lastmod>
   </url><url>
     <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/post/</loc>
-    <lastmod>2026-08-22T21:29:51+08:00</lastmod>
+    <lastmod>2026-09-07T16:47:10+08:00</lastmod>
+  </url><url>
+    <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/python/</loc>
+    <lastmod>2026-09-07T16:47:10+08:00</lastmod>
   </url><url>
     <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-09-07T16:47:10+08:00</lastmod>
+  </url><url>
+    <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/codex%E6%A1%8C%E9%9D%A2%E7%AB%AF%E5%8F%8D%E5%A4%8D%E8%A6%81%E6%B1%82%E9%87%8D%E6%96%B0%E7%99%BB%E5%BD%95/</loc>
     <lastmod>2026-08-22T21:29:51+08:00</lastmod>
   </url><url>
     <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/%E6%97%A5%E5%B8%B8/</loc>
@@ -23,10 +29,7 @@
     <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/langchain%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2026-08-08T14:59:01+08:00</lastmod>
   </url><url>
-    <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/python/</loc>
-    <lastmod>2026-08-08T14:59:01+08:00</lastmod>
-  </url><url>
-    <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%A3%E5%86%B3%E9%9F%B3%E5%93%8D%E7%A0%B0%E7%A0%B0%E5%93%8D/</loc>
+    <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/p/%E8%A7%A3%E5%86%B3%E9%9F%B3%E5%93%8D%E7%82%B8%E5%93%8D/</loc>
     <lastmod>2026-07-03T00:15:18+08:00</lastmod>
   </url><url>
     <loc>https://%E7%BC%98%E9%B1%BC%E7%9A%84%E5%8D%9A%E5%AE%A2.me/categories/java/</loc>
